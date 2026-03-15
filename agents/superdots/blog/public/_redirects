@@ -1,0 +1,2 @@
+# Redirect www to apex
+# https://www.superdots.ai/* https://superdots.ai/:splat 301
