@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://superdots.ai/sitemap-index.xml

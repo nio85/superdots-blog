@@ -1,5 +1,6 @@
 export const SITE_TITLE = 'Superdots';
 export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
+export const ANALYTICS_DOMAIN = 'superdots.ai';
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering' },
