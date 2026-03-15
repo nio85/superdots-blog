@@ -71,19 +71,40 @@ const navLinks = [
 	<!-- Mobile menu overlay -->
 	<div class="mobile-overlay" id="mobile-overlay"></div>
 
-	<!-- Mobile menu panel -->
+	<!-- Mobile menu panel — full-screen premium -->
 	<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
-		<div class="mobile-menu-links">
-			{navLinks.map(({ href, label }) => (
-				<a
-					href={href}
-					class:list={['mobile-link', { active: pathname.startsWith(href) }]}
-					aria-current={pathname.startsWith(href) ? 'page' : undefined}
-				>
-					<span class="mobile-link-dot"></span>
-					{label}
-				</a>
-			))}
+		<div class="mobile-menu-inner">
+			<nav class="mobile-menu-links">
+				{navLinks.map(({ href, label }, i) => (
+					<a
+						href={href}
+						class:list={['mobile-link', { active: pathname.startsWith(href) }]}
+						aria-current={pathname.startsWith(href) ? 'page' : undefined}
+						style={`--item-index: ${i}`}
+					>
+						<span class="mobile-link-indicator" aria-hidden="true">
+							<span class="indicator-line"></span>
+							<span class="indicator-dot"></span>
+						</span>
+						<span class="mobile-link-label">{label}</span>
+						<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<line x1="5" y1="12" x2="19" y2="12"></line>
+							<polyline points="12 5 19 12 12 19"></polyline>
+						</svg>
+					</a>
+				))}
+			</nav>
+			<div class="mobile-menu-footer">
+				<div class="mobile-menu-brand">
+					<span class="mobile-brand-dot"></span>
+					<span class="mobile-brand-text">{SITE_TITLE}</span>
+				</div>
+			</div>
+		</div>
+		<!-- Decorative background elements -->
+		<div class="mobile-menu-bg" aria-hidden="true">
+			<div class="bg-gradient"></div>
+			<div class="bg-dots"></div>
 		</div>
 	</div>
 </header>
@@ -125,6 +146,8 @@ const navLinks = [
 
 	var isOpen = false;
 
+	var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 	function openMenu() {
 		isOpen = true;
 		hamburger.classList.add('is-active');
@@ -134,9 +157,29 @@ const navLinks = [
 		overlay.classList.add('is-visible');
 		document.body.style.overflow = 'hidden';
 
+		// Staggered entrance for menu items
+		if (!prefersReducedMotion) {
+			var links = mobileMenu.querySelectorAll('.mobile-link');
+			for (var i = 0; i < links.length; i++) {
+				links[i].classList.remove('is-visible');
+			}
+			requestAnimationFrame(function() {
+				for (var i = 0; i < links.length; i++) {
+					(function(el, delay) {
+						setTimeout(function() { el.classList.add('is-visible'); }, delay);
+					})(links[i], 80 + i * 80);
+				}
+			});
+		} else {
+			var links = mobileMenu.querySelectorAll('.mobile-link');
+			for (var i = 0; i < links.length; i++) {
+				links[i].classList.add('is-visible');
+			}
+		}
+
 		// Focus first link
 		var firstLink = mobileMenu.querySelector('a');
-		if (firstLink) firstLink.focus();
+		if (firstLink) setTimeout(function() { firstLink.focus(); }, prefersReducedMotion ? 0 : 200);
 	}
 
 	function closeMenu() {
@@ -393,30 +436,30 @@ const navLinks = [
 		display: none;
 		position: fixed;
 		inset: 0;
-		background: rgba(11, 18, 34, 0.5);
+		background: rgba(11, 18, 34, 0.6);
 		z-index: 90;
 		opacity: 0;
-		transition: opacity var(--transition-slow);
+		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
 	}
 	.mobile-overlay.is-visible {
 		opacity: 1;
 	}
 
-	/* Mobile menu panel */
+	/* Mobile menu panel — full-screen premium */
 	.mobile-menu {
 		display: none;
 		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: min(320px, 85vw);
-		background: var(--color-bg);
+		inset: 0;
 		z-index: 95;
-		padding: calc(60px + var(--space-8)) var(--space-6) var(--space-6);
-		transform: translateX(100%);
-		transition: transform var(--transition-slow);
-		box-shadow: var(--shadow-lg);
 		overflow-y: auto;
+		overflow-x: hidden;
+		background: var(--color-bg);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+					visibility 0ms 400ms;
 	}
 	:global([data-theme="dark"]) .mobile-menu {
 		background: var(--sd-navy);
@@ -427,27 +470,97 @@ const navLinks = [
 		}
 	}
 	.mobile-menu.is-open {
-		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
+					visibility 0ms 0ms;
+	}
+
+	/* Background decorations */
+	.mobile-menu-bg {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		overflow: hidden;
+	}
+	.bg-gradient {
+		position: absolute;
+		bottom: -20%;
+		right: -20%;
+		width: 70vw;
+		height: 70vw;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
+		filter: blur(40px);
+	}
+	:global([data-theme="dark"]) .bg-gradient {
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.12) 0%, transparent 70%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .bg-gradient {
+			background: radial-gradient(circle, rgba(232, 54, 59, 0.12) 0%, transparent 70%);
+		}
+	}
+	.bg-dots {
+		position: absolute;
+		top: 15%;
+		left: 8%;
+		width: 120px;
+		height: 120px;
+		background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+		background-size: 16px 16px;
+		opacity: 0.5;
+	}
+
+	/* Inner layout */
+	.mobile-menu-inner {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+		min-height: 100dvh;
+		padding: calc(60px + var(--space-10)) var(--space-8) var(--space-10);
 	}
 
 	.mobile-menu-links {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-1);
+		gap: var(--space-2);
 	}
 
+	/* Individual menu link — premium style */
 	.mobile-link {
 		display: flex;
 		align-items: center;
-		gap: var(--space-3);
-		padding: var(--space-4);
+		gap: var(--space-5);
+		padding: var(--space-5) var(--space-4);
 		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		font-weight: var(--weight-medium);
+		font-size: var(--text-3xl);
+		font-weight: var(--weight-bold);
 		color: var(--color-text-muted);
 		text-decoration: none;
-		border-radius: var(--radius-md);
-		transition: all var(--transition-fast);
+		border-radius: var(--radius-lg);
+		transition: color 200ms ease, background 200ms ease;
+		letter-spacing: -0.01em;
+		/* Staggered entrance */
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	.mobile-link.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+		transition: color 200ms ease, background 200ms ease,
+					opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+					transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.mobile-link {
+			opacity: 1;
+			transform: none;
+			transition: color 200ms ease, background 200ms ease;
+		}
 	}
 	.mobile-link:hover {
 		color: var(--color-text-strong);
@@ -456,19 +569,89 @@ const navLinks = [
 	}
 	.mobile-link.active {
 		color: var(--color-text-strong);
-		background: var(--color-bg-dim);
 	}
 
-	.mobile-link-dot {
-		width: 6px;
-		height: 6px;
+	/* Premium active indicator */
+	.mobile-link-indicator {
+		display: flex;
+		align-items: center;
+		gap: 0;
+		width: 28px;
+		flex-shrink: 0;
+		position: relative;
+	}
+	.indicator-line {
+		width: 0;
+		height: 2px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.indicator-dot {
+		width: 8px;
+		height: 8px;
 		border-radius: var(--radius-full);
 		background: transparent;
-		transition: background var(--transition-fast);
+		border: 2px solid transparent;
+		transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
 		flex-shrink: 0;
 	}
-	.mobile-link.active .mobile-link-dot {
+	.mobile-link.active .indicator-line {
+		width: 14px;
+	}
+	.mobile-link.active .indicator-dot {
 		background: var(--color-primary);
+		border-color: var(--color-primary);
+		box-shadow: 0 0 8px rgba(232, 54, 59, 0.4);
+	}
+	.mobile-link:hover .indicator-dot {
+		border-color: var(--color-border-strong);
+	}
+
+	.mobile-link-label {
+		flex: 1;
+	}
+
+	/* Arrow icon — slides in on hover */
+	.mobile-link-arrow {
+		opacity: 0;
+		transform: translateX(-8px);
+		transition: all 200ms ease;
+		color: var(--color-text-muted);
+		flex-shrink: 0;
+	}
+	.mobile-link:hover .mobile-link-arrow {
+		opacity: 0.6;
+		transform: translateX(0);
+	}
+	.mobile-link.active .mobile-link-arrow {
+		opacity: 0.4;
+		transform: translateX(0);
+	}
+
+	/* Footer branding */
+	.mobile-menu-footer {
+		margin-top: auto;
+		padding-top: var(--space-12);
+	}
+	.mobile-menu-brand {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		opacity: 0.3;
+	}
+	.mobile-brand-dot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+	}
+	.mobile-brand-text {
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		letter-spacing: -0.02em;
 	}
 
 	/* ---- Responsive breakpoints ---- */
