@@ -1,230 +1,142 @@
 ---
-import Base from '../layouts/Base.astro';
+import LegalPage from '../layouts/LegalPage.astro';
 ---
 
-<Base title="Privacy Policy | Superdots" description="Privacy policy for superdots.sh — how we handle your data.">
-	<div class="legal-header">
-		<div class="dots dots-md" style="top: 5%; right: 3%;"></div>
-		<p class="legal-label">
-			<span class="superdot"></span>
-			Legal
-		</p>
-		<h1>Privacy Policy<span class="dot-accent">.</span></h1>
-		<p class="legal-updated">Last updated: 16 March 2026</p>
-	</div>
-	<div class="prose">
+<LegalPage
+	title="Privacy Policy | Superdots"
+	description="Privacy policy for superdots.sh — how we handle your data."
+	pageTitle="Privacy Policy"
+	lastUpdated="16 March 2026"
+>
 
-		<h2>1. Who we are</h2>
-		<p>
-			Superdots ("we", "us") operates the website
-			<a href="https://superdots.sh">superdots.sh</a> (the "Site").
-			For questions about this policy, contact us at
-			<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
-		</p>
+	<h2>1. Who we are</h2>
+	<p>
+		Superdots ("we", "us") operates the website
+		<a href="https://superdots.sh">superdots.sh</a> (the "Site").
+		For questions about this policy, contact us at
+		<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
+	</p>
 
-		<h2>2. What data we collect</h2>
-		<p>We collect the minimum data needed to run this Site:</p>
-		<table>
-			<thead>
-				<tr>
-					<th>Data</th>
-					<th>Purpose</th>
-					<th>Legal basis (GDPR)</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Usage analytics (page views, referrer, device type) via Google Analytics 4</td>
-					<td>Understand which content is useful so we can improve the Site</td>
-					<td>Consent — Art. 6(1)(a) GDPR</td>
-				</tr>
-				<tr>
-					<td>Theme preference (<code>sd-theme</code> in localStorage)</td>
-					<td>Remember your light/dark mode choice</td>
-					<td>Legitimate interest — Art. 6(1)(f) GDPR (strictly necessary for the service you requested)</td>
-				</tr>
-				<tr>
-					<td>IP address &amp; server logs (via Cloudflare)</td>
-					<td>Deliver pages, protect against abuse</td>
-					<td>Legitimate interest — Art. 6(1)(f) GDPR</td>
-				</tr>
-			</tbody>
-		</table>
-		<p>
-			We do <strong>not</strong> collect names, email addresses, or any other personal
-			information. There are no user accounts, contact forms, or newsletter sign-ups on this Site.
-		</p>
+	<h2>2. What data we collect</h2>
+	<p>We collect the minimum data needed to run this Site:</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Data</th>
+				<th>Purpose</th>
+				<th>Legal basis (GDPR)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Usage analytics (page views, referrer, device type) via Google Analytics 4</td>
+				<td>Understand which content is useful so we can improve the Site</td>
+				<td>Consent — Art. 6(1)(a)</td>
+			</tr>
+			<tr>
+				<td>Theme preference (<code>sd-theme</code> in localStorage)</td>
+				<td>Remember your light/dark mode choice</td>
+				<td>Legitimate interest — Art. 6(1)(f)</td>
+			</tr>
+			<tr>
+				<td>IP address &amp; server logs (via Cloudflare)</td>
+				<td>Deliver pages, protect against abuse</td>
+				<td>Legitimate interest — Art. 6(1)(f)</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		We do <strong>not</strong> collect names, email addresses, or any other personal
+		information. There are no user accounts, contact forms, or newsletter sign-ups on this Site.
+	</p>
 
-		<h2>3. Cookies and similar technologies</h2>
-		<p>
-			See our <a href="/cookie-policy">Cookie Policy</a> for the full list of cookies,
-			their purposes, durations, and how to manage them.
-		</p>
+	<h2>3. Cookies and similar technologies</h2>
+	<p>
+		See our <a href="/cookie-policy">Cookie Policy</a> for the full list of cookies,
+		their purposes, durations, and how to manage them.
+	</p>
 
-		<h2>4. Third-party data processors</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Service</th>
-					<th>Purpose</th>
-					<th>Data shared</th>
-					<th>Privacy policy</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Google Analytics 4</td>
-					<td>Traffic analytics</td>
-					<td>Pseudonymised usage data, IP address (anonymised by default in GA4)</td>
-					<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a></td>
-				</tr>
-				<tr>
-					<td>Google Fonts</td>
-					<td>Web fonts (Space Grotesk, Inter, JetBrains Mono)</td>
-					<td>IP address, HTTP headers sent with font requests</td>
-					<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy Policy</a></td>
-				</tr>
-				<tr>
-					<td>Cloudflare Pages</td>
-					<td>Hosting, CDN, DDoS protection</td>
-					<td>IP address, request metadata</td>
-					<td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">Cloudflare Privacy Policy</a></td>
-				</tr>
-			</tbody>
-		</table>
+	<h2>4. Third-party data processors</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Service</th>
+				<th>Purpose</th>
+				<th>Data shared</th>
+				<th>Privacy policy</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Google Analytics 4</td>
+				<td>Traffic analytics</td>
+				<td>Pseudonymised usage data, IP address (anonymised by default in GA4)</td>
+				<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy</a></td>
+			</tr>
+			<tr>
+				<td>Google Fonts</td>
+				<td>Web fonts</td>
+				<td>IP address, HTTP headers sent with font requests</td>
+				<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy</a></td>
+			</tr>
+			<tr>
+				<td>Cloudflare Pages</td>
+				<td>Hosting, CDN, DDoS protection</td>
+				<td>IP address, request metadata</td>
+				<td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">Cloudflare Privacy</a></td>
+			</tr>
+		</tbody>
+	</table>
 
-		<h2>5. International data transfers</h2>
-		<p>
-			Google and Cloudflare may process data outside the EEA. Both rely on
-			Standard Contractual Clauses (SCCs) and, where applicable, the
-			EU–US Data Privacy Framework as transfer safeguards. You can review
-			Google's transfer mechanisms in their
-			<a href="https://policies.google.com/privacy/frameworks" rel="noopener noreferrer" target="_blank">data transfer documentation</a>.
-		</p>
+	<h2>5. International data transfers</h2>
+	<p>
+		Google and Cloudflare may process data outside the EEA. Both rely on
+		Standard Contractual Clauses (SCCs) and, where applicable, the
+		EU–US Data Privacy Framework as transfer safeguards. You can review
+		Google's transfer mechanisms in their
+		<a href="https://policies.google.com/privacy/frameworks" rel="noopener noreferrer" target="_blank">data transfer documentation</a>.
+	</p>
 
-		<h2>6. Data retention</h2>
-		<ul>
-			<li><strong>Google Analytics data:</strong> retained for 14 months (GA4 default), then automatically deleted.</li>
-			<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
-			<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
-		</ul>
+	<h2>6. Data retention</h2>
+	<ul>
+		<li><strong>Google Analytics data:</strong> retained for 14 months (GA4 default), then automatically deleted.</li>
+		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
+		<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
+	</ul>
 
-		<h2>7. Your rights</h2>
-		<p>Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have the right to:</p>
-		<ul>
-			<li><strong>Access</strong> the personal data we hold about you (Art. 15 GDPR)</li>
-			<li><strong>Rectification</strong> of inaccurate data (Art. 16 GDPR)</li>
-			<li><strong>Erasure</strong> ("right to be forgotten") (Art. 17 GDPR)</li>
-			<li><strong>Restrict processing</strong> (Art. 18 GDPR)</li>
-			<li><strong>Data portability</strong> (Art. 20 GDPR)</li>
-			<li><strong>Object</strong> to processing based on legitimate interest (Art. 21 GDPR)</li>
-			<li><strong>Withdraw consent</strong> at any time for analytics cookies, without affecting the lawfulness of prior processing (Art. 7(3) GDPR)</li>
-		</ul>
-		<p>
-			To exercise any of these rights, email
-			<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
-			We will respond within 30 days.
-		</p>
+	<h2>7. Your rights</h2>
+	<p>Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have the right to:</p>
+	<ul>
+		<li><strong>Access</strong> the personal data we hold about you (Art. 15)</li>
+		<li><strong>Rectification</strong> of inaccurate data (Art. 16)</li>
+		<li><strong>Erasure</strong> ("right to be forgotten") (Art. 17)</li>
+		<li><strong>Restrict processing</strong> (Art. 18)</li>
+		<li><strong>Data portability</strong> (Art. 20)</li>
+		<li><strong>Object</strong> to processing based on legitimate interest (Art. 21)</li>
+		<li><strong>Withdraw consent</strong> at any time for analytics cookies, without affecting the lawfulness of prior processing (Art. 7(3))</li>
+	</ul>
+	<p>
+		To exercise any of these rights, email
+		<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
+		We will respond within 30 days.
+	</p>
 
-		<h2>8. Complaints</h2>
-		<p>
-			If you believe your data protection rights have been violated, you may lodge a complaint with:
-		</p>
-		<ul>
-			<li>
-				<strong>Garante per la protezione dei dati personali</strong> (Italian Data Protection Authority)<br />
-				<a href="https://www.garanteprivacy.it" rel="noopener noreferrer" target="_blank">www.garanteprivacy.it</a>
-			</li>
-			<li>Or your local EU supervisory authority under Art. 77 GDPR.</li>
-		</ul>
+	<h2>8. Complaints</h2>
+	<p>
+		If you believe your data protection rights have been violated, you may lodge a complaint with:
+	</p>
+	<ul>
+		<li>
+			<strong>Garante per la protezione dei dati personali</strong> (Italian Data Protection Authority) —
+			<a href="https://www.garanteprivacy.it" rel="noopener noreferrer" target="_blank">www.garanteprivacy.it</a>
+		</li>
+		<li>Or your local EU supervisory authority under Art. 77 GDPR.</li>
+	</ul>
 
-		<h2>9. Changes to this policy</h2>
-		<p>
-			We may update this policy from time to time. Changes are effective when posted
-			on this page. The "Last updated" date at the top reflects the most recent revision.
-		</p>
+	<h2>9. Changes to this policy</h2>
+	<p>
+		We may update this policy from time to time. Changes are effective when posted
+		on this page. The "Last updated" date at the top reflects the most recent revision.
+	</p>
 
-	</div>
-</Base>
-
-<style>
-	.legal-header {
-		position: relative;
-		overflow: hidden;
-		padding: var(--space-8) 0 var(--space-4);
-	}
-	.legal-label {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-primary);
-		margin-bottom: var(--space-4);
-	}
-	.legal-label .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		display: inline-block;
-	}
-	.legal-header h1 {
-		margin-bottom: var(--space-2);
-	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
-	.legal-updated {
-		color: var(--color-text-muted);
-		font-size: var(--text-sm);
-		margin: 0;
-	}
-	.prose {
-		max-width: var(--max-width-prose);
-		line-height: var(--leading-relaxed);
-	}
-	.prose h2 {
-		font-family: var(--font-display);
-		margin-top: var(--space-10);
-		margin-bottom: var(--space-4);
-	}
-	.prose ul {
-		padding-left: var(--space-6);
-	}
-	.prose li {
-		margin-bottom: 0.5em;
-	}
-	.prose li::marker {
-		color: var(--color-primary);
-	}
-	.prose strong {
-		color: var(--color-text-strong);
-	}
-	.prose table {
-		width: 100%;
-		border-collapse: collapse;
-		margin: var(--space-4) 0;
-		font-size: var(--text-sm);
-	}
-	.prose th,
-	.prose td {
-		text-align: left;
-		padding: var(--space-2) var(--space-3);
-		border-bottom: 1px solid var(--color-border);
-	}
-	.prose th {
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-	}
-	.prose code {
-		font-family: var(--font-mono);
-		font-size: 0.9em;
-		background: var(--color-surface-raised);
-		padding: 0.1em 0.3em;
-		border-radius: var(--radius-sm);
-	}
-</style>
+</LegalPage>
