@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_TITLE, ANALYTICS_DOMAIN } from '../consts';
+import { SITE_TITLE, GA_MEASUREMENT_ID } from '../consts';
 
 interface Props {
 	title: string;
@@ -59,4 +59,11 @@ const ogImage = image ? new URL(image, Astro.url) : undefined;
 <meta property="twitter:description" content={description} />
 {ogImage && <meta property="twitter:image" content={ogImage} />}
 
-<script defer data-domain={ANALYTICS_DOMAIN} src="https://plausible.io/js/script.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+<script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', gaId);
+</script>
