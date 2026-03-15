@@ -5,6 +5,7 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 
 <Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
 	<div class="page-header">
+		<div class="dots dots-md" style="top: -15%; right: 0;"></div>
 		<h1>Categories<span class="dot-accent">.</span></h1>
 		<p class="page-desc">Find guides by department or use case</p>
 	</div>
@@ -34,6 +35,8 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 
 <style>
 	.page-header {
+		position: relative;
+		overflow: hidden;
 		padding: var(--space-6) 0 var(--space-2);
 	}
 	.page-header h1 {

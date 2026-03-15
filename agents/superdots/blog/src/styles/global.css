@@ -496,31 +496,31 @@ hr {
 
 .dots {
 	position: absolute;
-	background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+	background-image: radial-gradient(circle, var(--color-border-strong) 1.5px, transparent 1.5px);
 	background-size: 16px 16px;
-	opacity: 0.45;
+	opacity: 0.65;
 	pointer-events: none;
 	z-index: 0;
 }
 
 .dots-sm {
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 }
 
 .dots-md {
-	width: 120px;
-	height: 120px;
+	width: 160px;
+	height: 160px;
 }
 
 .dots-lg {
-	width: 180px;
-	height: 180px;
+	width: 240px;
+	height: 240px;
 }
 
 .dots-xl {
-	width: 240px;
-	height: 240px;
+	width: 320px;
+	height: 320px;
 }
 
 /* Finer grid variant */
@@ -533,14 +533,20 @@ hr {
 	background-size: 24px 24px;
 }
 
+/* Brand-tinted dots for accent areas */
+.dots-brand {
+	background-image: radial-gradient(circle, var(--sd-red) 1.5px, transparent 1.5px);
+	opacity: 0.12;
+}
+
 @media (max-width: 720px) {
 	.dots-lg {
-		width: 120px;
-		height: 120px;
+		width: 180px;
+		height: 180px;
 	}
 	.dots-xl {
-		width: 150px;
-		height: 150px;
+		width: 220px;
+		height: 220px;
 	}
 }
 
