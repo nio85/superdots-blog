@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base title="All Articles | Superdots" description="Browse all practical AI guides.">
+	<h1>All articles</h1>
+	<div class="post-grid">
+		{posts.map((post) => (
+			<PostCard
+				title={post.data.title}
+				description={post.data.description}
+				pubDate={post.data.pubDate}
+				department={post.data.department}
+				useCase={post.data.useCase}
+				slug={post.slug}
+			/>
+		))}
+	</div>
+</Base>
+
+<style>
+	h1 {
+		margin-bottom: 1.5rem;
+	}
+	.post-grid {
+		display: grid;
+		gap: 1.25rem;
+	}
+	@media (min-width: 640px) {
+		.post-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

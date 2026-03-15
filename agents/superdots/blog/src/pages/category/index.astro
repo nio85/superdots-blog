@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import { DEPARTMENTS, USE_CASES } from '../../consts';
+---
+
+<Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
+	<h1>Categories</h1>
+
+	<section>
+		<h2>By department</h2>
+		<div class="tag-grid">
+			{DEPARTMENTS.map((d) => (
+				<a href={`/category/department/${d.slug}/`} class="tag-card dept">
+					{d.label}
+				</a>
+			))}
+		</div>
+	</section>
+
+	<section>
+		<h2>By use case</h2>
+		<div class="tag-grid">
+			{USE_CASES.map((u) => (
+				<a href={`/category/use-case/${u.slug}/`} class="tag-card use-case">
+					{u.label}
+				</a>
+			))}
+		</div>
+	</section>
+</Base>
+
+<style>
+	section {
+		margin-bottom: 2.5rem;
+	}
+	h2 {
+		margin-bottom: 1rem;
+	}
+	.tag-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: 0.75rem;
+	}
+	.tag-card {
+		display: block;
+		padding: 1rem 1.25rem;
+		border-radius: var(--radius);
+		font-weight: 600;
+		text-decoration: none;
+		text-align: center;
+		transition: transform 0.15s, box-shadow 0.15s;
+	}
+	.tag-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		text-decoration: none;
+	}
+	.tag-card.dept {
+		background: #ede9fe;
+		color: #6d28d9;
+	}
+	.tag-card.use-case {
+		background: #ecfdf5;
+		color: #059669;
+	}
+</style>

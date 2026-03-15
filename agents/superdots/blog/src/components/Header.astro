@@ -1,0 +1,55 @@
+---
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<a href="/" class="site-title">{SITE_TITLE}</a>
+		<div class="nav-links">
+			<a href="/blog">Articles</a>
+			<a href="/category">Categories</a>
+			<a href="/about">About</a>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		border-bottom: 1px solid var(--border);
+		background: var(--bg);
+	}
+	nav {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.site-title {
+		font-weight: 700;
+		font-size: 1.25rem;
+		color: var(--text);
+		text-decoration: none;
+	}
+	.site-title:hover {
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.nav-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+	.nav-links a {
+		color: var(--text-light);
+		text-decoration: none;
+		font-size: 0.95rem;
+	}
+	.nav-links a:hover {
+		color: var(--accent);
+	}
+	@media (max-width: 480px) {
+		.nav-links { gap: 1rem; }
+		.nav-links a { font-size: 0.875rem; }
+	}
+</style>

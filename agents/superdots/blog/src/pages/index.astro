@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE_DESCRIPTION } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 6);
+---
+
+<Base title="Superdots — Practical AI for Work" description={SITE_DESCRIPTION}>
+	<section class="hero">
+		<h1>AI that actually helps you work</h1>
+		<p>
+			Practical guides on using AI across every department.
+			No hype, no fluff — just useful techniques you can apply today.
+		</p>
+		<a href="/blog" class="cta">Browse all articles</a>
+	</section>
+
+	<section class="latest">
+		<h2>Latest articles</h2>
+		<div class="post-grid">
+			{posts.map((post) => (
+				<PostCard
+					title={post.data.title}
+					description={post.data.description}
+					pubDate={post.data.pubDate}
+					department={post.data.department}
+					useCase={post.data.useCase}
+					slug={post.slug}
+				/>
+			))}
+		</div>
+	</section>
+</Base>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 3rem 0 2rem;
+	}
+	.hero h1 {
+		font-size: 2.75rem;
+		margin-bottom: 0.75rem;
+	}
+	.hero p {
+		color: var(--text-light);
+		font-size: 1.2rem;
+		max-width: 560px;
+		margin: 0 auto 1.5rem;
+	}
+	.cta {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: var(--accent);
+		color: white;
+		border-radius: var(--radius);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.cta:hover {
+		background: var(--accent-dark);
+		color: white;
+		text-decoration: none;
+	}
+	.latest {
+		padding: 2rem 0;
+	}
+	.latest h2 {
+		margin-bottom: 1.5rem;
+	}
+	.post-grid {
+		display: grid;
+		gap: 1.25rem;
+	}
+	@media (min-width: 640px) {
+		.post-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 720px) {
+		.hero h1 { font-size: 2rem; }
+		.hero p { font-size: 1rem; }
+	}
+</style>
