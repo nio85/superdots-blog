@@ -1,6 +1,6 @@
 export const SITE_TITLE = 'Superdots';
 export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
-export const ANALYTICS_DOMAIN = 'superdots.sh';
+export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 Measurement ID
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering' },
