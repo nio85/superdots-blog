@@ -59,11 +59,22 @@ const ogImage = image ? new URL(image, Astro.url) : undefined;
 <meta property="twitter:description" content={description} />
 {ogImage && <meta property="twitter:image" content={ogImage} />}
 
-<!-- Google Analytics (GA4) -->
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+<!-- Google Analytics (GA4) — loaded only after cookie consent -->
 <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+	window.SD_GA_ID = gaId;
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', gaId);
+	window.gtag = gtag;
+
+	(function() {
+		var consent = localStorage.getItem('sd-cookie-consent');
+		if (consent === 'accepted') {
+			var s = document.createElement('script');
+			s.async = true;
+			s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+			document.head.appendChild(s);
+			gtag('js', new Date());
+			gtag('config', gaId);
+		}
+	})();
 </script>
