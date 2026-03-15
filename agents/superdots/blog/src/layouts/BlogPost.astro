@@ -7,13 +7,32 @@ import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, author, department, useCase } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, heroImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${title} | Superdots`} description={description} />
+		<BaseHead title={`${title} | Superdots`} description={description} image={heroImage} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": title,
+			"description": description,
+			"author": { "@type": "Person", "name": author },
+			"datePublished": pubDate.toISOString(),
+			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
+			...(heroImage && { "image": new URL(heroImage, Astro.url).toString() }),
+			"publisher": {
+				"@type": "Organization",
+				"name": "Superdots",
+				"url": "https://superdots.ai"
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": Astro.url.toString()
+			}
+		})} />
 	</head>
 	<body>
 		<Header />
