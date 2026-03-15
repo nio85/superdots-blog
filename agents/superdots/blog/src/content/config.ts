@@ -8,7 +8,7 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		author: z.string().default('Superdots Team'),
-		department: z.enum(['engineering', 'marketing', 'sales', 'hr', 'finance', 'operations']),
+		department: z.enum(['engineering', 'marketing', 'sales', 'hr', 'finance', 'operations', 'legal', 'customer-support', 'design']),
 		useCase: z.enum(['automation', 'analysis', 'writing', 'communication']),
 		tags: z.array(z.string()).default([]),
 		heroImage: z.string().optional(),
