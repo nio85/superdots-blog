@@ -9,6 +9,9 @@ export const DEPARTMENTS = [
 	{ slug: 'hr', label: 'HR' },
 	{ slug: 'finance', label: 'Finance' },
 	{ slug: 'operations', label: 'Operations' },
+	{ slug: 'legal', label: 'Legal' },
+	{ slug: 'customer-support', label: 'Customer Support' },
+	{ slug: 'design', label: 'Design' },
 ] as const;
 
 export const USE_CASES = [
