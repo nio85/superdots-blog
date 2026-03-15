@@ -1,235 +1,136 @@
 ---
-import Base from '../layouts/Base.astro';
+import LegalPage from '../layouts/LegalPage.astro';
 ---
 
-<Base title="Cookie Policy | Superdots" description="Cookie policy for superdots.sh — what cookies we use and why.">
-	<div class="legal-header">
-		<div class="dots dots-md" style="top: 5%; right: 3%;"></div>
-		<p class="legal-label">
-			<span class="superdot"></span>
-			Legal
-		</p>
-		<h1>Cookie Policy<span class="dot-accent">.</span></h1>
-		<p class="legal-updated">Last updated: 16 March 2026</p>
-	</div>
-	<div class="prose">
+<LegalPage
+	title="Cookie Policy | Superdots"
+	description="Cookie policy for superdots.sh — what cookies we use and why."
+	pageTitle="Cookie Policy"
+	lastUpdated="16 March 2026"
+>
 
-		<h2>What are cookies?</h2>
-		<p>
-			Cookies are small text files stored on your device by your browser.
-			We also use localStorage, a similar browser storage mechanism.
-			This policy covers both.
-		</p>
+	<h2>What are cookies?</h2>
+	<p>
+		Cookies are small text files stored on your device by your browser.
+		We also use localStorage, a similar browser storage mechanism.
+		This policy covers both.
+	</p>
 
-		<h2>Cookies we use</h2>
+	<h2>Cookies we use</h2>
 
-		<h3>Strictly necessary (no consent required)</h3>
-		<p>
-			These are essential for the Site to function. Under Art. 5(3) of the ePrivacy
-			Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento
-			n. 229/2021), strictly necessary cookies do not require consent.
-		</p>
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Provider</th>
-					<th>Purpose</th>
-					<th>Type</th>
-					<th>Duration</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><code>sd-theme</code></td>
-					<td>superdots.sh</td>
-					<td>Stores your light/dark mode preference so the site renders correctly</td>
-					<td>localStorage</td>
-					<td>Until cleared by user</td>
-				</tr>
-				<tr>
-					<td><code>__cf_bm</code></td>
-					<td>Cloudflare</td>
-					<td>Bot management — distinguishes humans from automated traffic</td>
-					<td>HTTP cookie</td>
-					<td>30 minutes</td>
-				</tr>
-			</tbody>
-		</table>
+	<h3>Strictly necessary (no consent required)</h3>
+	<p>
+		These are essential for the Site to function. Under Art. 5(3) of the ePrivacy
+		Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento
+		n. 229/2021), strictly necessary cookies do not require consent.
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Provider</th>
+				<th>Purpose</th>
+				<th>Type</th>
+				<th>Duration</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>sd-theme</code></td>
+				<td>superdots.sh</td>
+				<td>Stores your light/dark mode preference so the site renders correctly</td>
+				<td>localStorage</td>
+				<td>Until cleared</td>
+			</tr>
+			<tr>
+				<td><code>__cf_bm</code></td>
+				<td>Cloudflare</td>
+				<td>Bot management — distinguishes humans from automated traffic</td>
+				<td>HTTP cookie</td>
+				<td>30 minutes</td>
+			</tr>
+		</tbody>
+	</table>
 
-		<h3>Analytics (consent required)</h3>
-		<p>
-			These cookies are set by Google Analytics 4 to help us understand how visitors
-			use the Site. They are only activated <strong>after you give consent</strong>
-			via the cookie banner, as required by Art. 5(3) ePrivacy Directive and
-			Art. 6(1)(a) GDPR.
-		</p>
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Provider</th>
-					<th>Purpose</th>
-					<th>Type</th>
-					<th>Duration</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><code>_ga</code></td>
-					<td>Google</td>
-					<td>Distinguishes unique users by assigning a randomly generated ID</td>
-					<td>HTTP cookie</td>
-					<td>2 years</td>
-				</tr>
-				<tr>
-					<td><code>_ga_DC2BTH9VKX</code></td>
-					<td>Google</td>
-					<td>Maintains session state for GA4 property G-DC2BTH9VKX</td>
-					<td>HTTP cookie</td>
-					<td>2 years</td>
-				</tr>
-			</tbody>
-		</table>
+	<h3>Analytics (consent required)</h3>
+	<p>
+		These cookies are set by Google Analytics 4 to help us understand how visitors
+		use the Site. They are only activated <strong>after you give consent</strong>
+		via the cookie banner, as required by Art. 5(3) ePrivacy Directive and
+		Art. 6(1)(a) GDPR.
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Provider</th>
+				<th>Purpose</th>
+				<th>Type</th>
+				<th>Duration</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>_ga</code></td>
+				<td>Google</td>
+				<td>Distinguishes unique users by assigning a randomly generated ID</td>
+				<td>HTTP cookie</td>
+				<td>2 years</td>
+			</tr>
+			<tr>
+				<td><code>_ga_DC2BTH9VKX</code></td>
+				<td>Google</td>
+				<td>Maintains session state for GA4 property G-DC2BTH9VKX</td>
+				<td>HTTP cookie</td>
+				<td>2 years</td>
+			</tr>
+		</tbody>
+	</table>
 
-		<h2>Third-party requests</h2>
-		<p>
-			In addition to cookies, the Site makes requests to third-party servers
-			that may process your IP address:
-		</p>
-		<ul>
-			<li>
-				<strong>Google Fonts</strong> (<code>fonts.googleapis.com</code>,
-				<code>fonts.gstatic.com</code>) — loads the typefaces used on this Site.
-				Google receives your IP address with each font request.
-				<a href="https://developers.google.com/fonts/faq/privacy" rel="noopener noreferrer" target="_blank">Google Fonts privacy FAQ</a>.
-			</li>
-			<li>
-				<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
-				only loaded after consent. Sends pseudonymised usage data to Google.
-			</li>
-		</ul>
+	<h2>Third-party requests</h2>
+	<p>
+		In addition to cookies, the Site makes requests to third-party servers
+		that may process your IP address:
+	</p>
+	<ul>
+		<li>
+			<strong>Google Fonts</strong> (<code>fonts.googleapis.com</code>,
+			<code>fonts.gstatic.com</code>) — loads the typefaces used on this Site.
+			Google receives your IP address with each font request.
+			<a href="https://developers.google.com/fonts/faq/privacy" rel="noopener noreferrer" target="_blank">Google Fonts privacy FAQ</a>.
+		</li>
+		<li>
+			<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
+			only loaded after consent. Sends pseudonymised usage data to Google.
+		</li>
+	</ul>
 
-		<h2>How to manage cookies</h2>
+	<h2>How to manage cookies</h2>
 
-		<h3>Cookie banner</h3>
-		<p>
-			When you first visit the Site, a cookie banner lets you accept or refuse
-			analytics cookies. You can change your choice at any time by clicking
-			the "Cookie settings" link in the footer.
-		</p>
+	<h3>Cookie banner</h3>
+	<p>
+		When you first visit the Site, a cookie banner lets you accept or refuse
+		analytics cookies. You can change your choice at any time by clicking
+		the "Cookie settings" link in the site footer.
+	</p>
 
-		<h3>Browser settings</h3>
-		<p>You can also control cookies through your browser:</p>
-		<ul>
-			<li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Chrome</a></li>
-			<li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" rel="noopener noreferrer" target="_blank">Firefox</a></li>
-			<li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" rel="noopener noreferrer" target="_blank">Safari</a></li>
-			<li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" rel="noopener noreferrer" target="_blank">Edge</a></li>
-		</ul>
-		<p>
-			To clear localStorage (used for theme preference), use your browser's
-			developer tools or "Clear site data" option.
-		</p>
+	<h3>Browser settings</h3>
+	<p>You can also control cookies through your browser:</p>
+	<ul>
+		<li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Chrome</a></li>
+		<li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" rel="noopener noreferrer" target="_blank">Firefox</a></li>
+		<li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" rel="noopener noreferrer" target="_blank">Safari</a></li>
+		<li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" rel="noopener noreferrer" target="_blank">Edge</a></li>
+	</ul>
+	<p>
+		To clear localStorage (used for theme preference), use your browser's
+		developer tools or "Clear site data" option.
+	</p>
 
-		<h2>Changes to this policy</h2>
-		<p>
-			We may update this policy when we add or remove cookies.
-			The "Last updated" date at the top reflects the most recent revision.
-		</p>
+	<h2>Changes to this policy</h2>
+	<p>
+		We may update this policy when we add or remove cookies.
+		The "Last updated" date at the top reflects the most recent revision.
+	</p>
 
-		<h2>Contact</h2>
-		<p>
-			Questions about cookies? Email
-			<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
-		</p>
-
-	</div>
-</Base>
-
-<style>
-	.legal-header {
-		position: relative;
-		overflow: hidden;
-		padding: var(--space-8) 0 var(--space-4);
-	}
-	.legal-label {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-primary);
-		margin-bottom: var(--space-4);
-	}
-	.legal-label .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		display: inline-block;
-	}
-	.legal-header h1 {
-		margin-bottom: var(--space-2);
-	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
-	.legal-updated {
-		color: var(--color-text-muted);
-		font-size: var(--text-sm);
-		margin: 0;
-	}
-	.prose {
-		max-width: var(--max-width-prose);
-		line-height: var(--leading-relaxed);
-	}
-	.prose h2 {
-		font-family: var(--font-display);
-		margin-top: var(--space-10);
-		margin-bottom: var(--space-4);
-	}
-	.prose h3 {
-		font-family: var(--font-display);
-		margin-top: var(--space-6);
-		margin-bottom: var(--space-3);
-	}
-	.prose ul {
-		padding-left: var(--space-6);
-	}
-	.prose li {
-		margin-bottom: 0.5em;
-	}
-	.prose li::marker {
-		color: var(--color-primary);
-	}
-	.prose strong {
-		color: var(--color-text-strong);
-	}
-	.prose table {
-		width: 100%;
-		border-collapse: collapse;
-		margin: var(--space-4) 0;
-		font-size: var(--text-sm);
-	}
-	.prose th,
-	.prose td {
-		text-align: left;
-		padding: var(--space-2) var(--space-3);
-		border-bottom: 1px solid var(--color-border);
-	}
-	.prose th {
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-	}
-	.prose code {
-		font-family: var(--font-mono);
-		font-size: 0.9em;
-		background: var(--color-surface-raised);
-		padding: 0.1em 0.3em;
-		border-radius: var(--radius-sm);
-	}
-</style>
+</LegalPage>
