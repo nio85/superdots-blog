@@ -496,9 +496,9 @@ hr {
 
 .dots {
 	position: absolute;
-	background-image: radial-gradient(circle, var(--color-border-strong) 1.5px, transparent 1.5px);
-	background-size: 16px 16px;
-	opacity: 0.65;
+	background-image: radial-gradient(circle, var(--color-text-muted) 2px, transparent 2px);
+	background-size: 18px 18px;
+	opacity: 0.25;
 	pointer-events: none;
 	z-index: 0;
 }
@@ -535,8 +535,8 @@ hr {
 
 /* Brand-tinted dots for accent areas */
 .dots-brand {
-	background-image: radial-gradient(circle, var(--sd-red) 1.5px, transparent 1.5px);
-	opacity: 0.12;
+	background-image: radial-gradient(circle, var(--sd-red) 2px, transparent 2px);
+	opacity: 0.18;
 }
 
 @media (max-width: 720px) {
