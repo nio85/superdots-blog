@@ -4,24 +4,27 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 ---
 
 <Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
-	<h1>Categories</h1>
+	<div class="page-header">
+		<h1>Categories<span class="dot-accent">.</span></h1>
+		<p class="page-desc">Find guides by department or use case</p>
+	</div>
 
-	<section>
+	<section class="category-section">
 		<h2>By department</h2>
 		<div class="tag-grid">
 			{DEPARTMENTS.map((d) => (
-				<a href={`/category/department/${d.slug}/`} class="tag-card dept">
+				<a href={`/category/department/${d.slug}/`} class="tag-card tag-dept">
 					{d.label}
 				</a>
 			))}
 		</div>
 	</section>
 
-	<section>
+	<section class="category-section">
 		<h2>By use case</h2>
 		<div class="tag-grid">
 			{USE_CASES.map((u) => (
-				<a href={`/category/use-case/${u.slug}/`} class="tag-card use-case">
+				<a href={`/category/use-case/${u.slug}/`} class="tag-card tag-usecase">
 					{u.label}
 				</a>
 			))}
@@ -30,37 +33,62 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 </Base>
 
 <style>
-	section {
-		margin-bottom: 2.5rem;
+	.page-header {
+		padding: var(--space-6) 0 var(--space-2);
 	}
-	h2 {
-		margin-bottom: 1rem;
+	.page-header h1 {
+		margin-bottom: var(--space-2);
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.page-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin-bottom: var(--space-6);
+	}
+	.category-section {
+		margin-bottom: var(--space-10);
+	}
+	.category-section h2 {
+		font-family: var(--font-display);
+		margin-bottom: var(--space-4);
 	}
 	.tag-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-		gap: 0.75rem;
+		gap: var(--space-3);
 	}
 	.tag-card {
 		display: block;
-		padding: 1rem 1.25rem;
-		border-radius: var(--radius);
-		font-weight: 600;
+		padding: var(--space-4) var(--space-5);
+		border-radius: var(--radius-lg);
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-size: var(--text-base);
 		text-decoration: none;
 		text-align: center;
-		transition: transform 0.15s, box-shadow 0.15s;
+		transition: all var(--transition-base);
 	}
 	.tag-card:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		box-shadow: var(--shadow-md);
 		text-decoration: none;
 	}
-	.tag-card.dept {
-		background: #ede9fe;
-		color: #6d28d9;
+	.tag-dept {
+		background: var(--sd-red-light);
+		color: var(--sd-red-dark);
 	}
-	.tag-card.use-case {
-		background: #ecfdf5;
-		color: #059669;
+	.tag-dept:hover {
+		background: var(--sd-red);
+		color: #FFFFFF;
+	}
+	.tag-usecase {
+		background: var(--sd-teal-light);
+		color: var(--sd-teal-dark);
+	}
+	.tag-usecase:hover {
+		background: var(--sd-teal);
+		color: #FFFFFF;
 	}
 </style>

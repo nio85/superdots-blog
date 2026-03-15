@@ -8,7 +8,10 @@ const posts = (await getCollection('blog'))
 ---
 
 <Base title="All Articles | Superdots" description="Browse all practical AI guides.">
-	<h1>All articles</h1>
+	<div class="page-header">
+		<h1>All articles<span class="dot-accent">.</span></h1>
+		<p class="page-desc">{posts.length} practical guides and counting</p>
+	</div>
 	<div class="post-grid">
 		{posts.map((post) => (
 			<PostCard
@@ -24,12 +27,23 @@ const posts = (await getCollection('blog'))
 </Base>
 
 <style>
-	h1 {
-		margin-bottom: 1.5rem;
+	.page-header {
+		padding: var(--space-6) 0 var(--space-2);
+	}
+	.page-header h1 {
+		margin-bottom: var(--space-2);
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.page-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin-bottom: var(--space-6);
 	}
 	.post-grid {
 		display: grid;
-		gap: 1.25rem;
+		gap: var(--space-5);
 	}
 	@media (min-width: 640px) {
 		.post-grid {

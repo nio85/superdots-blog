@@ -3,18 +3,55 @@ const year = new Date().getFullYear();
 ---
 
 <footer>
-	<p>&copy; {year} Superdots. Practical AI for every team.</p>
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<span class="superdot"></span>
+			<span class="footer-name">Superdots</span>
+		</div>
+		<p class="footer-tagline">Practical AI for every team. No fluff, just useful stuff.</p>
+		<p class="footer-copy">&copy; {year} Superdots</p>
+	</div>
 </footer>
 
 <style>
 	footer {
-		border-top: 1px solid var(--border);
-		padding: 2rem 1rem;
-		text-align: center;
-		color: var(--text-light);
-		font-size: 0.875rem;
+		border-top: 2px solid var(--color-border);
+		padding: var(--space-12) var(--space-4);
+		margin-top: var(--space-16);
 	}
-	footer p {
+	.footer-inner {
+		max-width: var(--max-width-content);
+		margin: 0 auto;
+		text-align: center;
+	}
+	.footer-brand {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-3);
+	}
+	.footer-brand .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+	}
+	.footer-name {
+		font-family: var(--font-display);
+		font-weight: var(--weight-bold);
+		font-size: var(--text-lg);
+		color: var(--color-text-strong);
+		letter-spacing: -0.02em;
+	}
+	.footer-tagline {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin: 0 0 var(--space-4);
+	}
+	.footer-copy {
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
 		margin: 0;
+		opacity: 0.7;
 	}
 </style>

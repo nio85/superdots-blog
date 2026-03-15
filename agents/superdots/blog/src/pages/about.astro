@@ -3,7 +3,13 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="About | Superdots" description="About Superdots — practical AI guides for every department.">
-	<h1>About Superdots</h1>
+	<div class="about-header">
+		<p class="about-label">
+			<span class="superdot"></span>
+			About us
+		</p>
+		<h1>AI guides that respect your time<span class="dot-accent">.</span></h1>
+	</div>
 	<div class="prose">
 		<p>
 			We believe AI should help people work better, not replace them.
@@ -35,16 +41,53 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
+	.about-header {
+		padding: var(--space-8) 0 var(--space-4);
+	}
+	.about-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-4);
+	}
+	.about-label .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.about-header h1 {
+		margin-bottom: var(--space-6);
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
 	.prose {
-		line-height: 1.8;
+		max-width: var(--max-width-prose);
+		line-height: var(--leading-relaxed);
 	}
 	.prose h2 {
-		margin-top: 2rem;
+		font-family: var(--font-display);
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-4);
 	}
 	.prose ul {
-		padding-left: 1.5rem;
+		padding-left: var(--space-6);
 	}
 	.prose li {
 		margin-bottom: 0.5em;
+	}
+	.prose li::marker {
+		color: var(--color-primary);
+	}
+	.prose strong {
+		color: var(--color-text-strong);
 	}
 </style>
