@@ -39,6 +39,7 @@ const { title, description, pubDate, updatedDate, author, department, useCase, h
 		<main class="article-main">
 			<article>
 				<div class="article-header">
+					<div class="dots dots-md" style="top: 5%; right: -8%; opacity: 0.3;"></div>
 					<div class="meta">
 						<span class="badge badge-dept">{department}</span>
 						<span class="badge badge-usecase">{useCase}</span>
@@ -71,6 +72,8 @@ const { title, description, pubDate, updatedDate, author, department, useCase, h
 		max-width: var(--max-width-prose);
 	}
 	.article-header {
+		position: relative;
+		overflow: hidden;
 		margin-bottom: var(--space-8);
 	}
 	.article-header h1 {

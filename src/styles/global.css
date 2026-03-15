@@ -491,6 +491,54 @@ hr {
 	height: 12px;
 }
 
+/* --- Dot Pattern — Decorative Background Element --- */
+/* Reusable dot grid pattern. Place inside a position:relative container. */
+
+.dots {
+	position: absolute;
+	background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+	background-size: 16px 16px;
+	opacity: 0.45;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.dots-sm {
+	width: 80px;
+	height: 80px;
+}
+
+.dots-md {
+	width: 120px;
+	height: 120px;
+}
+
+.dots-lg {
+	width: 180px;
+	height: 180px;
+}
+
+.dots-xl {
+	width: 240px;
+	height: 240px;
+}
+
+/* Finer grid variant */
+.dots-fine {
+	background-size: 12px 12px;
+}
+
+/* Looser grid variant */
+.dots-loose {
+	background-size: 24px 24px;
+}
+
+@media (max-width: 720px) {
+	.dots-lg, .dots-xl {
+		display: none;
+	}
+}
+
 /* --- Accessibility --- */
 
 .sr-only {

@@ -9,6 +9,7 @@ const posts = (await getCollection('blog'))
 
 <Base title="All Articles | Superdots" description="Browse all practical AI guides.">
 	<div class="page-header">
+		<div class="dots dots-md dots-loose" style="top: 0; right: 0; opacity: 0.35;"></div>
 		<h1>All articles<span class="dot-accent">.</span></h1>
 		<p class="page-desc">{posts.length} practical guides and counting</p>
 	</div>
@@ -28,6 +29,8 @@ const posts = (await getCollection('blog'))
 
 <style>
 	.page-header {
+		position: relative;
+		overflow: hidden;
 		padding: var(--space-6) 0 var(--space-2);
 	}
 	.page-header h1 {
