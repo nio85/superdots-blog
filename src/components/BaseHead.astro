@@ -17,6 +17,15 @@ const ogImage = image ? new URL(image, Astro.url) : undefined;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+<!-- Theme: prevent FOUC by reading preference before render -->
+<script is:inline>
+(function() {
+	var stored = localStorage.getItem('sd-theme');
+	var theme = stored || 'auto';
+	document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+
 <!-- Fonts: Space Grotesk (display) + Inter (body) + JetBrains Mono (code) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
