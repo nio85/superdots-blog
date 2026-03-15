@@ -1,11 +1,11 @@
 ---
-title: 'AI Onboarding: Get New Hires Productive Faster Without More HR Headcount'
-description: 'Use AI to automate document collection, build personalized training paths, and cut onboarding time in half — without buying enterprise software.'
+title: 'AI Employee Onboarding: Get New Hires Productive in Half the Time'
+description: 'Automate document collection, build personalized training paths, and cut onboarding time in half with AI — no enterprise HR software required.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
-tags: ['onboarding', 'hr', 'automation', 'ai-tools', 'new-hire', 'training', 'productivity']
+tags: ['ai-onboarding', 'ai-employee-onboarding', 'hr-automation', 'new-hire-training', 'ai-for-hr', 'onboarding-automation', 'productivity']
 ---
 
 Your best new hire just accepted the offer. Now they wait two weeks to start, spend their first day filling out forms, and spend the next month asking "who do I talk to about X?" Meanwhile, their manager is too busy to hand-hold and HR is juggling three other new starters.
