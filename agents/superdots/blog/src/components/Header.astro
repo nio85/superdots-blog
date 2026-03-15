@@ -68,46 +68,47 @@ const navLinks = [
 		</div>
 	</nav>
 
-	<!-- Mobile menu overlay -->
-	<div class="mobile-overlay" id="mobile-overlay"></div>
+</header>
 
-	<!-- Mobile menu panel — full-screen premium -->
-	<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
-		<div class="mobile-menu-inner">
-			<nav class="mobile-menu-links">
-				{navLinks.map(({ href, label }, i) => (
-					<a
-						href={href}
-						class:list={['mobile-link', { active: pathname.startsWith(href) }]}
-						aria-current={pathname.startsWith(href) ? 'page' : undefined}
-						style={`--item-index: ${i}`}
-					>
-						<span class="mobile-link-indicator" aria-hidden="true">
-							<span class="indicator-line"></span>
-							<span class="indicator-dot"></span>
-						</span>
-						<span class="mobile-link-label">{label}</span>
-						<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<line x1="5" y1="12" x2="19" y2="12"></line>
-							<polyline points="12 5 19 12 12 19"></polyline>
-						</svg>
-					</a>
-				))}
-			</nav>
-			<div class="mobile-menu-footer">
-				<div class="mobile-menu-brand">
-					<span class="mobile-brand-dot"></span>
-					<span class="mobile-brand-text">{SITE_TITLE}</span>
-				</div>
+<!-- Mobile menu overlay — outside header to avoid backdrop-filter containing block -->
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile menu panel — full-screen premium, outside header -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+	<div class="mobile-menu-inner">
+		<nav class="mobile-menu-links">
+			{navLinks.map(({ href, label }, i) => (
+				<a
+					href={href}
+					class:list={['mobile-link', { active: pathname.startsWith(href) }]}
+					aria-current={pathname.startsWith(href) ? 'page' : undefined}
+					style={`--item-index: ${i}`}
+				>
+					<span class="mobile-link-indicator" aria-hidden="true">
+						<span class="indicator-line"></span>
+						<span class="indicator-dot"></span>
+					</span>
+					<span class="mobile-link-label">{label}</span>
+					<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</a>
+			))}
+		</nav>
+		<div class="mobile-menu-footer">
+			<div class="mobile-menu-brand">
+				<span class="mobile-brand-dot"></span>
+				<span class="mobile-brand-text">{SITE_TITLE}</span>
 			</div>
 		</div>
-		<!-- Decorative background elements -->
-		<div class="mobile-menu-bg" aria-hidden="true">
-			<div class="bg-gradient"></div>
-			<div class="bg-dots"></div>
-		</div>
 	</div>
-</header>
+	<!-- Decorative background elements -->
+	<div class="mobile-menu-bg" aria-hidden="true">
+		<div class="bg-gradient"></div>
+		<div class="bg-dots"></div>
+	</div>
+</div>
 
 <script is:inline>
 (function() {
