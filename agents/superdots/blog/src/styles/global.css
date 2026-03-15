@@ -543,25 +543,16 @@ hr {
 
 @media (max-width: 720px) {
 	.dots-lg {
-		width: 120px;
-		height: 120px;
+		width: 140px;
+		height: 140px;
 	}
 	.dots-xl {
-		width: 160px;
-		height: 160px;
+		width: 180px;
+		height: 180px;
 	}
 	.dots-md {
-		width: 100px;
-		height: 100px;
-	}
-	.dots {
-		opacity: 0.08;
-	}
-}
-
-@media (max-width: 480px) {
-	.dots {
-		opacity: 0.06;
+		width: 110px;
+		height: 110px;
 	}
 }
 
