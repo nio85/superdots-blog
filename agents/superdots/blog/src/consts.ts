@@ -1,6 +1,6 @@
 export const SITE_TITLE = 'Superdots';
 export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
-export const GA_MEASUREMENT_ID = 'G-RESYTHVN1D';
+export const GA_MEASUREMENT_ID = 'G-DC2BTH9VKX';
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering' },
