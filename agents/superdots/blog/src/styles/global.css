@@ -534,8 +534,13 @@ hr {
 }
 
 @media (max-width: 720px) {
-	.dots-lg, .dots-xl {
-		display: none;
+	.dots-lg {
+		width: 120px;
+		height: 120px;
+	}
+	.dots-xl {
+		width: 150px;
+		height: 150px;
 	}
 }
 
