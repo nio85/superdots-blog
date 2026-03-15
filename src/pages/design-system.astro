@@ -1,0 +1,562 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Design System | Superdots" description="Superdots brand identity and design system showcase.">
+	<div class="ds-header">
+		<p class="ds-label">
+			<span class="superdot"></span>
+			Design System
+		</p>
+		<h1>Superdots Brand<span class="dot-accent">.</span></h1>
+		<p class="ds-sub">The visual DNA of Superdots. Bold, human, trustworthy, no-fluff.</p>
+	</div>
+
+	<!-- Colors -->
+	<section class="ds-section">
+		<h2>Color Palette</h2>
+		<h3>Brand Colors</h3>
+		<div class="swatch-grid">
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-red);"></div>
+				<div class="swatch-info">
+					<strong>Red (Primary)</strong>
+					<code>#E8363B</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-red-dark);"></div>
+				<div class="swatch-info">
+					<strong>Red Dark</strong>
+					<code>#CC2D32</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color swatch-light" style="background: var(--sd-red-light);"></div>
+				<div class="swatch-info">
+					<strong>Red Light</strong>
+					<code>#FEE2E2</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-teal);"></div>
+				<div class="swatch-info">
+					<strong>Teal (Secondary)</strong>
+					<code>#14B8A6</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-teal-dark);"></div>
+				<div class="swatch-info">
+					<strong>Teal Dark</strong>
+					<code>#0D9488</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color swatch-light" style="background: var(--sd-teal-light);"></div>
+				<div class="swatch-info">
+					<strong>Teal Light</strong>
+					<code>#CCFBF1</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-amber);"></div>
+				<div class="swatch-info">
+					<strong>Amber (Accent)</strong>
+					<code>#F59E0B</code>
+				</div>
+			</div>
+			<div class="swatch">
+				<div class="swatch-color" style="background: var(--sd-navy);"></div>
+				<div class="swatch-info">
+					<strong>Navy</strong>
+					<code>#0B1222</code>
+				</div>
+			</div>
+		</div>
+
+		<h3>Neutrals</h3>
+		<div class="neutral-strip">
+			<div class="neutral-swatch" style="background: var(--sd-gray-50);"><span>50</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-100);"><span>100</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-200);"><span>200</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-300);"><span>300</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-400); color: white;"><span>400</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-500); color: white;"><span>500</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-600); color: white;"><span>600</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-700); color: white;"><span>700</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-800); color: white;"><span>800</span></div>
+			<div class="neutral-swatch" style="background: var(--sd-gray-900); color: white;"><span>900</span></div>
+		</div>
+	</section>
+
+	<!-- Typography -->
+	<section class="ds-section">
+		<h2>Typography</h2>
+
+		<div class="type-specimen">
+			<div class="type-label">Space Grotesk — Display</div>
+			<p class="type-display">The quick brown fox jumps over the lazy dog</p>
+		</div>
+
+		<div class="type-specimen">
+			<div class="type-label">Inter — Body</div>
+			<p class="type-body">The quick brown fox jumps over the lazy dog. Every article focuses on real techniques you can apply today. No hype, no jargon walls — just clear, tested approaches.</p>
+		</div>
+
+		<div class="type-specimen">
+			<div class="type-label">JetBrains Mono — Code</div>
+			<p class="type-code">const result = await ai.analyze(data);</p>
+		</div>
+
+		<h3>Type Scale</h3>
+		<div class="type-scale">
+			<div class="scale-row"><span class="scale-label">5xl / 48px</span><span class="scale-sample" style="font-size: var(--text-5xl);">Headline</span></div>
+			<div class="scale-row"><span class="scale-label">4xl / 36px</span><span class="scale-sample" style="font-size: var(--text-4xl);">Headline</span></div>
+			<div class="scale-row"><span class="scale-label">3xl / 30px</span><span class="scale-sample" style="font-size: var(--text-3xl);">Heading</span></div>
+			<div class="scale-row"><span class="scale-label">2xl / 24px</span><span class="scale-sample" style="font-size: var(--text-2xl);">Heading</span></div>
+			<div class="scale-row"><span class="scale-label">xl / 20px</span><span class="scale-sample" style="font-size: var(--text-xl);">Subheading</span></div>
+			<div class="scale-row"><span class="scale-label">lg / 18px</span><span class="scale-sample" style="font-size: var(--text-lg);">Body text</span></div>
+			<div class="scale-row"><span class="scale-label">base / 16px</span><span class="scale-sample" style="font-size: var(--text-base);">Body text</span></div>
+			<div class="scale-row"><span class="scale-label">sm / 14px</span><span class="scale-sample" style="font-size: var(--text-sm);">Caption</span></div>
+			<div class="scale-row"><span class="scale-label">xs / 12px</span><span class="scale-sample" style="font-size: var(--text-xs);">Badge</span></div>
+		</div>
+	</section>
+
+	<!-- Buttons -->
+	<section class="ds-section">
+		<h2>Buttons</h2>
+		<div class="button-row">
+			<a href="#" class="btn btn-primary">Primary</a>
+			<a href="#" class="btn btn-secondary">Secondary</a>
+			<a href="#" class="btn btn-ghost">Ghost</a>
+		</div>
+		<div class="button-row">
+			<a href="#" class="btn btn-primary btn-lg">Large Primary</a>
+			<a href="#" class="btn btn-secondary btn-lg">Large Secondary</a>
+		</div>
+		<div class="button-row">
+			<a href="#" class="btn btn-primary btn-sm">Small</a>
+			<a href="#" class="btn btn-secondary btn-sm">Small</a>
+			<a href="#" class="btn btn-ghost btn-sm">Small</a>
+		</div>
+	</section>
+
+	<!-- Badges -->
+	<section class="ds-section">
+		<h2>Badges</h2>
+		<div class="badge-row">
+			<span class="badge badge-dept">Engineering</span>
+			<span class="badge badge-dept">Marketing</span>
+			<span class="badge badge-dept">Sales</span>
+			<span class="badge badge-dept">HR</span>
+			<span class="badge badge-dept">Finance</span>
+			<span class="badge badge-dept">Operations</span>
+		</div>
+		<div class="badge-row">
+			<span class="badge badge-usecase">Automation</span>
+			<span class="badge badge-usecase">Analysis</span>
+			<span class="badge badge-usecase">Writing</span>
+			<span class="badge badge-usecase">Communication</span>
+		</div>
+		<div class="badge-row">
+			<span class="badge badge-tag">AI Tools</span>
+			<span class="badge badge-tag">Productivity</span>
+			<span class="badge badge-tag">How-To</span>
+		</div>
+	</section>
+
+	<!-- Cards -->
+	<section class="ds-section">
+		<h2>Cards</h2>
+		<div class="card-grid">
+			<div class="card">
+				<h3>Standard Card</h3>
+				<p>Hover for border and shadow effect. Cards lift slightly and get a red border accent.</p>
+			</div>
+			<div class="card-flat">
+				<h3>Flat Card</h3>
+				<p>For secondary content areas. No border, subtle background tint.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- The Dot -->
+	<section class="ds-section">
+		<h2>The Superdot</h2>
+		<p>Our signature brand element. A small red dot that represents clarity and precision.</p>
+		<div class="dot-demo">
+			<span class="superdot"></span>
+			<span class="dot-label">8px (default)</span>
+			<span class="superdot superdot-lg"></span>
+			<span class="dot-label">12px (large)</span>
+		</div>
+		<div class="dot-usage">
+			<h3>Cut through the noise<span class="dot-accent">.</span></h3>
+			<p>Used as a period accent on key headlines to reinforce brand presence.</p>
+		</div>
+	</section>
+
+	<!-- Spacing -->
+	<section class="ds-section">
+		<h2>Spacing Scale</h2>
+		<div class="spacing-demo">
+			<div class="space-bar" style="width: var(--space-1);"><span>1</span></div>
+			<div class="space-bar" style="width: var(--space-2);"><span>2</span></div>
+			<div class="space-bar" style="width: var(--space-3);"><span>3</span></div>
+			<div class="space-bar" style="width: var(--space-4);"><span>4</span></div>
+			<div class="space-bar" style="width: var(--space-5);"><span>5</span></div>
+			<div class="space-bar" style="width: var(--space-6);"><span>6</span></div>
+			<div class="space-bar" style="width: var(--space-8);"><span>8</span></div>
+			<div class="space-bar" style="width: var(--space-10);"><span>10</span></div>
+			<div class="space-bar" style="width: var(--space-12);"><span>12</span></div>
+			<div class="space-bar" style="width: var(--space-16);"><span>16</span></div>
+		</div>
+	</section>
+
+	<!-- Shadows -->
+	<section class="ds-section">
+		<h2>Shadows</h2>
+		<div class="shadow-grid">
+			<div class="shadow-box" style="box-shadow: var(--shadow-sm);">
+				<span>shadow-sm</span>
+			</div>
+			<div class="shadow-box" style="box-shadow: var(--shadow-md);">
+				<span>shadow-md</span>
+			</div>
+			<div class="shadow-box" style="box-shadow: var(--shadow-lg);">
+				<span>shadow-lg</span>
+			</div>
+			<div class="shadow-box" style="box-shadow: var(--shadow-glow);">
+				<span>shadow-glow</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Prose -->
+	<section class="ds-section">
+		<h2>Prose / Long-form Content</h2>
+		<div class="prose-demo">
+			<h3>This is what article content looks like</h3>
+			<p>
+				Body text uses Inter at 18px with relaxed line height (1.75). This ensures
+				comfortable reading on all devices. <strong>Bold text stands out</strong> and
+				<a href="#">links are underlined</a> with the primary red color.
+			</p>
+			<blockquote>
+				<p>Blockquotes have a red left border, a dim background, and italic styling.
+				They're used for pull-quotes and callouts.</p>
+			</blockquote>
+			<p>Inline <code>code</code> gets a subtle background and border treatment.</p>
+			<ul>
+				<li>List items have red markers</li>
+				<li>Consistent vertical spacing</li>
+				<li>Readable at all sizes</li>
+			</ul>
+		</div>
+	</section>
+</Base>
+
+<style>
+	/* Page Header */
+	.ds-header {
+		padding: var(--space-12) 0 var(--space-8);
+		text-align: center;
+	}
+	.ds-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-4);
+	}
+	.ds-label .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.ds-sub {
+		color: var(--color-text-muted);
+		font-size: var(--text-xl);
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	/* Sections */
+	.ds-section {
+		padding: var(--space-10) 0;
+		border-top: 1px solid var(--color-border);
+	}
+	.ds-section h2 {
+		font-family: var(--font-display);
+		margin-bottom: var(--space-6);
+	}
+	.ds-section h3 {
+		font-family: var(--font-display);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-4);
+	}
+
+	/* Color Swatches */
+	.swatch-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: var(--space-4);
+	}
+	.swatch {
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+	}
+	.swatch-color {
+		height: 80px;
+	}
+	.swatch-light {
+		border-bottom: 1px solid var(--color-border);
+	}
+	.swatch-info {
+		padding: var(--space-3);
+	}
+	.swatch-info strong {
+		display: block;
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-1);
+		color: var(--color-text-strong);
+	}
+	.swatch-info code {
+		font-size: var(--text-xs);
+		background: none;
+		border: none;
+		padding: 0;
+		color: var(--color-text-muted);
+	}
+
+	/* Neutral Strip */
+	.neutral-strip {
+		display: flex;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		margin-top: var(--space-4);
+	}
+	.neutral-swatch {
+		flex: 1;
+		height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-medium);
+	}
+
+	/* Typography */
+	.type-specimen {
+		padding: var(--space-6);
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-lg);
+		margin-bottom: var(--space-4);
+	}
+	.type-label {
+		font-family: var(--font-display);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-text-muted);
+		margin-bottom: var(--space-3);
+	}
+	.type-display {
+		font-family: var(--font-display);
+		font-size: var(--text-3xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		letter-spacing: -0.02em;
+		margin: 0;
+	}
+	.type-body {
+		font-family: var(--font-body);
+		font-size: var(--text-lg);
+		line-height: var(--leading-normal);
+		color: var(--color-text);
+		margin: 0;
+		max-width: 600px;
+	}
+	.type-code {
+		font-family: var(--font-mono);
+		font-size: var(--text-base);
+		color: var(--color-text);
+		margin: 0;
+	}
+
+	/* Type Scale */
+	.type-scale {
+		margin-top: var(--space-4);
+	}
+	.scale-row {
+		display: flex;
+		align-items: baseline;
+		gap: var(--space-6);
+		padding: var(--space-3) 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+	.scale-label {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		min-width: 100px;
+		flex-shrink: 0;
+	}
+	.scale-sample {
+		font-family: var(--font-display);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+	}
+
+	/* Buttons */
+	.button-row {
+		display: flex;
+		gap: var(--space-4);
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: var(--space-4);
+	}
+
+	/* Badges */
+	.badge-row {
+		display: flex;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-3);
+	}
+
+	/* Cards */
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: var(--space-5);
+	}
+	.card-grid h3 {
+		margin-top: 0;
+	}
+	.card-grid p {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin: 0;
+	}
+
+	/* Dot Demo */
+	.dot-demo {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-6);
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-lg);
+		margin-bottom: var(--space-6);
+	}
+	.dot-label {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+	}
+	.dot-usage {
+		padding: var(--space-6);
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-lg);
+	}
+	.dot-usage h3 {
+		margin-top: 0;
+	}
+	.dot-usage p {
+		color: var(--color-text-muted);
+		margin: 0;
+	}
+
+	/* Spacing */
+	.spacing-demo {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+	.space-bar {
+		height: 32px;
+		background: var(--sd-red-light);
+		border-radius: var(--radius-sm);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 24px;
+	}
+	.space-bar span {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--sd-red-dark);
+		font-weight: var(--weight-semibold);
+	}
+
+	/* Shadows */
+	.shadow-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: var(--space-6);
+	}
+	.shadow-box {
+		padding: var(--space-8) var(--space-4);
+		background: var(--color-bg);
+		border-radius: var(--radius-lg);
+		text-align: center;
+	}
+	.shadow-box span {
+		font-family: var(--font-mono);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
+
+	/* Prose Demo */
+	.prose-demo {
+		max-width: var(--max-width-prose);
+		line-height: var(--leading-relaxed);
+	}
+	.prose-demo h3 {
+		margin-top: 0;
+	}
+	.prose-demo ul {
+		padding-left: var(--space-6);
+	}
+	.prose-demo li {
+		margin-bottom: 0.5em;
+	}
+	.prose-demo li::marker {
+		color: var(--color-primary);
+	}
+	.prose-demo strong {
+		color: var(--color-text-strong);
+	}
+	.prose-demo a {
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	@media (max-width: 640px) {
+		.neutral-strip {
+			flex-wrap: wrap;
+		}
+		.neutral-swatch {
+			min-width: 20%;
+			height: 48px;
+		}
+	}
+</style>
