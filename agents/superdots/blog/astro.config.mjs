@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-	site: 'https://superdots.ai',
+	site: 'https://superdots.sh',
 	integrations: [mdx(), sitemap()],
 	server: {
 		host: '0.0.0.0',
