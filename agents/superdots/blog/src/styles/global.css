@@ -111,8 +111,26 @@
 }
 
 /* --- Dark Mode Tokens --- */
+/* Applied via data-theme="dark" on <html>. System preference fallback below. */
+[data-theme="dark"] {
+	--color-text: var(--sd-gray-200);
+	--color-text-strong: #FFFFFF;
+	--color-text-muted: var(--sd-gray-400);
+	--color-bg: var(--sd-navy);
+	--color-bg-dim: var(--sd-gray-900);
+	--color-bg-code: var(--sd-gray-800);
+	--color-border: var(--sd-gray-700);
+	--color-border-strong: var(--sd-gray-600);
+
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+	--shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+	--shadow-glow: 0 0 0 3px rgba(232, 54, 59, 0.25);
+}
+
+/* System preference fallback when no explicit theme is set */
 @media (prefers-color-scheme: dark) {
-	:root {
+	[data-theme="auto"] {
 		--color-text: var(--sd-gray-200);
 		--color-text-strong: #FFFFFF;
 		--color-text-muted: var(--sd-gray-400);
@@ -125,6 +143,55 @@
 		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
 		--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
 		--shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+		--shadow-glow: 0 0 0 3px rgba(232, 54, 59, 0.25);
+	}
+}
+
+/* --- Dark Mode Component Overrides --- */
+[data-theme="dark"] .badge-dept,
+[data-theme="dark"] .badge-tag {
+	background: rgba(232, 54, 59, 0.15);
+	color: #F87171;
+}
+
+[data-theme="dark"] .badge-usecase {
+	background: rgba(20, 184, 166, 0.15);
+	color: #5EEAD4;
+}
+
+[data-theme="dark"] .badge-tag {
+	background: var(--sd-gray-800);
+	color: var(--sd-gray-300);
+}
+
+@media (prefers-color-scheme: dark) {
+	[data-theme="auto"] .badge-dept {
+		background: rgba(232, 54, 59, 0.15);
+		color: #F87171;
+	}
+	[data-theme="auto"] .badge-usecase {
+		background: rgba(20, 184, 166, 0.15);
+		color: #5EEAD4;
+	}
+	[data-theme="auto"] .badge-tag {
+		background: var(--sd-gray-800);
+		color: var(--sd-gray-300);
+	}
+}
+
+/* Dark mode space bar overrides */
+[data-theme="dark"] .space-bar {
+	background: rgba(232, 54, 59, 0.2);
+}
+[data-theme="dark"] .space-bar span {
+	color: #F87171;
+}
+@media (prefers-color-scheme: dark) {
+	[data-theme="auto"] .space-bar {
+		background: rgba(232, 54, 59, 0.2);
+	}
+	[data-theme="auto"] .space-bar span {
+		color: #F87171;
 	}
 }
 
