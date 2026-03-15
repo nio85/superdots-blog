@@ -195,16 +195,31 @@ const navLinks = [
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		background: rgba(255, 255, 255, 0.92);
+		background: rgb(255, 255, 255);
+	}
+	@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+		header {
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			background: rgba(255, 255, 255, 0.92);
+		}
 	}
 	:global([data-theme="dark"]) header {
-		background: rgba(11, 18, 34, 0.92);
+		background: rgb(11, 18, 34);
+	}
+	@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+		:global([data-theme="dark"]) header {
+			background: rgba(11, 18, 34, 0.92);
+		}
 	}
 	@media (prefers-color-scheme: dark) {
 		:global([data-theme="auto"]) header {
-			background: rgba(11, 18, 34, 0.92);
+			background: rgb(11, 18, 34);
+		}
+		@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+			:global([data-theme="auto"]) header {
+				background: rgba(11, 18, 34, 0.92);
+			}
 		}
 	}
 
