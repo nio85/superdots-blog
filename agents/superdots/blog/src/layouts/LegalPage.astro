@@ -57,10 +57,21 @@ const legalLinks = [
 	</article>
 </Base>
 
+<script>
+	// Wrap tables in scroll containers to prevent horizontal overflow on mobile
+	document.querySelectorAll('.legal-body table').forEach((table) => {
+		const wrapper = document.createElement('div');
+		wrapper.className = 'table-scroll-wrapper';
+		table.parentNode!.insertBefore(wrapper, table);
+		wrapper.appendChild(table);
+	});
+</script>
+
 <style>
 	.legal-page {
 		max-width: var(--max-width-prose);
 		margin: 0 auto;
+		overflow-x: hidden;
 	}
 
 	/* --- Header --- */
@@ -98,6 +109,8 @@ const legalLinks = [
 	/* --- Body --- */
 	.legal-body {
 		line-height: var(--leading-relaxed);
+		overflow-wrap: break-word;
+		word-break: break-word;
 	}
 	.legal-body :global(h2) {
 		font-family: var(--font-display);
@@ -133,7 +146,7 @@ const legalLinks = [
 		font-size: var(--text-sm);
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-md);
-		overflow: hidden;
+		min-width: 480px;
 	}
 	.legal-body :global(thead) {
 		background: var(--color-bg-dim);
@@ -200,6 +213,20 @@ const legalLinks = [
 	}
 	.legal-nav-sep {
 		color: var(--color-border-strong);
+	}
+
+	/* Table scroll wrapper (injected by script below) */
+	.legal-body :global(.table-scroll-wrapper) {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: var(--space-6) 0;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+	}
+	.legal-body :global(.table-scroll-wrapper table) {
+		margin: 0;
+		border: none;
+		border-radius: 0;
 	}
 
 	@media (max-width: 720px) {
