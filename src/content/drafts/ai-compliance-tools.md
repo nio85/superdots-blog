@@ -5,7 +5,7 @@ pubDate: '2026-03-23'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
-tags: ['ai-compliance', 'compliance-automation', 'ai-for-legal', 'regulatory-compliance']
+tags: ['ai-compliance-tools', 'compliance-automation', 'regulatory-compliance', 'ai-for-legal']
 ---
 
 Regulations are multiplying faster than your team can read them. GDPR, the EU AI Act, SOC 2, HIPAA, state-level privacy laws — every quarter brings new requirements, and every requirement brings new documentation, new audits, and new ways to get fined.
@@ -83,7 +83,7 @@ A voluntary US framework organized around four functions: Govern, Map, Measure, 
 
 These are not AI-specific but they are the frameworks most compliance teams already know. AI compliance tools typically support these as baseline frameworks and add AI-specific modules on top. If you already have SOC 2 or ISO 27001 compliance tooling, check whether your vendor has added AI governance capabilities before buying a separate tool.
 
-## Evaluating vendors (what to ask)
+## Evaluating AI compliance vendors (what to ask)
 
 The compliance software market is crowded and confusing. Here are the questions that separate useful tools from expensive shelf-ware.
 

@@ -5,7 +5,7 @@ pubDate: '2026-03-21'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
-tags: ['ai-knowledge-base', 'knowledge-management', 'internal-knowledge-base', 'ai-for-teams']
+tags: ['ai-knowledge-base-for-teams', 'ai-knowledge-base', 'knowledge-management', 'internal-knowledge-base', 'ai-for-teams']
 ---
 
 Your best employee just quit. They took two weeks of vacation before their last day, handed off a bullet-point list of "where stuff lives," and walked out the door. Now three people are scrambling to figure out how a critical process works — and the only documentation is a Slack thread from 2024.
@@ -179,7 +179,7 @@ Make it easy for users to flag problems. A simple "Was this helpful?" button or 
 
 When multiple people contribute to a knowledge base, tone and style can drift. Set clear writing guidelines and consider using an [AI writing assistant to maintain a consistent voice](/blog/ai-writing-assistant-keep-your-voice) across all entries. This is not about style for style's sake — consistent formatting makes content faster to scan and easier for AI to parse.
 
-## Measuring impact
+## Measuring your AI knowledge base's impact
 
 You need to know if your knowledge base is actually working. Track these metrics:
 
