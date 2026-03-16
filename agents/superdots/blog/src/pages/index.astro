@@ -11,8 +11,13 @@ const posts = (await getCollection('blog'))
 
 <Base title="Superdots — Practical AI for Work" description={SITE_DESCRIPTION}>
 	<section class="hero">
-		<div class="dots dots-lg" style="top: 8%; right: 3%;"></div>
-		<div class="dots dots-sm dots-brand" style="bottom: 12%; left: 2%;"></div>
+		<!-- Decorative background elements -->
+		<div class="hero-glow" aria-hidden="true"></div>
+		<div class="hero-glow-secondary" aria-hidden="true"></div>
+		<div class="dots dots-xl dots-fine" style="top: 5%; right: -2%; opacity: 0.12;" aria-hidden="true"></div>
+		<div class="dots dots-lg dots-brand" style="bottom: 8%; left: -1%; opacity: 0.1;" aria-hidden="true"></div>
+		<div class="dots dots-sm" style="top: 30%; left: 8%; opacity: 0.08;" aria-hidden="true"></div>
+
 		<p class="hero-label">
 			<span class="superdot"></span>
 			AI guides that actually help
@@ -28,9 +33,11 @@ const posts = (await getCollection('blog'))
 		</div>
 	</section>
 
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
 	<section class="latest">
 		<div class="section-header">
-			<h2>Latest articles</h2>
+			<h2>Latest articles<span class="dot-accent">.</span></h2>
 			<a href="/blog" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="post-grid">
@@ -48,14 +55,20 @@ const posts = (await getCollection('blog'))
 		</div>
 	</section>
 
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
 	<section class="browse">
 		<div class="section-header">
-			<h2>Browse by department</h2>
+			<h2>Browse by department<span class="dot-accent">.</span></h2>
 			<a href="/category" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="dept-grid">
 			{DEPARTMENTS.map((d) => (
-				<a href={`/category/department/${d.slug}/`} class="dept-link">{d.label}</a>
+				<a href={`/category/department/${d.slug}/`} class="dept-card">
+					<span class="dept-icon" aria-hidden="true"><span class="superdot"></span></span>
+					<span class="dept-name">{d.label}</span>
+					<svg class="dept-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+				</a>
 			))}
 		</div>
 	</section>
@@ -67,9 +80,48 @@ const posts = (await getCollection('blog'))
 		position: relative;
 		overflow: hidden;
 		text-align: center;
-		padding: var(--space-16) 0 var(--space-12);
+		padding: var(--space-20) 0 var(--space-16);
+	}
+	/* Radial glow behind hero */
+	.hero-glow {
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 800px;
+		height: 600px;
+		border-radius: 50%;
+		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
+		filter: blur(60px);
+		pointer-events: none;
+	}
+	.hero-glow-secondary {
+		position: absolute;
+		bottom: -40%;
+		right: -10%;
+		width: 500px;
+		height: 500px;
+		border-radius: 50%;
+		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
+		filter: blur(50px);
+		pointer-events: none;
+	}
+	:global([data-theme="dark"]) .hero-glow {
+		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+	}
+	:global([data-theme="dark"]) .hero-glow-secondary {
+		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .hero-glow {
+			background: radial-gradient(ellipse, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+		}
+		:global([data-theme="auto"]) .hero-glow-secondary {
+			background: radial-gradient(ellipse, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
+		}
 	}
 	.hero-label {
+		position: relative;
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-2);
@@ -87,35 +139,54 @@ const posts = (await getCollection('blog'))
 		background: var(--color-primary);
 		border-radius: var(--radius-full);
 		display: inline-block;
+		animation: pulse-dot 2s ease-in-out infinite;
+	}
+	@keyframes pulse-dot {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(232, 54, 59, 0.4); }
+		50% { box-shadow: 0 0 0 6px rgba(232, 54, 59, 0); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.hero-label .superdot { animation: none; }
 	}
 	.hero h1 {
+		position: relative;
 		font-size: var(--text-5xl);
-		line-height: 1.1;
+		line-height: 1.08;
 		margin-bottom: var(--space-6);
-		max-width: 700px;
+		max-width: 740px;
 		margin-left: auto;
 		margin-right: auto;
+		letter-spacing: -0.03em;
 	}
 	.dot-accent {
 		color: var(--color-primary);
 	}
 	.hero-sub {
+		position: relative;
 		color: var(--color-text-muted);
 		font-size: var(--text-xl);
 		max-width: 560px;
-		margin: 0 auto var(--space-8);
+		margin: 0 auto var(--space-10);
 		line-height: var(--leading-snug);
 	}
 	.hero-actions {
+		position: relative;
 		display: flex;
 		gap: var(--space-4);
 		justify-content: center;
 		flex-wrap: wrap;
 	}
+	/* Primary CTA glow on hover */
+	.hero-actions .btn-primary {
+		position: relative;
+	}
+	.hero-actions .btn-primary:hover {
+		box-shadow: var(--shadow-md), 0 0 20px rgba(232, 54, 59, 0.2);
+	}
 
 	/* Latest Section */
 	.latest {
-		padding: var(--space-8) 0;
+		padding: var(--space-4) 0 var(--space-8);
 	}
 	.section-header {
 		display: flex;
@@ -134,6 +205,7 @@ const posts = (await getCollection('blog'))
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
+		transition: gap var(--transition-fast);
 	}
 	.view-all:hover {
 		text-decoration: none;
@@ -151,7 +223,7 @@ const posts = (await getCollection('blog'))
 	}
 	@media (max-width: 720px) {
 		.hero {
-			padding: var(--space-10) 0 var(--space-8);
+			padding: var(--space-12) 0 var(--space-10);
 		}
 		.hero h1 {
 			font-size: var(--text-4xl);
@@ -160,36 +232,94 @@ const posts = (await getCollection('blog'))
 			font-size: var(--text-lg);
 		}
 	}
-	/* Browse by Department */
+
+	/* Browse by Department — Card Grid */
 	.browse {
-		padding: var(--space-8) 0 var(--space-12);
+		padding: var(--space-4) 0 var(--space-12);
 	}
 	.dept-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: var(--space-3);
+	}
+	.dept-card {
 		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-	}
-	.dept-link {
-		display: inline-block;
-		padding: var(--space-2) var(--space-4);
-		background: var(--sd-red-light);
-		color: var(--sd-red-dark);
-		border-radius: var(--radius-md);
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-4) var(--space-5);
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
 		font-family: var(--font-display);
-		font-size: var(--text-sm);
+		font-size: var(--text-base);
 		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
 		text-decoration: none;
-		transition: all var(--transition-fast);
+		transition: all var(--transition-base);
+		position: relative;
+		overflow: hidden;
 	}
-	.dept-link:hover {
-		background: var(--sd-red);
-		color: #FFFFFF;
+	.dept-card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.04) 0%, transparent 60%);
+		opacity: 0;
+		transition: opacity var(--transition-base);
+	}
+	.dept-card:hover {
+		border-color: var(--color-primary);
+		box-shadow: var(--shadow-md);
+		transform: translateY(-2px);
 		text-decoration: none;
+		color: var(--color-text-strong);
+	}
+	.dept-card:hover::before {
+		opacity: 1;
+	}
+	.dept-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		background: var(--sd-red-light);
+		border-radius: var(--radius-md);
+		flex-shrink: 0;
+		transition: background var(--transition-base);
+	}
+	.dept-icon .superdot {
+		width: 6px;
+		height: 6px;
+	}
+	.dept-card:hover .dept-icon {
+		background: var(--sd-red);
+	}
+	.dept-card:hover .dept-icon .superdot {
+		background: #FFFFFF;
+	}
+	.dept-name {
+		flex: 1;
+		position: relative;
+	}
+	.dept-arrow {
+		opacity: 0;
+		transform: translateX(-6px);
+		transition: all var(--transition-fast);
+		color: var(--color-text-muted);
+		flex-shrink: 0;
+	}
+	.dept-card:hover .dept-arrow {
+		opacity: 0.6;
+		transform: translateX(0);
 	}
 
 	@media (max-width: 480px) {
 		.hero h1 {
 			font-size: var(--text-3xl);
+		}
+		.dept-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

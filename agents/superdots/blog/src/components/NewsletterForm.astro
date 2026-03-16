@@ -8,6 +8,8 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 ---
 
 <div class:list={['newsletter', `newsletter--${variant}`]} data-source={source}>
+	{variant === 'banner' && <div class="newsletter-dots" aria-hidden="true"></div>}
+	{variant === 'banner' && <div class="newsletter-glow" aria-hidden="true"></div>}
 	<div class="newsletter-inner">
 		<div class="newsletter-text">
 			<span class="superdot"></span>
@@ -84,12 +86,13 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 <style>
 	.newsletter {
 		border: 2px solid var(--color-border);
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-xl);
 		padding: var(--space-8) var(--space-6);
-		margin: var(--space-10) 0;
+		margin: var(--space-12) 0;
 		position: relative;
 		overflow: hidden;
 	}
+	/* Red left accent bar */
 	.newsletter::before {
 		content: '';
 		position: absolute;
@@ -101,15 +104,53 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 	}
 	.newsletter--banner {
 		background: var(--color-bg-dim);
+		border-color: var(--color-border);
 	}
 	.newsletter--inline {
 		background: transparent;
+		margin: var(--space-4) 0;
+		padding: var(--space-5) var(--space-4);
+		border-radius: var(--radius-lg);
+	}
+	/* Dot pattern decoration — banner variant only */
+	.newsletter-dots {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		width: 140px;
+		height: 140px;
+		background-image: radial-gradient(circle, var(--color-border-strong) 1px, transparent 1px);
+		background-size: 14px 14px;
+		opacity: 0.3;
+		pointer-events: none;
+	}
+	/* Subtle gradient glow — banner variant only */
+	.newsletter-glow {
+		position: absolute;
+		bottom: -40%;
+		right: -15%;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
+		filter: blur(30px);
+		pointer-events: none;
+	}
+	:global([data-theme="dark"]) .newsletter-glow {
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .newsletter-glow {
+			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+		}
 	}
 	.newsletter-inner {
 		max-width: 560px;
+		position: relative;
+		z-index: 1;
 	}
 	.newsletter-text {
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-5);
 	}
 	.newsletter-text .superdot {
 		display: inline-block;
@@ -121,11 +162,15 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 	}
 	.newsletter-heading {
 		font-family: var(--font-display);
-		font-size: var(--text-xl);
+		font-size: var(--text-2xl);
 		font-weight: var(--weight-bold);
 		color: var(--color-text-strong);
-		margin: 0 0 var(--space-1);
+		margin: 0 0 var(--space-2);
 		letter-spacing: -0.02em;
+		line-height: var(--leading-tight);
+	}
+	.newsletter--inline .newsletter-heading {
+		font-size: var(--text-lg);
 	}
 	.dot-accent {
 		color: var(--color-primary);
@@ -148,12 +193,13 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		border-radius: var(--radius-md);
 		background: var(--color-bg);
 		color: var(--color-text);
-		transition: border-color var(--transition-fast);
+		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 		min-width: 0;
 	}
 	.newsletter-field input:focus {
 		outline: none;
 		border-color: var(--color-primary);
+		box-shadow: var(--shadow-glow);
 	}
 	.newsletter-field input::placeholder {
 		color: var(--color-text-muted);
@@ -195,6 +241,10 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		}
 		.newsletter {
 			padding: var(--space-6) var(--space-4);
+		}
+		.newsletter-dots {
+			width: 80px;
+			height: 80px;
 		}
 	}
 </style>
