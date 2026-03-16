@@ -12,6 +12,7 @@ const posts = (await getCollection('blog'))
 <Base title="Superdots — Practical AI for Work" description={SITE_DESCRIPTION}>
 	<section class="hero">
 		<div class="dots dots-lg" style="top: 8%; right: 3%;"></div>
+		<div class="dots dots-sm dots-brand" style="bottom: 12%; left: 2%;"></div>
 		<p class="hero-label">
 			<span class="superdot"></span>
 			AI guides that actually help
@@ -41,6 +42,7 @@ const posts = (await getCollection('blog'))
 					department={post.data.department}
 					useCase={post.data.useCase}
 					slug={post.slug}
+					tags={post.data.tags}
 				/>
 			))}
 		</div>

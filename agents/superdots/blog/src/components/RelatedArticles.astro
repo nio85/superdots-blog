@@ -35,7 +35,7 @@ const related = others
 
 {related.length > 0 && (
 	<aside class="related-articles">
-		<h2>Related Articles</h2>
+		<h2>Related articles<span class="dot-accent">.</span></h2>
 		<ul>
 			{related.map((post) => (
 				<li>
@@ -64,6 +64,9 @@ const related = others
 		font-weight: var(--weight-bold);
 		letter-spacing: -0.02em;
 		margin-bottom: var(--space-6);
+	}
+	.dot-accent {
+		color: var(--color-primary);
 	}
 	.related-articles ul {
 		list-style: none;
