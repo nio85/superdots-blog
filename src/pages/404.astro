@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found | Superdots" description="The page you're looking for doesn't exist.">
+	<section class="not-found">
+		<p class="not-found-label">
+			<span class="superdot"></span>
+			404
+		</p>
+		<h1>Page not found<span class="dot-accent">.</span></h1>
+		<p class="not-found-text">
+			The page you're looking for doesn't exist or has been moved.
+		</p>
+		<div class="not-found-actions">
+			<a href="/" class="btn btn-primary">Go home</a>
+			<a href="/blog" class="btn btn-ghost">Browse articles</a>
+		</div>
+	</section>
+</Base>
+
+<style>
+	.not-found {
+		text-align: center;
+		padding: var(--space-16) 0 var(--space-12);
+	}
+	.not-found-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-6);
+	}
+	.not-found-label .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.not-found h1 {
+		font-size: var(--text-5xl);
+		line-height: 1.1;
+		margin-bottom: var(--space-6);
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.not-found-text {
+		color: var(--color-text-muted);
+		font-size: var(--text-xl);
+		max-width: 460px;
+		margin: 0 auto var(--space-8);
+		line-height: var(--leading-snug);
+	}
+	.not-found-actions {
+		display: flex;
+		gap: var(--space-4);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	@media (max-width: 720px) {
+		.not-found {
+			padding: var(--space-10) 0 var(--space-8);
+		}
+		.not-found h1 {
+			font-size: var(--text-4xl);
+		}
+		.not-found-text {
+			font-size: var(--text-lg);
+		}
+	}
+	@media (max-width: 480px) {
+		.not-found h1 {
+			font-size: var(--text-3xl);
+		}
+	}
+</style>
