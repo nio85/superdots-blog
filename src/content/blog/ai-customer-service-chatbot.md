@@ -1,7 +1,7 @@
 ---
 title: 'AI Customer Service Chatbots: How to Set One Up Without a Dev Team'
 description: 'A step-by-step guide to setting up an AI customer service chatbot — from choosing a platform to measuring results — no developers required.'
-pubDate: '2026-03-20'
+pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
