@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'engineering'
 useCase: 'writing'
 tags: ['documentation', 'engineering', 'technical-writing']
+heroImage: "/images/blog/writing-better-docs-with-ai.svg"
 ---
 
 Good documentation saves thousands of hours. Bad documentation wastes them. AI won't write your docs for you, but it's an excellent writing partner.

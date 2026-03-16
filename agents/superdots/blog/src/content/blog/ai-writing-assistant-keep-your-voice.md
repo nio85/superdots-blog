@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
 tags: ['writing', 'content-creation', 'ai-tools', 'marketing', 'brand-voice', 'copywriting']
+heroImage: "/images/blog/ai-writing-assistant-keep-your-voice.svg"
 ---
 
 AI can generate a 1,000-word blog post in 30 seconds. The problem is that it reads like every other AI-generated blog post: polished, generic, and forgettable.

@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
 tags: ['ai-inventory-management', 'inventory-automation', 'demand-forecasting', 'ai-for-operations']
+heroImage: "/images/blog/ai-inventory-management.svg"
 ---
 
 Your inventory spreadsheet is lying to you. Not on purpose — it just cannot keep up. Someone forgot to log a shipment. The reorder formula references a deleted column. And the "forecast" for Q2 is last year's numbers with 10% added because that felt right.

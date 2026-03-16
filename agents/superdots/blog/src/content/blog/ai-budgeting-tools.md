@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
 tags: ['ai-budgeting-tools', 'ai-budget-tracking', 'ai-financial-planning', 'ai-for-finance', 'budget-management', 'no-code', 'spreadsheets']
+heroImage: "/images/blog/ai-budgeting-tools.svg"
 ---
 
 You know how much budget you were given at the start of the year. You have no idea how much is left. The spreadsheet that is supposed to track it has five tabs, three different date formats, and a formula that broke in February and nobody noticed until May.
