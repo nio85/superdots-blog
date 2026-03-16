@@ -8,6 +8,22 @@ const posts = (await getCollection('blog'))
 ---
 
 <Base title="All Articles | Superdots" description="Browse all practical AI guides.">
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		"name": "All Articles",
+		"description": "Browse all practical AI guides.",
+		"url": "https://superdots.sh/blog",
+		"mainEntity": {
+			"@type": "ItemList",
+			"numberOfItems": posts.length,
+			"itemListElement": posts.slice(0, 10).map((post, i) => ({
+				"@type": "ListItem",
+				"position": i + 1,
+				"url": `https://superdots.sh/blog/${post.slug}/`
+			}))
+		}
+	})} />
 	<div class="page-header">
 		<div class="dots dots-md dots-loose" style="top: 5%; right: 3%;"></div>
 		<h1>All articles<span class="dot-accent">.</span></h1>

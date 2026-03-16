@@ -7,6 +7,13 @@ department: 'legal'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-contract-review-non-lawyers.svg"
+faqs:
+  - question: "Can non-lawyers use AI contract review tools?"
+    answer: "Yes. AI contract review tools are designed for business professionals who handle contracts regularly — procurement, sales, and operations teams. They flag risky clauses and extract key terms in plain language, so you know when to involve legal."
+  - question: "How much time does AI contract review save?"
+    answer: "Most teams report 50-70% reduction in contract review time. An NDA that took 30 minutes to review manually can be analyzed by AI in under 2 minutes, with key risks highlighted automatically."
+  - question: "Is AI contract review accurate enough to trust?"
+    answer: "AI contract review is highly accurate for standard agreements like NDAs and vendor contracts. It catches 85-95% of common risk patterns. However, it should complement — not replace — human review for high-value or unusual contracts."
 ---
 
 You have 12 vendor agreements sitting in your inbox. Legal is backed up for two weeks. The sales team is asking why the partnership deal is stalled. Sound familiar?

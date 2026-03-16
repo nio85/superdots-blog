@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from './FormattedDate.astro';
+import { DEPARTMENTS } from '../consts';
 
 interface Props {
 	currentSlug: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { currentSlug, department, useCase, tags = [] } = Astro.props;
+const deptLabel = DEPARTMENTS.find((d) => d.slug === department)?.label ?? department;
 
 const allPosts = await getCollection('blog');
 const others = allPosts.filter((p) => p.slug !== currentSlug);
@@ -49,6 +51,9 @@ const related = others
 				</li>
 			))}
 		</ul>
+		<a href={`/category/department/${department}/`} class="explore-dept">
+			Explore all {deptLabel} guides <span aria-hidden="true">&rarr;</span>
+		</a>
 	</aside>
 )}
 
@@ -101,5 +106,21 @@ const related = others
 		gap: var(--space-2);
 		font-size: var(--text-sm);
 		color: var(--color-text-muted);
+	}
+	.explore-dept {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin-top: var(--space-5);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		text-decoration: none;
+		transition: gap var(--transition-fast);
+	}
+	.explore-dept:hover {
+		gap: var(--space-2);
+		text-decoration: none;
 	}
 </style>

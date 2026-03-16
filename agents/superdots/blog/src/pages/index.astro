@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
-import { SITE_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION, DEPARTMENTS, USE_CASES } from '../consts';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -44,6 +44,18 @@ const posts = (await getCollection('blog'))
 					slug={post.slug}
 					tags={post.data.tags}
 				/>
+			))}
+		</div>
+	</section>
+
+	<section class="browse">
+		<div class="section-header">
+			<h2>Browse by department</h2>
+			<a href="/category" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
+		</div>
+		<div class="dept-grid">
+			{DEPARTMENTS.map((d) => (
+				<a href={`/category/department/${d.slug}/`} class="dept-link">{d.label}</a>
 			))}
 		</div>
 	</section>
@@ -148,6 +160,33 @@ const posts = (await getCollection('blog'))
 			font-size: var(--text-lg);
 		}
 	}
+	/* Browse by Department */
+	.browse {
+		padding: var(--space-8) 0 var(--space-12);
+	}
+	.dept-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+	.dept-link {
+		display: inline-block;
+		padding: var(--space-2) var(--space-4);
+		background: var(--sd-red-light);
+		color: var(--sd-red-dark);
+		border-radius: var(--radius-md);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-decoration: none;
+		transition: all var(--transition-fast);
+	}
+	.dept-link:hover {
+		background: var(--sd-red);
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+
 	@media (max-width: 480px) {
 		.hero h1 {
 			font-size: var(--text-3xl);

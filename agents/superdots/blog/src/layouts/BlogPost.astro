@@ -10,7 +10,7 @@ import { TAGS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, slug: propSlug } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug } = Astro.props;
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -77,6 +77,20 @@ const tagMeta = (tags ?? [])
 				}
 			]
 		})} />
+		{faqs && faqs.length > 0 && (
+			<script type="application/ld+json" set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": faqs.map((faq: { question: string; answer: string }) => ({
+					"@type": "Question",
+					"name": faq.question,
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": faq.answer
+					}
+				}))
+			})} />
+		)}
 	</head>
 	<body>
 		<Header />
@@ -92,8 +106,8 @@ const tagMeta = (tags ?? [])
 				<div class="article-header">
 					<div class="dots dots-md" style="top: 5%; right: 3%;"></div>
 					<div class="meta">
-						<span class="badge badge-dept">{department}</span>
-						<span class="badge badge-usecase">{useCase}</span>
+						<a href={`/category/department/${department}/`} class="badge badge-dept">{department}</a>
+						<a href={`/category/use-case/${useCase}/`} class="badge badge-usecase">{useCase}</a>
 						{tagMeta.map((t) => (
 							<a href={`/tags/${t!.slug}/`} class="badge badge-tag">{t!.label}</a>
 						))}
@@ -190,9 +204,19 @@ const tagMeta = (tags ?? [])
 		gap: var(--space-2);
 		flex-wrap: wrap;
 	}
+	.meta a.badge-dept,
+	.meta a.badge-usecase,
 	.meta .badge-tag {
 		text-decoration: none;
 		transition: all var(--transition-fast);
+	}
+	.meta a.badge-dept:hover {
+		opacity: 0.85;
+		text-decoration: none;
+	}
+	.meta a.badge-usecase:hover {
+		opacity: 0.85;
+		text-decoration: none;
 	}
 	.meta .badge-tag:hover {
 		background: var(--color-border-strong);
