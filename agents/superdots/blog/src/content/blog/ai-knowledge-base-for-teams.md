@@ -1,7 +1,7 @@
 ---
 title: 'How to Build an AI-Powered Internal Knowledge Base for Your Team'
 description: 'Stop losing institutional knowledge to turnover and doc sprawl. Learn how to build an AI-powered knowledge base your team will actually use.'
-pubDate: '2026-03-21'
+pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'

@@ -1,7 +1,7 @@
 ---
 title: 'AI Compliance Tools: What Non-Technical Teams Need to Know'
 description: 'AI compliance tools help non-technical teams automate policy monitoring, track regulatory changes, and stay audit-ready without GRC expertise.'
-pubDate: '2026-03-23'
+pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
