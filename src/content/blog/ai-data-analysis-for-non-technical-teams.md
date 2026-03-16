@@ -17,7 +17,7 @@ With AI, you type: "Which product category had the highest growth rate in Q4?" a
 
 The biggest change AI brings to data analysis is not speed — it is accessibility. You no longer need to know the right formula or function. You describe what you want in plain English, and the AI figures out how to get it.
 
-This matters because most business data sits in spreadsheets, and most of the people who need insights from that data are not analysts. They are operations managers, HR leads, finance coordinators, and marketing managers.
+This matters because most business data sits in spreadsheets, and most of the people who need insights from that data are not analysts. They are operations managers, HR leads, [finance coordinators planning budgets](/blog/ai-budgeting-tools/), and marketing managers.
 
 ## What AI can do with your spreadsheets
 
@@ -38,7 +38,7 @@ This is the core feature. Instead of building formulas, you ask questions:
 
 - "What was our average deal size by region last quarter?"
 - "Show me the top 10 customers by lifetime value."
-- "Which sales reps are consistently hitting quota and which are falling short?"
+- "Which sales reps are consistently hitting quota and which are falling short?" (Sales teams also use AI to [prepare for calls with data-driven prospect research](/blog/ai-for-sales-call-prep/))
 
 The AI translates your question into the right operations and returns an answer — often with a chart.
 
@@ -57,7 +57,7 @@ Ask: "Create a chart showing monthly revenue by product line for the last 12 mon
 AI can surface insights that are hard to find manually:
 
 - "Are there any seasonal patterns in our support ticket volume?"
-- "Which combinations of features correlate with higher customer retention?"
+- "Which combinations of features correlate with higher [customer retention](/blog/ai-customer-feedback-analysis/)?"
 - "What factors predict whether a lead converts?"
 
 These questions would require statistical analysis to answer manually. AI handles them conversationally.

@@ -62,8 +62,8 @@ The real value comes from getting notes where your team already works:
 
 - **Slack**: Auto-post meeting summaries to relevant channels
 - **Notion/Confluence**: Create meeting notes pages automatically
-- **Jira/Asana/ClickUp**: Push action items directly as tasks
-- **CRM (Salesforce/HubSpot)**: Log client call notes to the relevant deal
+- **Jira/Asana/ClickUp**: Push action items directly as tasks (see our guide to [AI project management features](/blog/ai-project-management-features-guide/) for getting the most out of this integration)
+- **CRM (Salesforce/HubSpot)**: Log client call notes to the relevant deal — great for [AI-assisted sales call prep](/blog/ai-for-sales-call-prep/)
 
 A tool that keeps notes stuck in its own dashboard is a liability. A tool that pushes them to your existing workflows is an asset.
 
@@ -101,7 +101,7 @@ Teams using AI meeting notes report:
 - **30+ minutes saved per meeting** on manual note-taking and follow-up
 - **Fewer dropped action items** because tasks are automatically tracked
 - **Better meeting culture** because people focus on the conversation instead of scribbling notes
-- **Institutional memory** that survives employee turnover
+- **Institutional memory** that survives employee turnover — especially valuable when paired with an [AI-powered knowledge base](/blog/ai-knowledge-base-for-teams/)
 
 If your organization has more than 10 meetings per week, an AI note-taker pays for itself in the first week.
 

@@ -40,7 +40,7 @@ AI is good at organizing information logically. Check:
 
 ### Step 3: Fix the voice
 
-AI tends to be verbose and formal. Run a second pass:
+AI tends to be verbose and formal. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass:
 
 > Rewrite this to be more concise. Use active voice. Remove any sentences that don't add information. Our docs style is direct and practical — no fluff.
 
@@ -58,7 +58,7 @@ This is where AI really shines:
 AI-generated docs need a human to verify:
 
 - **Technical accuracy** — AI can hallucinate API parameters or behaviors
-- **Completeness** — did it miss edge cases you know about?
+- **Completeness** — did it miss edge cases you know about? (If your docs feed into [presentations](/blog/ai-presentation-maker/), verify those too.)
 - **Relevance** — is everything in the doc actually useful?
 
 ## What not to do
@@ -70,5 +70,7 @@ AI-generated docs need a human to verify:
 ## The result
 
 Teams using AI-assisted documentation typically produce docs 3x faster with comparable quality. More importantly, they actually write docs instead of putting it off because "it takes too long."
+
+Once your docs are written, make sure they are discoverable. An [AI-powered knowledge base](/blog/ai-knowledge-base-for-teams/) can surface the right documentation when your team needs it most.
 
 The best documentation is the documentation that exists. AI helps you get it written.

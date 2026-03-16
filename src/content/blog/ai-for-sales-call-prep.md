@@ -32,7 +32,7 @@ Here's a prompt template that works:
 
 ### Connect your CRM
 
-Most modern CRMs (Salesforce, HubSpot, Pipedrive) have AI integrations. Set up a pre-call automation that:
+Most modern CRMs (Salesforce, HubSpot, Pipedrive) have AI integrations. Combine these with [AI-powered competitive analysis](/blog/ai-competitive-analysis/) to understand how your prospect's market is shifting. Set up a pre-call automation that:
 
 1. Pulls the prospect's record
 2. Enriches it with public data
@@ -62,7 +62,9 @@ The AI output is a starting point. Spend 2 minutes reviewing and adding your own
 Sales reps who use AI for call prep consistently report:
 
 - **Higher conversion rates** — being prepared builds trust
-- **Shorter sales cycles** — you ask better questions earlier
+- **Shorter sales cycles** — you ask better questions earlier (and [AI meeting notes](/blog/ai-meeting-notes-summaries-action-items/) ensure nothing from the call gets lost)
 - **Less burnout** — the tedious research part is handled
+
+If your prospect data lives in spreadsheets and CRM exports, [AI data analysis tools](/blog/ai-data-analysis-for-non-technical-teams/) can help you spot patterns across your pipeline without writing a single formula.
 
 Five minutes of AI-assisted prep beats thirty minutes of manual research. Every time.

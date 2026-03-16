@@ -42,7 +42,7 @@ Instead of manually creating tasks after a meeting, AI can extract action items 
 - **Notion**: AI can convert any block of text into a structured project with tasks and subtasks.
 - **Linear**: Type a natural language description and AI creates the issue with labels, priority, and project assignment.
 
-**Pro tip**: Combine this with an AI meeting note-taker. The note-taker extracts action items, and your PM tool turns them into tasks. Zero manual work.
+**Pro tip**: Combine this with an [AI meeting note-taker](/blog/ai-meeting-notes-summaries-action-items/). The note-taker extracts action items, and your PM tool turns them into tasks. Zero manual work.
 
 ### 3. Task prioritization and scheduling
 
@@ -52,7 +52,7 @@ When you have 50 tasks and limited team capacity, AI can help you decide what to
 
 **How to use it**:
 
-- **Wrike**: Work Intelligence analyzes project data and recommends priority adjustments.
+- **Wrike**: Work Intelligence analyzes project data and recommends priority adjustments. For teams managing physical goods, [AI inventory management](/blog/ai-inventory-management/) tools offer similar prioritization for supply chains.
 - **Asana**: Smart workflows suggest task reordering based on deadlines and blockers.
 - **ClickUp**: AI can analyze your sprint and suggest which tasks to move if the team is overloaded.
 
@@ -103,7 +103,7 @@ The biggest challenge is not the technology — it is adoption. Here is what wor
 
 **Daily standups**: Use AI-generated project summaries instead of going around the room asking for updates.
 
-**After meetings**: Paste notes into your PM tool. AI creates tasks. Review and assign.
+**After meetings**: Paste notes into your PM tool. AI creates tasks. Review and assign. (If email follow-ups pile up too, consider [automating your email triage](/blog/automate-email-triage-with-ai/) as well.)
 
 **Friday**: AI generates the weekly status report. Review for 5 minutes. Send.
 
