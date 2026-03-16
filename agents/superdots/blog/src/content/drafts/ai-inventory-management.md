@@ -80,7 +80,7 @@ Here is the good news: you do not need perfect data. You need minimum viable dat
 - Having sales data in one system and inventory data in another with no connection. You will need to export and merge, or choose a tool that integrates with both.
 - Not tracking stockout events. When you are out of stock, your sales data shows zero — which the AI interprets as zero demand. Flag stockout periods so the AI can adjust.
 
-## How to evaluate AI inventory tools
+## How to evaluate AI inventory management tools
 
 Not all tools are built for the same user. Enterprise platforms like Blue Yonder or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
 
@@ -119,7 +119,7 @@ Vendor demos love to show the "day one" dashboard. Here is what actually happens
 
 Most teams that follow this path see measurable results by month three. Companies that try to automate everything on day one usually stall during the data cleanup phase.
 
-## Measuring ROI (what to actually track)
+## Measuring AI inventory management ROI
 
 You need concrete metrics, not vibes. Track these before you start and compare monthly:
 
