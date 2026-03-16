@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
-tags: ['ai-compliance-tools', 'compliance-automation', 'regulatory-compliance', 'ai-for-legal']
+tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-compliance-tools.svg"
 ---
 

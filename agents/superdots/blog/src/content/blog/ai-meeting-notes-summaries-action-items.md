@@ -5,7 +5,7 @@ pubDate: '2026-03-13'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
-tags: ['meetings', 'note-taking', 'productivity', 'transcription', 'action-items', 'ai-tools']
+tags: ['ai-meetings', 'productivity']
 heroImage: "/images/blog/ai-meeting-notes-summaries-action-items.svg"
 ---
 

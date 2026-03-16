@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
-tags: ['email', 'productivity', 'ai-tools', 'inbox-management', 'gmail', 'outlook']
+tags: ['ai-email', 'productivity', 'ai-tools']
 heroImage: "/images/blog/manage-email-faster-with-ai.svg"
 ---
 

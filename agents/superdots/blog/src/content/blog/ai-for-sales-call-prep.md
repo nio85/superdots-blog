@@ -5,7 +5,7 @@ pubDate: '2026-03-08'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
-tags: ['sales', 'research', 'crm', 'prospecting']
+tags: ['ai-for-sales', 'ai-tools']
 heroImage: "/images/blog/ai-for-sales-call-prep.svg"
 ---
 

@@ -5,7 +5,7 @@ pubDate: '2026-03-05'
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'writing'
-tags: ['documentation', 'engineering', 'technical-writing']
+tags: ['ai-writing', 'ai-tools']
 heroImage: "/images/blog/writing-better-docs-with-ai.svg"
 ---
 

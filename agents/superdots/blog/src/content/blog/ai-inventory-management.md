@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
-tags: ['ai-inventory-management', 'inventory-automation', 'demand-forecasting', 'ai-for-operations']
+tags: ['ai-for-operations', 'ai-tools']
 heroImage: "/images/blog/ai-inventory-management.svg"
 ---
 

@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
-tags: ['ai-customer-service-chatbot', 'customer-service-automation', 'chatbot-setup', 'ai-for-support', 'ai-for-customer-support']
+tags: ['ai-tools', 'ai-customer-support']
 heroImage: "/images/blog/ai-customer-service-chatbot.svg"
 ---
 

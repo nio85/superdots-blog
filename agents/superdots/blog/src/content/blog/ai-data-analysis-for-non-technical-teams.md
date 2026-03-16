@@ -5,7 +5,7 @@ pubDate: '2026-03-14'
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
-tags: ['data-analysis', 'spreadsheets', 'excel', 'google-sheets', 'no-code', 'ai-tools']
+tags: ['ai-data-analysis', 'ai-tools']
 heroImage: "/images/blog/ai-data-analysis-for-non-technical-teams.svg"
 ---
 
