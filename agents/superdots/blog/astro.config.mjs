@@ -5,7 +5,12 @@ import { rehypeLazyImages } from './src/plugins/rehype-lazy-images.mjs';
 
 export default defineConfig({
 	site: 'https://superdots.sh',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => !page.includes('/design-system'),
+		}),
+	],
 	image: {
 		// Sharp is the default service in Astro 4.x
 		service: { entrypoint: 'astro/assets/services/sharp' },

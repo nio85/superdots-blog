@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
 			<a href="/privacy">Privacy Policy</a>
 			<a href="/cookie-policy">Cookie Policy</a>
 			<a href="/terms">Terms of Service</a>
-			<a href="#" id="cookie-settings-link">Cookie Settings</a>
+			<button type="button" id="cookie-settings-link" class="footer-cookie-btn">Cookie Settings</button>
 		</nav>
 		<p class="footer-copy">&copy; {year} Superdots</p>
 	</div>
@@ -68,6 +68,20 @@ const year = new Date().getFullYear();
 		transition: color 0.15s ease;
 	}
 	.footer-legal a:hover {
+		color: var(--color-primary);
+	}
+	.footer-cookie-btn {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
+		font-family: inherit;
+		text-decoration: none;
+		transition: color 0.15s ease;
+	}
+	.footer-cookie-btn:hover {
 		color: var(--color-primary);
 	}
 	.footer-copy {
