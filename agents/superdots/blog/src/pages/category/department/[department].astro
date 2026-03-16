@@ -4,6 +4,18 @@ import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
 import { DEPARTMENTS } from '../../../consts';
 
+const DEPARTMENT_INTROS: Record<string, string> = {
+	engineering: 'Guides that help engineering teams ship faster with AI — from smarter code reviews to automated documentation.',
+	marketing: 'AI techniques for marketing teams: sharpen your copy, speed up competitive research, and turn customer feedback into action.',
+	sales: 'Practical AI guides that help sales teams prep better, follow up faster, and close more deals.',
+	hr: 'AI tools that help HR teams hire faster, onboard smoother, and spend less time on admin.',
+	finance: 'AI guides for finance teams: tighten your forecasts, streamline budgeting, and catch what spreadsheets miss.',
+	operations: 'Guides that help ops teams cut busywork — automate email triage, streamline project tracking, and build better knowledge bases.',
+	legal: 'AI guides for legal teams: review contracts faster, stay on top of compliance, and reduce manual document work.',
+	'customer-support': 'AI techniques that help support teams respond faster, resolve more tickets, and keep customers happy without burning out.',
+	design: 'Practical AI guides for design teams — speed up mockups, explore more ideas, and handle production work without extra headcount.',
+};
+
 export function getStaticPaths() {
 	return DEPARTMENTS.map((d) => ({
 		params: { department: d.slug },
@@ -13,6 +25,7 @@ export function getStaticPaths() {
 
 const { department } = Astro.params;
 const { label } = Astro.props;
+const intro = DEPARTMENT_INTROS[department!] || `AI guides for ${label.toLowerCase()} teams.`;
 
 const posts = (await getCollection('blog', ({ data }) => data.department === department))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -23,7 +36,7 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;"></div>
 		<a href="/category" class="back">&larr; Categories</a>
 		<h1>{label}<span class="dot-accent">.</span></h1>
-		<p class="subtitle">AI guides for {label.toLowerCase()} teams</p>
+		<p class="subtitle">{intro}</p>
 	</div>
 
 	{posts.length === 0 ? (
@@ -38,6 +51,7 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 					department={post.data.department}
 					useCase={post.data.useCase}
 					slug={post.slug}
+					tags={post.data.tags}
 				/>
 			))}
 		</div>

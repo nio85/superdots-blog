@@ -1,37 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
-import Base from '../../../layouts/Base.astro';
-import PostCard from '../../../components/PostCard.astro';
-import { USE_CASES } from '../../../consts';
-
-const USE_CASE_INTROS: Record<string, string> = {
-	automation: 'Guides for automating the repetitive stuff — email triage, data entry, routine approvals — so your team can focus on work that matters.',
-	analysis: 'AI techniques for pulling insights from data, feedback, and research — without needing a data science degree.',
-	writing: 'Guides for writing faster and better with AI — emails, docs, reports, and customer-facing copy that still sounds like you.',
-	communication: 'AI guides for clearer, faster team communication — from meeting summaries to smarter async updates.',
-};
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { TAGS } from '../../consts';
 
 export function getStaticPaths() {
-	return USE_CASES.map((u) => ({
-		params: { useCase: u.slug },
-		props: { label: u.label },
+	return TAGS.map((t) => ({
+		params: { tag: t.slug },
+		props: { label: t.label, description: t.description },
 	}));
 }
 
-const { useCase } = Astro.params;
-const { label } = Astro.props;
-const intro = USE_CASE_INTROS[useCase!] || `AI-powered ${label.toLowerCase()} guides.`;
+const { tag } = Astro.params;
+const { label, description } = Astro.props;
 
-const posts = (await getCollection('blog', ({ data }) => data.useCase === useCase))
+const posts = (await getCollection('blog', ({ data }) => (data.tags ?? []).includes(tag!)))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Base title={`${label} | Superdots`} description={`AI guides for ${label.toLowerCase()}.`}>
+<Base title={`${label} Articles | Superdots`} description={description}>
 	<div class="page-header">
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;"></div>
-		<a href="/category" class="back">&larr; Categories</a>
+		<a href="/tags" class="back">&larr; Tags</a>
 		<h1>{label}<span class="dot-accent">.</span></h1>
-		<p class="subtitle">{intro}</p>
+		<p class="subtitle">{description}</p>
 	</div>
 
 	{posts.length === 0 ? (

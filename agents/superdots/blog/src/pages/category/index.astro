@@ -1,13 +1,13 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { DEPARTMENTS, USE_CASES } from '../../consts';
+import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 ---
 
 <Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
 	<div class="page-header">
 		<div class="dots dots-md" style="top: -15%; right: 0;"></div>
 		<h1>Categories<span class="dot-accent">.</span></h1>
-		<p class="page-desc">Find guides by department or use case</p>
+		<p class="page-desc">Browse guides by the team you're on or the problem you're solving. Pick a department or use case to find what's relevant to your work.</p>
 	</div>
 
 	<section class="category-section">
@@ -27,6 +27,17 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 			{USE_CASES.map((u) => (
 				<a href={`/category/use-case/${u.slug}/`} class="tag-card tag-usecase">
 					{u.label}
+				</a>
+			))}
+		</div>
+	</section>
+
+	<section class="category-section">
+		<h2>By topic tag</h2>
+		<div class="tag-grid">
+			{TAGS.map((t) => (
+				<a href={`/tags/${t.slug}/`} class="tag-card tag-topic">
+					{t.label}
 				</a>
 			))}
 		</div>
@@ -93,5 +104,15 @@ import { DEPARTMENTS, USE_CASES } from '../../consts';
 	.tag-usecase:hover {
 		background: var(--sd-teal);
 		color: #FFFFFF;
+	}
+	.tag-topic {
+		background: var(--color-bg-dim);
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
+	}
+	.tag-topic:hover {
+		background: var(--color-text-strong);
+		color: var(--color-bg);
+		border-color: var(--color-text-strong);
 	}
 </style>
