@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
 tags: ['ai-customer-service-chatbot', 'customer-service-automation', 'chatbot-setup', 'ai-for-support', 'ai-for-customer-support']
+heroImage: "/images/blog/ai-customer-service-chatbot.svg"
 ---
 
 Your support team is drowning. Ticket volume keeps climbing, customers expect instant answers, and hiring is not moving fast enough to keep up. You have heard that AI chatbots can help — but everything you have read sounds like it requires an engineering team you do not have.

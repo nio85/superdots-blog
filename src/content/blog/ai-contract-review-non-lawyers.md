@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
 tags: ['ai-contract-review', 'legal-automation', 'contract-analysis', 'ai-for-legal']
+heroImage: "/images/blog/ai-contract-review-non-lawyers.svg"
 ---
 
 You have 12 vendor agreements sitting in your inbox. Legal is backed up for two weeks. The sales team is asking why the partnership deal is stalled. Sound familiar?

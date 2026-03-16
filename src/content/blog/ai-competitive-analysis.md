@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
 tags: ['ai-competitive-analysis', 'ai-competitor-research', 'sales-intelligence', 'battlecards', 'competitive-intelligence', 'ai-for-sales']
+heroImage: "/images/blog/ai-competitive-analysis.svg"
 ---
 
 Your biggest competitor just changed their pricing. They announced it Tuesday. Your rep found out Thursday — on a call, from the prospect. That's the kind of moment that loses deals.

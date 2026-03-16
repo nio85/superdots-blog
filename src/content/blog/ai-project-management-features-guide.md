@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
 tags: ['project-management', 'productivity', 'automation', 'ai-tools', 'task-management']
+heroImage: "/images/blog/ai-project-management-features-guide.svg"
 ---
 
 Every major project management tool now has AI features. Most teams ignore them. The ones that don't are saving hours per week on status updates, task creation, and risk detection.

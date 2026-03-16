@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'
 tags: ['ai-feedback-analysis', 'sentiment-analysis', 'customer-insights', 'ai-for-customer-support']
+heroImage: "/images/blog/ai-customer-feedback-analysis.svg"
 ---
 
 Your customers are telling you exactly what they want. The problem is they are saying it in 200 support tickets, 47 app store reviews, a quarterly NPS survey, three social media threads, and a passive-aggressive email to your sales rep.

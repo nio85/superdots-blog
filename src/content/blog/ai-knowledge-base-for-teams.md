@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
 tags: ['ai-knowledge-base-for-teams', 'ai-knowledge-base', 'knowledge-management', 'internal-knowledge-base', 'ai-for-teams']
+heroImage: "/images/blog/ai-knowledge-base-for-teams.svg"
 ---
 
 Your best employee just quit. They took two weeks of vacation before their last day, handed off a bullet-point list of "where stuff lives," and walked out the door. Now three people are scrambling to figure out how a critical process works — and the only documentation is a Slack thread from 2024.

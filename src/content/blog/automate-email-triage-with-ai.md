@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
 tags: ['email', 'productivity', 'gmail', 'outlook']
+heroImage: "/images/blog/automate-email-triage-with-ai.svg"
 ---
 
 Most knowledge workers spend 2+ hours per day on email. A huge chunk of that time goes to sorting, prioritizing, and drafting routine replies. AI can handle most of this.
