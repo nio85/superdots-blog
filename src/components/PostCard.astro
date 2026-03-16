@@ -32,7 +32,7 @@ const tagMeta = tags
 		{tagMeta.length > 0 && (
 			<div class="tag-pills">
 				{tagMeta.map((t) => (
-					<span class="badge badge-tag" onclick={`event.preventDefault(); window.location.href='/tags/${t!.slug}/'`}>{t!.label}</span>
+					<a href={`/tags/${t!.slug}/`} class="badge badge-tag" onclick="event.stopPropagation()">{t!.label}</a>
 				))}
 			</div>
 		)}
@@ -118,11 +118,13 @@ const tagMeta = tags
 	.tag-pills .badge-tag {
 		font-size: var(--text-xs);
 		cursor: pointer;
+		text-decoration: none;
 		transition: all var(--transition-fast);
 	}
 	.tag-pills .badge-tag:hover {
 		background: var(--color-border-strong);
 		color: var(--color-text-strong);
+		text-decoration: none;
 	}
 	.read-more {
 		font-family: var(--font-display);
