@@ -7,6 +7,13 @@ department: 'customer-support'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-customer-support']
 heroImage: "/images/blog/ai-customer-service-chatbot.svg"
+faqs:
+  - question: "Can I set up an AI chatbot without developers?"
+    answer: "Yes. Modern AI chatbot platforms like Intercom, Zendesk AI, and Tidio are built for support managers. Most can be set up in a day, trained on your existing knowledge base, and go live within a week — no coding required."
+  - question: "Will an AI chatbot replace my support team?"
+    answer: "No. AI chatbots handle repetitive questions (order status, password resets, FAQs) so your human agents can focus on complex issues that need empathy and judgment. Most teams see 40-60% of tickets handled automatically."
+  - question: "How long does it take to set up an AI customer service chatbot?"
+    answer: "A basic AI chatbot can be live in 1-3 days. Import your help docs, configure responses, and test with your team. Fine-tuning based on real conversations typically takes 2-4 weeks."
 ---
 
 Your support team is drowning. Ticket volume keeps climbing, customers expect instant answers, and hiring is not moving fast enough to keep up. You have heard that AI chatbots can help — but everything you have read sounds like it requires an engineering team you do not have.

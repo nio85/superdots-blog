@@ -12,6 +12,10 @@ const blog = defineCollection({
 		useCase: z.enum(['automation', 'analysis', 'writing', 'communication']),
 		tags: z.array(z.string()).default([]),
 		heroImage: z.union([image(), z.string()]).optional(),
+		faqs: z.array(z.object({
+			question: z.string(),
+			answer: z.string(),
+		})).optional(),
 	}),
 });
 

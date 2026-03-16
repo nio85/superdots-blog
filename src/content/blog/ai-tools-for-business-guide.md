@@ -6,6 +6,13 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-hr', 'ai-for-sales', 'ai-for-legal', 'ai-for-finance', 'ai-for-operations', 'ai-customer-support', 'ai-design']
+faqs:
+  - question: "Which department benefits most from AI tools?"
+    answer: "Every department benefits differently, but customer support and HR typically see the fastest ROI. Support teams can automate 40-60% of tickets, while HR teams cut resume screening time by 80%. Start with the department that has the most repetitive, high-volume work."
+  - question: "How much do AI tools for business cost?"
+    answer: "Most AI business tools range from $10-50 per user per month, with many offering free tiers. The ROI typically exceeds the cost within the first month through time savings on repetitive tasks like email, data entry, and document review."
+  - question: "Are AI tools safe for handling business data?"
+    answer: "Reputable AI business tools use enterprise-grade encryption and comply with SOC 2, GDPR, and other standards. Always check a vendor's security certifications, data processing agreements, and whether your data is used for model training before adopting."
 ---
 
 Every department has its own version of the same problem: too much busywork, not enough time for the work that actually matters. AI tools fix this — but only when you apply them to the right tasks in the right places.
