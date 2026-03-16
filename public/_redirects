@@ -1,2 +1,2 @@
 # Redirect www to apex
-# https://www.superdots.sh/* https://superdots.sh/:splat 301
+https://www.superdots.sh/* https://superdots.sh/:splat 301
