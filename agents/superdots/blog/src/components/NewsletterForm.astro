@@ -1,0 +1,200 @@
+---
+interface Props {
+	variant?: 'inline' | 'banner';
+	source?: string;
+}
+
+const { variant = 'banner', source = 'unknown' } = Astro.props;
+---
+
+<div class:list={['newsletter', `newsletter--${variant}`]} data-source={source}>
+	<div class="newsletter-inner">
+		<div class="newsletter-text">
+			<span class="superdot"></span>
+			<h3 class="newsletter-heading">Get AI tips that actually help at work<span class="dot-accent">.</span></h3>
+			<p class="newsletter-desc">One email per week. Practical guides, no fluff.</p>
+		</div>
+		<form class="newsletter-form" aria-label="Newsletter signup">
+			<div class="newsletter-field">
+				<label for={`newsletter-email-${variant}`} class="sr-only">Email address</label>
+				<input
+					type="email"
+					id={`newsletter-email-${variant}`}
+					name="email"
+					placeholder="you@company.com"
+					required
+					autocomplete="email"
+					aria-describedby={`newsletter-legal-${variant}`}
+				/>
+				<button type="submit" class="btn btn-primary">Subscribe</button>
+			</div>
+			<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
+				By subscribing, you agree to receive our newsletter. We'll use your email address solely to send you articles about AI at work &mdash; no spam, no sharing. You can unsubscribe anytime. See our <a href="/privacy">Privacy Policy</a>.
+			</p>
+			<div class="newsletter-status" role="status" aria-live="polite"></div>
+		</form>
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll('.newsletter-form').forEach((form) => {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const el = e.currentTarget as HTMLFormElement;
+			const input = el.querySelector('input[type="email"]') as HTMLInputElement;
+			const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
+			const status = el.querySelector('.newsletter-status') as HTMLElement;
+			const source = el.closest('.newsletter')?.getAttribute('data-source') || 'unknown';
+
+			const email = input.value.trim();
+			if (!email) return;
+
+			btn.disabled = true;
+			btn.textContent = 'Sending...';
+			status.textContent = '';
+			status.className = 'newsletter-status';
+
+			try {
+				const res = await fetch('/api/subscribe', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email, source }),
+				});
+				const data = await res.json();
+
+				if (res.ok) {
+					status.textContent = 'Check your inbox to confirm your subscription.';
+					status.classList.add('newsletter-status--success');
+					input.value = '';
+				} else {
+					status.textContent = data.error || 'Something went wrong. Please try again.';
+					status.classList.add('newsletter-status--error');
+				}
+			} catch {
+				status.textContent = 'Network error. Please try again.';
+				status.classList.add('newsletter-status--error');
+			} finally {
+				btn.disabled = false;
+				btn.textContent = 'Subscribe';
+			}
+		});
+	});
+</script>
+
+<style>
+	.newsletter {
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-8) var(--space-6);
+		margin: var(--space-10) 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.newsletter::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 100%;
+		background: var(--color-primary);
+	}
+	.newsletter--banner {
+		background: var(--color-bg-dim);
+	}
+	.newsletter--inline {
+		background: transparent;
+	}
+	.newsletter-inner {
+		max-width: 560px;
+	}
+	.newsletter-text {
+		margin-bottom: var(--space-4);
+	}
+	.newsletter-text .superdot {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		margin-bottom: var(--space-2);
+	}
+	.newsletter-heading {
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-1);
+		letter-spacing: -0.02em;
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.newsletter-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin: 0;
+	}
+	.newsletter-field {
+		display: flex;
+		gap: var(--space-2);
+	}
+	.newsletter-field input {
+		flex: 1;
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--text-base);
+		font-family: inherit;
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-md);
+		background: var(--color-bg);
+		color: var(--color-text);
+		transition: border-color var(--transition-fast);
+		min-width: 0;
+	}
+	.newsletter-field input:focus {
+		outline: none;
+		border-color: var(--color-primary);
+	}
+	.newsletter-field input::placeholder {
+		color: var(--color-text-muted);
+		opacity: 0.6;
+	}
+	.newsletter-field button {
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+	.newsletter-legal {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: var(--space-2) 0 0;
+		line-height: var(--leading-relaxed);
+	}
+	.newsletter-legal a {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.newsletter-legal a:hover {
+		color: var(--color-primary);
+	}
+	.newsletter-status {
+		font-size: var(--text-sm);
+		margin-top: var(--space-2);
+		min-height: 1.4em;
+	}
+	.newsletter-status--success {
+		color: var(--sd-teal, #14B8A6);
+	}
+	.newsletter-status--error {
+		color: var(--color-primary);
+	}
+
+	@media (max-width: 480px) {
+		.newsletter-field {
+			flex-direction: column;
+		}
+		.newsletter {
+			padding: var(--space-6) var(--space-4);
+		}
+	}
+</style>
