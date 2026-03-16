@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
-tags: ['ai-knowledge-base-for-teams', 'ai-knowledge-base', 'knowledge-management', 'internal-knowledge-base', 'ai-for-teams']
+tags: ['ai-knowledge-management', 'productivity']
 heroImage: "/images/blog/ai-knowledge-base-for-teams.svg"
 ---
 

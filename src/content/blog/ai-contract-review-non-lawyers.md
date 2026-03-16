@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
-tags: ['ai-contract-review', 'legal-automation', 'contract-analysis', 'ai-for-legal']
+tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-contract-review-non-lawyers.svg"
 ---
 

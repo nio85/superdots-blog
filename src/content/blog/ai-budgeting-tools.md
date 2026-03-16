@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
-tags: ['ai-budgeting-tools', 'ai-budget-tracking', 'ai-financial-planning', 'ai-for-finance', 'budget-management', 'no-code', 'spreadsheets']
+tags: ['ai-tools', 'ai-for-finance', 'ai-data-analysis']
 heroImage: "/images/blog/ai-budgeting-tools.svg"
 ---
 

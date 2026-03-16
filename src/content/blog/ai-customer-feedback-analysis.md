@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'
-tags: ['ai-feedback-analysis', 'sentiment-analysis', 'customer-insights', 'ai-for-customer-support']
+tags: ['ai-customer-support', 'ai-data-analysis']
 heroImage: "/images/blog/ai-customer-feedback-analysis.svg"
 ---
 

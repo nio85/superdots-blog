@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
-tags: ['ai-onboarding', 'ai-employee-onboarding', 'hr-automation', 'new-hire-training', 'ai-for-hr', 'onboarding-automation', 'productivity']
+tags: ['ai-for-hr', 'productivity']
 heroImage: "/images/blog/ai-employee-onboarding.svg"
 ---
 

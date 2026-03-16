@@ -5,7 +5,7 @@ pubDate: '2026-03-12'
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
-tags: ['writing', 'content-creation', 'ai-tools', 'marketing', 'brand-voice', 'copywriting']
+tags: ['ai-writing', 'ai-tools']
 heroImage: "/images/blog/ai-writing-assistant-keep-your-voice.svg"
 ---
 

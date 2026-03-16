@@ -5,7 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'design'
 useCase: 'communication'
-tags: ['ai-design-tools', 'non-designer-visuals', 'ai-graphics', 'ai-for-design']
+tags: ['ai-tools', 'ai-design']
 heroImage: "/images/blog/ai-design-tools-non-designers.svg"
 ---
 

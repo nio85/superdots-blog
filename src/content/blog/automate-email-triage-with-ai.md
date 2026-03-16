@@ -5,7 +5,7 @@ pubDate: '2026-03-10'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
-tags: ['email', 'productivity', 'gmail', 'outlook']
+tags: ['ai-email', 'productivity']
 heroImage: "/images/blog/automate-email-triage-with-ai.svg"
 ---
 

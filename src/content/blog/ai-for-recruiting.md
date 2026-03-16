@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
-tags: ['ai-for-recruiting', 'ai-hiring-tools', 'ai-resume-screening', 'hr-automation', 'ai-for-hr', 'recruiting-automation']
+tags: ['ai-for-hr', 'ai-tools']
 heroImage: "/images/blog/ai-for-recruiting.svg"
 ---
 

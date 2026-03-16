@@ -5,7 +5,7 @@ pubDate: '2026-03-11'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
-tags: ['project-management', 'productivity', 'automation', 'ai-tools', 'task-management']
+tags: ['ai-project-management', 'productivity', 'ai-tools']
 heroImage: "/images/blog/ai-project-management-features-guide.svg"
 ---
 

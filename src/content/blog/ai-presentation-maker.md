@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'writing'
-tags: ['presentations', 'ai-tools', 'powerpoint', 'slides', 'productivity', 'operations']
+tags: ['ai-tools', 'productivity', 'ai-design']
 heroImage: "/images/blog/ai-presentation-maker.svg"
 ---
 

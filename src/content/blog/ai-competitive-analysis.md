@@ -5,7 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
-tags: ['ai-competitive-analysis', 'ai-competitor-research', 'sales-intelligence', 'battlecards', 'competitive-intelligence', 'ai-for-sales']
+tags: ['ai-for-sales', 'ai-data-analysis']
 heroImage: "/images/blog/ai-competitive-analysis.svg"
 ---
 
