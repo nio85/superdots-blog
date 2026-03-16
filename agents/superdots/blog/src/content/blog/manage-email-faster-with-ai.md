@@ -17,7 +17,7 @@ AI can cut that time in half. Here is how.
 
 Email clients have gotten smarter, but the core problem remains: you are the router. Every message lands in your inbox and waits for you to decide what to do with it. Read, reply, forward, archive, ignore — multiply that by 121 and you have a full-time job.
 
-The fix is not "inbox zero" discipline. It is delegation — to AI.
+The fix is not "inbox zero" discipline. It is delegation — to AI. If you want to go deeper on the sorting and filtering side, our guide on [automating email triage with AI](/blog/automate-email-triage-with-ai/) covers that in detail.
 
 ## Three things AI does well with email
 
@@ -26,7 +26,7 @@ The fix is not "inbox zero" discipline. It is delegation — to AI.
 This is the biggest time saver. AI can draft responses for routine messages in seconds:
 
 - **Meeting confirmations**: "Thanks, I'll be there at 3pm."
-- **Status updates**: Pull context from your calendar or project tool and generate a summary.
+- **Status updates**: Pull context from your calendar or [project management tool](/blog/ai-project-management-features-guide/) and generate a summary.
 - **Simple questions**: Draft a clear answer and flag it for your quick review.
 
 **How to do it**: Gmail's "Help Me Write" and Outlook's Copilot both offer inline draft generation. Type a one-line prompt ("politely decline this meeting and suggest next week") and the AI fills in the rest.
@@ -43,7 +43,7 @@ Long email chains are where hours disappear. Instead of scrolling through 47 rep
 - **Outlook**: Copilot's "Summarize" button does the same. It highlights who said what and what was agreed.
 - **Third-party tools**: Superhuman and Shortwave offer thread summaries that go deeper, including sentiment and urgency detection.
 
-This alone can save you 30 minutes a day if you deal with cross-functional threads.
+This alone can save you 30 minutes a day if you deal with cross-functional threads. For meetings themselves, [AI note-takers](/blog/ai-meeting-notes-summaries-action-items/) can capture the discussion so you do not need to reconstruct it from email later.
 
 ### 3. Smart sorting and prioritization
 

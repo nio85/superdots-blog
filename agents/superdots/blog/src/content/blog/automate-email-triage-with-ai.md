@@ -13,7 +13,7 @@ Most knowledge workers spend 2+ hours per day on email. A huge chunk of that tim
 
 ## The problem
 
-Your inbox is a firehose. Important client messages sit next to newsletter spam. Urgent requests hide behind FYI threads. You scan everything manually because you're afraid of missing something.
+Your inbox is a firehose. Important client messages sit next to newsletter spam. Urgent requests hide behind FYI threads. You scan everything manually because you're afraid of missing something. For a broader look at reclaiming your inbox time, see our guide to [managing email faster with AI](/blog/manage-email-faster-with-ai/).
 
 ## What AI can do
 
@@ -48,7 +48,7 @@ Both Gmail and Outlook now have built-in AI categorization. Turn it on:
 For common reply patterns, create templates with AI fill-in:
 
 - Meeting confirmations: "Thanks, I'll be there"
-- Status requests: Pull from your project management tool
+- Status requests: Pull from your [project management tool](/blog/ai-project-management-features-guide/)
 - Simple questions: Draft a response and flag for review
 
 ### Step 4: Review, don't read
@@ -61,6 +61,6 @@ Teams that implement AI email triage typically report:
 
 - **60% fewer emails** that need manual reading
 - **30 minutes saved** per day on average
-- **Faster response times** because urgent emails surface immediately
+- **Faster response times** because urgent emails surface immediately — which matters even more for teams handling [customer service inquiries](/blog/ai-customer-service-chatbot/)
 
 Start with one category. Get comfortable. Then expand. The goal isn't zero-inbox perfection — it's spending your time on emails that actually matter.

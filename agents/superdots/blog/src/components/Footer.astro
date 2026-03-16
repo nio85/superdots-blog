@@ -9,6 +9,12 @@ const year = new Date().getFullYear();
 			<span class="footer-name">Superdots</span>
 		</div>
 		<p class="footer-tagline">Practical AI for every team. No fluff, just useful stuff.</p>
+		<nav class="footer-content" aria-label="Content">
+			<a href="/blog/">Blog</a>
+			<a href="/category/">Categories</a>
+			<a href="/about/">About</a>
+			<a href="/rss.xml">RSS</a>
+		</nav>
 		<nav class="footer-legal">
 			<a href="/privacy">Privacy Policy</a>
 			<a href="/cookie-policy">Cookie Policy</a>
@@ -53,6 +59,23 @@ const year = new Date().getFullYear();
 		color: var(--color-text-muted);
 		font-size: var(--text-base);
 		margin: 0 0 var(--space-4);
+	}
+	.footer-content {
+		display: flex;
+		justify-content: center;
+		gap: var(--space-4);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-4);
+	}
+	.footer-content a {
+		color: var(--color-text);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		text-decoration: none;
+		transition: color 0.15s ease;
+	}
+	.footer-content a:hover {
+		color: var(--color-primary);
 	}
 	.footer-legal {
 		display: flex;

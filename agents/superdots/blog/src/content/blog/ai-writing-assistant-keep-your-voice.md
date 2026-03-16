@@ -43,7 +43,7 @@ This takes 5-10 minutes but makes the difference between generic content and con
 
 Different people get stuck at different points. Use AI for your specific bottlenecks:
 
-**If you struggle with structure**: Give AI your rough ideas and ask it to suggest an outline. "Here are my thoughts on X. Organize these into a logical article structure with headings."
+**If you struggle with structure**: Give AI your rough ideas and ask it to suggest an outline. "Here are my thoughts on X. Organize these into a logical article structure with headings." You can even use [AI presentation tools](/blog/ai-presentation-maker/) to turn that outline into slides.
 
 **If you struggle with first drafts**: Write your key points as bullet points. Ask AI to expand them into paragraphs. Then rewrite those paragraphs in your voice.
 
@@ -100,7 +100,7 @@ This pass takes 10-15 minutes and is the difference between "AI-assisted" and "A
 
 ### Reports and presentations
 
-1. Dump your data and findings into AI
+1. Dump your data and findings into AI (tools for [AI-powered data analysis](/blog/ai-data-analysis-for-non-technical-teams/) can help you pull insights from raw spreadsheets first)
 2. Ask for a structured summary with headers
 3. Add your interpretation and recommendations
 4. Use AI to polish language and check consistency
@@ -117,4 +117,4 @@ This pass takes 10-15 minutes and is the difference between "AI-assisted" and "A
 
 After you finish any AI-assisted piece, ask yourself: "Could I defend every sentence in this article as something I believe and would say?" If the answer is no, you have let the AI take too much control.
 
-The goal is not to hide that you use AI. It is to use AI in a way that makes your writing better without making it generic. Speed without sacrifice.
+The goal is not to hide that you use AI. It is to use AI in a way that makes your writing better without making it generic. Speed without sacrifice. These same principles apply whether you are crafting marketing copy or [writing technical documentation](/blog/writing-better-docs-with-ai/).
