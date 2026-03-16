@@ -90,15 +90,30 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 	function gtag(){dataLayer.push(arguments);}
 	window.gtag = gtag;
 
+	// Consent Mode v2: default all consent to denied (required for EU/EEA traffic)
+	gtag('consent', 'default', {
+		analytics_storage: 'denied',
+		ad_storage: 'denied',
+		ad_user_data: 'denied',
+		ad_personalization: 'denied',
+		wait_for_update: 500
+	});
+
 	(function() {
+		// Always load gtag.js so consent mode signals are sent to GA4
+		var s = document.createElement('script');
+		s.async = true;
+		s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+		document.head.appendChild(s);
+		gtag('js', new Date());
+		gtag('config', gaId);
+
+		// If user already consented, grant analytics immediately
 		var consent = localStorage.getItem('sd-cookie-consent');
 		if (consent === 'accepted') {
-			var s = document.createElement('script');
-			s.async = true;
-			s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-			document.head.appendChild(s);
-			gtag('js', new Date());
-			gtag('config', gaId);
+			gtag('consent', 'update', {
+				analytics_storage: 'granted'
+			});
 		}
 	})();
 </script>

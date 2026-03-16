@@ -45,14 +45,11 @@
 		localStorage.setItem('sd-cookie-consent-date', new Date().toISOString());
 		hideBanner();
 
-		var gaId = window.SD_GA_ID;
-		if (gaId) {
-			var s = document.createElement('script');
-			s.async = true;
-			s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-			document.head.appendChild(s);
-			window.gtag('js', new Date());
-			window.gtag('config', gaId);
+		// Grant analytics consent — gtag.js is already loaded by BaseHead
+		if (window.gtag) {
+			window.gtag('consent', 'update', {
+				analytics_storage: 'granted'
+			});
 		}
 	});
 
