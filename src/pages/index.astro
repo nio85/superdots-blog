@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 import { SITE_DESCRIPTION, DEPARTMENTS, USE_CASES } from '../consts';
 
 const posts = (await getCollection('blog'))
@@ -29,7 +30,7 @@ const posts = (await getCollection('blog'))
 		</p>
 		<div class="hero-actions">
 			<a href="/blog" class="btn btn-primary btn-lg">Browse articles</a>
-			<a href="/about" class="btn btn-ghost btn-lg">Learn more</a>
+			<a href="#newsletter" class="btn btn-ghost btn-lg">Get the newsletter</a>
 		</div>
 	</section>
 
@@ -57,6 +58,12 @@ const posts = (await getCollection('blog'))
 
 	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
 
+	<section class="home-newsletter" id="newsletter">
+		<NewsletterForm variant="banner" source="homepage" />
+	</section>
+
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
 	<section class="browse">
 		<div class="section-header">
 			<h2>Browse by department<span class="dot-accent">.</span></h2>
@@ -78,7 +85,6 @@ const posts = (await getCollection('blog'))
 	/* Hero */
 	.hero {
 		position: relative;
-		overflow: hidden;
 		text-align: center;
 		padding: var(--space-20) 0 var(--space-16);
 	}
@@ -231,6 +237,14 @@ const posts = (await getCollection('blog'))
 		.hero-sub {
 			font-size: var(--text-lg);
 		}
+	}
+
+	/* Newsletter section */
+	.home-newsletter {
+		padding: var(--space-2) 0;
+	}
+	.home-newsletter :global(.newsletter) {
+		margin: 0;
 	}
 
 	/* Browse by Department — Card Grid */
