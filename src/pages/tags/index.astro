@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { TAGS } from '../../consts';
+
+const posts = await getCollection('blog');
+
+// Count articles per tag
+const tagCounts = new Map<string, number>();
+for (const post of posts) {
+	for (const tag of post.data.tags ?? []) {
+		tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+	}
+}
+---
+
+<Base title="Tags | Superdots" description="Browse AI guides by topic tag.">
+	<div class="page-header">
+		<div class="dots dots-md" style="top: -15%; right: 0;"></div>
+		<h1>Tags<span class="dot-accent">.</span></h1>
+		<p class="page-desc">Browse guides by topic — pick a tag to find articles that match your interest.</p>
+	</div>
+
+	<div class="tag-grid">
+		{TAGS.map((t) => {
+			const count = tagCounts.get(t.slug) ?? 0;
+			return (
+				<a href={`/tags/${t.slug}/`} class="tag-card">
+					<span class="tag-label">{t.label}</span>
+					<span class="tag-count">{count} {count === 1 ? 'article' : 'articles'}</span>
+				</a>
+			);
+		})}
+	</div>
+</Base>
+
+<style>
+	.page-header {
+		position: relative;
+		overflow: hidden;
+		padding: var(--space-6) 0 var(--space-2);
+	}
+	.page-header h1 {
+		margin-bottom: var(--space-2);
+	}
+	.dot-accent {
+		color: var(--color-primary);
+	}
+	.page-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin-bottom: var(--space-6);
+	}
+	.tag-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: var(--space-3);
+	}
+	.tag-card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		padding: var(--space-4) var(--space-5);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		text-decoration: none;
+		transition: all var(--transition-base);
+	}
+	.tag-card:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
+		border-color: var(--color-primary);
+		text-decoration: none;
+	}
+	.tag-label {
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-size: var(--text-base);
+		color: var(--color-text-strong);
+	}
+	.tag-count {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
+</style>

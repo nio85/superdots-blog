@@ -6,6 +6,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import type { CollectionEntry } from 'astro:content';
+import { TAGS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
 
@@ -20,6 +21,10 @@ const ogImageSrc = heroImage
 
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://superdots.sh';
 const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
+
+const tagMeta = (tags ?? [])
+	.map((t: string) => TAGS.find((tm) => tm.slug === t))
+	.filter(Boolean);
 ---
 
 <!doctype html>
@@ -89,6 +94,9 @@ const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/
 					<div class="meta">
 						<span class="badge badge-dept">{department}</span>
 						<span class="badge badge-usecase">{useCase}</span>
+						{tagMeta.map((t) => (
+							<a href={`/tags/${t!.slug}/`} class="badge badge-tag">{t!.label}</a>
+						))}
 					</div>
 					<h1>{title}<span class="dot-accent">.</span></h1>
 					<p class="description">{description}</p>
@@ -180,6 +188,16 @@ const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/
 	.meta {
 		display: flex;
 		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.meta .badge-tag {
+		text-decoration: none;
+		transition: all var(--transition-fast);
+	}
+	.meta .badge-tag:hover {
+		background: var(--color-border-strong);
+		color: var(--color-text-strong);
+		text-decoration: none;
 	}
 	.byline {
 		color: var(--color-text-muted);

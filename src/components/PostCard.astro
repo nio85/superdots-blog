@@ -1,5 +1,6 @@
 ---
 import FormattedDate from './FormattedDate.astro';
+import { TAGS } from '../consts';
 
 interface Props {
 	title: string;
@@ -8,9 +9,15 @@ interface Props {
 	department: string;
 	useCase: string;
 	slug: string;
+	tags?: string[];
 }
 
-const { title, description, pubDate, department, useCase, slug } = Astro.props;
+const { title, description, pubDate, department, useCase, slug, tags = [] } = Astro.props;
+
+const tagMeta = tags
+	.map((t) => TAGS.find((tm) => tm.slug === t))
+	.filter(Boolean)
+	.slice(0, 3);
 ---
 
 <article class="post-card">
@@ -22,6 +29,13 @@ const { title, description, pubDate, department, useCase, slug } = Astro.props;
 		</div>
 		<h3>{title}</h3>
 		<p>{description}</p>
+		{tagMeta.length > 0 && (
+			<div class="tag-pills">
+				{tagMeta.map((t) => (
+					<span class="badge badge-tag" onclick={`event.preventDefault(); window.location.href='/tags/${t!.slug}/'`}>{t!.label}</span>
+				))}
+			</div>
+		)}
 		<span class="read-more">Read article <span aria-hidden="true">&rarr;</span></span>
 	</a>
 </article>
@@ -94,6 +108,21 @@ const { title, description, pubDate, department, useCase, slug } = Astro.props;
 		font-size: var(--text-xs);
 		color: var(--color-text-muted);
 		margin-left: auto;
+	}
+	.tag-pills {
+		display: flex;
+		gap: var(--space-1);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-3);
+	}
+	.tag-pills .badge-tag {
+		font-size: var(--text-xs);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+	}
+	.tag-pills .badge-tag:hover {
+		background: var(--color-border-strong);
+		color: var(--color-text-strong);
 	}
 	.read-more {
 		font-family: var(--font-display);
