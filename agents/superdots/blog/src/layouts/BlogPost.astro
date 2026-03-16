@@ -3,17 +3,25 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, author, department, useCase, heroImage } = Astro.props;
+
+// Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
+const ogImageSrc = heroImage
+	? typeof heroImage === 'string'
+		? heroImage
+		: heroImage.src
+	: undefined;
 ---
 
 <!doctype html>
 <html lang="en" data-theme="auto">
 	<head>
-		<BaseHead title={`${title} | Superdots`} description={description} image={heroImage} />
+		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Article",
@@ -22,7 +30,7 @@ const { title, description, pubDate, updatedDate, author, department, useCase, h
 			"author": { "@type": "Person", "name": author },
 			"datePublished": pubDate.toISOString(),
 			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
-			...(heroImage && { "image": new URL(heroImage, Astro.url).toString() }),
+			...(ogImageSrc && { "image": new URL(ogImageSrc, Astro.url).toString() }),
 			"publisher": {
 				"@type": "Organization",
 				"name": "Superdots",
@@ -57,6 +65,18 @@ const { title, description, pubDate, updatedDate, author, department, useCase, h
 						)}
 					</div>
 				</div>
+				{heroImage && (
+					<div class="hero-image">
+						<OptimizedImage
+							src={heroImage}
+							alt={title}
+							widths={[400, 800, 1200, 1600]}
+							sizes="(max-width: 720px) 100vw, 720px"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					</div>
+				)}
 				<hr />
 				<div class="prose">
 					<slot />
@@ -111,6 +131,16 @@ const { title, description, pubDate, updatedDate, author, department, useCase, h
 	}
 	.updated {
 		font-style: italic;
+	}
+	.hero-image {
+		margin: var(--space-6) 0;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+	.hero-image :global(img) {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	/* Prose Styling */
