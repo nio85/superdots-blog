@@ -6,7 +6,11 @@ const year = new Date().getFullYear();
 <footer>
 	<div class="footer-inner">
 		<div class="footer-brand">
-			<span class="superdot"></span>
+			<svg class="footer-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<circle cx="14" cy="50" r="6" fill="currentColor"/>
+				<circle cx="32" cy="32" r="8" fill="currentColor"/>
+				<circle cx="50" cy="14" r="10" fill="currentColor"/>
+			</svg>
 			<span class="footer-name">Superdots</span>
 		</div>
 		<p class="footer-tagline">Practical AI for every team. No fluff, just useful stuff.</p>
@@ -46,11 +50,11 @@ const year = new Date().getFullYear();
 		gap: var(--space-2);
 		margin-bottom: var(--space-3);
 	}
-	.footer-brand .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
+	.footer-mark {
+		width: 20px;
+		height: 20px;
+		color: var(--color-primary);
+		flex-shrink: 0;
 	}
 	.footer-name {
 		font-family: var(--font-display);
