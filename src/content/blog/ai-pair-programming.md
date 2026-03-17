@@ -1,7 +1,7 @@
 ---
 title: "AI Pair Programming: Beyond GitHub Copilot"
 description: "AI pair programming isn't just autocomplete. Learn how developers use AI coding assistants for architecture decisions, code review, debugging, and knowledge transfer."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:29:52Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"

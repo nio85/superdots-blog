@@ -1,7 +1,7 @@
 ---
 title: "How to Generate API Documentation with AI"
 description: "API docs are always out of date. AI documentation tools generate, update, and maintain API references from your code — keeping docs in sync automatically."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "writing"

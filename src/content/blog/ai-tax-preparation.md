@@ -1,7 +1,7 @@
 ---
 title: "AI Tax Prep Tools: What Works and What Doesn't"
 description: "AI tax tools promise to automate filing and find deductions. Here's an honest look at what they can actually do for small businesses and finance teams."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:26:40Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"

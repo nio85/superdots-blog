@@ -1,7 +1,7 @@
 ---
 title: "AI Email Marketing: How to Write Campaigns That Convert"
 description: "Learn how to use AI tools to write better marketing emails — from subject lines to personalization — without losing your brand voice."
-pubDate: "2026-03-16"
+pubDate: "2026-03-16T21:00:07Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"

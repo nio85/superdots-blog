@@ -1,7 +1,7 @@
 ---
 title: "AI Test Generation: Write Better Tests in Half the Time"
 description: "How to use AI tools to generate unit tests, integration tests, and edge cases — and where human judgment is still essential."
-pubDate: "2026-03-17"
+pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"

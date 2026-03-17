@@ -1,7 +1,7 @@
 ---
 title: "AI Invoice Processing: Cut AP Time by 80%"
 description: "How AI invoice processing tools automate data extraction, matching, and approvals — saving finance teams hours of manual work every week."
-pubDate: "2026-03-16"
+pubDate: "2026-03-16T21:17:15Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"

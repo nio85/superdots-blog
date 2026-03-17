@@ -1,7 +1,7 @@
 ---
 title: "AI Cold Outreach: Personalize at Scale Without Being Spammy"
 description: "Cold emails don't have to feel cold. Learn how AI tools research prospects, personalize messaging, and optimize send timing for higher response rates."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T09:25:38Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"

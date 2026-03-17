@@ -1,7 +1,7 @@
 ---
 title: "AI Video Marketing Tools for Teams Without a Video Team"
 description: "No videographer? No problem. These AI video tools let marketing teams create professional video content from text, slides, and existing assets."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:22:03Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"

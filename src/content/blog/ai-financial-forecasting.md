@@ -1,7 +1,7 @@
 ---
 title: "How to Use AI for Financial Forecasting"
 description: "AI financial forecasting goes beyond spreadsheet projections. Learn how ML models predict revenue, cash flow, and market trends with higher accuracy."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T09:18:54Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "analysis"

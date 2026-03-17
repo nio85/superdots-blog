@@ -1,7 +1,7 @@
 ---
 title: "AI Performance Reviews: How to Write Better Feedback in Half the Time"
 description: "Use AI to draft performance reviews that are specific, fair, and actually useful — without spending your entire weekend writing them."
-pubDate: "2026-03-16"
+pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "writing"

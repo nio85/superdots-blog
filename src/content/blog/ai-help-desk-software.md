@@ -1,7 +1,7 @@
 ---
 title: "Best AI Help Desk Software for Growing Teams"
 description: "Your support team is drowning in tickets. AI help desk software triages, routes, and resolves common issues automatically so your agents handle what matters."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:19:59Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"

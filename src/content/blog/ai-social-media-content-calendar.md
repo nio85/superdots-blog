@@ -1,7 +1,7 @@
 ---
 title: "How to Build an AI Social Media Content Calendar (Even If You're Not a Marketer)"
 description: "Build a consistent social media presence with AI — plan content, write posts, and stay on schedule without a marketing team."
-pubDate: "2026-03-16"
+pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"

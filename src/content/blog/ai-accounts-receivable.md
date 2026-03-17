@@ -1,7 +1,7 @@
 ---
 title: "How AI Automates Accounts Receivable and Gets You Paid Faster"
 description: "Stop chasing payments manually. AI AR tools predict payment timing, automate follow-ups, and prioritize collection efforts for better cash flow."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"

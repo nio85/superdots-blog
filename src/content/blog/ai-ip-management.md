@@ -1,7 +1,7 @@
 ---
 title: "AI for Intellectual Property Management: Track and Protect Your IP"
 description: "Managing trademarks, patents, and copyrights is complex. AI IP management tools track portfolios, flag infringements, and automate renewals."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"

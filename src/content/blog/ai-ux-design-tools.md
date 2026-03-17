@@ -1,7 +1,7 @@
 ---
 title: "Best AI Tools for UX Design and Prototyping"
 description: "Practical guide to AI tools that speed up UX workflows — from wireframing and prototyping to user testing and design handoff."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:15:33Z"
 author: "Superdots Team"
 department: "design"
 useCase: "automation"

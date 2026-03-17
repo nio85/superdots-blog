@@ -1,7 +1,7 @@
 ---
 title: "AI Ticket Routing: Get Customers to the Right Agent Instantly"
 description: "Stop losing time on misrouted tickets. Learn how AI ticket routing uses NLP and intent classification to match customers with the right agent."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:20:08Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
