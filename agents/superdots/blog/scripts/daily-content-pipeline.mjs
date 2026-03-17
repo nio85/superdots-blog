@@ -7,71 +7,25 @@
  *
  * Flow (per SUP-31 editorial workflow):
  *   Content Manager owns the parent task and coordinates:
- *   1. SEO Expert → keyword research & briefs
- *   2. Content Manager → reviews briefs, creates article briefs for Copywriter
- *   3. Copywriter → develops proposals from briefs
- *   4. Content Manager → quality check, publish handoff
- *   5. Founding Engineer → deploy all new articles to production
+ *   1. SEO Expert -> keyword research & briefs
+ *   2. Content Manager -> reviews briefs, creates article briefs for Copywriter
+ *   3. Copywriter -> develops proposals from briefs
+ *   4. Content Manager -> quality check, publish handoff
+ *   5. Founding Engineer -> deploy all new articles to production
  *
  * Auth: uses PAPERCLIP_API_KEY if available, otherwise generates a JWT
  * from PAPERCLIP_AGENT_JWT_SECRET (loaded from ~/.paperclip/instances/default/.env).
- *
- * Env vars required (at least one auth method):
- *   PAPERCLIP_API_KEY — or —
- *   PAPERCLIP_AGENT_JWT_SECRET (auto-loaded from paperclip .env)
- *
- * Also needs: PAPERCLIP_COMPANY_ID (defaults to Superdots company)
  */
 
-import { createHmac, randomUUID } from 'node:crypto';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { homedir } from 'node:os';
+import {
+  PAPERCLIP_API_URL as API_URL,
+  PAPERCLIP_COMPANY_ID as COMPANY_ID,
+  PAPERCLIP_PROJECT_ID as PROJECT_ID,
+  AGENTS,
+  getPaperclipApiKey,
+} from './config.mjs';
 
-// Load paperclip .env for JWT secret
-const PAPERCLIP_ENV_PATH = resolve(homedir(), '.paperclip', 'instances', 'default', '.env');
-try {
-  const envFile = readFileSync(PAPERCLIP_ENV_PATH, 'utf-8');
-  for (const line of envFile.split('\n')) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-} catch {}
-
-const API_URL = process.env.PAPERCLIP_API_URL || 'http://localhost:3100';
-const COMPANY_ID = process.env.PAPERCLIP_COMPANY_ID || 'cdb3c45d-c7df-4ea0-b495-26426a1e9df4';
-
-// Agent IDs
-const CEO_ID = 'ce91a8d9-14e5-4d4b-a9bc-aae3e20a405b';
-const CONTENT_MANAGER_ID = '4e20f5d2-69a0-4406-98fa-797de097792e';
-const SEO_EXPERT_ID = 'af76f46b-658d-4216-adf5-a9ef8653157a';
-const COPYWRITER_ID = 'c19687c9-1bbd-4f5e-a220-fac60ae547c6';
-const FOUNDING_ENGINEER_ID = '11e3188a-5eda-49d8-acd4-8815456d9a0f';
-const PROJECT_ID = 'd4fe361f-bdeb-4f81-9238-2d6795a54dbc';
-
-function createJwt(secret, agentId, companyId) {
-  const b64url = (s) => Buffer.from(s, 'utf8').toString('base64url');
-  const header = b64url(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
-  const now = Math.floor(Date.now() / 1000);
-  const payload = b64url(JSON.stringify({
-    sub: agentId,
-    company_id: companyId,
-    adapter_type: 'claude_local',
-    run_id: randomUUID(),
-    iat: now,
-    exp: now + 3600,
-    iss: 'paperclip',
-    aud: 'paperclip-api',
-  }));
-  const sig = createHmac('sha256', secret).update(`${header}.${payload}`).digest('base64url');
-  return `${header}.${payload}.${sig}`;
-}
-
-// Resolve auth token
-let API_KEY = process.env.PAPERCLIP_API_KEY;
-if (!API_KEY && process.env.PAPERCLIP_AGENT_JWT_SECRET) {
-  API_KEY = createJwt(process.env.PAPERCLIP_AGENT_JWT_SECRET, CEO_ID, COMPANY_ID);
-}
+const API_KEY = getPaperclipApiKey(AGENTS.CEO);
 if (!API_KEY) {
   console.error('No auth available: set PAPERCLIP_API_KEY or PAPERCLIP_AGENT_JWT_SECRET');
   process.exit(1);
@@ -116,7 +70,7 @@ async function main() {
     status: 'todo',
     priority: 'high',
     projectId: PROJECT_ID,
-    assigneeAgentId: CONTENT_MANAGER_ID,
+    assigneeAgentId: AGENTS.CONTENT_MANAGER,
   });
   console.log(`  Parent task: ${parentTask.identifier} (${parentTask.id})`);
 
@@ -128,7 +82,7 @@ async function main() {
     priority: 'high',
     projectId: PROJECT_ID,
     parentId: parentTask.id,
-    assigneeAgentId: SEO_EXPERT_ID,
+    assigneeAgentId: AGENTS.SEO_EXPERT,
   });
   console.log(`  SEO task: ${seoTask.identifier} (${seoTask.id})`);
 
@@ -140,19 +94,31 @@ async function main() {
     priority: 'high',
     projectId: PROJECT_ID,
     parentId: parentTask.id,
-    assigneeAgentId: COPYWRITER_ID,
+    assigneeAgentId: AGENTS.COPYWRITER,
   });
   console.log(`  Copywriter task: ${copyTask.identifier} (${copyTask.id})`);
 
-  // 4. Create deploy subtask (blocked on Content Manager review of articles)
-  const deployTask = await api('POST', `/api/companies/${COMPANY_ID}/issues`, {
-    title: `[${today}] Deploy new articles to production`,
-    description: `## Daily Content Pipeline — ${today}\n\nDeploy all new articles from today's content batch to production.\n\n## Steps\n1. Run \`npm run deploy\` from the blog directory (auto-detects Wrangler or subtree push)\n2. Verify deployment succeeds\n\n## Blocked on\nContent Manager review and approval of articles from [${copyTask.identifier}](/SUP/issues/${copyTask.identifier}).`,
+  // 4. Create image generation subtask (blocked on Content Manager review of articles)
+  const imageTask = await api('POST', `/api/companies/${COMPANY_ID}/issues`, {
+    title: `[${today}] Generate AI hero images for new articles`,
+    description: `## Daily Content Pipeline — ${today}\n\nGenerate AI hero images for today's new articles using Flux Pro via Replicate.\n\n## Steps\n1. Run \`node scripts/generate-ai-images.mjs\` from the blog directory\n2. Script auto-detects articles missing AI images and generates them\n3. Falls back to existing SVG hero images if Replicate API fails\n4. Updates article frontmatter with new image paths\n\n## Requirements\n- \`REPLICATE_API_TOKEN\` must be set\n- If token is unavailable, existing SVG images are kept as fallback\n\n## Blocked on\nContent Manager review and approval of articles from [${copyTask.identifier}](/SUP/issues/${copyTask.identifier}).`,
     status: 'blocked',
     priority: 'high',
     projectId: PROJECT_ID,
     parentId: parentTask.id,
-    assigneeAgentId: FOUNDING_ENGINEER_ID,
+    assigneeAgentId: AGENTS.FOUNDING_ENGINEER,
+  });
+  console.log(`  Image gen task: ${imageTask.identifier} (${imageTask.id})`);
+
+  // 5. Create deploy subtask (blocked on image generation)
+  const deployTask = await api('POST', `/api/companies/${COMPANY_ID}/issues`, {
+    title: `[${today}] Deploy new articles to production`,
+    description: `## Daily Content Pipeline — ${today}\n\nDeploy all new articles from today's content batch to production.\n\n## Steps\n1. Run \`npm run deploy\` from the blog directory (auto-detects Wrangler or subtree push)\n2. Deploy script auto-generates any missing AI hero images before building\n3. Verify deployment succeeds\n\n## Blocked on\nImage generation [${imageTask.identifier}](/SUP/issues/${imageTask.identifier}) and Content Manager review of articles from [${copyTask.identifier}](/SUP/issues/${copyTask.identifier}).`,
+    status: 'blocked',
+    priority: 'high',
+    projectId: PROJECT_ID,
+    parentId: parentTask.id,
+    assigneeAgentId: AGENTS.FOUNDING_ENGINEER,
   });
   console.log(`  Deploy task: ${deployTask.identifier} (${deployTask.id})`);
 
