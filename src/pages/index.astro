@@ -87,6 +87,7 @@ const posts = (await getCollection('blog'))
 		position: relative;
 		text-align: center;
 		padding: var(--space-20) 0 var(--space-16);
+		overflow: clip;
 	}
 	/* Radial glow behind hero */
 	.hero-glow {
@@ -333,7 +334,20 @@ const posts = (await getCollection('blog'))
 			font-size: var(--text-3xl);
 		}
 		.dept-grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-2);
+		}
+		.dept-card {
+			padding: var(--space-3);
+			gap: var(--space-2);
+			font-size: var(--text-sm);
+		}
+		.dept-icon {
+			width: 24px;
+			height: 24px;
+		}
+		.dept-arrow {
+			display: none;
 		}
 	}
 </style>
