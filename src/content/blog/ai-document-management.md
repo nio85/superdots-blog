@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "ai-operations", "ai-document-management"]
-heroImage: "/images/blog/ai-document-management.svg"
+heroImage: "/images/blog/ai-document-management.webp"
 faqs:
   - question: "How does AI document management handle sensitive files?"
     answer: "AI document management tools include PII detection that automatically flags documents containing sensitive information — social security numbers, credit card data, health records, financial details. Flagged documents can be routed to secure storage, restricted in access, or tagged for compliance review. Most enterprise tools process documents within your environment rather than sending content to external servers, keeping sensitive data under your control."

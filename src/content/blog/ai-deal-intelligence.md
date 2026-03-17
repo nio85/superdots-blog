@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
 tags: ["ai-tools", "ai-sales", "ai-deal-intelligence"]
-heroImage: "/images/blog/ai-deal-intelligence.svg"
+heroImage: "/images/blog/ai-deal-intelligence.webp"
 faqs:
   - question: "How does AI know when a deal is at risk?"
     answer: "AI deal intelligence tools analyze dozens of behavioral signals that correlate with deal outcomes: email response times, meeting frequency, stakeholder engagement breadth, sentiment shifts in call transcripts, and how the deal's activity pattern compares to historically won deals at the same stage. When a deal's signals diverge from the pattern of deals that typically close — for example, the champion stops responding, no new stakeholders are being engaged, or meeting cadence drops — the AI flags it as at risk. This is more reliable than rep self-reporting because it is based on actual behavior data, not subjective judgment."

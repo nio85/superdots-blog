@@ -13,6 +13,7 @@ faqs:
     answer: "No. Modern AI automation tools like Zapier, Make, and Microsoft Power Automate are designed for non-technical users. Most setups take 15-30 minutes with a visual drag-and-drop interface."
   - question: "What tasks should I automate with AI first?"
     answer: "Start with email triage, meeting scheduling, and data entry. These are high-frequency, low-complexity tasks where AI delivers the biggest time savings with minimal setup."
+heroImage: "/images/blog/ai-automation-guide.webp"
 ---
 
 You don't need to write code to automate your work. The latest AI automation tools are built for people who have never opened a terminal — and they handle the repetitive tasks that eat up your day.

@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
 tags: ['ai-meetings', 'productivity']
-heroImage: "/images/blog/ai-meeting-notes-summaries-action-items.svg"
+heroImage: "/images/blog/ai-meeting-notes-summaries-action-items.webp"
 ---
 
 You leave a 45-minute meeting with a vague sense of what was decided and a half-finished page of notes. Then you spend 20 minutes writing up a summary. Multiply that by 5-8 meetings a day and you have lost your entire afternoon.

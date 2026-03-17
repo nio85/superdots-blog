@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-video"]
-heroImage: "/images/blog/ai-video-marketing-tools.svg"
+heroImage: "/images/blog/ai-video-marketing-tools.webp"
 faqs:
   - question: "Can AI-generated videos look professional enough for B2B?"
     answer: "Yes, for certain formats. AI avatar videos for product explainers, training content, and webinar clips now look polished enough for B2B audiences. The quality gap is closing fast — platforms like Synthesia and HeyGen produce avatar presenters with natural gestures and lip sync that most viewers accept. Where AI still falls short is brand films, thought leadership, and content where authentic human presence matters."

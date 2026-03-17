@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-code-review']
-heroImage: "/images/blog/ai-code-review-tools.svg"
+heroImage: "/images/blog/ai-code-review-tools.webp"
 ---
 
 Code review is the bottleneck nobody wants to talk about. Your team writes code faster than it can review it. PRs sit open for days. Reviewers skim when they should be reading carefully. Bugs slip through because the reviewer was context-switching between three other reviews.

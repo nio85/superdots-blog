@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
 tags: ['ai-for-sales', 'ai-data-analysis', 'ai-tools']
-heroImage: "/images/blog/ai-sales-forecasting.svg"
+heroImage: "/images/blog/ai-sales-forecasting.webp"
 ---
 
 Your sales forecast is probably wrong. If you're still building it in a spreadsheet — pulling numbers from reps, adjusting for gut feel, hoping the board doesn't notice the gap — you're not alone. Most sales teams forecast this way. Most sales teams miss by 20% or more.

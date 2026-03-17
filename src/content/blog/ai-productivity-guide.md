@@ -11,6 +11,7 @@ faqs:
     answer: "Most knowledge workers save 5-10 hours per week using AI for email triage, meeting notes, and writing assistance. The biggest gains come from email automation (2+ hours) and meeting summaries (1-2 hours per week)."
   - question: "What is the best AI tool for productivity?"
     answer: "There is no single best tool — it depends on your biggest time sink. For email, tools like SaneBox or Superhuman help most. For meetings, Otter.ai or Fireflies. For writing, Claude or ChatGPT. Start with the task that eats the most of your day."
+heroImage: "/images/blog/ai-productivity-guide.webp"
 ---
 
 You don't need to overhaul your entire workflow to get more done. The biggest productivity gains from AI come from speeding up the tasks you already do every day — email, meetings, writing, project management, and presentations.

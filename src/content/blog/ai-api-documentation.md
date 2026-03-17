@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "writing"
 tags: ["ai-tools", "ai-engineering", "ai-documentation"]
-heroImage: "/images/blog/ai-api-documentation.svg"
+heroImage: "/images/blog/ai-api-documentation.webp"
 faqs:
   - question: "Can AI generate OpenAPI/Swagger docs from code?"
     answer: "Yes. Several tools can analyze your source code — route definitions, type annotations, request/response schemas — and generate an OpenAPI spec automatically. Tools like Speakeasy, Fern, and various IDE plugins extract endpoint definitions, parameter types, and response shapes directly from your codebase. The generated spec is usually accurate for the structural parts. Where AI falls short is business context: why an endpoint exists, what edge cases matter, and how endpoints relate to each other in a workflow. Treat the generated spec as a strong starting point that needs human review for the conceptual and contextual documentation."

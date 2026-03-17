@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "ai-operations", "ai-procurement"]
-heroImage: "/images/blog/ai-procurement-tools.svg"
+heroImage: "/images/blog/ai-procurement-tools.webp"
 faqs:
   - question: "What are AI procurement tools?"
     answer: "AI procurement tools automate and optimize purchasing processes — from analyzing spending patterns and discovering new suppliers to generating RFPs and monitoring vendor risk. They handle the data-heavy, repetitive work so procurement teams can focus on strategy and relationships."

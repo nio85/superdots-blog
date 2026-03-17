@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-ad-copy"]
-heroImage: "/images/blog/ai-ad-copy-tools.svg"
+heroImage: "/images/blog/ai-ad-copy-tools.webp"
 faqs:
   - question: "Can AI write ad copy that converts?"
     answer: "AI can generate effective ad copy, but not by default. The key is using AI to produce many variations quickly, then testing them against real audiences. The best-performing AI ad copy typically goes through 2-3 rounds of generation, testing, and iteration."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
 tags: ["ai-tools", "ai-hr", "ai-workforce-planning"]
-heroImage: "/images/blog/ai-workforce-planning.svg"
+heroImage: "/images/blog/ai-workforce-planning.webp"
 faqs:
   - question: "What is AI workforce planning?"
     answer: "AI workforce planning uses machine learning to forecast hiring needs, predict attrition, identify skills gaps, and model workforce scenarios. It replaces spreadsheet-based headcount planning with data-driven predictions that connect business goals to people strategy."

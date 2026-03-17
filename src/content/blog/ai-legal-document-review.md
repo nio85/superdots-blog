@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "legal"
 useCase: "automation"
 tags: ["ai-tools", "ai-legal", "ai-document-review"]
-heroImage: "/images/blog/ai-legal-document-review.svg"
+heroImage: "/images/blog/ai-legal-document-review.webp"
 faqs:
   - question: "Can AI document review replace junior lawyers?"
     answer: "No, but it changes what junior lawyers spend their time on. Instead of manually reading hundreds of documents to extract key terms and flag issues, junior lawyers review AI-generated summaries, verify flagged risks, and focus on the judgment calls that require legal training. AI handles the volume; lawyers handle the analysis. Teams that adopt AI document review typically redeploy junior lawyer time toward higher-value work, not headcount reduction."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-engineering", "ai-devops"]
-heroImage: "/images/blog/ai-devops-tools.svg"
+heroImage: "/images/blog/ai-devops-tools.webp"
 faqs:
   - question: "How does AI improve CI/CD pipelines?"
     answer: "AI optimizes CI/CD by predicting which tests are likely to fail (so you run those first), identifying flaky tests, predicting build times, and auto-tuning pipeline configuration. The result is faster feedback loops and fewer wasted compute cycles."

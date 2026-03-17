@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-customer-support']
-heroImage: "/images/blog/ai-customer-service-chatbot.svg"
+heroImage: "/images/blog/ai-customer-service-chatbot.webp"
 faqs:
   - question: "Can I set up an AI chatbot without developers?"
     answer: "Yes. Modern AI chatbot platforms like Intercom, Zendesk AI, and Tidio are built for support managers. Most can be set up in a day, trained on your existing knowledge base, and go live within a week — no coding required."

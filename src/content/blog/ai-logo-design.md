@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "communication"
 tags: ["ai-design", "ai-tools"]
-heroImage: "/images/blog/ai-logo-design.svg"
+heroImage: "/images/blog/ai-logo-design.webp"
 ---
 
 You started a company, launched a side project, or got handed the rebrand. Now you need a logo. You also need brand colors, social media templates, and a business card that does not look like it was made in Microsoft Paint in 2004.

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
 tags: ["ai-tools", "ai-customer-support", "ai-voice"]
-heroImage: "/images/blog/ai-voice-assistant-customer-service.svg"
+heroImage: "/images/blog/ai-voice-assistant-customer-service.webp"
 faqs:
   - question: "Do customers prefer AI voice assistants or human agents?"
     answer: "It depends on the task. For simple, transactional requests — checking order status, scheduling appointments, making payments — most customers prefer the speed of AI over waiting on hold for a human. For complex issues, complaints, or anything emotionally charged, customers strongly prefer human agents. The best implementations use AI for the simple stuff and route complex calls to humans quickly."

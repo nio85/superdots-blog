@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
 tags: ["ai-tools", "ai-marketing", "ai-analysis"]
-heroImage: "/images/blog/ai-market-research.svg"
+heroImage: "/images/blog/ai-market-research.webp"
 ---
 
 Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a Gartner subscription, or a time machine.

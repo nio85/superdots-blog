@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "ai-operations", "ai-scheduling"]
-heroImage: "/images/blog/ai-scheduling-assistant.svg"
+heroImage: "/images/blog/ai-scheduling-assistant.webp"
 faqs:
   - question: "Can AI scheduling assistants work across different calendar apps?"
     answer: "Most AI scheduling assistants integrate with Google Calendar and Microsoft Outlook/365. Some also support Apple Calendar and other platforms. Cross-calendar scheduling (where participants use different calendar apps) is handled through standard calendar protocols. Check that your specific combination is supported before committing to a tool."

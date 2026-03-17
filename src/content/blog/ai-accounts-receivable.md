@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "automation"
 tags: ["ai-tools", "ai-finance", "ai-accounts-receivable"]
-heroImage: "/images/blog/ai-accounts-receivable.svg"
+heroImage: "/images/blog/ai-accounts-receivable.webp"
 faqs:
   - question: "Can AI AR tools integrate with my accounting software?"
     answer: "Yes. Most AI accounts receivable platforms integrate with major ERPs and accounting systems — QuickBooks, NetSuite, Xero, Sage, SAP, and Microsoft Dynamics. They pull invoice data, payment history, and customer records directly from your existing system rather than requiring you to maintain a separate database. Some tools like Versapay and HighRadius offer native ERP connectors, while others use API integrations or middleware like Zapier. The integration typically takes 1-3 weeks depending on your ERP complexity and data volume."

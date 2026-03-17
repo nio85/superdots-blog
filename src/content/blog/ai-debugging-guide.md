@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-debugging", "ai-engineering"]
-heroImage: "/images/blog/ai-debugging-guide.svg"
+heroImage: "/images/blog/ai-debugging-guide.webp"
 ---
 
 You have a bug. You have been staring at it for 45 minutes. You have added six `console.log` statements. You have read the same function three times. You have opened four Stack Overflow tabs. The bug does not care.

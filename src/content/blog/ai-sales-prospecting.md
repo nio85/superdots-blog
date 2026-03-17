@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "automation"
 tags: ["ai-tools", "ai-sales", "ai-prospecting"]
-heroImage: "/images/blog/ai-sales-prospecting.svg"
+heroImage: "/images/blog/ai-sales-prospecting.webp"
 faqs:
   - question: "How is AI prospecting different from buying a lead list?"
     answer: "Lead lists give you static contact data that starts decaying the moment you buy it. AI prospecting tools continuously find and qualify prospects based on your ideal customer profile, intent signals, and trigger events. The data is fresher, the targeting is more precise, and the system learns from your results — the more you use it, the better it gets at finding prospects like your best customers."

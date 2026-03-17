@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-engineering", "ai-pair-programming"]
-heroImage: "/images/blog/ai-pair-programming.svg"
+heroImage: "/images/blog/ai-pair-programming.webp"
 faqs:
   - question: "Does AI pair programming make developers less skilled?"
     answer: "It depends on how you use it. Developers who accept suggestions blindly without understanding the code will build less intuition over time. Developers who use AI to explore approaches, then understand and adapt the suggestions, often learn faster — especially when working in unfamiliar languages or frameworks. The key is treating AI as a teacher and collaborator, not a crutch."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "legal"
 useCase: "automation"
 tags: ["ai-tools", "ai-legal", "ai-ip-management"]
-heroImage: "/images/blog/ai-ip-management.svg"
+heroImage: "/images/blog/ai-ip-management.webp"
 faqs:
   - question: "Can AI help with patent prior art searches?"
     answer: "Yes, and this is one of the strongest use cases for AI in IP management. AI patent search tools use semantic understanding to find prior art described in different terminology — a patent about 'machine learning classification' surfaces when you search for 'AI-based categorization' even without exact keyword matches. Modern AI search tools achieve 85-95% recall compared to 70-80% for skilled keyword-based searches. They can also scan non-patent literature, academic papers, and product documentation that traditional searches often miss. However, freedom-to-operate opinions and patentability assessments should always include human expert review."

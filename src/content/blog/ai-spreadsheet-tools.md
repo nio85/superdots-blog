@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
 tags: ["ai-tools", "ai-data-analysis", "productivity"]
+heroImage: "/images/blog/ai-spreadsheet-tools.webp"
 ---
 
 You need to find every row where revenue dropped more than 15% compared to last quarter. In a traditional spreadsheet, that means building a formula with INDEX MATCH, maybe a nested IF, and praying you got the cell references right. One wrong dollar sign and the whole column breaks.

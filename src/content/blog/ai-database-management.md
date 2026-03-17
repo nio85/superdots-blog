@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-engineering", "ai-database"]
-heroImage: "/images/blog/ai-database-management.svg"
+heroImage: "/images/blog/ai-database-management.webp"
 faqs:
   - question: "Can AI optimize my SQL queries?"
     answer: "Yes. AI tools analyze slow queries, identify inefficiencies (missing indexes, suboptimal joins, unnecessary full table scans), and suggest rewrites that achieve the same result faster. Some tools auto-apply optimizations in staging for you to review before deploying to production."

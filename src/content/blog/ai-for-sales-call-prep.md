@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
 tags: ['ai-for-sales', 'ai-tools']
-heroImage: "/images/blog/ai-for-sales-call-prep.svg"
+heroImage: "/images/blog/ai-for-sales-call-prep.webp"
 ---
 
 The difference between a good sales call and a great one is preparation. But who has 30 minutes to research every prospect? AI can do it in 5.

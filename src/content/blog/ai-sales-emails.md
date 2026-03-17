@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "writing"
 tags: ["ai-writing", "ai-sales", "ai-tools"]
-heroImage: "/images/blog/ai-sales-emails.svg"
+heroImage: "/images/blog/ai-sales-emails.webp"
 ---
 
 You sent 47 cold emails last week. You got two replies. One was an unsubscribe request.

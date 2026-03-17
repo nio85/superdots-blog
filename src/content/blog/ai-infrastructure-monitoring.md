@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-engineering", "ai-monitoring"]
-heroImage: "/images/blog/ai-infrastructure-monitoring.svg"
+heroImage: "/images/blog/ai-infrastructure-monitoring.webp"
 faqs:
   - question: "Can AI monitoring replace traditional tools like Datadog or Grafana?"
     answer: "No. AI monitoring layers on top of your existing observability stack, not instead of it. Datadog, Grafana, Prometheus, and similar tools are excellent at collecting metrics, building dashboards, and providing raw visibility. AI adds a pattern recognition layer that learns normal behavior, detects anomalies, and correlates alerts across services. Think of it as an intelligent filter sitting between your monitoring data and your on-call team. You still need the underlying tools to collect and store the data."
