@@ -5,12 +5,102 @@ import Base from '../layouts/Base.astro';
 <Base title="Design System | Superdots" description="Superdots brand identity and design system showcase.">
 	<div class="ds-header">
 		<p class="ds-label">
-			<span class="superdot"></span>
-			Design System
+			<svg class="ds-label-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<circle cx="14" cy="50" r="6" fill="currentColor"/>
+				<circle cx="32" cy="32" r="8" fill="currentColor"/>
+				<circle cx="50" cy="14" r="10" fill="currentColor"/>
+			</svg>
+			Brand Book
 		</p>
 		<h1>Superdots Brand<span class="dot-accent">.</span></h1>
 		<p class="ds-sub">The visual DNA of Superdots. Bold, human, trustworthy, no-fluff.</p>
 	</div>
+
+	<!-- Logo -->
+	<section class="ds-section">
+		<h2>Logo & Mark</h2>
+		<p class="ds-note">Three ascending dots — minimal, memorable. Represents progression, growth, and the leveling-up that AI enables at work.</p>
+
+		<h3>Primary Logo</h3>
+		<div class="logo-showcase">
+			<div class="logo-demo logo-demo-light">
+				<svg viewBox="0 0 280 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+					<circle cx="14" cy="50" r="6" fill="#E8363B"/>
+					<circle cx="32" cy="32" r="8" fill="#E8363B"/>
+					<circle cx="50" cy="14" r="10" fill="#E8363B"/>
+					<text x="72" y="44" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="32" fill="#0B1222" letter-spacing="-0.02em">superdots</text>
+				</svg>
+				<span class="logo-demo-label">Light background</span>
+			</div>
+			<div class="logo-demo logo-demo-dark">
+				<svg viewBox="0 0 280 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+					<circle cx="14" cy="50" r="6" fill="#E8363B"/>
+					<circle cx="32" cy="32" r="8" fill="#E8363B"/>
+					<circle cx="50" cy="14" r="10" fill="#E8363B"/>
+					<text x="72" y="44" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="32" fill="#FFFFFF" letter-spacing="-0.02em">superdots</text>
+				</svg>
+				<span class="logo-demo-label">Dark background</span>
+			</div>
+		</div>
+
+		<h3>Icon Mark</h3>
+		<div class="icon-showcase">
+			<div class="icon-demo icon-demo-light">
+				<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+					<circle cx="14" cy="50" r="6" fill="#E8363B"/>
+					<circle cx="32" cy="32" r="8" fill="#E8363B"/>
+					<circle cx="50" cy="14" r="10" fill="#E8363B"/>
+				</svg>
+				<span class="logo-demo-label">Red (primary)</span>
+			</div>
+			<div class="icon-demo icon-demo-navy">
+				<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+					<circle cx="14" cy="50" r="6" fill="#0B1222"/>
+					<circle cx="32" cy="32" r="8" fill="#0B1222"/>
+					<circle cx="50" cy="14" r="10" fill="#0B1222"/>
+				</svg>
+				<span class="logo-demo-label">Navy</span>
+			</div>
+			<div class="icon-demo icon-demo-dark">
+				<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+					<circle cx="14" cy="50" r="6" fill="#FFFFFF"/>
+					<circle cx="32" cy="32" r="8" fill="#FFFFFF"/>
+					<circle cx="50" cy="14" r="10" fill="#FFFFFF"/>
+				</svg>
+				<span class="logo-demo-label">White</span>
+			</div>
+			<div class="icon-demo icon-demo-favicon">
+				<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="favicon-svg">
+					<rect width="32" height="32" rx="6" fill="#0B1222"/>
+					<circle cx="9" cy="23" r="3" fill="#E8363B"/>
+					<circle cx="16" cy="16" r="4" fill="#E8363B"/>
+					<circle cx="23" cy="9" r="5" fill="#E8363B"/>
+				</svg>
+				<span class="logo-demo-label">Favicon</span>
+			</div>
+		</div>
+
+		<h3>Usage Rules</h3>
+		<div class="usage-rules">
+			<div class="rule rule-do">
+				<strong>Do</strong>
+				<ul>
+					<li>Maintain clear space equal to smallest dot diameter around the logo</li>
+					<li>Use icon mark only below 140px width</li>
+					<li>Keep dots in the ascending diagonal orientation</li>
+				</ul>
+			</div>
+			<div class="rule rule-dont">
+				<strong>Don't</strong>
+				<ul>
+					<li>Rotate, stretch, or distort the logo</li>
+					<li>Add shadows, outlines, or effects</li>
+					<li>Recolor dots to non-brand colors</li>
+					<li>Use wordmark without the icon mark</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 
 	<!-- Colors -->
 	<section class="ds-section">
@@ -319,6 +409,56 @@ import Base from '../layouts/Base.astro';
 			</ul>
 		</div>
 	</section>
+
+	<!-- Imagery Style -->
+	<section class="ds-section">
+		<h2>Imagery Style</h2>
+		<p class="ds-note">Guidelines for AI-generated and selected imagery across the brand.</p>
+
+		<div class="imagery-grid">
+			<div class="imagery-card">
+				<h3>Tone</h3>
+				<p>Warm, human, practical. Show real work scenarios — people at desks, teams collaborating, dashboards and tools in use. Avoid sterile stock photography.</p>
+			</div>
+			<div class="imagery-card">
+				<h3>Color Treatment</h3>
+				<p>Favor warm tones. If using brand colors as overlays or accents, use red sparingly as a highlight, not as a dominant wash. Navy works well for dark hero backgrounds.</p>
+			</div>
+			<div class="imagery-card">
+				<h3>Illustrations</h3>
+				<p>Abstract, geometric, dot-based. Use the ascending dot motif as a recurring element. SVG preferred for performance. Flat style, no 3D or skeuomorphism.</p>
+			</div>
+			<div class="imagery-card">
+				<h3>Don'ts</h3>
+				<p>No robots or sci-fi imagery. No cold blue AI aesthetics. No clip art. No busy patterns that compete with text content.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Voice & Tone -->
+	<section class="ds-section">
+		<h2>Voice & Tone</h2>
+		<div class="voice-grid">
+			<div class="voice-card">
+				<div class="voice-label">We are</div>
+				<ul>
+					<li><strong>Direct</strong> — say it plainly, no jargon walls</li>
+					<li><strong>Practical</strong> — techniques you can apply today</li>
+					<li><strong>Human</strong> — we write for people, not algorithms</li>
+					<li><strong>Confident</strong> — no hedging, no "might" or "could possibly"</li>
+				</ul>
+			</div>
+			<div class="voice-card">
+				<div class="voice-label">We are not</div>
+				<ul>
+					<li><strong>Hype-driven</strong> — no "revolutionize" or "game-changing"</li>
+					<li><strong>Corporate</strong> — no buzzword bingo</li>
+					<li><strong>Academic</strong> — no unnecessary complexity</li>
+					<li><strong>Dismissive</strong> — we respect every department and skill level</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </Base>
 
 <style>
@@ -339,12 +479,10 @@ import Base from '../layouts/Base.astro';
 		color: var(--color-primary);
 		margin-bottom: var(--space-4);
 	}
-	.ds-label .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		display: inline-block;
+	.ds-label-mark {
+		width: 16px;
+		height: 16px;
+		color: var(--color-primary);
 	}
 	.dot-accent {
 		color: var(--color-primary);
@@ -627,6 +765,180 @@ import Base from '../layouts/Base.astro';
 		margin-bottom: var(--space-6);
 	}
 
+	/* Logo Showcase */
+	.logo-showcase {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: var(--space-4);
+		margin-bottom: var(--space-6);
+	}
+	.logo-demo {
+		padding: var(--space-10) var(--space-8);
+		border-radius: var(--radius-lg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-4);
+	}
+	.logo-demo-light {
+		background: var(--sd-gray-50);
+		border: 1px solid var(--color-border);
+	}
+	.logo-demo-dark {
+		background: var(--sd-navy);
+	}
+	.logo-demo-label {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+	}
+	.logo-demo-dark .logo-demo-label {
+		color: var(--sd-gray-400);
+	}
+	.logo-svg {
+		width: 240px;
+		height: auto;
+	}
+
+	/* Icon Showcase */
+	.icon-showcase {
+		display: flex;
+		gap: var(--space-4);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-6);
+	}
+	.icon-demo {
+		padding: var(--space-8);
+		border-radius: var(--radius-lg);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-3);
+		min-width: 120px;
+	}
+	.icon-demo-light {
+		background: var(--sd-gray-50);
+		border: 1px solid var(--color-border);
+	}
+	.icon-demo-navy {
+		background: var(--sd-gray-50);
+		border: 1px solid var(--color-border);
+	}
+	.icon-demo-dark .logo-demo-label {
+		color: var(--sd-gray-400);
+	}
+	.icon-demo-favicon {
+		background: var(--sd-gray-50);
+		border: 1px solid var(--color-border);
+	}
+	.icon-svg {
+		width: 48px;
+		height: 48px;
+	}
+	.favicon-svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	/* Usage Rules */
+	.usage-rules {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: var(--space-4);
+	}
+	.rule {
+		padding: var(--space-6);
+		border-radius: var(--radius-lg);
+	}
+	.rule strong {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		display: block;
+		margin-bottom: var(--space-3);
+	}
+	.rule ul {
+		padding-left: var(--space-5);
+		margin: 0;
+	}
+	.rule li {
+		margin-bottom: var(--space-2);
+		font-size: var(--text-base);
+		color: var(--color-text);
+	}
+	.rule-do {
+		background: rgba(20, 184, 166, 0.08);
+		border: 1px solid rgba(20, 184, 166, 0.2);
+	}
+	.rule-do strong {
+		color: var(--sd-teal-dark);
+	}
+	.rule-do li::marker {
+		color: var(--sd-teal);
+	}
+	.rule-dont {
+		background: rgba(232, 54, 59, 0.06);
+		border: 1px solid rgba(232, 54, 59, 0.15);
+	}
+	.rule-dont strong {
+		color: var(--sd-red-dark);
+	}
+	.rule-dont li::marker {
+		color: var(--sd-red);
+	}
+
+	/* Imagery Grid */
+	.imagery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		gap: var(--space-4);
+	}
+	.imagery-card {
+		padding: var(--space-6);
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-lg);
+	}
+	.imagery-card h3 {
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+	.imagery-card p {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin: 0;
+		line-height: var(--leading-normal);
+	}
+
+	/* Voice Grid */
+	.voice-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: var(--space-4);
+	}
+	.voice-card {
+		padding: var(--space-6);
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-lg);
+	}
+	.voice-label {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin-bottom: var(--space-4);
+	}
+	.voice-card ul {
+		padding-left: var(--space-5);
+		margin: 0;
+	}
+	.voice-card li {
+		margin-bottom: var(--space-2);
+		color: var(--color-text);
+		font-size: var(--text-base);
+	}
+	.voice-card li::marker {
+		color: var(--color-primary);
+	}
+
 	@media (max-width: 640px) {
 		.neutral-strip {
 			flex-wrap: wrap;
@@ -634,6 +946,17 @@ import Base from '../layouts/Base.astro';
 		.neutral-swatch {
 			min-width: 20%;
 			height: 48px;
+		}
+		.logo-showcase {
+			grid-template-columns: 1fr;
+		}
+		.icon-showcase {
+			gap: var(--space-3);
+		}
+		.icon-demo {
+			min-width: 0;
+			flex: 1;
+			padding: var(--space-6);
 		}
 	}
 </style>
