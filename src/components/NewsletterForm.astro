@@ -37,12 +37,12 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 			</div>
 			{variant !== 'compact' && (
 				<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
-					By subscribing, you agree to receive our newsletter. We'll use your email address solely to send you articles about AI at work &mdash; no spam, no sharing. You can unsubscribe anytime. See our <a href="/privacy">Privacy Policy</a>.
+					By subscribing, you agree to receive our newsletter. We'll use your email address solely to send you articles about AI at work &mdash; no spam, no sharing. Emails include open and click tracking to help us improve content. You can unsubscribe anytime. See our <a href="/privacy#newsletter">Privacy Policy</a>.
 				</p>
 			)}
 			{variant === 'compact' && (
 				<p class="newsletter-legal newsletter-legal--compact" id={`newsletter-legal-${variant}`}>
-					No spam. <a href="/privacy">Privacy Policy</a>.
+					No spam. Includes <a href="/privacy#newsletter">email tracking</a>.
 				</p>
 			)}
 			<div class="newsletter-status" role="status" aria-live="polite"></div>
