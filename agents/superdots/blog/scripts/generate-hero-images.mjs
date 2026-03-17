@@ -44,7 +44,7 @@ const USECASE_LABELS = {
   communication: 'Communication',
 };
 
-// All 20 blog posts
+// All blog posts
 const posts = [
   { slug: 'ai-budgeting-tools', title: 'AI Budgeting Tools', subtitle: 'How Non-Finance Teams Can Track Spending', dept: 'finance', useCase: 'analysis' },
   { slug: 'ai-competitive-analysis', title: 'AI Competitive Analysis', subtitle: 'How Sales Teams Prep Smarter, Faster', dept: 'sales', useCase: 'analysis' },
@@ -66,6 +66,22 @@ const posts = [
   { slug: 'automate-email-triage-with-ai', title: 'Automate Email Triage', subtitle: 'Sort, Prioritize, Respond — with AI', dept: 'operations', useCase: 'automation' },
   { slug: 'manage-email-faster-with-ai', title: 'Manage Email 2x Faster', subtitle: 'A Practical Guide to AI Email', dept: 'operations', useCase: 'communication' },
   { slug: 'writing-better-docs-with-ai', title: 'Better Technical Docs', subtitle: 'Writing Docs with AI That Actually Help', dept: 'engineering', useCase: 'writing' },
+  // Sprint 5b quick-win articles
+  { slug: 'ai-contract-clause-extraction', title: 'AI Clause Extraction', subtitle: 'Extract and Analyze Contract Clauses Automatically', dept: 'legal', useCase: 'automation' },
+  { slug: 'ai-legal-billing', title: 'AI Legal Billing', subtitle: 'Automate Time Tracking and Client Invoices', dept: 'legal', useCase: 'automation' },
+  { slug: 'ai-motion-graphics-tools', title: 'AI Motion Graphics', subtitle: 'Animation Tools for Design Teams', dept: 'design', useCase: 'automation' },
+  { slug: 'ai-design-handoff', title: 'AI Design Handoff', subtitle: 'Streamline Design-to-Dev Delivery', dept: 'design', useCase: 'automation' },
+  { slug: 'ai-customer-sentiment-dashboard', title: 'AI Sentiment Dashboard', subtitle: 'Real-Time Customer Sentiment at a Glance', dept: 'customer-support', useCase: 'analysis' },
+  { slug: 'ai-compensation-benchmarking', title: 'AI Comp Benchmarking', subtitle: 'Get Salary Data Right Without Consultants', dept: 'hr', useCase: 'analysis' },
+  { slug: 'ai-employee-offboarding', title: 'AI Offboarding', subtitle: 'Automate the Exit Checklist', dept: 'hr', useCase: 'automation' },
+  { slug: 'ai-proposal-generator', title: 'AI Proposal Generator', subtitle: 'Write Winning Proposals in Half the Time', dept: 'sales', useCase: 'writing' },
+  { slug: 'ai-sales-territory-planning', title: 'AI Territory Planning', subtitle: 'Optimize Sales Territory Assignment', dept: 'sales', useCase: 'analysis' },
+  { slug: 'ai-revenue-recognition', title: 'AI Revenue Recognition', subtitle: 'Automate ASC 606 Compliance', dept: 'finance', useCase: 'automation' },
+  { slug: 'ai-audit-preparation', title: 'AI Audit Preparation', subtitle: 'Automate Evidence Gathering', dept: 'finance', useCase: 'automation' },
+  { slug: 'ai-code-migration', title: 'AI Code Migration', subtitle: 'Upgrade Legacy Codebases Without the Pain', dept: 'engineering', useCase: 'automation' },
+  { slug: 'ai-customer-journey-mapping', title: 'AI Journey Mapping', subtitle: 'Map Customer Journeys with Real Data', dept: 'marketing', useCase: 'analysis' },
+  { slug: 'ai-vendor-management', title: 'AI Vendor Management', subtitle: 'Evaluate, Track, and Negotiate Smarter', dept: 'operations', useCase: 'analysis' },
+  { slug: 'ai-fleet-management', title: 'AI Fleet Management', subtitle: 'Optimize Routes, Maintenance, and Costs', dept: 'operations', useCase: 'automation' },
 ];
 
 // Word-wrap text into lines of maxChars
