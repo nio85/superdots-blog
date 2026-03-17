@@ -80,7 +80,7 @@ Zoho Analytics is the quiet overachiever on this list — solid AI features at a
 - AI-powered formula suggestions tailored to your data model
 - Auto-analysis that scans datasets and surfaces key findings
 
-**Pricing**: Free tier available for small needs. Paid plans start at $60/month (billed annually with 20% discount). Standard, Premium, and Enterprise tiers scale with users and data rows.
+**Pricing**: Free tier available for small needs. Paid plans start at $24/month for 2 users (Standard), scaling to $115/month for 5 users (Premium) and $455/month for 15 users (Enterprise). Annual billing saves 20%.
 
 **Best for**: Small to mid-size teams that want serious analytics without enterprise pricing. Especially strong if you are already in the Zoho ecosystem (CRM, Projects, etc.).
 
@@ -126,22 +126,22 @@ Julius AI takes a different approach — it is an AI-first data analysis and vis
 
 ### **6. Anomaly**
 
-Anomaly (anomaly.io) focuses on making business data accessible through natural language, with a strong emphasis on mobile-first analytics.
+Anomaly is an AI data analyst agent that creates interactive dashboards from your data in minutes — no manual setup required.
 
-**What it does**: Connects to your business data sources and lets you build dashboards and ask questions using natural language. Strong focus on making data accessible to executives and frontline managers on mobile devices.
+**What it does**: Upload Google Sheets, Excel files, or connect databases, and Anomaly's AI autonomously inspects your data schema and generates dashboards with charts and insights. Think of it as an AI analyst that builds the dashboard for you.
 
 **Key AI features**:
-- Natural language question builder
-- AI-generated anomaly detection and alerts
-- Smart data narratives that explain what changed and why
-- Automated report generation and scheduling
-- Mobile-optimized dashboards with push notifications
+- Agentic AI workflows that autonomously analyze data structure and generate insights
+- Natural language queries for exploring your data
+- Auto-generated interactive dashboards from raw data
+- Shareable dashboards and export capabilities
+- Supports multiple data sources including spreadsheets and databases
 
-**Pricing**: Custom pricing based on users and data volume. Typically positioned for mid-market and enterprise teams.
+**Pricing**: Free tier with 25 credits/month (roughly 25 queries or 5 dashboard builds). Pro at $25/month with 250 credits. Enterprise with custom pricing and volume discounts.
 
-**Best for**: Teams that need mobile-first analytics and executive dashboards. Anomaly's strength is making data accessible to people who will never open a desktop BI tool.
+**Best for**: Small teams and individual analysts who want fast, AI-generated dashboards without configuring a BI platform. A great entry point for teams exploring AI-powered analytics.
 
-**Limitations**: Smaller ecosystem and community compared to Power BI or Tableau. Less flexibility for complex custom visualizations. Limited third-party integrations compared to larger platforms.
+**Limitations**: Relatively new platform with a smaller ecosystem. Credit-based model means heavy users may hit limits quickly. Fewer visualization types and less customization than established BI tools. Limited enterprise governance features.
 
 ### **7. Google Looker**
 
@@ -175,7 +175,7 @@ Observable (the spiritual successor to Chartio, which shut down in 2021) takes a
 - Collaborative editing with version control
 - Observable Plot — a grammar-of-graphics library with intelligent defaults
 
-**Pricing**: Free tier for public notebooks. Pro starts at $12/user/month for private notebooks and team features. Enterprise pricing available.
+**Pricing**: Free tier with AI query allotment. Starter at $22/user/month (annual) or $25/user/month (monthly). All plans include unlimited canvases and notebooks. Enterprise pricing available.
 
 **Best for**: Data teams and developers who want code-level control over their visualizations while benefiting from AI assistance. Excellent for creating polished, interactive data stories.
 
@@ -233,7 +233,7 @@ Non-technical business users need tools with strong natural language interfaces 
 Ongoing dashboards and monitoring? Power BI, Tableau, Looker, or ThoughtSpot. Ad-hoc analysis? Julius AI or Observable. Visual storytelling and presentations? Flourish or Infogram. If you need help with [data analysis without technical skills](/blog/ai-data-analysis-for-non-technical-teams/), prioritize NL query strength.
 
 **4. What is your budget?**
-Free or low-cost: Zoho Analytics, Julius AI, Observable, Infogram (free tiers). Mid-range: Power BI Pro, Zoho paid plans. Enterprise: Tableau, ThoughtSpot, Looker.
+Free or low-cost: Zoho Analytics, Julius AI, Anomaly, Infogram (free tiers). Mid-range: Power BI Pro ($14/user/mo), Zoho paid plans, Observable ($22/user/mo). Enterprise: Tableau, ThoughtSpot, Looker.
 
 **5. How important is natural language query support?**
 If NL queries are your main reason for switching, ThoughtSpot leads the pack. Power BI Copilot and Tableau Agent are catching up fast. Zoho's Zia is solid for the price. Lighter tools like Julius AI offer great NL for simpler datasets.
