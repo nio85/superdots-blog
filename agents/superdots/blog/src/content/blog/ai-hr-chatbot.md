@@ -1,6 +1,6 @@
 ---
-title: "AI HR Chatbot: What It Can Actually Handle (and What It Can't)"
-description: "AI HR chatbots cut response times, free up HR teams, and handle repetitive queries at scale. Here's how to deploy one that actually works."
+title: "AI HR Chatbots: Automate Employee Questions Without Losing the Human Touch"
+description: "HR teams answer the same questions hundreds of times. AI chatbots handle policy lookups, benefits queries, and leave requests instantly — freeing HR for strategic work."
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "hr"
@@ -8,12 +8,12 @@ useCase: "automation"
 tags: ["ai-tools", "ai-hr", "ai-chatbot"]
 heroImage: "/images/blog/ai-hr-chatbot.svg"
 faqs:
-  - question: "What can an AI HR chatbot actually handle on its own?"
-    answer: "A well-configured AI HR chatbot can independently handle a wide range of repetitive, policy-based queries: PTO balances, payroll deadlines, benefits enrollment windows, onboarding checklists, expense submission steps, and links to internal documents. It can also triage more complex issues by collecting context before routing to a human. The key is giving it a solid, up-to-date knowledge base — if the underlying HR documentation is outdated or incomplete, the chatbot will reflect that. Most mature deployments handle 60–80% of inbound HR queries without human intervention."
-  - question: "How is an AI HR chatbot different from a standard FAQ page or HR portal?"
-    answer: "A static FAQ page requires employees to know what to search for and browse to find it — most don't bother. An AI HR chatbot meets employees where they are (Slack, Teams, email, a web widget) and responds in natural language to whatever they actually type. It can interpret ambiguous questions, ask clarifying follow-ups, and surface the right answer even when the employee uses informal phrasing. It also learns from interaction patterns, so you can see exactly which questions employees are asking most — which informs your HR documentation and policy communication strategy."
-  - question: "What are the main risks of deploying an AI HR chatbot?"
-    answer: "The biggest risk is confidently wrong answers — when the chatbot responds with outdated policy details or misinterprets a question and the employee acts on that information. This is why grounding the chatbot in a curated, version-controlled knowledge base matters more than the underlying model. Other risks include employee distrust if the bot feels impersonal or evasive, and data privacy concerns if the chatbot is configured to collect or log sensitive employee information without proper governance. Always include a clear escalation path to a human HR rep, and audit the chatbot's responses regularly."
+  - question: "Can AI HR chatbots handle sensitive employee issues?"
+    answer: "Not well, and they should not try. Sensitive topics — harassment complaints, mental health concerns, disciplinary issues, accommodation requests — require human empathy, confidentiality, and judgment that AI cannot provide. A well-designed HR chatbot recognizes when a conversation touches sensitive territory and immediately routes to a human HR professional with full context. The chatbot's job is to handle the routine questions so your HR team has more time for exactly these critical conversations."
+  - question: "How long does it take to set up an HR chatbot?"
+    answer: "A basic deployment covering your top 20 HR questions can be live in 2-4 weeks. This includes configuring the knowledge base, connecting to your messaging platform (Slack, Teams), and testing responses. A more comprehensive setup with HRIS integrations (leave balances, benefits lookups), multi-language support, and custom escalation workflows typically takes 6-8 weeks. The biggest time investment is not the technology — it is curating and updating the HR knowledge base that the chatbot draws from."
+  - question: "What questions can an AI HR chatbot answer?"
+    answer: "The sweet spot is high-volume, policy-based questions that have clear, consistent answers: PTO balances and leave policies, benefits enrollment dates and plan details, payroll schedules and tax form locations, expense submission procedures, onboarding checklists and IT setup guides, office policies, and company holiday calendars. Most mature deployments handle 60-80% of inbound HR queries without human intervention. The common thread is that these questions have factual, documented answers — the chatbot is surfacing information, not making judgment calls."
 ---
 
 Your HR inbox has 47 unread messages. Fourteen of them ask about the same PTO policy that's already in the employee handbook. Three are about the same open enrollment deadline you announced last week. You've answered these questions so many times you could do it in your sleep — and honestly, that's exactly the problem.
