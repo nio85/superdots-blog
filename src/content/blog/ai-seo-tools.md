@@ -4,7 +4,7 @@ description: "Cut through the noise. These AI SEO tools handle keyword research,
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "marketing"
-useCase: "analytics"
+useCase: "analysis"
 tags: ["ai-tools", "ai-marketing", "ai-seo"]
 heroImage: "/images/blog/ai-seo-tools.svg"
 faqs:

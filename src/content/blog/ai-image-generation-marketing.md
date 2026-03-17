@@ -4,7 +4,7 @@ description: "Skip the stock photo search. Learn how marketing teams use AI imag
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "design"
-useCase: "content"
+useCase: "writing"
 tags: ["ai-tools", "ai-design", "ai-image-generation"]
 heroImage: "/images/blog/ai-image-generation-marketing.svg"
 faqs:

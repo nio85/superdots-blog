@@ -4,7 +4,7 @@ description: "Practical guide to AI tools that speed up UX workflows — from wi
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "design"
-useCase: "productivity"
+useCase: "automation"
 tags: ["ai-tools", "ai-design", "ai-ux"]
 heroImage: "/images/blog/ai-ux-design-tools.svg"
 ---

@@ -4,7 +4,7 @@ description: "Most AI ad copy is forgettable. Learn the workflow for generating,
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "marketing"
-useCase: "productivity"
+useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-ad-copy"]
 heroImage: "/images/blog/ai-ad-copy-tools.svg"
 faqs:
