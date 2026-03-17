@@ -4,7 +4,7 @@ description: 'AI customer service QA tools automatically score calls and chats, 
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'customer-support'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-customer-support']
 heroImage: "/images/blog/ai-customer-service-qa.webp"
 ---

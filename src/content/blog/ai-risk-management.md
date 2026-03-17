@@ -4,7 +4,7 @@ description: 'AI risk management tools identify, assess, and mitigate business r
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'operations'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-operations']
 heroImage: "/images/blog/ai-risk-management.webp"
 faqs:

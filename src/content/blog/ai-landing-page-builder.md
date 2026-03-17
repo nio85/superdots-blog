@@ -4,7 +4,7 @@ description: 'AI landing page builders create, test, and optimize conversion-foc
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'marketing'
-useCase: 'creation'
+useCase: 'writing'
 tags: ['ai-tools', 'ai-for-marketing']
 heroImage: "/images/blog/ai-landing-page-builder.webp"
 faqs:

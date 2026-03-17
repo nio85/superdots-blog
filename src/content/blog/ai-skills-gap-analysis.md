@@ -4,7 +4,7 @@ description: 'AI skills gap analysis tools identify workforce skill shortages by
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'hr'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-hr']
 heroImage: "/images/blog/ai-skills-gap-analysis.webp"
 ---

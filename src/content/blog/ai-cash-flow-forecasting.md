@@ -4,7 +4,7 @@ description: 'AI cash flow forecasting predicts cash positions with higher accur
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'finance'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-finance']
 heroImage: "/images/blog/ai-cash-flow-forecasting.webp"
 faqs:

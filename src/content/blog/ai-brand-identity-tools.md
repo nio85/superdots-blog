@@ -4,7 +4,7 @@ description: 'AI brand identity tools help create and maintain consistent brand 
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'design'
-useCase: 'creation'
+useCase: 'writing'
 tags: ['ai-tools', 'ai-for-design']
 heroImage: "/images/blog/ai-brand-identity-tools.webp"
 faqs:
