@@ -8,7 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "node scripts/deploy.mjs",
-    "deploy:dry": "node scripts/deploy.mjs --dry-run"
+    "deploy:dry": "node scripts/deploy.mjs --dry-run",
+    "generate-images": "node scripts/generate-ai-images.mjs",
+    "generate-images:dry": "node scripts/generate-ai-images.mjs --dry-run",
+    "generate-images:all": "node scripts/generate-ai-images.mjs --all"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.0",
@@ -16,6 +19,9 @@
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^4.16.0",
     "docx": "^9.6.1",
-    "nodemailer": "^8.0.2"
+    "nodemailer": "^8.0.2",
+    "replicate": "^1.4.0",
+    "sharp": "^0.34.5",
+    "tweetnacl": "^1.0.3"
   }
 }

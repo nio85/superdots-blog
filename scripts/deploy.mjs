@@ -15,23 +15,20 @@
 
 import { execSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const BLOG_ROOT = resolve(__dirname, '..');
-const MONO_ROOT = resolve(BLOG_ROOT, '..', '..', '..');
-
-const CF_ACCOUNT_ID = '2013b526ab724299e028e1fcfe5a5c62';
-const CF_PROJECT_NAME = 'superdots-blog';
-const GH_REMOTE = 'superdots-blog';
-const GH_REPO_URL = 'https://github.com/nio85/superdots-blog.git';
-const SUBTREE_PREFIX = 'agents/superdots/blog';
+import { resolve } from 'node:path';
+import {
+  BLOG_ROOT, MONO_ROOT,
+  CF_ACCOUNT_ID, CF_PROJECT_NAME,
+  GH_REMOTE, GH_REPO_URL, SUBTREE_PREFIX,
+  PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID, SITE_URL,
+  getPaperclipApiKey,
+} from './config.mjs';
 
 const args = process.argv.slice(2);
 const forceWrangler = args.includes('--wrangler');
 const forceGit = args.includes('--git');
 const dryRun = args.includes('--dry-run');
+const skipImages = args.includes('--skip-images');
 
 function run(cmd, opts = {}) {
   console.log(`  $ ${cmd}`);
@@ -40,6 +37,26 @@ function run(cmd, opts = {}) {
 
 function runCapture(cmd, opts = {}) {
   return execSync(cmd, { encoding: 'utf-8', ...opts }).trim();
+}
+
+function generateImages() {
+  if (skipImages) {
+    console.log('\n== Skipping image generation (--skip-images) ==');
+    return;
+  }
+  if (!process.env.REPLICATE_API_TOKEN) {
+    console.log('\n== Skipping image generation (REPLICATE_API_TOKEN not set) ==');
+    console.log('  Existing SVG hero images will be used as fallback.');
+    return;
+  }
+  console.log('\n== Generating AI hero images ==');
+  try {
+    run('node scripts/generate-ai-images.mjs', { cwd: BLOG_ROOT });
+    console.log('Image generation complete.');
+  } catch (err) {
+    console.warn(`Image generation failed: ${err.message}`);
+    console.warn('Continuing with existing images (SVG fallback).');
+  }
 }
 
 function build() {
@@ -61,7 +78,6 @@ function canWrangler() {
 
 function canGit() {
   if (!process.env.GITHUB_TOKEN) return false;
-  // Quick check: test the token
   try {
     const result = runCapture(
       `curl -sf -H "Authorization: token ${process.env.GITHUB_TOKEN}" https://api.github.com/user`
@@ -90,14 +106,12 @@ function deployWrangler(distDir) {
 function deployGit() {
   console.log('\n== Deploying via git subtree push ==');
 
-  // Ensure remote exists
   try {
     runCapture(`git remote get-url ${GH_REMOTE}`, { cwd: MONO_ROOT });
   } catch {
     run(`git remote add ${GH_REMOTE} ${GH_REPO_URL}`, { cwd: MONO_ROOT });
   }
 
-  // Set authenticated remote URL
   const token = process.env.GITHUB_TOKEN;
   const authUrl = `https://x-access-token:${token}@github.com/nio85/superdots-blog.git`;
   run(`git remote set-url ${GH_REMOTE} "${authUrl}"`, { cwd: MONO_ROOT });
@@ -106,10 +120,38 @@ function deployGit() {
     run(`git subtree push --prefix=${SUBTREE_PREFIX} ${GH_REMOTE} main`, {
       cwd: MONO_ROOT,
     });
-    console.log('\nDeploy complete (subtree push → Cloudflare Pages CI/CD).');
+    console.log('\nDeploy complete (subtree push -> Cloudflare Pages CI/CD).');
   } finally {
-    // Restore non-authenticated URL
     run(`git remote set-url ${GH_REMOTE} "${GH_REPO_URL}"`, { cwd: MONO_ROOT });
+  }
+}
+
+async function notifyPaperclip(success, method, error) {
+  const apiKey = getPaperclipApiKey();
+  if (!apiKey) return;
+  const runId = process.env.PAPERCLIP_RUN_ID;
+  const taskId = process.env.PAPERCLIP_TASK_ID;
+  if (!taskId) return;
+
+  const headers = {
+    'Authorization': `Bearer ${apiKey}`,
+    'Content-Type': 'application/json',
+  };
+  if (runId) headers['X-Paperclip-Run-Id'] = runId;
+
+  const body = success
+    ? { status: 'done', comment: `Deploy successful via ${method}.\n\nSite live at ${SITE_URL}` }
+    : { status: 'blocked', comment: `Deploy failed via ${method}.\n\nError: ${error}` };
+
+  try {
+    await fetch(`${PAPERCLIP_API_URL}/api/issues/${taskId}`, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify(body),
+    });
+    console.log(`Paperclip task ${taskId} updated: ${body.status}`);
+  } catch (e) {
+    console.error(`Failed to notify Paperclip: ${e.message}`);
   }
 }
 
@@ -117,6 +159,7 @@ async function main() {
   console.log('superdots-blog deploy');
   console.log('====================');
 
+  generateImages();
   const distDir = build();
 
   if (dryRun) {
@@ -124,33 +167,42 @@ async function main() {
     return;
   }
 
-  // Pick deploy method
-  if (forceWrangler) {
-    if (!canWrangler()) {
-      console.error('CLOUDFLARE_API_TOKEN not set. Cannot deploy via Wrangler.');
-      process.exit(1);
-    }
-    deployWrangler(distDir);
-  } else if (forceGit) {
-    if (!canGit()) {
-      console.error('GITHUB_TOKEN not set or invalid. Cannot deploy via subtree push.');
-      process.exit(1);
-    }
-    deployGit();
-  } else {
-    // Auto-detect
-    if (canWrangler()) {
+  let method = 'unknown';
+  try {
+    if (forceWrangler) {
+      if (!canWrangler()) {
+        console.error('CLOUDFLARE_API_TOKEN not set. Cannot deploy via Wrangler.');
+        process.exit(1);
+      }
+      method = 'wrangler';
       deployWrangler(distDir);
-    } else if (canGit()) {
+    } else if (forceGit) {
+      if (!canGit()) {
+        console.error('GITHUB_TOKEN not set or invalid. Cannot deploy via subtree push.');
+        process.exit(1);
+      }
+      method = 'subtree-push';
       deployGit();
     } else {
-      console.error(
-        '\nNo deploy credentials available.\n' +
-        'Set CLOUDFLARE_API_TOKEN for Wrangler direct upload, or\n' +
-        'set GITHUB_TOKEN (with repo scope) for subtree push.\n'
-      );
-      process.exit(1);
+      if (canWrangler()) {
+        method = 'wrangler';
+        deployWrangler(distDir);
+      } else if (canGit()) {
+        method = 'subtree-push';
+        deployGit();
+      } else {
+        console.error(
+          '\nNo deploy credentials available.\n' +
+          'Set CLOUDFLARE_API_TOKEN for Wrangler direct upload, or\n' +
+          'set GITHUB_TOKEN (with repo scope) for subtree push.\n'
+        );
+        process.exit(1);
+      }
     }
+    await notifyPaperclip(true, method);
+  } catch (err) {
+    await notifyPaperclip(false, method, err.message);
+    throw err;
   }
 }
 
