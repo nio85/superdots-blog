@@ -1,12 +1,12 @@
 ---
-title: "The Best AI Color Palette Tools That Actually Save You Time"
-description: "A practical guide to AI color palette tools—Coolors, Khroma, Adobe Color, and more—plus how to use them to ship better designs faster."
+title: "AI Color Palette Generators That Match Your Brand"
+description: "Stop guessing at colors. AI palette generators create on-brand color schemes in seconds — with accessibility checks and harmony rules built in."
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "design"
 useCase: "automation"
 tags: ["ai-tools", "ai-design", "ai-color"]
-heroImage: "/images/blog/ai-color-palette-tools.svg"
+heroImage: "/images/blog/ai-color-palette-generator.svg"
 faqs:
   - question: "Are AI color palette tools accurate enough to use in production?"
     answer: "Yes, with caveats. Tools like Khroma and Adobe Color produce palettes that are technically sound—they respect contrast ratios, harmony rules, and accessibility guidelines when configured correctly. The weak point is brand fit: AI doesn't know your brand personality, so you'll always need a human review pass before shipping. Think of the output as a well-informed starting point, not a finished deliverable."
