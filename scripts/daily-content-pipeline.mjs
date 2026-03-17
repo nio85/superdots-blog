@@ -147,7 +147,7 @@ async function main() {
   // 4. Create deploy subtask (blocked on Content Manager review of articles)
   const deployTask = await api('POST', `/api/companies/${COMPANY_ID}/issues`, {
     title: `[${today}] Deploy new articles to production`,
-    description: `## Daily Content Pipeline — ${today}\n\nDeploy all new articles from today's content batch to production.\n\n## Steps\n1. Verify all new articles build cleanly (\`npm run build\`)\n2. Push to production via subtree push to \`nio85/superdots-blog\`\n3. Verify Cloudflare Pages deploy succeeds\n\n## Blocked on\nContent Manager review and approval of articles from [${copyTask.identifier}](/SUP/issues/${copyTask.identifier}).`,
+    description: `## Daily Content Pipeline — ${today}\n\nDeploy all new articles from today's content batch to production.\n\n## Steps\n1. Run \`npm run deploy\` from the blog directory (auto-detects Wrangler or subtree push)\n2. Verify deployment succeeds\n\n## Blocked on\nContent Manager review and approval of articles from [${copyTask.identifier}](/SUP/issues/${copyTask.identifier}).`,
     status: 'blocked',
     priority: 'high',
     projectId: PROJECT_ID,
