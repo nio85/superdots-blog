@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-legal']
-heroImage: "/images/blog/ai-contract-review-non-lawyers.svg"
+heroImage: "/images/blog/ai-contract-review-non-lawyers.webp"
 faqs:
   - question: "Can non-lawyers use AI contract review tools?"
     answer: "Yes. AI contract review tools are designed for business professionals who handle contracts regularly — procurement, sales, and operations teams. They flag risky clauses and extract key terms in plain language, so you know when to involve legal."

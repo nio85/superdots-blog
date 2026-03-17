@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'design'
 useCase: 'communication'
 tags: ['ai-tools', 'ai-design']
-heroImage: "/images/blog/ai-design-tools-non-designers.svg"
+heroImage: "/images/blog/ai-design-tools-non-designers.webp"
 ---
 
 Your company needs visuals. Social posts, pitch decks, blog headers, video thumbnails. You need them this week, not in three sprints when the design team has bandwidth.

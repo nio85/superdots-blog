@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "writing"
 tags: ["ai-tools", "ai-sales", "ai-outreach"]
-heroImage: "/images/blog/ai-cold-outreach.svg"
+heroImage: "/images/blog/ai-cold-outreach.webp"
 faqs:
   - question: "Is AI cold outreach considered spam?"
     answer: "Not if you use it correctly. Spam is unsolicited, irrelevant, mass-blasted messaging. AI cold outreach done right is the opposite — it researches each prospect, references specific details about their role and company, and sends messages that feel hand-written because they address real pain points. The difference is intent and execution. If you use AI to blast more generic emails faster, that is spam with better grammar. If you use AI to research prospects deeply and craft genuinely relevant messages, your outreach will feel personal and earn replies rather than spam complaints."

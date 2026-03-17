@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
 tags: ['ai-for-hr', 'ai-tools']
-heroImage: "/images/blog/ai-for-recruiting.svg"
+heroImage: "/images/blog/ai-for-recruiting.webp"
 ---
 
 Your recruiting team is buried. Hundreds of applications per role, scheduling nightmares, job descriptions that took three people and a week to finalize. AI can fix most of this. But only if you use it in the right places — and keep humans where they matter.

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "legal"
 useCase: "analysis"
 tags: ["ai-tools", "ai-legal", "ai-legal-research"]
-heroImage: "/images/blog/ai-legal-research.svg"
+heroImage: "/images/blog/ai-legal-research.webp"
 faqs:
   - question: "How accurate are AI legal research tools?"
     answer: "Leading AI legal research platforms achieve 90-95% relevance accuracy for case law retrieval. However, they can hallucinate citations or misstate holdings. Always verify AI-surfaced cases against primary sources before citing them in any legal document."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
 tags: ["ai-tools", "ai-sales", "ai-lead-scoring"]
-heroImage: "/images/blog/ai-lead-scoring.svg"
+heroImage: "/images/blog/ai-lead-scoring.webp"
 faqs:
   - question: "How does AI lead scoring work?"
     answer: "AI lead scoring analyzes your historical win/loss data to identify patterns that predict conversion. It considers behavioral signals (website visits, email engagement, content downloads), firmographic data (company size, industry, role), and timing signals to assign each lead a probability score."

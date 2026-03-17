@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
 tags: ["ai-tools", "ai-customer-support", "ai-self-service"]
-heroImage: "/images/blog/ai-customer-self-service.svg"
+heroImage: "/images/blog/ai-customer-self-service.webp"
 faqs:
   - question: "How much can AI self-service reduce support tickets?"
     answer: "A well-built AI self-service system typically reduces support tickets by 40-60%. Simple, high-volume requests — password resets, order status checks, billing questions, account updates — can reach 80-90% automation rates. The remainder tends to be complex, multi-issue, or emotionally charged tickets that genuinely need a human. Your results depend on your ticket mix and how well your knowledge base content is structured. Teams that invest in content quality and backend integrations see the highest deflection rates."

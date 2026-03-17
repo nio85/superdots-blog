@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "automation"
 tags: ["ai-tools", "ai-design", "ai-design-systems"]
-heroImage: "/images/blog/ai-design-systems.svg"
+heroImage: "/images/blog/ai-design-systems.webp"
 faqs:
   - question: "What is AI for design systems?"
     answer: "AI for design systems uses machine learning to automate the maintenance of component libraries, design tokens, and documentation. It catches inconsistencies, detects drift, and keeps your system healthy without manual audits."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
 tags: ["ai-tools", "ai-finance", "ai-forecasting"]
-heroImage: "/images/blog/ai-financial-forecasting.svg"
+heroImage: "/images/blog/ai-financial-forecasting.webp"
 faqs:
   - question: "How accurate is AI financial forecasting?"
     answer: "AI forecasting models typically reduce prediction error rates by 30-50% compared to traditional spreadsheet-based methods. Some sales forecasting platforms report 95%+ accuracy for quarterly revenue predictions. The key factor is data quality — the more clean, consistent historical data you feed the model, the better it performs. AI will not predict black swan events, but for normal business conditions it significantly outperforms manual forecasting."

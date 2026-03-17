@@ -13,6 +13,7 @@ faqs:
     answer: "Most AI business tools range from $10-50 per user per month, with many offering free tiers. The ROI typically exceeds the cost within the first month through time savings on repetitive tasks like email, data entry, and document review."
   - question: "Are AI tools safe for handling business data?"
     answer: "Reputable AI business tools use enterprise-grade encryption and comply with SOC 2, GDPR, and other standards. Always check a vendor's security certifications, data processing agreements, and whether your data is used for model training before adopting."
+heroImage: "/images/blog/ai-tools-for-business-guide.webp"
 ---
 
 Every department has its own version of the same problem: too much busywork, not enough time for the work that actually matters. AI tools fix this — but only when you apply them to the right tasks in the right places.

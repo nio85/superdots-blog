@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "analysis"
 tags: ["ai-tools", "ai-customer-support", "ai-retention"]
-heroImage: "/images/blog/ai-customer-retention.svg"
+heroImage: "/images/blog/ai-customer-retention.webp"
 faqs:
   - question: "How does AI predict customer churn?"
     answer: "AI churn models analyze behavioral signals — login frequency, feature usage, support ticket patterns, payment history — and identify combinations that historically precede cancellation. The model assigns each customer a churn risk score so your team can intervene early."

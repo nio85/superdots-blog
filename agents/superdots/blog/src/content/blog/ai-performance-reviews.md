@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "writing"
 tags: ["ai-for-hr", "ai-writing", "ai-tools"]
+heroImage: "/images/blog/ai-performance-reviews.webp"
 ---
 
 Performance review season is the most dreaded week on every manager's calendar. You have eight direct reports, each needing a thoughtful, specific review. You know you should reference actual accomplishments, give balanced feedback, and tie everything to goals. Instead, you stare at a blank text box at 11pm on Sunday and write something vague about "consistent performance" and "areas for growth."

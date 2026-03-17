@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "writing"
 tags: ["ai-tools", "ai-design", "ai-image-generation"]
-heroImage: "/images/blog/ai-image-generation-marketing.svg"
+heroImage: "/images/blog/ai-image-generation-marketing.webp"
 faqs:
   - question: "Can I use AI-generated images commercially?"
     answer: "Generally yes, but with caveats. Most AI image tools (Midjourney, DALL-E, Adobe Firefly) grant commercial usage rights in their paid tiers. However, copyright law around AI-generated images is still evolving. Images generated from copyrighted training data face legal uncertainty in some jurisdictions. For safest commercial use, choose tools trained on licensed content (like Adobe Firefly) and avoid prompts that reference specific artists or copyrighted characters."

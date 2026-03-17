@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
 tags: ["ai-tools", "ai-customer-support", "ai-help-desk"]
-heroImage: "/images/blog/ai-help-desk-software.svg"
+heroImage: "/images/blog/ai-help-desk-software.webp"
 faqs:
   - question: "Will AI help desk software replace support agents?"
     answer: "No. AI help desk software handles repetitive, predictable tickets — password resets, order status checks, billing questions. It frees agents to focus on complex issues that require judgment, empathy, and creative problem-solving. The best support teams use AI to make each agent more effective, not to reduce headcount."

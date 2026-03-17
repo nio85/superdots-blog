@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "automation"
 tags: ["ai-tools", "ai-hr", "ai-chatbot"]
-heroImage: "/images/blog/ai-hr-chatbot.svg"
+heroImage: "/images/blog/ai-hr-chatbot.webp"
 faqs:
   - question: "Can AI HR chatbots handle sensitive employee issues?"
     answer: "Not well, and they should not try. Sensitive topics — harassment complaints, mental health concerns, disciplinary issues, accommodation requests — require human empathy, confidentiality, and judgment that AI cannot provide. A well-designed HR chatbot recognizes when a conversation touches sensitive territory and immediately routes to a human HR professional with full context. The chatbot's job is to handle the routine questions so your HR team has more time for exactly these critical conversations."

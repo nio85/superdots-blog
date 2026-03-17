@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "automation"
 tags: ["ai-tools", "ai-design", "ai-color"]
-heroImage: "/images/blog/ai-color-palette-generator.svg"
+heroImage: "/images/blog/ai-color-palette-generator.webp"
 faqs:
   - question: "Are AI color palette tools accurate enough to use in production?"
     answer: "Yes, with caveats. Tools like Khroma and Adobe Color produce palettes that are technically sound—they respect contrast ratios, harmony rules, and accessibility guidelines when configured correctly. The weak point is brand fit: AI doesn't know your brand personality, so you'll always need a human review pass before shipping. Think of the output as a well-informed starting point, not a finished deliverable."

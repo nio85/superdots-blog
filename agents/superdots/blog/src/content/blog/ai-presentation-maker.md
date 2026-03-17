@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'writing'
 tags: ['ai-tools', 'productivity', 'ai-design']
-heroImage: "/images/blog/ai-presentation-maker.svg"
+heroImage: "/images/blog/ai-presentation-maker.webp"
 ---
 
 You open an AI presentation maker, type "Q3 sales review," and 30 seconds later you have 12 slides. They are clean, organized, and completely generic. Gradient backgrounds, bullet points that say nothing, stock icons that could belong to any company on Earth.

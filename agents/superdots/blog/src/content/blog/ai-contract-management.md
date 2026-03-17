@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "legal"
 useCase: "automation"
 tags: ["ai-tools", "ai-legal", "ai-contract-management"]
-heroImage: "/images/blog/ai-contract-management.svg"
+heroImage: "/images/blog/ai-contract-management.webp"
 faqs:
   - question: "What is AI contract management?"
     answer: "AI contract management uses artificial intelligence to automate the entire contract lifecycle — drafting, reviewing, tracking obligations, managing renewals, and extracting key terms. It replaces manual tracking with intelligent automation."

@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
 tags: ['ai-email', 'productivity', 'ai-tools']
-heroImage: "/images/blog/manage-email-faster-with-ai.svg"
+heroImage: "/images/blog/manage-email-faster-with-ai.webp"
 ---
 
 The average professional receives 121 emails per day and spends over three hours managing their inbox. That is nearly 40% of your workday gone before you do any real work.

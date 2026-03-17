@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
 tags: ["ai-tools", "ai-finance", "ai-fraud-detection"]
-heroImage: "/images/blog/ai-fraud-detection.svg"
+heroImage: "/images/blog/ai-fraud-detection.webp"
 faqs:
   - question: "How does AI detect fraud?"
     answer: "AI fraud detection learns normal transaction patterns — amounts, frequencies, vendors, timing — and flags deviations. It catches anomalies that rule-based systems miss because it understands context, not just thresholds. A $5,000 expense might be normal for one department and suspicious for another."

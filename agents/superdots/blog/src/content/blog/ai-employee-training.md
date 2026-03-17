@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "automation"
 tags: ["ai-tools", "ai-hr", "ai-training"]
-heroImage: "/images/blog/ai-employee-training.svg"
+heroImage: "/images/blog/ai-employee-training.webp"
 faqs:
   - question: "How does AI personalize employee training?"
     answer: "AI assesses each employee's current skill level, learning pace, and knowledge gaps, then builds a customized learning path. It adjusts difficulty in real time — skipping material they already know and spending more time on areas where they struggle."

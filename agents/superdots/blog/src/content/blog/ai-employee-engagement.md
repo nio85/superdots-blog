@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
 tags: ["ai-tools", "ai-hr", "ai-employee-engagement"]
-heroImage: "/images/blog/ai-employee-engagement.svg"
+heroImage: "/images/blog/ai-employee-engagement.webp"
 faqs:
   - question: "Is it ethical to use AI to monitor employee engagement?"
     answer: "It can be, with the right guardrails. The ethical line is between measuring organizational health (ethical) and surveilling individual employees (not ethical). Aggregate, anonymous data about team-level engagement is similar to what annual surveys already collect — just faster and more continuous. Individual monitoring — analyzing specific employees' communication patterns without consent — crosses into surveillance. Transparency, anonymity, and employee consent are non-negotiable."

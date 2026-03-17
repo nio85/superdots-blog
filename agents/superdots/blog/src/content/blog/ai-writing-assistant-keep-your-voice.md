@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
 tags: ['ai-writing', 'ai-tools']
-heroImage: "/images/blog/ai-writing-assistant-keep-your-voice.svg"
+heroImage: "/images/blog/ai-writing-assistant-keep-your-voice.webp"
 faqs:
   - question: "How do I stop AI writing from sounding generic?"
     answer: "Feed the AI examples of your own writing as style references, edit AI drafts with your voice rather than publishing raw output, and use AI for structure and research while writing the final version yourself. The key is treating AI as a writing partner, not a replacement."

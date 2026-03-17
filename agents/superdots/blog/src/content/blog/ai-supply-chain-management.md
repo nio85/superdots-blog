@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "ai-operations", "ai-supply-chain"]
-heroImage: "/images/blog/ai-supply-chain-management.svg"
+heroImage: "/images/blog/ai-supply-chain-management.webp"
 faqs:
   - question: "How accurate is AI demand forecasting?"
     answer: "Organizations using AI-powered forecasting report accuracy rates roughly 20-25% higher than traditional methods. The improvement depends on data quality and volume — AI needs at least 2 years of clean historical data to outperform spreadsheet-based forecasting. For new products without sales history, AI forecasting is less reliable and should be supplemented with human judgment."

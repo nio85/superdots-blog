@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "automation"
 tags: ["ai-tools", "ai-finance", "ai-automation"]
-heroImage: "/images/blog/ai-invoice-processing.svg"
+heroImage: "/images/blog/ai-invoice-processing.webp"
 ---
 
 Your accounts payable clerk just spent 15 minutes on a single invoice. They opened the PDF, typed the vendor name into your ERP, manually entered the line items, cross-referenced the PO number, checked the payment terms, and routed it for approval. One invoice. They have 47 more to process today.

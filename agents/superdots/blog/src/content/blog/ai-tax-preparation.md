@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "automation"
 tags: ["ai-tools", "ai-finance", "ai-tax"]
-heroImage: "/images/blog/ai-tax-preparation.svg"
+heroImage: "/images/blog/ai-tax-preparation.webp"
 faqs:
   - question: "Can AI file my business taxes automatically?"
     answer: "Not fully. AI can pre-fill forms, categorize expenses, and identify deductions, but business tax filing involves judgment calls about entity structure, timing, and strategy that AI cannot make reliably. Use AI to prepare and organize — then have a CPA review and file. For simple personal returns, some AI tools can handle end-to-end filing."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "automation"
 tags: ["ai-tools", "ai-finance", "ai-accounting"]
-heroImage: "/images/blog/ai-accounting-software.svg"
+heroImage: "/images/blog/ai-accounting-software.webp"
 faqs:
   - question: "Can AI replace my accountant?"
     answer: "No — and it shouldn't. AI handles the repetitive, high-volume work: categorizing transactions, matching receipts, reconciling accounts, and flagging anomalies. Your accountant handles the judgment calls: tax strategy, compliance decisions, financial planning, and audit responses. Think of AI as giving your accountant (or your lean finance team) superpowers, not replacing them."

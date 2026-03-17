@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
 tags: ['ai-for-hr', 'productivity']
-heroImage: "/images/blog/ai-employee-onboarding.svg"
+heroImage: "/images/blog/ai-employee-onboarding.webp"
 ---
 
 Your best new hire just accepted the offer. Now they wait two weeks to start, spend their first day filling out forms, and spend the next month asking "who do I talk to about X?" Meanwhile, their manager is too busy to hand-hold and HR is juggling three other new starters.

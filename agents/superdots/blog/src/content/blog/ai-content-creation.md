@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-content-creation"]
-heroImage: "/images/blog/ai-content-creation.svg"
+heroImage: "/images/blog/ai-content-creation.webp"
 faqs:
   - question: "Can AI create marketing content that doesn't sound generic?"
     answer: "Yes, but not by default. AI produces generic content when you give it generic prompts. The key is using AI for research and first drafts, then adding your brand voice, original examples, and specific expertise in the editing phase. AI accelerates the process — you provide the distinctiveness."

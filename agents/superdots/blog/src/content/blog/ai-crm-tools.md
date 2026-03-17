@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "automation"
 tags: ["ai-tools", "ai-sales", "ai-crm"]
-heroImage: "/images/blog/ai-crm-tools.svg"
+heroImage: "/images/blog/ai-crm-tools.webp"
 faqs:
   - question: "Is AI in CRM worth the premium pricing?"
     answer: "It depends on which features you actually use. Deal scoring and activity capture pay for themselves quickly on most teams — they save hours of manual data entry and help reps focus on the right deals. But if you're paying extra for AI features your team ignores, you're wasting money. Start with the free or included AI features in your current CRM before upgrading to premium tiers."

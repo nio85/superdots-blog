@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
 tags: ["ai-tools", "ai-customer-support", "ai-ticket-routing"]
-heroImage: "/images/blog/ai-ticket-routing.svg"
+heroImage: "/images/blog/ai-ticket-routing.webp"
 faqs:
   - question: "What is AI ticket routing?"
     answer: "AI ticket routing uses natural language processing to read incoming support tickets, classify their intent and urgency, and automatically assign them to the agent or team best equipped to handle them — without manual triage."

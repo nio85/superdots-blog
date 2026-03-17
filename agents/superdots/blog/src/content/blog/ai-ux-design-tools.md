@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "automation"
 tags: ["ai-tools", "ai-design", "ai-ux"]
-heroImage: "/images/blog/ai-ux-design-tools.svg"
+heroImage: "/images/blog/ai-ux-design-tools.webp"
 ---
 
 You know the drill. Product wants a new feature. You need wireframes by Wednesday, a clickable prototype by Friday, and usability test results before the sprint review. Meanwhile you are still annotating last week's handoff specs.

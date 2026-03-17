@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
 tags: ["ai-tools", "ai-hr", "ai-hiring"]
-heroImage: "/images/blog/ai-diversity-hiring.svg"
+heroImage: "/images/blog/ai-diversity-hiring.webp"
 faqs:
   - question: "Is AI hiring really less biased than human hiring?"
     answer: "It depends entirely on how the AI is built and used. AI can consistently apply the same criteria to every candidate, eliminating the human inconsistency that causes some reviewers to give more scrutiny to certain names or backgrounds. But AI trained on historical hiring data often encodes exactly the same biases it was supposed to fix — if your past hires skewed toward one demographic, the model learns to replicate that pattern. The honest answer is that AI is less biased than humans at some tasks (consistent resume scoring, removing gendered language from job posts) and potentially more biased at others (pattern matching on historical data that reflects systemic inequality). The key is treating AI as a tool that requires ongoing auditing, not a one-time fix."
