@@ -1,7 +1,7 @@
 ---
 title: "AI Legal Research Tools: Find Case Law in Minutes"
 description: "Stop spending hours on legal research. Learn how AI tools use semantic search and citation analysis to find relevant case law and precedents faster."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:33:45Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "analysis"

@@ -1,7 +1,7 @@
 ---
 title: "How AI Helps Maintain Design Systems at Scale"
 description: "Design systems break at scale. Here is how AI tools detect inconsistencies, manage tokens, and keep your component library healthy."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:18:23Z"
 author: "Superdots Team"
 department: "design"
 useCase: "automation"

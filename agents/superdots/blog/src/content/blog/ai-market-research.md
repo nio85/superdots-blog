@@ -1,7 +1,7 @@
 ---
 title: "AI for Market Research: Faster Insights, Better Decisions"
 description: "How to use AI tools for market research — from competitor analysis to customer sentiment — without a dedicated research team or expensive platforms."
-pubDate: "2026-03-17"
+pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"

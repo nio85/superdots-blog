@@ -1,7 +1,7 @@
 ---
 title: "AI Lead Scoring: Prioritize Your Best Prospects Automatically"
 description: "Stop wasting time on dead-end leads. Learn how AI lead scoring uses behavioral and firmographic data to predict which prospects will convert."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:41:49Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"

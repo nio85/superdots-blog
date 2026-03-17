@@ -1,7 +1,7 @@
 ---
 title: "How to Debug Faster with AI (Step-by-Step Guide)"
 description: "A practical guide to using AI for debugging — how to describe bugs, interpret suggestions, and cut your debugging time in half."
-pubDate: "2026-03-16"
+pubDate: "2026-03-16T21:15:29Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"

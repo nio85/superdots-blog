@@ -1,7 +1,7 @@
 ---
 title: "How to Write Sales Emails with AI (That Actually Get Replies)"
 description: "Use AI to write better, more personalized sales emails — from cold outreach to follow-ups — without sounding like a robot or a spammer."
-pubDate: "2026-03-17"
+pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"

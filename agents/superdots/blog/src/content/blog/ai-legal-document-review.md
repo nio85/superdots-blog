@@ -1,7 +1,7 @@
 ---
 title: "AI Legal Document Review: Save Hours on Due Diligence"
 description: "AI legal review tools scan contracts, flag risks, and extract key terms in minutes instead of hours. Here's how legal teams are actually using them."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:33:15Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"

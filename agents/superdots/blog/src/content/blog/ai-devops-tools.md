@@ -1,7 +1,7 @@
 ---
 title: "AI for DevOps: Automate Your CI/CD Pipeline"
 description: "Cut through alert fatigue and flaky tests. Learn how AI tools optimize CI/CD pipelines, predict incidents, and automate infrastructure management."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:35:42Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"

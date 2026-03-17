@@ -1,7 +1,7 @@
 ---
 title: "Best AI Scheduling Assistants for Busy Teams"
 description: "End the back-and-forth. AI scheduling assistants find meeting times, protect focus blocks, and optimize your team's calendar automatically."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T08:25:08Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"

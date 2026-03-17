@@ -1,7 +1,7 @@
 ---
 title: "AI Ad Copy Tools That Actually Convert"
 description: "Most AI ad copy is forgettable. Learn the workflow for generating, testing, and iterating ad copy with AI that actually drives conversions."
-pubDate: "2026-03-17"
+pubDate: "2026-03-17T07:31:59Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
