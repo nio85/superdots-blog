@@ -4,7 +4,7 @@ description: "Go beyond churn prediction. Learn how AI helps identify at-risk cu
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "customer-support"
-useCase: "analytics"
+useCase: "analysis"
 tags: ["ai-tools", "ai-customer-support", "ai-retention"]
 heroImage: "/images/blog/ai-customer-retention.svg"
 faqs:

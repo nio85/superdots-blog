@@ -4,7 +4,7 @@ description: "Most corporate training fails. Learn how AI creates personalized l
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "hr"
-useCase: "productivity"
+useCase: "automation"
 tags: ["ai-tools", "ai-hr", "ai-training"]
 heroImage: "/images/blog/ai-employee-training.svg"
 faqs:

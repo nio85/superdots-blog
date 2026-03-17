@@ -4,7 +4,7 @@ description: "Detect expense fraud, invoice manipulation, and suspicious transac
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "finance"
-useCase: "analytics"
+useCase: "analysis"
 tags: ["ai-tools", "ai-finance", "ai-fraud-detection"]
 heroImage: "/images/blog/ai-fraud-detection.svg"
 faqs:

@@ -4,7 +4,7 @@ description: "Stop spending hours on legal research. Learn how AI tools use sema
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "legal"
-useCase: "productivity"
+useCase: "analysis"
 tags: ["ai-tools", "ai-legal", "ai-legal-research"]
 heroImage: "/images/blog/ai-legal-research.svg"
 faqs:

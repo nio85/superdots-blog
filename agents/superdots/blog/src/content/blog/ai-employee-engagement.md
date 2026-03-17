@@ -4,7 +4,7 @@ description: "Annual surveys aren't cutting it. AI engagement tools track sentim
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "hr"
-useCase: "analytics"
+useCase: "analysis"
 tags: ["ai-tools", "ai-hr", "ai-employee-engagement"]
 heroImage: "/images/blog/ai-employee-engagement.svg"
 faqs:

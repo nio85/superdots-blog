@@ -4,7 +4,7 @@ description: "AI content does not have to sound like AI. Learn the workflow for 
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "marketing"
-useCase: "productivity"
+useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-content-creation"]
 heroImage: "/images/blog/ai-content-creation.svg"
 faqs:

@@ -4,7 +4,7 @@ description: "No videographer? No problem. These AI video tools let marketing te
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "marketing"
-useCase: "content"
+useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-video"]
 heroImage: "/images/blog/ai-video-marketing-tools.svg"
 faqs:

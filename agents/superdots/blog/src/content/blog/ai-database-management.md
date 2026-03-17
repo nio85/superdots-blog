@@ -4,7 +4,7 @@ description: "Not a DBA? No problem. Learn how AI tools optimize queries, recomm
 pubDate: "2026-03-17"
 author: "Superdots Team"
 department: "engineering"
-useCase: "productivity"
+useCase: "automation"
 tags: ["ai-tools", "ai-engineering", "ai-database"]
 heroImage: "/images/blog/ai-database-management.svg"
 faqs:
