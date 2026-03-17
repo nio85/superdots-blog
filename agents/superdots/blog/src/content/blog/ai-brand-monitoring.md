@@ -4,7 +4,7 @@ description: 'AI brand monitoring tracks mentions, sentiment, and competitive po
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'marketing'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-marketing']
 heroImage: "/images/blog/ai-brand-monitoring.webp"
 faqs:

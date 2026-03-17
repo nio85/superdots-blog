@@ -4,7 +4,7 @@ description: 'AI wireframing tools speed up the ideation-to-prototype pipeline, 
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'design'
-useCase: 'creation'
+useCase: 'writing'
 tags: ['ai-tools', 'ai-for-design']
 heroImage: "/images/blog/ai-wireframing-tools.webp"
 ---

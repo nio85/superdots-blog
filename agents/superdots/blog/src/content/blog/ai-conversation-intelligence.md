@@ -4,7 +4,7 @@ description: 'AI conversation intelligence analyzes sales calls and meetings to 
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'sales'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-sales']
 heroImage: "/images/blog/ai-conversation-intelligence.webp"
 faqs:

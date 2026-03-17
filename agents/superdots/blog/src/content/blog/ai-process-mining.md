@@ -4,7 +4,7 @@ description: 'AI process mining discovers and optimizes business processes by an
 pubDate: '2026-03-17'
 author: 'Superdots Team'
 department: 'operations'
-useCase: 'analytics'
+useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-operations']
 faqs:
   - question: "What is AI process mining?"
