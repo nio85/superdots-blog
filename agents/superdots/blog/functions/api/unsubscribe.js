@@ -31,18 +31,17 @@ async function handleUnsubscribe(context) {
 		return errorPage('Invalid unsubscribe link.');
 	}
 
-	// Mark as unsubscribed in Resend
+	// Delete contact from Resend audience (GDPR Art. 17 — right to erasure)
+	// Privacy policy §6 commits to deletion within 30 days; immediate deletion exceeds that.
 	const res = await fetch(`https://api.resend.com/audiences/${RESEND_AUDIENCE_ID}/contacts/${encodeURIComponent(email)}`, {
-		method: 'PATCH',
+		method: 'DELETE',
 		headers: {
 			'Authorization': `Bearer ${RESEND_API_KEY}`,
-			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({ unsubscribed: true }),
 	});
 
-	if (!res.ok) {
-		console.error('Resend unsubscribe error:', await res.text());
+	if (!res.ok && res.status !== 404) {
+		console.error('Resend contact deletion error:', await res.text());
 		return errorPage('Something went wrong. Please try again or contact us.');
 	}
 
