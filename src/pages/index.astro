@@ -87,7 +87,7 @@ const posts = (await getCollection('blog'))
 		position: relative;
 		text-align: center;
 		padding: var(--space-20) var(--space-4) var(--space-16);
-		overflow: clip;
+		overflow-x: clip;
 		/* Break out of main's max-width to go full-bleed */
 		width: 100vw;
 		margin-left: calc(50% - 50vw);
@@ -109,7 +109,7 @@ const posts = (await getCollection('blog'))
 	}
 	.hero-glow-secondary {
 		position: absolute;
-		bottom: -40%;
+		bottom: -20%;
 		right: 0;
 		width: 50%;
 		max-width: 600px;
@@ -118,6 +118,18 @@ const posts = (await getCollection('blog'))
 		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
 		filter: blur(50px);
 		pointer-events: none;
+	}
+	/* Bottom fade — ensures seamless transition into page background */
+	.hero::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 120px;
+		background: linear-gradient(to bottom, transparent, var(--color-bg));
+		pointer-events: none;
+		z-index: 1;
 	}
 	:global([data-theme="dark"]) .hero-glow {
 		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
