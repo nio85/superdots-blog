@@ -55,11 +55,11 @@ function runCapture(cmd, opts = {}) {
 
 // --- HTTP helper ---
 
-async function fetchWithTimeout(url, timeoutMs = 15000) {
+async function fetchWithTimeout(url, timeoutMs = 15000, opts = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch(url, { ...opts, signal: controller.signal });
     return res;
   } finally {
     clearTimeout(timer);
@@ -201,12 +201,14 @@ async function pollCfDeployment(method) {
   const maxAttempts = method === 'wrangler' ? 30 : 60; // 5 min / 10 min
   const pollInterval = 10000; // 10s
   const deployStartTime = Date.now();
+  const cfHeaders = { headers: { 'Authorization': `Bearer ${cfToken}` } };
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const res = await fetchWithTimeout(
         `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/${CF_PROJECT_NAME}/deployments?per_page=1`,
-        15000
+        15000,
+        cfHeaders
       );
       if (!res.ok) {
         console.log(`  CF API returned ${res.status}, retrying...`);
