@@ -12,77 +12,28 @@
  *   7. Email delivery — verify SMTP auth to Gmail
  *   8. Build health — astro build dry run
  *
- * Auth: uses PAPERCLIP_API_KEY if set, otherwise generates JWT from
- * PAPERCLIP_AGENT_JWT_SECRET (loaded from ~/.paperclip/instances/default/.env).
- *
  * Output: JSON report to /tmp/debug-internal-latest.json
  * Exit: 0 = all pass, 1 = any failure
  */
 
-import { createHmac, randomUUID } from 'node:crypto';
-import { readFileSync, writeFileSync, statSync } from 'node:fs';
-import { resolve, join, dirname } from 'node:path';
-import { homedir } from 'node:os';
-import { fileURLToPath } from 'node:url';
+import { writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import nodemailer from 'nodemailer';
+import {
+  BLOG_ROOT,
+  PAPERCLIP_API_URL as API_URL,
+  PAPERCLIP_COMPANY_ID as COMPANY_ID,
+  CF_ACCOUNT_ID as CF_ACCOUNT,
+  CF_PROJECT_NAME as CF_PROJECT,
+  SMTP_USER, SMTP_PASS,
+  REPORT_INTERNAL_PATH as REPORT_PATH,
+  getPaperclipApiKey, createSmtpTransport,
+} from './config.mjs';
+import { readFileSync } from 'node:fs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const BLOG_ROOT = resolve(__dirname, '..');
-
-// Load paperclip .env for JWT secret
-const PAPERCLIP_ENV_PATH = resolve(homedir(), '.paperclip', 'instances', 'default', '.env');
-try {
-  const envFile = readFileSync(PAPERCLIP_ENV_PATH, 'utf-8');
-  for (const line of envFile.split('\n')) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-} catch {}
-
-// Load blog .env for GMAIL_APP_PASSWORD, CLOUDFLARE_API_TOKEN
-try {
-  const envFile = readFileSync(join(BLOG_ROOT, '.env'), 'utf-8');
-  for (const line of envFile.split('\n')) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-} catch {}
-
-const API_URL = process.env.PAPERCLIP_API_URL || 'http://localhost:3100';
-const COMPANY_ID = process.env.PAPERCLIP_COMPANY_ID || 'cdb3c45d-c7df-4ea0-b495-26426a1e9df4';
-const CEO_ID = 'ce91a8d9-14e5-4d4b-a9bc-aae3e20a405b';
-const CF_ACCOUNT = '2013b526ab724299e028e1fcfe5a5c62';
-const CF_PROJECT = 'superdots-blog';
 const CF_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
-const SMTP_USER = 'lucavittorio.bartoccini@gmail.com';
-const SMTP_PASS = process.env.GMAIL_APP_PASSWORD;
-const REPORT_PATH = '/tmp/debug-internal-latest.json';
 
-// --- Auth ---
-
-function createJwt(secret, agentId, companyId) {
-  const b64url = (s) => Buffer.from(s, 'utf8').toString('base64url');
-  const header = b64url(JSON.stringify({ alg: 'HS256', typ: 'JWT' }));
-  const now = Math.floor(Date.now() / 1000);
-  const payload = b64url(JSON.stringify({
-    sub: agentId,
-    company_id: companyId,
-    adapter_type: 'claude_local',
-    run_id: randomUUID(),
-    iat: now,
-    exp: now + 3600,
-    iss: 'paperclip',
-    aud: 'paperclip-api',
-  }));
-  const sig = createHmac('sha256', secret).update(`${header}.${payload}`).digest('base64url');
-  return `${header}.${payload}.${sig}`;
-}
-
-let API_KEY = process.env.PAPERCLIP_API_KEY;
-if (!API_KEY && process.env.PAPERCLIP_AGENT_JWT_SECRET) {
-  API_KEY = createJwt(process.env.PAPERCLIP_AGENT_JWT_SECRET, CEO_ID, COMPANY_ID);
-}
+const API_KEY = getPaperclipApiKey();
 if (!API_KEY) {
   console.error('No auth available: set PAPERCLIP_API_KEY or PAPERCLIP_AGENT_JWT_SECRET');
   process.exit(1);
@@ -109,7 +60,6 @@ const isWeekday = ![0, 6].includes(new Date().getDay());
 
 // --- Checks ---
 
-/** 1. Agent status — flag any agent running >2h */
 async function checkAgentStatus() {
   try {
     const agents = await api('GET', `/api/companies/${COMPANY_ID}/agents`);
@@ -129,7 +79,6 @@ async function checkAgentStatus() {
   }
 }
 
-/** 2. Content pipeline ran today (weekdays only) */
 async function checkContentPipeline() {
   if (!isWeekday) return skip('content_pipeline', 'Weekend — skipped');
   try {
@@ -142,7 +91,6 @@ async function checkContentPipeline() {
   }
 }
 
-/** 3. Stuck tasks — in_progress >24h without comment update */
 async function checkStuckTasks() {
   try {
     const issues = await api('GET', `/api/companies/${COMPANY_ID}/issues?status=in_progress&limit=100`);
@@ -160,7 +108,6 @@ async function checkStuckTasks() {
   }
 }
 
-/** 4. Blocked tasks >48h */
 async function checkBlockedTasks() {
   try {
     const issues = await api('GET', `/api/companies/${COMPANY_ID}/issues?status=blocked&limit=100`);
@@ -178,7 +125,6 @@ async function checkBlockedTasks() {
   }
 }
 
-/** 5. Cron execution — check /tmp log files for today's entries */
 async function checkCronExecution() {
   const logs = [
     'daily-content-pipeline.log',
@@ -208,7 +154,6 @@ async function checkCronExecution() {
   return ok('cron_execution', results.join('; '));
 }
 
-/** 6. Git deploy health — last CF Pages deploy <48h old */
 async function checkDeployHealth() {
   if (!CF_TOKEN) return skip('deploy_health', 'CLOUDFLARE_API_TOKEN not set');
   try {
@@ -237,16 +182,10 @@ async function checkDeployHealth() {
   }
 }
 
-/** 7. Email delivery — verify SMTP auth to Gmail */
 async function checkEmailDelivery() {
   if (!SMTP_PASS) return skip('email_delivery', 'GMAIL_APP_PASSWORD not set');
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
-    });
+    const transporter = createSmtpTransport(nodemailer);
     await transporter.verify();
     return ok('email_delivery', 'SMTP auth verified');
   } catch (e) {
@@ -254,7 +193,6 @@ async function checkEmailDelivery() {
   }
 }
 
-/** 8. Build health — astro build dry run */
 async function checkBuildHealth() {
   try {
     execSync('npx astro build', {
@@ -276,7 +214,6 @@ async function main() {
   console.log(`Internal debug pipeline — ${new Date().toISOString()}`);
   console.log(`Company: ${COMPANY_ID}\n`);
 
-  // Run API checks in parallel, then sequential checks
   const [agentStatus, contentPipeline, stuckTasks, blockedTasks, cronExec, deployHealth, emailDelivery] =
     await Promise.all([
       checkAgentStatus(),
@@ -288,7 +225,6 @@ async function main() {
       checkEmailDelivery(),
     ]);
 
-  // Build check runs separately (slow, CPU-intensive)
   const buildHealth = await checkBuildHealth();
 
   const checks = [agentStatus, contentPipeline, stuckTasks, blockedTasks, cronExec, deployHealth, emailDelivery, buildHealth];
@@ -305,7 +241,6 @@ async function main() {
     },
   };
 
-  // Print results
   for (const c of checks) {
     const icon = c.status === 'pass' ? 'PASS' : c.status === 'skip' ? 'SKIP' : 'FAIL';
     console.log(`[${icon}] ${c.name}: ${c.detail}`);
@@ -313,11 +248,9 @@ async function main() {
 
   console.log(`\nSummary: ${report.summary.pass}/${report.summary.total} passed, ${report.summary.fail} failed, ${report.summary.skip} skipped`);
 
-  // Write report
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
   console.log(`Report written to ${REPORT_PATH}`);
 
-  // Exit code
   process.exit(report.summary.fail > 0 ? 1 : 0);
 }
 
