@@ -1,6 +1,6 @@
 # Data Processor Agreement (DPA) Verification Log
 
-**Last reviewed:** 17 March 2026
+**Last reviewed:** 18 March 2026
 
 This document tracks the status of Data Processing Agreements with all third-party processors used by Superdots (superdots.sh), as required for accountability under Art. 28 GDPR.
 
@@ -37,6 +37,24 @@ No additional action required. The DPA is automatically accepted through the Ter
 | **SCCs included** | Yes |
 | **DPF certified** | Yes — Google LLC is certified under the EU-US Data Privacy Framework |
 | **Verification status** | **VERIFIED** |
+
+---
+
+## Microsoft (Microsoft Corporation) — Clarity
+
+| Field | Status |
+|-------|--------|
+| **Processor** | Microsoft Corporation |
+| **DPA URL** | https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA |
+| **DPA acceptance method** | Accepted via Microsoft Online Services Terms when using Clarity |
+| **SCCs included** | Yes — EU SCCs incorporated in Microsoft DPA |
+| **DPF certified** | Yes — Microsoft Corporation is certified under the EU-US Data Privacy Framework |
+| **Sub-processors** | Listed at https://learn.microsoft.com/en-us/compliance/regulatory/offering-home |
+| **Security certifications** | SOC 2 Type II, ISO 27001 |
+| **Verification status** | **VERIFIED** |
+
+### Recommendation
+Clarity-specific data handling details: session recordings retained for 30 days, built-in input masking available. Verify in Clarity dashboard that input masking is enabled for all form fields. Consider preparing a lightweight DPIA for session recording activities.
 
 ---
 

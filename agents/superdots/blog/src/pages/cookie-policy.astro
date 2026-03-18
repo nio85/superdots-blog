@@ -43,6 +43,20 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td>Until cleared</td>
 			</tr>
 			<tr>
+				<td><code>sd-cookie-consent</code></td>
+				<td>superdots.sh</td>
+				<td>Records your cookie consent choice (accepted or rejected)</td>
+				<td>localStorage</td>
+				<td>Until cleared</td>
+			</tr>
+			<tr>
+				<td><code>sd-cookie-consent-date</code></td>
+				<td>superdots.sh</td>
+				<td>Timestamp of when you gave or refused cookie consent</td>
+				<td>localStorage</td>
+				<td>Until cleared</td>
+			</tr>
+			<tr>
 				<td><code>__cf_bm</code></td>
 				<td>Cloudflare</td>
 				<td>Bot management — distinguishes humans from automated traffic</td>
@@ -127,12 +141,6 @@ import LegalPage from '../layouts/LegalPage.astro';
 		that may process your IP address:
 	</p>
 	<ul>
-		<li>
-			<strong>Google Fonts</strong> (<code>fonts.googleapis.com</code>,
-			<code>fonts.gstatic.com</code>) — loads the typefaces used on this Site.
-			Google receives your IP address with each font request.
-			<a href="https://developers.google.com/fonts/faq/privacy" rel="noopener noreferrer" target="_blank">Google Fonts privacy FAQ</a>.
-		</li>
 		<li>
 			<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
 			only loaded after consent. Sends pseudonymised usage data to Google.
