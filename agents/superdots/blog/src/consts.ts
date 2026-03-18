@@ -1,7 +1,7 @@
 export const SITE_TITLE = 'Superdots';
 export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
 export const GA_MEASUREMENT_ID = 'G-DC2BTH9VKX';
-export const CLARITY_PROJECT_ID = ''; // TODO: create project at clarity.microsoft.com and paste ID here
+export const CLARITY_PROJECT_ID = 'vxukclgmnh';
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering' },
