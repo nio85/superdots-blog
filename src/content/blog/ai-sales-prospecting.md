@@ -36,7 +36,7 @@ The AI gets smarter over time. When you close deals and mark wins and losses, th
 
 Once you have target companies, you need the right people. AI enrichment tools find decision-makers, pull their email addresses and phone numbers, and fill in context — job title, department, time in role, social profiles, recent activity.
 
-The best tools maintain continuously updated databases with hundreds of millions of contacts. They verify email addresses in real time, so you are not sending outreach to addresses that bounce.
+Platforms like [ZoomInfo](https://www.zoominfo.com) and [Apollo](https://www.apollo.io) maintain continuously updated databases with hundreds of millions of contacts. They verify email addresses in real time, so you are not sending outreach to addresses that bounce.
 
 ### Intent signal detection
 
@@ -60,7 +60,7 @@ Here is what changes when you add AI to the prospecting process.
 
 1. Rep searches LinkedIn for 30 minutes, finds 10 potential companies
 2. Visits each company's website to check if they match the ICP — 45 minutes
-3. Uses LinkedIn Sales Navigator to find the right contact at each company — 30 minutes
+3. Uses [LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions) to find the right contact at each company — 30 minutes
 4. Manually searches for email addresses using various tools — 20 minutes
 5. Researches each prospect for personalization context — 40 minutes
 6. Logs everything in CRM — 15 minutes

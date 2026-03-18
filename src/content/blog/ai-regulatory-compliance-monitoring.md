@@ -32,7 +32,7 @@ This is not a training problem. It is a monitoring problem. And it is the exact 
 
 ## The monitoring gap is getting worse
 
-The volume of regulatory change has accelerated beyond what manual processes can handle. Thomson Reuters tracked over 61,000 regulatory alerts globally in 2023 — that is roughly 234 updates per business day. The pace has not slowed since.
+The volume of regulatory change has accelerated beyond what manual processes can handle. [Thomson Reuters](https://www.thomsonreuters.com) tracked over 61,000 regulatory alerts globally in 2023 — that is roughly 234 updates per business day. The pace has not slowed since.
 
 If your organization operates across multiple jurisdictions, multiply that number. US federal regulations, state-level privacy laws (now active in 19 states), EU directives, UK post-Brexit divergence, sector-specific rules — the sources compound quickly.
 
@@ -58,7 +58,7 @@ This is the hardest technical problem in the space. Regulatory language is inten
 
 ### Relevance matching
 
-Not every regulatory change matters to your organization. A new pharmaceutical labeling requirement is irrelevant if you are a fintech company. AI regulatory compliance monitoring tools maintain a profile of your industry, jurisdictions, products, and existing obligations. They filter changes against this profile and surface only what is relevant.
+Not every regulatory change matters to your organization. A new pharmaceutical labeling requirement is irrelevant if you are a fintech company. AI regulatory compliance monitoring tools — including platforms from [OneTrust](https://www.onetrust.com) and others — maintain a profile of your industry, jurisdictions, products, and existing obligations. They filter changes against this profile and surface only what is relevant.
 
 This is where the time savings compound. Instead of reviewing 234 alerts per day and discarding 220 of them, your team sees only the 14 that actually require attention.
 
@@ -173,7 +173,7 @@ The key is building connections between monitoring, assessment, and action. A re
 
 ## The cost of getting this wrong
 
-Non-compliance penalties are escalating. GDPR fines have exceeded EUR 5.65 billion cumulatively. The EU AI Act introduces fines up to EUR 35 million or 7% of global annual turnover. The SEC issued $8.2 billion in penalties in fiscal year 2024. State-level privacy law fines are smaller individually but add up fast when you are non-compliant in multiple states simultaneously.
+Non-compliance penalties are escalating. [GDPR](https://gdpr.eu) fines have exceeded EUR 5.65 billion cumulatively. The EU AI Act introduces fines up to EUR 35 million or 7% of global annual turnover. The SEC issued $8.2 billion in penalties in fiscal year 2024. State-level privacy law fines are smaller individually but add up fast when you are non-compliant in multiple states simultaneously.
 
 But fines are only part of the cost. A missed regulatory change that triggers an enforcement action consumes legal fees, management attention, and remediation resources. It damages customer trust and can delay product launches. One compliance team lead at a mid-market fintech told us their missed CFPB guidance update cost them four months of product development time — the engineering team had to rebuild a feature to meet requirements they should have known about months earlier.
 

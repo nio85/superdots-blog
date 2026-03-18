@@ -71,7 +71,7 @@ The quality of your AI journey map depends entirely on the completeness of your 
 Typical sources include:
 
 - **Website analytics** (Google Analytics, Mixpanel, Amplitude) — page visits, session data, click paths
-- **CRM** (Salesforce, HubSpot) — sales interactions, pipeline stages, deal notes
+- **CRM** ([Salesforce](https://www.salesforce.com), [HubSpot](https://www.hubspot.com)) — sales interactions, pipeline stages, deal notes
 - **Email platform** — opens, clicks, replies, unsubscribes
 - **Support desk** (Zendesk, Intercom) — tickets, chat transcripts, resolution times
 - **Ad platforms** — impressions, clicks, attributed conversions by channel and creative
@@ -156,7 +156,7 @@ The goal is to move from a static artifact to a living model of customer behavio
 
 A well-executed AI journey mapping practice looks like this: your marketing team pulls up a live dashboard showing the top five paths customers take from first touch to purchase. They can filter by segment, channel, and time period. They know which touchpoints are inflection points and which are exit risks. When they make a change to the funnel, they can measure its effect on path distribution within weeks, not quarters.
 
-This is not a data science project. It is a marketing operations capability. The teams that build it earliest have a compounding advantage — every quarter of behavioral data makes their models more accurate and their interventions more targeted.
+Platforms like [Adobe Experience Cloud](https://business.adobe.com) offer integrated journey analytics that bring these capabilities together. This is not a data science project. It is a marketing operations capability. The teams that build it earliest have a compounding advantage — every quarter of behavioral data makes their models more accurate and their interventions more targeted.
 
 Manual journey maps had their moment. They were better than nothing at a time when behavioral data was hard to collect and harder to analyze. Neither is true anymore.
 

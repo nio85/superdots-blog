@@ -71,7 +71,7 @@ These questions would require statistical analysis to answer manually. AI handle
 
 ### Standalone AI data tools
 
-- **Julius AI**: Upload a CSV or connect a database. Ask questions, get visualizations and analysis. Great for one-off analysis.
+- **Julius AI**: Upload a CSV or connect a database. Ask questions, get visualizations and analysis. Great for one-off analysis. For more advanced needs, enterprise tools like [Microsoft Power BI](https://powerbi.microsoft.com), [Tableau](https://www.tableau.com), and [Google Looker](https://cloud.google.com/looker) offer AI-assisted analysis at scale.
 - **Quadratic**: An AI-native spreadsheet that combines traditional spreadsheet functionality with Python, SQL, and AI — no coding required on your end.
 - **Excelmatic**: Browser-based tool focused on non-technical users. Chat with your data, get charts, and clean datasets.
 

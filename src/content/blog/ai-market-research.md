@@ -9,9 +9,9 @@ tags: ["ai-tools", "ai-marketing", "ai-analysis"]
 heroImage: "/images/blog/ai-market-research.webp"
 ---
 
-Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a Gartner subscription, or a time machine.
+Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a [Gartner](https://www.gartner.com) subscription, or a time machine.
 
-This used to mean spending weeks on Google, cobbling together data from free reports, and hoping your conclusions were not already outdated by the time you presented them.
+This used to mean spending weeks on Google, cobbling together data from free reports on sites like [Statista](https://www.statista.com) and [Nielsen](https://www.nielsen.com), and hoping your conclusions were not already outdated by the time you presented them.
 
 AI changes the math. Not by replacing real research, but by making it possible for a two-person marketing team to produce insights that used to require a dedicated analyst. Here is how to do it right — and where to be careful.
 
@@ -180,7 +180,7 @@ It depends on the input data and the type of analysis. AI is very accurate at su
 
 ### What tools do I need for AI market research?
 
-You can start with a general-purpose AI assistant (ChatGPT, Claude, Gemini) and your existing data sources. No specialized tools are required for basic competitor analysis, sentiment analysis, and trend spotting. Specialized platforms like Crayon, Klue, or Semrush add automation and monitoring capabilities as your needs grow.
+You can start with a general-purpose AI assistant (ChatGPT, Claude, Gemini) and your existing data sources. No specialized tools are required for basic competitor analysis, sentiment analysis, and trend spotting. Specialized platforms like Crayon, Klue, or [Semrush](https://www.semrush.com) add automation and monitoring capabilities as your needs grow.
 
 ### How do I present AI-generated research to stakeholders?
 

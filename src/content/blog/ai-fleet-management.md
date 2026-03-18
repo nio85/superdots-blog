@@ -53,7 +53,7 @@ AI route optimization handles the constraints that static planning ignores:
 
 - **Time windows**: Customer A needs delivery between 10 AM and noon. Customer B cannot receive before 2 PM. The system builds routes that satisfy both without manual juggling.
 - **Vehicle capacity**: Load weight and volume constraints across multi-stop routes. The system knows which stops can be combined and which cannot.
-- **Driver hours**: Federal hours-of-service regulations are not optional. AI builds compliant schedules automatically, flagging routes that would put a driver over limit before they leave the yard.
+- **Driver hours**: [Federal hours-of-service regulations](https://www.fmcsa.dot.gov) are not optional. AI builds compliant schedules automatically, flagging routes that would put a driver over limit before they leave the yard.
 - **Traffic and road conditions**: Real-time data feeds update routes as conditions change. A 20-minute traffic jam gets rerouted around before the driver hits it, not after.
 - **Customer priority tiers**: Some customers have SLA penalties for late delivery. Others are flexible. AI weights the route to protect the high-priority windows first.
 
@@ -75,7 +75,7 @@ Predictive maintenance is the highest-ROI application of AI for most fleets. Her
 
 ### The data layer
 
-Modern telematics devices read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time.
+Modern telematics devices from providers like [Samsara](https://www.samsara.com) and [Geotab](https://www.geotab.com) read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time.
 
 Most fleet vehicles built after 2015 already have OBD-II ports that expose this data. Adding a telematics dongle costs $100-200 per vehicle. For older vehicles without built-in sensors, aftermarket kits handle tire pressure and basic engine diagnostics.
 

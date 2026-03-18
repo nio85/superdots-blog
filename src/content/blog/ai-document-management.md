@@ -16,7 +16,7 @@ faqs:
     answer: "AI auto-classification typically achieves 85-90% accuracy out of the box for common document types (contracts, invoices, reports, presentations). Accuracy improves to 95%+ after 2-3 months of corrections and training on your specific document patterns. The remaining edge cases — unusual formats, ambiguous documents, handwritten notes — still benefit from human review."
 ---
 
-The file you need is somewhere. You know it exists. It was in a shared drive, or attached to an email, or uploaded to Slack, or saved locally on someone's laptop. Maybe it was in the old SharePoint folder before the team moved to Google Drive. Or maybe it was renamed and you are searching for the wrong title.
+The file you need is somewhere. You know it exists. It was in a shared drive, or attached to an email, or uploaded to Slack, or saved locally on someone's laptop. Maybe it was in the old [SharePoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint) folder before the team moved to Google Drive. Or maybe it was renamed and you are searching for the wrong title.
 
 This is not a technology problem. It is an organization problem that technology made worse. Every new tool gives teams another place to store files and another set of folders to search through. The average knowledge worker spends nearly 20% of their time looking for information they need to do their job.
 
@@ -46,7 +46,7 @@ For more on building accessible knowledge systems, see our guide on [AI knowledg
 
 ### Version tracking
 
-AI tracks document versions and relationships — which version is current, who changed what, and how the document evolved over time. When multiple versions of a contract exist across email, shared drives, and a DocuSign folder, AI identifies the most recent version and flags potential conflicts.
+Enterprise document management platforms like [M-Files](https://www.m-files.com) and [DocuWare](https://www.docuware.com) use AI to track document versions and relationships — which version is current, who changed what, and how the document evolved over time. When multiple versions of a contract exist across email, shared drives, and a DocuSign folder, AI identifies the most recent version and flags potential conflicts.
 
 ### Duplicate detection
 

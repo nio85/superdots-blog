@@ -83,11 +83,11 @@ Here is the good news: you do not need perfect data. You need minimum viable dat
 
 ## How to evaluate AI inventory management tools
 
-Not all tools are built for the same user. Enterprise platforms like Blue Yonder or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
+Not all tools are built for the same user. Enterprise platforms like Blue Yonder, [NetSuite](https://www.netsuite.com), or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
 
 **Must-haves:**
 
-- **Integrations with your existing systems.** Your POS, ERP, or e-commerce platform. If the tool cannot pull data automatically, you will be back to manual exports within a month.
+- **Integrations with your existing systems.** Your POS, ERP, or e-commerce platform. If the tool cannot pull data automatically, you will be back to manual exports within a month. Tools like [Fishbowl](https://www.fishbowlinventory.com) and [Shopify](https://www.shopify.com) offer built-in integrations for common e-commerce and warehouse systems.
 - **Demand forecasting with automatic reorder suggestions.** This is the core value. If a tool does not do this well, nothing else matters.
 - **A clear UI that ops people (not data scientists) can use.** You should be able to understand the forecast, see why it made a recommendation, and override it when you know something the AI does not.
 

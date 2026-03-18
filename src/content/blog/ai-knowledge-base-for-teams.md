@@ -120,7 +120,7 @@ You do not need to buy enterprise software to get started. Here is a practical, 
 
 ### Pick your platform
 
-Choose based on what your team already uses. The best knowledge base is the one people actually open. Options range from AI-native tools (Guru, Notion AI, Slite) to adding AI search layers on top of existing wikis.
+Choose based on what your team already uses. The best knowledge base is the one people actually open. Options range from AI-native tools ([Guru](https://www.getguru.com), [Notion](https://www.notion.so) AI, Slite) to adding AI search layers on top of existing wikis like [Confluence](https://www.atlassian.com/software/confluence).
 
 What matters most:
 

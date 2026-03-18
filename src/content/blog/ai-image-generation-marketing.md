@@ -62,7 +62,7 @@ Getting good results from AI image tools is a skill. Here is how to develop it.
 
 ### Use style references
 
-Most AI tools let you reference specific visual styles: "in the style of isometric illustration," "flat vector art," "watercolor texture," "minimal line drawing." Build a vocabulary of style terms that match your brand aesthetic and use them consistently.
+Most AI tools — including [Midjourney](https://www.midjourney.com) and [DALL-E by OpenAI](https://openai.com) — let you reference specific visual styles: "in the style of isometric illustration," "flat vector art," "watercolor texture," "minimal line drawing." Build a vocabulary of style terms that match your brand aesthetic and use them consistently.
 
 Some tools also support image references — upload an existing on-brand image and ask the AI to generate new images in a similar style. This is the fastest path to visual consistency.
 
@@ -106,7 +106,7 @@ Copyright law around AI-generated images is evolving. In the US, the Copyright O
 
 ### Training data concerns
 
-AI image models are trained on large datasets that include copyrighted images. This creates legal uncertainty, particularly when generated images closely resemble existing copyrighted work. Some tools, like Adobe Firefly, are trained exclusively on licensed content to reduce this risk.
+AI image models are trained on large datasets that include copyrighted images. This creates legal uncertainty, particularly when generated images closely resemble existing copyrighted work. Some tools, like [Adobe Firefly](https://www.adobe.com/products/firefly.html), are trained exclusively on licensed content to reduce this risk.
 
 ### Commercial licensing
 

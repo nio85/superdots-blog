@@ -32,7 +32,7 @@ This is the same logic that makes [AI design tools valuable for non-designers](/
 
 ### Coolors
 
-Coolors is the most widely used color palette tool on the market, and its AI features are genuinely useful rather than bolted on. Hit the spacebar and it generates a five-color palette using harmony rules. Lock any swatch you want to keep, then regenerate the rest. The tool also shows WCAG contrast ratios inline, so you catch accessibility failures before they leave your screen.
+[Coolors](https://coolors.co) is the most widely used color palette tool on the market, and its AI features are genuinely useful rather than bolted on. Hit the spacebar and it generates a five-color palette using harmony rules. Lock any swatch you want to keep, then regenerate the rest. The tool also shows WCAG contrast ratios inline, so you catch accessibility failures before they leave your screen.
 
 The upgrade over manual selection is speed. A designer who knows what they want can validate or reject a palette in under two seconds. In a thirty-minute session you can realistically evaluate dozens of candidate palettes and narrow to three or four worth developing further.
 
@@ -52,7 +52,7 @@ Khroma is free and runs in the browser. There's no export API, so you'll copy he
 
 ### Adobe Color
 
-Adobe Color is the most feature-complete option and integrates directly with Creative Cloud. Its color wheel lets you apply classic harmony rules—complementary, analogous, triadic, split-complementary—and the AI-assisted "Explore" section surfaces trending palettes tagged by mood and theme.
+[Adobe Color](https://color.adobe.com) is the most feature-complete option and integrates directly with Creative Cloud. Its color wheel lets you apply classic harmony rules—complementary, analogous, triadic, split-complementary—and the AI-assisted "Explore" section surfaces trending palettes tagged by mood and theme.
 
 The accessibility features are the strongest in the category. The dedicated accessibility checker evaluates foreground/background pairs against WCAG thresholds and flags failures in real time. For teams that ship interfaces with strict accessibility requirements, this alone justifies using Adobe Color.
 
@@ -96,7 +96,7 @@ A more productive workflow looks like this:
 
 These tools don't understand brand strategy. They don't know that your fintech client needs to feel trustworthy, or that the palette you're building needs to work alongside a logo designed in 1987. They can't evaluate whether a color combination will resonate with a specific cultural context.
 
-They also don't account for print production requirements, color gamut limitations for physical media, or specific industry conventions (healthcare blue, legal navy, etc.) unless you explicitly constrain the generation.
+They also don't account for print production requirements, color gamut limitations for physical media, or specific industry conventions defined by standards bodies like [Pantone](https://www.pantone.com) (healthcare blue, legal navy, etc.) unless you explicitly constrain the generation.
 
 If you're working on a [logo design project with AI](/blog/ai-logo-design), the color palette needs to be considered alongside form, typography, and context—not in isolation. AI palette tools are one input into that process, not the whole process.
 

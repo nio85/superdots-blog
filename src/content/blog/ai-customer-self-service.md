@@ -13,7 +13,7 @@ faqs:
   - question: "What content do I need for an AI self-service portal?"
     answer: "Start with your top 50 most-asked questions and build clear, structured articles for each one. Every article should lead with the answer in the first sentence, use the language your customers actually use (not internal product terminology), and cover one topic per article. Beyond help articles, you need troubleshooting decision trees for common technical issues, and ideally API integrations that let the self-service layer take actions — not just provide information. The quality of your knowledge base content is the single biggest factor in self-service success."
   - question: "Do customers actually use self-service portals?"
-    answer: "Yes. Research consistently shows that 67% of customers prefer self-service over speaking to a support representative. The key is that self-service has to work — customers abandon portals that give irrelevant results, trap them in chatbot loops, or make it hard to reach a human when needed. When self-service actually resolves the issue quickly, customer satisfaction scores are on par with or higher than agent-handled interactions. The portals that fail are the ones built to deflect customers rather than genuinely help them."
+    answer: "Yes. Research from [Gartner](https://www.gartner.com) consistently shows that 67% of customers prefer self-service over speaking to a support representative. The key is that self-service has to work — customers abandon portals that give irrelevant results, trap them in chatbot loops, or make it hard to reach a human when needed. When self-service actually resolves the issue quickly, customer satisfaction scores are on par with or higher than agent-handled interactions. The portals that fail are the ones built to deflect customers rather than genuinely help them."
 ---
 
 Your customer submits a ticket at 11pm asking how to change the billing email on their account. The answer is in your help center. It takes a human agent 90 seconds to respond. But the customer waits until morning to get that response — and they are mildly annoyed when they do.
@@ -91,7 +91,7 @@ This is where your [AI customer service chatbot](/blog/ai-customer-service-chatb
 - Walk through structured troubleshooting flows for your top technical issues
 - Collect context before escalating to a human agent
 
-Platforms that work well for this: **Intercom Fin** (strong for SaaS), **Zendesk AI** (best if you are already in the Zendesk ecosystem), **Freshdesk Freddy** (solid mid-market option), and **Ada** (purpose-built for self-service automation at scale).
+Platforms that work well for this: **Intercom Fin** (strong for SaaS), **[Zendesk](https://www.zendesk.com) AI** (best if you are already in the Zendesk ecosystem), **Freshdesk Freddy** (solid mid-market option), and **Ada** (purpose-built for self-service automation at scale).
 
 Start with a narrow scope — five to ten of your highest-volume topics — and expand as you validate accuracy. A chatbot that handles ten things well is far more valuable than one that attempts fifty things poorly.
 
@@ -105,7 +105,7 @@ What this looks like in practice:
 - Customer reports a duplicate charge → AI checks the transaction data and initiates a refund if the criteria are met
 - Customer wants to update their shipping address → AI authenticates, makes the change, confirms
 
-This requires API integrations between your customer-facing AI layer and your billing system, CRM, order management, and product database. Most enterprise support platforms (Zendesk, Salesforce Service Cloud, Intercom) have native integration frameworks. For custom setups, Zapier or Make can bridge simpler workflows.
+This requires API integrations between your customer-facing AI layer and your billing system, CRM, order management, and product database. Most enterprise support platforms (Zendesk, [Salesforce](https://www.salesforce.com) Service Cloud, Intercom) have native integration frameworks. For custom setups, Zapier or Make can bridge simpler workflows.
 
 The more actions AI can complete — not just describe — the higher your true resolution rate.
 

@@ -45,7 +45,7 @@ The market has matured quickly. Here are the tools that engineering teams are ac
 
 ### CodeRabbit
 
-The most widely adopted AI code reviewer, connected to over 2 million GitHub and GitLab repositories. CodeRabbit runs 40+ linters and security scanners alongside its AI analysis, filtering out false positives (a critical feature — nobody wants to triage 50 noise alerts per PR). It reviews PRs automatically on open, posts inline comments, and learns from your team's feedback over time.
+The most widely adopted AI code reviewer, connected to over 2 million [GitHub](https://github.com) and [GitLab](https://about.gitlab.com) repositories. [CodeRabbit](https://coderabbit.ai) runs 40+ linters and security scanners alongside its AI analysis, filtering out false positives (a critical feature — nobody wants to triage 50 noise alerts per PR). It reviews PRs automatically on open, posts inline comments, and learns from your team's feedback over time.
 
 **Best for:** Teams on GitHub or GitLab who want a drop-in solution that works out of the box.
 
@@ -66,7 +66,7 @@ Qodo focuses on connecting reviews to intent. It integrates with Jira and Azure 
 If data sovereignty matters or you need self-hosted tools:
 
 - **PR-Agent (by Qodo)** — open-source PR reviewer that runs in your CI pipeline. Generates PR descriptions, reviews code, and suggests improvements.
-- **SonarQube Community Edition** — mature static analysis with quality gates. Not AI-powered in the same way, but a solid foundation to layer AI tools on top of.
+- **[SonarQube](https://www.sonarsource.com/products/sonarqube) Community Edition** — mature static analysis with quality gates. Not AI-powered in the same way, but a solid foundation to layer AI tools on top of.
 
 ## Integrating AI review into your workflow
 

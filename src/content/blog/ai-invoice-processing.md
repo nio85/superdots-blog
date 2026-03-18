@@ -21,7 +21,7 @@ Most companies know their AP process is slow. What they underestimate is how muc
 
 ### Time per invoice
 
-Industry benchmarks put the average cost of processing a single invoice manually at $12–$15. That includes the AP clerk's time, the approver's time, filing, follow-up on discrepancies, and corrections. For a company processing 500 invoices a month, that is $6,000–$7,500 in labor costs — just to enter data that already exists on a document someone sent you.
+Industry benchmarks from the [Institute of Finance and Management (IOFM)](https://www.iofm.com) put the average cost of processing a single invoice manually at $12–$15. That includes the AP clerk's time, the approver's time, filing, follow-up on discrepancies, and corrections. For a company processing 500 invoices a month, that is $6,000–$7,500 in labor costs — just to enter data that already exists on a document someone sent you.
 
 ### Error rates
 
@@ -92,7 +92,7 @@ Ask vendors about accuracy rates on documents similar to yours. A tool that is 9
 
 ### ERP integration
 
-The tool needs to connect to your accounting system — QuickBooks, NetSuite, SAP, Xero, whatever you use. Look for native integrations, not just CSV exports. The value of AI processing drops sharply if someone still has to manually import the results.
+The tool needs to connect to your accounting system — QuickBooks, NetSuite, [SAP](https://www.sap.com), Xero, whatever you use. Look for native integrations, not just CSV exports. The value of AI processing drops sharply if someone still has to manually import the results.
 
 ### Learning capability
 

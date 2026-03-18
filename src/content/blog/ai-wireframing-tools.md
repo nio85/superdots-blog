@@ -86,7 +86,7 @@ Here are the tools that have earned their place in production workflows. Each on
 
 ### Figma Make
 
-Figma's built-in AI wireframing capability. Describe what you need in natural language and get wireframes directly on your canvas, using your own design system components.
+[Figma](https://www.figma.com)'s built-in AI wireframing capability. Describe what you need in natural language and get wireframes directly on your canvas, using your own design system components.
 
 **Strengths:** Zero context-switching. Everything stays in Figma. The AI pulls from your team's component library, so generated wireframes use your actual buttons, inputs, and layout patterns. Collaboration works exactly like regular Figma files.
 
@@ -122,7 +122,7 @@ Purpose-built for website wireframing. Relume generates sitemaps from project de
 
 ### Visily
 
-Visily is designed for non-designers. It generates wireframes from text descriptions, screenshots, and templates, with an interface simple enough for product managers and developers to use without training.
+[Visily](https://www.visily.ai) is designed for non-designers. It generates wireframes from text descriptions, screenshots, and templates, with an interface simple enough for product managers and developers to use without training.
 
 **Strengths:** The learning curve is nearly flat. Built-in templates cover common application patterns: dashboards, settings pages, onboarding flows, e-commerce checkouts. Screenshot-to-wireframe conversion is fast and accurate.
 
@@ -165,6 +165,8 @@ Choosing an AI wireframing tool comes down to three questions:
 **What is your input format?** If you start from whiteboard sketches, Uizard is the strongest option. If you start from text briefs, most tools work well. If you start from competitor screenshots, Visily and Uizard both handle that.
 
 **What comes after the wireframe?** If you need interactive prototypes, Google Stitch gets you there fastest. If you need code, TeleportHQ bridges that gap. If you need to hand off to a design team for high-fidelity work, anything that exports to Figma is fine.
+
+If you prefer traditional wireframing tools with lighter AI assistance, established options like [Balsamiq](https://balsamiq.com) for low-fidelity mockups and [Whimsical](https://whimsical.com) for collaborative flowcharts and wireframes remain solid choices that complement AI-first tools.
 
 Do not over-optimize this decision. The difference between AI wireframing tools is smaller than the difference between using one and not using one. Pick the tool that fits your existing workflow and start.
 

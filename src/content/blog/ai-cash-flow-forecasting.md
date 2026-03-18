@@ -84,7 +84,7 @@ A spreadsheet handles one layer of seasonality with reasonable accuracy. AI hand
 
 ### Economic indicator integration
 
-Your cash flow does not exist in isolation. Interest rate changes affect your borrowing costs. Inflation shifts your expense timing. Industry-specific indicators — commodity prices, freight rates, consumer confidence — ripple through your numbers with varying lag times.
+Your cash flow does not exist in isolation. Interest rate changes affect your borrowing costs. Inflation shifts your expense timing. Payments infrastructure providers like [Stripe](https://stripe.com) increasingly offer built-in cash flow analytics that feed into forecasting models. Industry-specific indicators — commodity prices, freight rates, consumer confidence — ripple through your numbers with varying lag times.
 
 AI cash flow forecasting models ingest external economic data and learn how specific indicators correlate with your business's cash patterns. Maybe a rise in the Producer Price Index leads to higher supplier costs in your business 60-90 days later. Maybe consumer confidence dips correlate with slower customer payments in your industry.
 
@@ -154,7 +154,7 @@ The AI cash flow forecasting market splits into a few categories. Here is where 
 
 **Trovata** — Cloud-native, connects directly to your bank accounts via API. Clean interface, fast setup, and solid AI categorization of transactions. Good for companies that want better cash visibility without a six-month implementation.
 
-**Float** — Integrates with QuickBooks, Xero, and FreeAgent. Simple scenario modeling and visual cash flow timelines. Best for small businesses that want to graduate from spreadsheet forecasting without a steep learning curve.
+**[Float](https://floatapp.com)** — Integrates with QuickBooks, Xero, and FreeAgent. Simple scenario modeling and visual cash flow timelines. Best for small businesses that want to graduate from spreadsheet forecasting without a steep learning curve.
 
 **Centime** — Combines cash flow forecasting with AP/AR management and credit monitoring. Interesting for companies that want an integrated approach without buying separate tools for each function.
 
@@ -176,7 +176,7 @@ You do not need to implement a full treasury management system to benefit from A
 
 **Month 4+: Expand inputs and scenarios.** Once the baseline forecast is reliable, start adding CRM pipeline data, economic indicators, and scenario models. This is where the compound value kicks in — each additional data source improves the forecast's ability to anticipate rather than just project.
 
-The key mindset shift is this: AI cash flow forecasting is not a one-time project. It is an ongoing system that gets better as it ingests more data and as your team learns to use its outputs for decision-making. The companies that get the most value are the ones that treat the forecast as a daily operational tool, not a monthly report that sits in a folder.
+The key mindset shift is this: AI cash flow forecasting is not a one-time project. It is an ongoing system that gets better as it ingests more data and as your team learns to use its outputs for decision-making. The companies that get the most value are the ones that treat the forecast as a daily operational tool, not a monthly report that sits in a folder. [McKinsey](https://www.mckinsey.com) research consistently shows that organizations with real-time cash visibility outperform peers on working capital efficiency.
 
 Start with the timing problem — knowing when cash will actually arrive and leave — and build from there. That single improvement will change how your finance team plans, how your leadership makes investment decisions, and how confidently you navigate the periods when cash gets tight.
 

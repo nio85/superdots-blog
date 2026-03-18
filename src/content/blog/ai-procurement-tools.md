@@ -204,7 +204,7 @@ This is the foundation. Connect your purchasing data (ERP, credit cards, expense
 
 **Expected outcome:** Complete spend map, 5-15% in identified savings opportunities, and the data you need for every subsequent procurement improvement.
 
-**Tools:** Coupa, Zip, SpendHQ, and Sievo all offer AI-powered spend analysis.
+**Tools:** [Coupa](https://www.coupa.com), Zip, SpendHQ, and Sievo all offer AI-powered spend analysis.
 
 ### Priority 2: Supplier comparison for active sourcing (Weeks 5-8)
 
@@ -220,7 +220,7 @@ Set up continuous monitoring for your top 20 vendors by spend. Configure alerts 
 
 ### Priority 4: Contract intelligence (Months 5+)
 
-Integrate procurement AI with your [contract management](/blog/ai-contract-management) system. Use AI for price benchmarking in negotiations, clause analysis during contract review, and total cost modeling for vendor decisions.
+Integrate procurement AI with your [contract management](/blog/ai-contract-management) system. Platforms like [SAP Ariba](https://www.sap.com/products/procurement.html) and [Jaggaer](https://www.jaggaer.com) offer end-to-end procurement suites that combine sourcing, contract management, and supplier management in one platform. Use AI for price benchmarking in negotiations, clause analysis during contract review, and total cost modeling for vendor decisions.
 
 **Expected outcome:** Better negotiation outcomes, faster contract cycles, and consistent terms across vendor agreements.
 

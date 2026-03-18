@@ -123,11 +123,11 @@ AI billing tools do not replace your practice management system. They layer on t
 
 Most tools integrate with the major platforms:
 
-**Mid-market:** Clio, PracticePanther, MyCase, Rocket Matter. These are the most commonly integrated platforms. Setup is typically an OAuth connection and matter sync.
+**Mid-market:** [Clio](https://www.clio.com), PracticePanther, MyCase, Rocket Matter. These are the most commonly integrated platforms. Setup is typically an OAuth connection and matter sync.
 
-**Enterprise:** Aderant, Elite 3E, Thomson Reuters eBillingHub. Integrations here are deeper and often require IT involvement, but enterprise firms have more complex billing requirements that justify it.
+**Enterprise:** Aderant, Elite 3E, [Thomson Reuters](https://www.thomsonreuters.com) eBillingHub. Integrations here are deeper and often require IT involvement, but enterprise firms have more complex billing requirements that justify it.
 
-**Client billing portals:** LEDES format export for e-billing clients. Many large corporate clients require invoices submitted through platforms like TyMetrix, Serengeti, or BillerXpert. AI billing tools that output LEDES-compliant files eliminate manual reformatting for these submissions.
+**Client billing portals:** [LEDES](https://ledes.org) format export for e-billing clients. Many large corporate clients require invoices submitted through platforms like TyMetrix, Serengeti, or BillerXpert. AI billing tools that output LEDES-compliant files eliminate manual reformatting for these submissions.
 
 When evaluating any AI billing tool, test the integration depth. Some tools only push finalized invoices in one direction. Better tools sync bidirectionally — matter budgets flow in, time entries flow in for approval, finalized invoices flow back. When the integration is shallow, you end up with a parallel system instead of a unified one.
 

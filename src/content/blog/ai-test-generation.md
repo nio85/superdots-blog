@@ -89,7 +89,7 @@ Give the AI tool:
 
 - The source file you want to test
 - Any interfaces or types it depends on
-- Your testing framework (Jest, pytest, Go testing, etc.)
+- Your testing framework ([Jest](https://jestjs.io), pytest, Go testing, etc.)
 - Your project's test conventions (file naming, describe/it structure, assertion style)
 
 **Example prompt:**
@@ -163,7 +163,7 @@ When you find a prompt that produces good tests for your codebase, save it. Buil
 
 ### Run mutation testing
 
-If you want to verify that your AI-generated tests actually catch bugs, run a mutation testing tool (Stryker for JS/TS, mutmut for Python, go-mutesting for Go). These tools intentionally introduce bugs into your code and check whether your tests catch them. AI-generated tests often score lower on mutation testing than hand-written tests — which tells you exactly where to add manual tests.
+If you want to verify that your AI-generated tests actually catch bugs, run a mutation testing tool (Stryker for JS/TS, mutmut for Python, go-mutesting for Go). For end-to-end testing, frameworks like [Playwright](https://playwright.dev) and [Selenium](https://www.selenium.dev) can validate AI-generated test scenarios against your running application. These tools intentionally introduce bugs into your code and check whether your tests catch them. AI-generated tests often score lower on mutation testing than hand-written tests — which tells you exactly where to add manual tests.
 
 ## Frequently asked questions
 

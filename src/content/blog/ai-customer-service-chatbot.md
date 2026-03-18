@@ -49,7 +49,7 @@ You do not need to evaluate 30 tools. Focus on these criteria and you will narro
 - **No-code setup.** If it requires API calls or custom code to get started, it is not built for you.
 - **Knowledge base training.** The platform should let you upload help articles, FAQs, and product docs — then use that content to answer questions automatically.
 - **Human handoff.** When the bot cannot help, it needs to transfer the conversation to a live agent smoothly, with full context intact.
-- **Integration with your support tool.** It should connect to whatever you already use — Zendesk, Intercom, Freshdesk, HubSpot, or similar.
+- **Integration with your support tool.** It should connect to whatever you already use — Zendesk, Intercom, Freshdesk, HubSpot, or [Drift](https://www.drift.com).
 - **Analytics dashboard.** You need to see what the bot is handling, what it is failing on, and where customers drop off.
 
 ### Nice-to-haves
@@ -65,7 +65,7 @@ You do not need to evaluate 30 tools. Focus on these criteria and you will narro
 - "Unlimited" claims. Every platform has limits. Ask about message caps, knowledge base size limits, and overage pricing.
 - Feature lists with 200 items. You need five things to work well, not fifty things to exist.
 
-Most no-code platforms — including Zendesk AI, Intercom Fin, Freshdesk Freddy, and standalone tools like Chatling or SiteGPT — can get you from zero to a working chatbot within hours. The differentiator is not the technology. It is how well you prepare your content.
+Most no-code platforms — including [Zendesk](https://www.zendesk.com) AI, [Intercom](https://www.intercom.com) Fin, Freshdesk Freddy, and standalone tools like Chatling or SiteGPT — can get you from zero to a working chatbot within hours. The differentiator is not the technology. It is how well you prepare your content.
 
 ## Training your chatbot on your knowledge base
 

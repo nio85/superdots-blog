@@ -22,7 +22,7 @@ Nobody knows exactly how many active contracts you have. Nobody knows which ones
 
 This is the contract management problem. It is not that contracts are hard to write. It is that managing a portfolio of contracts over their full lifecycle — creation, negotiation, execution, obligation tracking, and renewal — is a volume problem that breaks at scale.
 
-AI contract management tools solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated.
+AI contract management tools — platforms like [Ironclad](https://ironcladapp.com), [Agiloft](https://www.agiloft.com), and others — solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated.
 
 ## Why Contract Management Is Broken
 
@@ -156,7 +156,7 @@ A contract management tool that does not connect to your other systems is just a
 
 **CRM (Salesforce, HubSpot).** Sales contracts should flow from the CRM into the contract system automatically. When a deal closes, the signed contract gets indexed and tracked. When a renewal is approaching, the account owner sees it in their CRM workflow.
 
-**E-signature (DocuSign, Adobe Sign).** Signed documents should automatically flow into the contract repository. No manual upload step. No "I'll file it later" that never happens.
+**E-signature ([DocuSign](https://www.docusign.com), Adobe Sign).** Signed documents should automatically flow into the contract repository. No manual upload step. No "I'll file it later" that never happens.
 
 **ERP and finance (NetSuite, SAP, QuickBooks).** Contract values and payment schedules should sync with finance systems. When a contract renews at a higher rate, the budget forecast should update.
 
@@ -188,7 +188,7 @@ Here is what to measure and what good looks like.
 
 ## Key Takeaways
 
-Contract management is not a legal problem. It is an operational problem that happens to involve legal documents. When contracts are scattered, untracked, and unmanaged, every department pays the price.
+Contract management is not a legal problem. It is an operational problem that happens to involve legal documents. Research from [WorldCC](https://www.worldcc.com) (formerly IACCM) consistently shows that poor contract management costs organizations 9% or more of annual revenue. When contracts are scattered, untracked, and unmanaged, every department pays the price.
 
 AI contract management tools solve the volume problem. They centralize, extract, track, and alert — at a scale no spreadsheet or paralegal can match.
 

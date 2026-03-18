@@ -32,7 +32,7 @@ AI tools attack the problem from two angles: generating the first draft from exi
 
 ## Generating Docs from Your OpenAPI Spec
 
-If you're already writing an OpenAPI spec (and you should be), you have a machine-readable description of every endpoint, parameter, and response schema. AI tools can turn that into readable prose.
+If you're already writing an [OpenAPI spec](https://swagger.io) (and you should be), you have a machine-readable description of every endpoint, parameter, and response schema. AI tools can turn that into readable prose.
 
 **Speakeasy** and **Fern** are both code-generation tools that also produce SDK documentation from your OpenAPI spec. Speakeasy in particular has invested heavily in generating usage examples in multiple languages — it reads your spec and produces idiomatic Python, TypeScript, Go, and Java snippets that actually work, not just copy-pasted curl commands with placeholder values.
 
@@ -80,7 +80,7 @@ This connects to [writing better docs with AI](/blog/writing-better-docs-with-ai
 
 Static docs are fine for reference. But the fastest path to "I understand how this API works" is sending a real request and seeing a real response.
 
-Both **ReadMe** and **Mintlify** support interactive API explorers where developers can fill in parameters and make live API calls from the docs page. Swagger UI and Redoc do the same. These features aren't AI-specific, but AI is starting to show up here too: **Mintlify's Playground** lets you describe in natural language what you want to do ("get all orders placed in the last 7 days for user ID 12345") and generates the correct API call. That's genuinely useful for discovery — understanding which endpoint to use before you understand how to use it.
+Both **[ReadMe](https://readme.com)** and **Mintlify** support interactive API explorers where developers can fill in parameters and make live API calls from the docs page. Swagger UI and Redoc do the same. These features aren't AI-specific, but AI is starting to show up here too: **Mintlify's Playground** lets you describe in natural language what you want to do ("get all orders placed in the last 7 days for user ID 12345") and generates the correct API call. That's genuinely useful for discovery — understanding which endpoint to use before you understand how to use it.
 
 The practical implication for teams: if you're choosing a doc platform in 2025, interactive features and AI-assisted exploration are table stakes. Static HTML reference docs are a step backward.
 
@@ -90,7 +90,7 @@ Here's a stack that works well for an API team that wants AI-assisted documentat
 
 1. **Source of truth**: OpenAPI spec committed to the repo, auto-generated from code annotations where possible (FastAPI, tsoa, Springdoc).
 2. **Reference docs**: Mintlify or ReadMe, importing the spec via CI on every merge to main. Reference section is auto-generated; guides and tutorials are human-written with AI assistance.
-3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations.
+3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations. Tools like [Postman](https://www.postman.com) can also help validate API examples in your docs against live endpoints.
 4. **Sync enforcement**: A GitHub Actions check that compares the committed spec against the running service's `/openapi.json` endpoint and fails the build on drift.
 5. **Review integration**: A step in your PR template that asks "did you update the spec?" for any PR touching an API endpoint. Pair this with an AI reviewer that checks the diff and flags missing spec changes.
 

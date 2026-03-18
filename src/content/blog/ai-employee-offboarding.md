@@ -42,7 +42,7 @@ The consequences are predictable.
 
 **Equipment and licenses bleed money.** A forgotten software seat costs $50 a month. Multiply that by turnover at scale. Equipment that was not returned costs replacement value. These are recoverable costs that simply go unrecovered because nobody tracked them.
 
-The root cause is the same across all of these: manual processes that depend on humans remembering every step, under time pressure, while also doing their actual jobs.
+The root cause is the same across all of these: manual processes that depend on humans remembering every step, under time pressure, while also doing their actual jobs. [SHRM](https://www.shrm.org) research consistently shows that structured offboarding processes reduce these risks significantly.
 
 ## What AI Automates in Offboarding
 
@@ -100,7 +100,7 @@ You do not need to automate everything at once. Start with the two highest-risk 
 
 ### Week 1-2: Access Revocation
 
-Connect your identity provider to your offboarding workflow. If you use Okta, JumpCloud, or Azure AD, you already have a foundation. Configure automatic deprovisioning triggers when an employee status changes in your HRIS.
+Connect your identity provider to your offboarding workflow. If you use Okta, JumpCloud, or Azure AD, you already have a foundation. HRIS platforms like [BambooHR](https://www.bamboohr.com) and [Workday](https://www.workday.com) offer built-in offboarding triggers that connect directly to identity providers. Configure automatic deprovisioning triggers when an employee status changes in your HRIS.
 
 Map all SaaS tools that are not managed through SSO. These are your highest risk — they require manual revocation and are the most likely to be forgotten. Document them now and build a manual checklist that HR reviews on every departure until you can automate each one.
 

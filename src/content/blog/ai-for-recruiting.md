@@ -21,7 +21,7 @@ Not every part of recruiting benefits equally from AI. Some tasks are perfect fo
 
 These are the tasks where AI consistently delivers measurable results:
 
-**1. Resume screening and shortlisting.** A single job posting can generate 250+ applications. A recruiter spends an average of 7 seconds per resume on an initial scan. AI can review all 250 in under a minute and produce a ranked shortlist based on criteria you define. This alone can save 10-15 hours per open role.
+**1. Resume screening and shortlisting.** A single job posting on [Indeed](https://www.indeed.com) or [LinkedIn](https://www.linkedin.com) can generate 250+ applications. A recruiter spends an average of 7 seconds per resume on an initial scan. AI can review all 250 in under a minute and produce a ranked shortlist based on criteria you define. This alone can save 10-15 hours per open role.
 
 **2. Writing and optimizing job descriptions.** Most job descriptions are too long, full of jargon, or accidentally biased. AI can audit your language, suggest improvements, and generate first drafts that you refine. What used to take a day takes 20 minutes.
 
@@ -123,7 +123,7 @@ Interview scheduling is a coordination problem, and coordination problems are ex
 The tools that work best connect directly to your team's calendars and your ATS (applicant tracking system):
 
 - **Calendly or SavvyCal**: Good for simple one-on-one interview scheduling. Candidates pick from available slots. Free plans available.
-- **GoodTime**: Built specifically for interview scheduling. Automatically finds times that work across multiple interviewers, rotates interview panels, and integrates with Greenhouse, Lever, and other ATS platforms.
+- **GoodTime**: Built specifically for interview scheduling. Automatically finds times that work across multiple interviewers, rotates interview panels, and integrates with [Greenhouse](https://www.greenhouse.com), [Lever](https://www.lever.co), and other ATS platforms.
 - **Paradox (Olivia)**: An AI assistant that handles scheduling via text message or chat. Works well for high-volume roles where candidates prefer texting over email.
 - **ModernLoop**: Focuses on interview logistics at scale — panel scheduling, room booking, interviewer load balancing.
 
@@ -155,7 +155,7 @@ You do not need an enterprise contract to start using AI in recruiting. These op
 - **Zoho Recruit**: Has AI matching features built in. Free for one recruiter, paid plans from $25/month.
 
 **For job descriptions:**
-- **Textio**: Specifically built for bias detection and optimization in job posts. Pricey for enterprise, but they offer smaller plans.
+- **[Textio](https://textio.com)**: Specifically built for bias detection and optimization in job posts. Pricey for enterprise, but they offer smaller plans.
 - **Gender Decoder**: Free, open-source tool that checks for gendered language. Basic but useful.
 - **Any general AI assistant**: Claude, ChatGPT, or similar. Give it your draft and the prompts from the section above. This costs almost nothing and works surprisingly well.
 

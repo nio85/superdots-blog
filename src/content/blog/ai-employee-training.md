@@ -94,7 +94,7 @@ AI can produce several types of training content from your existing materials:
 
 ### Content curation
 
-Most companies do not need to create all training content from scratch. There is a massive amount of existing content — courses, articles, videos, documentation — that could be useful if employees could find the right piece at the right time.
+Most companies do not need to create all training content from scratch. Platforms like [LinkedIn Learning](https://www.linkedin.com/learning) and [Coursera](https://www.coursera.org) offer thousands of courses, and the [Association for Talent Development](https://www.td.org) maintains extensive professional development resources. There is a massive amount of existing content — courses, articles, videos, documentation — that could be useful if employees could find the right piece at the right time.
 
 AI curates by matching content to the learner's current skill gaps, role, and learning preferences. Instead of browsing a catalog of 500 courses, the employee sees 5 recommended pieces that address their specific needs right now.
 

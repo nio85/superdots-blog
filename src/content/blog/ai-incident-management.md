@@ -65,7 +65,7 @@ AI correlation goes beyond simple rule-based grouping (like "group alerts from t
 
 The result: 70-90% reduction in alert volume without missing real incidents. Your on-call engineer sees five incidents per shift instead of 50 alerts. Each incident has full context attached.
 
-**Tools to consider:** PagerDuty's Event Intelligence, Moogsoft, and BigPanda specialize in AI-powered alert correlation. These integrate with existing [AI DevOps tools](/blog/ai-devops-tools) and monitoring stacks to reduce noise at the point of alert delivery.
+**Tools to consider:** [PagerDuty](https://www.pagerduty.com)'s Event Intelligence, Moogsoft, and BigPanda specialize in AI-powered alert correlation. These integrate with existing [AI DevOps tools](/blog/ai-devops-tools) and monitoring stacks to reduce noise at the point of alert delivery.
 
 ## Automated Triage: Prioritize What Matters
 
@@ -84,7 +84,7 @@ Based on this assessment, AI assigns an initial severity, routes the incident to
 
 This cuts triage time from 10-15 minutes to under 60 seconds. The right people are engaged immediately with the right context. No more waking up the database team for a networking issue.
 
-For teams already using [AI ticket routing](/blog/ai-ticket-routing) for customer support, the same principles apply to incident triage — pattern matching, historical classification, and intelligent routing.
+For teams already using [AI ticket routing](/blog/ai-ticket-routing) for customer support, the same principles apply to incident triage — pattern matching, historical classification, and intelligent routing. [Google's SRE handbook](https://sre.google) formalized many of these triage principles long before AI tooling existed.
 
 ## Root Cause Analysis: Stop Guessing, Start Knowing
 
@@ -129,7 +129,7 @@ You write your runbooks as executable scripts or playbooks (Ansible, Terraform, 
 
 The key is trust escalation. You start with semi-automated execution for everything. As the AI demonstrates reliability on specific runbooks, you graduate them to fully automated. A fix that has been executed correctly 50 times in a row earns full automation. A fix that has only been used twice stays semi-automated.
 
-**Tools to consider:** Shoreline.io, Rundeck (with AI extensions), and PagerDuty's Automation Actions all support AI-triggered runbook execution. For infrastructure-level automation, Kubernetes operators and custom controllers can also serve as automated runbooks for container orchestration issues.
+**Tools to consider:** Shoreline.io, Rundeck (with AI extensions), and PagerDuty's Automation Actions all support AI-triggered runbook execution. For infrastructure-level automation, Kubernetes operators and custom controllers can also serve as automated runbooks for container orchestration issues. [Opsgenie](https://www.atlassian.com/software/opsgenie) also offers automation rules that trigger runbook execution based on alert conditions.
 
 ### What to Automate First
 
