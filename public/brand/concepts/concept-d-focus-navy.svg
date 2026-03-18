@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Concept D: "Focus" — Navy monochrome variant -->
+  <defs>
+    <clipPath id="focus-clip-n">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="24" fill="#0B1222"/>
+  <line x1="14" y1="50" x2="50" y2="14" stroke="rgba(11,18,34,0.2)" stroke-width="1.5" clip-path="url(#focus-clip-n)"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Concept C: "Convergence"
+       Two circles of different sizes that partially overlap.
+       Each has a gradient; the overlap creates a rich visual blend
+       via semi-transparency. Feels like two forces converging.
+       Kandinsky: intersecting geometric forms. Tschichold: bold simplicity. -->
+  <defs>
+    <linearGradient id="conv-a" x1="0" y1="1" x2="0.8" y2="0">
+      <stop offset="0%" stop-color="#0B1222"/>
+      <stop offset="40%" stop-color="#1A2744"/>
+      <stop offset="100%" stop-color="#E8363B"/>
+    </linearGradient>
+    <linearGradient id="conv-b" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F04048"/>
+      <stop offset="100%" stop-color="#C42D31"/>
+    </linearGradient>
+  </defs>
+  <!-- Large circle: navy-to-red gradient -->
+  <circle cx="22" cy="36" r="20" fill="url(#conv-a)"/>
+  <!-- Small circle: bright red gradient, semi-transparent overlap -->
+  <circle cx="42" cy="24" r="16" fill="url(#conv-b)" opacity="0.88"/>
+</svg>

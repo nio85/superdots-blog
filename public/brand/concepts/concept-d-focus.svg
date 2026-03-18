@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Concept D: "Focus"
+       A single circle with a dramatic radial gradient — bright red
+       at center dissolving into deep navy at the edge (sfumatura).
+       A precise geometric line bisects the composition diagonally,
+       adding Tschichold-inspired structure. Minimal, bold, unforgettable.
+       The line transforms a simple circle into a designed mark. -->
+  <defs>
+    <radialGradient id="focus-grad" cx="0.45" cy="0.42" r="0.55">
+      <stop offset="0%" stop-color="#F24A50"/>
+      <stop offset="35%" stop-color="#E8363B"/>
+      <stop offset="70%" stop-color="#8C1E22"/>
+      <stop offset="100%" stop-color="#0B1222"/>
+    </radialGradient>
+    <clipPath id="focus-clip">
+      <circle cx="32" cy="32" r="24"/>
+    </clipPath>
+  </defs>
+  <!-- Main circle with sfumatura gradient -->
+  <circle cx="32" cy="32" r="24" fill="url(#focus-grad)"/>
+  <!-- Diagonal line, clipped to circle — Tschichold structural element -->
+  <line x1="14" y1="50" x2="50" y2="14" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" clip-path="url(#focus-clip)"/>
+</svg>
