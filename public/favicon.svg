@@ -1,16 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Superdots Favicon: Convergence mark on brand navy -->
-  <defs>
-    <linearGradient id="fav-a" x1="0" y1="1" x2="0.8" y2="0">
-      <stop offset="0%" stop-color="#1A2744"/>
-      <stop offset="100%" stop-color="#E8363B"/>
-    </linearGradient>
-    <linearGradient id="fav-b" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F04048"/>
-      <stop offset="100%" stop-color="#C42D31"/>
-    </linearGradient>
-  </defs>
+  <!-- Superdots Favicon: flat circle on navy -->
   <rect width="32" height="32" rx="6" fill="#0B1222"/>
-  <circle cx="11" cy="18" r="10" fill="url(#fav-a)"/>
-  <circle cx="21" cy="12" r="8" fill="url(#fav-b)" opacity="0.88"/>
+  <circle cx="16" cy="16" r="12" fill="#E8363B"/>
 </svg>

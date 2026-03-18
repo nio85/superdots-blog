@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Superdots Icon Mark: Navy monochrome variant -->
-  <circle cx="22" cy="36" r="20" fill="#0B1222"/>
-  <circle cx="42" cy="24" r="16" fill="#0B1222" opacity="0.6"/>
+  <!-- Superdots Icon Mark: navy monochrome -->
+  <circle cx="32" cy="32" r="24" fill="#0B1222"/>
 </svg>
