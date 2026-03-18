@@ -73,7 +73,7 @@ AI systems let you define weight profiles by vendor category. A critical infrast
 
 ### Benchmarking against peers
 
-Scores in isolation are less useful than scores in context. AI can benchmark your vendors against each other and, with market data integrations, against industry standards. Knowing that your top-performing logistics vendor scores 78 out of 100 is useful. Knowing that the industry average for that category is 85 tells you something more actionable.
+Scores in isolation are less useful than scores in context. AI can benchmark your vendors against each other and, with market data integrations, against industry standards. Knowing that your top-performing logistics vendor scores 78 out of 100 is useful. Knowing that the industry average for that category is 85 — based on benchmarks from analysts like [Gartner](https://www.gartner.com) — tells you something more actionable.
 
 ---
 
@@ -179,7 +179,7 @@ Three main approaches:
 
 **Dedicated vendor management platforms** like Vendorful, Genuity, or Gatekeeper combine contract management, SLA tracking, and vendor scoring in one system. Best if you are starting fresh or your current tools have no vendor management functionality.
 
-**Procurement suite add-ons** like Coupa or SAP Ariba's vendor management modules work if you are already on those platforms. Less implementation friction, but often less sophisticated AI than point solutions.
+**Procurement suite add-ons** like [Coupa](https://www.coupa.com) or [SAP Ariba](https://www.sap.com/products/procurement.html)'s vendor management modules work if you are already on those platforms. Less implementation friction, but often less sophisticated AI than point solutions.
 
 **AI overlays on existing tools** — tools like Glean, Ironclad AI, or custom GPT-based setups can analyze contracts and surface insights from data in your existing systems without replacing them. Best for teams that want AI capabilities without a platform migration.
 

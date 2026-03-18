@@ -19,7 +19,7 @@ Here is what actually works in 2026, organized by the UX workflow stage where ea
 
 UX work involves a specific loop: explore many options, test them, converge on the best one. The exploration phase is expensive. You sketch ten wireframe variations to find the one that works. You build three prototype flows to test which interaction model clicks with users.
 
-AI compresses the exploration phase. Instead of drawing ten layouts by hand, you describe the constraints and get ten variations in minutes. Instead of spending a day building a prototype, you feed it a wireframe and get a clickable flow.
+As [Nielsen Norman Group](https://www.nngroup.com) has long emphasized, rapid iteration and user testing are the foundation of effective UX. AI compresses the exploration phase. Instead of drawing ten layouts by hand, you describe the constraints and get ten variations in minutes. Instead of spending a day building a prototype, you feed it a wireframe and get a clickable flow.
 
 The judgment stays with you. AI handles volume. You handle taste.
 
@@ -31,7 +31,7 @@ This is where AI saves the most time in the earliest design phase. Instead of ma
 
 ### Figma Make
 
-If your team already lives in Figma, this is the obvious starting point. Figma Make generates wireframes and layouts directly inside your existing workspace, pulling from your design system components. The key advantage is that AI-generated layouts use your actual components — not generic placeholders you have to swap out later.
+If your team already lives in [Figma](https://www.figma.com), this is the obvious starting point. Figma Make generates wireframes and layouts directly inside your existing workspace, pulling from your design system components. The key advantage is that AI-generated layouts use your actual components — not generic placeholders you have to swap out later.
 
 **Best for:** Teams already invested in the Figma ecosystem who want AI without switching tools.
 
@@ -110,7 +110,7 @@ This is where AI might deliver the highest return on investment. Synthesizing us
 
 ### Maze
 
-Maze supports prototype testing, preference tests, interviews, surveys, and focus groups. Its AI features handle report generation, transcription, and theme analysis. You run a usability test, and Maze surfaces patterns across participants — common drop-off points, confusion areas, task completion rates — without you manually coding each session.
+[Maze](https://maze.co) supports prototype testing, preference tests, interviews, surveys, and focus groups. Its AI features handle report generation, transcription, and theme analysis. You run a usability test, and Maze surfaces patterns across participants — common drop-off points, confusion areas, task completion rates — without you manually coding each session.
 
 **Best for:** Teams that run frequent usability tests and need fast synthesis.
 
@@ -122,7 +122,7 @@ Dovetail aggregates data from interviews, usability tests, surveys, and support 
 
 ### UserTesting
 
-UserTesting's AI capabilities accelerate the entire research cycle — from participant recruitment through test planning to analysis. The platform handles repetitive tasks like transcription and highlight extraction so you can focus on deeper insights. The AI summary feature generates a research report from test sessions that is usually good enough to share with stakeholders after light editing.
+[UserTesting](https://www.usertesting.com)'s AI capabilities accelerate the entire research cycle — from participant recruitment through test planning to analysis. The platform handles repetitive tasks like transcription and highlight extraction so you can focus on deeper insights. The AI summary feature generates a research report from test sessions that is usually good enough to share with stakeholders after light editing.
 
 **Best for:** Teams that need to scale research without scaling the research team.
 

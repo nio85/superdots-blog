@@ -195,11 +195,11 @@ When you have multiple budgets, shared expenses, and need to collaborate:
 
 For larger organizations with complex budgeting needs:
 
-- **Anaplan.** Enterprise planning platform with AI-powered forecasting. Connects across departments for company-wide budget visibility.
-- **Workday Adaptive Planning.** AI-enhanced budgeting and forecasting that integrates with HR and finance data. Good for organizations that need workforce planning tied to budget planning.
+- **[Anaplan](https://www.anaplan.com).** Enterprise planning platform with AI-powered forecasting. Connects across departments for company-wide budget visibility.
+- **[Workday Adaptive Planning](https://www.workday.com/en-us/products/adaptive-planning).** AI-enhanced budgeting and forecasting that integrates with HR and finance data. Good for organizations that need workforce planning tied to budget planning.
 - **Oracle Cloud EPM.** Full enterprise performance management with AI scenario modeling. Heavy investment, but handles the complexity of large organizations.
 
-**Best for:** Companies with 500+ employees, multi-department budgets, and the need for audit trails and compliance. These are not tools you try this week — they are platforms you evaluate over months.
+**Best for:** Companies with 500+ employees, multi-department budgets, and the need for audit trails and compliance. These are not tools you try this week — they are platforms you evaluate over months. [Gartner](https://www.gartner.com) regularly publishes evaluations of enterprise planning platforms if you need help narrowing the field.
 
 ## When to loop in finance (and when you don't need to)
 

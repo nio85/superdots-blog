@@ -62,7 +62,7 @@ Most modern AI tools let you provide context about your writing style. Use this.
 
 - 3-5 examples of your published writing
 - A style brief: "Direct. Short sentences. No jargon. Use concrete examples instead of abstract advice."
-- Words and phrases to avoid: "Do not use the words 'delve,' 'unlock,' 'harness,' or 'game-changer.'"
+- Words and phrases to avoid: "Do not use the words 'delve,' 'unlock,' 'harness,' or 'game-changer.'" Style guides like the [AP Stylebook](https://www.apstylebook.com) can help you define clear rules for your AI prompts.
 
 Claude, ChatGPT, and Jasper all support custom instructions or system prompts where you can set this once and have it apply to every session.
 
@@ -115,8 +115,8 @@ This pass takes 10-15 minutes and is the difference between "AI-assisted" and "A
 - **Claude**: Strong at following style instructions and maintaining a consistent tone across long documents.
 - **ChatGPT**: Good for brainstorming and generating variations. Custom GPTs let you build a personalized writing assistant.
 - **Jasper**: Built for marketing teams. Brand voice training is a core feature.
-- **Grammarly**: Not generative AI, but excellent at cleaning up your writing while keeping your voice.
-- **Hemingway Editor**: Highlights overly complex sentences. Useful as a second pass after AI drafting.
+- **[Grammarly](https://www.grammarly.com)**: Not generative AI, but excellent at cleaning up your writing while keeping your voice.
+- **[Hemingway Editor](https://hemingwayapp.com)**: Highlights overly complex sentences. Useful as a second pass after AI drafting.
 
 ## The test that matters
 

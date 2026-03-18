@@ -34,7 +34,7 @@ Here is how AI eDiscovery tools work across every phase of the process, which to
 
 ## The eDiscovery Lifecycle — Where AI Fits
 
-eDiscovery follows a well-established framework: the EDRM (Electronic Discovery Reference Model). AI eDiscovery tools now touch every stage. Some stages benefit more than others.
+eDiscovery follows a well-established framework: the [EDRM](https://edrm.net) (Electronic Discovery Reference Model). AI eDiscovery tools now touch every stage. Some stages benefit more than others.
 
 ### Identification
 
@@ -110,7 +110,7 @@ For broader document management workflows that feed into eDiscovery, see our gui
 
 ### Relativity (and RelativityOne)
 
-The industry standard. RelativityOne is the cloud-hosted version. It offers TAR 2.0 (Active Learning), conceptual analytics, email threading, sentiment analysis, and communication visualization. Its marketplace includes hundreds of third-party integrations.
+[Relativity](https://www.relativity.com) is the industry standard. RelativityOne is the cloud-hosted version. It offers TAR 2.0 (Active Learning), conceptual analytics, email threading, sentiment analysis, and communication visualization. Its marketplace includes hundreds of third-party integrations.
 
 Best for: Large firms and corporations handling complex, high-volume matters. The learning curve is steep, and you will likely need dedicated Relativity administrators.
 
@@ -132,7 +132,7 @@ Best for: Investigations, regulatory matters, and internal reviews where underst
 
 ### Logikcull (now part of Relativity)
 
-Self-service eDiscovery for smaller matters. Logikcull simplifies the process — upload documents, and the platform handles processing, de-duplication, and basic review. Limited AI capabilities compared to full-featured platforms, but the simplicity is the point.
+Self-service eDiscovery for smaller matters. [Logikcull](https://www.logikcull.com) simplifies the process — upload documents, and the platform handles processing, de-duplication, and basic review. Limited AI capabilities compared to full-featured platforms, but the simplicity is the point.
 
 Best for: Small firms, in-house legal teams handling routine litigation, and organizations that want to bring eDiscovery in-house without hiring specialists.
 

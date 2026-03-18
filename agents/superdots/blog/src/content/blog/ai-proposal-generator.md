@@ -131,7 +131,7 @@ The tool works. The content infrastructure isn't there yet. Spend a day organizi
 
 General AI writing tools (ChatGPT, Claude, etc.) can help you draft proposal sections. But they don't integrate with your CRM, they don't know your pricing, and they can't pull from your case study library. You end up doing most of the assembly work yourself.
 
-Purpose-built proposal tools (Proposify, PandaDoc AI, Loopio, Responsive) exist specifically for this workflow. The integrations are what create the time savings. If you're only using AI for the writing step, you're capturing maybe 20% of the available efficiency.
+Purpose-built proposal tools ([Proposify](https://www.proposify.com), [PandaDoc](https://www.pandadoc.com) AI, Loopio, Responsive) exist specifically for this workflow. The integrations are what create the time savings. If you're only using AI for the writing step, you're capturing maybe 20% of the available efficiency.
 
 ### Ignoring Win/Loss Data
 
@@ -141,7 +141,7 @@ The best AI proposal systems learn from your history. Which proposals won? Which
 
 The right AI proposal tool depends on your deal complexity and existing stack.
 
-**For small teams with straightforward deals:** PandaDoc or Proposify. Both have AI writing features, template libraries, and CRM integrations. Low setup cost, fast time-to-value.
+**For small teams with straightforward deals:** [PandaDoc](https://www.pandadoc.com) or [Proposify](https://www.proposify.com). Both have AI writing features, template libraries, and CRM integrations. Low setup cost, fast time-to-value.
 
 **For teams with complex pricing and configuration:** Loopio or Responsive. Built for RFP response workflows, with sophisticated content library management and multi-stakeholder collaboration.
 
@@ -153,7 +153,7 @@ The integrations to prioritize, in order:
 1. CRM (non-negotiable)
 2. Document storage / content library
 3. CPQ or pricing system
-4. E-signature
+4. E-signature (tools like [DocuSign](https://www.docusign.com))
 5. Analytics (proposal engagement tracking)
 
 ## What Good Looks Like

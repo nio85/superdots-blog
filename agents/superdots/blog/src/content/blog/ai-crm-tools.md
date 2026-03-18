@@ -18,7 +18,7 @@ faqs:
 
 Your CRM has AI features. You are probably not using them.
 
-This is not an accusation. It is a pattern. Every major CRM — Salesforce, HubSpot, Zoho, Pipedrive, Microsoft Dynamics — has added AI capabilities over the past two years. Most of them shipped with fanfare, a webinar, and then silence. Adoption on the average sales team hovers somewhere between "we tried it once" and "wait, we have that?"
+This is not an accusation. It is a pattern. Every major CRM — [Salesforce](https://www.salesforce.com), [HubSpot](https://www.hubspot.com), [Zoho](https://www.zoho.com/crm), [Pipedrive](https://www.pipedrive.com), Microsoft Dynamics — has added AI capabilities over the past two years. Most of them shipped with fanfare, a webinar, and then silence. Adoption on the average sales team hovers somewhere between "we tried it once" and "wait, we have that?"
 
 The problem is not the technology. It is the gap between what CRM vendors demo and what sales teams actually need. AI features that sound impressive in a keynote often fail in practice because they require clean data nobody has, training nobody provides, or behavior changes nobody is willing to make.
 

@@ -89,7 +89,7 @@ The AI updates these scores continuously as new data arrives. A supplier's score
 
 This matters because early warning enables early action. A 20-point score drop three months before a disruption gives you time to qualify alternatives. A phone call on the day of the disruption does not.
 
-**Tools worth evaluating:** Riskmethods (now Sphera) provides AI-driven supplier risk scores with real-time monitoring. LogicGate offers configurable risk scoring across multiple domains. Resolver combines risk scoring with incident management.
+**Tools worth evaluating:** Riskmethods (now Sphera) provides AI-driven supplier risk scores with real-time monitoring. [LogicGate](https://www.logicgate.com) offers configurable risk scoring across multiple domains. Resolver combines risk scoring with incident management.
 
 ### Scenario modeling and simulation
 
@@ -107,7 +107,7 @@ These are not theoretical exercises. McKinsey found that companies using scenari
 
 ## Managing Supply Chain Risks with AI
 
-Supply chain disruption is the risk that keeps operations leaders up at night. And for good reason. A 2025 survey by Gartner found that 73% of supply chain leaders experienced at least one significant disruption in the previous 12 months. The average cost per disruption was $184 million for large enterprises.
+Supply chain disruption is the risk that keeps operations leaders up at night. And for good reason. A 2025 survey by [Gartner](https://www.gartner.com) found that 73% of supply chain leaders experienced at least one significant disruption in the previous 12 months. The average cost per disruption was $184 million for large enterprises.
 
 AI changes the equation by providing visibility into risks that were previously invisible.
 
@@ -214,7 +214,7 @@ AI is powerful, but it is not omniscient. Be clear about the limitations.
 
 **It cannot fix bad data.** If your supplier records are incomplete, your financial data is inconsistent, or your incident reports are unreliable, AI will produce unreliable risk assessments. Data quality is the foundation.
 
-**It cannot eliminate risk.** The goal of AI risk management is not zero risk. It is informed risk-taking. Better visibility into risks lets you take the right risks deliberately rather than stumbling into the wrong ones accidentally.
+**It cannot eliminate risk.** The goal of AI risk management is not zero risk. It is informed risk-taking, aligned with frameworks like [ISO 31000](https://www.iso.org/iso-31000-risk-management.html). Better visibility into risks lets you take the right risks deliberately rather than stumbling into the wrong ones accidentally.
 
 ## Measuring the ROI of AI Risk Management
 

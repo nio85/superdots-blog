@@ -34,11 +34,11 @@ You do not need a 40-page brand guidelines document. You need four things:
 
 ### Setting it up
 
-In **Canva**, go to Brand Kit (available on Pro plans). Upload your logo, enter your hex codes, and select your fonts. Every template you open will now offer your brand colors and fonts first.
+In **[Canva](https://www.canva.com)**, go to Brand Kit (available on Pro plans). Upload your logo, enter your hex codes, and select your fonts. Every template you open will now offer your brand colors and fonts first.
 
 In **Microsoft Designer**, your brand assets carry over from your Microsoft 365 account. If your company uses Microsoft 365, your brand fonts and colors may already be configured.
 
-In **Adobe Express**, the Brand Kit feature works similarly to Canva. Upload logos, set colors, choose fonts. The advantage is tight integration with Adobe Fonts — thousands of professional typefaces included.
+In **[Adobe Express](https://www.adobe.com/express)**, the Brand Kit feature works similarly to Canva. Upload logos, set colors, choose fonts. The advantage is tight integration with Adobe Fonts — thousands of professional typefaces included.
 
 Once your brand kit is set, every design you create starts on-brand instead of starting from scratch.
 
@@ -165,7 +165,7 @@ AI design tools are not going to replace professional designers. But they will �
 - **Complex infographics and data visualization.** AI can generate simple charts, but turning complex data into a clear visual story requires design thinking that tools do not have yet.
 - **Anything that requires originality.** If you need a visual concept that has never been done before, you need a human creative. AI remixes existing patterns — it does not invent new ones.
 
-The smartest approach: hire a designer to build your brand system — logo, colors, fonts, templates, and guidelines. Then use AI tools to execute within that system for everyday content. You get professional quality at scale without a full-time design hire.
+The smartest approach: hire a designer to build your brand system in a tool like [Figma](https://www.figma.com) — logo, colors, fonts, templates, and guidelines. Then use AI tools to execute within that system for everyday content. You get professional quality at scale without a full-time design hire.
 
 ## Start Here
 

@@ -48,7 +48,7 @@ The term "AI handoff" gets used loosely. Let's be specific about the four distin
 
 AI reads design files and produces written specifications automatically. Feed it a Figma component and it returns documented spacing values, typography settings, color references, border properties, shadow values, and responsive behavior.
 
-Tools like Zeplin's AI layer, Supernova, and the emerging generation of Figma plugins with AI backends do this today. The output is not a PDF full of screenshots. It is structured data: exact values, token references, and context — the kind of thing a developer can act on without a follow-up conversation.
+Tools like [Zeplin](https://zeplin.io)'s AI layer, Supernova, and the emerging generation of [Figma](https://www.figma.com) plugins with AI backends do this today. The output is not a PDF full of screenshots. It is structured data: exact values, token references, and context — the kind of thing a developer can act on without a follow-up conversation.
 
 The practical benefit is that designers stop writing specs by hand. They design, mark it ready, and the spec exists. What used to take an hour per screen now takes seconds.
 
@@ -102,9 +102,9 @@ There is no single platform that handles all four jobs well. Most teams combine 
 
 **For token management:** Supernova and Token Studio handle the extraction and sync workflow. Supernova in particular has strong CI/CD integration — tokens update in your codebase automatically when the Figma variables change.
 
-**For visual regression and drift detection:** Percy, Chromatic, and Applitools have added AI layers to their visual testing products. Chromatic integrates cleanly with Storybook if your team already uses it.
+**For visual regression and drift detection:** Percy, Chromatic, and Applitools have added AI layers to their visual testing products. Chromatic integrates cleanly with [Storybook](https://storybook.js.org) if your team already uses it.
 
-**For teams that want to consolidate:** Zeplin's newer AI features cover spec generation and comment-based annotation well. Not the best at code generation, but strong as a communication layer between design and development.
+**For teams that want to consolidate:** [Zeplin](https://zeplin.io)'s newer AI features cover spec generation and comment-based annotation well. Not the best at code generation, but strong as a communication layer between design and development.
 
 ## What Changes for Designers
 

@@ -46,7 +46,7 @@ AI monitoring tools watch these databases continuously and surface relevant chan
 
 ### How AI patent search works
 
-AI patent search tools index the full text of patent databases (USPTO, EPO, WIPO, and national patent offices) and use natural language processing to understand the technical substance of each document. When you query "method for detecting anomalies in network traffic using machine learning," the tool returns patents covering that technical ground — regardless of how each patent phrases it.
+AI patent search tools index the full text of patent databases ([USPTO](https://www.uspto.gov), EPO, [WIPO](https://www.wipo.int), and national patent offices) and use natural language processing to understand the technical substance of each document. When you query "method for detecting anomalies in network traffic using machine learning," the tool returns patents covering that technical ground — regardless of how each patent phrases it.
 
 The leading tools here include **Patsnap**, **Derwent Innovation** (Clarivate), **Lens.org** (open source), **TotalPatent One** (LexisNexis), and **Ambercite** for citation-based prior art analysis. Each has different strengths in coverage, semantic capability, and analytics depth.
 
@@ -98,7 +98,7 @@ This does not replace a formal clearance opinion from counsel. It does front-loa
 
 Most companies do not have a clear picture of what their IP portfolio actually contains, what it is worth, or how well it aligns with current business strategy. AI portfolio tools analyze your patents against your product lines, identify coverage gaps, flag patents with expiring relevance, and surface licensing opportunities in your non-core areas.
 
-**Dennemeyer Diaphon**, **Anaqua**, and **CPA Global** offer portfolio analytics that connect your IP assets to business value. The outcome is a prioritized portfolio: know which assets to maintain, which to abandon, and which to monetize.
+**Dennemeyer Diaphon**, **[Anaqua](https://www.anaqua.com)**, and **CPA Global** offer portfolio analytics that connect your IP assets to business value. The outcome is a prioritized portfolio: know which assets to maintain, which to abandon, and which to monetize.
 
 ### Renewal management
 

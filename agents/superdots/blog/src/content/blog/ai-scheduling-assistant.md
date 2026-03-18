@@ -32,7 +32,7 @@ The basic capability — "find a time when these people are all free" — is tab
 
 You share a scheduling link or CC the AI assistant on an email. It reads the context, checks everyone's availability, suggests times, and books the meeting when a time is confirmed. No back-and-forth. No spreadsheet of available slots. The AI handles the negotiation.
 
-For external scheduling (prospects, clients, partners), this is where the biggest time savings land. Instead of a five-email thread to find a meeting time, you send one link and the AI handles the rest.
+For external scheduling (prospects, clients, partners), this is where the biggest time savings land. Tools like [Calendly](https://calendly.com) and [Reclaim.ai](https://reclaim.ai) have pioneered this approach. Instead of a five-email thread to find a meeting time, you send one link and the AI handles the rest.
 
 ### Preference learning
 
@@ -84,7 +84,7 @@ For tips on getting more value from the meetings you do have, see our guide on [
 
 ### Calendar integrations
 
-The scheduler must work with your team's calendar system. Google Calendar and Microsoft 365/Outlook are baseline requirements. If your team uses both (common in companies that have acquired other companies), cross-platform support matters. Check that the integration is native, not through a third-party connector that might lag or break.
+The scheduler must work with your team's calendar system. [Google Calendar](https://calendar.google.com) and Microsoft 365/Outlook are baseline requirements. If your team uses both (common in companies that have acquired other companies), cross-platform support matters. Check that the integration is native, not through a third-party connector that might lag or break.
 
 ### Natural language processing
 

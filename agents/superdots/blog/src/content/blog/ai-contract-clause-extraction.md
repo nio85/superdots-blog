@@ -32,7 +32,7 @@ Here is exactly how it works, what it does well, and where you still need human 
 
 Clause extraction is not keyword search. Searching a contract for the word "termination" finds every time the word appears — in headings, definitions, cross-references, and actual termination provisions alike. That is noise.
 
-AI clause extraction uses natural language processing to understand context. It identifies the clause that governs termination rights, extracts the substantive terms (who can terminate, under what conditions, with how much notice), and structures that information in a way you can compare across contracts.
+AI clause extraction uses natural language processing to understand context. Platforms like [Kira Systems](https://kirasystems.com) and [Ironclad](https://ironcladapp.com) have pioneered this approach. It identifies the clause that governs termination rights, extracts the substantive terms (who can terminate, under what conditions, with how much notice), and structures that information in a way you can compare across contracts.
 
 The process has three steps.
 
@@ -158,7 +158,7 @@ Use AI to handle the volume. Use lawyers to handle the judgment.
 
 ## The Time Math
 
-A legal team reviewing a portfolio of 500 contracts manually — just to extract key clause terms — spends roughly 200-400 attorney hours on the project, depending on contract complexity. At loaded attorney costs, that is significant.
+A legal team reviewing a portfolio of 500 contracts manually — just to extract key clause terms — spends roughly 200-400 attorney hours on the project, depending on contract complexity. [Thomson Reuters](https://www.thomsonreuters.com) research on legal department efficiency confirms the scale of this burden. At loaded attorney costs, that is significant.
 
 AI clause extraction processes the same 500 contracts in a few hours. Your legal team spends another day verifying flagged items and reviewing edge cases. Total: two days instead of two months.
 

@@ -11,7 +11,7 @@ faqs:
   - question: "What data sources should a sentiment dashboard include?"
     answer: "At minimum: support tickets, app/product reviews, NPS survey responses, and social media mentions. For a complete picture, add live chat transcripts, community forum posts, sales call notes, and email feedback. The more signals you aggregate, the more accurate your sentiment trends become."
   - question: "How accurate is AI sentiment analysis?"
-    answer: "General-purpose sentiment analysis achieves 80-85% accuracy. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
+    answer: "General-purpose sentiment analysis achieves 80-85% accuracy, according to [Forrester](https://www.forrester.com) research. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
   - question: "How quickly can AI detect a sentiment shift?"
     answer: "Real-time dashboards can detect sentiment shifts within minutes of a spike in negative feedback. Most tools process incoming signals every 1-5 minutes. Alerting thresholds let you set sensitivity — for example, alert when negative sentiment in a product area increases 20% above the 7-day average."
   - question: "What is the difference between sentiment analysis and customer feedback analysis?"
@@ -44,7 +44,7 @@ A useful sentiment dashboard starts with four core data sources. Each captures a
 
 Tickets are the highest-signal source you have. Customers who submit a ticket are already frustrated enough to take action. The language they use — the specific features they name, the urgency in their tone — tells you a lot.
 
-Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
+Connect your helpdesk ([Qualtrics](https://www.qualtrics.com), Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
 
 ### App and Product Reviews
 
@@ -113,7 +113,7 @@ This is where sentiment scoring and classification happen. Three approaches:
 
 **Managed APIs** — OpenAI, Anthropic, or Google's NLP APIs handle the inference. You send text, they return sentiment scores and categories. Low setup cost, pay-per-use pricing. Good for early-stage or lower-volume use.
 
-**Specialized sentiment platforms** — Tools like MonkeyLearn, Lexalytics, or Chattermill are purpose-built for customer sentiment. They include pre-built classifiers, topic modeling, and dashboards out of the box. Faster time to value, less custom work.
+**Specialized sentiment platforms** — Tools like MonkeyLearn, Lexalytics, [Sprinklr](https://www.sprinklr.com), or Chattermill are purpose-built for customer sentiment. They include pre-built classifiers, topic modeling, and dashboards out of the box. Faster time to value, less custom work.
 
 **Self-hosted models** — Fine-tune an open-source model (BERT, RoBERTa) on your own data. Higher accuracy for domain-specific language, full data control, higher setup cost. Worth it at scale.
 

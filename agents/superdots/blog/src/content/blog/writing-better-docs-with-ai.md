@@ -40,7 +40,7 @@ AI is good at organizing information logically. Check:
 
 ### Step 3: Fix the voice
 
-AI tends to be verbose and formal. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass:
+AI tends to be verbose and formal. Google's [technical writing courses](https://developers.google.com/tech-writing) are a solid reference for the tone to aim for. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass:
 
 > Rewrite this to be more concise. Use active voice. Remove any sentences that don't add information. Our docs style is direct and practical — no fluff.
 
@@ -69,7 +69,7 @@ AI-generated docs need a human to verify:
 
 ## The result
 
-Teams using AI-assisted documentation typically produce docs 3x faster with comparable quality. More importantly, they actually write docs instead of putting it off because "it takes too long."
+Teams using AI-assisted documentation typically produce docs 3x faster with comparable quality. The [Write the Docs](https://www.writethedocs.org) community has excellent templates and style guides to build on. More importantly, teams actually write docs instead of putting it off because "it takes too long."
 
 Once your docs are written, make sure they are discoverable. An [AI-powered knowledge base](/blog/ai-knowledge-base-for-teams/) can surface the right documentation when your team needs it most.
 

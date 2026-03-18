@@ -36,7 +36,7 @@ If you are already using [AI spreadsheet tools](/blog/ai-spreadsheet-tools/) for
 
 Power BI is the most widely used BI tool in the enterprise world, and Microsoft's Copilot integration makes it significantly more accessible.
 
-**What it does**: Full-stack business intelligence — data modeling, dashboards, reports, and embedded analytics. Copilot adds natural language queries, auto-generated report pages, and narrative summaries of your data.
+**What it does**: [Power BI](https://powerbi.microsoft.com) provides full-stack business intelligence — data modeling, dashboards, reports, and embedded analytics. Copilot adds natural language queries, auto-generated report pages, and narrative summaries of your data.
 
 **Key AI features**:
 - Ask questions in plain English from a dedicated Copilot chat panel
@@ -52,7 +52,7 @@ Power BI is the most widely used BI tool in the enterprise world, and Microsoft'
 
 ### **2. Tableau (with Einstein AI)**
 
-Tableau has been the gold standard for data visualization for years. Salesforce's Einstein AI integration brings conversational analytics to an already powerful platform.
+[Tableau](https://www.tableau.com) has been the gold standard for data visualization for years. Salesforce's Einstein AI integration brings conversational analytics to an already powerful platform.
 
 **What it does**: Interactive visual analytics with deep drill-down capabilities. Tableau Agent (formerly Einstein Copilot) lets you ask questions in natural language and get instant chart responses.
 
@@ -146,7 +146,7 @@ Anomaly is an AI data analyst agent that creates interactive dashboards from you
 
 ### **7. Google Looker**
 
-Looker is Google Cloud's enterprise BI platform, now deeply integrated with Gemini AI for conversational analytics.
+[Looker](https://cloud.google.com/looker) is Google Cloud's enterprise BI platform, now deeply integrated with Gemini AI for conversational analytics.
 
 **What it does**: Enterprise BI with a semantic modeling layer (LookML). Looker standardizes your data definitions so everyone in the organization works from the same metrics. Gemini AI adds natural language exploration on top.
 

@@ -11,7 +11,7 @@ faqs:
   - question: "Can AI write ad copy that converts?"
     answer: "AI can generate effective ad copy, but not by default. The key is using AI to produce many variations quickly, then testing them against real audiences. The best-performing AI ad copy typically goes through 2-3 rounds of generation, testing, and iteration."
   - question: "What is the best AI ad copy generator?"
-    answer: "It depends on your workflow. For high-volume Google Ads, tools like Copy.ai and Jasper integrate well with ad platforms. For social ads, Anyword and Persado offer performance prediction. The best tool is the one that fits your testing and iteration process."
+    answer: "It depends on your workflow. For high-volume Google Ads, tools like [Copy.ai](https://www.copy.ai) and [Jasper](https://www.jasper.ai) integrate well with ad platforms. For social ads, Anyword and Persado offer performance prediction. The best tool is the one that fits your testing and iteration process."
   - question: "Does AI ad copy outperform human-written copy?"
     answer: "In A/B tests, AI-generated variations often match or beat human-written copy — not because AI writes better, but because AI lets you test 20 variations where a human would test 3. More tests means faster discovery of what resonates."
 ---
@@ -60,7 +60,7 @@ A human copywriter might produce 5 solid variations in an hour. AI produces 20 i
 
 ### Adapt across platforms
 
-Write one core message, and AI adapts it for Google Ads (character-limited headlines + descriptions), Meta (punchy hooks for short attention spans), LinkedIn (professional but human), and email (subject line + preview text + body). Each version matches the platform's constraints and audience expectations.
+Write one core message, and AI adapts it for [Google Ads](https://ads.google.com) (character-limited headlines + descriptions), [Meta Ads](https://www.facebook.com/business/ads) (punchy hooks for short attention spans), LinkedIn (professional but human), and email (subject line + preview text + body). Each version matches the platform's constraints and audience expectations.
 
 ### Iterate from performance data
 

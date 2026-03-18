@@ -11,7 +11,7 @@ heroImage: "/images/blog/ai-compliance-tools.webp"
 
 Regulations are multiplying faster than your team can read them. GDPR, the EU AI Act, SOC 2, HIPAA, state-level privacy laws — every quarter brings new requirements, and every requirement brings new documentation, new audits, and new ways to get fined.
 
-Here is the uncomfortable truth: most compliance teams are tracking obligations in spreadsheets, shared folders, and email threads. It works until it does not. And when it fails, the consequences are expensive. Non-compliance costs 2.71 times more than maintaining compliance when you factor in fines, legal fees, remediation, and business disruption.
+Here is the uncomfortable truth: most compliance teams are tracking obligations in spreadsheets, shared folders, and email threads. It works until it does not. And when it fails, the consequences are expensive. Non-compliance costs 2.71 times more than maintaining compliance when you factor in fines, legal fees, remediation, and business disruption, according to research from [Gartner](https://www.gartner.com).
 
 AI compliance tools do not make regulations simpler. But they automate the tedious parts — monitoring changes, flagging gaps, generating audit trails — so your team can focus on the judgment calls that actually require human expertise.
 
@@ -98,7 +98,7 @@ The compliance software market is crowded and confusing. Here are the questions 
 
 **Red flags:**
 
-- The vendor cannot explain what their AI actually does. "AI-powered" is marketing. You want to know: does it use NLP to parse regulatory text? ML to score risks? Or is "AI" just a search function with a chatbot wrapper?
+- The vendor cannot explain what their AI actually does. "AI-powered" is marketing. You want to know: does it use NLP to parse regulatory text? ML to score risks? Or is "AI" just a search function with a chatbot wrapper? Established vendors like [Thomson Reuters](https://www.thomsonreuters.com) and [OneTrust](https://www.onetrust.com) publish detailed documentation on their AI methodology — expect the same from any vendor you evaluate.
 - Implementation requires a dedicated technical team. If the tool is built for compliance professionals, it should be usable by compliance professionals.
 - No clear pricing. Compliance budgets are tight. If you cannot get a straight answer on cost before signing, expect surprises.
 - The tool only generates reports but does not help you act on findings. Reports are not compliance. Workflows, task assignment, and remediation tracking are what close gaps.
