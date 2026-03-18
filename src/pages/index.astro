@@ -82,12 +82,16 @@ const posts = (await getCollection('blog'))
 </Base>
 
 <style>
-	/* Hero */
+	/* Hero — full-bleed breakout from main container */
 	.hero {
 		position: relative;
 		text-align: center;
-		padding: var(--space-20) 0 var(--space-16);
+		padding: var(--space-20) var(--space-4) var(--space-16);
 		overflow: clip;
+		/* Break out of main's max-width to go full-bleed */
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-top: calc(-1 * var(--space-8)); /* cancel main's top padding */
 	}
 	/* Radial glow behind hero */
 	.hero-glow {
@@ -95,7 +99,8 @@ const posts = (await getCollection('blog'))
 		top: -30%;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 800px;
+		width: 100%;
+		max-width: 1200px;
 		height: 600px;
 		border-radius: 50%;
 		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
@@ -105,8 +110,9 @@ const posts = (await getCollection('blog'))
 	.hero-glow-secondary {
 		position: absolute;
 		bottom: -40%;
-		right: -10%;
-		width: 500px;
+		right: 0;
+		width: 50%;
+		max-width: 600px;
 		height: 500px;
 		border-radius: 50%;
 		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
@@ -230,7 +236,7 @@ const posts = (await getCollection('blog'))
 	}
 	@media (max-width: 720px) {
 		.hero {
-			padding: var(--space-12) 0 var(--space-10);
+			padding: var(--space-12) var(--space-4) var(--space-10);
 		}
 		.hero h1 {
 			font-size: var(--text-4xl);
