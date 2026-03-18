@@ -18,14 +18,17 @@
 
 ## Visual Identity
 
-### The Superdot
+### The Superdots Mark
 
-The red dot is our signature mark. It appears:
-- Next to the wordmark in navigation
-- As a period accent on key headlines (`Work smarter.`)
-- As a visual separator and brand element throughout the site
+Three ascending red dots in a diagonal — our signature mark. It appears:
+- Next to the wordmark in navigation (header, footer, mobile menu)
+- As the icon mark (favicon, small contexts below 140px)
+- Represents progression, growth, and the leveling-up that AI enables at work
 
-It represents a single point of clarity — cutting through the noise to the thing that matters.
+The single red dot (`.superdot`) is used as:
+- A period accent on key headlines (`Work smarter.`)
+- A visual separator and brand element throughout the site
+- A single point of clarity — cutting through the noise to the thing that matters.
 
 ### Color Palette
 
