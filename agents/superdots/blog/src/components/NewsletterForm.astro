@@ -89,7 +89,8 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 				status.classList.add('newsletter-status--error');
 			} finally {
 				btn.disabled = false;
-				btn.textContent = 'Subscribe';
+				const isCompact = el.closest('.newsletter')?.classList.contains('newsletter--compact');
+				btn.textContent = isCompact ? 'Join' : 'Subscribe';
 			}
 		});
 	});
