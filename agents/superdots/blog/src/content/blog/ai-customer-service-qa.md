@@ -1,7 +1,7 @@
 ---
 title: 'AI Customer Service QA: Automate Quality Scoring for Every Interaction'
 description: 'AI customer service QA tools automatically score calls and chats, identify coaching opportunities, and ensure compliance across every customer interaction.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:12:00Z"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'

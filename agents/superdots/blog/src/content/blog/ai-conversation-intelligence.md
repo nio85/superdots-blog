@@ -1,7 +1,7 @@
 ---
 title: 'AI Conversation Intelligence: Extract Real Insights From Every Sales Call'
 description: 'AI conversation intelligence analyzes sales calls and meetings to surface talk ratios, objection patterns, competitor mentions, and deal risk signals automatically.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:09:00Z"
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'

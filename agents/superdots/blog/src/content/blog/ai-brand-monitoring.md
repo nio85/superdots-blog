@@ -1,7 +1,7 @@
 ---
 title: 'AI Brand Monitoring: Track Every Mention, Sentiment Shift, and Competitor Move'
 description: 'AI brand monitoring tracks mentions, sentiment, and competitive positioning across social media, news, reviews, and forums in real-time for faster response.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:03:00Z"
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'analysis'

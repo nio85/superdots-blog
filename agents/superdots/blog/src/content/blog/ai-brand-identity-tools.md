@@ -1,7 +1,7 @@
 ---
 title: 'AI Brand Identity Tools: Build a Professional Brand Without an Agency'
 description: 'AI brand identity tools help create and maintain consistent brand identities — logos, color systems, typography, and brand guidelines — without hiring a branding agency.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:00:00Z"
 author: 'Superdots Team'
 department: 'design'
 useCase: 'writing'
