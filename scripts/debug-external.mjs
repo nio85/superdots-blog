@@ -7,37 +7,21 @@
  * Output: JSON report to /tmp/debug-external-latest.json
  * Exit: 0 = all pass, 1 = any failure
  * On critical failure (site down, SSL <14 days): sends alert email via Gmail SMTP.
- *
- * Requires: GMAIL_APP_PASSWORD (loaded from .env)
- * Optional: CLOUDFLARE_API_TOKEN (for deploy status check)
  */
 
-import { readFileSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { writeFileSync } from 'fs';
 import * as tls from 'tls';
 import * as dns from 'dns/promises';
 import nodemailer from 'nodemailer';
+import {
+  SITE_URL as SITE, SITE_HOST as HOST,
+  CF_ACCOUNT_ID as CF_ACCOUNT, CF_PROJECT_NAME as CF_PROJECT,
+  SMTP_USER, SMTP_PASS,
+  REPORT_EXTERNAL_PATH as REPORT_PATH,
+  createSmtpTransport,
+} from './config.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Load .env from blog root
-try {
-  const envFile = readFileSync(join(__dirname, '..', '.env'), 'utf-8');
-  for (const line of envFile.split('\n')) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-} catch {}
-
-const SITE = 'https://superdots.sh';
-const HOST = 'superdots.sh';
-const CF_ACCOUNT = '2013b526ab724299e028e1fcfe5a5c62';
-const CF_PROJECT = 'superdots-blog';
-const SMTP_USER = 'lucavittorio.bartoccini@gmail.com';
-const SMTP_PASS = process.env.GMAIL_APP_PASSWORD;
 const CF_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
-const REPORT_PATH = '/tmp/debug-external-latest.json';
 
 // --- Helpers ---
 
@@ -134,13 +118,11 @@ async function checkRss() {
 
 async function checkBrokenLinks() {
   try {
-    // Fetch sitemap index to get child sitemaps
     const { res: idxRes } = await timedFetch(`${SITE}/sitemap-index.xml`);
     if (idxRes.status !== 200) return fail('broken_links', 'Cannot fetch sitemap index');
     const idxBody = await idxRes.text();
     const sitemapUrls = [...idxBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 
-    // Collect page URLs from child sitemaps
     const pageUrls = [];
     for (const smUrl of sitemapUrls) {
       try {
@@ -155,7 +137,6 @@ async function checkBrokenLinks() {
 
     if (!pageUrls.length) return fail('broken_links', 'No pages found in sitemap');
 
-    // Check each page (HEAD request for speed, limit concurrency)
     const broken = [];
     const batchSize = 10;
     for (let i = 0; i < pageUrls.length; i += batchSize) {
@@ -184,10 +165,8 @@ async function checkBrokenLinks() {
 
 async function checkPerformance() {
   try {
-    // Homepage TTFB
     const { latencyMs: homeTtfb } = await timedFetch(SITE);
 
-    // Get 3 random article URLs from sitemap
     const { res: idxRes } = await timedFetch(`${SITE}/sitemap-index.xml`);
     const idxBody = await idxRes.text();
     const sitemapUrls = [...idxBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
@@ -206,7 +185,6 @@ async function checkPerformance() {
       } catch {}
     }
 
-    // Shuffle and take 3
     const sample = articleUrls.sort(() => Math.random() - 0.5).slice(0, 3);
     const ttfbs = [{ url: SITE, ttfb: homeTtfb }];
 
@@ -262,12 +240,7 @@ async function sendAlert(criticals) {
     return;
   }
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
+  const transporter = createSmtpTransport(nodemailer);
 
   const lines = criticals.map(c => `- **${c.name}**: ${c.detail}`).join('\n');
   const text = `CRITICAL: superdots.sh external checks failed\n\n${lines}\n\nReport: ${REPORT_PATH}`;
@@ -315,7 +288,6 @@ async function main() {
     },
   };
 
-  // Print results
   for (const c of checks) {
     const icon = c.status === 'pass' ? 'PASS' : c.status === 'skip' ? 'SKIP' : 'FAIL';
     console.log(`[${icon}] ${c.name}: ${c.detail}`);
@@ -323,11 +295,9 @@ async function main() {
 
   console.log(`\nSummary: ${report.summary.pass}/${report.summary.total} passed`);
 
-  // Write report
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
   console.log(`Report written to ${REPORT_PATH}`);
 
-  // Critical alerts: site down or SSL expiring
   const criticals = checks.filter(c =>
     c.status === 'fail' && (c.name === 'http_uptime' || c.name === 'ssl_expiry')
   );
@@ -336,7 +306,6 @@ async function main() {
     await sendAlert(criticals);
   }
 
-  // Exit code
   const hasFail = checks.some(c => c.status === 'fail');
   process.exit(hasFail ? 1 : 0);
 }
