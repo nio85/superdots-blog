@@ -184,24 +184,3 @@ The marketers who figure this out now will have a serious advantage. The ones wh
 
 Your call.
 
-## FAQ
-
-### What is the best AI tool for email marketing?
-
-Start with whatever email platform you already use. Mailchimp, HubSpot, Klaviyo, and ActiveCampaign all include built-in AI features for subject lines, content generation, and send-time optimization. For better copy specifically, Jasper and Copy.ai have email-specific templates. For basic subject line and body copy drafting, ChatGPT or Claude with a good prompt template gets you 80% of the way without any additional tools.
-
-### How do I stop AI-written emails from sounding generic?
-
-Create a brand voice document listing specific phrases you use, phrases you never use, and examples of emails that nailed your tone. Include it in every AI prompt. Generate multiple drafts, then edit ruthlessly: cut the first paragraph (AI tends to add filler intros), replace generic phrases with specific product details, and add at least one line that only someone who knows your brand could write. Read it out loud before sending.
-
-### Does AI email personalization actually improve open rates?
-
-Yes. Send-time optimization alone consistently delivers a 10-15% improvement in open rates by sending each subscriber their email at their individual optimal time. Dynamic content personalization, where different subscribers see different product recommendations, testimonials, or CTAs based on their behavior, further improves click-through rates. The combination of personalized timing and content outperforms batch-and-blast campaigns significantly.
-
-### How do I use AI for email subject line testing?
-
-Generate 15-20 subject line variations using an AI tool with a prompt specifying your audience, topic, desired tone, and a mix of approaches (curiosity-driven, benefit-focused, direct). Use predictive scoring tools like Phrasee or Jasper to estimate open rate probability. Then A/B test the top contenders by sending them to small segments of your list first and rolling out the winner to the rest.
-
-### How often should I send marketing emails with AI tools?
-
-AI makes it easy to produce more campaigns, but sending too frequently causes subscriber fatigue and unsubscribes. Use AI to optimize frequency per subscriber rather than blasting everyone on the same schedule. Let engagement data drive how often you email each person. Some subscribers prefer weekly emails while others engage better with biweekly sends, and AI can adjust frequency automatically based on individual behavior.

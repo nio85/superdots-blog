@@ -182,24 +182,3 @@ Start with auto-categorization. It is the quickest win and the foundation for ev
 
 For more ways AI can help your business operations, explore our [AI tools for business guide](/blog/ai-tools-for-business-guide).
 
-## FAQ
-
-### Is AI accounting software secure enough for financial data?
-
-Reputable AI accounting tools use bank-level encryption (AES-256 at rest, TLS in transit) and most are SOC 2 compliant. Before signing up, verify where your data is stored, who has access, and what happens to it if you cancel. If you operate in a regulated industry, confirm the vendor meets your specific compliance requirements.
-
-### How long does it take to set up AI accounting software?
-
-Most tools connect to your bank accounts and accounting software (QuickBooks, Xero, etc.) within a day. However, the AI needs 2-4 weeks of learning from your transaction history before it reaches useful accuracy levels. Plan for a full month before you see meaningful time savings from auto-categorization.
-
-### What size business benefits most from AI accounting tools?
-
-Small and mid-size businesses processing 100+ transactions per month see the fastest ROI. At that volume, manual categorization and reconciliation consume significant bookkeeper time. Businesses with fewer transactions can still benefit, but the time savings may not justify the subscription cost. Enterprise teams typically need more customized solutions.
-
-### How much does AI accounting software cost?
-
-Pricing varies widely. Some tools charge a flat monthly fee ($50-$300/month for small businesses), while others price by transaction volume or number of connected accounts. Calculate your cost at 2x and 5x your current transaction volume before committing, since volume-based pricing can spike unexpectedly as your business grows.
-
-### Can AI accounting software handle multiple currencies?
-
-Most modern AI accounting tools support multi-currency transactions, but the depth varies. Some automatically convert and categorize foreign transactions using real-time exchange rates, while others require manual currency selection. If you regularly deal with international vendors or customers, test multi-currency handling during your trial with real transactions.

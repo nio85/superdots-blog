@@ -161,24 +161,3 @@ Start by connecting your existing storage. Let AI classify what you already have
 
 For more on AI-powered productivity workflows, explore our [AI productivity guide](/blog/ai-productivity-guide) and our [AI automation guide](/blog/ai-automation-guide). For a comprehensive overview, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
 
-## FAQ
-
-### What is AI document management?
-
-AI document management adds an intelligence layer to your existing file storage. It auto-classifies documents by type (contract, invoice, report), tags them with attributes like client name and date, and enables semantic search so you can find files by meaning rather than exact keywords. It works on top of tools like Google Drive, SharePoint, and Dropbox without requiring you to migrate files.
-
-### How does semantic search differ from keyword search?
-
-Keyword search only matches exact words, so searching for "Q4 revenue projections" will not find a document titled "FY2025 Financial Forecast -- October through December." Semantic search understands meaning, so it matches conceptually related queries to relevant documents regardless of the specific terms used. This shifts the experience from remembering exact file names to simply describing what you need.
-
-### How accurate is AI at auto-classifying documents?
-
-AI auto-classification typically achieves 85-90% accuracy out of the box for common document types like contracts, invoices, reports, and presentations. After 2-3 months of corrections and training on your specific document patterns, accuracy improves to 95% or higher. Edge cases like unusual formats or ambiguous documents still benefit from human review.
-
-### Can AI document management help with compliance?
-
-Yes. AI applies retention policies automatically based on document classification, scans for personally identifiable information to flag documents for appropriate handling under GDPR, CCPA, or HIPAA, maintains audit trails of every document action, and identifies documents with inappropriate access levels. This turns compliance from a manual exercise into an automated, ongoing process.
-
-### How do I get started with AI document management?
-
-Connect your primary document storage (Google Drive, SharePoint, or Dropbox) and let AI index and classify your existing files. Spend the second week reviewing and correcting classifications for your most important document types. Then connect additional sources like email and chat platforms. Once classification is working well, establish it as the standard for new documents going forward.

@@ -195,32 +195,3 @@ AI QA is powerful. It is not magic. Be clear about its limitations.
 
 **It does not eliminate bias completely.** AI models can carry biases from training data. Regularly audit your scoring for patterns — are certain accents scored lower on communication quality? Are certain phrasing styles penalized unfairly?
 
-## FAQ
-
-### What is AI customer service QA?
-
-AI customer service QA uses artificial intelligence to automatically evaluate customer support interactions — calls, chats, and emails — against your quality standards. Instead of manually reviewing a small sample, AI scores every interaction for criteria like process adherence, communication quality, compliance, and customer sentiment.
-
-### How much does AI customer service QA cost?
-
-Pricing varies widely. Entry-level tools start around $15-25 per agent per month. Enterprise platforms with advanced analytics, compliance features, and custom integrations can run $50-100+ per agent per month. Most vendors offer volume discounts for larger teams.
-
-### Can AI QA handle multiple languages?
-
-Yes, most modern AI customer service QA tools support major languages. Accuracy varies by language — English, Spanish, French, and German typically perform best. If your team supports less common languages, test accuracy carefully during your pilot phase.
-
-### How long does it take to implement AI customer service QA?
-
-Plan for 6-8 weeks from kickoff to full deployment. The first 2 weeks focus on rubric design and tool configuration. Weeks 3-4 are for pilot testing. Weeks 5-8 cover calibration, expansion, and integration with coaching workflows. Teams with simpler rubrics and a single channel can move faster.
-
-### Will AI QA make agents feel like they are being surveilled?
-
-It can, if you roll it out badly. The key is transparency. Tell agents what you are measuring and why. Share their scores with them directly. Position AI QA as a coaching tool — not a surveillance system. Teams that involve agents in rubric design and treat QA data as developmental (not punitive) see much higher adoption and trust.
-
-### Does AI customer service QA integrate with existing helpdesk tools?
-
-Most AI QA platforms integrate with major helpdesks like Zendesk, Freshdesk, Intercom, Salesforce Service Cloud, and HubSpot. Voice-focused tools typically integrate with contact center platforms like Five9, Genesys, and NICE. Check integration support early in your evaluation — a tool that does not connect to your helpdesk is not worth considering.
-
-### What accuracy can I expect from AI scoring?
-
-After proper calibration, AI QA tools typically achieve 85-92% agreement with human evaluators on rubric-based scoring. Sentiment analysis accuracy is slightly lower, around 80-88%. These numbers improve over time as the model learns from corrections and additional data.

@@ -1,0 +1,40 @@
+---
+interface FaqItem {
+	question: string;
+	answer: string;
+}
+
+interface Props {
+	faqs: FaqItem[];
+}
+
+const { faqs } = Astro.props;
+---
+
+{faqs && faqs.length > 0 && (
+	<section class="faq-section" aria-labelledby="faq-heading">
+		<div class="faq-header">
+			<div class="faq-header-line" aria-hidden="true"></div>
+			<h2 id="faq-heading">FAQ<span class="dot-accent">.</span></h2>
+			<div class="faq-header-line" aria-hidden="true"></div>
+		</div>
+		<div class="faq-list">
+			{faqs.map((faq, i) => (
+				<details class="faq-item" name="faq">
+					<summary class="faq-question">
+						<span class="faq-q-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+						<span class="faq-q-text">{faq.question}</span>
+						<span class="faq-chevron" aria-hidden="true">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+					</summary>
+					<div class="faq-answer">
+						<p>{faq.answer}</p>
+					</div>
+				</details>
+			))}
+		</div>
+	</section>
+)}

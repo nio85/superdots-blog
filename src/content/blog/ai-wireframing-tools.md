@@ -192,32 +192,3 @@ They also struggle with novel interaction patterns. If your product needs someth
 
 Use AI wireframing tools for what they are good at: fast exploration of known patterns, rapid iteration on layout options, and quick conversion of ideas into something a team can react to. Keep the strategic decisions with your designers.
 
-## FAQ
-
-### Do I need design skills to use AI wireframing tools?
-
-No. Tools like Visily and Uizard are built specifically for non-designers. You describe what you need in plain language and get a usable wireframe. That said, having a basic understanding of layout principles — hierarchy, spacing, grouping — helps you give better prompts and evaluate the output more effectively.
-
-### Can AI wireframing tools replace a designer on my team?
-
-No. AI wireframing tools handle the mechanical parts of wireframing: drawing boxes, aligning elements, creating variations. The strategic parts — deciding what to build, how to structure information, what trade-offs to make — require human judgment. Think of these tools as making your existing designer two to three times faster, not as a substitute.
-
-### How accurate are wireframes generated from text descriptions?
-
-Accuracy depends on prompt specificity. A vague prompt like "make a dashboard" produces a generic layout. A specific prompt like "a dashboard with three KPI cards at the top, a line chart showing monthly revenue below, and a table of recent transactions at the bottom" produces something you can work with immediately. Most teams find that specific prompts yield wireframes that are 70-80% usable on the first generation.
-
-### Can AI wireframing tools work with my existing design system?
-
-Some can. Figma Make pulls directly from your component library. Relume exports to Figma where your design system lives. Most other tools generate wireframes using their own component sets, which means you will need to swap components when you move to high-fidelity design. If design system consistency matters (and it should), prioritize tools that integrate with your component library.
-
-### What is the difference between AI wireframing and AI prototyping?
-
-Wireframing focuses on layout and structure — what goes where on each screen. Prototyping adds interactivity — click targets, transitions, conditional flows. Some AI wireframing tools (like Google Stitch) blur this line by generating interactive output directly. Others (like Uizard and Visily) generate static wireframes that you make interactive in a second step. For most teams, starting with wireframes and adding interactivity later gives more control.
-
-### How do AI wireframing tools handle responsive design?
-
-Most AI wireframing tools generate wireframes for a single viewport — typically desktop. Some (like TeleportHQ) generate responsive variants automatically. For others, you need to generate separate wireframes for mobile and tablet or manually adjust the layout. If responsive wireframing is important for your project, check this capability before committing to a tool.
-
-### Are AI-generated wireframes suitable for user testing?
-
-Yes, with some preparation. Add realistic content (not lorem ipsum), include navigation and basic interactions, and test the wireframe as an interactive prototype if your tool supports it. AI wireframing tools get you to a testable state faster than manual wireframing, which means you can run more tests earlier in the process. That earlier feedback loop is where the real value lies.
