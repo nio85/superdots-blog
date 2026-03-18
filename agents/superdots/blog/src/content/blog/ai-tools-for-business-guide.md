@@ -86,6 +86,6 @@ These tools won't replace skilled designers for complex brand work. But for ever
 
 Don't try to AI-enable every department at once. Pick the team with the most painful, repetitive bottleneck. Prove it works there. Then expand.
 
-The best AI implementations share three traits: they target specific, repetitive tasks; they keep humans in the decision-making loop; and they measure results from day one. As [Harvard Business Review](https://hbr.org) has documented, companies that start with focused AI pilots outperform those that try to transform everything at once.
+The best AI implementations share three traits: they target specific, repetitive tasks; they keep humans in the decision-making loop; and they measure results from day one. As [Harvard Business Review](https://hbr.org) has documented, companies that start with focused AI pilots outperform those that try to transform everything at once. For individual productivity quick-wins, our [AI productivity guide](/blog/ai-productivity-guide) covers email, meetings, and writing. And if your sales team is the starting point, [AI CRM tools](/blog/ai-crm-tools) shows which features actually drive adoption.
 
 Start with one guide above. Try one tool this week. The busywork isn't going to eliminate itself.

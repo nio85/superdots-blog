@@ -25,7 +25,7 @@ This is the highest-value feature for most teams. Regulations change constantly 
 
 AI compliance tools scan regulatory sources automatically, identify changes relevant to your industry and obligations, and alert your team. Instead of reading through 200 pages of Federal Register updates, you get a summary: "The FTC updated its data broker regulations. Here is what changed. Here is how it affects your current policies."
 
-This alone can save compliance teams 10-15 hours per week — time that was spent on monitoring and can now go toward actually implementing changes.
+This alone can save compliance teams 10-15 hours per week — time that was spent on monitoring and can now go toward actually implementing changes. Teams that need continuous oversight across multiple jurisdictions may also benefit from [AI regulatory compliance monitoring](/blog/ai-regulatory-compliance-monitoring) platforms that specialize in real-time tracking.
 
 ### Policy gap analysis
 
@@ -43,7 +43,7 @@ AI tools generate audit trails automatically by connecting to your existing syst
 
 Not all compliance risks are equal. A minor documentation gap in a low-risk area is different from a missing control in a system that processes customer financial data.
 
-AI tools assign risk scores based on the regulation's severity, the potential impact of non-compliance, and your current mitigation status. This helps teams with limited resources focus on what matters most instead of treating every finding with equal urgency.
+AI tools assign risk scores based on the regulation's severity, the potential impact of non-compliance, and your current mitigation status. This helps teams with limited resources focus on what matters most instead of treating every finding with equal urgency. For a broader look at how AI supports this process, see our guide to [AI risk management](/blog/ai-risk-management).
 
 ## When you need an AI compliance tool (and when you don't)
 

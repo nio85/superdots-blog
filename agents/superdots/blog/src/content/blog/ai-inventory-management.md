@@ -13,7 +13,7 @@ Your inventory spreadsheet is lying to you. Not on purpose — it just cannot ke
 
 Meanwhile, you are sitting on $40K of product that is not moving and out of stock on the three SKUs your biggest customer actually wants.
 
-This is not a discipline problem. It is a tools problem. AI inventory management fixes it by turning your messy, lagging data into demand forecasts, automatic reorder triggers, and early warnings — without requiring a data science team or a six-figure software budget.
+This is not a discipline problem. It is a tools problem. AI inventory management fixes it by turning your messy, lagging data into demand forecasts, automatic reorder triggers, and early warnings — without requiring a data science team or a six-figure software budget. When combined with [AI supply chain management](/blog/ai-supply-chain-management), it gives operations teams end-to-end visibility from supplier to shelf.
 
 ## The real cost of "good enough" inventory tracking
 
@@ -51,7 +51,7 @@ AI is particularly good at spotting things that do not fit the pattern:
 
 - **Demand spikes**: A product that normally sells 10 units per week suddenly sells 40. Is it a trend or a one-time event? AI flags it so you can investigate before your next reorder.
 - **Shrinkage patterns**: Stock levels that consistently drop faster than sales would explain. Could be theft, damage, or counting errors — AI surfaces the discrepancy.
-- **Supplier reliability shifts**: A vendor that used to deliver in 10 days is now averaging 16. AI detects the drift before it causes a stockout.
+- **Supplier reliability shifts**: A vendor that used to deliver in 10 days is now averaging 16. AI detects the drift before it causes a stockout. Teams that manage complex vendor networks may also benefit from [AI procurement tools](/blog/ai-procurement-tools) that evaluate supplier performance systematically.
 
 ### Seasonal pattern recognition
 

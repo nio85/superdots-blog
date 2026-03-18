@@ -27,17 +27,17 @@ The cost isn't just bugs. It's velocity. Every day a PR sits in review is a day 
 
 Traditional static analysis tools (linters, SAST scanners) check for known patterns — syntax errors, security vulnerabilities, style violations. They're useful but limited. They can tell you a variable is unused. They can't tell you that your retry logic will cause a thundering herd problem under load.
 
-AI code review tools go further:
+AI code review tools — often used alongside [AI pair programming assistants](/blog/ai-pair-programming) — go further:
 
 **Bug detection.** They analyze code changes in context — not just the diff, but how it interacts with the rest of the codebase. They catch null pointer issues, off-by-one errors, race conditions, and logic flaws that pattern-matching tools miss.
 
 **PR summarization.** Every PR gets an auto-generated summary: what changed, why it matters, which files are most critical to review. This saves reviewers 5-10 minutes of orientation per PR.
 
-**Security scanning.** Beyond known CVEs, AI tools spot insecure patterns — hardcoded secrets, SQL injection vectors, improper input validation — in the context of your specific application.
+**Security scanning.** Beyond known CVEs, AI tools spot insecure patterns — hardcoded secrets, SQL injection vectors, improper input validation — in the context of your specific application. For a deeper look at how AI handles vulnerability detection, see our guide to [AI security scanning](/blog/ai-security-scanning).
 
 **Style and standards enforcement.** Not just formatting (your linter already does that) but architectural patterns, naming conventions, and project-specific practices.
 
-**Test gap identification.** AI flags code paths that aren't covered by the existing test suite, especially when new logic is introduced without corresponding tests.
+**Test gap identification.** AI flags code paths that aren't covered by the existing test suite, especially when new logic is introduced without corresponding tests. If test coverage is a priority, [AI test generation tools](/blog/ai-test-generation) can complement your review process by automatically writing tests for uncovered paths.
 
 ## Tools worth knowing about
 

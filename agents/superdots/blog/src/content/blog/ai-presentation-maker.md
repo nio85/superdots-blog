@@ -50,7 +50,7 @@ Not every AI presentation maker does the same thing. Some generate full decks fr
 
 **Microsoft Copilot for PowerPoint** — Best if your company already uses Microsoft 365. It works inside PowerPoint, which means you keep your existing templates, brand fonts, and workflows. Content generation is decent. Design suggestions are conservative but on-brand. Requires a Copilot license.
 
-**[Canva](https://www.canva.com)** — Best for non-designers who need visual slides. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
+**[Canva](https://www.canva.com)** — Best for non-designers who need visual slides, and one of several [AI design tools for non-designers](/blog/ai-design-tools-non-designers) worth exploring. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
 
 **SlidesAI** — Best for [Google Slides](https://workspace.google.com/products/slides) users. It is a Google Workspace add-on that generates slides from text you provide. Good for converting documents or notes into presentations. Design options are more limited than Canva or Beautiful.ai.
 
@@ -205,4 +205,4 @@ AI presentation makers are genuinely useful. They eliminate the blank-slide prob
 
 But they do not eliminate the need to think about your message. The best presentations — even the quick internal ones — have a clear point, specific evidence, and a reason to exist. AI can structure and design that message. It cannot figure out what the message should be.
 
-Use AI for the parts it is good at: generating structure, suggesting layouts, filling in boilerplate. Then spend your time on the parts that matter: accurate data, a clear narrative, and a slide deck that actually looks like it came from your team.
+Use AI for the parts it is good at: generating structure, suggesting layouts, filling in boilerplate. Then spend your time on the parts that matter: accurate data, a clear narrative, and a slide deck that actually looks like it came from your team. If presentations are just one piece of a larger content pipeline, see how [AI content creation tools](/blog/ai-content-creation) can streamline the rest of your workflow.

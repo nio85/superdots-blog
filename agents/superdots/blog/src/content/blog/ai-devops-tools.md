@@ -186,7 +186,7 @@ The most powerful observability feature: AI correlates logs, metrics, and traces
 
 ### What to look for
 
-**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and incident management tools. Whether you use [Kubernetes](https://kubernetes.io) for orchestration, [Terraform](https://www.terraform.io) for infrastructure as code, or [Docker](https://www.docker.com) for containerization, the AI layer should integrate without requiring you to change your stack. An AI tool that requires you to change your infrastructure is not worth the overhead.
+**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and [AI infrastructure monitoring](/blog/ai-infrastructure-monitoring) tools. Whether you use [Kubernetes](https://kubernetes.io) for orchestration, [Terraform](https://www.terraform.io) for infrastructure as code, or [Docker](https://www.docker.com) for containerization, the AI layer should integrate without requiring you to change your stack. An AI tool that requires you to change your infrastructure is not worth the overhead.
 
 **Learning period and accuracy.** AI tools need historical data to learn patterns. Ask: how much data does the model need? How long until it is useful? What is the accuracy after the learning period?
 

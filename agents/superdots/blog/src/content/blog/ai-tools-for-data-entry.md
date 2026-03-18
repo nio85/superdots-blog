@@ -11,7 +11,7 @@ heroImage: "/images/blog/ai-tools-for-data-entry.webp"
 
 Data entry is one of the most hated tasks in every office. It's repetitive, error-prone, and feels like a waste of time — because it usually is. You're taking information that already exists in one format (a PDF, an email, a handwritten form) and manually typing it into another format (a spreadsheet, a database, a CRM).
 
-AI tools can now do most of this work for you. Not "someday." Right now.
+AI tools can now do most of this work for you. Not "someday." Right now. If you are new to AI automation in general, our [AI automation guide](/blog/ai-automation-guide) covers the fundamentals before diving into specific tools.
 
 ## The real cost of manual data entry
 
@@ -53,7 +53,7 @@ For unstructured data like emails, chat transcripts, and notes, NLP extracts rel
 
 **[Nanonets](https://nanonets.com)** processes invoices, receipts, purchase orders, and other financial documents. Upload a PDF or image, and it extracts all relevant fields into a structured format you can export to your accounting software. It learns from corrections, so accuracy improves over time.
 
-**[Rossum](https://rossum.ai)** is built specifically for document processing in finance. It handles complex multi-page invoices, credit notes, and delivery notes with high accuracy out of the box. The interface lets you verify AI extractions with a single click rather than retyping everything.
+**[Rossum](https://rossum.ai)** is built specifically for document processing in finance — and pairs well with [AI invoice processing](/blog/ai-invoice-processing) workflows for end-to-end accounts payable automation. It handles complex multi-page invoices, credit notes, and delivery notes with high accuracy out of the box. The interface lets you verify AI extractions with a single click rather than retyping everything.
 
 ### For CRM and sales data
 
@@ -69,7 +69,7 @@ For unstructured data like emails, chat transcripts, and notes, NLP extracts rel
 
 ### For general-purpose data extraction
 
-**ChatGPT and Claude** handle ad hoc data extraction surprisingly well. Paste a block of unstructured text — a list of contacts from an email, product specifications from a vendor's website, meeting notes with action items — and ask it to extract the data into a table or JSON format. This isn't a production workflow, but it's incredibly useful for one-off tasks.
+**ChatGPT and Claude** handle ad hoc data extraction surprisingly well. Paste a block of unstructured text — a list of contacts from an email, product specifications from a vendor's website, meeting notes with action items — and ask it to extract the data into a table or JSON format. For recurring spreadsheet work, [AI spreadsheet tools](/blog/ai-spreadsheet-tools) offer more structured automation than chat-based extraction. This isn't a production workflow, but it's incredibly useful for one-off tasks.
 
 For ongoing data analysis once your data is clean, check out our guide to [AI data analysis for non-technical teams](/blog/ai-data-analysis-for-non-technical-teams/).
 

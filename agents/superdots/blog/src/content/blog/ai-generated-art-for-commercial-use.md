@@ -24,7 +24,7 @@ The first thing everyone asks about AI-generated art: can I legally use it for m
 
 The longer answer: copyright law for AI-generated content is still evolving. In the US, the Copyright Office has ruled that purely AI-generated images can't be copyrighted by the person who prompted them. This means you can use AI images commercially, but you also can't stop someone else from using the same (or similar) image.
 
-For most business uses — blog illustrations, social media graphics, internal presentations, marketing collateral — this is fine. You're using the image, not selling it. The lack of exclusive copyright rarely matters when the image is illustrating your content rather than being the product itself.
+For most business uses — blog illustrations, social media graphics, internal presentations, marketing collateral — this is fine. If you want a deeper look at using AI visuals specifically for marketing campaigns, our guide to [AI image generation for marketing](/blog/ai-image-generation-marketing) covers the practical workflow. You're using the image, not selling it. The lack of exclusive copyright rarely matters when the image is illustrating your content rather than being the product itself.
 
 ## Where AI-generated art works well for businesses
 
@@ -38,7 +38,7 @@ A prompt like "minimalist illustration of a team reviewing financial data on a d
 
 AI art tools can produce scroll-stopping social media visuals at the speed your content calendar demands. Need a unique image for every LinkedIn post this week? That's 10 minutes of prompting instead of hours of design work or stock photo browsing.
 
-The key is developing a consistent visual style. Write a "style prompt" that you reuse: "flat illustration style, muted earth tones, geometric shapes, minimal detail." Apply this to every image you generate, and your social feed develops a cohesive look.
+The key is developing a consistent visual style. Write a "style prompt" that you reuse: "flat illustration style, muted earth tones, geometric shapes, minimal detail." Apply this to every image you generate, and your social feed develops a cohesive look. Pairing AI art with an [AI social media content calendar](/blog/ai-social-media-content-calendar) lets you batch-produce visuals for the entire week in one sitting.
 
 ### Internal presentations and docs
 
@@ -113,7 +113,7 @@ When someone on your team needs an image, they grab a prompt from the library, a
 
 ### Establish brand guidelines for AI art
 
-Just like you have brand guidelines for typography and color, create guidelines for AI-generated visuals:
+Just like you have brand guidelines for typography and color, create guidelines for AI-generated visuals. If your team does not have formal brand assets yet, [AI brand identity tools](/blog/ai-brand-identity-tools) can help you establish a cohesive visual foundation before you start generating art at scale:
 
 - Preferred styles (flat illustration, watercolor, line art)
 - Color palettes to use and avoid
