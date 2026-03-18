@@ -182,3 +182,25 @@ Your visuals will not win design awards. But they will be consistent, profession
 ---
 
 *Need help with content that goes alongside your visuals? Learn how to [keep your voice when writing with AI](/blog/ai-writing-assistant-keep-your-voice), or read our deep dive on [AI presentations that don't look AI-generated](/blog/ai-presentation-maker).*
+
+## FAQ
+
+### What is the best free AI design tool for non-designers?
+
+Canva's free tier is the most accessible starting point for non-designers. It includes thousands of templates, basic AI image generation, and background removal. Microsoft Designer is another strong free option, especially if you already use Microsoft 365. For simple tasks like removing image backgrounds or generating quick graphics, both tools handle the basics without requiring a paid plan.
+
+### How do I make AI-generated designs look professional?
+
+Set up a brand kit first with your logo, 2-3 brand colors, and 1-2 fonts. Start with a template for its layout structure, then strip it back and rebuild with your own content and brand elements. Use AI for supporting elements like background generation or photo editing rather than generating the entire design. Follow three core principles: use whitespace generously, align every element to a grid, and limit your color palette.
+
+### Can AI design tools replace a professional graphic designer?
+
+AI design tools can handle routine, high-volume visuals like social media posts, blog headers, internal presentations, and email graphics. They cannot replace a designer for brand identity work, high-stakes external materials like investor decks, complex data visualizations, or anything requiring original creative concepts. The best approach is hiring a designer to build your brand system, then using AI tools to execute within that system for everyday content.
+
+### How do I create consistent social media graphics with AI tools?
+
+Set up your brand kit in Canva or Adobe Express with your colors, fonts, and logo. Find 3-5 templates with layouts you like and save them as your go-to starting points. Design for your primary platform first, then use the magic resize feature to reflow the design for other platforms. This process takes under five minutes per graphic once your templates are established.
+
+### What is the difference between Canva, Adobe Express, and Microsoft Designer?
+
+Canva offers the largest template library and strongest brand kit features, making it ideal for teams producing high volumes of social content. Adobe Express provides tight integration with Adobe Fonts and the broader Adobe ecosystem, which is an advantage if your team already uses Creative Cloud. Microsoft Designer integrates with Microsoft 365 and carries over existing brand assets automatically, making it the easiest option for organizations already in the Microsoft ecosystem.

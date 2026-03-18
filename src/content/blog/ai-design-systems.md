@@ -60,7 +60,7 @@ These tools scan your codebase, your Figma files, or both, and flag components t
 
 ### How to set this up
 
-Start with visual regression testing. It gives you the biggest return with the least setup.
+Start with visual regression testing. It gives you the biggest return with the least setup. If you are building new components or pages alongside this, [AI wireframing tools](/blog/ai-wireframing-tools) can generate initial layouts that already conform to your system's spacing and structure.
 
 1. **Pick a tool.** Chromatic (built by the Storybook team) or Applitools Eyes are the two strongest options. Both use AI to reduce false positives in visual comparisons.
 2. **Connect it to your component library.** If you use Storybook, both tools integrate directly. They render every story, screenshot it, and compare against the last approved version.
@@ -138,7 +138,7 @@ This is the hardest problem to catch manually because each individual deviation 
 
 **Visual scanning.** AI tools can crawl your production applications and compare rendered UI against your design system specs. They flag elements that look like they are using design system components but have been modified — wrong spacing, different colors, custom overrides.
 
-**Code analysis.** Static analysis tools can scan your product codebases and find components that override design system styles. If a product team has `!important` overrides on system components, that is drift worth investigating.
+**Code analysis.** Static analysis tools can scan your product codebases and find components that override design system styles. If a product team has `!important` overrides on system components, that is drift worth investigating. This kind of analysis is especially valuable during [AI design handoff](/blog/ai-design-handoff), where discrepancies between design specs and implementation are most likely to appear.
 
 **Usage analytics.** Some design system platforms track which components are used across products and which are substituted with custom implementations. AI can analyze these patterns and identify products that are drifting away from the system.
 
@@ -194,3 +194,25 @@ The best design system is not the one with the most components. It is the one th
 - [AI Design Tools for Non-Designers](/blog/ai-design-tools-non-designers) — If your team needs to create visuals without a designer, this is where to start.
 - [AI Automation Guide](/blog/ai-automation-guide) — The broader playbook for automating repetitive work across your team.
 - [AI Tools for Business Guide](/blog/ai-tools-for-business-guide) — A department-by-department look at which AI tools actually deliver value.
+
+## FAQ
+
+### How does AI help maintain a design system?
+
+AI automates the repetitive maintenance tasks that cause design systems to drift: scanning codebases for hard-coded values instead of design tokens, running visual regression tests to catch unintended component changes, detecting naming inconsistencies across components, and auto-generating documentation from source code. This lets your design systems team focus on strategic decisions rather than manual audits.
+
+### What is design token management and why does it matter?
+
+Design tokens are named variables for colors, spacing, typography, and other design values that connect design files to code. They matter because when managed properly, changing a brand color means updating one value in one place. AI helps by validating token definitions, flagging unused or near-duplicate tokens, syncing values across platforms, and showing impact analysis before changes are made.
+
+### What is the best way to start using AI for a design system?
+
+Start with visual regression testing using tools like Chromatic or Applitools. Set it up on your component library in CI so every pull request gets visual checks automatically. This takes 2-4 hours to configure and immediately catches visual inconsistencies. From there, layer in token validation, documentation automation, and drift detection over the following months.
+
+### Can AI replace a design systems team?
+
+No. AI handles the tedious maintenance work that humans cannot do at scale, such as scanning thousands of component implementations for inconsistencies, flagging drift, and updating documentation. The strategic work of deciding which patterns to add, handling edge cases, and driving adoption across teams still requires human judgment and design expertise.
+
+### How do you detect design drift across multiple products?
+
+AI-powered visual scanning tools crawl your production applications and compare rendered UI against design system specs, flagging components that have been modified with wrong spacing, different colors, or custom overrides. Static analysis tools scan codebases for style overrides on system components. The goal is not zero drift but informed drift, where every deviation is a conscious choice rather than an accident.

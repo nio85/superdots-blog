@@ -277,3 +277,25 @@ You don't need to build the whole system at once. Here's a sequence that gets yo
 5. **Ongoing**: Spend 30 minutes per week reviewing alerts and updating your competitive briefs. Schedule a monthly review analysis refresh.
 
 The reps who prep smarter don't just know more — they sell with more confidence. And confidence, combined with current information, is what wins competitive deals. If your team is also drowning in email during deal cycles, pair this with an [AI email triage workflow](/blog/automate-email-triage-with-ai) to keep your inbox from eating into research time.
+
+## FAQ
+
+### How much time does AI save on competitive analysis?
+
+Most teams report cutting competitor research time from 8-12 hours per month per rep to 2-3 hours. The monthly battlecard update process typically drops from 12 hours to 3 hours with AI handling monitoring and summarization. The bigger win is timeliness: AI catches competitor changes within hours instead of weeks, so your team is never blindsided on a sales call.
+
+### What free tools can I use for AI competitive intelligence?
+
+You can build a solid competitive intelligence workflow for under $20 per month using Google Alerts for news mentions, Visualping (free for 5 pages) for monitoring competitor pricing and feature pages, ChatGPT or Claude for review analysis and competitive brief generation, and G2 or Capterra for browsing competitor reviews. A shared Google Doc or Notion page serves as your lightweight battlecard.
+
+### How often should I update sales battlecards?
+
+Monthly updates produce the best results. Klue's 2025 research found that teams updating battlecards monthly had a 59% win rate in competitive deals compared to 41% for teams updating quarterly or less. With AI handling the monitoring and summarization, monthly updates take a fraction of the time they used to.
+
+### How do I track competitors in AI search results like ChatGPT and Perplexity?
+
+Open ChatGPT or Perplexity and ask buying-intent questions for your category, such as "best [category] software for mid-market companies" or "[competitor] alternatives." Document who gets mentioned, in what order, and what the AI says about each product. Do this monthly to track trends. If competitors are showing up more favorably, your marketing team needs to adjust your content and positioning strategy.
+
+### What should a 5-minute pre-call competitive brief include?
+
+A good competitive brief covers six things: the competitor's current pricing and packaging, features launched in the last 90 days, top complaints from recent G2 or Capterra reviews, how their positioning differs from yours, two specific weaknesses you can probe during the call, and one area where they are genuinely strong that you should be ready to acknowledge honestly.
