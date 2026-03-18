@@ -1,21 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
-  <!-- Superdots Primary Logo: Convergence mark + wordmark -->
-  <defs>
-    <linearGradient id="logo-a" x1="0" y1="1" x2="0.8" y2="0">
-      <stop offset="0%" stop-color="#0B1222"/>
-      <stop offset="40%" stop-color="#1A2744"/>
-      <stop offset="100%" stop-color="#E8363B"/>
-    </linearGradient>
-    <linearGradient id="logo-b" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F04048"/>
-      <stop offset="100%" stop-color="#C42D31"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Icon: Convergence mark -->
-  <circle cx="22" cy="36" r="20" fill="url(#logo-a)"/>
-  <circle cx="42" cy="24" r="16" fill="url(#logo-b)" opacity="0.88"/>
-
-  <!-- Wordmark: "superdots" in Space Grotesk Bold -->
+  <!-- Superdots Primary Logo: flat circle mark + wordmark -->
+  <circle cx="32" cy="32" r="24" fill="#E8363B"/>
   <text x="72" y="44" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="32" fill="#0B1222" letter-spacing="-0.02em">superdots</text>
 </svg>
