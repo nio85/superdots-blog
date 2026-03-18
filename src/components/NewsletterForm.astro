@@ -32,6 +32,7 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 					required
 					autocomplete="email"
 					aria-describedby={`newsletter-legal-${variant}`}
+					data-clarity-mask="true"
 				/>
 				<button type="submit" class="btn btn-primary">{variant === 'compact' ? 'Join' : 'Subscribe'}</button>
 			</div>
