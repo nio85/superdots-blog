@@ -144,7 +144,7 @@ For a deeper dive into turning meeting recordings into organized notes and actio
 
 ## What's next
 
-AI transcription is often the first step toward broader [meeting automation](/blog/ai-meeting-notes-summaries-action-items/). Once you have reliable transcripts, you can build on them — auto-generating follow-up emails, syncing action items to project management tools, and feeding customer conversation data into your CRM.
+AI transcription is often the first step toward broader [meeting automation](/blog/ai-meeting-notes-summaries-action-items/). Once you have reliable transcripts, you can build on them — auto-generating follow-up emails, syncing action items to project management tools, and feeding customer conversation data into your CRM. For a full look at how teams are using AI to manage documents end-to-end, see our guide on [AI document management](/blog/ai-document-management/).
 
 For teams exploring voice AI beyond meetings, see how [AI voice assistants handle customer service](/blog/ai-voice-assistant-customer-service/) calls without human intervention.
 
