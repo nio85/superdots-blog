@@ -131,3 +131,25 @@ The best teams use AI for the mechanical parts of review — consistency, covera
 If your team is also looking to improve how you document code alongside reviewing it, [AI writing tools for technical docs](/blog/writing-better-docs-with-ai/) can help keep documentation in sync with the code changes AI is reviewing.
 
 The goal isn't to automate code review away. It's to make every review faster, more consistent, and more focused on what humans do best. The AI handles the checklist. Your team handles the thinking.
+
+## FAQ
+
+### Do AI code review tools replace human reviewers?
+
+No. AI code review tools handle the mechanical parts of review — style consistency, obvious bugs, security scanning, and test coverage gaps. Human reviewers still make the calls on architecture, business logic, design trade-offs, and whether the approach is right for the problem. The best workflow uses AI as a first pass so human reviewers can focus on higher-level concerns instead of catching typos and formatting issues.
+
+### How much do AI code review tools cost?
+
+Most AI code review tools offer free tiers for open-source projects and small teams. Paid plans typically range from $15-$30 per user per month. CodeRabbit, for example, offers a free tier for public repos and charges per seat for private repositories. Open-source options like PR-Agent are free to self-host. The cost is usually justified if the tool prevents even one production bug per quarter.
+
+### Can AI code review tools work with private repositories?
+
+Yes. All major AI code review tools (CodeRabbit, Greptile, Qodo) support private repositories on GitHub, GitLab, and Bitbucket. For teams with strict data sovereignty requirements, open-source tools like PR-Agent can be self-hosted so your code never leaves your infrastructure. Check each vendor's data handling policy to understand how your code is processed and whether it is used for model training.
+
+### How do I reduce false positives from AI code reviews?
+
+Spend the first two weeks actively dismissing irrelevant suggestions with a reason so the tool learns your preferences. Most tools let you configure rules per repository, set severity thresholds, and suppress specific categories of feedback. Over time, the signal-to-noise ratio improves significantly. If a tool is still noisy after a month of tuning, it is probably not the right fit for your codebase.
+
+### What metrics should I track after adopting AI code review?
+
+Track four key metrics: time to first review (did it decrease?), production bugs that escaped review (are there fewer?), PR merge throughput (are more PRs shipping per week?), and developer satisfaction (do reviewers feel the tool is helping or creating busywork?). Measure these for a month before and after adoption to get a clear picture of impact.

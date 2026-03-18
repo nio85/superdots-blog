@@ -202,3 +202,25 @@ Focus on early warning, not last-minute saves. By the time a customer says they 
 - [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis) — Turn support conversations and survey data into retention insights.
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot) — Resolve issues faster so they do not become churn drivers.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting) — Use the same data-driven approach to predict revenue growth.
+
+## FAQ
+
+### How does AI predict customer churn?
+
+AI churn models analyze behavioral signals — login frequency, feature usage, support ticket patterns, payment history, and engagement data — and identify combinations that historically preceded cancellation. The model assigns each customer a churn risk score that updates daily or weekly based on the latest data. No single signal is definitive, but the combination of declining usage, frustrated support interactions, and billing issues is highly predictive.
+
+### How accurate are AI churn predictions?
+
+Well-trained models typically achieve 75-90% accuracy depending on data quality, volume, and how far in advance you are predicting. The key is not perfect prediction — it is catching enough at-risk customers early enough to intervene. Even a model that correctly identifies 70% of at-risk customers gives your team a significant head start compared to reacting after cancellation requests arrive.
+
+### What data do I need to build an AI churn prediction model?
+
+At minimum, you need customer activity data (logins, feature usage), support interaction history, and billing or payment history. The more behavioral signals you connect — email engagement, NPS scores, onboarding milestones, community participation — the better the model performs. Most teams need 12-18 months of historical data including both retained and churned customers to train an effective model.
+
+### What is a customer health score and how does AI improve it?
+
+A customer health score combines multiple signals — product usage, support experience, relationship engagement, and financial indicators — into a single metric that represents the strength of your customer relationship. AI improves health scoring by learning what "healthy" looks like for each customer segment rather than using static thresholds. It adjusts based on company size, industry, plan type, and usage patterns, and updates continuously with fresh behavioral data.
+
+### How should I respond when AI flags a customer as at-risk?
+
+Match your intervention to the specific risk signal. For usage decline, trigger proactive success outreach with relevant feature guides. For support frustration, escalate their next interaction to a senior agent. For approaching renewal with low engagement, initiate executive outreach early. For payment issues, automate smart dunning sequences. Generic "we miss you" campaigns perform poorly — targeted outreach based on the actual reason for risk is far more effective.

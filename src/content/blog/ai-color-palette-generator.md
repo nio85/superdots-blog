@@ -123,3 +123,25 @@ If you take nothing else from this:
 - **Run accessibility checks before handoff**, not after. Fixing contrast failures in development costs more than fixing them in Figma.
 
 AI color tools are a genuine time-saver when used as a generation engine paired with human judgment. They're a liability when used as a substitute for it.
+
+## FAQ
+
+### What is the best free AI color palette generator?
+
+Coolors is the most widely used free option and handles most use cases without a paid plan. It generates palettes with one click, shows WCAG contrast ratios inline, and lets you lock swatches while regenerating the rest. Colormind is another strong free option, especially if you want palettes trained on film and art aesthetics or need API access.
+
+### How do I make an AI-generated color palette accessible?
+
+Run every palette through an accessibility checker before handoff to development. Adobe Color has the strongest accessibility mode, evaluating foreground and background pairs against WCAG 2.1 AA and AAA thresholds. Coolors shows contrast ratios inline as you build, and Colorsafe generates text-safe combinations from scratch. Fix contrast failures at the design stage rather than after development.
+
+### Can AI generate a color palette from a logo or image?
+
+Yes. Most AI palette tools include image-to-palette extraction. Adobe Color lets you upload any image and extract colors weighted toward dominant tones, mood, or muted palettes. Coolors also has an image extractor. This is particularly useful for matching a UI color system to campaign photography or existing brand assets.
+
+### How do I keep AI color palettes consistent with my brand?
+
+Seed the tool with your existing brand colors as constraints. In Coolors, lock your brand swatches and let AI generate complementary colors around them. In Khroma, train the model on colors you already approve so it learns your preferences over time. Adobe Color can extract a palette from an uploaded brand asset and expand from there. Unconstrained generation produces technically valid but often off-brand results.
+
+### Is AI better than a designer for choosing colors?
+
+No. AI is better at generating color candidates quickly and checking technical requirements like contrast ratios and harmony rules. Designers are better at evaluating whether a palette fits a brand personality, cultural context, or strategic goal. The most productive workflow uses AI for exploration and generation, then relies on human judgment for the final selection.

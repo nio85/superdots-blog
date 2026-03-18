@@ -91,4 +91,28 @@ Start with the task that matches all three of these criteria:
 
 Email triage almost always wins this test. Start there if you're unsure.
 
+If your automation involves spreadsheets — and most business processes do — our guide on [AI spreadsheet tools](/blog/ai-spreadsheet-tools) covers how to automate data entry, formulas, and reporting. And if scheduling is eating your team's time, see how an [AI scheduling assistant](/blog/ai-scheduling-assistant) can handle the coordination for you.
+
 The tools are ready. The setup is simple. The only thing standing between you and fewer hours of busywork is picking one task and automating it this week.
+
+## FAQ
+
+### What are the best no-code AI automation tools for beginners?
+
+Zapier, Make (formerly Integromat), and Microsoft Power Automate are the three most popular no-code options. Zapier is the easiest to start with and connects to 6,000+ apps. Make offers more complex workflow logic at a lower price. Power Automate is the best choice if your team already uses Microsoft 365. All three offer free tiers to get started.
+
+### How much time can AI automation save per week?
+
+Most teams save 5-10 hours per week after automating their first two or three workflows. Email triage alone typically saves 3-5 hours weekly. The savings compound as you add more automations — customer support routing, data entry, and meeting scheduling each add another 2-3 hours of recovered time. Start by timing how long your most repetitive tasks take, then measure the difference after automation.
+
+### Is AI automation safe for handling sensitive data?
+
+It depends on the tool and the data. Major platforms like Zapier and Make use encryption and comply with SOC 2 standards, making them suitable for most business data. For highly sensitive data (health records, financial data, personally identifiable information), check each tool's compliance certifications and data processing agreements. Avoid sending sensitive data through free-tier tools that may not meet enterprise security standards.
+
+### Can AI automation integrate with the software I already use?
+
+Almost certainly. Modern AI automation platforms connect to thousands of popular business tools — Gmail, Slack, Google Sheets, Salesforce, HubSpot, Notion, Asana, and many more. Before committing to a platform, check that it has native integrations with the specific tools your team uses daily. Native integrations are more reliable than workarounds using generic webhooks or APIs.
+
+### What happens when an AI automation makes a mistake?
+
+Good automation tools include error handling, logging, and notification features. When something fails, you get an alert with details about what went wrong. Start with automations that have a human review step before any final action — for example, the AI drafts a reply but you approve it before sending. As you build confidence, you can remove the review step for low-risk tasks.
