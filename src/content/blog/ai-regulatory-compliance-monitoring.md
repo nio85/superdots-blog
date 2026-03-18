@@ -1,7 +1,7 @@
 ---
 title: 'AI Regulatory Compliance Monitoring: How to Track Rules That Never Stop Changing'
 description: 'AI regulatory compliance monitoring tools track regulatory changes across jurisdictions in real-time, replacing manual monitoring and keeping your team ahead of new rules.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:33:00Z"
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'

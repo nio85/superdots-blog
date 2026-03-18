@@ -1,7 +1,7 @@
 ---
 title: 'AI Wireframing Tools: From Text Descriptions to Interactive Prototypes in Minutes'
 description: 'AI wireframing tools speed up the ideation-to-prototype pipeline, turning text descriptions and sketches into interactive wireframes without design expertise.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:45:00Z"
 author: 'Superdots Team'
 department: 'design'
 useCase: 'writing'

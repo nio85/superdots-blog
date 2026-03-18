@@ -1,7 +1,7 @@
 ---
 title: 'AI Cash Flow Forecasting: Predict Your Cash Position With Confidence'
 description: 'AI cash flow forecasting predicts cash positions with higher accuracy than spreadsheets by factoring in payment patterns, seasonal trends, and economic indicators.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:06:00Z"
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'

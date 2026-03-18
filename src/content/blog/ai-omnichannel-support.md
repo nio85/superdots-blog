@@ -1,7 +1,7 @@
 ---
 title: 'AI Omnichannel Support: Unify Every Customer Conversation in One Place'
 description: 'AI omnichannel support unifies email, chat, phone, social, and messaging into one coherent experience with consistent context across every channel.'
-pubDate: '2026-03-17'
+pubDate: "2026-03-17T17:27:00Z"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
