@@ -139,7 +139,7 @@ function canGit() {
 function deployWrangler(distDir) {
   console.log('\n== Deploying via Wrangler (direct upload) ==');
   run(
-    `npx wrangler pages deploy "${distDir}" --project-name=${CF_PROJECT_NAME} --commit-dirty=true`,
+    `npx wrangler pages deploy "${distDir}" --project-name=${CF_PROJECT_NAME} --branch=main --commit-dirty=true`,
     {
       cwd: BLOG_ROOT,
       env: {
