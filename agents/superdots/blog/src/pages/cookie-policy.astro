@@ -6,7 +6,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Cookie Policy | Superdots"
 	description="Cookie policy for superdots.sh — what cookies we use and why."
 	pageTitle="Cookie Policy"
-	lastUpdated="17 March 2026"
+	lastUpdated="18 March 2026"
 >
 
 	<h2>What are cookies?</h2>
@@ -54,10 +54,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h3>Analytics (consent required)</h3>
 	<p>
-		These cookies are set by Google Analytics 4 to help us understand how visitors
-		use the Site. They are only activated <strong>after you give consent</strong>
-		via the cookie banner, as required by Art. 5(3) ePrivacy Directive and
-		Art. 6(1)(a) GDPR.
+		These cookies are set by Google Analytics 4 and Microsoft Clarity to help us
+		understand how visitors use the Site. They are only activated <strong>after you
+		give consent</strong> via the cookie banner, as required by Art. 5(3) ePrivacy
+		Directive and Art. 6(1)(a) GDPR.
 	</p>
 	<table>
 		<thead>
@@ -83,6 +83,27 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td>Maintains session state for GA4 property G-DC2BTH9VKX</td>
 				<td>HTTP cookie</td>
 				<td>2 years</td>
+			</tr>
+			<tr>
+				<td><code>_clck</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Persists the Clarity user ID and preferences</td>
+				<td>HTTP cookie</td>
+				<td>1 year</td>
+			</tr>
+			<tr>
+				<td><code>_clsk</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Connects page views into a single Clarity session recording</td>
+				<td>HTTP cookie</td>
+				<td>1 day</td>
+			</tr>
+			<tr>
+				<td><code>CLID</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Identifies the first-time Clarity saw this user on any site</td>
+				<td>HTTP cookie</td>
+				<td>1 year</td>
 			</tr>
 		</tbody>
 	</table>
@@ -115,6 +136,11 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li>
 			<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
 			only loaded after consent. Sends pseudonymised usage data to Google.
+		</li>
+		<li>
+			<strong>Microsoft Clarity</strong> (<code>www.clarity.ms</code>) —
+			only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability.
+			<a href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent" rel="noopener noreferrer" target="_blank">Clarity privacy info</a>.
 		</li>
 	</ul>
 
