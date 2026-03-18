@@ -78,7 +78,7 @@ Required under Art. 30 GDPR. This document records all personal data processing 
 | **Retention period** | 30 days (Microsoft Clarity default), then automatically deleted |
 | **Technical & organisational measures** | Consent-gated loading (no tracking without opt-in); built-in input masking for form fields; Microsoft SOC 2 and ISO 27001 certified; cookies: `_clck` (1yr), `_clsk` (1d), `CLID` (1yr) |
 | **Data processor agreement** | Microsoft Online Services DPA: https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA |
-| **DPIA status** | Recommended — session recordings involve systematic behavioural monitoring per Art. 35(3)(c) GDPR and Garante Provvedimento 11 October 2018 |
+| **DPIA status** | **Completed** — see `legal/DPIA-CLARITY.md` (18 March 2026). Next review: September 2026 |
 
 ---
 
