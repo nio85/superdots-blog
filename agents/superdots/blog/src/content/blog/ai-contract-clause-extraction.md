@@ -171,3 +171,25 @@ For recurring work — quarterly contract audits, annual renewal reviews, ad hoc
 - [AI Contract Management](/blog/ai-contract-management)
 - [AI Legal Document Review](/blog/ai-legal-document-review)
 - [AI Compliance Tools](/blog/ai-compliance-tools)
+
+## FAQ
+
+### How much does AI contract clause extraction cost?
+
+Pricing varies by vendor and contract volume. Lightweight tools for occasional use start at a few hundred dollars per month. Enterprise platforms that handle thousands of contracts with full portfolio analytics typically run $2,000 to $10,000 or more per month. The ROI calculation is straightforward: compare the tool cost against the attorney hours saved on manual review.
+
+### Can AI extract clauses from contracts in languages other than English?
+
+Many enterprise AI clause extraction tools support multiple languages, including German, French, Spanish, and Mandarin. Accuracy varies by language and the amount of training data the tool has for that language. English-language extraction is the most mature. For multilingual portfolios, test the tool on a sample of contracts in each language before committing.
+
+### How do I get started with AI clause extraction?
+
+Start by defining which clause types matter most for your business, such as indemnification, termination, and liability caps. Upload a batch of 20-30 contracts and compare the AI extractions against the actual contract language to calibrate accuracy. Correct any errors so the system learns your contract styles. Then scale to your full portfolio, prioritizing high-value and high-risk contracts first.
+
+### What file formats does AI clause extraction support?
+
+Most tools handle PDF, Word documents, and scanned images. For native digital documents, extraction is straightforward and highly accurate. Scanned contracts require an OCR step first, which adds processing time and may reduce accuracy depending on scan quality. Faded photocopies and handwritten documents produce the lowest confidence results and typically need manual verification.
+
+### Is AI clause extraction accurate enough for due diligence?
+
+AI extraction achieves 90-95% accuracy on standard contract formats, making it highly effective for initial due diligence review. However, due diligence always requires human verification of flagged items and edge cases. The practical value is compressing weeks of manual review into days: AI does the extraction and categorization, and attorneys verify the output and handle interpretation.

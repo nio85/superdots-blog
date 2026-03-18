@@ -162,3 +162,25 @@ It does not.
 - [AI Accounting Software](/blog/ai-accounting-software)
 - [AI Expense Reports](/blog/ai-expense-reports)
 - [AI Compliance Tools](/blog/ai-compliance-tools)
+
+## FAQ
+
+### How much does AI audit preparation software cost?
+
+Pricing varies by vendor, framework coverage, and company size. Entry-level tools for startups pursuing SOC 2 typically cost $10,000-$25,000/year. Mid-market platforms covering multiple frameworks run $25,000-$75,000/year. Enterprise solutions with full GRC integration can exceed $100,000/year. Factor in implementation costs — some platforms require professional services for setup, adding 20-40% to the first-year cost.
+
+### Can AI audit tools work with my existing systems?
+
+Most AI audit preparation tools integrate with common cloud platforms (AWS, Azure, GCP), identity providers (Okta, Active Directory), HR systems, ticketing tools (Jira, ServiceNow), and financial software. Check specifically for native connectors to your systems during evaluation. Integration gaps mean manual evidence collection for those areas, which reduces the time savings.
+
+### How long does it take to implement an AI audit preparation tool?
+
+Implementation typically takes 4-8 weeks for a single framework like SOC 2. Multi-framework deployments or complex environments take longer. The biggest time investment is configuring the control-to-requirement mapping and integrating with your evidence sources. Plan to run the AI tool in parallel with your manual process for the first audit cycle to validate completeness.
+
+### Is AI-collected evidence accepted by auditors?
+
+Yes. Auditors care about the quality, completeness, and timeliness of evidence, not whether a human or a system collected it. In fact, auditors often prefer continuously collected evidence over retroactively assembled documentation because it is contemporaneous — created at the time of the event rather than reconstructed months later. Ensure your AI tool maintains a clear audit trail showing when and how evidence was collected.
+
+### Can one AI audit tool handle multiple compliance frameworks?
+
+Yes. Most mature AI audit preparation platforms support multiple frameworks (SOC 2, ISO 27001, SOX, HIPAA, PCI DSS) and map controls across them. This means a single control can satisfy requirements in multiple frameworks, reducing duplicate documentation work. The cross-framework mapping is one of the most valuable features — ask vendors specifically about framework overlap handling during evaluation.

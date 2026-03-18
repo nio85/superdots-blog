@@ -192,3 +192,25 @@ The full dashboard comes later. The insight starts now.
 - [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis)
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot)
 - [AI Data Visualization Tools](/blog/ai-data-visualization-tools)
+
+## FAQ
+
+### What data sources should a customer sentiment dashboard include?
+
+At minimum, connect support tickets and app or product reviews — these are the highest-signal sources. Then add NPS and CSAT survey responses, and social media mentions. For a more complete picture, include live chat transcripts, community forum posts, sales call notes, and email feedback. The more signals you aggregate, the more accurate your sentiment trends become.
+
+### How accurate is AI sentiment analysis for customer feedback?
+
+General-purpose sentiment analysis achieves 80-85% accuracy out of the box. Domain-trained models tuned to your product vocabulary and customer language reach 90-95%. The main challenges are sarcasm, mixed sentiment in a single message, and context-dependent language. Regular human review of edge cases and periodic model retraining improve accuracy over time.
+
+### How quickly can an AI sentiment dashboard detect problems?
+
+Real-time dashboards can detect sentiment shifts within minutes of a spike in negative feedback. Most tools process incoming signals every 1-5 minutes. You set alerting thresholds based on your needs — for example, alert when negative sentiment in a product area increases 20% above the 7-day rolling average, or when more than 10 tickets mention the same feature within 4 hours.
+
+### Can small teams benefit from a sentiment dashboard?
+
+Yes — small teams may benefit even more than large ones. When you have limited support staff, you cannot manually read every ticket and review. A sentiment dashboard automatically surfaces emerging issues, at-risk accounts, and trending complaints so small teams focus their limited time on the highest-impact problems instead of trying to monitor everything manually.
+
+### What is the difference between a sentiment dashboard and customer feedback analysis?
+
+Sentiment analysis measures the emotional tone (positive, negative, neutral) of customer communications and tracks how it changes over time. Customer feedback analysis goes deeper — categorizing feedback by topic, extracting specific feature requests, identifying root causes, and ranking themes by business impact. A good sentiment dashboard combines both, showing real-time sentiment trends alongside the thematic analysis that explains what is driving those trends.

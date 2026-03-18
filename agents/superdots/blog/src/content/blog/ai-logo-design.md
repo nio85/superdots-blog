@@ -119,11 +119,11 @@ Your AI logo tool probably suggested a color palette. Use it as a starting point
 - **Secondary color:** Complements the primary. Used for accents and supporting elements.
 - **Neutral colors:** A dark color for text, a light color for backgrounds. Most brands need a near-black and a near-white.
 
-Tools like [Coolors](https://coolors.co) and [Realtime Colors](https://realtimecolors.com) let you test your palette on a real website layout before committing. If you are already using [AI design tools for other visuals](/category/department/design), your palette should carry over consistently.
+Tools like [Coolors](https://coolors.co) and [Realtime Colors](https://realtimecolors.com) let you test your palette on a real website layout before committing. If you are already using AI design tools for other visuals — like our [AI color palette generator](/blog/ai-color-palette-generator) — your palette should carry over consistently.
 
 ### Social media templates
 
-Once you have your logo and colors, create templates for the content you post most. If you are running [social media content with AI](/ai-social-media-content-calendar), having brand-consistent templates ready saves time on every post.
+Once you have your logo and colors, create templates for the content you post most. If you are running [social media content with AI](/blog/ai-social-media-content-calendar), having brand-consistent templates ready saves time on every post.
 
 Most AI logo tools (Looka especially) generate social media templates automatically. If yours does not, take your brand kit into [Canva](https://www.canva.com) or [Adobe Express](https://www.adobe.com/express) and build three to five templates:
 
@@ -164,7 +164,7 @@ The sweet spot for many teams: use AI to explore concepts and define direction, 
 
 **Generic output syndrome.** If your logo looks like it could belong to any company in your industry, it probably came from default AI settings. Fix this by being more specific in your inputs. Instead of "modern tech company," try "developer tools company that values simplicity and clear documentation."
 
-**Copyright gray areas.** AI-generated logos exist in an evolving legal landscape. Most AI logo services grant you commercial rights to the output, but that is not the same as trademark protection. Before committing to an AI logo for your primary business identity, run a trademark search through the USPTO (or your country's equivalent). If you want the full picture on AI and legal concerns, our [AI contract review guide](/ai-contract-review-non-lawyers) covers the basics.
+**Copyright gray areas.** AI-generated logos exist in an evolving legal landscape. Most AI logo services grant you commercial rights to the output, but that is not the same as trademark protection. Before committing to an AI logo for your primary business identity, run a trademark search through the USPTO (or your country's equivalent). If you want the full picture on AI and legal concerns, our [AI contract review guide](/blog/ai-contract-review-non-lawyers) covers the basics.
 
 **Skipping the brand system.** A logo without brand guidelines drifts. Six months from now, your marketing team will be using slightly different colors and fonts in every document. Spend 30 minutes creating a one-page brand guide with your logo, colors (hex codes), fonts, and usage rules. Your future self will thank you.
 
@@ -182,4 +182,4 @@ Here is your action plan:
 
 Your brand identity will evolve. AI tools make it cheap and fast to evolve it. The worst branding decision is not having bad colors — it is having no consistent brand at all.
 
-If you are just getting started with AI tools in general, our [AI tools for business guide](/ai-tools-for-business-guide) covers the full landscape beyond design. And if you want to level up your overall visual game, check out our guide on [AI design tools for non-designers](/ai-design-tools-non-designers) for everything from presentations to social media graphics.
+If you are just getting started with AI tools in general, our [AI tools for business guide](/blog/ai-tools-for-business-guide) covers the full landscape beyond design. And if you want to level up your overall visual game, check out our guide on [AI design tools for non-designers](/blog/ai-design-tools-non-designers) for everything from presentations to social media graphics.

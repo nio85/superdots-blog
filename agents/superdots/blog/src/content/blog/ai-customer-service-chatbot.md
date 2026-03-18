@@ -196,3 +196,25 @@ You do not need a six-month project plan. Here is a realistic timeline:
 That is it. One week of focused effort gets you to a working chatbot. The rest is optimization.
 
 Your support team did not sign up to answer the same password reset question 40 times a day. Let the bot handle the routine. Let your team handle the work that actually needs a human. That is the whole point — and now you know how to [keep your brand voice consistent](/blog/ai-writing-assistant-keep-your-voice) even in automated responses.
+
+## FAQ
+
+### Can I set up an AI customer service chatbot without developers?
+
+Yes. Modern platforms like Intercom Fin, Zendesk AI, Freshdesk Freddy, and standalone tools like Chatling and SiteGPT are built for support managers. You upload your help articles and FAQs, configure handoff rules, and test — no coding required. Most teams can go from zero to a working chatbot within a week.
+
+### How many support tickets can an AI chatbot handle?
+
+A well-configured chatbot typically deflects 40-50% of incoming tickets from day one, handling common questions like order status, password resets, and billing inquiries. With ongoing content optimization and backend integrations, advanced implementations reach 70% or higher. Each deflected ticket saves approximately $5-15 compared to a human interaction.
+
+### Will an AI chatbot frustrate my customers?
+
+Only if it is poorly implemented. The main sources of frustration are chatbots that give irrelevant answers, loop customers through endless prompts, or make it difficult to reach a human. Prevent this by covering your top 50 topics with quality content, setting clear escalation triggers (after two failed attempts, or any time the customer asks for a human), and passing full conversation context when handing off to an agent.
+
+### How long does it take to set up an AI chatbot?
+
+A basic chatbot can be live in 1-3 days. The setup involves uploading your help center content, configuring response settings, and testing against your most common questions. Fine-tuning based on real customer conversations typically takes 2-4 weeks. Start with a soft launch on one channel with limited traffic, then expand as you validate accuracy.
+
+### How do I measure if my AI chatbot is working?
+
+Track four key metrics: deflection rate (conversations resolved without a human), confirmed resolution rate (did the customer's problem actually get solved), CSAT for bot interactions compared to human interactions, and escalation reasons (which questions does the bot fail on). Review escalation data weekly to identify content gaps, and do a deeper analysis of overall performance monthly.
