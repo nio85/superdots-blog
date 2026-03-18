@@ -25,6 +25,7 @@ for (const file of fs.readdirSync(blogDir)) {
 
 export default defineConfig({
 	site: 'https://superdots.sh',
+	compressHTML: true,
 	integrations: [
 		mdx(),
 		sitemap({
