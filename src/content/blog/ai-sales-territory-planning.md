@@ -38,7 +38,7 @@ Most territory planning happens once a year, in a conference room, with a spread
 
 The process usually looks like this: someone pulls an account list, groups accounts by geography or industry, eyeballs rep capacity, and divides things up. It takes weeks. It satisfies no one. And within six months, the market has shifted enough that the plan is already out of date.
 
-The fundamental problem is complexity. Territory planning is an optimization problem with dozens of interdependent variables:
+The fundamental problem is complexity. As [Gartner](https://www.gartner.com) research confirms, territory planning is an optimization problem with dozens of interdependent variables:
 
 - **Account potential** — not all accounts are equal. A 50-person company in fintech isn't the same as a 50-person company in retail.
 - **Rep capacity** — how many accounts can a rep meaningfully cover? What's their average deal cycle? Their close rate?
@@ -57,7 +57,7 @@ Think of it as constraint-based optimization. You define the variables and the l
 
 ### Step 1: Account Scoring
 
-Before you can distribute accounts, you need to know what each account is worth. AI tools pull data from your CRM, firmographic databases, and intent signals to assign each account a potential score.
+Before you can distribute accounts, you need to know what each account is worth. AI tools pull data from your CRM (such as [Salesforce](https://www.salesforce.com)), firmographic databases, and intent signals to assign each account a potential score.
 
 This isn't just company size. It combines:
 
@@ -211,7 +211,7 @@ The category is evolving fast. When evaluating tools, focus on these capabilitie
 
 **Data connectivity.** Can it pull directly from your CRM? Enrich accounts with third-party data? The quality of the output depends entirely on the quality of the input.
 
-**Scenario modeling.** Can you define different optimization objectives and compare outcomes? You want to see multiple options, not just one recommendation.
+**Scenario modeling.** Tools like [Xactly](https://www.xactly.com) let you define different optimization objectives and compare outcomes. You want to see multiple options, not just one recommendation.
 
 **Constraint handling.** Can you set rules that the optimizer must respect? If it reassigns everything without guardrails, it's not production-ready.
 

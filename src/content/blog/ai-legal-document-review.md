@@ -76,7 +76,7 @@ Beyond individual reviews, AI enables portfolio-level analysis. What is our aver
 
 ### How AI review compares to human review
 
-Studies consistently show that AI document review achieves 85-95% accuracy on standard clause identification. Human reviewers typically achieve 80-90% accuracy — higher on focused tasks, lower when fatigued or reviewing high volumes.
+Studies consistently show that AI document review achieves 85-95% accuracy on standard clause identification, with platforms like [Relativity](https://www.relativity.com) and [Thomson Reuters](https://www.thomsonreuters.com) publishing benchmark data on their models. Human reviewers typically achieve 80-90% accuracy — higher on focused tasks, lower when fatigued or reviewing high volumes.
 
 The comparison is not AI versus humans. It is AI plus humans versus humans alone. The "second pair of eyes" model — AI does the first pass, humans verify the flagged items — catches more issues than either approach independently.
 
@@ -100,7 +100,7 @@ AI can tell you that a contract deviates from your standard terms. It cannot tel
 
 ### Novel legal questions
 
-When a contract raises issues that are genuinely new — emerging regulations, untested legal theories, first-of-their-kind transaction structures — AI has no relevant precedent to draw on. These questions require legal research, creative thinking, and expert judgment.
+When a contract raises issues that are genuinely new — emerging regulations, untested legal theories, first-of-their-kind transaction structures — AI has no relevant precedent to draw on. These questions require legal research using platforms like [LexisNexis](https://www.lexisnexis.com), creative thinking, and expert judgment.
 
 For AI-assisted legal research workflows, see our guide on [AI legal research](/blog/ai-legal-research).
 
@@ -122,7 +122,7 @@ Can you configure your own playbook — defining which clauses matter, what devi
 
 ### Integration with your document management system
 
-AI review that requires manual document upload and download adds friction. Look for integrations with your DMS (iManage, NetDocuments, SharePoint) and e-signature platforms (DocuSign, Adobe Sign) that fit into your existing workflow.
+AI review that requires manual document upload and download adds friction. Look for integrations with your DMS (iManage, NetDocuments, SharePoint) and e-signature platforms ([DocuSign](https://www.docusign.com), Adobe Sign) that fit into your existing workflow.
 
 ### Export and reporting
 

@@ -111,10 +111,10 @@ Pick one or two platforms where your audience actually is. You can expand later.
 
 Batch-schedule everything so posts go out automatically:
 
-- **Buffer**: Simple, affordable, works for individuals and small teams. AI caption writing built in.
+- **[Buffer](https://buffer.com)**: Simple, affordable, works for individuals and small teams. AI caption writing built in.
 - **Later**: Strong for Instagram-first creators. Visual calendar planning.
 - **Typefully**: Best for X/Twitter power users. AI-assisted drafting and thread creation.
-- **Hootsuite**: Enterprise option if you manage multiple brands or team members.
+- **[Hootsuite](https://www.hootsuite.com)**: Enterprise option if you manage multiple brands or team members.
 
 Schedule the entire month in one sitting. When posts go out automatically, you do not need to think about social media daily — just check in weekly to respond to comments and engagement.
 
@@ -152,7 +152,7 @@ That is it. 30 minutes a week to maintain a consistent social media presence. Co
 
 **Optimizing for engagement over value.** Controversial hot takes get likes. But if every post is clickbait, you attract an audience that does not buy. Focus on genuinely useful content that builds trust with potential customers.
 
-**Ignoring what works.** Check your analytics monthly. Double down on content types that get engagement. Stop doing what does not work. AI can help here: "Here are my top 5 posts this month and my bottom 5. What patterns do you see in the ones that performed well?"
+**Ignoring what works.** Check your analytics monthly using your platform's built-in insights or a tool like [Sprout Social](https://sproutsocial.com). Double down on content types that get engagement. Stop doing what does not work. AI can help here: "Here are my top 5 posts this month and my bottom 5. What patterns do you see in the ones that performed well?"
 
 **Overthinking it.** Social media rewards consistency over perfection. A good post published today beats a perfect post you never finish. Use AI to lower the bar for getting content out the door, then improve as you learn what resonates.
 

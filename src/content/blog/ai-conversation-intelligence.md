@@ -42,7 +42,7 @@ At its core, AI conversation intelligence platforms do four things:
 
 **Surface insights.** The platform highlights what matters: deals where objections spiked, reps who are talking too much, calls where a competitor was mentioned, moments where sentiment turned negative. Managers get a dashboard instead of a stack of recordings.
 
-This is not futuristic. Gong, Chorus (now ZoomInfo), Clari Copilot, and several other platforms have been doing this for years. The technology is mature. The question is not whether it works — it is whether your team is using it.
+This is not futuristic. [Gong](https://www.gong.io), Chorus (now [ZoomInfo](https://www.zoominfo.com)), Clari Copilot, and several other platforms have been doing this for years. The technology is mature. The question is not whether it works — it is whether your team is using it.
 
 ## Call Recording and Transcription: The Foundation
 
@@ -190,7 +190,7 @@ AI conversation intelligence does not live in isolation. The insights it generat
 - **Deal intelligence.** Call-level signals roll up into [AI deal intelligence](/blog/ai-deal-intelligence) platforms that score pipeline health. A deal where sentiment has been declining across calls gets flagged before it stalls.
 - **Call prep.** Before a follow-up call, [AI for sales call prep](/blog/ai-for-sales-call-prep) can pull the transcript from the last conversation, highlight unresolved objections, and suggest talking points.
 - **Customer feedback.** Post-sale, the same conversation analysis applies to customer success calls. [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) surfaces churn risk signals and expansion opportunities from ongoing conversations.
-- **CRM enrichment.** Conversation data flows back into Salesforce, HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
+- **CRM enrichment.** Conversation data flows back into [Salesforce](https://www.salesforce.com), HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
 - **Forecasting.** Conversation-level signals (sentiment, engagement, next step quality) improve forecast accuracy when combined with pipeline data.
 
 ## Actionable Takeaways

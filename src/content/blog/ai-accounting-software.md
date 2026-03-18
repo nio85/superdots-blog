@@ -62,7 +62,7 @@ Not all AI accounting tools are equal. Here is what separates the useful from th
 
 ### Integration with your existing stack
 
-The tool needs to connect to your current accounting software (QuickBooks, Xero, Sage, NetSuite) and your bank accounts. If it requires you to change your accounting system or manually export data, the efficiency gains evaporate in integration work. Check that the integration is bidirectional — the AI should read from and write to your accounting system, not just pull data into a separate dashboard.
+The tool needs to connect to your current accounting software ([QuickBooks](https://quickbooks.intuit.com), [Xero](https://www.xero.com), [Sage](https://www.sage.com), [NetSuite](https://www.netsuite.com)) and your bank accounts. If it requires you to change your accounting system or manually export data, the efficiency gains evaporate in integration work. Check that the integration is bidirectional — the AI should read from and write to your accounting system, not just pull data into a separate dashboard.
 
 ### Categorization accuracy and learning
 

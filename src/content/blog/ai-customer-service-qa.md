@@ -25,7 +25,7 @@ Now your team handles 2,000 tickets a week. Or 20,000. The math stops working.
 
 **Scoring is inconsistent.** Give the same call to three QA analysts. You will get three different scores. Human evaluators bring their own biases, mood, and interpretation of rubrics. One analyst might dock points for not using the customer's name. Another might not care. This inconsistency makes it hard for agents to trust the process.
 
-**Feedback is slow.** By the time a QA review reaches an agent, the conversation happened weeks ago. The agent does not remember the interaction. The coaching moment is gone. Research from Gartner shows that feedback delivered within 24 hours is 3x more likely to change behavior than feedback delivered after a week.
+**Feedback is slow.** By the time a QA review reaches an agent, the conversation happened weeks ago. The agent does not remember the interaction. The coaching moment is gone. Industry standards like those defined by [COPC](https://www.copc.com) emphasize timely feedback, and research shows that feedback delivered within 24 hours is 3x more likely to change behavior than feedback delivered after a week.
 
 **It burns out your best people.** QA analysts spend hours listening to calls and filling out forms. It is repetitive, mentally draining work. Many teams struggle to retain QA staff because the job is a grind.
 
@@ -155,9 +155,9 @@ Aggregate sentiment trends can predict churn before it shows up in your retentio
 
 The AI customer service QA market has matured. Here are tools that teams are using effectively.
 
-**MaestroQA.** Purpose-built for support QA. Strong rubric customization, integrates with most helpdesks, and has solid coaching workflows. Good for teams that want a dedicated QA platform.
+**[MaestroQA](https://www.maestroqa.com).** Purpose-built for support QA. Strong rubric customization, integrates with most helpdesks, and has solid coaching workflows. Good for teams that want a dedicated QA platform.
 
-**Klaus (now Zendesk QA).** Tight Zendesk integration. AI-powered conversation scoring with customizable categories. Good fit if you are already in the Zendesk ecosystem.
+**Klaus (now [Zendesk](https://www.zendesk.com) QA).** Tight Zendesk integration. AI-powered conversation scoring with customizable categories. Good fit if you are already in the Zendesk ecosystem.
 
 **Observe.AI.** Strong on voice interactions. Real-time transcription, sentiment analysis, and agent assist features. Good for call centers with high voice volume.
 

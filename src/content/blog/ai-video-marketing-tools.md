@@ -16,7 +16,7 @@ faqs:
     answer: "AI video tools cost between $18-50/month for most plans, with enterprise tiers running $100-300/month. Traditional video production for a single professional video ranges from $1,000 for basic to $10,000+ for polished content. If you produce more than 2-3 videos per month, AI tools pay for themselves immediately. The trade-off is creative ceiling — AI tools produce consistent, competent video, while traditional production can achieve truly distinctive results."
 ---
 
-You know video works. Every metric says so. Higher engagement, better conversion, longer time on page. Your LinkedIn posts with video get 5x the reach. Your landing pages with video convert better. Your customers would rather watch a 2-minute explainer than read a 2,000-word guide.
+You know video works. Every metric says so. Higher engagement, better conversion, longer time on page. Your LinkedIn posts with video get 5x the reach. Your landing pages with video convert better. Platforms like [YouTube](https://www.youtube.com), [Wistia](https://wistia.com), and [Vimeo](https://vimeo.com) make hosting and distributing video easier than ever. Your customers would rather watch a 2-minute explainer than read a 2,000-word guide.
 
 You also know why you are not making more video. You do not have a videographer. You do not have a video editor. You do not have the budget for either. And the one time you tried making a video with your laptop camera and a ring light, the results confirmed why professionals exist.
 

@@ -36,7 +36,7 @@ The result is a sales manager who walks into a pipeline review already knowing w
 
 ## The Signals That Actually Predict Deal Outcomes
 
-Not all pipeline signals are equally predictive. Here is what the research from tools like Gong and People.ai consistently shows matters most:
+Not all pipeline signals are equally predictive. Here is what the research from tools like [Gong](https://www.gong.io) and People.ai consistently shows matters most:
 
 ### Stakeholder engagement breadth
 
@@ -68,7 +68,7 @@ Best for: Teams that want deep call analytics alongside deal health. Strong on c
 
 ### Clari
 
-Clari sits more squarely in the revenue operations space. Where Gong starts with call intelligence, Clari starts with pipeline data and CRM signals. It analyzes deal stage velocity, close date movement, and rep activity to generate deal health scores and a bottom-up AI forecast. Its "Deal Inspection" view lets managers drill into any deal and see exactly which signals are driving the health score.
+[Clari](https://www.clari.com) sits more squarely in the revenue operations space. Where Gong starts with call intelligence, Clari starts with pipeline data and CRM signals. It analyzes deal stage velocity, close date movement, and rep activity to generate deal health scores and a bottom-up AI forecast. Its "Deal Inspection" view lets managers drill into any deal and see exactly which signals are driving the health score.
 
 Best for: Revenue operations teams and managers who want AI deal intelligence tightly integrated with forecasting. Strong on pipeline analytics. See how it complements [AI sales forecasting](/blog/ai-sales-forecasting).
 
@@ -128,7 +128,7 @@ A few honest caveats before you buy:
 
 **It requires data quality and adoption.** People.ai can auto-capture activity, but tools like Clari still depend on your CRM stages, deal values, and close dates being accurate. If reps are not keeping records up to date, deal intelligence will surface noisy signals alongside real ones.
 
-**It is not cheap.** Gong and Clari are enterprise tools with enterprise pricing — typically $100-$200 per user per month. For a 20-person sales team, that is $24,000-$48,000 per year. The ROI math needs to be clear before committing.
+**It is not cheap.** Gong and Clari are enterprise tools with enterprise pricing — [Forrester](https://www.forrester.com) research confirms they deliver ROI for mid-market and above, but the upfront cost is significant — typically $100-$200 per user per month. For a 20-person sales team, that is $24,000-$48,000 per year. The ROI math needs to be clear before committing.
 
 ## Getting Started: A Practical Sequence
 

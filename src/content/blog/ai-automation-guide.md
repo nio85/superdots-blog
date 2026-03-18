@@ -16,7 +16,7 @@ faqs:
 heroImage: "/images/blog/ai-automation-guide.webp"
 ---
 
-You don't need to write code to automate your work. The latest AI automation tools are built for people who have never opened a terminal — and they handle the repetitive tasks that eat up your day.
+You don't need to write code to automate your work. The latest AI automation tools — platforms like [Zapier](https://zapier.com), [Make](https://www.make.com), and [UiPath](https://www.uipath.com) — are built for people who have never opened a terminal — and they handle the repetitive tasks that eat up your day.
 
 This guide shows you exactly where to start, what to automate first, and how to set things up without calling IT.
 
@@ -31,7 +31,7 @@ The AI part is what makes this smarter than old-school rules. Instead of rigid "
 
 ## Email automation: your inbox on autopilot
 
-Email is the most common starting point for AI automation, and for good reason. It's predictable, repetitive, and time-consuming.
+Email is the most common starting point for AI automation, and for good reason. [McKinsey research](https://www.mckinsey.com) estimates that 60% of occupations have at least 30% of activities that could be automated. It's predictable, repetitive, and time-consuming.
 
 AI email tools can sort incoming messages by urgency, draft replies for routine requests, and flag messages that need your personal attention. You set the categories. The AI does the sorting.
 

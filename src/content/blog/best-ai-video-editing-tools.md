@@ -25,7 +25,7 @@ This doesn't mean AI produces cinema-quality results. It means AI handles the 80
 
 ### Descript
 
-Descript is the tool that made "edit video like a document" a real thing. It transcribes your video, then lets you edit the footage by editing the transcript. Delete a sentence from the text, and the corresponding video clip disappears. It's that simple.
+[Descript](https://www.descript.com) is the tool that made "edit video like a document" a real thing. It transcribes your video, then lets you edit the footage by editing the transcript. Delete a sentence from the text, and the corresponding video clip disappears. It's that simple.
 
 **Best for:** Podcast and interview editing, removing filler words ("um," "uh," "like"), creating clips from long-form content.
 
@@ -40,7 +40,7 @@ Descript is the tool that made "edit video like a document" a real thing. It tra
 
 ### Opus Clip
 
-Opus Clip takes long-form video and automatically generates short clips optimized for social media. Upload an hour-long webinar, and it identifies the most engaging moments, adds captions, reframes for vertical video, and produces a batch of ready-to-post clips.
+[Opus Clip](https://www.opus.pro) takes long-form video and automatically generates short clips optimized for social media. Upload an hour-long webinar, and it identifies the most engaging moments, adds captions, reframes for vertical video, and produces a batch of ready-to-post clips.
 
 **Best for:** Repurposing long content into short-form social clips (TikTok, Reels, Shorts).
 

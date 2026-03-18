@@ -27,7 +27,7 @@ Here's the practical difference:
 - **Omnichannel**: Same customer, same thread. The email agent sees the Twitter message. Context carries over.
 - **AI omnichannel**: The system auto-detects the customer, merges the interactions, summarizes prior conversations, suggests responses, and routes to the best-fit agent — all before a human touches it.
 
-According to a 2025 Salesforce report, 76% of customers expect consistent interactions across departments and channels. Only 54% say it feels like sales, service, and marketing share information. That gap is where AI omnichannel support lives.
+According to a 2025 [Salesforce](https://www.salesforce.com) report, 76% of customers expect consistent interactions across departments and channels. Only 54% say it feels like sales, service, and marketing share information. That gap is where AI omnichannel support lives.
 
 ## Why Channel Unification Matters More Than Channel Count
 
@@ -114,7 +114,7 @@ Most teams discover they have three or four tools that don't talk to each other.
 
 You have two paths:
 
-**Option A: All-in-one platform.** Tools like Zendesk Suite, Freshdesk Omni, Intercom, or Gladly handle multiple channels natively. They're easier to set up but may lack depth in specific channels.
+**Option A: All-in-one platform.** Tools like [Zendesk](https://www.zendesk.com) Suite, Freshdesk Omni, Intercom, or Gladly handle multiple channels natively. They're easier to set up but may lack depth in specific channels.
 
 **Option B: Best-of-breed with integration.** Keep your specialized tools (e.g., Aircall for voice, Front for email) and connect them through a middleware layer or customer data platform. More flexible but harder to maintain.
 
@@ -148,7 +148,7 @@ Phone support is often the last channel teams connect because it's the hardest. 
 
 AI changes this. Modern [AI voice assistant customer service](/blog/ai-voice-assistant-customer-service) tools transcribe calls in real time, extract key details, and feed them into the same unified timeline as chat and email interactions. When a customer calls in, the agent sees their full history — including the chat they had yesterday — right on screen.
 
-Tools like Dialpad, Observe.AI, and Assembled handle real-time transcription and integrate with major support platforms. Some go further, offering live coaching to agents during calls based on customer sentiment.
+Tools like Dialpad, Observe.AI, Assembled, and [Twilio](https://www.twilio.com) Flex handle real-time transcription and integrate with major support platforms. Some go further, offering live coaching to agents during calls based on customer sentiment.
 
 ### Step 6: Train Your Team
 

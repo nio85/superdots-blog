@@ -132,7 +132,7 @@ Here is a practical breakdown of the AI landing page builders worth considering 
 
 **Best for:** Conversion-focused teams that need data-backed optimization.
 
-Unbounce has been in the landing page space for over a decade. Their AI features are built on top of conversion data from billions of page sessions. Smart Builder generates pages from prompts. Smart Traffic optimizes traffic allocation automatically. Smart Copy suggests headline and body copy improvements.
+[Unbounce](https://unbounce.com) has been in the landing page space for over a decade. Their AI features are built on top of conversion data from billions of page sessions. Smart Builder generates pages from prompts. Smart Traffic optimizes traffic allocation automatically. Smart Copy suggests headline and body copy improvements.
 
 Pricing starts at $99/month. Worth it if you run more than a couple of landing pages at a time.
 
@@ -148,7 +148,7 @@ Pricing starts at $5/month for basic sites, with pro plans at $15/month.
 
 **Best for:** Enterprise teams running high-volume paid campaigns.
 
-Instapage focuses on post-click optimization — making sure the traffic you pay for actually converts. Their AI features include automated personalization (showing different content to different audience segments) and advanced A/B testing. It integrates deeply with Google Ads and Meta Ads.
+[Instapage](https://instapage.com) focuses on post-click optimization — making sure the traffic you pay for actually converts. Their AI features include automated personalization (showing different content to different audience segments) and advanced A/B testing. It integrates deeply with Google Ads and Meta Ads.
 
 Pricing starts at $99/month.
 
@@ -224,7 +224,7 @@ Social proof — testimonials, logos, case studies, user counts — is the singl
 
 ### Slow page load times
 
-A page that takes more than 3 seconds to load loses 53% of mobile visitors according to Google's research. AI-generated pages can sometimes include heavy images or unnecessary scripts. Check your page speed with Google PageSpeed Insights before launching. Compress images, remove unused elements, and enable caching.
+A page that takes more than 3 seconds to load loses 53% of mobile visitors according to Google's research. AI-generated pages can sometimes include heavy images or unnecessary scripts. Check your page speed with [Google PageSpeed Insights](https://pagespeed.web.dev/) before launching. Compress images, remove unused elements, and enable caching.
 
 ## What AI Landing Page Builders Cannot Do
 

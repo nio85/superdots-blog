@@ -110,7 +110,7 @@ For teams building out their [AI customer self-service](/blog/ai-customer-self-s
 
 The AI knowledge base generator market is maturing quickly. Here are tools that do this well in different contexts.
 
-### Zendesk AI
+### [Zendesk](https://www.zendesk.com) AI
 
 If you are already on Zendesk, their built-in AI content suggestions analyze your ticket data and recommend new articles. It drafts content based on agent responses and flags articles that need updating. The advantage is zero integration work — it reads your existing ticket history natively.
 
@@ -120,11 +120,11 @@ Freshdesk's AI layer can auto-generate response templates and knowledge base sug
 
 ### Tettra
 
-Tettra focuses on internal knowledge bases and uses AI to identify knowledge gaps based on questions employees ask in Slack. It is better suited for internal team knowledge than customer-facing help centers, but the gap-detection approach is solid.
+Tettra focuses on internal knowledge bases and uses AI to identify knowledge gaps based on questions employees ask in Slack. For teams already using Atlassian products, [Confluence](https://www.atlassian.com/software/confluence) also offers AI-powered content suggestions and search. Tettra is better suited for internal team knowledge than customer-facing help centers, but the gap-detection approach is solid.
 
 ### Guru
 
-Guru's AI suggests knowledge base content based on what your team is searching for and what questions come up repeatedly. It verifies content freshness and flags stale articles automatically.
+[HelpScout](https://www.helpscout.com) also offers AI-powered knowledge base features with built-in article suggestions and gap detection. [Guru](https://www.getguru.com)'s AI suggests knowledge base content based on what your team is searching for and what questions come up repeatedly. It verifies content freshness and flags stale articles automatically.
 
 ### Helpjuice
 

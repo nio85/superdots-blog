@@ -51,9 +51,9 @@ For unstructured data like emails, chat transcripts, and notes, NLP extracts rel
 
 ### For invoices and financial documents
 
-**Nanonets** processes invoices, receipts, purchase orders, and other financial documents. Upload a PDF or image, and it extracts all relevant fields into a structured format you can export to your accounting software. It learns from corrections, so accuracy improves over time.
+**[Nanonets](https://nanonets.com)** processes invoices, receipts, purchase orders, and other financial documents. Upload a PDF or image, and it extracts all relevant fields into a structured format you can export to your accounting software. It learns from corrections, so accuracy improves over time.
 
-**Rossum** is built specifically for document processing in finance. It handles complex multi-page invoices, credit notes, and delivery notes with high accuracy out of the box. The interface lets you verify AI extractions with a single click rather than retyping everything.
+**[Rossum](https://rossum.ai)** is built specifically for document processing in finance. It handles complex multi-page invoices, credit notes, and delivery notes with high accuracy out of the box. The interface lets you verify AI extractions with a single click rather than retyping everything.
 
 ### For CRM and sales data
 
@@ -63,7 +63,7 @@ For unstructured data like emails, chat transcripts, and notes, NLP extracts rel
 
 ### For forms and surveys
 
-**DocuSign Intelligent Insights** extracts data from signed documents and routes it into your systems automatically. No more printing, signing, scanning, and then manually entering the data from the signed form.
+**[DocuSign](https://www.docusign.com) Intelligent Insights** extracts data from signed documents and routes it into your systems automatically. No more printing, signing, scanning, and then manually entering the data from the signed form.
 
 **Jotform** offers AI-powered form processing that can read uploaded documents and auto-populate form fields. Users upload a document instead of filling out a 20-field form manually.
 

@@ -21,10 +21,10 @@ Most companies treat onboarding as a checklist. Sign these forms. Watch these vi
 
 The data is clear:
 
-- Companies with structured onboarding see **30% higher retention** after the first year (Brandon Hall Group).
+- Companies with structured onboarding see **30% higher retention** after the first year (Brandon Hall Group). [SHRM](https://www.shrm.org) reports similar findings across industries.
 - Organizations using AI in their onboarding process report **53% faster task completion** for new hires in their first 90 days.
 - Bad onboarding costs between **50% and 200% of an employee's annual salary** when they leave within the first six months.
-- Only **12% of employees** say their company does onboarding well (Gallup).
+- Only **12% of employees** say their company does onboarding well ([Gallup](https://www.gallup.com)).
 
 That last number is the one that should worry you. Most new hires know their onboarding was bad. They just do not tell you — they tell their next employer during the interview.
 
@@ -204,9 +204,10 @@ Not every team needs the same solution. Here is what works at different stages.
 
 | Tool | What it does | Cost |
 |------|-------------|------|
-| BambooHR | HRIS with onboarding workflows | Custom pricing |
+| [BambooHR](https://www.bamboohr.com) | HRIS with onboarding workflows | Custom pricing |
 | Trainual | Role-based training and SOPs | From $250/month |
 | Guru | AI-powered knowledge base | From $15/user/month |
+| [Sapling](https://www.saplinghr.com) | People operations and onboarding automation | Custom pricing |
 | Enboarder | Experience-driven onboarding workflows | Custom pricing |
 
 **Best approach:** Use your HRIS for compliance and paperwork automation. Add a knowledge management tool with AI search for self-service Q&A. Build department-specific training paths in a dedicated learning tool. This handles 20+ new hires per month without adding HR headcount.
@@ -215,7 +216,7 @@ Not every team needs the same solution. Here is what works at different stages.
 
 | Tool | What it does | Cost |
 |------|-------------|------|
-| Workday | Full HRIS with AI-powered onboarding | Enterprise pricing |
+| [Workday](https://www.workday.com) | Full HRIS with AI-powered onboarding | Enterprise pricing |
 | ServiceNow HR | Automated HR service delivery | Enterprise pricing |
 | Eightfold AI | AI talent management including onboarding | Enterprise pricing |
 | Microsoft Viva | Employee experience platform | Part of Microsoft 365 |

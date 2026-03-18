@@ -72,9 +72,9 @@ Some AI spreadsheet tools go further, generating formatted reports with annotati
 
 ### Built into spreadsheets you already use
 
-**Google Sheets with Gemini**: Google's AI is now embedded directly in Sheets. You can ask questions about your data, generate formulas, and create charts from the sidebar. It works best with clean, well-labeled data.
+**[Google Sheets](https://workspace.google.com/products/sheets) with Gemini**: Google's AI is now embedded directly in Sheets. You can ask questions about your data, generate formulas, and create charts from the sidebar. It works best with clean, well-labeled data.
 
-**Microsoft Excel with Copilot**: If your company uses Microsoft 365, Copilot can analyze data, build pivot tables, create charts, and even write VBA macros from plain English descriptions. It is the most powerful option for enterprise users who already live in Excel.
+**[Microsoft Excel](https://www.microsoft.com/en-us/microsoft-365/excel) with Copilot**: If your company uses Microsoft 365, Copilot can analyze data, build pivot tables, create charts, and even write VBA macros from plain English descriptions. It is the most powerful option for enterprise users who already live in Excel.
 
 **Apple Numbers**: Apple's AI features are more limited but handle basic formula generation and data summaries for personal and small team use.
 
@@ -88,7 +88,7 @@ Some AI spreadsheet tools go further, generating formatted reports with annotati
 
 ### For teams that need more
 
-If your data lives in databases or BI tools, you might need something beyond a spreadsheet. But for teams whose primary data tool is a spreadsheet — and that is most teams — AI spreadsheet add-ons and built-in features cover 90% of needs. For teams managing budgets, our guide on [AI budgeting tools](/blog/ai-budgeting-tools/) shows how these same capabilities apply specifically to financial tracking.
+If your data lives in databases or BI tools, you might need something beyond a spreadsheet — platforms like [Airtable](https://www.airtable.com) bridge the gap between spreadsheets and databases with built-in AI features. But for teams whose primary data tool is a spreadsheet — and that is most teams — AI spreadsheet add-ons and built-in features cover 90% of needs. For teams managing budgets, our guide on [AI budgeting tools](/blog/ai-budgeting-tools/) shows how these same capabilities apply specifically to financial tracking.
 
 ## Practical workflows that save real time
 

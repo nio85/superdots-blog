@@ -21,7 +21,7 @@ Before we get into the AI approach, it helps to understand why debugging eats so
 
 ### The context-switching tax
 
-You hit a bug. You open the logs. You switch to the code. You check the database. You open the browser dev tools. You go back to the logs. Every switch costs you mental context. Studies show it takes 15–25 minutes to regain deep focus after a context switch. A single debugging session can involve dozens of them.
+You hit a bug. You open the logs. You switch to the code. You check the database. You open the browser dev tools (like [Chrome DevTools](https://developer.chrome.com/docs/devtools)). You go back to the logs. Every switch costs you mental context. Studies show it takes 15–25 minutes to regain deep focus after a context switch. A single debugging session can involve dozens of them.
 
 ### The log-hunting spiral
 
@@ -164,7 +164,7 @@ AI is not a replacement for all debugging. It has real limitations:
 - **Performance bugs.** AI can suggest optimizations, but it cannot profile your running code. If the bug is "this page takes 8 seconds to load," you still need your profiler. For broader productivity improvements, check out the [AI productivity guide](/blog/ai-productivity-guide).
 - **Business logic bugs.** If the code runs correctly but produces the wrong business result, the AI needs to understand the domain rules to help. You have to explain what "correct" means.
 
-For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis, and good old rubber duck debugging.
+For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis tools like [Sentry](https://sentry.io) or [Datadog](https://www.datadoghq.com), and good old rubber duck debugging.
 
 ## Building AI debugging into your workflow
 

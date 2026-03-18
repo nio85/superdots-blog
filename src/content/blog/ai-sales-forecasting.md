@@ -23,7 +23,7 @@ Traditional sales forecasting has three big problems:
 
 **No pattern recognition.** A human looking at a spreadsheet can't easily spot that deals involving a specific competitor close 40% less often, or that deals stalling at the proposal stage for more than 12 days almost never close. AI can.
 
-The result? According to industry benchmarks, traditional forecasting methods hit 60-75% accuracy at best. AI-native forecasting platforms routinely achieve 90% or higher.
+The result? According to [Gartner](https://www.gartner.com) and other industry benchmarks, traditional forecasting methods hit 60-75% accuracy at best. AI-native forecasting platforms routinely achieve 90% or higher.
 
 ## How AI forecasting actually works
 
@@ -66,9 +66,9 @@ If you're not there yet, spend a month cleaning up. It's worth it.
 For most teams, AI forecasting comes built into your existing CRM or as a lightweight add-on:
 
 - **HubSpot Sales Hub** (Professional/Enterprise) includes AI forecasting that analyzes pipeline velocity, deal value, and rep performance. Good for mid-market teams already on HubSpot.
-- **Salesforce Einstein** adds AI predictions on top of your Salesforce data. Enterprise-grade but requires solid Salesforce hygiene.
+- **[Salesforce](https://www.salesforce.com) Einstein** adds AI predictions on top of your Salesforce data. Enterprise-grade but requires solid Salesforce hygiene.
 - **Zoho CRM with Zia** offers AI-powered forecasting that's accessible for smaller teams on a budget.
-- **Standalone tools** like Aviso, Clari, or Forecastio plug into your CRM and focus specifically on forecasting accuracy. Worth exploring if your CRM's built-in AI isn't cutting it.
+- **Standalone tools** like Aviso, [Clari](https://www.clari.com), or Forecastio plug into your CRM and focus specifically on forecasting accuracy. Worth exploring if your CRM's built-in AI isn't cutting it.
 
 Pick the option that works with what you already have. The best forecasting tool is the one your team will actually use.
 
