@@ -186,32 +186,3 @@ The timeline matters too. Most teams see measurable improvement within 60-90 day
 
 **Forgetting about internal handoffs.** Omnichannel isn't just customer-facing. When a support agent escalates to engineering, that context needs to transfer too.
 
-## FAQ
-
-### What's the difference between multichannel and omnichannel support?
-
-Multichannel means you're available on multiple channels. Omnichannel means those channels are connected — customer context, conversation history, and status carry over when someone switches from one channel to another. AI omnichannel support adds intelligence on top: automatic routing, summarization, sentiment detection, and response suggestions.
-
-### How much does an AI omnichannel support platform cost?
-
-Entry-level platforms like Freshdesk Omni start around $49 per agent per month. Mid-tier options like Zendesk Suite run $89-$115 per agent per month. Enterprise platforms like Gladly or Kustomer start around $150 per agent per month. AI features often cost extra — Zendesk charges an additional $50 per agent per month for its Advanced AI add-on.
-
-### Can small teams benefit from AI omnichannel support?
-
-Yes. Small teams often benefit the most because they can't afford to waste time on manual context gathering. A five-person support team saving 30 minutes per agent per day reclaims over 50 hours per month. Many platforms offer plans scaled for small teams, and the setup is simpler with fewer legacy systems to migrate.
-
-### How long does implementation take?
-
-A basic setup — connecting two or three channels with identity resolution and AI summarization — takes two to four weeks. A full rollout across all channels with custom routing rules, CRM integration, and agent training typically takes two to three months. Plan for an additional three months of optimization afterward.
-
-### Does AI omnichannel support replace human agents?
-
-No. It makes human agents more effective. AI handles the repetitive parts — gathering context, classifying issues, drafting initial responses, routing to the right person. Agents spend more time on the work that actually requires judgment, empathy, and creative problem-solving. Most teams that implement AI omnichannel support don't reduce headcount. They handle more volume with the same team.
-
-### What channels should I prioritize first?
-
-Start with your highest-volume channels. For most B2B companies, that's email and chat. For B2C and e-commerce, it's chat, social media, and messaging apps like WhatsApp. Add voice once the text-based channels are stable — phone integration is the most complex piece and benefits from having the rest of the system working first.
-
-### How do I measure success after implementation?
-
-Track five metrics: average handle time, first-contact resolution rate, customer effort score, channel switch rate (how often customers have to change channels to get help), and agent satisfaction. Compare these against your baseline from before implementation. Review weekly for the first three months, then monthly once the system stabilizes.

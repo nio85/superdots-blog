@@ -183,32 +183,3 @@ Skills gap analysis only works if business leaders are involved. HR can run the 
 
 A skills gap analysis that happens annually is a compliance exercise, not a strategic tool. The value comes from continuous monitoring and rapid response. Set up quarterly reviews at minimum, with AI providing real-time alerts for critical gaps.
 
-## FAQ
-
-### How long does it take to run an AI skills gap analysis?
-
-The initial setup — connecting data sources, building the skills taxonomy, validating profiles — takes 4-8 weeks depending on organization size and data quality. After that, AI runs continuously. Individual analyses and reports generate in minutes, not weeks.
-
-### What size company benefits from AI skills gap analysis?
-
-Companies with 200+ employees see the most value, because manual analysis breaks down at that scale. But smaller companies (50-200) can still benefit using lighter-weight tools. Below 50 employees, you probably know your team's skills well enough that a structured conversation achieves the same result.
-
-### How accurate is AI at assessing employee skills?
-
-AI-inferred skills are typically 70-80% accurate when based on behavioral data (project history, tool usage, certifications). Self-reported skills are less reliable. The key is using multiple data sources and building in human validation. No AI system should be the sole judge of someone's capabilities.
-
-### Does AI skills gap analysis replace performance reviews?
-
-No. Performance reviews assess how well someone does their job overall. Skills gap analysis specifically measures capability against defined proficiency targets. They are complementary. Skills data can inform performance conversations, and performance review feedback can improve skills assessments.
-
-### What is the ROI of AI skills gap analysis?
-
-Organizations using AI-driven skills analysis report 25-40% reductions in external hiring costs by identifying internal candidates for open roles. They also see 30-50% faster time-to-productivity for upskilled employees compared to new hires. The biggest ROI often comes from avoided costs — projects that do not stall, opportunities that do not get missed.
-
-### How do you handle employee privacy concerns?
-
-Be transparent about what data you collect and how you use it. Aggregate and anonymize data wherever possible. Give employees access to their own skill profiles and the ability to dispute inaccuracies. Use skills data for development, not punishment. If employees feel the system is being used against them, they will game it — and your data becomes worthless.
-
-### Can AI skills gap analysis predict which skills will be obsolete?
-
-AI can identify skills with declining demand based on market trends, technology shifts, and industry patterns. It cannot predict obsolescence with certainty — too many variables are involved. But it can flag skills that are trending downward, giving you time to plan reskilling pathways before the decline becomes urgent.

@@ -204,24 +204,3 @@ AI conversation intelligence does not live in isolation. The insights it generat
 
 The gap between good sales teams and great ones is not talent. It is information. Great teams know what is happening on every call, across every rep, every day. AI conversation intelligence is how you close that gap.
 
-## FAQ
-
-### How much does AI conversation intelligence software cost?
-
-Pricing varies by platform and team size. Fireflies.ai and Otter.ai offer free tiers with paid plans starting at $10-$19 per user per month for basic transcription and analytics. Enterprise platforms like Gong typically cost $100-$150 per user per month and include deep call analytics, deal-level insights, and coaching capabilities. Most vendors require annual contracts for the best pricing.
-
-### What is a good talk ratio for sales calls?
-
-On discovery calls, top-performing reps speak about 40-46% of the time and let the prospect talk 54-60%. On demo calls, rep talk time shifts to 60-65%, but the best performers pause frequently for questions. During negotiation calls, deals where the buyer talks more close at higher rates. If your reps are above 65% talk time on discovery calls, that is a clear coaching opportunity.
-
-### Can conversation intelligence work with phone calls, not just video?
-
-Yes. Most AI conversation intelligence platforms integrate with phone dialers like Outreach, Aircall, and RingCentral in addition to video tools like Zoom, Teams, and Google Meet. Some platforms also offer mobile apps that route calls through the system for recording. The analysis capabilities work the same regardless of whether the conversation happened on video, phone, or in person.
-
-### How do I get sales reps to adopt conversation intelligence tools?
-
-Start with a lightweight tool like Fireflies.ai to build the habit of recording calls. Focus on one or two metrics first, typically talk ratio and objection tracking. Position the tool as a coaching aid, not a surveillance system. Let reps review their own call analytics before managers do. The key mistake is buying an enterprise platform on day one and overwhelming the team before they see value in basic transcription.
-
-### Does recording sales calls create legal issues?
-
-Recording laws vary by jurisdiction. Some US states require only one-party consent, while others require all parties to agree. The EU requires explicit consent under GDPR. Most conversation intelligence platforms handle this automatically by displaying a visible recording notice in video calls and playing an audio disclaimer on phone calls. Have your legal team review the consent configuration before going live.

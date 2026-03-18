@@ -188,32 +188,3 @@ For a deeper look at building a knowledge base that actually works for your team
 
 **Not closing the feedback loop.** When a customer reads an article and still submits a ticket, that is a signal. The article did not solve their problem. Feed that signal back into your AI knowledge base generator so it can improve the content.
 
-## FAQ
-
-### How much does an AI knowledge base generator cost?
-
-Pricing varies widely. Some tools include knowledge base generation as part of a broader help desk platform — Zendesk and Freshdesk bundle it into their AI add-ons, typically $25-75 per agent per month. Standalone tools like Tettra and Guru range from $5-15 per user per month. Enterprise solutions with advanced gap detection and automated publishing can run $500-2,000 per month depending on volume.
-
-### Can an AI knowledge base generator work with my existing help desk?
-
-Yes, most tools integrate with major help desk platforms — Zendesk, Freshdesk, Intercom, Salesforce Service Cloud, and HubSpot. The key requirement is API access to your ticket data. If your help desk has an API (and almost all modern ones do), an AI knowledge base generator can read your ticket history and agent responses.
-
-### How long does it take to see results?
-
-Expect 2-4 weeks to set up, generate your first batch of articles, and publish them after review. Measurable ticket deflection typically shows up within 4-6 weeks of publishing new content. Full optimization — where the system is continuously generating, updating, and filling gaps — takes 2-3 months.
-
-### Will AI-generated articles sound robotic?
-
-Not if you configure the tool properly. Modern AI knowledge base generators let you set tone guidelines, provide sample articles for style matching, and customize formatting templates. The first drafts may need more editing. After a few review cycles, the AI learns your style and produces content that is close to publish-ready. The articles will not win literary awards, but they will be clear, accurate, and helpful — which is all a help article needs to be.
-
-### What types of content can an AI knowledge base generator create?
-
-Most tools generate how-to articles, troubleshooting guides, FAQ entries, and process documentation. Some can also generate onboarding guides, product walkthroughs, and release notes. The quality is best for structured, procedural content — "how to do X" — and weaker for conceptual or strategic content. Stick to the practical stuff and you will get the most value.
-
-### Do I still need a technical writer?
-
-For a small to mid-size support team, an AI knowledge base generator can replace the need for a dedicated technical writer focused on help articles. But you still need someone to review, approve, and occasionally rewrite AI-generated content. A support lead or content manager spending 2-3 hours per week on review is usually sufficient. Large enterprises with complex products may still want a technical writer for in-depth documentation, but the AI handles the high-volume, straightforward articles.
-
-### How do I measure ROI on an AI knowledge base generator?
-
-Calculate the cost per ticket your support team handles (total support costs divided by total tickets). Then measure how many tickets are deflected by new knowledge base content. If your cost per ticket is $15 and the AI knowledge base generator deflects 500 tickets per month, that is $7,500 in monthly savings. Compare that against the tool cost. Most teams see positive ROI within the first month of publishing AI-generated content.

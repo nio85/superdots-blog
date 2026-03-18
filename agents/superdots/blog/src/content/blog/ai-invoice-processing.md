@@ -171,20 +171,3 @@ You do not need to overhaul your AP department overnight. Start with these three
 
 The math on AI invoice processing is straightforward. If your team is manually typing data from documents into a system, AI can do it faster, cheaper, and with fewer mistakes. The only question is which tool fits your stack.
 
-## FAQ
-
-### How long does it take to implement AI invoice processing?
-
-Most cloud-based tools can be set up in 2–4 weeks, including ERP integration and initial configuration. The parallel testing period adds another 2–4 weeks. Plan on being fully live within 6–8 weeks.
-
-### Can AI handle invoices in multiple languages and currencies?
-
-Yes. Modern AI extraction models support dozens of languages and automatically convert currencies when configured with exchange rates. If you receive invoices from international vendors, confirm that the specific tool you are evaluating supports your languages.
-
-### What happens when the AI makes a mistake?
-
-The same thing that happens when a human makes a mistake — except the AI learns from corrections. When you flag an extraction error, the model adjusts for future invoices from that vendor. Error rates typically drop below 1% within the first three months as the model learns your document patterns.
-
-### Do I still need AP staff after implementing AI?
-
-Yes, but their role changes. Instead of data entry, your AP team focuses on exception handling, vendor relationship management, and process optimization. Most companies do not reduce AP headcount — they redirect the team to higher-value work and handle higher invoice volumes without adding staff.

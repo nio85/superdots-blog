@@ -185,32 +185,3 @@ AI is not a magic fix for dysfunctional incident management. It will not help if
 
 AI incident management is a force multiplier. It makes good incident response faster. It does not make bad incident response good.
 
-## FAQ
-
-### How does AI incident management differ from traditional incident management?
-
-Traditional incident management relies on static threshold alerts, manual triage, and human-driven investigation. AI incident management adds pattern recognition that detects anomalies before they trigger threshold alerts, correlates related alerts into a single incident, suggests probable root causes based on historical data, and automates repetitive response steps. The human still makes the critical decisions. AI handles the data-heavy grunt work that slows responders down.
-
-### Can AI incident management replace on-call engineers?
-
-No. AI handles detection, correlation, and data gathering — the parts of incident response that are repetitive and time-sensitive. Engineers are still needed for judgment calls: deciding whether to roll back or push forward, communicating with stakeholders, making architectural decisions to prevent recurrence. AI makes on-call less painful, not unnecessary.
-
-### How long does it take to see results from AI incident management tools?
-
-Most teams see measurable improvement within 2-4 weeks. Alert noise reduction kicks in first as the AI learns normal patterns. Root cause suggestions improve over the first 1-3 months as the system ingests more incident history. Full value — including accurate runbook automation and predictive detection — typically takes 3-6 months of data.
-
-### What data does an AI incident management system need?
-
-At minimum: metrics (CPU, memory, latency, error rates), logs, deployment events, and historical incident records. The more context you provide — traces, change management records, dependency maps, past postmortems — the better the AI performs. Most tools integrate with standard observability pipelines like OpenTelemetry, Prometheus, and Datadog.
-
-### Is AI incident management only for large engineering teams?
-
-No. Small teams arguably benefit more because they have fewer people to share on-call burden. A five-person team where AI handles alert correlation, initial triage, and runbook execution effectively multiplies their incident response capacity. The tools scale down as well as they scale up.
-
-### What is the biggest mistake teams make when adopting AI incident management?
-
-Trying to automate everything at once. Start with alert noise reduction — it is the fastest win and builds trust in the system. Then add root cause suggestions. Then automate simple runbooks. Each step gives the AI more data and gives your team more confidence before you hand it more responsibility.
-
-### How does AI incident management handle novel incidents it has never seen before?
-
-AI will not automatically resolve a truly novel incident. But it still helps. It eliminates known patterns from the investigation, surfaces relevant telemetry data, and identifies which services are affected. This narrows the search space so the engineer investigating the incident can focus on what is actually new rather than re-discovering what the system already knows.

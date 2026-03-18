@@ -110,24 +110,3 @@ If your job involves reporting, budgets, surveys, or any kind of recurring analy
 
 Start with your most tedious recurring report. Let AI handle the first draft. Refine from there.
 
-## FAQ
-
-### Do I need to know SQL or Python to use AI data analysis tools?
-
-No. The entire point of modern AI data analysis tools is that you ask questions in plain English instead of writing code. Tools like Excel Copilot, Google Sheets with Gemini, Julius AI, and Quadratic let you type questions like "What was our average deal size by region last quarter?" and get answers with charts — no formulas, no programming required.
-
-### Is it safe to upload company data to AI analysis tools?
-
-It depends on the tool. Enterprise tools like Excel Copilot and Google Sheets with Gemini keep data within your organization's existing security boundaries. Free or standalone tools may store your data on external servers. Before uploading anything sensitive — financial records, customer data, HR information — check the tool's data handling policies and get approval from your IT or compliance team.
-
-### How accurate is AI data analysis?
-
-AI data analysis is generally reliable for straightforward calculations, aggregations, and trend detection, but it can misinterpret column headers, data types, or ambiguous questions. Always verify key numbers with a manual spot-check against the source data. Be specific in your questions — "analyze this data" gives vague results, while "compare Q3 and Q4 revenue by region and highlight declines greater than 10%" produces accurate, actionable output.
-
-### What kinds of questions can I ask an AI data analysis tool?
-
-You can ask comparison questions ("which product line grew fastest"), trend questions ("are there seasonal patterns in our support tickets"), correlation questions ("what factors predict whether a lead converts"), and summary questions ("create a one-page summary with charts for a leadership meeting"). AI handles aggregations, pivot-table style analysis, statistical patterns, and visualization — all through natural language.
-
-### What is the best AI tool for analyzing spreadsheets?
-
-If you already use Microsoft 365, start with Excel Copilot — it works directly in your spreadsheets. Google Workspace users should try Gemini in Google Sheets. For standalone analysis, Julius AI is excellent for uploading a CSV and getting quick visual answers. Quadratic combines spreadsheet functionality with AI in a browser-based environment. Start with whatever integrates into the tools you already use.
