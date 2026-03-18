@@ -153,3 +153,25 @@ The design-to-dev handoff is not a communication problem that needs better meeti
 - [AI Design Systems](/blog/ai-design-systems)
 - [AI UX Design Tools](/blog/ai-ux-design-tools)
 - [AI Code Review Tools](/blog/ai-code-review-tools)
+
+## FAQ
+
+### What is design-to-dev handoff and why does it matter?
+
+Design-to-dev handoff is the process of transferring finished designs from a design team to developers for implementation, including specs for spacing, colors, typography, assets, and interaction details. It matters because poor handoff leads to back-and-forth communication, misinterpretation of design intent, and pixel-imperfect implementations that waste days of calendar time on trivial fixes.
+
+### Can AI generate production-ready code from Figma designs?
+
+AI can generate code that is roughly 70-85% production-ready for standard UI components like cards, forms, and simple layouts. Complex interactive components, custom animations, and business logic still need developer refinement. Think of AI-generated code as a strong starting point that saves significant implementation time, not a finished product.
+
+### What are the best tools for AI-powered design handoff?
+
+For spec generation, Figma Dev Mode with AI features is the most accessible starting point. For serious code generation, Locofy and Anima produce framework-aware output. For token management, Supernova and Token Studio handle extraction and sync. For visual regression testing, Chromatic and Applitools detect drift between design and implementation.
+
+### How much time does AI save in the design-to-dev handoff process?
+
+Teams typically report a 40-60% reduction in handoff-related time. Designers spend less time writing specs and annotating files, while developers spend less time measuring spacing, looking up colors, and asking clarification questions. The biggest savings come from eliminating low-value back-and-forth conversations about measurements and specifications.
+
+### Does AI design handoff work with Figma?
+
+Yes. Most AI handoff tools integrate directly with Figma through plugins or API connections. They read Figma files, extract design data, and generate specifications and code automatically. Some tools also support Sketch and Adobe XD, but Figma integration is typically the most mature and feature-complete.

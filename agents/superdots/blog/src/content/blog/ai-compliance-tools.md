@@ -136,3 +136,25 @@ If compliance is keeping your team up at night, here is what to do this week:
 3. **Review your contracts.** Before buying a new tool, check if your existing vendors have added compliance capabilities. Many GRC, cloud security, and HR platforms now include AI-powered compliance modules. If you already have AI helping with [contract review](/blog/ai-contract-review-non-lawyers), your legal team has a head start on understanding what these tools can do.
 
 The teams that handle compliance well are not the ones with the biggest budgets. They are the ones that automated the routine work early, so when a new regulation drops — and it will — they have the capacity to actually respond.
+
+## FAQ
+
+### Do small companies need AI compliance tools?
+
+It depends on your regulatory exposure, not your company size. If you operate in one jurisdiction with simple audit requirements, a spreadsheet may suffice. But if you handle sensitive data, face multiple regulatory frameworks, or have continuous compliance obligations like SOC 2 or ISO 27001, an AI compliance tool saves significant time regardless of company size. Many tools offer tiered pricing that makes them accessible to smaller teams.
+
+### How much do AI compliance tools cost?
+
+Pricing varies widely depending on the tool, the number of frameworks you track, and your organization size. Entry-level tools start around $500 to $1,000 per month. Enterprise platforms with full regulatory monitoring, evidence collection, and workflow automation can run $3,000 to $10,000 or more per month. The ROI calculation should factor in the cost of manual compliance hours, audit failures, and potential fines.
+
+### Can AI compliance tools replace a compliance officer?
+
+No. AI automates the monitoring, documentation, and evidence collection work, but it does not make compliance decisions. Someone still needs to evaluate whether a flagged risk is relevant, whether a control is adequate, or whether an exception is justified. AI handles the volume and the tedious parts so your compliance team can focus on judgment calls and strategic risk management.
+
+### What is the EU AI Act and does it affect my company?
+
+The EU AI Act is a regulation on artificial intelligence, fully enforceable by August 2026. It classifies AI systems by risk level and imposes requirements accordingly. If your organization uses AI in hiring, credit scoring, healthcare, or law enforcement, you likely have high-risk obligations including risk assessments, technical documentation, and human oversight. Even non-AI companies using AI tools in these areas have compliance obligations. Fines can reach up to 35 million euros or 7% of global annual turnover.
+
+### How long does it take to implement an AI compliance tool?
+
+A basic implementation covering one framework can be up and running in 2-4 weeks. A full deployment across multiple frameworks with system integrations and automated evidence collection typically takes 2-3 months. Start with one framework as a pilot, measure the time savings and audit readiness improvement, then expand to additional frameworks.

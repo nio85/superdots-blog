@@ -117,3 +117,25 @@ There's also a fraud angle worth noting: unusual payment patterns flagged by you
 **Integrate your AR data with cash flow forecasting.** The value of accurate AR prediction multiplies when it feeds into your broader financial planning. This is the connection most teams leave on the table.
 
 The goal isn't to automate everything. It's to stop spending human attention on work a system can handle better, so your AR team can focus on the judgment calls that actually require them.
+
+## FAQ
+
+### How long does it take to implement AI accounts receivable software?
+
+Most mid-market AR automation tools take 2-6 weeks to implement, depending on ERP complexity and data volume. Lighter-weight tools like Gaviti can be running within a week. Enterprise platforms like HighRadius require a more involved setup of 2-3 months. Budget an additional 90 days for the AI's payment prediction models to calibrate against your specific customer payment data.
+
+### What is the ROI of AI accounts receivable automation?
+
+The ROI comes from three sources: reduced DSO freeing up working capital, labor savings from automating manual follow-up and cash application, and fewer write-offs from better collections prioritization. A company with $10M in revenue that reduces DSO by 10 days frees up roughly $280K in working capital. Add labor savings of $20-60K per AR specialist per year, and most tools pay for themselves within 3-6 months.
+
+### Can small businesses benefit from AI AR tools?
+
+Yes, but the right tool depends on your scale. Companies under $5M in revenue may not need a dedicated AR platform. Start with a self-service payment portal to reduce friction, then add automation as invoice volume grows. Tools like Gaviti are designed for the mid-market and offer faster time to value than enterprise-grade platforms.
+
+### How does AI handle disputed invoices?
+
+AI AR tools categorize disputes by type (pricing, delivery, quality, billing error), route them to the right person, and track resolution timelines. Some platforms automatically pull supporting documentation like POs and delivery receipts to speed up resolution. The AI learns from dispute patterns to flag potential issues before invoices are even sent, reducing dispute volume over time.
+
+### Does AI AR automation work for subscription billing?
+
+AI AR tools work well for subscription and recurring billing, but they shine brightest with variable invoicing where payment timing is less predictable. For pure subscription businesses, dunning management tools built into your billing platform (Stripe, Chargebee, Recurly) may be sufficient. AI AR platforms add the most value when you have a mix of recurring and one-time invoices with varying payment terms.

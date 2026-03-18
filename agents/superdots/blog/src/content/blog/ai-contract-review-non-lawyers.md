@@ -161,3 +161,25 @@ Once you see the first contract reviewed in minutes instead of hours, you will n
 ---
 
 *Looking for more ways AI can streamline your operations? Learn how to [automate email triage with AI](/blog/automate-email-triage-with-ai), explore [AI budgeting tools](/blog/ai-budgeting-tools) for tracking spending without spreadsheet headaches, or see how to [write better documentation with AI](/blog/writing-better-docs-with-ai).*
+
+## FAQ
+
+### Is it safe for non-lawyers to review contracts with AI?
+
+Yes, for standard agreements like NDAs, vendor contracts, and service renewals. AI flags risky clauses and extracts key terms in plain language so you know what to accept, negotiate, or escalate to legal. The goal is not to replace lawyers but to handle the 80% that is routine so legal focuses on the 20% that requires expertise.
+
+### What contracts should always go to a lawyer even with AI review?
+
+Always escalate contracts involving intellectual property or licensing, deals with regulatory or compliance implications (healthcare, finance, government), custom terms that deviate significantly from market standards, any contract where financial exposure exceeds your authority, and international agreements with unfamiliar governing law. AI handles the routine; lawyers handle the exceptions.
+
+### How accurate is AI contract review for spotting risky clauses?
+
+AI contract review catches 85-95% of common risk patterns in standard agreements. It reliably identifies non-standard clauses like unlimited liability, broad indemnities, one-sided termination rights, and hidden auto-renewal terms. Accuracy is lower for highly negotiated or unusual contract structures, which is why high-value or complex contracts should still go through legal review.
+
+### Can I use ChatGPT or Claude to review contracts?
+
+Yes, for occasional reviews under 50 contracts per year. Paste the contract text with a structured prompt specifying what to check: liability caps, auto-renewal terms, termination rights, data handling obligations, and non-standard indemnification language. For higher volumes, dedicated contract review platforms like Juro or ContractSafe offer workflow automation, clause libraries, and approval tracking that general-purpose AI tools lack.
+
+### How do I build a contract review playbook for my team?
+
+Start with your most common contract types, usually NDAs and vendor agreements. Write down 5-10 must-check items in plain language for each type: preferred terms, acceptable ranges, and red flags. For NDAs, this might include mutual over one-way, term under 2 years, and no buried non-compete language. Upload this playbook to your AI tool as a reference checklist that the AI checks against automatically.
