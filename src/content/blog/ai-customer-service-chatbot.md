@@ -27,7 +27,7 @@ Before you invest time in this, set the right expectations.
 **What a good AI chatbot handles well:**
 
 - Answering common questions using your help docs and FAQs
-- Collecting information before routing to a human (account details, issue category, urgency)
+- Collecting information before routing to a human (account details, issue category, urgency) — for more on this, see how [AI ticket routing](/blog/ai-ticket-routing) works
 - Handling simple actions like order status checks, password resets, or appointment scheduling
 - Providing instant responses 24/7, including outside business hours
 
@@ -38,7 +38,7 @@ Before you invest time in this, set the right expectations.
 - Make judgment calls on refunds, exceptions, or escalated complaints
 - Work well without good source material to learn from
 
-The realistic outcome: a well-set-up chatbot deflects 40-50% of incoming tickets. Advanced implementations reach 70% or higher. Every ticket the bot resolves saves you $5-15 compared to a human interaction. That math adds up fast.
+The realistic outcome: a well-set-up chatbot deflects 40-50% of incoming tickets — and when paired with [AI customer self-service portals](/blog/ai-customer-self-service), advanced implementations reach 70% or higher. Every ticket the bot resolves saves you $5-15 compared to a human interaction. That math adds up fast.
 
 ## How to choose an AI chatbot platform
 
@@ -99,7 +99,7 @@ Most platforms accept:
 - Spreadsheets of Q&A pairs
 - Existing chatbot conversation logs
 
-Start with your top 50 support topics. These typically cover 80% of incoming questions. You can expand later.
+Start with your top 50 support topics. These typically cover 80% of incoming questions. You can expand later. If you need help building that content library from scratch, our guide to [AI knowledge base generators](/blog/ai-knowledge-base-generator) walks through the process.
 
 ### Test before you launch
 

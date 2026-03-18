@@ -47,7 +47,7 @@ AI does not have access to your running application. It cannot set breakpoints o
 
 When you paste an error message and some code into an AI tool, it draws on patterns from millions of code examples, bug reports, Stack Overflow answers, and documentation. It has seen your error before — probably thousands of times, in dozens of variations. That is why it can often identify the issue faster than you can: not because it is smarter, but because it has more context about common failure modes.
 
-Think of it as having a senior developer sitting next to you who has worked in every language, every framework, and every codebase. They may not know your specific application, but they instantly recognize common patterns and anti-patterns.
+Think of it as having a senior developer sitting next to you who has worked in every language, every framework, and every codebase. They may not know your specific application, but they instantly recognize common patterns and anti-patterns. This is the same principle behind [AI pair programming](/blog/ai-pair-programming) — the AI augments your thinking rather than replacing it.
 
 ## Step-by-step: using AI to debug
 
@@ -164,7 +164,7 @@ AI is not a replacement for all debugging. It has real limitations:
 - **Performance bugs.** AI can suggest optimizations, but it cannot profile your running code. If the bug is "this page takes 8 seconds to load," you still need your profiler. For broader productivity improvements, check out the [AI productivity guide](/blog/ai-productivity-guide).
 - **Business logic bugs.** If the code runs correctly but produces the wrong business result, the AI needs to understand the domain rules to help. You have to explain what "correct" means.
 
-For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis tools like [Sentry](https://sentry.io) or [Datadog](https://www.datadoghq.com), and good old rubber duck debugging.
+For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis tools like [Sentry](https://sentry.io) or [Datadog](https://www.datadoghq.com), and good old rubber duck debugging. When bugs escalate into production outages, having an [AI incident management](/blog/ai-incident-management) workflow in place helps your team respond systematically instead of scrambling.
 
 ## Building AI debugging into your workflow
 

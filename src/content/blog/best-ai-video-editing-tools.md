@@ -19,7 +19,7 @@ Traditional video editing requires you to manually scrub through footage, find t
 
 AI video editing flips this. Instead of manually manipulating a timeline, you work with the AI at a higher level: "Remove all the pauses longer than 2 seconds." "Pull out the three best quotes from this interview." "Generate a 60-second highlight reel." The AI handles the frame-level work.
 
-This doesn't mean AI produces cinema-quality results. It means AI handles the 80% of editing work that's mechanical — the cutting, trimming, captioning, and formatting — so you can focus on the 20% that requires creative judgment.
+This doesn't mean AI produces cinema-quality results. It means AI handles the 80% of editing work that's mechanical — the cutting, trimming, captioning, and formatting — so you can focus on the 20% that requires creative judgment. Video editing is just one piece of a larger [AI content creation](/blog/ai-content-creation) toolkit that helps teams produce more with less.
 
 ## The best AI video editing tools right now
 
@@ -140,7 +140,7 @@ Always add captions. Always. 85% of social media video is watched without sound,
 
 ### 4. Create platform-specific versions
 
-One piece of footage should become multiple outputs:
+One piece of footage should become multiple outputs. Planning this repurposing in advance with an [AI social media content calendar](/blog/ai-social-media-content-calendar) ensures every clip has a publishing slot:
 - Full-length version for YouTube or your website
 - 3-5 short clips for social media (vertical format, under 60 seconds)
 - Audio-only version for podcast feeds
