@@ -92,6 +92,15 @@ const posts = (await getCollection('blog'))
 		width: 100vw;
 		margin-left: calc(50% - 50vw);
 		margin-top: calc(-1 * var(--space-8)); /* cancel main's top padding */
+		/* Fade glow to transparent at edges — no hardcoded color needed */
+		-webkit-mask-image:
+			linear-gradient(to bottom, black calc(100% - 120px), transparent),
+			linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+		-webkit-mask-composite: destination-in;
+		mask-image:
+			linear-gradient(to bottom, black calc(100% - 120px), transparent),
+			linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+		mask-composite: intersect;
 	}
 	/* Radial glow behind hero */
 	.hero-glow {
@@ -118,18 +127,6 @@ const posts = (await getCollection('blog'))
 		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
 		filter: blur(50px);
 		pointer-events: none;
-	}
-	/* Bottom fade — ensures seamless transition into page background */
-	.hero::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 120px;
-		background: linear-gradient(to bottom, transparent, var(--color-bg));
-		pointer-events: none;
-		z-index: 1;
 	}
 	:global([data-theme="dark"]) .hero-glow {
 		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
