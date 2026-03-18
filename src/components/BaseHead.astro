@@ -28,9 +28,15 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 })();
 </script>
 
-<!-- Fonts: self-hosted variable (latin subset) -->
+<!-- Preconnect to third-party origins used by analytics -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.clarity.ms" />
+
+<!-- Fonts: self-hosted variable (latin subset) — only preload critical fonts -->
 <link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<!-- JetBrains Mono: prefetch only (used in code blocks, not render-critical) -->
+<link rel="prefetch" href="/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 <style is:inline>
 @font-face {
 	font-family: 'Space Grotesk';
