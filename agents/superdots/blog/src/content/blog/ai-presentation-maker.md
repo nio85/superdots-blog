@@ -46,13 +46,13 @@ Not every AI presentation maker does the same thing. Some generate full decks fr
 
 **Gamma** — Best for fast first drafts. You give it a topic or paste in notes, and it generates a full presentation with content and visuals. The output is web-based (not a .pptx file by default), which is great for sharing links but annoying if your company runs on PowerPoint. Free tier is generous.
 
-**Beautiful.ai** — Best for design-focused teams. The AI handles layout adjustments automatically — add more text and it reflows the slide. Strong templates. Less useful for content generation, more useful for making content look good. Paid plans start around $12/month.
+**[Beautiful.ai](https://www.beautiful.ai)** — Best for design-focused teams. The AI handles layout adjustments automatically — add more text and it reflows the slide. Strong templates. Less useful for content generation, more useful for making content look good. Paid plans start around $12/month.
 
 **Microsoft Copilot for PowerPoint** — Best if your company already uses Microsoft 365. It works inside PowerPoint, which means you keep your existing templates, brand fonts, and workflows. Content generation is decent. Design suggestions are conservative but on-brand. Requires a Copilot license.
 
-**Canva** — Best for non-designers who need visual slides. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
+**[Canva](https://www.canva.com)** — Best for non-designers who need visual slides. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
 
-**SlidesAI** — Best for Google Slides users. It is a Google Workspace add-on that generates slides from text you provide. Good for converting documents or notes into presentations. Design options are more limited than Canva or Beautiful.ai.
+**SlidesAI** — Best for [Google Slides](https://workspace.google.com/products/slides) users. It is a Google Workspace add-on that generates slides from text you provide. Good for converting documents or notes into presentations. Design options are more limited than Canva or Beautiful.ai.
 
 ### Decision matrix by use case
 

@@ -82,7 +82,7 @@ Basic personalization ("Hi Sarah") stopped impressing people a decade ago. AI-po
 - **Content blocks that swap**: The same email can show different product recommendations, testimonials, or CTAs based on what the subscriber has engaged with before.
 - **Dynamic send frequency**: AI learns that some subscribers prefer weekly emails while others engage more with biweekly sends — and adjusts automatically.
 
-This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like Klaviyo, HubSpot, and Braze have built-in AI that handles this without requiring you to set up complex rules.
+This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like [Klaviyo](https://www.klaviyo.com), [HubSpot](https://www.hubspot.com), and Braze have built-in AI that handles this without requiring you to set up complex rules.
 
 ### Send-time optimization
 
@@ -166,7 +166,7 @@ AI makes it easy to create more campaigns. That does not mean you should. Subscr
 
 You do not need a dedicated AI email marketing platform to get started. Here is what works at different levels:
 
-**If you already use an email platform**: Most major platforms (Mailchimp, HubSpot, Klaviyo, ActiveCampaign) now include AI features for subject lines, content generation, and send-time optimization. Start there before adding new tools.
+**If you already use an email platform**: Most major platforms ([Mailchimp](https://mailchimp.com), HubSpot, Klaviyo, ActiveCampaign) now include AI features for subject lines, content generation, and send-time optimization. Start there before adding new tools.
 
 **If you want better copy**: Jasper, Copy.ai, and Writer all have email-specific templates. They are particularly good for teams that send high volumes and need consistent quality.
 

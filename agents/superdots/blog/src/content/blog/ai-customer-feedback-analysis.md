@@ -22,7 +22,7 @@ Before you analyze anything, you need to know where feedback actually lives. Mos
 Here is the typical spread:
 
 - **Support tickets** — the richest source. Customers describe problems in detail when they need help.
-- **Surveys** — NPS, CSAT, post-purchase. Structured but often shallow unless you read the open-ended responses.
+- **Surveys** — NPS (a methodology developed by [Bain & Company](https://www.netpromotersystem.com)), CSAT, post-purchase. Structured but often shallow unless you read the open-ended responses.
 - **App store and product reviews** — public, unfiltered, and brutally honest.
 - **Social media mentions** — Twitter/X, LinkedIn, Reddit threads, Facebook comments.
 - **Sales call notes** — prospects tell your reps what they wish your product did. (See our guide on [AI for sales call prep](/blog/ai-for-sales-call-prep) for capturing these systematically.)
@@ -49,7 +49,7 @@ For small teams (under 1,000 feedback items per month):
 For larger volumes, set up integrations:
 
 - **Zapier or Make** can automatically pull new reviews, survey responses, and support tickets into a central sheet or database.
-- **Dedicated feedback platforms** like Thematic, Chattermill, or Zonka Feedback connect directly to your sources and aggregate automatically.
+- **Dedicated feedback platforms** like Thematic, Chattermill, [Qualtrics](https://www.qualtrics.com), or Zonka Feedback connect directly to your sources and aggregate automatically.
 - **Your CRM** may already have an integration path — check if your support tool and survey platform can push data into it.
 
 The goal is not a perfect system on day one. The goal is getting feedback flowing into one place so you can run analysis across all of it.
@@ -91,7 +91,7 @@ Categories of tools to explore:
 |---|---|---|
 | Feedback analytics platforms | End-to-end feedback collection and analysis | Thematic, Chattermill, Enterpret |
 | Survey tools with AI | Surveys plus built-in sentiment analysis | Zonka Feedback, SurveyMonkey, Typeform |
-| Social listening tools | Track brand mentions and sentiment across social | Sprout Social, Brandwatch |
+| Social listening tools | Track brand mentions and sentiment across social | Sprout Social, Brandwatch, [Medallia](https://www.medallia.com) |
 | General-purpose AI | Flexible analysis via prompts | ChatGPT, Claude, Gemini |
 
 Pick based on your volume and budget. Start simple and upgrade when the manual approach becomes a bottleneck.

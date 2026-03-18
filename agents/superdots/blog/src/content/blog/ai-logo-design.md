@@ -65,7 +65,7 @@ This takes 10 minutes and will save you an hour of aimless generation.
 
 The major AI logo generators each have strengths:
 
-**Looka** is the most polished end-to-end experience. You answer questions about your brand, pick styles you like, and it generates complete brand packages — logo, colors, fonts, business cards, social templates. Best for: getting a full brand kit fast.
+**[Looka](https://looka.com)** is the most polished end-to-end experience. You answer questions about your brand, pick styles you like, and it generates complete brand packages — logo, colors, fonts, business cards, social templates. Best for: getting a full brand kit fast.
 
 **Brandmark** focuses on logo quality. Its AI tends to produce cleaner, more distinctive marks than competitors. It also generates a style guide with your logo. Best for: people who care most about the logo itself.
 
@@ -125,7 +125,7 @@ Tools like [Coolors](https://coolors.co) and [Realtime Colors](https://realtimec
 
 Once you have your logo and colors, create templates for the content you post most. If you are running [social media content with AI](/ai-social-media-content-calendar), having brand-consistent templates ready saves time on every post.
 
-Most AI logo tools (Looka especially) generate social media templates automatically. If yours does not, take your brand kit into Canva or Adobe Express and build three to five templates:
+Most AI logo tools (Looka especially) generate social media templates automatically. If yours does not, take your brand kit into [Canva](https://www.canva.com) or [Adobe Express](https://www.adobe.com/express) and build three to five templates:
 
 - LinkedIn post (1200×1200)
 - Instagram story (1080×1920)

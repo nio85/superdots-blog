@@ -131,7 +131,7 @@ The real power of AI for sales emails is not speed — it is the kind of persona
 
 **Batch personalization.** For a list of 50 prospects, AI can generate 50 genuinely different emails in the time it takes you to write five manually. Not the same template with name swaps — different angles, different openings, different proof points based on each prospect's context.
 
-For a broader view of how AI tools fit into the sales process beyond email, check out our guide on [AI for sales call prep](/blog/ai-for-sales-call-prep/).
+For a broader view of how AI tools fit into the sales process beyond email — including CRM integration with platforms like [HubSpot](https://www.hubspot.com) — check out our guide on [AI for sales call prep](/blog/ai-for-sales-call-prep/).
 
 ## What AI sales emails should never do
 
@@ -169,4 +169,4 @@ Only if you use AI to send more spam. AI-assisted emails that are relevant, pers
 
 ### Which AI tools work best for sales emails?
 
-General-purpose tools like ChatGPT and Claude work well with good prompts. Sales-specific tools like Lavender, Regie.ai, and Smartwriter add features like prospect research integration, email scoring, and CRM sync. For most reps starting out, a general AI tool plus your existing CRM is enough. Add specialized tools once you have a workflow that works.
+General-purpose tools like ChatGPT and Claude work well with good prompts. Sales-specific tools like Lavender, Regie.ai, and Smartwriter add features like prospect research integration, email scoring, and CRM sync. Enterprise teams often run these alongside platforms like [Outreach](https://www.outreach.io) or [Salesloft](https://www.salesloft.com) for sequencing and analytics. For most reps starting out, a general AI tool plus your existing CRM is enough. Add specialized tools once you have a workflow that works.

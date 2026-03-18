@@ -186,7 +186,7 @@ The most powerful observability feature: AI correlates logs, metrics, and traces
 
 ### What to look for
 
-**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and incident management tools. An AI tool that requires you to change your infrastructure is not worth the overhead.
+**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and incident management tools. Whether you use [Kubernetes](https://kubernetes.io) for orchestration, [Terraform](https://www.terraform.io) for infrastructure as code, or [Docker](https://www.docker.com) for containerization, the AI layer should integrate without requiring you to change your stack. An AI tool that requires you to change your infrastructure is not worth the overhead.
 
 **Learning period and accuracy.** AI tools need historical data to learn patterns. Ask: how much data does the model need? How long until it is useful? What is the accuracy after the learning period?
 
@@ -205,7 +205,7 @@ The most powerful observability feature: AI correlates logs, metrics, and traces
 
 ## Key Takeaways
 
-DevOps bottlenecks — alert fatigue, slow pipelines, manual infrastructure management — are scale problems. AI is the tool designed for scale problems.
+DevOps bottlenecks — alert fatigue, slow pipelines, manual infrastructure management — are scale problems. AI is the tool designed for scale problems. The [DORA metrics](https://dora.dev) framework confirms this: the highest-performing teams automate the data-heavy work that slows down deployment frequency and time to recovery.
 
 Start with alert noise reduction. It is the fastest win and has the biggest quality-of-life improvement for on-call engineers. Then optimize CI/CD with predictive test selection — it cuts pipeline time by 60-80% without reducing coverage.
 

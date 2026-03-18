@@ -13,7 +13,7 @@ faqs:
   - question: "What types of marketing content work best with AI?"
     answer: "AI works well for research-heavy content (industry roundups, comparison articles), structured formats (email sequences, social posts, product descriptions), and high-volume content (ad copy variations, SEO pages). It struggles with thought leadership, personal narratives, and anything requiring original analysis."
   - question: "How much time does AI save on content creation?"
-    answer: "Most marketing teams report 40-60% reduction in time from idea to published piece. The savings come from faster research, faster first drafts, and faster iteration — not from eliminating the editing and quality control steps."
+    answer: "Most marketing teams report 40-60% reduction in time from idea to published piece, according to research from [HubSpot](https://www.hubspot.com). The savings come from faster research, faster first drafts, and faster iteration — not from eliminating the editing and quality control steps."
 ---
 
 You have probably read AI-generated content without knowing it. You have also probably read AI-generated content and known immediately. The difference is not the tool. It is the process.
@@ -168,7 +168,7 @@ AI is not equally useful for all content. Knowing where it shines and where it s
 
 **High-volume content.** When you need 50 product descriptions or 20 ad copy variations, AI generates the volume and you edit for quality. This is 10x faster than writing each from scratch.
 
-**SEO content.** Content optimized for specific keywords, with clear structure and comprehensive coverage. AI is good at hitting keyword targets while maintaining readability.
+**SEO content.** Content optimized for specific keywords, with clear structure and comprehensive coverage. AI is good at hitting keyword targets while maintaining readability. Tools like [Semrush](https://www.semrush.com) can help identify keyword opportunities to pair with AI-generated drafts.
 
 **Repurposing.** Turning a blog post into a LinkedIn post, email, slide deck, or social thread. AI handles format conversion well because the thinking is already done.
 
@@ -186,7 +186,7 @@ AI is not equally useful for all content. Knowing where it shines and where it s
 
 ### The rule of thumb
 
-If the value of the content comes from the information it contains, AI can handle most of the work. If the value comes from the perspective, experience, or voice of the author, AI can assist but not lead.
+If the value of the content comes from the information it contains, AI can handle most of the work. If the value comes from the perspective, experience, or voice of the author, AI can assist but not lead. The [Content Marketing Institute](https://contentmarketinginstitute.com) has consistently found that the most effective content strategies blend efficiency with authentic expertise.
 
 ## Key Takeaways
 

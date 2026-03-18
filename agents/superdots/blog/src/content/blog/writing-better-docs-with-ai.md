@@ -56,7 +56,7 @@ AI is good at organizing information logically. Check the output for:
 
 ### Step 3: Fix the voice
 
-AI tends to be verbose and formal. Technical docs should be direct and scannable. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass:
+AI tends to be verbose and formal. Technical docs should be direct and scannable. Tools like [Grammarly](https://www.grammarly.com) can help catch verbosity in your final drafts. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Google's [technical writing courses](https://developers.google.com/tech-writing) are a solid reference for the tone to aim for. Run a second pass:
 
 > Rewrite this to be more concise. Use active voice. Remove any sentences that don't add information. Our docs style is direct and practical — no fluff. If a sentence starts with "It is important to note that," just say the thing.
 
@@ -103,7 +103,7 @@ AI excels here. Give it your API endpoint definitions (or even the code that imp
 Feed AI your team's tribal knowledge — Slack messages, incident notes, setup instructions — and it'll produce step-by-step guides. These are the docs that save new hires weeks of onboarding time.
 
 ### Architecture decision records (ADRs)
-AI can help you document the "why" behind architectural decisions. Give it the context of the problem, the options you considered, and what you chose, and it'll produce a clean ADR that future engineers will actually find useful.
+AI can help you document the "why" behind architectural decisions. The [Write the Docs](https://www.writethedocs.org) community has excellent templates for ADRs and other doc types. Give it the context of the problem, the options you considered, and what you chose, and it'll produce a clean ADR that future engineers will actually find useful.
 
 ### Changelogs and release notes
 AI can summarize git diffs and PR descriptions into user-facing release notes. This is one of those tasks that nobody wants to do but everyone benefits from.

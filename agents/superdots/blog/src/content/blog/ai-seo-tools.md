@@ -61,7 +61,7 @@ This used to require a dedicated SEO analyst checking dashboards weekly. AI tool
 
 ### Rank tracking with AI context
 
-Modern rank trackers do more than show you position changes. They correlate ranking shifts with algorithm updates, content changes, and competitor movements. Some tools now track your visibility in AI-generated search results — a growing factor as Google's AI Overviews and other AI search features reshape how people find information.
+Modern rank trackers do more than show you position changes. They correlate ranking shifts with algorithm updates, content changes, and competitor movements. Some tools now track your visibility in AI-generated search results — a growing factor as Google's AI Overviews and other AI search features reshape how people find information. [Google Search Console](https://search.google.com/search-console) remains the essential free tool for understanding how your site performs in search.
 
 ## Where AI SEO Delivers Real Value
 
@@ -131,7 +131,7 @@ A content optimization tool that requires you to copy-paste between platforms ad
 
 ### How accurate is the keyword data?
 
-Not all keyword databases are equal. Semrush and Ahrefs have the largest, most frequently updated keyword databases. Smaller tools often license data from these platforms or use less comprehensive sources. If keyword research is central to your workflow, accuracy matters more than a lower price.
+Not all keyword databases are equal. [Semrush](https://www.semrush.com) and [Ahrefs](https://ahrefs.com) have the largest, most frequently updated keyword databases. Smaller tools often license data from these platforms or use less comprehensive sources. If keyword research is central to your workflow, accuracy matters more than a lower price.
 
 ### What does pricing look like per seat?
 
@@ -141,7 +141,7 @@ Consider how many people on your team need access. A tool that costs $100/month 
 
 ### Content optimization vs. full platform
 
-Content optimization tools (Surfer, Clearscope, Rankability, Frase) focus on making individual pieces of content rank better. Full SEO platforms (Semrush, Ahrefs) cover keyword research, competitor analysis, backlink tracking, technical audits, and rank monitoring.
+Content optimization tools (Surfer, Clearscope, Rankability, Frase) focus on making individual pieces of content rank better. Full SEO platforms (Semrush, Ahrefs, [Moz](https://moz.com)) cover keyword research, competitor analysis, backlink tracking, technical audits, and rank monitoring.
 
 Most teams need both — a content tool for the writing workflow and a platform for strategic intelligence. Some teams start with just the content tool and add the platform later.
 

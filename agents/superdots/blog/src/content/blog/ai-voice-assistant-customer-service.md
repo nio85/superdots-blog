@@ -20,7 +20,7 @@ You have called customer service. You have pressed 1, then 3, then 2, then said 
 
 That experience — the old interactive voice response (IVR) system — trained an entire generation to hate phone automation. Press the right buttons in the right order, speak the right keyword at the right moment, and maybe the robot will understand what you want.
 
-Modern AI voice assistants are a different technology entirely. They understand natural conversation, not just keywords. They access your account information in real time. They handle transactions, not just routing. And when they cannot solve the problem, they transfer you to a human with full context — so you do not repeat yourself.
+Modern AI voice assistants — powered by platforms like [Amazon Connect](https://aws.amazon.com/connect), [Google Contact Center AI](https://cloud.google.com/solutions/contact-center), and [Twilio](https://www.twilio.com) — are a different technology entirely. They understand natural conversation, not just keywords. They access your account information in real time. They handle transactions, not just routing. And when they cannot solve the problem, they transfer you to a human with full context — so you do not repeat yourself.
 
 The technology has improved dramatically. The question is which use cases actually work and which ones still frustrate callers.
 

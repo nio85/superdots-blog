@@ -98,7 +98,7 @@ AI scoring finds non-obvious patterns: leads from companies that recently change
 To build a useful AI lead scoring model, you need:
 
 1. **CRM data with outcomes.** At least 6-12 months of deals marked as won or lost. The more deals, the better — 500+ closed deals is a strong starting point.
-2. **Website activity.** Pageview data linked to leads. Most marketing automation platforms (HubSpot, Marketo, Pardot) track this already.
+2. **Website activity.** Pageview data linked to leads. Most marketing automation platforms (HubSpot, [Marketo](https://business.adobe.com/products/marketo/adobe-marketo.html), Pardot) track this already.
 3. **Email engagement.** Open and click data from your marketing and sales emails.
 
 With just these three, you can build a model that outperforms gut feel.
@@ -188,7 +188,7 @@ If available, add:
 
 ### Step 3: Choose your tool (Week 2)
 
-**Built-in CRM scoring.** Salesforce Einstein, HubSpot Predictive Lead Scoring. Easiest to set up. Limited customization.
+**Built-in CRM scoring.** [Salesforce](https://www.salesforce.com) Einstein, [HubSpot](https://www.hubspot.com) Predictive Lead Scoring. Easiest to set up. Limited customization.
 
 **Dedicated scoring platforms.** MadKudu, Infer, 6sense. More sophisticated models, more data sources, better analytics.
 

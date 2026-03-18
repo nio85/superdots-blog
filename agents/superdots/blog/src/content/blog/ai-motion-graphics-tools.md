@@ -70,7 +70,7 @@ Pricing runs around $15-35/month for the plans most design teams need. The main 
 
 ### Rive
 
-Rive is the tool most design teams sleeping on. It is not purely an AI tool — it is a design and animation platform built specifically for interactive, production-ready animations. But its AI features in 2026 have changed how fast you can go from design to animated output.
+[Rive](https://rive.app) is the tool most design teams sleeping on. It is not purely an AI tool — it is a design and animation platform built specifically for interactive, production-ready animations. But its AI features in 2026 have changed how fast you can go from design to animated output.
 
 The core value of Rive is that animations export as Lottie-compatible files or native Rive format, meaning they run in-browser at tiny file sizes with zero video hosting required. A UI animation that would be a 2MB GIF becomes a 30KB Rive file that scales perfectly on any screen.
 
@@ -90,7 +90,7 @@ The free plan covers most individual projects. Team plans start around $40/month
 
 ### Adobe Express with Firefly Motion
 
-Adobe has caught up. Adobe Express now integrates Firefly's generative motion capabilities, letting you animate text, graphics, and images directly inside the same tool where you are likely already building social assets.
+Adobe has caught up. [Adobe Express](https://www.adobe.com/express) now integrates Firefly's generative motion capabilities, letting you animate text, graphics, and images directly inside the same tool where you are likely already building social assets.
 
 The workflow is fast: build your design in Express, select elements, choose an animation style (kinetic text, slideshow, reveal), and Firefly handles the timing and transitions. For templated content at volume — weekly social posts, announcement graphics, event promotions — this is the fastest path.
 
@@ -149,7 +149,7 @@ Pricing starts at $8/month, which makes it accessible for teams that need occasi
 
 ### Lottiefiles
 
-If your primary use case is web and app animations, Lottiefiles is the ecosystem to be in. It is part asset library, part animation tool, and part delivery infrastructure.
+If your primary use case is web and app animations, [LottieFiles](https://lottiefiles.com) is the ecosystem to be in. It is part asset library, part animation tool, and part delivery infrastructure.
 
 The AI features added in recent versions include:
 

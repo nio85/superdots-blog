@@ -189,11 +189,11 @@ Not everyone needs real-time data. Set up reporting tiers:
 
 The AI brand monitoring market has matured. Here are tools worth evaluating based on your team size and budget:
 
-**For small teams ($50-150/month):** Mention, Brand24, Awario. These cover social media, news, blogs, and forums with basic sentiment analysis. Good starting points with fast setup.
+**For small teams ($50-150/month):** [Mention](https://mention.com), Brand24, Awario. These cover social media, news, blogs, and forums with basic sentiment analysis. Good starting points with fast setup.
 
-**For mid-market teams ($200-500/month):** Sprout Social, Hootsuite Insights, Semrush Brand Monitoring. Stronger analytics, competitive benchmarking, and better integrations with marketing stacks.
+**For mid-market teams ($200-500/month):** [Sprout Social](https://sproutsocial.com), Hootsuite Insights, Semrush Brand Monitoring. Stronger analytics, competitive benchmarking, and better integrations with marketing stacks.
 
-**For enterprise teams ($800+/month):** Brandwatch, Talkwalker, Meltwater. Full competitive intelligence, advanced AI sentiment models, custom dashboards, API access, and dedicated support. These tools index the broadest range of sources and handle high-volume monitoring.
+**For enterprise teams ($800+/month):** [Brandwatch](https://www.brandwatch.com), Talkwalker, Meltwater. Full competitive intelligence, advanced AI sentiment models, custom dashboards, API access, and dedicated support. These tools index the broadest range of sources and handle high-volume monitoring.
 
 **Free options:** Google Alerts (basic web mentions), Reddit search, Twitter/X advanced search. Limited but useful for bootstrapped teams.
 

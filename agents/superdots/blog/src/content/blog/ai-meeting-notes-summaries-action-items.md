@@ -33,14 +33,14 @@ Choose based on your meeting platform and where your team works:
 | Tool | Works with | Best for |
 |------|-----------|----------|
 | Granola | Any platform | Privacy-first, no bot in meeting |
-| Fireflies.ai | Zoom, Meet, Teams | Deep integrations with CRMs and PM tools |
-| Otter.ai | Zoom, Meet, Teams | Real-time transcription and collaboration |
+| [Fireflies.ai](https://fireflies.ai) | Zoom, Meet, Teams | Deep integrations with CRMs and PM tools |
+| [Otter.ai](https://otter.ai) | Zoom, Meet, Teams | Real-time transcription and collaboration |
 | Fellow | Zoom, Meet, Teams | Teams that want notes tied to agendas |
 | Jamie | Any platform, even offline | No meeting bot needed, works locally |
 
 ### Step 2: Connect your calendar
 
-Most tools sync with Google Calendar or Outlook. Once connected, they automatically join your scheduled meetings — no manual setup per call.
+Most tools sync with Google Calendar or [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams) and Outlook. Once connected, they automatically join your scheduled meetings — no manual setup per call.
 
 **Important**: Configure which meetings get recorded. You probably do not want AI recording every 1:1 or sensitive HR conversation. Most tools let you set rules: record all team standups, skip anything marked "private."
 

@@ -50,7 +50,7 @@ The key is that the agent stays in control. AI suggests, the human decides. This
 
 This is the most impactful feature for scaling support. AI handles simple, repetitive tickets end-to-end without human involvement. Password resets, order status inquiries, shipping tracking, account update confirmations — tickets with predictable solutions that follow clear patterns.
 
-Modern platforms like Freshdesk report their AI handling up to 86% of support queries autonomously. The actual resolution rate for your team will vary depending on your ticket mix, but even automating 30-40% of tickets dramatically reduces the load on human agents.
+Modern platforms like [Freshdesk](https://www.freshworks.com/freshdesk) report their AI handling up to 86% of support queries autonomously. The actual resolution rate for your team will vary depending on your ticket mix, but even automating 30-40% of tickets dramatically reduces the load on human agents.
 
 ### Knowledge base suggestions
 
@@ -74,7 +74,7 @@ Look for tools that let you set confidence thresholds. Below a certain confidenc
 
 ### Integration with existing tools
 
-Your help desk does not exist in isolation. It connects to your CRM, your product, your billing system, and your internal communication tools. AI features that cannot access these systems are limited to surface-level responses. The best platforms integrate deeply — pulling order data, account status, and subscription details directly so AI can resolve tickets that require real information, not just canned answers.
+Your help desk does not exist in isolation. It connects to your CRM, your product, your billing system, and your internal communication tools. Platforms like [Zendesk](https://www.zendesk.com) and [ServiceNow](https://www.servicenow.com) offer deep integration ecosystems that connect to hundreds of business applications. AI features that cannot access these systems are limited to surface-level responses. The best platforms integrate deeply — pulling order data, account status, and subscription details directly so AI can resolve tickets that require real information, not just canned answers.
 
 ### Agent experience
 

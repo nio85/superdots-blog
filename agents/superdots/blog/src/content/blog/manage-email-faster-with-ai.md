@@ -39,8 +39,8 @@ Long email chains are where hours disappear. Instead of scrolling through 47 rep
 
 **How to do it**:
 
-- **Gmail**: Click the summary icon at the top of any conversation. Gemini condenses the thread into key points, decisions, and action items.
-- **Outlook**: Copilot's "Summarize" button does the same. It highlights who said what and what was agreed.
+- **[Gmail](https://workspace.google.com)**: Click the summary icon at the top of any conversation. Gemini condenses the thread into key points, decisions, and action items.
+- **[Microsoft Outlook](https://www.microsoft.com/en-us/microsoft-365/outlook)**: Copilot's "Summarize" button does the same. It highlights who said what and what was agreed.
 - **Third-party tools**: Superhuman and Shortwave offer thread summaries that go deeper, including sentiment and urgency detection.
 
 This alone can save you 30 minutes a day if you deal with cross-functional threads. For meetings themselves, [AI note-takers](/blog/ai-meeting-notes-summaries-action-items/) can capture the discussion so you do not need to reconstruct it from email later.
@@ -83,7 +83,7 @@ Here is a workflow that takes 45 minutes instead of three hours:
 | Outlook + Copilot | Microsoft 365 users | Included with M365 Copilot |
 | Superhuman | Power users who live in email | $30/month |
 | Shortwave | Gmail users who want AI-first | Free tier available |
-| SaneBox | Cross-platform inbox sorting | $7/month |
+| [SaneBox](https://www.sanebox.com) | Cross-platform inbox sorting | $7/month |
 
 ## What to watch out for
 

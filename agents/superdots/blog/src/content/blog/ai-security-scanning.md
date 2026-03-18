@@ -41,7 +41,7 @@ Dynamic Application Security Testing runs against a live application. It sends r
 
 The real risk lives in the gap between what SAST and DAST cover. Business logic vulnerabilities, authorization flaws, race conditions, insecure state management — these are the issues that cause breaches, and they are exactly what pattern-matching tools miss.
 
-A 2025 Veracode report found that 27% of exploited vulnerabilities in production were in categories that no SAST or DAST tool flagged during development. These were not obscure edge cases. They were authorization bypasses, insecure direct object references, and business logic flaws that required understanding the application's intent — not just its syntax.
+A 2025 [Veracode](https://www.veracode.com) report found that 27% of exploited vulnerabilities in production were in categories that no SAST or DAST tool flagged during development. These were not obscure edge cases. They were authorization bypasses, insecure direct object references, and business logic flaws that required understanding the application's intent — not just its syntax. The [OWASP](https://owasp.org) Top 10 has included these categories for years, yet automated scanners still struggle with them.
 
 ## How AI security scanning works
 
@@ -75,7 +75,7 @@ The market has matured past the "demo looks good but production is rough" stage.
 
 ### Snyk Code
 
-Snyk Code uses a semantic analysis engine that goes beyond pattern matching. It traces data flows across files and functions, understanding how user input moves through your application. It runs in the IDE and in CI/CD, giving developers immediate feedback.
+[Snyk](https://snyk.io) Code uses a semantic analysis engine that goes beyond pattern matching. It traces data flows across files and functions, understanding how user input moves through your application. It runs in the IDE and in CI/CD, giving developers immediate feedback.
 
 **Key strength:** Real-time scanning in the editor. Developers see security issues as they write code, not days later in a pipeline report. Snyk reports that their AI engine reduces false positives by 70% compared to traditional SAST.
 

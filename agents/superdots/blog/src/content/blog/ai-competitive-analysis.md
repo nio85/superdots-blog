@@ -19,13 +19,13 @@ Most sales teams know competitive research matters. The problem isn't awareness.
 
 ### The 8-12 hours per month problem
 
-A 2025 Crayon study found that the average sales rep spends 8-12 hours per month on competitor research. That's a full day and a half — scattered across browser tabs, Slack threads, and half-read newsletters.
+A 2025 [Crayon](https://www.crayon.co) study found that the average sales rep spends 8-12 hours per month on competitor research. That's a full day and a half — scattered across browser tabs, Slack threads, and half-read newsletters.
 
 Here's what that research typically looks like:
 
 - Checking competitor websites for pricing or feature changes
 - Scanning review sites like G2 and Capterra for sentiment shifts
-- Reading industry news and analyst reports
+- Reading industry news and analyst reports from firms like [Gartner](https://www.gartner.com)
 - Updating internal battlecards (or more likely, not updating them)
 - Asking colleagues "hey, has anyone seen what [Competitor X] is doing?"
 
@@ -188,7 +188,7 @@ Every quarter, do a full audit. Have AI compare your current battlecards against
 
 ### Teams using monthly updates see 59% win rate lift
 
-Klue's 2025 State of Competitive Intelligence report found that sales teams updating battlecards monthly had a 59% win rate in competitive deals — compared to 41% for teams updating quarterly or less.
+[Klue](https://klue.com)'s 2025 State of Competitive Intelligence report found that sales teams updating battlecards monthly had a 59% win rate in competitive deals — compared to 41% for teams updating quarterly or less.
 
 That's not a small difference. It's the gap between a team that hits quota and one that doesn't.
 
@@ -214,8 +214,8 @@ Total cost: $0-20/month. Total time: about 3-4 hours/month for one person to mai
 
 When you're ready to invest, these tools add automation and structure:
 
-- **Klue** ($): Purpose-built for competitive intelligence. Automated web monitoring, battlecard management, and integrations with CRMs and Slack. Good for teams of 20+ reps.
-- **Crayon** ($): Similar to Klue with strong analytics on competitor messaging changes. Useful if positioning shifts matter a lot in your market.
+- **[Klue](https://klue.com)** ($): Purpose-built for competitive intelligence. Automated web monitoring, battlecard management, and integrations with CRMs and Slack. Good for teams of 20+ reps.
+- **[Crayon](https://www.crayon.co)** ($): Similar to Klue with strong analytics on competitor messaging changes. Useful if positioning shifts matter a lot in your market.
 - **Kompyte** ($): More affordable entry point. Solid automated tracking with AI-powered summaries.
 - **Cipher** ($): Focuses on competitive landscape mapping. Good if you have many competitors and need to prioritize which ones to track closely.
 

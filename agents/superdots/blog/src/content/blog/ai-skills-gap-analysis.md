@@ -39,7 +39,7 @@ The foundation of any AI skills gap analysis is a skills inventory — a compreh
 AI pulls skills data from sources that traditional analysis ignores:
 
 - **Project history.** What technologies, methodologies, and tools has each person actually used? Git commits, Jira tickets, and project management tools reveal real skill application.
-- **Learning platform activity.** Completed courses, certifications, and learning paths from platforms like Coursera, LinkedIn Learning, or internal LMS systems.
+- **Learning platform activity.** Completed courses, certifications, and learning paths from platforms like [Coursera](https://www.coursera.org), [LinkedIn Learning](https://www.linkedin.com/learning), or internal LMS systems.
 - **Performance reviews.** Manager assessments and peer feedback, parsed by AI for skill-related mentions.
 - **Job descriptions and role requirements.** What skills does each role officially require? AI maps these against actual employee profiles.
 - **Communication patterns.** Who do people go to for help on specific topics? Internal Slack messages and email patterns (anonymized and aggregated) reveal informal expertise networks.
@@ -86,7 +86,7 @@ If your company plans to expand into AI-powered products, how many machine learn
 
 ## Tracking Market Trends and Future Skill Demands
 
-The most valuable part of AI skills gap analysis is its forward-looking capability. Current gaps are important. Future gaps are critical.
+The most valuable part of AI skills gap analysis is its forward-looking capability. The [World Economic Forum](https://www.weforum.org) estimates that 44% of workers' core skills will be disrupted in the next five years. Current gaps are important. Future gaps are critical.
 
 ### How AI monitors skill trends
 
@@ -101,7 +101,7 @@ AI tools track external signals to forecast which skills will become more or les
 
 **Lightcast** (formerly Emsi Burning Glass) is the gold standard for labor market analytics. It analyzes over a billion job postings and provides granular data on skill demand by industry, region, and role. You can see exactly how demand for specific skills has changed over time and where it is heading.
 
-**LinkedIn Talent Insights** uses LinkedIn's massive dataset to show skill trends, talent migration patterns, and competitive benchmarking. It is particularly useful for understanding where skilled talent is located and how supply compares to demand.
+**[LinkedIn](https://www.linkedin.com) Talent Insights** uses LinkedIn's massive dataset to show skill trends, talent migration patterns, and competitive benchmarking. It is particularly useful for understanding where skilled talent is located and how supply compares to demand.
 
 **SkyHive** specializes in mapping workforce skills against future labor market needs. Its AI predicts which skills will be in demand and identifies reskilling pathways from current roles to future ones.
 
@@ -117,7 +117,7 @@ Identifying gaps is the easy part. Closing them is where most organizations stal
 
 ### Prioritizing which gaps to close
 
-Not all skill gaps are equal. AI ranks them based on:
+Not all skill gaps are equal. [Gartner](https://www.gartner.com) research emphasizes that prioritization is the most critical step in skills gap remediation. AI ranks them based on:
 
 - **Business impact.** How much does this gap affect revenue, product delivery, or strategic goals?
 - **Urgency.** Is this needed now, in six months, or in two years?

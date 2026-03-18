@@ -24,8 +24,8 @@ This is the highest-value AI feature in any PM tool, because status reporting is
 **How to use it**:
 
 - **ClickUp**: AI Project Updates generate a narrative summary from task activity. Available in the project dashboard.
-- **Asana**: AI Status Updates pull from task completions and comments to draft a project status. One click to review and share.
-- **Monday.com**: AI-generated summaries available in board views and dashboards.
+- **[Asana](https://asana.com)**: AI Status Updates pull from task completions and comments to draft a project status. One click to review and share.
+- **[Monday.com](https://monday.com)**: AI-generated summaries available in board views and dashboards.
 - **Wrike**: Project health AI analyzes progress and flags at-risk items.
 
 **Time saved**: 30-60 minutes per week per project manager. No more manually gathering updates from five different people on Friday afternoon.
@@ -40,7 +40,7 @@ Instead of manually creating tasks after a meeting, AI can extract action items 
 
 - **ClickUp**: Paste text, select "Create tasks with AI." It identifies action items, suggests assignees based on context, and sets deadlines.
 - **Notion**: AI can convert any block of text into a structured project with tasks and subtasks.
-- **Linear**: Type a natural language description and AI creates the issue with labels, priority, and project assignment.
+- **Linear**: Type a natural language description and AI creates the issue with labels, priority, and project assignment. [Jira](https://www.atlassian.com/software/jira) also offers AI-powered issue creation and smart recommendations for project planning.
 
 **Pro tip**: Combine this with an [AI meeting note-taker](/blog/ai-meeting-notes-summaries-action-items/). The note-taker extracts action items, and your PM tool turns them into tasks. Zero manual work.
 

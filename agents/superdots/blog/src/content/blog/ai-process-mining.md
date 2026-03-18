@@ -72,7 +72,7 @@ The output is a process map you never had to draw. It shows the real workflow, w
 
 ### Tools for process discovery
 
-- **Celonis** — The market leader. Strong on SAP-heavy environments. Its Process Intelligence Graph covers process discovery, conformance checking, and automation recommendations in one platform.
+- **[Celonis](https://www.celonis.com)** — The market leader. Strong on SAP-heavy environments. Its Process Intelligence Graph covers process discovery, conformance checking, and automation recommendations in one platform.
 - **Microsoft Power Automate Process Mining** — Built into the Power Platform. Good entry point for Microsoft-shop organizations. Ingests data from Dataverse, SQL Server, and CSV files.
 - **Minit (now part of Microsoft)** — Lightweight and fast. Good for teams that want quick insights without a six-month implementation.
 - **QPR ProcessAnalyzer** — Strong in manufacturing and healthcare. Handles high-volume event logs well.
@@ -154,7 +154,7 @@ The AI evaluates each activity against automation criteria:
 
 The output is a ranked list of automation candidates with estimated time savings and implementation complexity.
 
-A telecommunications company used Celonis to analyze their order-to-activate process and identified 14 automation opportunities. The top three — automated address validation, automated credit check, and automated provisioning request — eliminated 12 manual touchpoints and reduced order processing time from 8 days to 3 days.
+A telecommunications company used Celonis to analyze their order-to-activate process and identified 14 automation opportunities. The top three — automated address validation, automated credit check, and automated provisioning request — eliminated 12 manual touchpoints and reduced order processing time from 8 days to 3 days. [UiPath](https://www.uipath.com) and similar RPA platforms are commonly used to implement the automations that process mining identifies.
 
 For a complete walkthrough of implementing AI-driven automation, check out our [AI automation guide](/blog/ai-automation-guide). It covers the practical steps for non-technical teams to act on the opportunities that process mining surfaces.
 
@@ -250,7 +250,7 @@ Most teams see initial insights within one to two weeks. Connecting data sources
 
 ### What's the ROI of AI process mining?
 
-Forrester found that organizations using process mining see an average 272% ROI over three years. The biggest gains come from eliminating rework (which accounts for 10-30% of process steps in most organizations) and automating manual handoffs between systems.
+[Gartner](https://www.gartner.com) identifies process mining as a critical capability for operational excellence. Forrester found that organizations using process mining see an average 272% ROI over three years. The biggest gains come from eliminating rework (which accounts for 10-30% of process steps in most organizations) and automating manual handoffs between systems.
 
 ### Can it work with legacy systems?
 
