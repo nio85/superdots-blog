@@ -4,7 +4,7 @@ description: "AI pitch deck generators turn your business idea into investor-rea
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "sales"
-useCase: "presentations"
+useCase: "communication"
 tags: ["ai-tools", "ai-presentations", "ai-sales"]
 heroImage: "/images/blog/ai-pitch-deck-generator.webp"
 faqs:
