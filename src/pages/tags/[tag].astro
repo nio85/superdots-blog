@@ -43,7 +43,7 @@ const posts = (await getCollection('blog', ({ data }) => (data.tags ?? []).inclu
 <Base title={`${label} Articles | Superdots`} description={description}>
 	<div class="page-header">
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;" aria-hidden="true"></div>
-		<a href="/tags" class="back">&larr; Tags</a>
+		<a href="/tags/" class="back">&larr; Tags</a>
 		<h1>{label}<span class="dot-accent">.</span></h1>
 		<p class="subtitle">{description}</p>
 	</div>

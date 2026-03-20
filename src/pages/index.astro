@@ -29,7 +29,7 @@ const posts = (await getCollection('blog'))
 			Real techniques you can apply today — not hype, not theory.
 		</p>
 		<div class="hero-actions">
-			<a href="/blog" class="btn btn-primary btn-lg">Browse articles</a>
+			<a href="/blog/" class="btn btn-primary btn-lg">Browse articles</a>
 			<a href="#newsletter" class="btn btn-ghost btn-lg">Get the newsletter</a>
 		</div>
 	</section>
@@ -39,7 +39,7 @@ const posts = (await getCollection('blog'))
 	<section class="latest">
 		<div class="section-header">
 			<h2>Latest articles<span class="dot-accent">.</span></h2>
-			<a href="/blog" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
+			<a href="/blog/" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="post-grid">
 			{posts.map((post) => (
@@ -67,7 +67,7 @@ const posts = (await getCollection('blog'))
 	<section class="browse">
 		<div class="section-header">
 			<h2>Browse by department<span class="dot-accent">.</span></h2>
-			<a href="/category" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
+			<a href="/category/" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="dept-grid">
 			{DEPARTMENTS.map((d) => (
