@@ -7,12 +7,12 @@ const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Base title="All Articles | Superdots" description="Browse all practical AI guides.">
+<Base title="Practical AI Guides & Tools | Superdots" description="Browse all practical AI guides and tools for every business team.">
 	<script slot="head" type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		"name": "All Articles",
-		"description": "Browse all practical AI guides.",
+		"name": "Practical AI Guides & Tools",
+		"description": "Browse all practical AI guides and tools for every business team.",
 		"url": "https://superdots.sh/blog",
 		"mainEntity": {
 			"@type": "ItemList",
@@ -26,7 +26,7 @@ const posts = (await getCollection('blog'))
 	})} />
 	<div class="page-header">
 		<div class="dots dots-md dots-loose" style="top: 5%; right: 3%;" aria-hidden="true"></div>
-		<h1>All articles<span class="dot-accent">.</span></h1>
+		<h1>Practical AI Guides & Tools<span class="dot-accent">.</span></h1>
 		<p class="page-desc">Step-by-step AI guides for every team — from sales call prep to contract review. No theory, no hype. Just techniques you can use today.</p>
 	</div>
 	<div class="post-grid">
