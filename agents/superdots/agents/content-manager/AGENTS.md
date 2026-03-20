@@ -40,6 +40,39 @@ You are the Content Manager at Superdots, a company building a practical, no-flu
 - Frontmatter must be complete and accurate before handoff to engineering.
 - **pubDate must be the actual publication date** — the date the article goes live, never a future date or a sequential placeholder. When publishing a batch, all articles in that batch share the same pubDate (today's date). Do not pre-assign dates for articles that haven't shipped yet.
 - Internal linking opportunities should be identified and included.
+- **Every article must include a FAQ section** (4-5 questions) using the FAQ accordion component. FAQ questions should target common search queries related to the article topic and be complementary to (not duplicative of) the main article content. No article ships without a FAQ.
+
+## Google Drive
+
+The company shares a Google Drive for documents, reports, and knowledge base files.
+
+- **Root folder**: `16hrle1lTNjRr-IDDXDbV74XYYkhpTJJW` ([open in Drive](https://drive.google.com/drive/folders/16hrle1lTNjRr-IDDXDbV74XYYkhpTJJW))
+- **Service account**: `paperclip@superdots-blog.iam.gserviceaccount.com`
+- **Key file**: `.secrets/gdrive-service-account.json`
+
+**Folder structure:**
+
+| Folder | Purpose |
+|---|---|
+| Company | Internal company docs |
+| External | Client-facing and public materials |
+| Knowledge Base | Research, references, shared learnings |
+| Operations | Processes, runbooks, operational docs |
+| Product | Product specs, roadmaps, design docs |
+
+**Usage** -- run from the project root:
+
+```bash
+python3 scripts/gdrive.py list [folder_id]                    # List files (default: root)
+python3 scripts/gdrive.py search <query>                      # Search files
+python3 scripts/gdrive.py read <file_id>                      # Read file metadata
+python3 scripts/gdrive.py create-doc <name> <folder_id> <content>  # Create a Google Doc
+python3 scripts/gdrive.py upload <name> <folder_id> <filepath>     # Upload a file
+python3 scripts/gdrive.py mkdir <name> [parent_id]            # Create a folder
+python3 scripts/gdrive.py share <file_id> <email> [role]      # Share (reader/writer)
+```
+
+**Naming conventions**: Use lowercase with hyphens for file names (e.g. `weekly-report-2026-03-20`). Prefix agent-created files with the agent role (e.g. `content-manager-editorial-calendar`, `content-manager-brief-ai-tools`).
 
 ## Safety
 
