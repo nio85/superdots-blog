@@ -32,7 +32,7 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !page.includes('/design-system'),
+			filter: (page) => !page.includes('/design-system') && !page.includes('/analytics-optout'),
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
 				item.lastmod = lastmod || buildDate;
