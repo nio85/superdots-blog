@@ -4,11 +4,33 @@ import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import { TAGS } from '../../consts';
 
-export function getStaticPaths() {
-	return TAGS.map((t) => ({
-		params: { tag: t.slug },
-		props: { label: t.label, description: t.description },
-	}));
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
+
+	function slugToLabel(s: string): string {
+		return s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+	}
+
+	const allTags = new Set<string>();
+	for (const post of posts) {
+		for (const tag of post.data.tags ?? []) {
+			allTags.add(tag);
+		}
+	}
+	for (const t of TAGS) {
+		allTags.add(t.slug);
+	}
+	return [...allTags].map((slug) => {
+		const known = tagLookup.get(slug);
+		return {
+			params: { tag: slug },
+			props: {
+				label: known?.label ?? slugToLabel(slug),
+				description: known?.description ?? `Articles tagged with ${slugToLabel(slug)}.`,
+			},
+		};
+	});
 }
 
 const { tag } = Astro.params;
