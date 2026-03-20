@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /analytics-optout
 
 Sitemap: https://superdots.sh/sitemap-index.xml

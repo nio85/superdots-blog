@@ -28,9 +28,18 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 })();
 </script>
 
-<!-- Preconnect to third-party origins used by analytics -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-<link rel="dns-prefetch" href="https://www.clarity.ms" />
+<!-- Preconnect to third-party origins used by analytics (skipped when opted out) -->
+<script is:inline>
+(function() {
+	if (localStorage.getItem('sd-analytics-optout') === 'true') return;
+	var pc = document.createElement('link');
+	pc.rel = 'preconnect'; pc.href = 'https://www.googletagmanager.com'; pc.crossOrigin = '';
+	document.head.appendChild(pc);
+	var dp = document.createElement('link');
+	dp.rel = 'dns-prefetch'; dp.href = 'https://www.clarity.ms';
+	document.head.appendChild(dp);
+})();
+</script>
 
 <!-- Fonts: self-hosted variable (latin subset) — only preload critical fonts -->
 <link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -91,8 +100,9 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImage} />
 
-<!-- Google Analytics (GA4) — loaded only after cookie consent -->
+<!-- Google Analytics (GA4) — loaded only after cookie consent; skipped entirely when opted out -->
 <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 	window.SD_GA_ID = gaId;
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
@@ -124,11 +134,13 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 			});
 		}
 	})();
+}
 </script>
 
-<!-- Microsoft Clarity — heatmaps & session recordings (consent-aware) -->
+<!-- Microsoft Clarity — heatmaps & session recordings (consent-aware; skipped when opted out) -->
 {CLARITY_PROJECT_ID && (
 <script is:inline define:vars={{ clarityId: CLARITY_PROJECT_ID }}>
+if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 	window.SD_CLARITY_ID = clarityId;
 	window.SD_startClarity = function() {
 		if (window.SD_clarityLoaded) return;
@@ -143,6 +155,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 	if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
 		window.SD_startClarity();
 	}
+}
 </script>
 )}
 
