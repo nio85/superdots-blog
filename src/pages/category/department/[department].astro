@@ -52,6 +52,7 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 					useCase={post.data.useCase}
 					slug={post.slug}
 					tags={post.data.tags}
+					headingLevel="h2"
 				/>
 			))}
 		</div>
