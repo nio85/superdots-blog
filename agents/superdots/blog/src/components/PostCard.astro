@@ -10,9 +10,11 @@ interface Props {
 	useCase: string;
 	slug: string;
 	tags?: string[];
+	headingLevel?: 'h2' | 'h3';
 }
 
-const { title, description, pubDate, department, useCase, slug, tags = [] } = Astro.props;
+const { title, description, pubDate, department, useCase, slug, tags = [], headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
 
 const tagMeta = tags
 	.map((t) => TAGS.find((tm) => tm.slug === t))
@@ -27,7 +29,7 @@ const tagMeta = tags
 			<span class="badge badge-usecase">{useCase}</span>
 			<span class="date"><FormattedDate date={pubDate} /></span>
 		</div>
-		<h3>{title}</h3>
+		<Heading class="card-title">{title}</Heading>
 		<p>{description}</p>
 		{tagMeta.length > 0 && (
 			<div class="tag-pills">
@@ -94,7 +96,7 @@ const tagMeta = tags
 	.post-card a:hover {
 		text-decoration: none;
 	}
-	.post-card h3 {
+	.post-card .card-title {
 		font-family: var(--font-display);
 		font-size: var(--text-xl);
 		font-weight: var(--weight-bold);
