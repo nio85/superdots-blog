@@ -5,6 +5,9 @@ import { rehypeLazyImages } from './src/plugins/rehype-lazy-images.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Build-time date for static pages without explicit lastmod
+const buildDate = new Date().toISOString().slice(0, 10);
+
 // Build a slug → lastmod map from blog frontmatter at config time
 const blogDir = path.resolve('./src/content/blog');
 const lastmodMap = new Map();
@@ -32,7 +35,7 @@ export default defineConfig({
 			filter: (page) => !page.includes('/design-system'),
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
-				if (lastmod) item.lastmod = lastmod;
+				item.lastmod = lastmod || buildDate;
 				return item;
 			},
 		}),
