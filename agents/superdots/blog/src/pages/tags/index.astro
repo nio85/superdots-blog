@@ -4,14 +4,32 @@ import Base from '../../layouts/Base.astro';
 import { TAGS } from '../../consts';
 
 const posts = await getCollection('blog');
+const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
 
-// Count articles per tag
+function slugToLabel(slug: string): string {
+	return slug
+		.split('-')
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(' ');
+}
+
+// Count articles per tag and collect all tags
 const tagCounts = new Map<string, number>();
 for (const post of posts) {
 	for (const tag of post.data.tags ?? []) {
 		tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
 	}
 }
+
+// Build sorted tag list: all tags from articles + predefined tags with 0 articles
+const allTagSlugs = new Set([...tagCounts.keys(), ...TAGS.map((t) => t.slug)]);
+const allTags = [...allTagSlugs]
+	.map((slug) => ({
+		slug,
+		label: tagLookup.get(slug)?.label ?? slugToLabel(slug),
+		count: tagCounts.get(slug) ?? 0,
+	}))
+	.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 ---
 
 <Base title="Tags | Superdots" description="Browse AI guides by topic tag.">
@@ -22,15 +40,12 @@ for (const post of posts) {
 	</div>
 
 	<div class="tag-grid">
-		{TAGS.map((t) => {
-			const count = tagCounts.get(t.slug) ?? 0;
-			return (
-				<a href={`/tags/${t.slug}/`} class="tag-card">
-					<span class="tag-label">{t.label}</span>
-					<span class="tag-count">{count} {count === 1 ? 'article' : 'articles'}</span>
-				</a>
-			);
-		})}
+		{allTags.map((t) => (
+			<a href={`/tags/${t.slug}/`} class="tag-card">
+				<span class="tag-label">{t.label}</span>
+				<span class="tag-count">{t.count} {t.count === 1 ? 'article' : 'articles'}</span>
+			</a>
+		))}
 	</div>
 </Base>
 
