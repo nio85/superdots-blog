@@ -1,0 +1,273 @@
+/* Superdots Slidev Theme — Layout-Specific Styles */
+
+/* --- Cover layout --- */
+.slidev-layout.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--sd-navy);
+  color: var(--sd-slate-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.slidev-layout.cover h1 {
+  color: white;
+  font-size: 3em;
+  max-width: 80%;
+  z-index: 2;
+}
+
+.slidev-layout.cover p {
+  color: var(--sd-slate-400);
+  font-size: 1.2em;
+  z-index: 2;
+  max-width: 60%;
+}
+
+/* --- Section divider --- */
+.slidev-layout.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 80px;
+  background: var(--sd-navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.slidev-layout.section h1 {
+  color: white;
+  font-size: 2.8em;
+  z-index: 2;
+}
+
+/* --- Default content --- */
+.slidev-layout.default {
+  padding: 64px 48px 48px;
+}
+
+/* --- Two columns --- */
+.slidev-layout.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 40px;
+  padding: 64px 48px 48px;
+}
+
+.slidev-layout.two-cols h1 {
+  grid-column: 1 / -1;
+}
+
+.slidev-layout.two-cols .col-left {
+  grid-column: 1;
+}
+
+.slidev-layout.two-cols .col-right {
+  grid-column: 2;
+}
+
+/* --- Image right --- */
+.slidev-layout.image-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.slidev-layout.image-right .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px;
+}
+
+.slidev-layout.image-right .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sd-slate-100);
+  overflow: hidden;
+}
+
+.dark .slidev-layout.image-right .image-container {
+  background: var(--sd-slate-800);
+}
+
+.slidev-layout.image-right .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Image left --- */
+.slidev-layout.image-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.slidev-layout.image-left .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sd-slate-100);
+  overflow: hidden;
+}
+
+.dark .slidev-layout.image-left .image-container {
+  background: var(--sd-slate-800);
+}
+
+.slidev-layout.image-left .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slidev-layout.image-left .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px;
+}
+
+/* --- Full bleed --- */
+.slidev-layout.full {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slidev-layout.full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Fact / big number --- */
+.slidev-layout.fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px;
+}
+
+.slidev-layout.fact h1 {
+  font-size: 5em;
+  color: var(--sd-red);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.slidev-layout.fact p {
+  font-size: 1.3em;
+  color: var(--sd-slate-500);
+  max-width: 60%;
+}
+
+.dark .slidev-layout.fact p {
+  color: var(--sd-slate-400);
+}
+
+/* --- Quote --- */
+.slidev-layout.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 80px;
+  position: relative;
+}
+
+.slidev-layout.quote blockquote,
+.slidev-layout.quote p:first-of-type {
+  font-family: var(--sd-font-display);
+  font-size: 1.8em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--sd-navy);
+  position: relative;
+  max-width: 80%;
+  border-left: none;
+  padding-left: 0;
+}
+
+.dark .slidev-layout.quote blockquote,
+.dark .slidev-layout.quote p:first-of-type {
+  color: var(--sd-slate-100);
+}
+
+.slidev-layout.quote blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -24px;
+  left: -20px;
+  font-size: 3em;
+  color: var(--sd-red);
+  opacity: 0.3;
+  font-family: var(--sd-font-display);
+}
+
+.slidev-layout.quote .attribution {
+  margin-top: 24px;
+  font-size: 0.9em;
+  color: var(--sd-slate-500);
+}
+
+/* --- Brand assets --- */
+.slidev-layout.brand-assets {
+  padding: 48px;
+}
+
+.slidev-layout.brand-assets .color-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.slidev-layout.brand-assets .color-swatch {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  padding: 6px 8px;
+  font-size: 0.65em;
+  font-family: var(--sd-font-mono);
+  color: white;
+}
+
+/* --- End / closing --- */
+.slidev-layout.end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--sd-navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.slidev-layout.end h1 {
+  color: white;
+  z-index: 2;
+}
+
+.slidev-layout.end p {
+  color: var(--sd-slate-400);
+  z-index: 2;
+}
