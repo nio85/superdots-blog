@@ -223,27 +223,74 @@ const btnText: Record<string, string> = {
 	}
 	/* Midpost variant — eye-catching inline CTA for mid-article */
 	.newsletter--midpost {
-		background: var(--color-bg-dim);
-		border: 2px solid var(--color-primary);
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
 		border-radius: var(--radius-xl);
-		padding: var(--space-8) var(--space-6);
-		margin: var(--space-10) 0;
+		padding: var(--space-10) var(--space-8);
+		margin: var(--space-12) 0;
 		position: relative;
 		overflow: hidden;
+		text-align: center;
 	}
 	.newsletter--midpost::before {
 		content: '';
 		position: absolute;
 		top: 0;
-		left: 0;
-		width: 100%;
-		height: 4px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
 		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal, #14B8A6));
 	}
-	.newsletter--midpost .newsletter-heading {
-		font-size: var(--text-xl);
+	.newsletter--midpost::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: linear-gradient(90deg, var(--sd-teal, #14B8A6), var(--color-primary));
 	}
-	/* Dot pattern decoration — banner variant only */
+	.newsletter--midpost .newsletter-inner {
+		max-width: 440px;
+		margin: 0 auto;
+	}
+	.newsletter--midpost .newsletter-text {
+		margin-bottom: var(--space-6);
+	}
+	.newsletter--midpost .newsletter-text .superdot {
+		width: 10px;
+		height: 10px;
+		margin-bottom: var(--space-3);
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
+	}
+	.newsletter--midpost .newsletter-heading {
+		font-size: var(--text-2xl);
+		letter-spacing: -0.025em;
+	}
+	.newsletter--midpost .newsletter-desc {
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-weight: var(--weight-medium);
+		opacity: 0.7;
+	}
+	.newsletter--midpost .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--midpost .newsletter-field input {
+		max-width: 240px;
+	}
+	.newsletter--midpost .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--midpost .newsletter-status {
+		text-align: center;
+	}
+	/* Dot pattern decoration */
 	.newsletter-dots {
 		position: absolute;
 		top: -10px;
@@ -255,7 +302,16 @@ const btnText: Record<string, string> = {
 		opacity: 0.3;
 		pointer-events: none;
 	}
-	/* Subtle gradient glow — banner variant only */
+	.newsletter--midpost .newsletter-dots {
+		top: auto;
+		bottom: -10px;
+		left: -10px;
+		right: auto;
+		width: 100px;
+		height: 100px;
+		opacity: 0.2;
+	}
+	/* Subtle gradient glow */
 	.newsletter-glow {
 		position: absolute;
 		bottom: -40%;
@@ -266,6 +322,17 @@ const btnText: Record<string, string> = {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
 		filter: blur(30px);
 		pointer-events: none;
+	}
+	.newsletter--midpost .newsletter-glow {
+		top: -30%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
+		filter: blur(40px);
 	}
 	:global([data-theme="dark"]) .newsletter-glow {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
@@ -372,6 +439,15 @@ const btnText: Record<string, string> = {
 		}
 		.newsletter {
 			padding: var(--space-6) var(--space-4);
+		}
+		.newsletter--midpost {
+			padding: var(--space-8) var(--space-5);
+		}
+		.newsletter--midpost .newsletter-heading {
+			font-size: var(--text-xl);
+		}
+		.newsletter--midpost .newsletter-field input {
+			max-width: 100%;
 		}
 		.newsletter-dots {
 			width: 80px;
