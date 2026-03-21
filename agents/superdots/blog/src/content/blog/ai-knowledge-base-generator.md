@@ -1,6 +1,6 @@
 ---
 title: 'AI Knowledge Base Generator: Turn Support Tickets Into Self-Service Gold'
-description: 'AI knowledge base generators build and maintain self-service help centers from support tickets, chat logs, and internal docs — reducing ticket volume automatically.'
+description: 'AI knowledge base generators build self-service help centers from support tickets and internal docs — reducing ticket volume automatically.'
 pubDate: "2026-03-17T17:21:00Z"
 author: 'Superdots Team'
 department: 'customer-support'

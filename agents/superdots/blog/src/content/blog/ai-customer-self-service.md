@@ -1,6 +1,6 @@
 ---
 title: "How to Build an AI-Powered Customer Self-Service Portal"
-description: "Let customers solve their own problems. AI self-service portals answer questions, process requests, and escalate intelligently — reducing support tickets by 40-60%."
+description: "AI self-service portals answer customer questions, process requests, and escalate intelligently — reducing support tickets by 40-60%."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "customer-support"

@@ -1,6 +1,6 @@
 ---
 title: 'How to Automate Email Triage with AI'
-description: 'Stop drowning in emails. Set up AI-powered filters that categorize, prioritize, and draft replies automatically.'
+description: 'Stop drowning in emails. Learn how to set up AI-powered filters that categorize, prioritize, and draft replies automatically in under an afternoon.'
 pubDate: '2026-03-10'
 author: 'Superdots Team'
 department: 'operations'

@@ -1,6 +1,6 @@
 ---
 title: "How to Automate Employee Offboarding with AI"
-description: "Stop missing access revocations and losing institutional knowledge. Automate your entire offboarding checklist with AI."
+description: "Stop missing access revocations and losing institutional knowledge when employees leave. Automate your entire offboarding checklist with AI."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "hr"

@@ -1,6 +1,6 @@
 ---
 title: 'Writing Better Technical Docs with AI'
-description: 'Use AI as a writing partner to produce clear, consistent documentation your team will actually read.'
+description: 'Learn how to use AI as a writing partner to produce clear, consistent technical documentation your team will actually read and maintain.'
 pubDate: '2026-03-05'
 author: 'Superdots Team'
 department: 'engineering'

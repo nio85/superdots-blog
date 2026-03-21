@@ -1,6 +1,6 @@
 ---
 title: 'AI in Project Management: Features That Actually Save Time'
-description: 'Your PM tool probably has AI features you are ignoring. Here is which ones are worth using and how to set them up.'
+description: 'Your PM tool probably has AI features you are ignoring. Discover which ones actually save time on status updates, task creation, and risk detection.'
 pubDate: '2026-03-11'
 author: 'Superdots Team'
 department: 'operations'
