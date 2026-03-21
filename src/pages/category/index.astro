@@ -1,8 +1,32 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 
+const posts = await getCollection('blog');
+
+// Count articles per department
+const deptCounts = new Map<string, number>();
+for (const post of posts) {
+	const d = post.data.department;
+	if (d) deptCounts.set(d, (deptCounts.get(d) ?? 0) + 1);
+}
+
+// Count articles per use case
+const ucCounts = new Map<string, number>();
+for (const post of posts) {
+	const u = post.data.useCase;
+	if (u) ucCounts.set(u, (ucCounts.get(u) ?? 0) + 1);
+}
+
+// Count articles per tag
+const tagCounts = new Map<string, number>();
+for (const post of posts) {
+	for (const tag of post.data.tags ?? []) {
+		tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+	}
+}
 ---
 
 <Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
@@ -24,6 +48,9 @@ import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 			{DEPARTMENTS.map((d) => (
 				<a href={`/category/department/${d.slug}/`} class="tag-card tag-dept">
 					{d.label}
+					{(deptCounts.get(d.slug) ?? 0) > 0 && (
+						<span class="cat-count">{deptCounts.get(d.slug)}</span>
+					)}
 				</a>
 			))}
 		</div>
@@ -35,6 +62,9 @@ import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 			{USE_CASES.map((u) => (
 				<a href={`/category/use-case/${u.slug}/`} class="tag-card tag-usecase">
 					{u.label}
+					{(ucCounts.get(u.slug) ?? 0) > 0 && (
+						<span class="cat-count">{ucCounts.get(u.slug)}</span>
+					)}
 				</a>
 			))}
 		</div>
@@ -46,6 +76,9 @@ import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 			{TAGS.map((t) => (
 				<a href={`/tags/${t.slug}/`} class="tag-card tag-topic">
 					{t.label}
+					{(tagCounts.get(t.slug) ?? 0) > 0 && (
+						<span class="cat-count">{tagCounts.get(t.slug)}</span>
+					)}
 				</a>
 			))}
 		</div>
@@ -136,5 +169,25 @@ import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 		background: var(--color-text-strong);
 		color: var(--color-bg);
 		border-color: var(--color-text-strong);
+	}
+	.cat-count {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 22px;
+		height: 22px;
+		font-size: var(--text-xs);
+		font-weight: var(--weight-bold);
+		border-radius: var(--radius-full);
+		background: rgba(0, 0, 0, 0.1);
+		padding: 0 var(--space-1);
+		line-height: 1;
+	}
+	.tag-dept:hover .cat-count,
+	.tag-usecase:hover .cat-count {
+		background: rgba(255, 255, 255, 0.25);
+	}
+	.tag-topic:hover .cat-count {
+		background: rgba(255, 255, 255, 0.2);
 	}
 </style>
