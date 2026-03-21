@@ -423,7 +423,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 	.reading-time {
 		display: inline-flex;
 		align-items: center;
-		gap: 4px;
+		gap: var(--space-1);
 		font-family: var(--font-mono);
 		font-size: var(--text-xs);
 		color: var(--color-text-muted);
