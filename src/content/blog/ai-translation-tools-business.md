@@ -21,7 +21,7 @@ faqs:
     answer: "Yes. DeepL Pro translates Word, PowerPoint, and PDF files while preserving formatting. Google Translate handles documents through Google Drive. For complex layouts, some manual formatting adjustment may be needed after translation."
   - question: "How much does business AI translation cost?"
     answer: "Google Translate is free for basic use. DeepL Pro starts at $8.74/month (500,000 characters). Enterprise API pricing is typically $20-25 per million characters. GPT-based tools cost $20/month for general use. Volume-heavy businesses should budget $50-200/month depending on translation volume."
-heroImage: '/images/blog/ai-translation-tools-business.webp'
+heroImage: "/images/blog/ai-translation-tools-business.webp"
 ---
 
 Your next customer, partner, or employee might speak a different language. Whether you're expanding into new markets, working with international teams, or serving a multilingual customer base, translation is no longer optional.

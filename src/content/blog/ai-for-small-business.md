@@ -21,7 +21,7 @@ faqs:
     answer: "Yes. AI levels the playing field. A small business with the right AI tools can produce professional marketing content, automate customer support, and analyze data in ways that previously required teams and budgets that only large companies had."
   - question: "What's the biggest mistake small businesses make with AI?"
     answer: "Trying to do too much at once. Pick one problem — the task that eats the most time — and solve it with one tool. Get that working, then add the next. Small businesses that buy five AI subscriptions at once rarely use any of them well."
-heroImage: '/images/blog/ai-for-small-business.webp'
+heroImage: "/images/blog/ai-for-small-business.webp"
 ---
 
 Most AI content is written for enterprise teams with dedicated IT departments and unlimited budgets. That's not you.
