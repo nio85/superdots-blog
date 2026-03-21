@@ -166,7 +166,7 @@ const btnText: Record<string, string> = {
 		width: 60px;
 		height: 3px;
 		border-radius: var(--radius-full);
-		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal, #14B8A6));
+		background: var(--color-primary);
 	}
 	.newsletter--banner::after {
 		content: '';
@@ -177,7 +177,7 @@ const btnText: Record<string, string> = {
 		width: 60px;
 		height: 3px;
 		border-radius: var(--radius-full);
-		background: linear-gradient(90deg, var(--sd-teal, #14B8A6), var(--color-primary));
+		background: var(--color-primary);
 	}
 	.newsletter--banner .newsletter-inner {
 		max-width: 460px;
@@ -253,7 +253,7 @@ const btnText: Record<string, string> = {
 	}
 	/* Hero variant — premium inline signup in hero section */
 	.newsletter--hero {
-		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 40%, rgba(20, 184, 166, 0.02) 100%);
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 60%);
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-xl);
 		margin: 0;
@@ -320,7 +320,7 @@ const btnText: Record<string, string> = {
 		width: 60px;
 		height: 3px;
 		border-radius: var(--radius-full);
-		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal, #14B8A6));
+		background: var(--color-primary);
 	}
 	.newsletter--midpost::after {
 		content: '';
@@ -331,7 +331,7 @@ const btnText: Record<string, string> = {
 		width: 60px;
 		height: 3px;
 		border-radius: var(--radius-full);
-		background: linear-gradient(90deg, var(--sd-teal, #14B8A6), var(--color-primary));
+		background: var(--color-primary);
 	}
 	.newsletter--midpost .newsletter-inner {
 		max-width: 440px;
@@ -410,7 +410,7 @@ const btnText: Record<string, string> = {
 		transform: translateX(-50%);
 		width: 400px;
 		height: 400px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
 		filter: blur(40px);
 	}
 	/* Banner variant — dots bottom-left, glow centered like midpost */
@@ -431,7 +431,7 @@ const btnText: Record<string, string> = {
 		transform: translateX(-50%);
 		width: 400px;
 		height: 400px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
 		filter: blur(40px);
 	}
 	/* Hero variant — subtle dot + glow decorations */
@@ -451,14 +451,14 @@ const btnText: Record<string, string> = {
 		transform: translateX(-50%);
 		width: 300px;
 		height: 300px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 70%);
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, transparent 70%);
 		filter: blur(30px);
 	}
 	:global([data-theme="dark"]) .newsletter-glow {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
 	}
 	:global([data-theme="dark"]) .newsletter--hero {
-		background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 40%, rgba(20, 184, 166, 0.04) 100%);
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
 		border-color: var(--color-border);
 	}
 	:global([data-theme="dark"]) .newsletter--banner {
@@ -469,7 +469,7 @@ const btnText: Record<string, string> = {
 			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
 		}
 		:global([data-theme="auto"]) .newsletter--hero {
-			background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 40%, rgba(20, 184, 166, 0.04) 100%);
+			background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
 			border-color: var(--color-border);
 		}
 	}
