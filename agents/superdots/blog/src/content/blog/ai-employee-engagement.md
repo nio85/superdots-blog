@@ -164,4 +164,4 @@ The annual survey is not dead, but it is no longer sufficient. Continuous measur
 
 Start with surveys. Respect privacy. Focus on teams, not individuals. And always remember: the goal is not better data. It is better workplaces.
 
-For related HR workflows, see our guide on [AI workforce planning](/blog/ai-workforce-planning). For a comprehensive overview of AI across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For related HR workflows, see our guide on [AI workforce planning](/blog/ai-workforce-planning). For a comprehensive overview of how AI is transforming every HR function, see our [complete guide to AI for HR](/blog/ai-for-hr). For AI across all departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

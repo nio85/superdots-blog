@@ -144,3 +144,5 @@ The difference between these outcomes is not the technology. It is the rigor you
 - **Ask every AI hiring vendor for independent bias audit results.** If they cannot provide them, that is your answer.
 - **Set a quarterly reminder to review your shortlist composition.** Bias auditing only works if it happens consistently, not just at implementation.
 
+For a comprehensive overview of how AI is transforming every aspect of people operations — from recruiting to offboarding — see our [complete guide to AI for HR](/blog/ai-for-hr).
+

@@ -167,5 +167,5 @@ For a broader view of how AI feeds into your sales process beyond outreach, see 
 
 The reps who will win with AI cold outreach are not the ones who use it to send more emails. They are the ones who use it to send fewer emails that are worth reading. The technology makes that possible. The strategy is still yours.
 
-For related approaches that connect outreach to the broader sales process, see our guides on [AI sales emails](/blog/ai-sales-emails), [AI for sales call prep](/blog/ai-for-sales-call-prep), and [AI lead scoring](/blog/ai-lead-scoring).
+For related approaches that connect outreach to the broader sales process, see our guides on [AI sales emails](/blog/ai-sales-emails), [AI for sales call prep](/blog/ai-for-sales-call-prep), and [AI lead scoring](/blog/ai-lead-scoring). For the full picture, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).
 

@@ -170,6 +170,7 @@ Offboarding is not the glamorous part of the employee lifecycle. It is the part 
 ---
 
 **Related reads:**
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI-powered people operations, from onboarding to offboarding.
 - [AI Employee Onboarding](/blog/ai-employee-onboarding) — Apply the same automation principles to the start of the employee journey.
 - [AI HR Chatbot](/blog/ai-hr-chatbot) — Build a self-service HR bot that answers offboarding questions too.
 - [AI Document Management](/blog/ai-document-management) — Capture and organize the knowledge that departing employees carry.

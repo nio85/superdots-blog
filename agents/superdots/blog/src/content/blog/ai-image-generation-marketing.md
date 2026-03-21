@@ -172,4 +172,4 @@ The marketing teams getting the most value treat it as a skill — investing in 
 
 Build the system. Develop the skill. Start with volume content and work up.
 
-For more on leveraging AI in your creative workflow, see our [AI logo design](/blog/ai-logo-design) guide. And for a comprehensive overview of AI tools across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For more on leveraging AI in your creative workflow, see our [AI logo design](/blog/ai-logo-design) guide. For the full picture of how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

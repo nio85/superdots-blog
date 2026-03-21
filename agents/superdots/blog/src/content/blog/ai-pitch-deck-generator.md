@@ -178,4 +178,4 @@ A well-customized AI deck does not just look good. It communicates that you are 
 
 Build your first draft with AI. Spend your time on the story and the numbers. That is where deals get done.
 
-For more on AI-powered presentations beyond pitch decks, see our guide on [how to make AI presentations that don't look AI-generated](/blog/ai-presentation-maker). If you are also building proposals, check out our [AI proposal generator](/blog/ai-proposal-generator) guide.
+For more on AI-powered presentations beyond pitch decks, see our guide on [how to make AI presentations that don't look AI-generated](/blog/ai-presentation-maker). If you are also building proposals, check out our [AI proposal generator](/blog/ai-proposal-generator) guide. For the complete picture of AI across the sales function, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).
