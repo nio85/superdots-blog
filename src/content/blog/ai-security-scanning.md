@@ -25,7 +25,7 @@ Static Application Security Testing scans source code without running it. It is 
 
 Here is what that means in practice:
 
-- **False positive rates of 30-70%.** SAST tools flag potential issues based on patterns. A function that takes user input and passes it to a database call gets flagged as SQL injection — even if there are three layers of sanitization in between. A 2025 study by the Ponemon Institute found that the average enterprise SAST deployment generates 60% false positives.
+- **False positive rates of 30-70%.** SAST tools flag potential issues based on patterns. A function that takes user input and passes it to a database call gets flagged as SQL injection — even if there are three layers of sanitization in between. Enterprise SAST deployments commonly generate high false-positive rates, often around 60%.
 - **No cross-service awareness.** Microservice A validates input. Microservice B trusts data from A and skips validation. SAST scans each service independently, so it never sees that B is vulnerable if A's validation changes.
 - **Known patterns only.** SAST rules are written by humans based on known vulnerability types. A novel attack pattern — one that exploits your specific business logic — will not match any rule in the database.
 
@@ -41,7 +41,7 @@ Dynamic Application Security Testing runs against a live application. It sends r
 
 The real risk lives in the gap between what SAST and DAST cover. Business logic vulnerabilities, authorization flaws, race conditions, insecure state management — these are the issues that cause breaches, and they are exactly what pattern-matching tools miss.
 
-A 2025 [Veracode](https://www.veracode.com) report found that 27% of exploited vulnerabilities in production were in categories that no SAST or DAST tool flagged during development. These were not obscure edge cases. They were authorization bypasses, insecure direct object references, and business logic flaws that required understanding the application's intent — not just its syntax. The [OWASP](https://owasp.org) Top 10 has included these categories for years, yet automated scanners still struggle with them.
+A significant portion of exploited production vulnerabilities fall outside traditional scanner coverage. Authorization bypasses, insecure direct object references, and business logic flaws require understanding the application's intent — not just its syntax. The [OWASP](https://owasp.org) Top 10 has included these categories for years, yet automated scanners still struggle with them.
 
 ## How AI security scanning works
 

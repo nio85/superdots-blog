@@ -11,7 +11,7 @@ heroImage: "/images/blog/ai-compliance-tools.webp"
 
 Regulations are multiplying faster than your team can read them. GDPR, the EU AI Act, SOC 2, HIPAA, state-level privacy laws — every quarter brings new requirements, and every requirement brings new documentation, new audits, and new ways to get fined.
 
-Here is the uncomfortable truth: most compliance teams are tracking obligations in spreadsheets, shared folders, and email threads. It works until it does not. And when it fails, the consequences are expensive. Non-compliance costs 2.71 times more than maintaining compliance when you factor in fines, legal fees, remediation, and business disruption, according to research from [Gartner](https://www.gartner.com).
+Here is the uncomfortable truth: most compliance teams are tracking obligations in spreadsheets, shared folders, and email threads. It works until it does not. And when it fails, the consequences are expensive. Non-compliance costs 2.71 times more than maintaining compliance when you factor in fines, legal fees, remediation, and business disruption, according to research from [Ponemon Institute/GlobalScape](https://www.ponemon.org).
 
 AI compliance tools do not make regulations simpler. But they automate the tedious parts — monitoring changes, flagging gaps, generating audit trails — so your team can focus on the judgment calls that actually require human expertise.
 
