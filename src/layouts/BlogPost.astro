@@ -32,7 +32,7 @@ const tagMeta = (tags ?? [])
 <!doctype html>
 <html lang="en" data-theme="auto">
 	<head>
-		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} />
+		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Article",
@@ -142,17 +142,105 @@ const tagMeta = (tags ?? [])
 					</div>
 				)}
 				<div class="article-divider" aria-hidden="true"><span class="superdot"></span></div>
-				<div class="prose">
+				<div class="prose" id="article-prose">
 					<slot />
 				</div>
 				{faqs && faqs.length > 0 && (
 					<FaqAccordion faqs={faqs} />
 				)}
 			</article>
-			<NewsletterForm variant="banner" source="article" />
+			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
 		<Footer />
+		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
+		<template id="midpost-cta-template">
+			<aside class="newsletter newsletter--midpost" data-source="article-inline" aria-label="Newsletter signup">
+				<div class="newsletter-dots" aria-hidden="true"></div>
+				<div class="newsletter-glow" aria-hidden="true"></div>
+				<div class="newsletter-inner">
+					<div class="newsletter-text">
+						<span class="superdot"></span>
+						<h3 class="newsletter-heading">Enjoying this? Get one like it every week<span class="dot-accent">.</span></h3>
+						<p class="newsletter-desc">Practical AI guides for your team — delivered every Tuesday.</p>
+					</div>
+					<form class="newsletter-form" aria-label="Newsletter signup">
+						<div class="newsletter-field">
+							<label for="newsletter-email-midpost" class="sr-only">Email address</label>
+							<input type="email" id="newsletter-email-midpost" name="email" placeholder="you@company.com" required autocomplete="email" data-clarity-mask="true" />
+							<button type="submit" class="btn btn-primary">Count me in</button>
+						</div>
+						<p class="newsletter-legal">No spam, unsubscribe anytime. Includes <a href="/privacy#newsletter">email tracking</a>.</p>
+						<div class="newsletter-status" role="status" aria-live="polite"></div>
+					</form>
+				</div>
+			</aside>
+		</template>
+		<script>
+			// Inject mid-article CTA at ~40% of prose content
+			(function() {
+				const prose = document.getElementById('article-prose');
+				const tpl = document.getElementById('midpost-cta-template') as HTMLTemplateElement | null;
+				if (!prose || !tpl) return;
+
+				const children = Array.from(prose.children);
+				if (children.length < 6) return; // Skip short articles
+
+				const targetIndex = Math.floor(children.length * 0.4);
+				// Find nearest heading break for clean placement
+				let insertIndex = targetIndex;
+				for (let i = targetIndex; i < Math.min(targetIndex + 4, children.length); i++) {
+					const tag = children[i].tagName;
+					if (tag === 'H2' || tag === 'H3') {
+						insertIndex = i;
+						break;
+					}
+				}
+
+				const cta = tpl.content.cloneNode(true);
+				children[insertIndex].before(cta);
+
+				// Bind form submit for the injected CTA
+				const injectedForm = prose.querySelector('.newsletter--midpost .newsletter-form');
+				if (injectedForm) {
+					injectedForm.addEventListener('submit', async (e) => {
+						e.preventDefault();
+						const el = e.currentTarget as HTMLFormElement;
+						const input = el.querySelector('input[type="email"]') as HTMLInputElement;
+						const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
+						const status = el.querySelector('.newsletter-status') as HTMLElement;
+						const email = input.value.trim();
+						if (!email) return;
+						btn.disabled = true;
+						btn.textContent = 'Sending...';
+						status.textContent = '';
+						status.className = 'newsletter-status';
+						try {
+							const res = await fetch('/api/subscribe', {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ email, source: 'article-inline' }),
+							});
+							const data = await res.json();
+							if (res.ok) {
+								status.textContent = 'Check your inbox to confirm.';
+								status.classList.add('newsletter-status--success');
+								input.value = '';
+							} else {
+								status.textContent = data.error || 'Something went wrong.';
+								status.classList.add('newsletter-status--error');
+							}
+						} catch {
+							status.textContent = 'Network error. Please try again.';
+							status.classList.add('newsletter-status--error');
+						} finally {
+							btn.disabled = false;
+							btn.textContent = 'Count me in';
+						}
+					});
+				}
+			})();
+		</script>
 	</body>
 </html>
 
