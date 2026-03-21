@@ -37,33 +37,6 @@ const POSTS_PER_PAGE = 12;
 		<p class="page-desc">Step-by-step AI guides for every team — from sales call prep to contract review. No theory, no hype. Just techniques you can use today.</p>
 	</div>
 
-	{/* Featured pillar guides */}
-	{pillarPosts.length > 0 && (
-		<section class="featured-section" aria-label="Featured guides">
-			<div class="featured-header">
-				<span class="featured-label">
-					<span class="superdot"></span>
-					Featured Guides
-				</span>
-			</div>
-			<div class="featured-grid">
-				{pillarPosts.map((post) => (
-					<PostCard
-						title={post.data.title}
-						description={post.data.description}
-						pubDate={post.data.pubDate}
-						department={post.data.department}
-						useCase={post.data.useCase}
-						slug={post.slug}
-						tags={post.data.tags}
-						headingLevel="h2"
-						variant="guide"
-					/>
-				))}
-			</div>
-		</section>
-	)}
-
 	{/* Department filter chips */}
 	<div class="filter-bar" role="toolbar" aria-label="Filter by department">
 		<button class="filter-chip active" data-dept="all" type="button">
@@ -109,6 +82,33 @@ const POSTS_PER_PAGE = 12;
 		</button>
 		<p class="showing-count" id="showing-count" aria-live="polite"></p>
 	</div>
+
+	{/* Guides carousel */}
+	{pillarPosts.length > 0 && (
+		<section class="guides-carousel" aria-label="Complete AI guides">
+			<div class="carousel-header">
+				<h2>Complete AI guides<span class="dot-accent">.</span></h2>
+				<a href="/guides/" class="view-all">All guides <span aria-hidden="true">&rarr;</span></a>
+			</div>
+			<div class="carousel-track">
+				{pillarPosts.map((post) => (
+					<div class="carousel-item">
+						<PostCard
+							title={post.data.title}
+							description={post.data.description}
+							pubDate={post.data.pubDate}
+							department={post.data.department}
+							useCase={post.data.useCase}
+							slug={post.slug}
+							tags={post.data.tags}
+							headingLevel="h2"
+							variant="guide"
+						/>
+					</div>
+				))}
+			</div>
+		</section>
+	)}
 
 	<NewsletterForm variant="banner" source="blog-listing" />
 </Base>
@@ -192,41 +192,58 @@ const POSTS_PER_PAGE = 12;
 		line-height: var(--leading-snug);
 	}
 
-	/* Featured section */
-	.featured-section {
-		margin-bottom: var(--space-8);
+	/* Guides carousel */
+	.guides-carousel {
+		padding: var(--space-8) 0;
 	}
-	.featured-header {
+	.carousel-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
 		margin-bottom: var(--space-4);
 	}
-	.featured-label {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
+	.carousel-header h2 {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		margin: 0;
+	}
+	.view-all {
 		font-family: var(--font-display);
 		font-size: var(--text-sm);
 		font-weight: var(--weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-secondary);
+		color: var(--color-primary);
+		text-decoration: none;
+		white-space: nowrap;
 	}
-	.featured-label .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-secondary);
-		border-radius: var(--radius-full);
-		display: inline-block;
+	.view-all:hover {
+		text-decoration: underline;
 	}
-	.featured-grid {
-		display: grid;
-		gap: var(--space-5);
+	.carousel-track {
+		display: flex;
+		gap: var(--space-4);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		padding-bottom: var(--space-2);
+		margin: 0 calc(-1 * var(--space-4));
+		padding-left: var(--space-4);
+		padding-right: var(--space-4);
+	}
+	.carousel-track::-webkit-scrollbar {
+		display: none;
+	}
+	.carousel-item {
+		flex: 0 0 280px;
+		scroll-snap-align: start;
+	}
+	.carousel-item :global(.post-card) {
+		height: 100%;
 	}
 	@media (min-width: 640px) {
-		.featured-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		.featured-grid :global(.post-card:first-child) {
-			grid-column: 1 / -1;
+		.carousel-item {
+			flex: 0 0 300px;
 		}
 	}
 
