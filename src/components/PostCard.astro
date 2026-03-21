@@ -5,16 +5,37 @@ import { TAGS } from '../consts';
 interface Props {
 	title: string;
 	description: string;
-	pubDate: Date;
+	pubDate?: Date;
 	department: string;
-	useCase: string;
-	slug: string;
+	useCase?: string;
+	slug?: string;
+	href?: string;
 	tags?: string[];
 	headingLevel?: 'h2' | 'h3';
+	variant?: 'article' | 'guide';
+	readingTime?: number;
+	relatedCount?: number;
 }
 
-const { title, description, pubDate, department, useCase, slug, tags = [], headingLevel = 'h3' } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	department,
+	useCase,
+	slug,
+	href,
+	tags = [],
+	headingLevel = 'h3',
+	variant = 'article',
+	readingTime,
+	relatedCount,
+} = Astro.props;
 const Heading = headingLevel;
+
+const linkHref = href || `/blog/${slug}/`;
+const isGuide = variant === 'guide';
+const ctaText = isGuide ? 'Read guide' : 'Read article';
 
 const tagMeta = tags
 	.map((t) => TAGS.find((tm) => tm.slug === t))
@@ -22,15 +43,31 @@ const tagMeta = tags
 	.slice(0, 3);
 ---
 
-<article class="post-card">
-	<a href={`/blog/${slug}/`}>
+<article class:list={['post-card', { 'post-card--guide': isGuide }]}>
+	<a href={linkHref}>
 		<div class="meta">
-			<span class="badge badge-dept">{department}</span>
-			<span class="badge badge-usecase">{useCase}</span>
-			<span class="date"><FormattedDate date={pubDate} /></span>
+			<span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>
+			{!isGuide && useCase && <span class="badge badge-usecase">{useCase}</span>}
+			{!isGuide && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
 		</div>
 		<Heading class="card-title">{title}</Heading>
 		<p>{description}</p>
+		{isGuide && (readingTime || relatedCount) ? (
+			<div class="guide-meta">
+				{readingTime && readingTime > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+						{readingTime} min read
+					</span>
+				)}
+				{relatedCount && relatedCount > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+						+{relatedCount} related articles
+					</span>
+				)}
+			</div>
+		) : null}
 		{tagMeta.length > 0 && (
 			<div class="tag-pills">
 				{tagMeta.map((t) => (
@@ -38,12 +75,15 @@ const tagMeta = tags
 				))}
 			</div>
 		)}
-		<span class="read-more">Read article <span aria-hidden="true">&rarr;</span></span>
+		<span class="read-more">{ctaText} <span aria-hidden="true">&rarr;</span></span>
 	</a>
 </article>
 
 <style>
 	.post-card {
+		--card-accent: var(--color-primary);
+		--card-accent-light: var(--sd-red-light);
+		--card-accent-rgb: 232, 54, 59;
 		background: var(--color-bg);
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-lg);
@@ -52,7 +92,12 @@ const tagMeta = tags
 		position: relative;
 		overflow: hidden;
 	}
-	/* Red left border — grows on hover */
+	.post-card--guide {
+		--card-accent: var(--color-secondary);
+		--card-accent-light: var(--sd-teal-light);
+		--card-accent-rgb: 20, 184, 166;
+	}
+	/* Left border — grows on hover */
 	.post-card::before {
 		content: '';
 		position: absolute;
@@ -60,7 +105,7 @@ const tagMeta = tags
 		left: 0;
 		width: 4px;
 		height: 0;
-		background: var(--color-primary);
+		background: var(--card-accent);
 		border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 		transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
 	}
@@ -69,15 +114,15 @@ const tagMeta = tags
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 50%);
+		background: linear-gradient(135deg, rgba(var(--card-accent-rgb), 0.03) 0%, transparent 50%);
 		opacity: 0;
 		transition: opacity var(--transition-base);
 		pointer-events: none;
 		z-index: 0;
 	}
 	.post-card:hover {
-		border-color: var(--color-primary);
-		box-shadow: var(--shadow-md), 0 4px 16px rgba(232, 54, 59, 0.06);
+		border-color: var(--card-accent);
+		box-shadow: var(--shadow-md), 0 4px 16px rgba(var(--card-accent-rgb), 0.06);
 		transform: translateY(-3px);
 	}
 	.post-card:hover::before {
@@ -106,8 +151,8 @@ const tagMeta = tags
 		transition: color var(--transition-fast);
 		line-height: var(--leading-tight);
 	}
-	.post-card:hover h3 {
-		color: var(--color-primary);
+	.post-card:hover .card-title {
+		color: var(--card-accent);
 	}
 	.post-card p {
 		color: var(--color-text-muted);
@@ -130,6 +175,23 @@ const tagMeta = tags
 		color: var(--color-text-muted);
 		margin-left: auto;
 	}
+	.badge-guide-dept {
+		background: var(--sd-teal-light);
+		color: var(--sd-teal-dark);
+	}
+	.guide-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+	.guide-meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
 	.tag-pills {
 		display: flex;
 		gap: var(--space-1);
@@ -151,7 +213,7 @@ const tagMeta = tags
 		font-family: var(--font-display);
 		font-size: var(--text-sm);
 		font-weight: var(--weight-semibold);
-		color: var(--color-primary);
+		color: var(--card-accent);
 		transition: gap var(--transition-fast), letter-spacing var(--transition-fast);
 		display: inline-flex;
 		align-items: center;

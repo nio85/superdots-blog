@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { getReadingTime } from '../../utils/readingTime';
 
@@ -74,32 +75,16 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 
 	<section class="guides-grid">
 		{availableGuides.map((guide) => (
-			<a href={guide.href} class="guide-card">
-				<div class="guide-card-inner">
-					<span class="guide-dept">{guide.department}</span>
-					<h2 class="guide-title">{guide.title}</h2>
-					<p class="guide-desc">{guide.description}</p>
-					<div class="guide-meta">
-						{guide.readingTime > 0 && (
-							<span class="guide-meta-item">
-								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-								{guide.readingTime} min read
-							</span>
-						)}
-						{guide.relatedCount > 0 && (
-							<span class="guide-meta-item">
-								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-								+{guide.relatedCount} related articles
-							</span>
-						)}
-					</div>
-					<span class="guide-cta">
-						Read guide
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-					</span>
-				</div>
-				<div class="guide-card-glow" aria-hidden="true"></div>
-			</a>
+			<PostCard
+				title={guide.title}
+				description={guide.description}
+				department={guide.department}
+				href={guide.href}
+				headingLevel="h2"
+				variant="guide"
+				readingTime={guide.readingTime}
+				relatedCount={guide.relatedCount}
+			/>
 		))}
 	</section>
 
@@ -181,96 +166,7 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		padding: var(--space-8) 0 var(--space-6);
 	}
 
-	/* Guide card */
-	.guide-card {
-		position: relative;
-		display: block;
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		background: var(--color-bg);
-		text-decoration: none;
-		overflow: hidden;
-		transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
-	}
-	.guide-card-inner {
-		position: relative;
-		z-index: 1;
-		padding: var(--space-8) var(--space-8) var(--space-6);
-	}
-	.guide-card-glow {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal));
-		opacity: 0;
-		transition: opacity 300ms ease;
-	}
-
-	a.guide-card:hover {
-		border-color: var(--color-primary);
-		box-shadow: var(--shadow-lg);
-		transform: translateY(-3px);
-		text-decoration: none;
-	}
-	a.guide-card:hover .guide-card-glow {
-		opacity: 1;
-	}
-	a.guide-card:hover .guide-cta {
-		gap: var(--space-2);
-		color: var(--color-primary);
-	}
-
-	.guide-dept {
-		display: inline-block;
-		font-family: var(--font-display);
-		font-size: var(--text-xs);
-		font-weight: var(--weight-bold);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-primary);
-		background: var(--sd-red-light);
-		padding: var(--space-1) var(--space-3);
-		border-radius: var(--radius-full);
-		margin-bottom: var(--space-3);
-	}
-	.guide-title {
-		font-size: var(--text-2xl);
-		margin: 0 0 var(--space-2);
-		color: var(--color-text-strong);
-		letter-spacing: -0.02em;
-	}
-	.guide-desc {
-		color: var(--color-text-muted);
-		font-size: var(--text-base);
-		line-height: var(--leading-normal);
-		margin: 0 0 var(--space-3);
-		max-width: 540px;
-	}
-	.guide-meta {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-4);
-		margin-bottom: var(--space-4);
-	}
-	.guide-meta-item {
-		display: inline-flex;
-		align-items: center;
-		gap: 4px;
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-	}
-	.guide-cta {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-		transition: all var(--transition-fast);
-	}
+	/* Guide cards use PostCard component — no custom card styles needed */
 
 	/* Coming soon — compact, de-emphasized */
 	.coming-soon-section {
@@ -346,26 +242,14 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		.guides-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		.guide-card:first-child {
+		.guides-grid :global(.post-card:first-child) {
 			grid-column: 1 / -1;
-		}
-		.guide-card:first-child .guide-title {
-			font-size: var(--text-3xl);
-		}
-		.guide-card:first-child .guide-desc {
-			max-width: 640px;
 		}
 	}
 
 	@media (max-width: 480px) {
 		.page-header h1 {
 			font-size: var(--text-3xl);
-		}
-		.guide-card-inner {
-			padding: var(--space-5) var(--space-5) var(--space-4);
-		}
-		.guide-title {
-			font-size: var(--text-xl);
 		}
 		.eval-cta-inner {
 			padding: var(--space-5);
