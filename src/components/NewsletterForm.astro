@@ -104,6 +104,15 @@ const btnText: Record<string, string> = {
 					status.textContent = 'Check your inbox to confirm your subscription.';
 					status.classList.add('newsletter-status--success');
 					input.value = '';
+
+					// GA4 conversion event: newsletter signup
+					if (typeof window.gtag === 'function') {
+						window.gtag('event', 'generate_lead', {
+							event_category: 'newsletter',
+							event_label: source,
+							value: 1,
+						});
+					}
 				} else {
 					status.textContent = data.error || 'Something went wrong. Please try again.';
 					status.classList.add('newsletter-status--error');

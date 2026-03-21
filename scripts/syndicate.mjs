@@ -110,13 +110,14 @@ function markSyndicated(slug, platform, url) {
 
 // ── Content transforms ──
 
-function addUtmToLinks(body, platform) {
+function addUtmToLinks(body, platform, slug = '') {
 	// Replace superdots.sh links with UTM-tagged versions
 	return body.replace(
 		/https:\/\/superdots\.sh(\/[^\s)"\]]*)/g,
 		(match, path) => {
 			const sep = path.includes('?') ? '&' : '?';
-			return `${match}${sep}utm_source=${platform}&utm_medium=syndication`;
+			const campaign = slug ? `&utm_campaign=${slug}` : '';
+			return `${match}${sep}utm_source=${platform}&utm_medium=syndication${campaign}`;
 		}
 	);
 }
@@ -131,9 +132,9 @@ function stripFaqSection(body) {
 	return body.replace(/## (?:FAQ|Frequently Asked Questions)[\s\S]*$/, '').trim();
 }
 
-function cleanBodyForSyndication(body, platform) {
+function cleanBodyForSyndication(body, platform, slug = '') {
 	let cleaned = body;
-	cleaned = addUtmToLinks(cleaned, platform);
+	cleaned = addUtmToLinks(cleaned, platform, slug);
 	cleaned = stripHeroImage(cleaned);
 	// Convert relative image paths to absolute
 	cleaned = cleaned.replace(
@@ -152,7 +153,7 @@ function convertForDevto(article) {
 		.slice(0, 4) // Dev.to max 4 tags
 		.map(t => t.replace(/^ai-/, '').replace(/-/g, ''));
 
-	const cleaned = cleanBodyForSyndication(body, 'devto');
+	const cleaned = cleanBodyForSyndication(body, 'devto', slug);
 
 	const devtoFm = [
 		'---',
@@ -165,7 +166,7 @@ function convertForDevto(article) {
 		'---',
 	].join('\n');
 
-	return `${devtoFm}\n\n${cleaned}\n\n---\n\n*Originally published on [Superdots](${canonicalUrl}?utm_source=devto&utm_medium=syndication).*\n`;
+	return `${devtoFm}\n\n${cleaned}\n\n---\n\n*Originally published on [Superdots](${canonicalUrl}?utm_source=devto&utm_medium=syndication&utm_campaign=${slug}).*\n`;
 }
 
 function convertForHashnode(article) {
@@ -175,7 +176,7 @@ function convertForHashnode(article) {
 		.slice(0, 5)
 		.map(t => ({ name: t.replace(/^ai-/, ''), slug: t }));
 
-	const cleaned = cleanBodyForSyndication(body, 'hashnode');
+	const cleaned = cleanBodyForSyndication(body, 'hashnode', slug);
 
 	// Hashnode uses a different frontmatter format
 	const hashnodeFm = [
@@ -189,7 +190,7 @@ function convertForHashnode(article) {
 		'---',
 	].join('\n');
 
-	return `${hashnodeFm}\n\n${cleaned}\n\n---\n\n*Originally published on [Superdots](${canonicalUrl}?utm_source=hashnode&utm_medium=syndication).*\n`;
+	return `${hashnodeFm}\n\n${cleaned}\n\n---\n\n*Originally published on [Superdots](${canonicalUrl}?utm_source=hashnode&utm_medium=syndication&utm_campaign=${slug}).*\n`;
 }
 
 const CONVERTERS = {
@@ -206,7 +207,7 @@ async function publishToDevto(article) {
 	const { frontmatter: fm, body, slug } = article;
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
 	const tags = (fm.tags || []).slice(0, 4).map(t => t.replace(/^ai-/, '').replace(/-/g, ''));
-	const cleaned = cleanBodyForSyndication(body, 'devto');
+	const cleaned = cleanBodyForSyndication(body, 'devto', slug);
 
 	const res = await fetch('https://dev.to/api/articles', {
 		method: 'POST',
@@ -242,7 +243,7 @@ async function publishToHashnode(article) {
 	const { frontmatter: fm, body, slug } = article;
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
 	const tags = (fm.tags || []).slice(0, 5).map(t => ({ name: t.replace(/^ai-/, ''), slug: t }));
-	const cleaned = cleanBodyForSyndication(body, 'hashnode');
+	const cleaned = cleanBodyForSyndication(body, 'hashnode', slug);
 
 	const mutation = `
 		mutation PublishPost($input: PublishPostInput!) {
