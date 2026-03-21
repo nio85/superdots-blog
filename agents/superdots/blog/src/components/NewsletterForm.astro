@@ -1,22 +1,45 @@
 ---
 interface Props {
-	variant?: 'inline' | 'banner' | 'compact';
+	variant?: 'inline' | 'banner' | 'compact' | 'hero' | 'midpost';
 	source?: string;
 }
 
 const { variant = 'banner', source = 'unknown' } = Astro.props;
+
+const headingText: Record<string, string> = {
+	banner: 'Get smarter about AI at work',
+	inline: 'Get AI tips that actually help at work',
+	hero: 'Join 2,000+ professionals getting smarter about AI',
+	midpost: 'Enjoying this? Get one like it every week',
+};
+const descText: Record<string, string> = {
+	banner: 'One practical email per week. Real techniques, no hype.',
+	inline: 'One email per week. Practical guides, no fluff.',
+	hero: '',
+	midpost: 'Practical AI guides for your team — delivered every Tuesday.',
+};
+const btnText: Record<string, string> = {
+	banner: 'Subscribe',
+	inline: 'Subscribe',
+	compact: 'Join',
+	hero: 'Get the newsletter',
+	midpost: 'Count me in',
+};
 ---
 
 <div class:list={['newsletter', `newsletter--${variant}`]} data-source={source}>
-	{variant === 'banner' && <div class="newsletter-dots" aria-hidden="true"></div>}
-	{variant === 'banner' && <div class="newsletter-glow" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost') && <div class="newsletter-dots" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost') && <div class="newsletter-glow" aria-hidden="true"></div>}
 	<div class="newsletter-inner">
-		{variant !== 'compact' && (
+		{variant !== 'compact' && variant !== 'hero' && (
 			<div class="newsletter-text">
 				<span class="superdot"></span>
-				<h3 class="newsletter-heading">Get AI tips that actually help at work<span class="dot-accent">.</span></h3>
-				<p class="newsletter-desc">One email per week. Practical guides, no fluff.</p>
+				<h3 class="newsletter-heading">{headingText[variant] || headingText.banner}<span class="dot-accent">.</span></h3>
+				{descText[variant] && <p class="newsletter-desc">{descText[variant]}</p>}
 			</div>
+		)}
+		{variant === 'hero' && (
+			<p class="newsletter-hero-label">{headingText.hero}<span class="dot-accent">.</span></p>
 		)}
 		{variant === 'compact' && (
 			<p class="newsletter-compact-label">Get the newsletter<span class="dot-accent">.</span></p>
@@ -34,16 +57,16 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 					aria-describedby={`newsletter-legal-${variant}`}
 					data-clarity-mask="true"
 				/>
-				<button type="submit" class="btn btn-primary">{variant === 'compact' ? 'Join' : 'Subscribe'}</button>
+				<button type="submit" class="btn btn-primary">{btnText[variant] || 'Subscribe'}</button>
 			</div>
-			{variant !== 'compact' && (
+			{variant !== 'compact' && variant !== 'hero' && (
 				<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
-					By subscribing, you agree to receive our newsletter. We'll use your email address solely to send you articles about AI at work &mdash; no spam, no sharing. Emails include open and click tracking to help us improve content. You can unsubscribe anytime. See our <a href="/privacy#newsletter">Privacy Policy</a>.
+					No spam, unsubscribe anytime. Includes <a href="/privacy#newsletter">email tracking</a>.
 				</p>
 			)}
-			{variant === 'compact' && (
+			{(variant === 'compact' || variant === 'hero') && (
 				<p class="newsletter-legal newsletter-legal--compact" id={`newsletter-legal-${variant}`}>
-					No spam. Includes <a href="/privacy#newsletter">email tracking</a>.
+					No spam, ever. <a href="/privacy#newsletter">Privacy</a>.
 				</p>
 			)}
 			<div class="newsletter-status" role="status" aria-live="polite"></div>
@@ -157,6 +180,68 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 	.newsletter-legal--compact {
 		font-size: var(--text-xs);
 		opacity: 0.7;
+	}
+	/* Hero variant — inline in hero, centered, no border/background */
+	.newsletter--hero {
+		background: transparent;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	.newsletter--hero::before {
+		display: none;
+	}
+	.newsletter--hero .newsletter-inner {
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	.newsletter-hero-label {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-3);
+		letter-spacing: -0.01em;
+		text-align: center;
+	}
+	.newsletter--hero .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--hero .newsletter-field input {
+		max-width: 260px;
+		border-color: var(--color-border-strong);
+		background: var(--color-bg);
+	}
+	.newsletter--hero .newsletter-field button {
+		padding: var(--space-3) var(--space-6);
+	}
+	.newsletter--hero .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--hero .newsletter-status {
+		text-align: center;
+	}
+	/* Midpost variant — eye-catching inline CTA for mid-article */
+	.newsletter--midpost {
+		background: var(--color-bg-dim);
+		border: 2px solid var(--color-primary);
+		border-radius: var(--radius-xl);
+		padding: var(--space-8) var(--space-6);
+		margin: var(--space-10) 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.newsletter--midpost::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal, #14B8A6));
+	}
+	.newsletter--midpost .newsletter-heading {
+		font-size: var(--text-xl);
 	}
 	/* Dot pattern decoration — banner variant only */
 	.newsletter-dots {

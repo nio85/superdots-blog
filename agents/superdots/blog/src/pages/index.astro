@@ -30,7 +30,9 @@ const posts = (await getCollection('blog'))
 		</h2>
 		<div class="hero-actions">
 			<a href="/blog/" class="btn btn-primary btn-lg">Browse articles</a>
-			<a href="#newsletter" class="btn btn-ghost btn-lg">Get the newsletter</a>
+		</div>
+		<div class="hero-signup">
+			<NewsletterForm variant="hero" source="homepage-hero" />
 		</div>
 	</section>
 
@@ -204,6 +206,20 @@ const posts = (await getCollection('blog'))
 	}
 	.hero-actions .btn-primary:hover {
 		box-shadow: var(--shadow-md), 0 0 20px rgba(232, 54, 59, 0.2);
+	}
+	/* Hero newsletter signup — positioned below main CTA */
+	.hero-signup {
+		position: relative;
+		margin-top: var(--space-8);
+		padding-top: var(--space-6);
+	}
+	.hero-signup::before {
+		content: '';
+		display: block;
+		width: 40px;
+		height: 1px;
+		background: var(--color-border-strong);
+		margin: 0 auto var(--space-6);
 	}
 
 	/* Latest Section */
