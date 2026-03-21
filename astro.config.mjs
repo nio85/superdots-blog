@@ -44,6 +44,9 @@ export default defineConfig({
 				} else if (url === 'https://superdots.sh/blog/') {
 					item.changefreq = 'daily';
 					item.priority = 0.9;
+				} else if (url === 'https://superdots.sh/guides/') {
+					item.changefreq = 'weekly';
+					item.priority = 0.85;
 				} else if (url.includes('/blog/ai-for-')) {
 					// Pillar pages
 					item.changefreq = 'weekly';
