@@ -13,8 +13,6 @@ interface Props {
 	tags?: string[];
 	headingLevel?: 'h2' | 'h3';
 	variant?: 'article' | 'guide';
-	readingTime?: number;
-	relatedCount?: number;
 }
 
 const {
@@ -28,8 +26,6 @@ const {
 	tags = [],
 	headingLevel = 'h3',
 	variant = 'article',
-	readingTime,
-	relatedCount,
 } = Astro.props;
 const Heading = headingLevel;
 
@@ -52,22 +48,7 @@ const tagMeta = tags
 		</div>
 		<Heading class="card-title">{title}</Heading>
 		<p>{description}</p>
-		{isGuide && (readingTime || relatedCount) ? (
-			<div class="guide-meta">
-				{readingTime && readingTime > 0 && (
-					<span class="guide-meta-item">
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-						{readingTime} min read
-					</span>
-				)}
-				{relatedCount && relatedCount > 0 && (
-					<span class="guide-meta-item">
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-						+{relatedCount} related articles
-					</span>
-				)}
-			</div>
-		) : null}
+
 		{tagMeta.length > 0 && (
 			<div class="tag-pills">
 				{tagMeta.map((t) => (
@@ -178,19 +159,6 @@ const tagMeta = tags
 	.badge-guide-dept {
 		background: var(--sd-teal-light);
 		color: var(--sd-teal-dark);
-	}
-	.guide-meta {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-4);
-		margin-bottom: var(--space-4);
-	}
-	.guide-meta-item {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
 	}
 	.tag-pills {
 		display: flex;

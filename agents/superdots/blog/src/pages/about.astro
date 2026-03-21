@@ -5,7 +5,6 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 import { DEPARTMENTS } from '../consts';
 
 const allPosts = await getCollection('blog');
-const pillarPosts = allPosts.filter((p) => p.data.pillar);
 const departmentsWithContent = new Set(allPosts.map((p) => p.data.department));
 
 const guides = [
@@ -26,23 +25,6 @@ const guides = [
 		<p class="about-subtitle">Practical, no-fluff resources for every team that uses a computer at work.</p>
 	</div>
 
-	<!-- Live stats -->
-	<section class="stats-strip">
-		<div class="stat">
-			<span class="stat-num">{allPosts.length}</span>
-			<span class="stat-label">Articles</span>
-		</div>
-		<div class="stat-divider" aria-hidden="true"></div>
-		<div class="stat">
-			<span class="stat-num">{pillarPosts.length}</span>
-			<span class="stat-label">In-depth guides</span>
-		</div>
-		<div class="stat-divider" aria-hidden="true"></div>
-		<div class="stat">
-			<span class="stat-num">{departmentsWithContent.size}</span>
-			<span class="stat-label">Departments covered</span>
-		</div>
-	</section>
 
 	<div class="prose">
 		<p>
@@ -182,38 +164,6 @@ const guides = [
 		margin: 0;
 	}
 
-	/* Stats strip */
-	.stats-strip {
-		display: flex;
-		align-items: center;
-		gap: var(--space-6);
-		padding: var(--space-6) 0;
-		margin: var(--space-4) 0 var(--space-6);
-		border-top: 1px solid var(--color-border);
-		border-bottom: 1px solid var(--color-border);
-	}
-	.stat {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-0-5);
-	}
-	.stat-num {
-		font-family: var(--font-display);
-		font-size: var(--text-3xl);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-strong);
-		letter-spacing: -0.03em;
-		line-height: 1;
-	}
-	.stat-label {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-	}
-	.stat-divider {
-		width: 1px;
-		height: 40px;
-		background: var(--color-border);
-	}
 
 	/* Prose */
 	.prose {
@@ -413,12 +363,6 @@ const guides = [
 	}
 
 	@media (max-width: 480px) {
-		.stats-strip {
-			gap: var(--space-4);
-		}
-		.stat-num {
-			font-size: var(--text-2xl);
-		}
 		.pillars-grid {
 			grid-template-columns: 1fr;
 		}
