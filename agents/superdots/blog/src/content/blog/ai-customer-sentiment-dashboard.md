@@ -11,7 +11,7 @@ faqs:
   - question: "What data sources should a sentiment dashboard include?"
     answer: "At minimum: support tickets, app/product reviews, NPS survey responses, and social media mentions. For a complete picture, add live chat transcripts, community forum posts, sales call notes, and email feedback. The more signals you aggregate, the more accurate your sentiment trends become."
   - question: "How accurate is AI sentiment analysis?"
-    answer: "General-purpose sentiment analysis achieves 80-85% accuracy, according to [Forrester](https://www.forrester.com) research. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
+    answer: "General-purpose sentiment analysis typically achieves 80-85% accuracy — roughly matching [human interrater agreement](https://www.lexalytics.com/blog/sentiment-accuracy-baseline-testing/) on the same task. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
   - question: "How quickly can AI detect a sentiment shift?"
     answer: "Real-time dashboards can detect sentiment shifts within minutes of a spike in negative feedback. Most tools process incoming signals every 1-5 minutes. Alerting thresholds let you set sensitivity — for example, alert when negative sentiment in a product area increases 20% above the 7-day average."
   - question: "What is the difference between sentiment analysis and customer feedback analysis?"
@@ -87,7 +87,7 @@ Individual data points aren't the goal. Trends are. For more on this topic, chec
 
 The AI baseline your normal sentiment distribution — what percentage of tickets are negative on an average week, which product areas generate the most friction. Then it flags deviations. If billing-related negative sentiment doubles in 48 hours, that's the signal. Without a baseline, you'd have no way to know whether 30 negative billing tickets is unusual or normal.
 
-Spotify demonstrates this at scale. They built an automated review analysis pipeline that uses sentiment analysis to process customer feedback across app stores and support channels. By tracking sentiment trends around specific features — playback quality, playlist recommendations, podcast experience — they can detect when a product change degrades the user experience within hours, not weeks. The result: faster issue detection and more data-driven product decisions.
+Companies with large app install bases use this approach at scale. By building automated review analysis pipelines that process customer feedback across app stores and support channels, product teams can track sentiment trends around specific features — playback quality, onboarding flows, billing experience — and detect when a product change degrades the user experience within hours, not weeks. The result: faster issue detection and more data-driven product decisions.
 
 Trend detection needs at least 60-90 days of historical data to establish reliable baselines. The longer the history, the better the anomaly detection.
 
