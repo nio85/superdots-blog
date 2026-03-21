@@ -162,7 +162,7 @@ The workflow looks like this:
 3. **Share templates with your team.** Make sure everyone uses the templates instead of starting from scratch.
 4. **Audit quarterly.** Check your actual outputs against your guidelines. Drift happens slowly — regular checks catch it early.
 
-A 2025 Lucidpress study found that consistent brand presentation across platforms increases revenue by up to 23%. That is not a design metric. That is a business metric. Consistency signals professionalism, builds recognition, and compounds trust over time.
+Research suggests consistent brand presentation across platforms can increase revenue by up to 23%. That is not a design metric. That is a business metric. Consistency signals professionalism, builds recognition, and compounds trust over time.
 
 ## Building brand assets with AI content tools
 

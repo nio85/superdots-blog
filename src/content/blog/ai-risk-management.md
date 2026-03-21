@@ -15,7 +15,7 @@ faqs:
   - question: "What types of business risks can AI help manage?"
     answer: "AI is effective at managing supply chain risks (supplier failures, logistics disruptions), financial risks (credit exposure, currency fluctuations, fraud), regulatory risks (compliance changes, policy shifts), operational risks (equipment failures, workforce gaps), and reputational risks (social media crises, product recalls)."
   - question: "How accurate is AI risk scoring compared to manual assessment?"
-    answer: "Studies show AI risk scoring reduces false positives by 30-50% compared to rule-based systems and catches 2-3x more emerging risks. Accuracy improves over time as models learn from outcomes. The key advantage is consistency — AI applies the same criteria to every risk, every time."
+    answer: "AI risk scoring can reduce false positives by 30-50% compared to rule-based systems and catches 2-3x more emerging risks. Accuracy improves over time as models learn from outcomes. The key advantage is consistency — AI applies the same criteria to every risk, every time."
   - question: "How long does it take to implement an AI risk management system?"
     answer: "Basic monitoring and alerting can be running within 2-4 weeks using SaaS tools. Full risk scoring and scenario modeling typically takes 2-3 months, depending on data integration complexity. Start with one risk domain (e.g., supply chain) and expand from there."
   - question: "Do I need a dedicated risk team to use AI risk management tools?"
