@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 import { TAGS } from '../../consts';
 
 const posts = await getCollection('blog');
@@ -47,6 +48,7 @@ const allTags = [...allTagSlugs]
 			</a>
 		))}
 	</div>
+	<NewsletterForm variant="banner" source="tags-listing" />
 </Base>
 
 <style>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -43,6 +44,7 @@ const posts = (await getCollection('blog'))
 			/>
 		))}
 	</div>
+	<NewsletterForm variant="banner" source="blog-listing" />
 </Base>
 
 <style>
