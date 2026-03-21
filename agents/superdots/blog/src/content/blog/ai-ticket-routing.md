@@ -14,17 +14,21 @@ faqs:
     answer: "Modern AI routing tools achieve 85-95% accuracy after training on your historical ticket data. That is significantly better than rule-based routing, which breaks whenever customers phrase things differently than expected."
   - question: "How long does it take to implement AI ticket routing?"
     answer: "Most teams can get a basic AI routing setup running in 2-4 weeks. You need historical ticket data for training, integration with your helpdesk platform, and a clear mapping of ticket categories to agent skills."
+  - question: "Does AI ticket routing work for small support teams?"
+    answer: "Yes, but the ROI depends on your ticket volume. Teams handling 100+ tickets per day see the fastest payback because misrouting costs compound at scale. Smaller teams (under 50 tickets per day) can still benefit from reduced transfer rates and faster first response times, but the setup effort may not pay off until ticket volume grows."
+  - question: "How much historical data does AI ticket routing need?"
+    answer: "Most AI routing tools need 3-6 months of historical ticket data to train an effective model. The data should include ticket text, assigned categories, which agent or team resolved it, and resolution outcomes. More data generally means better accuracy — 12 months is ideal. If your historical routing was inconsistent, plan to clean the data before training."
 ---
 
 A customer submits a ticket about a billing error. It goes to the technical support queue. A tech agent reads it, realizes it is not their problem, and transfers it to billing. The billing agent picks it up 40 minutes later. The customer has now waited an hour for a five-minute fix.
 
-This happens constantly. And it costs more than you think.
+This happens constantly. And according to industry data, misrouted tickets take 2-3x longer to resolve. For growing support teams, that wasted time compounds into real money — and real customer churn. For a broader look at how AI is transforming support operations, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide).
 
 ## The Hidden Cost of Bad Ticket Routing
 
 Misrouted tickets are not just annoying. They are expensive.
 
-**Resolution time doubles.** Every unnecessary transfer adds wait time. Industry data shows that tickets routed to the wrong team take 2-3x longer to resolve than correctly routed ones. That is not a rounding error — it is the difference between a satisfied customer and one writing a negative review.
+**Resolution time doubles.** Every unnecessary transfer adds wait time. Tickets routed to the wrong team take 2-3x longer to resolve than correctly routed ones. That is not a rounding error — it is the difference between a satisfied customer and one writing a negative review. Equinix, a global digital infrastructure company, saw this firsthand: after deploying [AI-powered ticket classification](https://www.moveworks.com/us/en/customers/equinix-disappears-it-queue-with-moveworks-triage-ticketing-system), they achieved 96% routing accuracy and reduced ticket resolution times by roughly a third.
 
 **Agent productivity drops.** Your billing specialist spends 15 minutes a day reading tickets that should have gone to tech support, then manually reassigning them. Across a 20-person support team, that is 5 hours of wasted time every day. That is a full-time employee's worth of productivity, gone to triage.
 
@@ -132,7 +136,7 @@ Do not set the confidence threshold to 50% on day one because you want to automa
 
 You need numbers to justify the investment and to know if it is working. Track these metrics before and after implementation.
 
-**First-response time.** How long until the right agent sees the ticket? This should drop significantly. A good target is 30-50% improvement.
+**First-response time.** How long until the right agent sees the ticket? This should drop significantly. According to [Pylon](https://www.usepylon.com/blog/ai-powered-customer-support-guide) (vendor-reported data), AI-powered support can reduce first response times by 37-97%, with some implementations dropping from 15 minutes to under 30 seconds. James Villas, a travel company, [cut first reply time on important tickets by 46%](https://www.sentisum.com/case-studies/james-villas) using SentiSum's automated routing.
 
 **Transfer rate.** What percentage of tickets get transferred after initial routing? This is your accuracy metric. Pre-AI, most teams see 20-30% transfer rates. Post-AI, aim for under 10%.
 
@@ -155,6 +159,12 @@ AI routing fixes this by reading tickets, understanding intent, and matching cus
 Start with a high confidence threshold and shadow mode. Train on your data, not generic models. Build feedback loops so the system gets smarter over time.
 
 The goal is not to remove humans from triage. It is to route 80-90% of tickets automatically so your team can focus on the complex ones that actually need human judgment.
+
+Here is what to do next:
+
+1. **Export 3-6 months of ticket data today.** You need it for training, and cleaning it takes longer than you expect. Start now.
+2. **Map your routing categories this week.** Be specific — "billing: refund request" is actionable, "billing" is not. Aim for 10-15 categories to start.
+3. **Run shadow mode for two weeks before going live.** Compare AI routing decisions against your human triage. This builds confidence and catches gaps before customers see them.
 
 **Related reads:**
 
