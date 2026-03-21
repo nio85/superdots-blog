@@ -1,13 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { getReadingTime } from '../../utils/readingTime';
 
 const allPosts = await getCollection('blog');
 
-// Guide definitions with article slugs for reading time
+// Guide definitions
 const guideDefs = [
 	{
 		title: 'AI for HR',
@@ -15,6 +14,7 @@ const guideDefs = [
 		href: '/blog/ai-for-hr/',
 		slug: 'ai-for-hr',
 		department: 'HR',
+		deptSlug: 'hr',
 		available: true,
 	},
 	{
@@ -23,6 +23,7 @@ const guideDefs = [
 		href: '/blog/ai-for-sales-complete-guide/',
 		slug: 'ai-for-sales-complete-guide',
 		department: 'Sales',
+		deptSlug: 'sales',
 		available: true,
 	},
 	{
@@ -31,35 +32,40 @@ const guideDefs = [
 		href: '/blog/ai-for-marketing-complete-guide/',
 		slug: 'ai-for-marketing-complete-guide',
 		department: 'Marketing',
+		deptSlug: 'marketing',
 		available: true,
 	},
 	{
 		title: 'AI for Customer Service',
 		description: 'Build faster support with AI chatbots, sentiment analysis, and automated ticket resolution.',
 		department: 'Customer Service',
+		deptSlug: 'customer-support',
 		available: false,
 	},
 	{
 		title: 'AI Business Automation',
 		description: 'Streamline workflows across departments with practical AI-powered automation.',
 		department: 'Operations',
+		deptSlug: 'operations',
 		available: false,
 	},
 ];
 
-// Enrich guides with reading time and related article count
+// Enrich guides with reading time, related articles
 const guides = guideDefs.map((g) => {
-	if (!g.available || !g.slug) return { ...g, readingTime: 0, relatedCount: 0 };
+	if (!g.available || !g.slug) return { ...g, readingTime: 0, relatedArticles: [] as typeof allPosts };
 	const post = allPosts.find((p) => p.slug === g.slug);
 	const readingTime = post ? getReadingTime(post.body) : 0;
-	// Count articles in the same department (excluding the guide itself)
-	const deptSlug = g.department.toLowerCase().replace(/\s+/g, '-');
-	const relatedCount = allPosts.filter((p) => p.data.department === deptSlug && p.slug !== g.slug).length;
-	return { ...g, readingTime, relatedCount };
+	const relatedArticles = allPosts
+		.filter((p) => p.data.department === g.deptSlug && p.slug !== g.slug)
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	return { ...g, readingTime, relatedArticles };
 });
 
 const availableGuides = guides.filter((g) => g.available);
 const comingSoonGuides = guides.filter((g) => !g.available);
+const totalArticles = allPosts.length;
+const totalReadingMins = availableGuides.reduce((sum, g) => sum + (g.readingTime || 0), 0);
 ---
 
 <Base title="Guides | Superdots" description="In-depth AI guides for every department. Comprehensive playbooks covering tools, strategies, and real implementation advice.">
@@ -73,21 +79,94 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		<p class="page-desc">Deep-dive guides covering tools, strategies, and real implementation advice. Each guide is a comprehensive resource for bringing AI into your department.</p>
 	</div>
 
-	<section class="guides-grid">
-		{availableGuides.map((guide) => (
-			<PostCard
-				title={guide.title}
-				description={guide.description}
-				department={guide.department}
-				href={guide.href}
-				headingLevel="h2"
-				variant="guide"
-				readingTime={guide.readingTime}
-				relatedCount={guide.relatedCount}
-			/>
+	{/* Social proof stats bar */}
+	<div class="stats-bar" aria-label="Guide statistics">
+		<div class="stat">
+			<span class="stat-value">{availableGuides.length}</span>
+			<span class="stat-label">Complete Guides</span>
+		</div>
+		<div class="stat-divider" aria-hidden="true"></div>
+		<div class="stat">
+			<span class="stat-value">{totalArticles}+</span>
+			<span class="stat-label">Articles</span>
+		</div>
+		<div class="stat-divider" aria-hidden="true"></div>
+		<div class="stat">
+			<span class="stat-value">{totalReadingMins}+</span>
+			<span class="stat-label">Min of Content</span>
+		</div>
+	</div>
+
+	{/* Guide cards with expandable chapters */}
+	<section class="guides-list" aria-label="Available guides">
+		{availableGuides.map((guide, idx) => (
+			<article class="guide-card">
+				<div class="guide-card-main">
+					<div class="guide-card-content">
+						<span class="guide-dept-badge">{guide.department}</span>
+						<h2 class="guide-title">
+							<a href={guide.href}>{guide.title}</a>
+						</h2>
+						<p class="guide-desc">{guide.description}</p>
+						<div class="guide-meta">
+							{guide.readingTime > 0 && (
+								<span class="guide-meta-item">
+									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+									{guide.readingTime} min read
+								</span>
+							)}
+							{guide.relatedArticles.length > 0 && (
+								<span class="guide-meta-item">
+									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									{guide.relatedArticles.length} related articles
+								</span>
+							)}
+						</div>
+						<div class="guide-actions">
+							<a href={guide.href} class="guide-cta">
+								Read guide <span aria-hidden="true">&rarr;</span>
+							</a>
+							{guide.relatedArticles.length > 0 && (
+								<button
+									class="guide-expand-btn"
+									type="button"
+									aria-expanded="false"
+									aria-controls={`chapters-${idx}`}
+								>
+									<span class="expand-text">Show related articles</span>
+									<svg class="expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+								</button>
+							)}
+						</div>
+					</div>
+					<div class="guide-card-visual" aria-hidden="true">
+						<span class="guide-number">{String(idx + 1).padStart(2, '0')}</span>
+					</div>
+				</div>
+
+				{/* Expandable related articles */}
+				{guide.relatedArticles.length > 0 && (
+					<div class="guide-chapters" id={`chapters-${idx}`} hidden>
+						<div class="chapters-inner">
+							<p class="chapters-label">Related articles in {guide.department}</p>
+							<ul class="chapters-list">
+								{guide.relatedArticles.map((article) => (
+									<li>
+										<a href={`/blog/${article.slug}/`} class="chapter-link">
+											<span class="chapter-title">{article.data.title}</span>
+											<span class="chapter-arrow" aria-hidden="true">&rarr;</span>
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				)}
+			</article>
 		))}
 	</section>
 
+	{/* Coming soon */}
 	{comingSoonGuides.length > 0 && (
 		<section class="coming-soon-section">
 			<p class="coming-soon-label">More guides in the works</p>
@@ -102,7 +181,7 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		</section>
 	)}
 
-	<!-- Evaluation checklist CTA -->
+	{/* CTA */}
 	<section class="eval-cta">
 		<div class="eval-cta-inner">
 			<div class="eval-cta-text">
@@ -114,6 +193,39 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 
 	<NewsletterForm variant="banner" source="guides-listing" />
 </Base>
+
+<script>
+	// Expandable chapters
+	document.querySelectorAll('.guide-expand-btn').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const targetId = btn.getAttribute('aria-controls');
+			const target = document.getElementById(targetId!);
+			if (!target) return;
+
+			const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', String(!isExpanded));
+			btn.querySelector('.expand-text')!.textContent = isExpanded ? 'Show related articles' : 'Hide related articles';
+
+			if (isExpanded) {
+				target.style.maxHeight = '0';
+				target.style.opacity = '0';
+				setTimeout(() => {
+					target.hidden = true;
+				}, 300);
+			} else {
+				target.hidden = false;
+				target.style.maxHeight = '0';
+				target.style.opacity = '0';
+				requestAnimationFrame(() => {
+					requestAnimationFrame(() => {
+						target.style.maxHeight = target.scrollHeight + 'px';
+						target.style.opacity = '1';
+					});
+				});
+			}
+		});
+	});
+</script>
 
 <style>
 	.page-header {
@@ -154,16 +266,250 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		margin: 0;
 	}
 
-	/* Guides grid */
-	.guides-grid {
-		display: grid;
-		gap: var(--space-5);
-		padding: var(--space-8) 0 var(--space-6);
+	/* Stats bar */
+	.stats-bar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-6);
+		padding: var(--space-5) var(--space-6);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		margin: var(--space-6) auto var(--space-8);
+		max-width: 500px;
+	}
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-0-5);
+	}
+	.stat-value {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-primary);
+		line-height: 1;
+	}
+	.stat-label {
+		font-size: var(--text-xs);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.stat-divider {
+		width: 1px;
+		height: 32px;
+		background: var(--color-border);
 	}
 
-	/* Guide cards use PostCard component — no custom card styles needed */
+	/* Guide cards */
+	.guides-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-5);
+		padding-bottom: var(--space-6);
+	}
+	.guide-card {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		background: var(--color-bg);
+		overflow: hidden;
+		transition: box-shadow var(--transition-base), border-color var(--transition-base);
+	}
+	.guide-card:hover {
+		box-shadow: var(--shadow-md);
+		border-color: var(--color-secondary);
+	}
+	.guide-card-main {
+		display: flex;
+		padding: var(--space-6) var(--space-8);
+		gap: var(--space-6);
+	}
+	.guide-card-content {
+		flex: 1;
+		min-width: 0;
+	}
+	.guide-card-visual {
+		display: none;
+	}
+	@media (min-width: 640px) {
+		.guide-card-visual {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-shrink: 0;
+		}
+	}
+	.guide-number {
+		font-family: var(--font-display);
+		font-size: 4rem;
+		font-weight: var(--weight-bold);
+		color: var(--color-secondary);
+		opacity: 0.12;
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+	.guide-dept-badge {
+		display: inline-block;
+		font-family: var(--font-display);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-bold);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		background: var(--sd-teal-light);
+		color: var(--sd-teal-dark);
+		padding: var(--space-0-5) var(--space-2);
+		border-radius: var(--radius-sm);
+		margin-bottom: var(--space-3);
+	}
+	.guide-title {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+		letter-spacing: -0.02em;
+		line-height: var(--leading-tight);
+	}
+	.guide-title a {
+		color: inherit;
+		text-decoration: none;
+		transition: color var(--transition-fast);
+	}
+	.guide-card:hover .guide-title a {
+		color: var(--color-secondary);
+	}
+	.guide-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		line-height: var(--leading-snug);
+		margin: 0 0 var(--space-3);
+	}
+	.guide-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+	.guide-meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
+	.guide-actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		flex-wrap: wrap;
+	}
+	.guide-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-secondary);
+		text-decoration: none;
+		transition: gap var(--transition-fast);
+	}
+	.guide-cta:hover {
+		gap: var(--space-2);
+		text-decoration: none;
+	}
+	.guide-expand-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		transition: color var(--transition-fast);
+	}
+	.guide-expand-btn:hover {
+		color: var(--color-text-strong);
+	}
+	.expand-icon {
+		transition: transform var(--transition-base);
+	}
+	.guide-expand-btn[aria-expanded="true"] .expand-icon {
+		transform: rotate(180deg);
+	}
 
-	/* Coming soon — compact, de-emphasized */
+	/* Expandable chapters */
+	.guide-chapters {
+		border-top: 1px solid var(--color-border);
+		overflow: hidden;
+		transition: max-height 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+	}
+	.chapters-inner {
+		padding: var(--space-4) var(--space-8) var(--space-6);
+	}
+	.chapters-label {
+		font-family: var(--font-display);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-3);
+	}
+	.chapters-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0;
+	}
+	@media (min-width: 640px) {
+		.chapters-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	.chapter-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		text-decoration: none;
+		border-radius: var(--radius-md);
+		transition: background var(--transition-fast);
+	}
+	.chapter-link:hover {
+		background: var(--color-bg-dim);
+		text-decoration: none;
+	}
+	.chapter-title {
+		font-size: var(--text-sm);
+		color: var(--color-text);
+		line-height: var(--leading-snug);
+	}
+	.chapter-link:hover .chapter-title {
+		color: var(--color-secondary);
+	}
+	.chapter-arrow {
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
+		flex-shrink: 0;
+		opacity: 0;
+		transition: opacity var(--transition-fast);
+	}
+	.chapter-link:hover .chapter-arrow {
+		opacity: 1;
+	}
+
+	/* Coming soon */
 	.coming-soon-section {
 		padding-bottom: var(--space-8);
 	}
@@ -233,18 +579,22 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 		margin-inline: auto;
 	}
 
-	@media (min-width: 640px) {
-		.guides-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		.guides-grid :global(.post-card:first-child) {
-			grid-column: 1 / -1;
-		}
-	}
-
 	@media (max-width: 480px) {
 		.page-header h1 {
 			font-size: var(--text-3xl);
+		}
+		.stats-bar {
+			gap: var(--space-4);
+			padding: var(--space-4);
+		}
+		.stat-value {
+			font-size: var(--text-xl);
+		}
+		.guide-card-main {
+			padding: var(--space-5);
+		}
+		.chapters-inner {
+			padding: var(--space-4) var(--space-5) var(--space-5);
 		}
 		.eval-cta-inner {
 			padding: var(--space-5);

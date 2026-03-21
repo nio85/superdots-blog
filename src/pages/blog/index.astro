@@ -3,9 +3,15 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
+import { DEPARTMENTS } from '../../consts';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const pillarPosts = posts.filter((p) => p.data.pillar);
+const regularPosts = posts.filter((p) => !p.data.pillar);
+
+const POSTS_PER_PAGE = 12;
 ---
 
 <Base title="Practical AI Guides & Tools | Superdots" description="Browse all practical AI guides and tools for every business team.">
@@ -30,22 +36,153 @@ const posts = (await getCollection('blog'))
 		<h1>Practical AI Guides & Tools<span class="dot-accent">.</span></h1>
 		<p class="page-desc">Step-by-step AI guides for every team — from sales call prep to contract review. No theory, no hype. Just techniques you can use today.</p>
 	</div>
-	<div class="post-grid">
-		{posts.map((post) => (
-			<PostCard
-				title={post.data.title}
-				description={post.data.description}
-				pubDate={post.data.pubDate}
-				department={post.data.department}
-				useCase={post.data.useCase}
-				slug={post.slug}
-				tags={post.data.tags}
-				headingLevel="h2"
-			/>
+
+	{/* Featured pillar guides */}
+	{pillarPosts.length > 0 && (
+		<section class="featured-section" aria-label="Featured guides">
+			<div class="featured-header">
+				<span class="featured-label">
+					<span class="superdot"></span>
+					Featured Guides
+				</span>
+			</div>
+			<div class="featured-grid">
+				{pillarPosts.map((post) => (
+					<PostCard
+						title={post.data.title}
+						description={post.data.description}
+						pubDate={post.data.pubDate}
+						department={post.data.department}
+						useCase={post.data.useCase}
+						slug={post.slug}
+						tags={post.data.tags}
+						headingLevel="h2"
+						variant="guide"
+					/>
+				))}
+			</div>
+		</section>
+	)}
+
+	{/* Department filter chips */}
+	<div class="filter-bar" role="toolbar" aria-label="Filter by department">
+		<button class="filter-chip active" data-dept="all" type="button">
+			All <span class="chip-count">{regularPosts.length}</span>
+		</button>
+		{DEPARTMENTS.map((dept) => {
+			const count = regularPosts.filter((p) => p.data.department === dept.slug).length;
+			return count > 0 ? (
+				<button class="filter-chip" data-dept={dept.slug} type="button">
+					{dept.label} <span class="chip-count">{count}</span>
+				</button>
+			) : null;
+		})}
+	</div>
+
+	{/* Article grid with load-more */}
+	<div class="post-grid" id="post-grid">
+		{regularPosts.map((post, i) => (
+			<div
+				class="post-item"
+				data-dept={post.data.department}
+				data-index={i}
+				style={i >= POSTS_PER_PAGE ? 'display:none' : ''}
+			>
+				<PostCard
+					title={post.data.title}
+					description={post.data.description}
+					pubDate={post.data.pubDate}
+					department={post.data.department}
+					useCase={post.data.useCase}
+					slug={post.slug}
+					tags={post.data.tags}
+					headingLevel="h2"
+				/>
+			</div>
 		))}
 	</div>
+
+	<div class="load-more-wrap" id="load-more-wrap">
+		<button class="btn-load-more" id="load-more-btn" type="button">
+			Show more articles
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+		</button>
+		<p class="showing-count" id="showing-count" aria-live="polite"></p>
+	</div>
+
 	<NewsletterForm variant="banner" source="blog-listing" />
 </Base>
+
+<script define:vars={{ POSTS_PER_PAGE }}>
+	const grid = document.getElementById('post-grid');
+	const items = Array.from(grid.querySelectorAll('.post-item'));
+	const loadMoreBtn = document.getElementById('load-more-btn');
+	const loadMoreWrap = document.getElementById('load-more-wrap');
+	const showingCount = document.getElementById('showing-count');
+	const filterChips = document.querySelectorAll('.filter-chip');
+
+	let activeDept = 'all';
+	let visibleCount = POSTS_PER_PAGE;
+
+	function getFilteredItems() {
+		if (activeDept === 'all') return items;
+		return items.filter((el) => el.dataset.dept === activeDept);
+	}
+
+	function render() {
+		const filtered = getFilteredItems();
+		const total = filtered.length;
+
+		// Hide all first
+		items.forEach((el) => {
+			el.style.display = 'none';
+			el.style.opacity = '0';
+			el.style.transform = 'translateY(12px)';
+		});
+
+		// Show visible slice with staggered animation
+		filtered.slice(0, visibleCount).forEach((el, i) => {
+			el.style.display = '';
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					el.style.opacity = '1';
+					el.style.transform = 'translateY(0)';
+				});
+			});
+		});
+
+		// Update button visibility
+		if (visibleCount >= total) {
+			loadMoreBtn.style.display = 'none';
+		} else {
+			loadMoreBtn.style.display = '';
+		}
+
+		// Update count text
+		const shown = Math.min(visibleCount, total);
+		showingCount.textContent = `Showing ${shown} of ${total} articles`;
+	}
+
+	// Filter chip click
+	filterChips.forEach((chip) => {
+		chip.addEventListener('click', () => {
+			filterChips.forEach((c) => c.classList.remove('active'));
+			chip.classList.add('active');
+			activeDept = chip.dataset.dept;
+			visibleCount = POSTS_PER_PAGE;
+			render();
+		});
+	});
+
+	// Load more
+	loadMoreBtn.addEventListener('click', () => {
+		visibleCount += POSTS_PER_PAGE;
+		render();
+	});
+
+	// Initial render
+	render();
+</script>
 
 <style>
 	.page-desc {
@@ -54,13 +191,146 @@ const posts = (await getCollection('blog'))
 		margin-bottom: var(--space-6);
 		line-height: var(--leading-snug);
 	}
+
+	/* Featured section */
+	.featured-section {
+		margin-bottom: var(--space-8);
+	}
+	.featured-header {
+		margin-bottom: var(--space-4);
+	}
+	.featured-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-secondary);
+	}
+	.featured-label .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-secondary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.featured-grid {
+		display: grid;
+		gap: var(--space-5);
+	}
+	@media (min-width: 640px) {
+		.featured-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.featured-grid :global(.post-card:first-child) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	/* Filter bar */
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-bottom: var(--space-6);
+		padding-bottom: var(--space-4);
+		border-bottom: 1px solid var(--color-border);
+	}
+	.filter-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: var(--space-1) var(--space-3);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: transparent;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+		white-space: nowrap;
+	}
+	.filter-chip:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+	}
+	.filter-chip.active {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+		color: #fff;
+	}
+	.filter-chip.active .chip-count {
+		background: rgba(255, 255, 255, 0.2);
+		color: #fff;
+	}
+	.chip-count {
+		font-size: var(--text-xs);
+		background: var(--color-bg-dim);
+		color: var(--color-text-muted);
+		padding: 0 var(--space-1);
+		border-radius: var(--radius-full);
+		min-width: 1.25rem;
+		text-align: center;
+		transition: all var(--transition-fast);
+	}
+
+	/* Post grid */
 	.post-grid {
 		display: grid;
 		gap: var(--space-5);
+	}
+	.post-item {
+		transition: opacity var(--transition-slow), transform var(--transition-slow);
 	}
 	@media (min-width: 640px) {
 		.post-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
+	}
+
+	/* Load more */
+	.load-more-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-8) 0 var(--space-4);
+	}
+	.btn-load-more {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-6);
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		background: transparent;
+		border: 2px solid var(--color-primary);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-base);
+	}
+	.btn-load-more:hover {
+		background: var(--color-primary);
+		color: #fff;
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-md);
+	}
+	.btn-load-more svg {
+		transition: transform var(--transition-base);
+	}
+	.btn-load-more:hover svg {
+		transform: translateY(2px);
+	}
+	.showing-count {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		margin: 0;
 	}
 </style>
