@@ -127,7 +127,7 @@ Best for enterprise teams using Microsoft 365. Copilot in Power BI lets you crea
 
 **Best for:** Enterprise teams, anyone already using Microsoft 365 and Power BI.
 
-**Pricing:** Power BI Pro at $10/user/month. Copilot requires a Microsoft 365 Copilot license.
+**Pricing:** Power BI Pro at $14/user/month. Copilot requires a Microsoft 365 Copilot license.
 
 **Standout feature:** Generates complete report pages from a single natural language prompt, including charts, tables, and written summaries.
 

@@ -19,7 +19,7 @@ Here is how to use AI to generate tests that are actually useful, and how to avo
 
 ## The testing debt problem
 
-A 2024 survey by Testim found that 62% of development teams ship code with less test coverage than their own standards require. The reason is almost always time pressure.
+Industry surveys suggest that over 60% of development teams ship code with less test coverage than their own standards require. The reason is almost always time pressure.
 
 Writing a solid unit test suite for a single function can take as long as writing the function itself. Edge cases, error paths, mock setups — it adds up. When the deadline hits, tests are the first thing that gets cut.
 

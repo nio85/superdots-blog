@@ -38,7 +38,7 @@ The problem is not that monitoring is too sensitive. It is that monitoring is no
 
 Every engineering team has them. Tests that pass sometimes and fail sometimes, for reasons nobody has time to investigate. Flaky tests erode confidence in the test suite. Engineers start ignoring test failures ("oh, that one's flaky, just re-run it"), which means real failures get missed.
 
-Studies show that 10-30% of test failures in large codebases are caused by flaky tests. That is an enormous amount of wasted investigation time and re-run compute.
+An estimated 10-30% of test failures in large codebases are caused by flaky tests. That is an enormous amount of wasted investigation time and re-run compute.
 
 ### Manual pipeline tuning
 
