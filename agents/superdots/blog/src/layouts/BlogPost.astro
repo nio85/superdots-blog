@@ -41,7 +41,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 			"@type": "Article",
 			"headline": title,
 			"description": description,
-			"author": { "@type": "Person", "name": author },
+			"author": { "@type": "Organization", "name": author },
 			"datePublished": pubDate.toISOString(),
 			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
 			...(ogImageSrc && { "image": new URL(ogImageSrc, Astro.url).toString() }),
