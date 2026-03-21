@@ -31,10 +31,11 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 })();
 </script>
 
-<!-- Preconnect to third-party origins used by analytics (skipped when opted out) -->
+<!-- Preconnect to third-party origins used by analytics (only after cookie consent) -->
 <script is:inline>
 (function() {
 	if (localStorage.getItem('sd-analytics-optout') === 'true') return;
+	if (localStorage.getItem('sd-cookie-consent') !== 'accepted') return;
 	var pc = document.createElement('link');
 	pc.rel = 'preconnect'; pc.href = 'https://www.googletagmanager.com'; pc.crossOrigin = '';
 	document.head.appendChild(pc);
@@ -83,6 +84,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+<meta name="ai-generated" content="true" />
 <link rel="canonical" href={canonicalURL} />
 
 <title>{title}</title>
