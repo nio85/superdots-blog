@@ -14,6 +14,10 @@ faqs:
     answer: "A basic deployment handling one or two simple use cases (like appointment scheduling or order status) takes 4-8 weeks including integration, testing, and tuning. A full-featured deployment handling multiple use cases with robust handoff to human agents typically takes 3-6 months. The biggest time investment is not the technology — it is designing the conversation flows, integrating with your backend systems, and testing with real callers."
   - question: "Can AI voice assistants handle multiple languages?"
     answer: "Yes. Modern AI voice platforms support 20-50+ languages with high speech recognition accuracy for major languages. Quality varies for less common languages and regional dialects. Multilingual support is particularly valuable for companies with international customer bases — AI voice assistants can route callers to the right language automatically and handle simple requests in languages where you do not have bilingual staff."
+  - question: "What is a good containment rate for an AI voice assistant?"
+    answer: "A realistic target is 40-60% containment for a well-implemented system handling appropriate use cases. Advanced AI platforms are reaching 55-70% first-contact resolution rates in production. Higher is not always better — a 90% containment rate might mean you are forcing callers through AI on issues that should go to humans. Focus on containment for simple, transactional calls and seamless handoff for everything else."
+  - question: "How much do AI voice assistants cost compared to human agents?"
+    answer: "AI voice interactions typically cost $0.50-2.00 per call compared to $5-12 for a human-handled call. The exact savings depend on your call volume and complexity mix. Improving IVR containment rates by 5-20% can reduce call center costs by 10-30%. Most companies see positive ROI within 3-6 months of deployment, primarily from handling after-hours calls and deflecting simple transactional requests."
 ---
 
 You have called customer service. You have pressed 1, then 3, then 2, then said "representative" six times, then pressed 0 repeatedly until a human picked up. Everyone has.
@@ -22,7 +26,7 @@ That experience — the old interactive voice response (IVR) system — trained 
 
 Modern AI voice assistants — powered by platforms like [Amazon Connect](https://aws.amazon.com/connect), [Google Contact Center AI](https://cloud.google.com/solutions/contact-center), and [Twilio](https://www.twilio.com) — are a different technology entirely. They understand natural conversation, not just keywords. They access your account information in real time. They handle transactions, not just routing. And when they cannot solve the problem, they transfer you to a human with full context — so you do not repeat yourself.
 
-The technology has improved dramatically. The question is which use cases actually work and which ones still frustrate callers.
+The technology has improved dramatically. For a broader look at how AI is transforming customer support across all channels, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide). The question is which use cases actually work and which ones still frustrate callers.
 
 ## What Has Changed
 
@@ -51,6 +55,8 @@ This context changes the experience fundamentally. The caller feels known, not p
 This is one of the strongest use cases for AI voice assistants. The conversation follows a predictable pattern: check availability, confirm the date and time, send confirmation. AI handles this as well as or better than a human agent because it has instant access to the scheduling system and never double-books.
 
 Healthcare, dental offices, salons, and professional services see the highest ROI here — high call volume, simple transactions, and callers who just want to get it done quickly.
+
+Nuance's conversational IVR demonstrates the impact: a major healthcare provider reduced call volume by 25% and lowered average handle time by 45 seconds per call by deploying AI voice for appointment scheduling and prescription refill requests.
 
 ### Order status and tracking
 
@@ -108,7 +114,7 @@ For related routing strategies, see our guide on [AI ticket routing](/blog/ai-ti
 
 ### Containment rate
 
-The percentage of calls fully resolved by the AI without human intervention. Target 40-60% for a well-implemented system handling appropriate use cases. Higher is not always better — a 90% containment rate might mean you are forcing callers through AI on issues that should go to humans.
+The percentage of calls fully resolved by the AI without human intervention. According to industry data, AI-native platforms are achieving 55-70% first-contact resolution rates, with some advanced deployments reaching 80% containment. However, seven out of ten companies still report containment rates of 30% or less on legacy systems. Target 40-60% for a well-implemented modern system. Higher is not always better — a 90% containment rate might mean you are forcing callers through AI on issues that should go to humans.
 
 ### Caller satisfaction (CSAT)
 
@@ -146,6 +152,12 @@ AI voice assistants are no longer the "press 1" systems that trained everyone to
 
 But the technology only works for the right use cases. Simple, transactional, predictable calls — appointment scheduling, order status, account updates, payment processing — are well within AI's capabilities today. Complex complaints, emotional situations, and multi-issue calls still need humans.
 
-Start with one simple use case. Perfect the handoff to humans. Expand based on data, not ambition. And never forget that the goal is not maximum automation — it is a better experience for the caller.
+Here is what to do next:
+
+1. **Identify your highest-volume, simplest call type this week.** Order status, appointment scheduling, or account verification are the safest starting points. Build one great experience before expanding.
+2. **Test the handoff experience relentlessly.** The transfer from AI to human determines whether callers accept the system or bypass it. Get this right before adding use cases.
+3. **Set a 90-day benchmark.** Track containment rate, caller satisfaction, and escalation reasons from day one. Most teams see meaningful improvement within three months as the AI learns from real conversations.
+
+The goal is not maximum automation — it is a better experience for the caller. Improving containment rates by even 5-20% can reduce call center costs by 10-30%, according to industry benchmarks.
 
 For more on AI across customer service, explore our guides on [AI customer retention](/blog/ai-customer-retention) and [AI customer feedback analysis](/blog/ai-customer-feedback-analysis). For a complete overview, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

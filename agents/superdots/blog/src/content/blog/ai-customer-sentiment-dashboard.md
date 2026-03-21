@@ -26,6 +26,8 @@ That four-day gap is what a sentiment dashboard eliminates.
 
 When you aggregate customer signals into one AI-powered view, slow load times show up as a trending topic within hours — not days. Your team gets an alert. Someone investigates. The problem gets fixed before it reaches the CEO's inbox.
 
+For a comprehensive look at how AI is transforming customer support across all channels, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide).
+
 This guide walks you through how to build that system: what to connect, how the AI layer works, and what to actually do with the output.
 
 ## Why Spreadsheets and Manual Reviews Don't Scale
@@ -84,6 +86,8 @@ For domain-specific vocabulary (your product's feature names, internal jargon, i
 Individual data points aren't the goal. Trends are. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
 
 The AI baseline your normal sentiment distribution — what percentage of tickets are negative on an average week, which product areas generate the most friction. Then it flags deviations. If billing-related negative sentiment doubles in 48 hours, that's the signal. Without a baseline, you'd have no way to know whether 30 negative billing tickets is unusual or normal.
+
+Spotify demonstrates this at scale. They built an automated review analysis pipeline that uses sentiment analysis to process customer feedback across app stores and support channels. By tracking sentiment trends around specific features — playback quality, playlist recommendations, podcast experience — they can detect when a product change degrades the user experience within hours, not weeks. The result: faster issue detection and more data-driven product decisions.
 
 Trend detection needs at least 60-90 days of historical data to establish reliable baselines. The longer the history, the better the anomaly detection.
 
@@ -184,6 +188,12 @@ You don't need a fully built dashboard on day one. Start with this:
 That's a working sentiment system. It's not pretty. It doesn't cover every source. But it's better than spreadsheets, and it gives you a foundation to build on.
 
 The full dashboard comes later. The insight starts now.
+
+Here is what to do next:
+
+1. **Connect your helpdesk to a sentiment API today.** Run the last 30 days of tickets through it. You will have your top five negative themes within an hour.
+2. **Pull your last 90 days of reviews and compare.** Do the themes match your tickets? If so, you have a validated signal. If not, you have a blind spot to investigate.
+3. **Set one alert this week.** Notify the support lead when negative sentiment in any category spikes 25% above the previous week. That single alert is worth more than a month of spreadsheet reviews.
 
 ---
 
