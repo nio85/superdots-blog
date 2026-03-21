@@ -21,7 +21,7 @@ faqs:
     answer: "Yes. Most AI note-taking apps integrate with Slack, Google Calendar, Zoom, and project management tools like Asana and Linear. Notion and Obsidian have the widest integration ecosystems through native connections and community plugins."
   - question: "Will AI note-taking apps work for technical notes with code snippets?"
     answer: "Notion, Obsidian, and Reflect all support code blocks with syntax highlighting. For heavy technical documentation, Obsidian with its plugin ecosystem is the most flexible. Notion handles inline code and code blocks well for mixed technical/non-technical teams."
-heroImage: '/images/blog/ai-note-taking-apps.webp'
+heroImage: "/images/blog/ai-note-taking-apps.webp"
 ---
 
 Your notes are scattered across three apps, two notebooks, and a pile of sticky notes that made sense last Tuesday.

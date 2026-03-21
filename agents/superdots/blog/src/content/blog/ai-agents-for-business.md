@@ -21,7 +21,7 @@ faqs:
     answer: "Agent platforms range from $20-100 per agent per month for standard tools to custom enterprise pricing for platforms like Salesforce Agentforce and ServiceNow. Many platforms charge by usage (actions taken) rather than flat fees."
   - question: "Do AI agents replace employees?"
     answer: "AI agents handle repetitive, time-consuming tasks so employees can focus on work that requires judgment, creativity, and relationship-building. Most companies report that agents increase team capacity rather than reduce headcount — teams do more with the same people."
-heroImage: '/images/blog/ai-agents-for-business.webp'
+heroImage: "/images/blog/ai-agents-for-business.webp"
 ---
 
 AI chatbots answer questions. AI agents do the work.
