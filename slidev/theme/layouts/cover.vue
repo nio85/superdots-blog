@@ -27,9 +27,13 @@
     </div>
 
     <!-- Logo bottom-right -->
-    <img src="/brand/superdots-logo-white.svg" alt="" class="sd-logo" />
+    <SdLogo class="sd-logo" :height="18" :opacity="0.3" />
   </div>
 </template>
+
+<script setup>
+import SdLogo from '../components/SdLogo.vue'
+</script>
 
 <style scoped>
 .sd-cover {

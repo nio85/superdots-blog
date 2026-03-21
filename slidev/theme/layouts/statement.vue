@@ -11,9 +11,13 @@
       <slot />
     </div>
 
-    <img src="/brand/superdots-icon-white.svg" alt="" class="sd-logo-mark" />
+    <SdIcon class="sd-logo-mark" :size="24" :opacity="0.2" />
   </div>
 </template>
+
+<script setup>
+import SdIcon from '../components/SdIcon.vue'
+</script>
 
 <style scoped>
 .sd-statement {

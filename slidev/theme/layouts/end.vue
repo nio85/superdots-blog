@@ -18,9 +18,13 @@
       </div>
     </div>
 
-    <img src="/brand/superdots-logo-white.svg" alt="" class="sd-logo" />
+    <SdLogo class="sd-logo" :height="16" :opacity="0.25" />
   </div>
 </template>
+
+<script setup>
+import SdLogo from '../components/SdLogo.vue'
+</script>
 
 <style scoped>
 .sd-end {

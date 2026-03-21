@@ -22,6 +22,15 @@
 
 /* ─── Base Reset ─── */
 
+/* Override ALL Slidev wrapper backgrounds so no parent container bleeds through */
+html, body,
+#app, #slide-content,
+.slidev-slides,
+.slidev-slide-container,
+.slidev-page {
+  background: var(--sd-navy-deep) !important;
+}
+
 .slidev-layout {
   background: var(--sd-navy-deep) !important;
   color: #CBD5E1 !important;
