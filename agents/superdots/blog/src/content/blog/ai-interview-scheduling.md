@@ -17,6 +17,7 @@ faqs:
     answer: "This is actually where they shine most. GoodTime and ModernLoop are specifically built for multi-interviewer coordination. They scan all panelists' calendars simultaneously, factor in timezone differences and buffer time, rotate interviewers to reduce bias, and even track interviewer training certifications to ensure only qualified interviewers are assigned. If a panelist cancels, the tool automatically finds a replacement."
   - question: "How do AI scheduling tools integrate with applicant tracking systems?"
     answer: "Most enterprise tools offer native integrations with major ATS platforms. GoodTime and Paradox connect natively with Greenhouse, Lever, Workday, iCIMS, and SmartRecruiters. Rooster is built exclusively for Workday. ModernLoop has deep Greenhouse integration. Calendly connects via API to most platforms. When evaluating tools, check that the integration is bidirectional — meaning the scheduling tool and ATS stay in sync automatically, not just a one-way data push."
+heroImage: "/images/blog/ai-interview-scheduling.webp"
 ---
 
 Scheduling interviews should take 30 seconds. Pick a time, send a link, done.
