@@ -481,6 +481,24 @@ hr {
 	padding: var(--space-6);
 }
 
+/* --- Page Header — Shared listing/section header --- */
+
+.page-header {
+	position: relative;
+	overflow: hidden;
+	padding: var(--space-6) 0 var(--space-2);
+}
+
+.page-header h1 {
+	margin-bottom: var(--space-2);
+}
+
+/* --- Dot Accent — Brand color for punctuation in headings --- */
+
+.dot-accent {
+	color: var(--color-primary);
+}
+
 /* --- Section Utilities --- */
 
 .section {
