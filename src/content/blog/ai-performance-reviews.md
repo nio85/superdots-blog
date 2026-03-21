@@ -136,3 +136,5 @@ Here is what this looks like in practice for a manager with eight direct reports
 You save roughly half the time — and the reviews are more specific and consistent because the AI forced you to start with structured input instead of staring at a blank page.
 
 The time you save is not the point. The point is that you spend your time on the parts that matter — the judgment, the nuance, the knowledge of your people — instead of the writing mechanics. That makes the reviews better for everyone.
+
+For the full picture of how AI supports every HR function — from recruiting and onboarding to reviews and workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).

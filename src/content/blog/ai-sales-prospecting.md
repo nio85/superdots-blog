@@ -148,4 +148,4 @@ The best sales teams are not the ones with the most reps. They are the ones whos
 
 Start with your ICP, feed the tool your best customers, and let AI find more like them. The technology is mature, the pricing is accessible, and the impact on pipeline velocity is immediate.
 
-For a comprehensive view of AI across your sales function, see our [AI sales forecasting](/blog/ai-sales-forecasting) guide, and for an overview of AI tools across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For a comprehensive view of AI across your entire sales function, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide). For an overview of AI tools across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

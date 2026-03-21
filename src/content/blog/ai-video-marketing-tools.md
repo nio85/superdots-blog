@@ -134,4 +134,4 @@ AI video tools do not make you a filmmaker. They make video accessible to teams 
 
 Start with repurposing content you already have. Expand to original short-form when you find your rhythm. Save traditional production for the moments when authenticity and craft genuinely matter.
 
-For a comprehensive look at AI tools across your marketing stack, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For a comprehensive look at AI across your entire marketing stack, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

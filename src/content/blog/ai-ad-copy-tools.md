@@ -210,6 +210,7 @@ Iterate constantly. Ad fatigue is real and AI makes it economical to refresh cre
 
 **Related reads:**
 
+- [AI for Marketing: Complete Guide](/blog/ai-for-marketing-complete-guide) — The complete guide to AI across content, ads, email, and every marketing function.
 - [AI Email Marketing](/blog/ai-email-marketing) — Apply the same test-and-iterate approach to email campaigns.
 - [AI Writing Assistant: Keep Your Voice](/blog/ai-writing-assistant-keep-your-voice) — Maintain brand consistency across high-volume AI-generated copy.
 - [AI Sales Emails](/blog/ai-sales-emails) — Use AI for outbound sales copy that gets responses.

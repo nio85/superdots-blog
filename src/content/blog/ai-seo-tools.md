@@ -175,4 +175,4 @@ The tools are mature enough to deliver real value today. But the value comes fro
 
 The goal is not to automate SEO. It is to spend less time on the mechanical parts so you can spend more time on the strategic parts — the content angles, the user experience, the original insights that no tool can generate for you.
 
-For a broader look at how AI tools can improve your marketing workflow, explore our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For a broader look at how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, explore our [AI tools for business guide](/blog/ai-tools-for-business-guide).

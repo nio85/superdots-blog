@@ -231,6 +231,7 @@ AI doesn't eliminate the judgment calls. It gives you better information to make
 
 ## Related reads
 
+- [AI for Sales: Complete Guide](/blog/ai-for-sales-complete-guide) — The complete guide to AI across every sales function.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting)
 - [AI Sales Prospecting](/blog/ai-sales-prospecting)
 - [AI Data Analysis for Non-Technical Teams](/blog/ai-data-analysis-for-non-technical-teams)

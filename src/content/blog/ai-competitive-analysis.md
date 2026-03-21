@@ -276,5 +276,5 @@ You don't need to build the whole system at once. Here's a sequence that gets yo
 4. **This month**: Share the battlecards with your team. Run a 30-minute session on the 3-sentence positioning framework.
 5. **Ongoing**: Spend 30 minutes per week reviewing alerts and updating your competitive briefs. Schedule a monthly review analysis refresh.
 
-The reps who prep smarter don't just know more — they sell with more confidence. And confidence, combined with current information, is what wins competitive deals. If your team is also drowning in email during deal cycles, pair this with an [AI email triage workflow](/blog/automate-email-triage-with-ai) to keep your inbox from eating into research time.
+The reps who prep smarter don't just know more — they sell with more confidence. And confidence, combined with current information, is what wins competitive deals. For the complete picture of how AI supports every sales function, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide). If your team is also drowning in email during deal cycles, pair this with an [AI email triage workflow](/blog/automate-email-triage-with-ai) to keep your inbox from eating into research time.
 

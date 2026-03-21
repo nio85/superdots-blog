@@ -154,3 +154,5 @@ Here's a 30-minute exercise to build your AI art capability:
 5. **Build your prompt library.** Save the prompts that produced the best results.
 
 AI-generated art isn't going to win design awards. But for the everyday visual content your business needs — the images that make your blog posts, social feeds, and presentations look professional instead of bare — it's faster, cheaper, and more relevant than the alternatives. Start using it.
+
+For the complete picture of how AI supports every marketing function — from visual content and brand to SEO and analytics — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).

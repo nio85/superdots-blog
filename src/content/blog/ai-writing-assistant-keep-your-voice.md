@@ -123,3 +123,5 @@ This pass takes 10-15 minutes and is the difference between "AI-assisted" and "A
 After you finish any AI-assisted piece, ask yourself: "Could I defend every sentence in this article as something I believe and would say?" If the answer is no, you have let the AI take too much control.
 
 The goal is not to hide that you use AI. It is to use AI in a way that makes your writing better without making it generic. Speed without sacrifice. These same principles apply whether you are crafting marketing copy or [writing technical documentation](/blog/writing-better-docs-with-ai/).
+
+For the full picture of how AI is transforming every marketing function — from content creation and SEO to email and brand — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).

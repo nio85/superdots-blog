@@ -302,3 +302,5 @@ Then measure what changed. Did new hires complete onboarding faster? Did they as
 The goal is not to remove humans from onboarding. The best parts — the welcome lunch, the first real project, the manager who says "I'm glad you're here" — should stay human. AI just handles the rest so those human moments actually happen instead of getting buried under paperwork.
 
 When those new hires eventually move on, the same principles apply in reverse. See how [AI transforms employee offboarding](/blog/ai-employee-offboarding) to protect your company from the security and knowledge risks of unstructured departures.
+
+For the full picture of how AI is reshaping people operations — from recruiting through offboarding — see our [complete guide to AI for HR](/blog/ai-for-hr).
