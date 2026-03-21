@@ -45,29 +45,29 @@ import SdLogo from '../components/SdLogo.vue'
 .sd-bg-base {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #0B1222 0%, #0E1729 40%, #0B1222 100%);
+  background: linear-gradient(160deg, #0D1526 0%, #0F1A2E 30%, #0B1222 60%, #0A0F1E 100%);
   z-index: 0;
 }
 
 .sd-glow-primary {
   position: absolute;
-  top: -30%;
-  right: 10%;
-  width: 80%;
-  height: 90%;
-  background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.10) 0%, rgba(232, 54, 59, 0.03) 40%, transparent 70%);
-  filter: blur(60px);
+  top: -20%;
+  left: 30%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.14) 0%, rgba(232, 54, 59, 0.06) 30%, rgba(232, 54, 59, 0.02) 50%, transparent 75%);
+  filter: blur(80px);
   z-index: 1;
 }
 
 .sd-glow-secondary {
   position: absolute;
-  bottom: -20%;
-  left: 40%;
-  width: 50%;
-  height: 60%;
-  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.05) 0%, transparent 65%);
-  filter: blur(50px);
+  bottom: -15%;
+  right: 15%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.07) 0%, rgba(20, 184, 166, 0.02) 40%, transparent 70%);
+  filter: blur(70px);
   z-index: 1;
 }
 
@@ -84,8 +84,8 @@ import SdLogo from '../components/SdLogo.vue'
 .sd-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
   z-index: 2;
 }
 

@@ -34,7 +34,7 @@ import SdIcon from '../components/SdIcon.vue'
 
 .sd-logo-mark {
   position: absolute;
-  top: 2rem;
+  bottom: 2rem;
   right: 2.5rem;
   width: 24px;
   height: 24px;
