@@ -166,6 +166,7 @@ The map was always supposed to help you understand your customers. AI finally le
 
 ## Related reads
 
+- [AI for Marketing: Complete Guide](/blog/ai-for-marketing-complete-guide) — The complete guide to AI across every marketing function.
 - [AI Content Creation](/blog/ai-content-creation)
 - [AI Market Research](/blog/ai-market-research)
 - [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis)

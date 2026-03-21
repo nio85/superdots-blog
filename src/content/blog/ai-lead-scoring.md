@@ -287,6 +287,7 @@ Measure lead-to-opportunity conversion by score tier. If A leads are not convert
 
 **Related reads:**
 
+- [AI for Sales: Complete Guide](/blog/ai-for-sales-complete-guide) — The complete guide to AI across prospecting, scoring, forecasting, and every sales function.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting) — Use AI to predict revenue from your scored pipeline.
 - [AI Sales Emails](/blog/ai-sales-emails) — Write better outreach for the leads AI tells you to prioritize.
 - [AI for Sales Call Prep](/blog/ai-for-sales-call-prep) — Prepare for calls with high-scored prospects using AI research.

@@ -229,6 +229,7 @@ The $400 billion corporate training industry is not going away. But the companie
 
 **Related reads:**
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI across recruiting, onboarding, training, and every HR function.
 - [AI Employee Onboarding](/blog/ai-employee-onboarding) — Apply the same personalization principles to new hire training from day one.
 - [AI Performance Reviews](/blog/ai-performance-reviews) — Connect training outcomes to performance data for a complete picture.
 - [AI Knowledge Base for Teams](/blog/ai-knowledge-base-for-teams) — Build the always-available resource that supports ongoing learning.

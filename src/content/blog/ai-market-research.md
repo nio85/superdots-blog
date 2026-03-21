@@ -185,3 +185,5 @@ You can start with a general-purpose AI assistant (ChatGPT, Claude, Gemini) and 
 ### How do I present AI-generated research to stakeholders?
 
 Be transparent about your methodology. State that you used AI tools for data analysis, explain what data sources you used, and highlight where you validated findings independently. Stakeholders care about the quality of insights, not whether a human or AI processed the raw data. Present findings with confidence intervals — "high confidence" for triangulated findings, "hypothesis" for single-source insights.
+
+For the complete picture of how AI supports every marketing function — from market research and analytics to content and brand — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).

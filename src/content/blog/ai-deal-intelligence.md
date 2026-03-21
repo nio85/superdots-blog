@@ -160,6 +160,7 @@ The best sales teams are not better at intuition than everyone else. They are be
 
 **Related reads:**
 
+- [AI for Sales: Complete Guide](/blog/ai-for-sales-complete-guide) — The complete guide to AI across prospecting, scoring, deal intelligence, and every sales function.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting) — Roll deal health signals into an accurate revenue forecast.
 - [AI CRM Tools](/blog/ai-crm-tools) — The CRM layer that deal intelligence tools sit on top of.
 - [AI Lead Scoring](/blog/ai-lead-scoring) — Prioritize which deals deserve the most attention before they even enter the pipeline.

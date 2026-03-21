@@ -162,4 +162,4 @@ Building a social media content calendar with AI is not about automating away yo
 
 The workflow: define your pillars once, generate ideas monthly, draft and edit in batches, schedule everything in advance, check in weekly. Total time investment: one afternoon per month plus 30 minutes per week.
 
-That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. For a broader look at how AI tools help across your business, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).
+That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. For the full picture of how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).

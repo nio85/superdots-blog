@@ -201,6 +201,7 @@ The goal is not a perfect prediction. It is a data-driven starting point that ma
 
 **Related reads:**
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI-powered people operations, from recruiting to offboarding.
 - [AI for Recruiting](/blog/ai-for-recruiting) — Once you know what roles to fill, here is how AI speeds up the hiring process.
 - [AI Performance Reviews](/blog/ai-performance-reviews) — Turn performance data into actionable workforce insights.
 - [AI Data Analysis for Non-Technical Teams](/blog/ai-data-analysis-for-non-technical-teams) — The broader guide to using AI for analysis without writing code.

@@ -206,6 +206,7 @@ The HR teams that treat compensation as a continuous data practice — rather th
 
 ## Related reads:
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI across every HR function.
 - [AI Workforce Planning](/blog/ai-workforce-planning)
 - [AI Performance Reviews](/blog/ai-performance-reviews)
 - [AI Budgeting Tools](/blog/ai-budgeting-tools)

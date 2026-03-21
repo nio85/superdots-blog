@@ -148,3 +148,5 @@ And on the talent acquisition side, chatbots are increasingly used in [AI recrui
 - **Use the logs.** The chatbot's interaction history is your best source of truth about where HR communication is breaking down. Review it quarterly.
 
 The goal isn't to eliminate HR — it's to eliminate the part of HR that feels like a human search engine. When your team isn't spending half their day answering the same ten questions, they have capacity for the work that actually takes a person.
+
+For the full picture of how AI is transforming people operations — from chatbots to recruiting, onboarding, and workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).
