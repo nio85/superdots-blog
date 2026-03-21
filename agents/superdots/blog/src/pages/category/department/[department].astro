@@ -56,7 +56,7 @@ const relatedUseCases = USE_CASES
 
 	<div class="page-header">
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;" aria-hidden="true"></div>
-		<h1>{label}<span class="dot-accent">.</span></h1>
+		<h1>{label}<span class="dot-accent">.</span> <span class="article-count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span></h1>
 		<p class="subtitle">{intro}</p>
 	</div>
 
@@ -86,6 +86,7 @@ const relatedUseCases = USE_CASES
 				{relatedUseCases.map((u) => (
 					<a href={`/category/use-case/${u.slug}/`} class="related-chip">
 						<span class="related-chip-label">{u.label}</span>
+						<span class="related-chip-count">{u.count}</span>
 					</a>
 				))}
 			</div>
@@ -118,6 +119,19 @@ const relatedUseCases = USE_CASES
 		font-weight: var(--weight-medium);
 	}
 
+	.article-count {
+		display: inline-block;
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-full);
+		vertical-align: middle;
+		letter-spacing: 0;
+	}
 	.subtitle {
 		color: var(--color-text-muted);
 		margin-bottom: var(--space-6);
@@ -167,6 +181,13 @@ const relatedUseCases = USE_CASES
 		text-decoration: none;
 		transform: translateY(-2px);
 		box-shadow: var(--shadow-sm);
+	}
+	.related-chip-count {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		padding: var(--space-0-5) var(--space-2);
+		border-radius: var(--radius-full);
 	}
 
 	@media (min-width: 640px) {
