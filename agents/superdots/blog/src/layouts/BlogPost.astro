@@ -7,6 +7,7 @@ import OptimizedImage from '../components/OptimizedImage.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
@@ -27,6 +28,8 @@ const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/
 const tagMeta = (tags ?? [])
 	.map((t: string) => TAGS.find((tm) => tm.slug === t))
 	.filter(Boolean);
+
+const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -118,15 +121,18 @@ const tagMeta = (tags ?? [])
 					</div>
 					<h1>{title}<span class="dot-accent">.</span></h1>
 					<p class="description">{description}</p>
-					<div class="byline">
-						<span class="author">{author}</span>
-						<span class="separator">&middot;</span>
-						<FormattedDate date={pubDate} />
-						{updatedDate && (
-							<span class="updated">
-								(Updated: <FormattedDate date={updatedDate} />)
-							</span>
-						)}
+					<div class="byline-row">
+						<div class="byline">
+							<span class="author">{author}</span>
+							<span class="separator">&middot;</span>
+							<FormattedDate date={pubDate} />
+							{updatedDate && (
+								<span class="updated">
+									(Updated: <FormattedDate date={updatedDate} />)
+								</span>
+							)}
+						</div>
+						<ShareButtons url={articleUrl} title={title} description={description} />
 					</div>
 				</div>
 				{heroImage && (
@@ -379,8 +385,15 @@ const tagMeta = (tags ?? [])
 		color: var(--color-text-strong);
 		text-decoration: none;
 	}
-	.byline {
+	.byline-row {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+	.byline {
 		color: var(--color-text-muted);
 		font-size: var(--text-sm);
 		display: flex;
