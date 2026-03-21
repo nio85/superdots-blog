@@ -7,6 +7,17 @@ department: 'hr'
 useCase: 'automation'
 tags: ['ai-for-hr', 'ai-tools']
 heroImage: "/images/blog/ai-for-recruiting.webp"
+faqs:
+  - question: "Is AI recruiting biased?"
+    answer: "It can be. Amazon's AI recruiting tool was scrapped in 2018 after it systematically downgraded resumes mentioning women's organizations. University of Washington research found that LLMs favored white-associated names 85% of the time in resume ranking. HireVue's speech recognition algorithms were found to disadvantage non-white and deaf applicants. The key is active bias testing and auditing — name-swap tests, quarterly demographic audits, and ongoing review of shortlist diversity. Bias is a risk, not an inevitability, if you build in the right checks."
+  - question: "What percentage of companies use AI in recruiting?"
+    answer: "99% of Fortune 500 companies use some form of automation in hiring. Adoption is growing rapidly at smaller companies too, driven by affordable AI-powered ATS platforms and scheduling tools that work even for teams of a few people."
+  - question: "Can AI replace human recruiters?"
+    answer: "No. AI handles volume and speed — screening hundreds of resumes in minutes, eliminating scheduling back-and-forth, and drafting routine communications. But nuance and judgment still require people: assessing culture fit, spotting non-obvious potential in career changers, reading the room in an interview, and making final hiring decisions. The best recruiting teams use AI to eliminate busywork so recruiters can spend more time on the parts that actually require a human."
+  - question: "Is AI recruiting legal?"
+    answer: "Yes, but the regulatory landscape is evolving quickly. New York City's Local Law 144 requires bias audits and candidate disclosure for automated employment decision tools. Illinois and Maryland have similar requirements. California finalized AI hiring regulations in October 2025. The Colorado AI Act, effective June 2026, requires reasonable care to prevent algorithmic discrimination. The EU AI Act classifies AI hiring tools as high-risk. Companies using AI in recruiting should document their bias testing, disclose AI use to candidates, and monitor new regulations in their jurisdictions."
+  - question: "How much time does AI save in recruiting?"
+    answer: "Resume screening alone saves 10-15 hours per open role — a typical recruiter spends 7 seconds per resume on an initial scan, and AI can review 250+ applications in under a minute. Interview scheduling saves 15-20 emails per interview loop by eliminating the back-and-forth coordination. Job description drafting and optimization drops from a full day to about 20 minutes. For high-volume hiring, the time savings compound significantly across dozens of open roles."
 ---
 
 Your recruiting team is buried. Hundreds of applications per role, scheduling nightmares, job descriptions that took three people and a week to finalize. AI can fix most of this. But only if you use it in the right places — and keep humans where they matter.
@@ -182,7 +193,11 @@ This is the section most AI recruiting guides skip, but it is the one that can g
 
 ### Testing for bias in your AI outputs
 
-AI screening tools can inherit and amplify biases from their training data. Amazon famously scrapped an AI recruiting tool in 2018 because it systematically downgraded resumes that included the word "women's" — as in "women's chess club captain."
+AI screening tools can inherit and amplify biases from their training data. Amazon famously scrapped an AI recruiting tool in 2018 because it systematically downgraded resumes that included the word "women's" — as in "women's chess club captain." That example is widely cited, but it is not isolated.
+
+HireVue's speech recognition algorithms — used by 700+ companies including Goldman Sachs and Unilever — were found to disadvantage non-white and deaf applicants, raising serious questions about algorithmic validity in video-based screening. A class-action lawsuit was filed against Workday alleging its AI screening tools discriminated against candidates based on race, age, and disability. Stanford researchers found that AI resume-screening tools gave older male candidates higher ratings than female and younger candidates with identical qualifications. And University of Washington research found that large language models favored white-associated names 85% of the time in resume ranking tasks.
+
+This is not an argument against AI in recruiting. It is an argument for testing your tools — before they become a liability.
 
 You need to actively test for this. Here is how:
 
@@ -199,13 +214,13 @@ Compare these distributions against your applicant pool. If your shortlists are 
 
 **Test with equivalent resumes.** Create two identical resumes with different formatting, schools, or company names. If one scores significantly higher, investigate why.
 
-**Document everything.** Keep records of your testing process and results. Several U.S. states (New York, Illinois, Maryland) already require bias audits for AI hiring tools, and more legislation is coming. The EU AI Act classifies AI hiring tools as "high-risk," which triggers specific compliance requirements.
+**Document everything.** Keep records of your testing process and results. Several U.S. states (New York, Illinois, Maryland) already require bias audits for AI hiring tools, and more legislation is coming. The EU AI Act classifies AI hiring tools as "high-risk," which triggers specific compliance requirements. For a deeper look at how to use AI to actively improve representation rather than simply avoid harm, see our guide on [AI and diversity hiring](/blog/ai-diversity-hiring).
 
 ### Transparency best practices
 
 Here is the reality: 74% of job applicants say they distrust evaluations made entirely by AI. And they are not wrong to be cautious. The way you handle transparency directly affects your employer brand and your legal exposure.
 
-**Tell candidates when AI is involved.** This is already legally required in New York City (Local Law 144), Illinois, and parts of the EU. Even where it is not required, it is the right thing to do. A simple statement works:
+**Tell candidates when AI is involved.** This is already legally required in New York City (Local Law 144), Illinois, and parts of the EU. California finalized AI hiring regulations in October 2025 with similar disclosure and audit requirements. Colorado's AI Act, effective June 2026, requires employers using algorithmic decision-making tools to take reasonable care to prevent discrimination — including in hiring. The regulatory trend is clearly toward more oversight, not less. Even where disclosure is not yet required, it is the right thing to do. A simple statement works:
 
 > "We use AI-assisted tools to help review applications. All shortlisted candidates are reviewed by our recruiting team, and final decisions are always made by people."
 
