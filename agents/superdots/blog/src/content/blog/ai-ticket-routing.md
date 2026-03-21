@@ -28,7 +28,7 @@ This happens constantly. And according to industry data, misrouted tickets take 
 
 Misrouted tickets are not just annoying. They are expensive.
 
-**Resolution time doubles.** Every unnecessary transfer adds wait time. Tickets routed to the wrong team take 2-3x longer to resolve than correctly routed ones. That is not a rounding error — it is the difference between a satisfied customer and one writing a negative review. Equinix, a global digital infrastructure company, saw this firsthand: after deploying AI-powered ticket classification, they achieved 96% routing accuracy and reduced ticket resolution times by roughly a third.
+**Resolution time doubles.** Every unnecessary transfer adds wait time. Tickets routed to the wrong team take 2-3x longer to resolve than correctly routed ones. That is not a rounding error — it is the difference between a satisfied customer and one writing a negative review. Equinix, a global digital infrastructure company, saw this firsthand: after deploying [AI-powered ticket classification](https://www.moveworks.com/us/en/customers/equinix-disappears-it-queue-with-moveworks-triage-ticketing-system), they achieved 96% routing accuracy and reduced ticket resolution times by roughly a third.
 
 **Agent productivity drops.** Your billing specialist spends 15 minutes a day reading tickets that should have gone to tech support, then manually reassigning them. Across a 20-person support team, that is 5 hours of wasted time every day. That is a full-time employee's worth of productivity, gone to triage.
 
@@ -136,7 +136,7 @@ Do not set the confidence threshold to 50% on day one because you want to automa
 
 You need numbers to justify the investment and to know if it is working. Track these metrics before and after implementation.
 
-**First-response time.** How long until the right agent sees the ticket? This should drop significantly. According to Pylon, AI-powered support can reduce first response times by 37-97%, with some implementations dropping from 15 minutes to under 30 seconds. James Villas, a travel company, cut first reply time on important tickets by 46% using SentiSum's automated routing.
+**First-response time.** How long until the right agent sees the ticket? This should drop significantly. According to [Pylon](https://www.usepylon.com/blog/ai-powered-customer-support-guide) (vendor-reported data), AI-powered support can reduce first response times by 37-97%, with some implementations dropping from 15 minutes to under 30 seconds. James Villas, a travel company, [cut first reply time on important tickets by 46%](https://www.sentisum.com/case-studies/james-villas) using SentiSum's automated routing.
 
 **Transfer rate.** What percentage of tickets get transferred after initial routing? This is your accuracy metric. Pre-AI, most teams see 20-30% transfer rates. Post-AI, aim for under 10%.
 

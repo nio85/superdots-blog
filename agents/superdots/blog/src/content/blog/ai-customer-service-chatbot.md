@@ -20,7 +20,7 @@ faqs:
     answer: "A good starting target is 30-40% deflection in the first month. After optimization, most teams reach 50% or higher. According to Freshworks, their AI agents deflect over 53% of retail queries. Top performers with well-structured knowledge bases and backend integrations reach 70% or above."
 ---
 
-According to Gartner, conversational AI will reduce contact center agent labor costs by $80 billion in 2026. Your support team is drowning. Ticket volume keeps climbing, customers expect instant answers, and hiring is not moving fast enough to keep up. You have heard that AI chatbots can help — but everything you have read sounds like it requires an engineering team you do not have.
+According to [Gartner](https://www.gartner.com/en/newsroom/press-releases/2022-08-31-gartner-predicts-conversational-ai-will-reduce-contac), conversational AI will reduce contact center agent labor costs by $80 billion in 2026. Your support team is drowning. Ticket volume keeps climbing, customers expect instant answers, and hiring is not moving fast enough to keep up. You have heard that AI chatbots can help — but everything you have read sounds like it requires an engineering team you do not have.
 
 It does not. Modern AI customer service chatbot platforms are built for support managers, not developers. Most can be set up in a day, trained on your existing knowledge base, and live within a week. For a broader look at how AI is reshaping customer support, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide). Here is exactly how to set one up.
 
@@ -209,5 +209,5 @@ Here is what to do next:
 2. **Audit your top 20 help articles this week.** Make them AI-readable: one topic per article, answer in the first sentence, customer language throughout.
 3. **Set a 30-day goal.** Track deflection rate and CSAT from day one. Aim for 30% deflection in month one, then optimize from there.
 
-With 85% of customer service leaders exploring conversational AI in 2025, according to Gartner, this is not an experiment anymore — it is how modern support teams operate. And you can [keep your brand voice consistent](/blog/ai-writing-assistant-keep-your-voice) even in automated responses.
+With [85% of customer service leaders](https://www.gartner.com/en/newsroom/press-releases/2024-12-09-gartner-survey-reveals-85-percent-of-customer-service-leaders-will-explore-or-pilot-customer-facing-conversational-genai-in-2025) exploring conversational AI in 2025, according to Gartner, this is not an experiment anymore — it is how modern support teams operate. And you can [keep your brand voice consistent](/blog/ai-writing-assistant-keep-your-voice) even in automated responses.
 

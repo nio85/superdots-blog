@@ -11,7 +11,7 @@ faqs:
   - question: "What is an AI knowledge base generator?"
     answer: "An AI knowledge base generator is a tool that automatically creates and maintains help articles from your existing support data — tickets, chat transcripts, agent responses, and internal docs. It clusters similar questions, extracts the best answers from your top-performing agents, and drafts structured articles for human review. Unlike a chatbot, it does not interact with customers directly — it builds the content library that chatbots and self-service portals use."
   - question: "How much can an AI knowledge base generator reduce support tickets?"
-    answer: "Companies with mature, AI-maintained knowledge bases see an average 23% reduction in support ticket volume, according to industry benchmarks. B2B SaaS companies using AI-first support platforms report up to 60% higher ticket deflection compared to traditional solutions. The key factor is content quality and coverage — better articles mean more customers find answers without submitting tickets."
+    answer: "Companies with mature, AI-maintained knowledge bases see an average 23% reduction in support ticket volume, according to vendor-reported data from [Pylon](https://www.usepylon.com/blog/ai-ticket-deflection-reduce-support-volume-2025). B2B SaaS companies using AI-first support platforms report up to 60% higher ticket deflection compared to traditional solutions. The key factor is content quality and coverage — better articles mean more customers find answers without submitting tickets."
   - question: "Do AI-generated knowledge base articles need human review?"
     answer: "Yes, always. AI eliminates the blank-page problem — it drafts structured articles from your best agent responses — but human editors should review every article before publishing. AI does not know your product nuances, brand voice quirks, or edge cases that could make instructions misleading. The first batch of articles typically needs more editing; quality improves as the AI calibrates to your standards."
   - question: "How long does it take to set up an AI knowledge base generator?"
@@ -175,7 +175,7 @@ Track how many tickets are deflected by new knowledge base content. The metric t
 
 An AI knowledge base generator is only as valuable as its impact on your support operation. Here are the numbers to watch.
 
-**Ticket deflection rate.** The percentage of potential tickets resolved by self-service content before a ticket is created. According to Pylon, companies with data-driven knowledge bases see an average 23% reduction in support ticket volume. B2B SaaS companies using AI-first platforms report up to 60% higher deflection compared to traditional solutions. Top performers with AI-generated and maintained content reach 50% or higher.
+**Ticket deflection rate.** The percentage of potential tickets resolved by self-service content before a ticket is created. According to vendor-reported data from [Pylon](https://www.usepylon.com/blog/ai-ticket-deflection-reduce-support-volume-2025), companies with data-driven knowledge bases see an average 23% reduction in support ticket volume. B2B SaaS companies using AI-first platforms report up to 60% higher deflection compared to traditional solutions. Top performers with AI-generated and maintained content reach 50% or higher.
 
 **Content coverage ratio.** The percentage of ticket topics that have a corresponding knowledge base article. If you are below 60%, you have significant gaps. Above 80% is strong.
 

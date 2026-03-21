@@ -62,7 +62,7 @@ Technical issues that follow a diagnostic pattern ("Is the red light on? Yes. Ha
 
 Everything your team would have resolved during business hours anyway — now resolved at 2am, without making the customer wait. This alone can move your customer satisfaction scores meaningfully, because response time is one of the biggest satisfaction drivers.
 
-Lush, the cosmetics company, demonstrates the impact well. Their AI assistant Marvin handles straightforward customer inquiries and saves agents about five minutes per ticket — translating to 360 agent hours saved each month. That is the equivalent of two full-time employees freed up to handle complex, high-value interactions instead of answering repetitive questions.
+Lush, the cosmetics company, demonstrates the impact well. Their AI assistant Marvin handles straightforward customer inquiries and [saves agents about five minutes per ticket](https://www.zendesk.com/customer/lush/) — translating to 360 agent hours saved each month. That is the equivalent of two full-time employees freed up to handle complex, high-value interactions instead of answering repetitive questions.
 
 ## Building Your AI Self-Service Stack
 
