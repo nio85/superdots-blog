@@ -532,12 +532,44 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		line-height: var(--leading-snug);
 		letter-spacing: -0.01em;
 	}
-	/* Callout boxes — tables with emoji headers become callout-style visually */
+	/* Responsive table wrapper — wraps every <table> via rehype plugin */
+	.prose :global(.table-scroll) {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: var(--space-6) 0;
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		/* Scroll affordance — subtle shadow on right edge */
+		background:
+			linear-gradient(to right, var(--color-bg) 30%, transparent),
+			linear-gradient(to left, var(--color-bg) 30%, transparent),
+			linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent 15px),
+			linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent 15px);
+		background-position: left center, right center, left center, right center;
+		background-repeat: no-repeat;
+		background-size: 20px 100%, 20px 100%, 15px 100%, 15px 100%;
+		background-attachment: local, local, scroll, scroll;
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar) {
+		height: 6px;
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-track) {
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-full);
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-thumb) {
+		background: var(--color-border-strong);
+		border-radius: var(--radius-full);
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-thumb:hover) {
+		background: var(--color-text-muted);
+	}
+	/* Table base styles */
 	.prose :global(table) {
 		width: 100%;
 		border-collapse: collapse;
-		margin: var(--space-6) 0;
 		font-size: var(--text-base);
+		margin: 0; /* margin handled by .table-scroll wrapper */
 	}
 	.prose :global(th) {
 		text-align: left;
@@ -549,6 +581,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		font-size: var(--text-sm);
 		letter-spacing: 0.02em;
 		color: var(--color-text-strong);
+		white-space: nowrap;
 	}
 	.prose :global(td) {
 		padding: var(--space-3) var(--space-4);
@@ -557,6 +590,26 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 	}
 	.prose :global(tr:last-child td) {
 		border-bottom: none;
+	}
+	.prose :global(tr:hover td) {
+		background: var(--color-bg-dim);
+	}
+	/* Mobile table adjustments */
+	@media (max-width: 768px) {
+		.prose :global(.table-scroll) {
+			margin: var(--space-4) calc(-1 * var(--space-4));
+			border-radius: 0;
+			border-left: none;
+			border-right: none;
+		}
+		.prose :global(th),
+		.prose :global(td) {
+			padding: var(--space-2) var(--space-3);
+			font-size: var(--text-sm);
+		}
+		.prose :global(th) {
+			font-size: var(--text-xs);
+		}
 	}
 	/* Code block refinements */
 	.prose :global(pre) {
