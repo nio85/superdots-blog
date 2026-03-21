@@ -21,7 +21,7 @@ faqs:
     answer: "Excellent. Tools like remove.bg and PhotoRoom handle clean backgrounds in seconds with 95%+ accuracy, including tricky edges like hair and transparent objects. Complex backgrounds with similar foreground colors still occasionally need manual touchup."
   - question: "Can AI help with batch editing for e-commerce?"
     answer: "Yes. Tools like PhotoRoom, Pixelcut, and remove.bg offer batch processing — upload dozens or hundreds of product photos and apply consistent editing (background removal, enhancement, resizing) in minutes instead of hours."
-heroImage: '/images/blog/ai-image-editing-tools.webp'
+heroImage: "/images/blog/ai-image-editing-tools.webp"
 ---
 
 Your team needs images constantly. Product photos for the website. Headshots for the team page. Social media graphics. Presentation visuals. Banners for email campaigns.

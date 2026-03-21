@@ -21,7 +21,7 @@ faqs:
     answer: "As long as it needs to be for clarity. Simple tasks need 1-2 sentences. Complex tasks benefit from 3-5 sentences with specific context. There's no penalty for longer prompts — AI tools handle detailed instructions better than vague ones."
   - question: "Does prompt engineering work the same across different AI tools?"
     answer: "The principles are the same (be specific, give context, provide examples), but each tool has quirks. Claude tends to follow nuanced instructions well. ChatGPT responds well to step-by-step formatting. Test your prompts on the tool your team uses."
-heroImage: '/images/blog/ai-prompt-engineering-for-business.webp'
+heroImage: "/images/blog/ai-prompt-engineering-for-business.webp"
 ---
 
 You've tried AI. You typed a question, got a mediocre answer, and thought: "This isn't as useful as everyone says."

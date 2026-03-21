@@ -19,7 +19,7 @@ faqs:
     answer: "Free tiers handle small volumes (50-100 documents/month). Paid plans range from $20-200/month depending on volume and complexity. Enterprise OCR tools like Rossum start around $500/month for high-volume processing. ROI is typically positive within the first month."
   - question: "Is AI data entry secure for sensitive information?"
     answer: "Enterprise AI tools offer encryption, SOC 2 compliance, and data residency options. For sensitive data like financial records or personal information, use tools with clear data handling policies and avoid free-tier tools that may use your data for model training."
-heroImage: '/images/blog/ai-data-entry-automation.webp'
+heroImage: "/images/blog/ai-data-entry-automation.webp"
 ---
 
 Manual data entry is one of those tasks everyone knows is a waste of time, but few teams have actually automated. The reasons are always the same: "It's too technical," "Our data is too messy," "We tried automation before and it didn't work."
