@@ -85,11 +85,11 @@ Then expand to other departments. Engineering is harder (headcount is project-dr
 
 ## AI for Skills Gap Analysis and Internal Mobility
 
-Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?"
+Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?" If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 ### Skills inventory
 
-AI can build a skills inventory from data you already have:
+AI can build a skills inventory from data you already have: For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 - **Resume and profile data.** What skills did employees list when they were hired?
 - **Project history.** What have they actually worked on? A developer who has been writing Python for two years has Python skills regardless of what their resume says.

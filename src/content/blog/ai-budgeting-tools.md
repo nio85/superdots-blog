@@ -70,7 +70,7 @@ You do not have to ask for these insights. The AI surfaces them proactively, the
 
 ### Visual dashboards from raw data
 
-Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and dashboards automatically:
+Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and dashboards automatically: If this applies to your team, our [AI Cash Flow Forecasting: Predict Your Cash Position With Confidence](/blog/ai-cash-flow-forecasting/) guide covers the details.
 
 - Upload a CSV of monthly expenses and get a trend chart in seconds.
 - Ask for a breakdown of spending by category and get a pie chart.

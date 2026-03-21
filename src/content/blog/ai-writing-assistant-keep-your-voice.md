@@ -46,7 +46,7 @@ This takes 5-10 minutes but makes the difference between generic content and con
 
 ### Step 2: Use AI for the parts that slow you down
 
-Different people get stuck at different points. Use AI for your specific bottlenecks:
+Different people get stuck at different points. Use AI for your specific bottlenecks: For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
 
 **If you struggle with structure**: Give AI your rough ideas and ask it to suggest an outline. "Here are my thoughts on X. Organize these into a logical article structure with headings." You can even use [AI presentation tools](/blog/ai-presentation-maker/) to turn that outline into slides.
 
@@ -58,7 +58,7 @@ Different people get stuck at different points. Use AI for your specific bottlen
 
 ### Step 3: Train AI on your voice
 
-Most modern AI tools let you provide context about your writing style. Use this. Give it:
+Most modern AI tools let you provide context about your writing style. Use this. Give it: For more on this topic, check out [How to Build an AI Social Media Content Calendar (Even If You're Not a Marketer)](/blog/ai-social-media-content-calendar/).
 
 - 3-5 examples of your published writing
 - A style brief: "Direct. Short sentences. No jargon. Use concrete examples instead of abstract advice."

@@ -77,7 +77,7 @@ For ongoing data analysis once your data is clean, check out our guide to [AI da
 
 ### Step 1: Identify your highest-volume data entry tasks
 
-List every place in your workflow where someone manually enters data. Common examples:
+List every place in your workflow where someone manually enters data. Common examples: For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 - Invoice processing
 - Expense report entry

@@ -80,7 +80,7 @@ The employee sees these flags immediately, not a week later in a rejection email
 
 ### Smart approval routing
 
-Most expense tools route approvals based on a simple org chart: your expenses go to your manager. AI makes this smarter:
+Most expense tools route approvals based on a simple org chart: your expenses go to your manager. AI makes this smarter: If this applies to your team, our [AI Cash Flow Forecasting: Predict Your Cash Position With Confidence](/blog/ai-cash-flow-forecasting/) guide covers the details.
 
 - **Amount-based routing.** Expenses under $100 get auto-approved. $100–$500 go to the manager. Over $500 requires director approval.
 - **Category-based routing.** Software purchases route to IT for license tracking. Travel over budget routes to finance.
@@ -90,11 +90,11 @@ Managers stop wasting time approving $8 parking charges and focus their attentio
 
 ## How to set up AI-powered expense reporting
 
-You do not need to rip out your existing tools. Most AI expense features work as additions to what you already have. Here is a practical setup path.
+You do not need to rip out your existing tools. Most AI expense features work as additions to what you already have. Here is a practical setup path. For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 ### Step 1: Audit your current pain points
 
-Before picking a tool, figure out where the bottleneck actually is:
+Before picking a tool, figure out where the bottleneck actually is: For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 - **Are employees not submitting on time?** You need better capture (mobile scanning, email forwarding).
 - **Is categorization inconsistent?** You need AI auto-categorization.

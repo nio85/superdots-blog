@@ -99,7 +99,7 @@ To build a useful AI lead scoring model, you need:
 
 1. **CRM data with outcomes.** At least 6-12 months of deals marked as won or lost. The more deals, the better — 500+ closed deals is a strong starting point.
 2. **Website activity.** Pageview data linked to leads. Most marketing automation platforms (HubSpot, [Marketo](https://business.adobe.com/products/marketo/adobe-marketo.html), Pardot) track this already.
-3. **Email engagement.** Open and click data from your marketing and sales emails.
+3. **Email engagement.** Open and click data from your marketing and sales emails. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 With just these three, you can build a model that outperforms gut feel.
 
@@ -109,7 +109,7 @@ With just these three, you can build a model that outperforms gut feel.
 5. **Product usage data.** If you have a free trial or freemium product, usage patterns are the strongest conversion predictor.
 6. **Sales interaction data.** Call notes, meeting attendance, email reply rates.
 7. **Marketing engagement.** Webinar attendance, ad clicks, social engagement.
-8. **Intent data.** Third-party signals showing what topics leads are researching. Available through Bombora, G2, TrustRadius.
+8. **Intent data.** Third-party signals showing what topics leads are researching. Available through Bombora, G2, TrustRadius. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 ### Data quality matters more than data volume
 

@@ -80,13 +80,13 @@ That single correlated alert contains more useful information than five separate
 
 ## Key capabilities that deliver real value
 
-Not all AI monitoring features deliver equal value. Here are the capabilities that engineering teams actually use day to day.
+Not all AI monitoring features deliver equal value. Here are the capabilities that engineering teams actually use day to day. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 ### Predictive alerting
 
 This is the difference between "your disk is full" and "your disk will be full in 6 hours at the current growth rate."
 
-AI models analyze metric trends and predict where they are heading. If a memory leak is slowly consuming RAM on your application servers, the model spots the upward trend long before it hits any threshold. If database connection pool usage is growing faster than usual, the model flags it while you still have time to act.
+AI models analyze metric trends and predict where they are heading. If a memory leak is slowly consuming RAM on your application servers, the model spots the upward trend long before it hits any threshold. If database connection pool usage is growing faster than usual, the model flags it while you still have time to act. If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 Predictive alerting turns incidents from emergencies into planned maintenance. Instead of scrambling at 2 AM when the disk fills up, you get a Slack message at 2 PM saying you should probably add storage or clean up old logs before tomorrow.
 

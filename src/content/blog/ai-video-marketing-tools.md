@@ -60,7 +60,7 @@ AI avatars are good. They are not people. For content where authenticity and per
 
 ### Complex storytelling
 
-AI tools excel at straightforward, information-delivery formats: explainer, demo, how-to. They struggle with narrative structure, emotional arcs, humor, and the kind of creative storytelling that makes brand films memorable. If your video needs to make someone feel something, AI is probably not the right tool.
+AI tools excel at straightforward, information-delivery formats: explainer, demo, how-to. They struggle with narrative structure, emotional arcs, humor, and the kind of creative storytelling that makes brand films memorable. If your video needs to make someone feel something, AI is probably not the right tool. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 ### Custom animation and motion graphics
 

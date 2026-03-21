@@ -69,13 +69,13 @@ Fleets implementing AI route optimization typically see 10-15% reductions in tot
 
 ## Predictive maintenance: fix it before it breaks
 
-A vehicle breakdown mid-route is not just a maintenance expense. It is a missed delivery, a stranded driver, an emergency tow, a customer call, and a scramble to redeploy. The fully-loaded cost of an unplanned breakdown is 3-5x higher than the cost of the same repair done on schedule.
+A vehicle breakdown mid-route is not just a maintenance expense. It is a missed delivery, a stranded driver, an emergency tow, a customer call, and a scramble to redeploy. The fully-loaded cost of an unplanned breakdown is 3-5x higher than the cost of the same repair done on schedule. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 Predictive maintenance is the highest-ROI application of AI for most fleets. Here is how it works.
 
 ### The data layer
 
-Modern telematics devices from providers like [Samsara](https://www.samsara.com) and [Geotab](https://www.geotab.com) read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time.
+Modern telematics devices from providers like [Samsara](https://www.samsara.com) and [Geotab](https://www.geotab.com) read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time. If this applies to your team, our [AI Procurement Tools: Smarter Sourcing and Vendor Management](/blog/ai-procurement-tools/) guide covers the details.
 
 Most fleet vehicles built after 2015 already have OBD-II ports that expose this data. Adding a telematics dongle costs $100-200 per vehicle. For older vehicles without built-in sensors, aftermarket kits handle tire pressure and basic engine diagnostics.
 

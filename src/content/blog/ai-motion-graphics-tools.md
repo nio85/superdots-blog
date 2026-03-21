@@ -82,7 +82,7 @@ Rive's AI features handle:
 
 For product and UI work, Rive is the right tool. You are building animations that will actually run in your product — not video files you are converting and compressing.
 
-The free plan covers most individual projects. Team plans start around $40/month and add shared libraries and collaboration.
+The free plan covers most individual projects. Team plans start around $40/month and add shared libraries and collaboration. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
 
 **Best for:** UI animations, interactive components, Lottie-format exports for web and mobile.
 
@@ -92,7 +92,7 @@ The free plan covers most individual projects. Team plans start around $40/month
 
 Adobe has caught up. [Adobe Express](https://www.adobe.com/express) now integrates Firefly's generative motion capabilities, letting you animate text, graphics, and images directly inside the same tool where you are likely already building social assets.
 
-The workflow is fast: build your design in Express, select elements, choose an animation style (kinetic text, slideshow, reveal), and Firefly handles the timing and transitions. For templated content at volume — weekly social posts, announcement graphics, event promotions — this is the fastest path.
+The workflow is fast: build your design in Express, select elements, choose an animation style (kinetic text, slideshow, reveal), and Firefly handles the timing and transitions. For templated content at volume — weekly social posts, announcement graphics, event promotions — this is the fastest path. For related guidance, see our guide on [How AI Streamlines Design-to-Dev Handoff](/blog/ai-design-handoff/).
 
 What makes it practical:
 

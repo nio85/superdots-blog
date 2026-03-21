@@ -64,7 +64,7 @@ Every deal that has had its close date pushed back more than twice in a quarter 
 
 Gong is the market leader in conversation intelligence. It records and transcribes all sales calls and emails, analyzes them for deal signals, and surfaces insights at both the deal and rep level. Its "Deal Intelligence" module shows deal health scores, stakeholder engagement maps, and specific risks flagged across each deal. If a deal's champion has gone quiet for two weeks while a legal contact has appeared, Gong will surface that.
 
-Best for: Teams that want deep call analytics alongside deal health. Strong on coaching and rep performance alongside pure deal visibility.
+Best for: Teams that want deep call analytics alongside deal health. Strong on coaching and rep performance alongside pure deal visibility. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 ### Clari
 

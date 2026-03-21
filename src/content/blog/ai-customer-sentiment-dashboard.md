@@ -77,11 +77,11 @@ Each incoming signal gets tagged. The AI assigns:
 - **Urgency level** — is this a one-off complaint or a pattern?
 - **Intent signal** — is the customer at churn risk? Expressing loyalty? Making a feature request?
 
-For domain-specific vocabulary (your product's feature names, internal jargon, industry terms), out-of-the-box models underperform. Fine-tuning on your historical tickets and reviews pushes accuracy from the 80% range into the low 90s.
+For domain-specific vocabulary (your product's feature names, internal jargon, industry terms), out-of-the-box models underperform. Fine-tuning on your historical tickets and reviews pushes accuracy from the 80% range into the low 90s. For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
 
 ### Trend Detection
 
-Individual data points aren't the goal. Trends are.
+Individual data points aren't the goal. Trends are. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
 
 The AI baseline your normal sentiment distribution — what percentage of tickets are negative on an average week, which product areas generate the most friction. Then it flags deviations. If billing-related negative sentiment doubles in 48 hours, that's the signal. Without a baseline, you'd have no way to know whether 30 negative billing tickets is unusual or normal.
 

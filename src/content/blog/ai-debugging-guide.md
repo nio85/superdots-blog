@@ -61,7 +61,7 @@ Before you open an AI tool, get the actual error. Not "it does not work." The sp
 - The exact input that triggers the bug
 - What you expected to happen vs. what actually happened
 
-This matters because the quality of AI debugging output is directly proportional to the quality of your input. Vague descriptions get vague answers.
+This matters because the quality of AI debugging output is directly proportional to the quality of your input. Vague descriptions get vague answers. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 **Example of a bad prompt:**
 

@@ -69,7 +69,7 @@ Some CRMs can do this natively. For others, you can connect an AI tool through Z
 
 ### Create a "call prep" template
 
-Standardize what "prepared" looks like for your team. Every brief should cover:
+Standardize what "prepared" looks like for your team. Every brief should cover: For more on this topic, check out [AI Conversation Intelligence: Extract Real Insights From Every Sales Call](/blog/ai-conversation-intelligence/).
 
 - **Company snapshot**: industry, size, funding stage, competitors, recent momentum
 - **Prospect profile**: role, reports to, how long in position, career trajectory
@@ -89,7 +89,7 @@ The AI output is a starting point, not a script. Spend 2 minutes reviewing and a
 
 ## Scaling call prep across your team
 
-When it's just you, call prep is a personal habit. When you're managing a team of 10+ reps, it becomes a process.
+When it's just you, call prep is a personal habit. When you're managing a team of 10+ reps, it becomes a process. If this applies to your team, our [AI Sales Forecasting: Predict Revenue Without a Data Team](/blog/ai-sales-forecasting/) guide covers the details.
 
 ### Share prompt templates
 

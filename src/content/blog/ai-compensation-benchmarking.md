@@ -96,13 +96,13 @@ The more granular, the better. Add performance ratings, reporting structure dept
 
 This is where most DIY comp audits break down. Your internal job architecture probably doesn't map cleanly to market benchmarks.
 
-AI tools handle this in one of two ways. Some use title-matching algorithms trained on millions of job descriptions to find the closest market equivalent. Better tools ask you to provide a brief role description and use that to match against scope, not title.
+AI tools handle this in one of two ways. Some use title-matching algorithms trained on millions of job descriptions to find the closest market equivalent. Better tools ask you to provide a brief role description and use that to match against scope, not title. For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 Be critical here. If the tool is matching "Product Manager II" to a generic PM bucket without accounting for whether they manage a single feature or an entire product line, the benchmark will be off. Review a sample of mappings manually before trusting the output.
 
 ### Step 3: Run the Benchmark Analysis
 
-With roles mapped, run your full workforce against market data. A good AI tool will output:
+With roles mapped, run your full workforce against market data. A good AI tool will output: Our guide on [Best AI Tools for Employee Engagement in 2026](/blog/ai-employee-engagement/) explores this further.
 
 - Each role's 25th, 50th, 75th, and 90th market percentile for base and total cash
 - Where each employee falls relative to market (their "compa-ratio")

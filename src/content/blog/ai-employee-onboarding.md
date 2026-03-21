@@ -91,7 +91,7 @@ Instead of pinging their manager or HR for each one, a Q&A bot trained on your c
 3. Give new hires a dedicated channel or link where they can ask anything.
 4. Review the questions weekly. When the bot cannot answer something, add that information to your knowledge base.
 
-The bot does not need to be perfect. It just needs to handle the 80% of questions that have clear, documented answers. The remaining 20% — the nuanced, judgment-call stuff — still goes to a human. But now that human is handling 5 questions a week instead of 25.
+The bot does not need to be perfect. It just needs to handle the 80% of questions that have clear, documented answers. The remaining 20% — the nuanced, judgment-call stuff — still goes to a human. But now that human is handling 5 questions a week instead of 25. Our guide on [AI Performance Reviews: How to Write Better Feedback in Half the Time](/blog/ai-performance-reviews/) explores this further.
 
 ## Build a personalized onboarding journey
 
@@ -99,7 +99,7 @@ Generic onboarding makes new hires feel like a number. Personalized onboarding m
 
 ### How AI adapts content by department
 
-Different departments have different cultures, tools, and workflows. AI can customize the onboarding experience at the department level without HR building separate programs from scratch.
+Different departments have different cultures, tools, and workflows. AI can customize the onboarding experience at the department level without HR building separate programs from scratch. Our guide on [AI Skills Gap Analysis: Find and Fix Workforce Skill Shortages Before They Hurt](/blog/ai-skills-gap-analysis/) explores this further.
 
 **Here is a practical approach:**
 

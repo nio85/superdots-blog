@@ -68,7 +68,7 @@ Then it flags deviations. Not every deviation is fraud — most are legitimate b
 
 ### Pattern matching
 
-AI identifies known fraud patterns in your data:
+AI identifies known fraud patterns in your data: For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 - **Round number transactions.** Expenses that are always round numbers ($100, $500, $1,000) can indicate fabricated receipts.
 - **Just-below-threshold amounts.** Transactions consistently just below approval limits suggest someone is gaming the controls.
@@ -78,7 +78,7 @@ AI identifies known fraud patterns in your data:
 
 ### Behavioral analysis
 
-AI builds behavioral profiles for employees, vendors, and accounts. It tracks how each entity normally transacts and flags changes:
+AI builds behavioral profiles for employees, vendors, and accounts. It tracks how each entity normally transacts and flags changes: For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 - An employee who typically submits $500/month in expenses suddenly submitting $2,000/month
 - A vendor whose payment terms shift from net-30 to immediate payment

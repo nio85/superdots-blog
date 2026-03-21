@@ -104,7 +104,7 @@ Check your CRM notes, ask the prospect directly, or look at the prospect's tech 
 
 **Step 2: Pull your latest battlecard (30 seconds)**
 
-If you have one. If it's more than 60 days old, treat it as unreliable and supplement with Step 3.
+If you have one. If it's more than 60 days old, treat it as unreliable and supplement with Step 3. If this applies to your team, our [AI Sales Forecasting: Predict Revenue Without a Data Team](/blog/ai-sales-forecasting/) guide covers the details.
 
 **Step 3: Generate a fresh competitive snapshot (2 minutes)**
 
@@ -117,7 +117,7 @@ Use this prompt with any AI assistant that has web access:
 > 3. Top complaints in their recent G2/Capterra reviews
 > 4. How their positioning differs from ours: [one sentence about your positioning]
 > 5. Two specific weaknesses I can probe during the call
-> 6. One area where they're genuinely strong that I should be ready to acknowledge
+> 6. One area where they're genuinely strong that I should be ready to acknowledge For more on this topic, check out [AI Conversation Intelligence: Extract Real Insights From Every Sales Call](/blog/ai-conversation-intelligence/).
 
 That last point matters. Reps who acknowledge a competitor's strength and then redirect the conversation earn more trust than reps who pretend the competitor has zero advantages.
 

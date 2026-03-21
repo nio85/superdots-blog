@@ -41,7 +41,7 @@ That difference — 30 units — is the difference between a stockout and a smoo
 
 Most inventory systems have reorder points — when stock drops below X, order more. The problem is that X is usually a static number someone set once and never updated.
 
-AI reorder systems adjust dynamically. They factor in current demand velocity, supplier lead times, upcoming promotions, and seasonal shifts. If your supplier's lead time just went from 14 days to 21 days (because they emailed you about a delay and you forgot to update the system), an AI tool watching that data adjusts your reorder point automatically.
+AI reorder systems adjust dynamically. They factor in current demand velocity, supplier lead times, upcoming promotions, and seasonal shifts. If your supplier's lead time just went from 14 days to 21 days (because they emailed you about a delay and you forgot to update the system), an AI tool watching that data adjusts your reorder point automatically. If this applies to your team, our [AI Process Mining: Discover Bottlenecks and Optimization Opportunities Automatically](/blog/ai-process-mining/) guide covers the details.
 
 This is where AI shines brightest for operations teams. Not in flashy dashboards, but in the boring, critical work of making sure the right reorder happens at the right time.
 

@@ -56,7 +56,7 @@ Running A/B tests on ad creative is expensive if every variation requires a desi
 
 ### Brand photography
 
-If your brand relies on real people using your product, AI won't cut it. AI-generated people still hit the uncanny valley, and customers can tell. Authentic photography of real employees, customers, and products builds trust that AI images can't replicate.
+If your brand relies on real people using your product, AI won't cut it. AI-generated people still hit the uncanny valley, and customers can tell. Authentic photography of real employees, customers, and products builds trust that AI images can't replicate. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 ### Detailed product shots
 
@@ -64,7 +64,7 @@ AI can't produce accurate representations of your specific product from specific
 
 ### Consistent character or mascot design
 
-AI struggles with consistency across images. If you need the same character appearing in 50 different illustrations throughout your marketing materials, you'll spend more time fighting the AI for consistency than you'd spend with a human illustrator.
+AI struggles with consistency across images. If you need the same character appearing in 50 different illustrations throughout your marketing materials, you'll spend more time fighting the AI for consistency than you'd spend with a human illustrator. For related guidance, see our guide on [How to Create Marketing Content with AI (Without Sounding Generic)](/blog/ai-content-creation/).
 
 ### Legally sensitive materials
 

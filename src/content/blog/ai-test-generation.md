@@ -75,7 +75,7 @@ The catch: AI often generates integration tests that look correct but make wrong
 
 ### Mock generation
 
-AI is surprisingly good at generating mock objects and test fixtures. It reads your interfaces and produces realistic test data that covers the shapes you need. This alone can save significant setup time.
+AI is surprisingly good at generating mock objects and test fixtures. It reads your interfaces and produces realistic test data that covers the shapes you need. This alone can save significant setup time. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 ## Step by step: using AI to generate tests for existing code
 
@@ -85,7 +85,7 @@ Do not try to generate tests for your entire codebase at once. Pick one file —
 
 ### Step 2: Provide context
 
-Give the AI tool:
+Give the AI tool: If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 - The source file you want to test
 - Any interfaces or types it depends on

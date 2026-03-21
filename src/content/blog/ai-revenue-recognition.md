@@ -72,13 +72,13 @@ SSP determination is one of the most judgment-intensive parts of ASC 606. AI hel
 
 First, it can analyze your historical transaction data to derive observable SSPs where you have sold elements separately. It surfaces the range of prices at which you have sold each obligation on a standalone basis and flags outliers.
 
-Second, for elements without observable data, it applies your configured estimation methodology — adjusted market assessment or cost-plus — and documents the basis. When SSPs change over time, the system tracks the change and can retroactively show auditors the SSP in effect at the contract's inception.
+Second, for elements without observable data, it applies your configured estimation methodology — adjusted market assessment or cost-plus — and documents the basis. When SSPs change over time, the system tracks the change and can retroactively show auditors the SSP in effect at the contract's inception. For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 ### Transaction Price Allocation
 
 Once performance obligations and SSPs are established, the system allocates the transaction price. Discounts get allocated proportionally across obligations unless you have specific guidance requiring allocation to a subset. Variable consideration gets estimated and constrained.
 
-The allocation updates automatically when contracts are modified. If a customer adds a new obligation mid-contract, the system recalculates the allocation and determines whether the modification creates a separate contract or modifies the existing one under ASC 606-10-25-12.
+The allocation updates automatically when contracts are modified. If a customer adds a new obligation mid-contract, the system recalculates the allocation and determines whether the modification creates a separate contract or modifies the existing one under ASC 606-10-25-12. For more on this topic, check out [How to Use AI for Financial Forecasting](/blog/ai-financial-forecasting/).
 
 ### Revenue Schedule Generation
 

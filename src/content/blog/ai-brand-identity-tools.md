@@ -86,13 +86,13 @@ Here is a practical approach:
 3. Test every combination against WCAG contrast standards. Tools like Coolors have this built in.
 4. Document every color with its exact hex, RGB, and CMYK values.
 
-One mistake to avoid: too many colors. Brands like Stripe use essentially two colors (purple and white) with great effect. Constraint creates recognition.
+One mistake to avoid: too many colors. Brands like Stripe use essentially two colors (purple and white) with great effect. Constraint creates recognition. For related guidance, see our guide on [AI Wireframing Tools: From Text Descriptions to Interactive Prototypes in Minutes](/blog/ai-wireframing-tools/).
 
 ## Typography: the part everyone skips
 
 Most teams spend hours on their logo and sixty seconds on fonts. This is backwards. Typography carries more of your brand's personality than you think — it appears in every headline, every paragraph, every button on your website.
 
-You need two fonts, occasionally three:
+You need two fonts, occasionally three: For related guidance, see our guide on [How AI Streamlines Design-to-Dev Handoff](/blog/ai-design-handoff/).
 
 - **A headline font** — expressive, distinctive, sets the tone
 - **A body font** — readable, clean, works at small sizes

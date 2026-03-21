@@ -101,7 +101,7 @@ AI-powered scenario modeling lets you ask "what if" questions against your actua
 - **What if a new tariff hits imports from a specific country?** The model calculates the cost impact across your supply chain, identifies which products become unprofitable, and suggests sourcing alternatives.
 - **What if interest rates increase by 200 basis points?** The AI models the impact on your debt service, customer purchasing behavior, and competitive position.
 
-These are not theoretical exercises. McKinsey found that companies using scenario modeling identified 60% of material risks before they materialized, compared to 25% for companies using traditional methods. The difference is preparation time. When a risk materializes and you have already modeled it, your response plan is ready. When it surprises you, your response is improvised.
+These are not theoretical exercises. McKinsey found that companies using scenario modeling identified 60% of material risks before they materialized, compared to 25% for companies using traditional methods. The difference is preparation time. When a risk materializes and you have already modeled it, your response plan is ready. When it surprises you, your response is improvised. Our guide on [AI Inventory Management: A Practical Guide for Operations Teams](/blog/ai-inventory-management/) explores this further.
 
 **Tools worth evaluating:** Anaplan supports risk scenario modeling with financial planning integration. Palantir Foundry handles complex multi-variable risk simulations for large enterprises. For mid-market companies, Mosaic provides scenario planning tied to financial metrics.
 
@@ -109,7 +109,7 @@ These are not theoretical exercises. McKinsey found that companies using scenari
 
 Supply chain disruption is the risk that keeps operations leaders up at night. And for good reason. A 2025 survey by [Gartner](https://www.gartner.com) found that 73% of supply chain leaders experienced at least one significant disruption in the previous 12 months. The average cost per disruption was $184 million for large enterprises.
 
-AI changes the equation by providing visibility into risks that were previously invisible.
+AI changes the equation by providing visibility into risks that were previously invisible. If this applies to your team, our [AI Process Mining: Discover Bottlenecks and Optimization Opportunities Automatically](/blog/ai-process-mining/) guide covers the details.
 
 ### Multi-tier supplier monitoring
 

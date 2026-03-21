@@ -63,9 +63,9 @@ Teams using AI-powered business logic scanning report finding 3-5 critical logic
 
 ### Novel vulnerability discovery
 
-SAST and DAST tools rely on databases of known vulnerability patterns. They are reactive. Someone has to discover a new attack type, write a detection rule, and ship it in an update before the scanner can find it.
+SAST and DAST tools rely on databases of known vulnerability patterns. They are reactive. Someone has to discover a new attack type, write a detection rule, and ship it in an update before the scanner can find it. Our guide on [AI Incident Management: Detect, Triage, and Resolve Issues Faster](/blog/ai-incident-management/) explores this further.
 
-AI security scanning can identify vulnerability patterns it has never been explicitly programmed to find. Because it understands code semantics — not just syntax — it can reason about whether a piece of code is secure in its context. It can spot a new variation of a known attack pattern even if the specific pattern is not in any rule database.
+AI security scanning can identify vulnerability patterns it has never been explicitly programmed to find. Because it understands code semantics — not just syntax — it can reason about whether a piece of code is secure in its context. It can spot a new variation of a known attack pattern even if the specific pattern is not in any rule database. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 This does not mean AI finds zero-days reliably. It means it finds the variants and mutations of known vulnerability classes that static rules miss.
 

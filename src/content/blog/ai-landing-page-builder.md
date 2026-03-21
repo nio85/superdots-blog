@@ -108,9 +108,9 @@ Some AI landing page builders can predict how a page will perform before you lau
 
 ## Conversion Tracking and Analytics
 
-Building the page is half the job. Knowing what happens after visitors arrive is the other half.
+Building the page is half the job. Knowing what happens after visitors arrive is the other half. If this applies to your team, our [AI Brand Monitoring: Track Every Mention, Sentiment Shift, and Competitor Move](/blog/ai-brand-monitoring/) guide covers the details.
 
-Most AI landing page builders include built-in analytics that go beyond basic pageview counts. Here is what to look for.
+Most AI landing page builders include built-in analytics that go beyond basic pageview counts. Here is what to look for. For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
 
 ### Heatmaps and scroll tracking
 

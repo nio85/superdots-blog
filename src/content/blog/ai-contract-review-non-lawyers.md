@@ -74,13 +74,13 @@ AI will return a list of flagged items. For each one, you decide:
 - **Negotiate**: Push back on this term before signing
 - **Escalate**: This needs a lawyer's review (complex IP, regulatory, or high-risk terms)
 
-Most contracts will have 2-5 flags. Of those, maybe one or two need escalation. The rest you can handle yourself.
+Most contracts will have 2-5 flags. Of those, maybe one or two need escalation. The rest you can handle yourself. For related guidance, see our guide on [AI Compliance Tools: What Non-Technical Teams Need to Know](/blog/ai-compliance-tools/).
 
 ### Step 4: Route only what matters to legal
 
 This is where the real time savings happen. Instead of sending every contract to legal and waiting two weeks, you send them a short list:
 
-> "Reviewed vendor agreement with Acme Corp. AI flagged an unlimited liability clause in Section 8.2 and a non-standard data retention term in Section 12. Everything else matches our playbook. Need your review on these two items."
+> "Reviewed vendor agreement with Acme Corp. AI flagged an unlimited liability clause in Section 8.2 and a non-standard data retention term in Section 12. Everything else matches our playbook. Need your review on these two items." For more on this topic, check out [AI eDiscovery Tools: Cut Document Review Time by 60-80%](/blog/ai-ediscovery-tools/).
 
 Your legal team gets a focused ask instead of a 40-page document with no context. They respond in a day instead of two weeks.
 

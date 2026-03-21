@@ -56,9 +56,9 @@ AI is good at organizing information logically. Check the output for:
 
 ### Step 3: Fix the voice
 
-AI tends to be verbose and formal. Technical docs should be direct and scannable. Tools like [Grammarly](https://www.grammarly.com) can help catch verbosity in your final drafts. Google's [technical writing courses](https://developers.google.com/tech-writing) are a solid reference for the tone to aim for. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass:
+AI tends to be verbose and formal. Technical docs should be direct and scannable. Tools like [Grammarly](https://www.grammarly.com) can help catch verbosity in your final drafts. Google's [technical writing courses](https://developers.google.com/tech-writing) are a solid reference for the tone to aim for. The same voice-preservation techniques from [using an AI writing assistant without losing your style](/blog/ai-writing-assistant-keep-your-voice/) apply here. Run a second pass: For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
-> Rewrite this to be more concise. Use active voice. Remove any sentences that don't add information. Our docs style is direct and practical — no fluff. If a sentence starts with "It is important to note that," just say the thing.
+> Rewrite this to be more concise. Use active voice. Remove any sentences that don't add information. Our docs style is direct and practical — no fluff. If a sentence starts with "It is important to note that," just say the thing. If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 Common AI writing habits to watch for:
 - Unnecessary qualifiers ("It should be noted that...", "It's worth mentioning...")

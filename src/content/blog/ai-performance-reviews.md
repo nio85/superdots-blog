@@ -58,11 +58,11 @@ This step is the most important. AI can turn rough notes into polished prose, bu
 
 ### Step 2: Draft with AI (10 minutes per person)
 
-Use a prompt like this:
+Use a prompt like this: Our guide on [AI Skills Gap Analysis: Find and Fix Workforce Skill Shortages Before They Hurt](/blog/ai-skills-gap-analysis/) explores this further.
 
 *"I'm writing a performance review for a [role] on my team. Here are my notes on their performance this period: [paste bullet points]. Write a performance review that includes: specific accomplishments with impact, areas for growth with actionable suggestions, and an overall assessment. Use a professional but direct tone. Avoid vague language — every statement should reference a specific behavior or outcome."*
 
-The AI will produce a first draft. It will be decent but generic. That is expected.
+The AI will produce a first draft. It will be decent but generic. That is expected. If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 ### Step 3: Edit for truth and nuance (10 minutes per person)
 

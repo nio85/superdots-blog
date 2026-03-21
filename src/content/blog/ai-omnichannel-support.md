@@ -59,7 +59,7 @@ For teams already using a CRM, connecting your support platform to your customer
 
 ### 2. Context Persistence
 
-Identity resolution tells you who the customer is. Context persistence tells you what they've been dealing with.
+Identity resolution tells you who the customer is. Context persistence tells you what they've been dealing with. For more on this topic, check out [AI Customer Service QA: Automate Quality Scoring for Every Interaction](/blog/ai-customer-service-qa/).
 
 This means when a customer moves from chat to phone, the phone agent sees:
 
@@ -68,7 +68,7 @@ This means when a customer moves from chat to phone, the phone agent sees:
 - The customer's product details, subscription tier, and account status
 - A brief AI-generated summary of the situation
 
-This AI-generated summary is the key differentiator. Raw transcripts are long. Agents don't have time to read through ten messages before responding. AI omnichannel platforms condense the history into a two- or three-sentence brief: "Customer reported a double charge on March 12. Refund was initiated on March 14 but hasn't appeared. Customer is on the Pro plan, has been a member for 2 years, and has escalated once before."
+This AI-generated summary is the key differentiator. Raw transcripts are long. Agents don't have time to read through ten messages before responding. AI omnichannel platforms condense the history into a two- or three-sentence brief: "Customer reported a double charge on March 12. Refund was initiated on March 14 but hasn't appeared. Customer is on the Pro plan, has been a member for 2 years, and has escalated once before." For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
 
 That summary travels across channels. It updates after each interaction. The customer never repeats themselves.
 

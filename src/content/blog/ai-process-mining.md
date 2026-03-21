@@ -105,7 +105,7 @@ AI process mining detects bottlenecks by analyzing the time between activities. 
 - **Processing time** — how long each step actually takes
 - **Rework time** — how much time is spent redoing completed steps
 
-The AI then identifies which transitions have abnormally high waiting times and correlates them with specific conditions. For example: "Orders over $50,000 wait an average of 4.2 days for approval, compared to 0.5 days for orders under $50,000. The bottleneck is the VP approval step, which has a single approver handling 340 requests per month."
+The AI then identifies which transitions have abnormally high waiting times and correlates them with specific conditions. For example: "Orders over $50,000 wait an average of 4.2 days for approval, compared to 0.5 days for orders under $50,000. The bottleneck is the VP approval step, which has a single approver handling 340 requests per month." Our guide on [AI Inventory Management: A Practical Guide for Operations Teams](/blog/ai-inventory-management/) explores this further.
 
 That level of specificity turns a vague complaint ("approvals take too long") into an actionable fix (add a second VP approver or raise the threshold for VP-level approval).
 
@@ -129,7 +129,7 @@ For example, an AI model might learn that:
 
 - Orders from Region B are 3x more likely to require rework than orders from Region A
 - Tickets submitted through the web portal resolve 40% faster than tickets submitted via email
-- Purchase orders created on Fridays are 2.5x more likely to have data entry errors
+- Purchase orders created on Fridays are 2.5x more likely to have [data entry](/blog/ai-tools-for-data-entry/) errors
 
 These patterns are invisible in traditional reporting. They emerge only when the AI analyzes millions of events across thousands of cases and dozens of attributes simultaneously.
 

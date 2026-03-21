@@ -79,11 +79,11 @@ Even your best agents write differently from each other. The AI normalizes the t
 
 ### Review workflow
 
-No serious AI knowledge base generator publishes content without human review. The standard workflow is: AI drafts the article, flags it for review, a support lead or content manager approves or edits, and then it publishes. This keeps quality high while eliminating the blank-page problem that stops most teams from writing anything at all.
+No serious AI knowledge base generator publishes content without human review. The standard workflow is: AI drafts the article, flags it for review, a support lead or content manager approves or edits, and then it publishes. This keeps quality high while eliminating the blank-page problem that stops most teams from writing anything at all. For more on this topic, check out [AI Customer Service QA: Automate Quality Scoring for Every Interaction](/blog/ai-customer-service-qa/).
 
 ## Automatic Updates: The Feature That Matters Most
 
-Generating initial content is useful. Keeping it current is where the real value lives.
+Generating initial content is useful. Keeping it current is where the real value lives. If this applies to your team, our [AI Omnichannel Support: Unify Every Customer Conversation in One Place](/blog/ai-omnichannel-support/) guide covers the details.
 
 Support teams at companies with fast-moving products know the pain. You ship a UI update on Tuesday. By Wednesday, customers are filing tickets because the help article still shows the old interface. By Thursday, your agents are answering tickets that say "I followed the instructions but the button is not where you said it would be."
 

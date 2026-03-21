@@ -84,11 +84,11 @@ Relativity's Analytics, Everlaw's Clustering, and Brainspace (now part of Reveal
 
 AI eDiscovery tools reconstruct email conversations into threads, identifying the most inclusive message in each chain. Instead of reviewing 12 separate emails in a thread, reviewers see the final, most complete version. Coding decisions can propagate up or down the thread automatically.
 
-This alone reduces review volumes by 30-50% in email-heavy matters.
+This alone reduces review volumes by 30-50% in email-heavy matters. For related guidance, see our guide on [AI Compliance Tools: What Non-Technical Teams Need to Know](/blog/ai-compliance-tools/).
 
 #### Sentiment and Communication Analysis
 
-Newer AI eDiscovery tools analyze communication patterns and sentiment. Who was talking to whom, and when? Which conversations shifted in tone around key dates? These tools surface behavioral patterns that keyword searches miss entirely.
+Newer AI eDiscovery tools analyze communication patterns and sentiment. Who was talking to whom, and when? Which conversations shifted in tone around key dates? These tools surface behavioral patterns that keyword searches miss entirely. For related guidance, see our guide on [AI Contract Review for Non-Lawyers: Cut Review Time by 70%](/blog/ai-contract-review-non-lawyers/).
 
 This capability is especially relevant in investigations — internal misconduct, regulatory inquiries, whistleblower matters — where the pattern of communication matters as much as the content.
 

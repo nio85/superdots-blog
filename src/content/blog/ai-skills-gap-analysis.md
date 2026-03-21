@@ -19,7 +19,7 @@ AI skills gap analysis changes the timeline. Instead of reacting after the damag
 
 Traditional skills gap analysis is a manual process. HR sends out self-assessment surveys. Managers fill in competency matrices. Someone compiles everything in a spreadsheet and tries to find patterns. The whole exercise takes weeks, produces stale data, and happens once a year at best.
 
-AI skills gap analysis automates the heavy lifting. It pulls data from multiple sources — job descriptions, performance reviews, project assignments, learning platform activity, even external labor market data — and builds a real-time picture of what your workforce can do versus what it needs to do.
+AI skills gap analysis automates the heavy lifting. It pulls data from multiple sources — job descriptions, [performance reviews](/blog/ai-performance-reviews/), project assignments, learning platform activity, even external labor market data — and builds a real-time picture of what your workforce can do versus what it needs to do.
 
 The output is not a static report. It is a continuously updated view of where your organization is strong, where it is weak, and what to do about it.
 
@@ -80,7 +80,7 @@ This team view connects directly to [AI workforce planning](/blog/ai-workforce-p
 
 ### Organization-level gaps
 
-Zoom out further and you see strategic gaps. These are the skills your organization needs for its 12-to-24-month roadmap but does not currently have enough of.
+Zoom out further and you see strategic gaps. These are the skills your organization needs for its 12-to-24-month roadmap but does not currently have enough of. Our guide on [AI for Recruiting: Cut Hiring Busywork Without Losing the Human Touch](/blog/ai-for-recruiting/) explores this further.
 
 If your company plans to expand into AI-powered products, how many machine learning engineers do you need? How many do you have? How many existing employees could realistically upskill into adjacent roles? AI answers these questions with data instead of guesswork.
 

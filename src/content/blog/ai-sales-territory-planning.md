@@ -104,13 +104,13 @@ This is where territory planning becomes a hiring plan. You're not guessing wher
 
 ## The Variables That Matter Most
 
-Not all inputs carry equal weight. Here's what moves the needle.
+Not all inputs carry equal weight. Here's what moves the needle. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 ### Account Potential vs. Account Count
 
 The most common mistake is distributing accounts by count. "Each rep gets 100 accounts" sounds fair. It isn't.
 
-A rep with 100 mid-market fintech accounts has a completely different workload and opportunity than a rep with 100 small retail accounts. Distribute by potential, not headcount.
+A rep with 100 mid-market fintech accounts has a completely different workload and opportunity than a rep with 100 small retail accounts. Distribute by potential, not headcount. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 AI tools let you set weighted targets. You define that each territory should contain roughly equal total addressable revenue, then adjust for rep seniority and capacity. A senior enterprise rep might have 20 accounts worth $10M each. A mid-market rep might have 150 accounts worth $200K each. Both territories have similar revenue potential but very different management styles.
 

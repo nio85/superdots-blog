@@ -72,11 +72,11 @@ Give AI your prospect brief, your chosen angle, and these constraints:
 
 *"Write a cold email to [name] at [company]. Context: [brief]. Angle: [specific angle]. Constraints: under 125 words, one clear CTA, casual professional tone, no exclamation marks, no 'I hope this finds you well.' Start with something specific to them, not about us."*
 
-The constraints matter. Without them, AI writes long, generic, enthusiastic emails that sound exactly like AI. Short constraints force specificity.
+The constraints matter. Without them, AI writes long, generic, enthusiastic emails that sound exactly like AI. Short constraints force specificity. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 ### Step 4: Edit for authenticity (2 minutes)
 
-The AI draft will be close but not ready. Check for:
+The AI draft will be close but not ready. Check for: If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 - **The opening line.** If it sounds like it could apply to anyone, rewrite it. The first sentence is the only one that determines whether they read the rest.
 - **The jargon check.** Remove any phrase you would not say out loud to a colleague. "Streamline your workflow" becomes "spend less time on admin work."

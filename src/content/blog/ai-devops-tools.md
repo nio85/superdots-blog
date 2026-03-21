@@ -75,7 +75,7 @@ AI identifies flaky tests by analyzing historical test results. It looks for tes
 - Fail on specific infrastructure (one CI runner but not others)
 - Correlate with time-of-day or system load rather than code changes
 
-Once identified, AI can quarantine flaky tests — running them separately so they do not block the main pipeline — and provide diagnostic data to help engineers fix the root cause.
+Once identified, AI can quarantine flaky tests — running them separately so they do not block the main pipeline — and provide diagnostic data to help engineers fix the root cause. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 **The impact:** Engineers stop wasting time investigating false failures. The test suite becomes trustworthy again. Real failures get caught immediately instead of being assumed flaky.
 

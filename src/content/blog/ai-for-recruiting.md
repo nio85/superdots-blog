@@ -96,9 +96,9 @@ Here is a practical workflow:
 1. Write your job description the way you normally would (or paste an existing one)
 2. Run it through an AI tool with this prompt: "Review this job description for biased language, unnecessarily exclusionary requirements, and unclear expectations. Suggest specific replacements."
 3. Ask the AI to rate the reading level. Job descriptions should target an 8th-grade reading level. If yours requires a PhD to parse, simplify it
-4. Have the AI generate a shorter version — most job descriptions are 40% longer than they need to be
+4. Have the AI generate a shorter version — most job descriptions are 40% longer than they need to be Our guide on [AI Performance Reviews: How to Write Better Feedback in Half the Time](/blog/ai-performance-reviews/) explores this further.
 
-This works well as part of a broader [AI writing assistant workflow](/blog/ai-writing-assistant-keep-your-voice). The same techniques for keeping your brand voice apply here.
+This works well as part of a broader [AI writing assistant workflow](/blog/ai-writing-assistant-keep-your-voice). The same techniques for keeping your brand voice apply here. Our guide on [AI Skills Gap Analysis: Find and Fix Workforce Skill Shortages Before They Hurt](/blog/ai-skills-gap-analysis/) explores this further.
 
 ### Before/after examples
 
