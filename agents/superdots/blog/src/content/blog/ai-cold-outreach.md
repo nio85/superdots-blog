@@ -70,7 +70,7 @@ For each prospect, pull together:
 - Any public content the prospect has written or shared
 - Job postings that signal priorities or pain points
 
-Tools like Clay, [Apollo](https://www.apollo.io), and Phantombuster can automate much of this enrichment at scale. For individual high-value prospects, a five-minute manual review of their LinkedIn and company news page still produces the best results.
+Tools like Clay, [Apollo](https://www.apollo.io), and Phantombuster can automate much of this enrichment at scale. For individual high-value prospects, a five-minute manual review of their LinkedIn and company news page still produces the best results. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 The output is a short brief — five to seven bullet points — that gives AI enough context to write something specific.
 

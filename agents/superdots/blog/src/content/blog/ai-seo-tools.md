@@ -81,9 +81,9 @@ This is tedious work that humans consistently skip. Having a tool surface the op
 
 ### SERP analysis
 
-Before writing content, you need to understand what is already ranking and why. AI tools analyze the top results for any keyword and extract patterns: average word count, common headings, content format (listicle vs. guide vs. comparison), and the specific subtopics covered.
+Before writing content, you need to understand what is already ranking and why. AI tools analyze the top results for any keyword and extract patterns: average word count, common headings, content format (listicle vs. guide vs. comparison), and the specific subtopics covered. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
-This is not about copying what works. It is about understanding searcher expectations so you can meet them — and then exceed them with better information, clearer writing, or a fresher angle.
+This is not about copying what works. It is about understanding searcher expectations so you can meet them — and then exceed them with better information, clearer writing, or a fresher angle. Our guide on [AI Video Marketing Tools for Teams Without a Video Team](/blog/ai-video-marketing-tools/) explores this further.
 
 ### Content gap detection
 

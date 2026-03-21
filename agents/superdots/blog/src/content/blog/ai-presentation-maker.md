@@ -86,7 +86,7 @@ This takes three minutes to write and saves you 30 minutes of editing.
 
 **Template 1: Sales pitch**
 
-> Create a 10-slide sales presentation for [product/service] targeting [specific audience]. Start with the problem they face, then present our solution with 3 specific benefits. Include a slide for social proof (use placeholder text for customer quotes), a pricing overview slide, and a clear next-steps slide. Tone: confident, not pushy. No slides with more than 5 bullet points.
+> Create a 10-slide sales presentation for [product/service] targeting [specific audience]. Start with the problem they face, then present our solution with 3 specific benefits. Include a slide for social proof (use placeholder text for customer quotes), a pricing overview slide, and a clear next-steps slide. Tone: confident, not pushy. No slides with more than 5 bullet points. For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
 
 **Template 2: Quarterly business review**
 

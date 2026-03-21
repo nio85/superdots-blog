@@ -84,7 +84,7 @@ AI tools scan multiple data sources — supplier databases, industry directories
 
 You define what you need: "IT managed services provider, 100+ employees, SOC 2 certified, experience with healthcare clients, based in the US or Canada." The AI returns a ranked list of matching suppliers with summary profiles.
 
-This takes minutes instead of the days or weeks of manual research. More importantly, it surfaces suppliers you would not have found through your existing network.
+This takes minutes instead of the days or weeks of manual research. More importantly, it surfaces suppliers you would not have found through your existing network. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 ### Supplier evaluation
 
@@ -97,7 +97,7 @@ Once you have a list of potential suppliers, AI helps evaluate them across multi
 
 ### Supplier comparison
 
-AI creates standardized comparison frameworks across suppliers. Instead of manually extracting data from proposals and building comparison spreadsheets, AI reads the proposals, extracts key data points, and presents them in a structured comparison.
+AI creates standardized comparison frameworks across suppliers. Instead of manually extracting data from proposals and building comparison spreadsheets, AI reads the proposals, extracts key data points, and presents them in a structured comparison. If this applies to your team, our [AI Fleet Management: Optimize Routes, Maintenance, and Costs](/blog/ai-fleet-management/) guide covers the details.
 
 "Supplier A offers 99.9% uptime SLA with $500/incident credits. Supplier B offers 99.95% uptime SLA with service-level rebates. Supplier C offers 99.9% uptime with no financial guarantees."
 

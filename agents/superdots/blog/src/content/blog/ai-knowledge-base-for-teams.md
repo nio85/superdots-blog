@@ -81,13 +81,13 @@ High-value content is anything that gets used regularly, covers a critical proce
 Ask your team two questions:
 
 1. "What questions do you answer repeatedly for other people?"
-2. "What took you the longest to figure out when you started?"
+2. "What took you the longest to figure out when you started?" For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
 
 The answers show you what knowledge exists in heads but not in documents. These gaps are your highest-priority content to create.
 
 ## Structuring content for AI retrieval
 
-AI retrieval works best when your content follows certain patterns. This is not about formatting for the sake of formatting — it directly affects how well your AI can find and present answers.
+AI retrieval works best when your content follows certain patterns. This is not about formatting for the sake of formatting — it directly affects how well your AI can find and present answers. For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 ### Write atomic documents
 

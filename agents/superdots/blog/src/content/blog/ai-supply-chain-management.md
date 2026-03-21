@@ -68,7 +68,7 @@ AI-powered visual inspection systems use computer vision to detect defects on pr
 
 Beyond visual inspection, AI quality tools analyze production data to predict quality issues before they happen. If a machine's output is drifting toward the edge of tolerance, the system flags it before defective products reach the end of the line. This predictive quality approach reduces scrap rates, rework costs, and customer complaints.
 
-This is most relevant for manufacturing operations, but the technology is increasingly accessible. Camera-based inspection systems that used to cost six figures now start in the low five figures, and cloud-based quality analytics platforms charge monthly subscriptions that mid-market manufacturers can justify.
+This is most relevant for manufacturing operations, but the technology is increasingly accessible. Camera-based inspection systems that used to cost six figures now start in the low five figures, and cloud-based quality analytics platforms charge monthly subscriptions that mid-market manufacturers can justify. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 ## Demand Forecasting with AI: A Closer Look
 

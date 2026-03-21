@@ -62,7 +62,7 @@ Not all AI hiring tools handle bias the same way. Here is a realistic breakdown.
 
 ### For job description analysis
 
-[Textio](https://textio.com) is the most established tool in this category. It flags gendered language, credential inflation, reading level issues, and language that discourages specific groups from applying. The before-and-after data from companies using it consistently shows applicant pool diversification within one to two hiring cycles.
+[Textio](https://textio.com) is the most established tool in this category. It flags gendered language, credential inflation, reading level issues, and language that discourages specific groups from applying. The before-and-after data from companies using it consistently shows applicant pool diversification within one to two hiring cycles. If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 **Gender Decoder** is a free, open-source tool that checks for masculine and feminine coded language. It is basic but useful for teams without budget for Textio.
 
@@ -84,7 +84,7 @@ The sourcing stage is underrated in the AI diversity conversation. Bias in your 
 
 ## How to audit your AI hiring tools
 
-Adopting an AI tool without auditing it is worse than not using AI at all — you get the same biased outcomes with false confidence in a "fair" process. Auditing is not complicated, but it requires consistency.
+Adopting an AI tool without auditing it is worse than not using AI at all — you get the same biased outcomes with false confidence in a "fair" process. Auditing is not complicated, but it requires consistency. Our guide on [Best AI Tools for Employee Engagement in 2026](/blog/ai-employee-engagement/) explores this further.
 
 ### Quarterly output analysis
 

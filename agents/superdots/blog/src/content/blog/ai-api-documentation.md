@@ -50,9 +50,9 @@ The fix is simple: use AI to generate the skeleton, then do a pass where you ann
 
 ## AI Writing Assistants in Your Editor
 
-For teams writing docs in Markdown or MDX (as most modern doc platforms like Mintlify, Docusaurus, or Astro-based setups do), GitHub Copilot is already useful without any special setup.
+For teams writing docs in Markdown or MDX (as most modern doc platforms like Mintlify, Docusaurus, or Astro-based setups do), GitHub Copilot is already useful without any special setup. If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
-Copilot learns from the patterns in your codebase and existing docs. If you've written ten endpoint descriptions with a consistent structure, Copilot will autocomplete the eleventh following the same pattern — parameter descriptions, example values, return type explanations. It's not always right, but it's right often enough that writing docs in this workflow feels like pair programming rather than solo documentation duty.
+Copilot learns from the patterns in your codebase and existing docs. If you've written ten endpoint descriptions with a consistent structure, Copilot will autocomplete the eleventh following the same pattern — parameter descriptions, example values, return type explanations. It's not always right, but it's right often enough that writing docs in this workflow feels like pair programming rather than solo documentation duty. For more on this topic, check out [How to Debug Faster with AI (Step-by-Step Guide)](/blog/ai-debugging-guide/).
 
 More targeted tools:
 

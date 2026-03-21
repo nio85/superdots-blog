@@ -102,7 +102,7 @@ Once AI has your SLA terms, it needs performance data to compare against. This t
 - **ERP or WMS** for delivery performance and order fill rates
 - **Vendor-provided reports** uploaded on a regular cadence
 
-The AI reconciles these sources and flags discrepancies — including cases where vendor-reported metrics look better than what your own systems record.
+The AI reconciles these sources and flags discrepancies — including cases where vendor-reported metrics look better than what your own systems record. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 ### What alerts look like in practice
 
@@ -112,7 +112,7 @@ A well-configured AI vendor management system surfaces:
 - "Uptime fell to 99.6% in February. Contract guarantees 99.9%. Service credit of $4,200 may apply."
 - "Average delivery time for Vendor Y increased from 3.2 days to 4.8 days over 90 days. Contract specifies 3-day window."
 
-These are not manual reports. They run continuously and escalate automatically when thresholds are breached.
+These are not manual reports. They run continuously and escalate automatically when thresholds are breached. If this applies to your team, our [AI Fleet Management: Optimize Routes, Maintenance, and Costs](/blog/ai-fleet-management/) guide covers the details.
 
 ### Claiming credits you are owed
 

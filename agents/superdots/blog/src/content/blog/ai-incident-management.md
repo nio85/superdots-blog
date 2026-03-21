@@ -80,11 +80,11 @@ AI automated triage handles the initial assessment. It evaluates the incident ba
 - **Historical severity.** Similar incidents in the past were P1/P2/P3 — this one is likely the same.
 - **Rate of change.** Is the problem getting worse quickly? A slowly climbing error rate is less urgent than one that doubled in the last 60 seconds.
 
-Based on this assessment, AI assigns an initial severity, routes the incident to the right team, and populates the incident channel with relevant context — recent deployments, related past incidents, affected runbooks.
+Based on this assessment, AI assigns an initial severity, routes the incident to the right team, and populates the incident channel with relevant context — recent deployments, related past incidents, affected runbooks. If this applies to your team, our [AI Security Scanning: Find Vulnerabilities That Traditional Scanners Miss](/blog/ai-security-scanning/) guide covers the details.
 
 This cuts triage time from 10-15 minutes to under 60 seconds. The right people are engaged immediately with the right context. No more waking up the database team for a networking issue.
 
-For teams already using [AI ticket routing](/blog/ai-ticket-routing) for customer support, the same principles apply to incident triage — pattern matching, historical classification, and intelligent routing. [Google's SRE handbook](https://sre.google) formalized many of these triage principles long before AI tooling existed.
+For teams already using [AI ticket routing](/blog/ai-ticket-routing) for customer support, the same principles apply to incident triage — pattern matching, historical classification, and intelligent routing. [Google's SRE handbook](https://sre.google) formalized many of these triage principles long before AI tooling existed. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 ## Root Cause Analysis: Stop Guessing, Start Knowing
 

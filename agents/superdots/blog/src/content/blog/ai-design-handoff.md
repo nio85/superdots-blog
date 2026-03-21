@@ -62,11 +62,11 @@ Some tools go further: they flag when a designer has used a raw hex value where 
 
 ### 3. Code Generation from Design
 
-This is the most visible AI capability in handoff, and also the most misunderstood.
+This is the most visible AI capability in handoff, and also the most misunderstood. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
 
 AI can look at a designed component and generate functional code for it — HTML and CSS, React JSX, Tailwind utility classes, SwiftUI, Jetpack Compose. The quality varies by component complexity. For a standard card with a heading, subtext, and a button? The output is genuinely close to production-ready. For a complex multi-state dropdown with custom animation? It needs significant developer refinement.
 
-The honest framing: AI-generated code is a strong starting point, not a finished product. Teams report 70-85% of the code being directly usable for standard UI components. That percentage drops for complex interactive patterns.
+The honest framing: AI-generated code is a strong starting point, not a finished product. Teams report 70-85% of the code being directly usable for standard UI components. That percentage drops for complex interactive patterns. For related guidance, see our guide on [AI Design Tools for Non-Designers: Create Pro Visuals Fast](/blog/ai-design-tools-non-designers/).
 
 The tools worth knowing here include Locofy, Builder.io's AI, Anima, and GitHub Copilot when given the right context about your design system. Each has different strengths — Locofy tends to produce cleaner React output, Builder.io integrates well with CMS workflows, Anima handles Figma-to-HTML translation.
 

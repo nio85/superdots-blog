@@ -61,13 +61,13 @@ Now turn each idea into an actual post. This is where most people stall — and 
 
 ### For LinkedIn posts
 
-LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post:
+LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post: For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
 
 *"Write a LinkedIn post about [topic]. The audience is [target]. Keep it under 200 words. Start with a hook — a surprising fact, a contrarian opinion, or a relatable frustration. End with a question or call to action. Tone: conversational, direct, no buzzwords."*
 
 ### For X/Twitter posts
 
-Short, punchy, opinionated. Prompt:
+Short, punchy, opinionated. Prompt: For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 *"Write a tweet about [topic] for [audience]. Maximum 280 characters. Make it specific and slightly provocative — something worth replying to."*
 

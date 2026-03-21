@@ -72,13 +72,13 @@ A marketing manager might get a path that focuses on data analysis skills they n
 
 ### Spaced repetition
 
-AI schedules review sessions at scientifically optimal intervals. Right when you are about to forget something, a quick review exercise appears. This combats the forgetting curve and dramatically improves long-term retention.
+AI schedules review sessions at scientifically optimal intervals. Right when you are about to forget something, a quick review exercise appears. This combats the forgetting curve and dramatically improves long-term retention. If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 Research shows that spaced repetition can improve knowledge retention from 10% to 80% after 30 days. That is the difference between training that sticks and training that wastes everyone's time.
 
 ## AI for Content Creation and Curation
 
-Creating training content is expensive and slow. A single hour of e-learning content can take 40-100 hours to develop. AI dramatically reduces this.
+Creating training content is expensive and slow. A single hour of e-learning content can take 40-100 hours to develop. AI dramatically reduces this. For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 ### Generating training materials
 

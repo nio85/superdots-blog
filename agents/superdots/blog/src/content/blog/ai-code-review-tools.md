@@ -57,7 +57,7 @@ Greptile indexes your entire codebase and builds a code graph, so its reviews ha
 
 ### Qodo (formerly CodiumAI)
 
-Qodo focuses on connecting reviews to intent. It integrates with Jira and Azure DevOps to validate that code changes actually match the ticket requirements. It also runs automated workflows — scope validation, missing test detection, risk scoring — before a human ever looks at the PR.
+Qodo focuses on connecting reviews to intent. It integrates with Jira and Azure DevOps to validate that code changes actually match the ticket requirements. It also runs automated workflows — scope validation, missing test detection, risk scoring — before a human ever looks at the PR. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 **Best for:** Teams that want reviews tied to project management and requirements validation.
 

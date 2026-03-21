@@ -70,7 +70,7 @@ The review takes 5-10 minutes instead of 20-30. You catch things you would have 
 
 ## Anomaly Detection: Catching Errors Before the Client Does
 
-Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both.
+Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 ### What anomaly detection looks for
 
@@ -88,7 +88,7 @@ Manual billing creates errors in both directions — hours underreported due to 
 
 These are not hypothetical errors. They show up in manual billing systems at every firm. The difference is whether someone catches them before or after the client receives the invoice.
 
-Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean.
+Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean. For more on this topic, check out [AI for Intellectual Property Management: Track and Protect Your IP](/blog/ai-ip-management/).
 
 ## Generating Client-Ready Invoices
 

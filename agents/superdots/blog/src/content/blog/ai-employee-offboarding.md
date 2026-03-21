@@ -74,7 +74,7 @@ This is where AI provides the most differentiated value.
 
 Before the departing employee's last day, AI tools can analyze their digital footprint: documents they authored, processes they owned, Slack threads they anchored, meetings they facilitated, and decisions they documented. The output is a knowledge map — a structured view of what this person uniquely knew that is not captured anywhere else.
 
-That map drives the knowledge transfer agenda. Instead of a generic "hand over your work" conversation, the departing employee and their manager have specific prompts:
+That map drives the knowledge transfer agenda. Instead of a generic "hand over your work" conversation, the departing employee and their manager have specific prompts: If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 - "You are the only documented owner of the client billing reconciliation process. Can you walk through it step by step?"
 - "You managed the relationship with this vendor. Who else should be introduced before you leave?"
@@ -84,7 +84,7 @@ The AI can also generate first drafts of process documentation from meeting reco
 
 ### Exit Interview and Documentation
 
-AI can conduct structured exit interviews asynchronously. The departing employee completes a conversational questionnaire at their own pace. The AI synthesizes responses into themes, flags actionable feedback for HR leadership, and stores verbatim responses for future reference.
+AI can conduct structured exit interviews asynchronously. The departing employee completes a conversational questionnaire at their own pace. The AI synthesizes responses into themes, flags actionable feedback for HR leadership, and stores verbatim responses for future reference. For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 This captures more honest feedback than a rushed 30-minute call on someone's last day, when they are distracted and not inclined to be candid. It also ensures consistency — every departure is asked the same core questions, creating data that HR can actually analyze over time.
 

@@ -42,7 +42,7 @@ A mid-sized B2B company with $10M in annual revenue and a 45-day DSO has roughly
 
 Beyond the working capital math, consider the labor cost. If an AR specialist earns $55K/year and spends 40% of their time on manual follow-up and cash application, that's $22K/year of salary going toward work that automation handles better. Multiply across a team of three and the case for tooling investment becomes obvious.
 
-Then there's the cost of errors and missed follow-up. Invoices that fall through the cracks, disputes that drag on for months because nobody tracked the communication history, customers who slip into 90-day overdue status because the reminder cadence wasn't aggressive enough. These costs don't show up cleanly on a P&L but they compound. The [AICPA](https://www.aicpa.org) has highlighted AR management as a key area where automation can improve financial reporting accuracy.
+Then there's the cost of errors and missed follow-up. Invoices that fall through the cracks, disputes that drag on for months because nobody tracked the communication history, customers who slip into 90-day overdue status because the reminder cadence wasn't aggressive enough. These costs don't show up cleanly on a P&L but they compound. The [AICPA](https://www.aicpa.org) has highlighted AR management as a key area where automation can improve financial reporting accuracy. Our guide on [AI for Revenue Recognition: Automate ASC 606 Compliance](/blog/ai-revenue-recognition/) explores this further.
 
 ## Key Features to Evaluate
 

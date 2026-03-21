@@ -34,7 +34,7 @@ This used to take hours of manual work. Now it takes a prompt: "Clean this datas
 
 ### Answer questions in plain English
 
-This is the core feature. Instead of building formulas, you ask questions:
+This is the core feature. Instead of building formulas, you ask questions: For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 - "What was our average deal size by region last quarter?"
 - "Show me the top 10 customers by lifetime value."
@@ -44,7 +44,7 @@ The AI translates your question into the right operations and returns an answer 
 
 ### Generate charts and summaries
 
-AI can automatically create visualizations from your data:
+AI can automatically create visualizations from your data: For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 - Bar charts comparing categories
 - Trend lines showing growth over time

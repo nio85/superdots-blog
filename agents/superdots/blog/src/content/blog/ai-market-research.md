@@ -69,7 +69,7 @@ Feed AI a competitor's website, recent blog posts, product pages, and press rele
 **Example prompt:**
 *"Analyze these five pages from [competitor]. Identify their primary value proposition, target customer profile, three key differentiators they emphasize, and any messaging changes compared to [previous version/date]. Present findings in a comparison table."*
 
-Do this for three to five competitors and you have a competitive landscape overview in an afternoon. For a deeper dive into AI-powered competitive analysis workflows, see our full guide on [AI competitive analysis](/blog/ai-competitive-analysis/).
+Do this for three to five competitors and you have a competitive landscape overview in an afternoon. For a deeper dive into AI-powered competitive analysis workflows, see our full guide on [AI competitive analysis](/blog/ai-competitive-analysis/). For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 ### 2. Customer sentiment analysis
 
@@ -77,7 +77,7 @@ Your customers are already telling you what they think — in reviews, support t
 
 **How to do it:**
 
-Gather customer feedback from multiple sources: app store reviews, G2/Capterra reviews, social media mentions, support ticket themes, community forums. Feed them into an AI tool and ask for:
+Gather customer feedback from multiple sources: app store reviews, G2/Capterra reviews, social media mentions, support ticket themes, community forums. Feed them into an AI tool and ask for: For related guidance, see our guide on [How to Create Marketing Content with AI (Without Sounding Generic)](/blog/ai-content-creation/).
 
 - Top five positive themes (what do customers love?)
 - Top five negative themes (what frustrates them?)

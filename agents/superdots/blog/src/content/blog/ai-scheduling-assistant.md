@@ -56,7 +56,7 @@ This sounds simple, but it changes calendar culture. Without protection, focus t
 
 For managers and team leads, AI can distribute meetings more evenly across the week. Instead of cramming six meetings into Monday and having none on Thursday, the scheduler spreads them out, leaving breathing room between sessions.
 
-Some tools extend this to team-level balancing — making sure no single person is absorbing a disproportionate meeting load compared to their teammates.
+Some tools extend this to team-level balancing — making sure no single person is absorbing a disproportionate meeting load compared to their teammates. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 ## Beyond Basic Scheduling
 

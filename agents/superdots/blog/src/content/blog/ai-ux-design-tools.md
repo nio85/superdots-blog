@@ -64,13 +64,13 @@ Do not use AI wireframing as a replacement for thinking about your information a
 1. Define your user flow in plain text first. What screens exist? What is the user trying to do on each one?
 2. Generate wireframes for each screen using any of the tools above.
 3. Arrange and edit in Figma. Move things around. Delete what does not work. Add what is missing.
-4. Share for feedback at the wireframe stage — before you invest time in high fidelity.
+4. Share for feedback at the wireframe stage — before you invest time in high fidelity. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
 
 The goal is to get to feedback faster, not to skip the design process.
 
 ## AI for Prototyping and Interaction Design
 
-Once wireframes are solid, you need to make them interactive. This is traditionally the most time-consuming part — linking screens, defining transitions, building conditional flows. AI tools are compressing this step significantly.
+Once wireframes are solid, you need to make them interactive. This is traditionally the most time-consuming part — linking screens, defining transitions, building conditional flows. AI tools are compressing this step significantly. For related guidance, see our guide on [How AI Streamlines Design-to-Dev Handoff](/blog/ai-design-handoff/).
 
 ### Google Stitch
 

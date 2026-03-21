@@ -77,9 +77,9 @@ Typical sources include:
 - **Ad platforms** — impressions, clicks, attributed conversions by channel and creative
 - **Product/app telemetry** — feature usage, session depth, in-app events
 
-You do not need all of these on day one. Start with website analytics and CRM. Add sources iteratively as you confirm the baseline journey map is working.
+You do not need all of these on day one. Start with website analytics and CRM. Add sources iteratively as you confirm the baseline journey map is working. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
-The one non-negotiable: you need a common customer identifier that lets you stitch records together across systems. Usually this is an email address or user ID. If your systems do not share a common identifier, data stitching becomes the first problem to solve.
+The one non-negotiable: you need a common customer identifier that lets you stitch records together across systems. Usually this is an email address or user ID. If your systems do not share a common identifier, data stitching becomes the first problem to solve. For related guidance, see our guide on [AI SEO Tools: How to Rank Higher with Less Effort](/blog/ai-seo-tools/).
 
 ### Step 3: Let AI Identify the Actual Paths
 

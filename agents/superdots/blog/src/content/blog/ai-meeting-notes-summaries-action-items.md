@@ -54,11 +54,11 @@ Before rolling it out, do a test run:
 - Check if the summary captures the key points
 - See where the action items land (email, Slack, your PM tool)
 
-Every tool handles accents, jargon, and audio quality differently. A test run saves you from discovering issues during an important client call.
+Every tool handles accents, jargon, and audio quality differently. A test run saves you from discovering issues during an important client call. For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
 
 ### Step 4: Set up integrations
 
-The real value comes from getting notes where your team already works:
+The real value comes from getting notes where your team already works: For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 - **Slack**: Auto-post meeting summaries to relevant channels
 - **Notion/Confluence**: Create meeting notes pages automatically

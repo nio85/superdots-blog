@@ -82,13 +82,13 @@ Each of these tells a different story and suggests a different intervention.
 
 ### Sentiment shifts
 
-AI-powered sentiment analysis across support conversations, NPS responses, and even social media mentions can detect attitude changes before they become cancellation requests.
+AI-powered sentiment analysis across support conversations, NPS responses, and even social media mentions can detect attitude changes before they become cancellation requests. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
 
 A customer who rated you 9/10 six months ago and 6/10 last month has not churned yet. But that trajectory is concerning, and AI can flag it automatically.
 
 ### Milestone risks
 
-Some churn patterns are tied to lifecycle events, not gradual decline:
+Some churn patterns are tied to lifecycle events, not gradual decline: For more on this topic, check out [Build a Real-Time AI Customer Sentiment Dashboard](/blog/ai-customer-sentiment-dashboard/).
 
 - **End of annual contract.** Renewal is the highest-risk moment. AI can flag accounts approaching renewal that have low engagement scores.
 - **Post-onboarding drop-off.** Customers who do not reach key activation milestones in the first 30 days churn at much higher rates. AI tracks activation progress and flags stalled accounts.

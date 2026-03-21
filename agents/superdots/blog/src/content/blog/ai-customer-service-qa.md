@@ -62,7 +62,7 @@ This matters because a technically perfect call can still be a bad experience. A
 
 ### Trend identification
 
-Individual scores are useful. Patterns are more useful. AI QA tools aggregate data across thousands of interactions to surface trends:
+Individual scores are useful. Patterns are more useful. AI QA tools aggregate data across thousands of interactions to surface trends: If this applies to your team, our [AI Omnichannel Support: Unify Every Customer Conversation in One Place](/blog/ai-omnichannel-support/) guide covers the details.
 
 - Agent X's empathy scores dropped 15% this month
 - Calls about the new pricing plan have a 40% lower satisfaction score than average
@@ -85,7 +85,7 @@ The temptation is to measure everything. Resist it. Too many criteria dilute the
 
 **Compliance.** For regulated industries — finance, healthcare, insurance — this is non-negotiable. AI customer service QA tools can check every interaction for required disclosures, prohibited language, and proper consent documentation. Missing a compliance violation in a 2% sample is a risk. Catching it in 100% of interactions is a safeguard.
 
-**Customer effort.** How hard did the customer have to work to get their problem solved? Did they have to repeat themselves? Were they transferred multiple times? Low-effort interactions correlate strongly with customer retention.
+**Customer effort.** How hard did the customer have to work to get their problem solved? Did they have to repeat themselves? Were they transferred multiple times? Low-effort interactions correlate strongly with [customer retention](/blog/ai-customer-retention/).
 
 ## Identifying Coaching Opportunities
 

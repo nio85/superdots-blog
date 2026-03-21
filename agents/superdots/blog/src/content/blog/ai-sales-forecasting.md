@@ -39,7 +39,7 @@ The key insight: AI doesn't replace your judgment. It gives you a reality check 
 
 ## What AI needs from your CRM
 
-AI forecasting is only as good as the data you feed it. Here's the minimum your CRM needs to have:
+AI forecasting is only as good as the data you feed it. Here's the minimum your CRM needs to have: For more on this topic, check out [AI Conversation Intelligence: Extract Real Insights From Every Sales Call](/blog/ai-conversation-intelligence/).
 
 - **Deal stages and dates.** When did each deal enter and exit each stage? This is the backbone of any forecast model.
 - **Deal values.** Obvious, but make sure they're up to date — not the number from first discovery.
@@ -59,7 +59,7 @@ Before you buy any tool, check your CRM:
 - Is activity logging happening? (Automatic email/calendar sync is a minimum.)
 - Do you have at least 100 closed deals to train on? Ideally 200+.
 
-If you're not there yet, spend a month cleaning up. It's worth it.
+If you're not there yet, spend a month cleaning up. It's worth it. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 ### Step 2: Choose your tool
 

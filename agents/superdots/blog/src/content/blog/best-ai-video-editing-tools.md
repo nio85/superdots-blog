@@ -69,7 +69,7 @@ Kapwing is a browser-based editor that layers AI tools onto a traditional timeli
 
 ### Runway
 
-Runway pushes into more creative AI editing territory. Beyond basic cuts, it offers AI tools for removing backgrounds, generating b-roll, and applying style effects that would take hours in After Effects.
+Runway pushes into more creative AI editing territory. Beyond basic cuts, it offers AI tools for removing backgrounds, generating b-roll, and applying style effects that would take hours in After Effects. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 **Best for:** Creative teams that need visual effects and more advanced editing capabilities.
 
@@ -98,7 +98,7 @@ CapCut has evolved from a simple mobile editor into a surprisingly capable AI-po
 
 ## How to choose the right tool
 
-The right tool depends on your starting point and end goal:
+The right tool depends on your starting point and end goal: If this applies to your team, our [AI Brand Monitoring: Track Every Mention, Sentiment Shift, and Competitor Move](/blog/ai-brand-monitoring/) guide covers the details.
 
 **If you're editing podcasts or interviews:** Start with Descript. Text-based editing is a game-changer for speech-heavy content.
 

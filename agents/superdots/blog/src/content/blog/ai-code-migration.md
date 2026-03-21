@@ -125,9 +125,9 @@ This gives you a scope document. You know what you're getting into before a sing
 
 This is where migrations go wrong. The syntax changes are easy to find. The behavioral changes are not.
 
-Ask AI specifically:
+Ask AI specifically: For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
-> "Between [source] and [target], what behavioral changes exist — not just syntax changes — that could cause bugs without throwing errors? Focus on: type coercion, integer handling, timezone behavior, string encoding, default parameter changes."
+> "Between [source] and [target], what behavioral changes exist — not just syntax changes — that could cause bugs without throwing errors? Focus on: type coercion, integer handling, timezone behavior, string encoding, default parameter changes." For more on this topic, check out [AI for DevOps: Automate Your CI/CD Pipeline](/blog/ai-devops-tools/).
 
 For a Python 2→3 migration, AI will flag things like:
 - `int / int` now returns a float in Python 3 (silent logic bugs)

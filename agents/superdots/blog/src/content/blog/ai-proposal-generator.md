@@ -80,7 +80,7 @@ Most teams have this content scattered across Google Drive, email threads, and i
 
 ### Step 2: Keep Your CRM Data Clean
 
-AI personalization depends on CRM data quality. If your deal records are sparse — a company name, a contact, and a deal value — the AI has almost nothing to work with. The output will be generic.
+AI personalization depends on CRM data quality. If your deal records are sparse — a company name, a contact, and a deal value — the AI has almost nothing to work with. The output will be generic. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 The fields that matter most for AI proposal generation:
 - Industry and company size
@@ -89,7 +89,7 @@ The fields that matter most for AI proposal generation:
 - Deal type and specific products/services in scope
 - Decision maker roles and their stated priorities
 
-If your team logs detailed notes after discovery calls, this data exists. It just needs to be in a structured field the AI can read, not buried in free-text notes.
+If your team logs detailed notes after discovery calls, this data exists. It just needs to be in a structured field the AI can read, not buried in free-text notes. If this applies to your team, our [AI Deal Intelligence: Know When Deals Are at Risk](/blog/ai-deal-intelligence/) guide covers the details.
 
 ### Step 3: Generate the Draft — Then Actually Review It
 

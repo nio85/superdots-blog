@@ -70,9 +70,9 @@ Customer A pays invoices under $10,000 within 25 days but takes 40-50 days on in
 
 These patterns exist in your data right now. You might know some of them intuitively. But an AI model finds all of them, quantifies the probability distributions, and factors them into every forecast automatically.
 
-The impact is significant. According to a 2025 report by the Association for Financial Professionals, organizations using AI-driven forecasting achieved forecast accuracy within 5% of actuals for 30-day projections, compared to 10-15% variance with manual methods.
+The impact is significant. According to a 2025 report by the Association for Financial Professionals, organizations using AI-driven forecasting achieved forecast accuracy within 5% of actuals for 30-day projections, compared to 10-15% variance with manual methods. For more on this topic, check out [AI Budgeting Tools: How Non-Finance Teams Can Track Spending](/blog/ai-budgeting-tools/).
 
-This connects directly to [AI accounts receivable](/blog/ai-accounts-receivable) — the payment prediction models used in AR automation feed naturally into cash flow forecasting. If you are already using AI to predict when customers will pay, you are halfway to an AI cash flow forecast.
+This connects directly to [AI accounts receivable](/blog/ai-accounts-receivable) — the payment prediction models used in AR automation feed naturally into cash flow forecasting. If you are already using AI to predict when customers will pay, you are halfway to an AI cash flow forecast. Our guide on [AI Expense Reports: Automate the Most Hated Task in Finance](/blog/ai-expense-reports/) explores this further.
 
 ### Seasonal trend adjustments
 

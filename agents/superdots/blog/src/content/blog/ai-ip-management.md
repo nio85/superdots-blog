@@ -66,7 +66,7 @@ For related workflows in legal document analysis, see our guide on [AI legal doc
 
 ### Patent landscape analysis
 
-Landscape analysis maps the competitive patent environment around a technology area: who holds patents, where coverage is dense, where white spaces exist, how activity has trended over time. This informs R&D investment, licensing strategy, and acquisition targeting.
+Landscape analysis maps the competitive patent environment around a technology area: who holds patents, where coverage is dense, where white spaces exist, how activity has trended over time. This informs R&D investment, licensing strategy, and acquisition targeting. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 AI makes landscape analysis practical for smaller teams. Tools like Patsnap and Derwent generate visual patent landscapes — cluster maps, filing trend charts, assignee matrices — that previously required specialized analysts or expensive consulting engagements. A startup can now run a landscape analysis on a competitor's technology for thousands of dollars rather than tens of thousands.
 

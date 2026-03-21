@@ -46,7 +46,7 @@ Khroma takes a different approach. Instead of generating palettes on demand, it 
 
 The results feel more personal than other tools because they reflect actual human preferences rather than abstract harmony rules. The tradeoff is setup time: training takes ten minutes, and the model improves with ongoing use rather than being immediately perfect.
 
-Khroma is free and runs in the browser. There's no export API, so you'll copy hex codes manually—a minor friction point.
+Khroma is free and runs in the browser. There's no export API, so you'll copy hex codes manually—a minor friction point. For related guidance, see our guide on [How AI Streamlines Design-to-Dev Handoff](/blog/ai-design-handoff/).
 
 **Best for:** Individual designers who want a tool that gets better over time, projects where brand voice and aesthetic feel matter more than technical precision.
 

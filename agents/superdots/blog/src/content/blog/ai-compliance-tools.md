@@ -35,7 +35,7 @@ This is not a one-time audit. The best tools run continuous gap analysis, re-che
 
 ### Automated audit trails
 
-Every compliance framework requires evidence — proof that you did what you said you would do. Building audit trails manually means chasing colleagues for screenshots, exporting logs, and assembling documents into reviewer-friendly formats.
+Every compliance framework requires evidence — proof that you did what you said you would do. Building audit trails manually means chasing colleagues for screenshots, exporting logs, and assembling documents into reviewer-friendly formats. For more on this topic, check out [AI eDiscovery Tools: Cut Document Review Time by 60-80%](/blog/ai-ediscovery-tools/).
 
 AI tools generate audit trails automatically by connecting to your existing systems (HR platforms, cloud infrastructure, access management tools) and collecting evidence continuously. When audit time comes, the documentation is already there.
 

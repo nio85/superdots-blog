@@ -80,7 +80,7 @@ Every sales team hits the same objections repeatedly. Pricing. Timing. Competito
 
 AI conversation intelligence changes this. Platforms like Gong and Chorus detect objections automatically using natural language processing. They categorize them, track frequency, and — critically — show what happened next.
 
-Here is what this looks like in practice:
+Here is what this looks like in practice: If this applies to your team, our [AI Sales Forecasting: Predict Revenue Without a Data Team](/blog/ai-sales-forecasting/) guide covers the details.
 
 **Frequency analysis.** You discover that "we are already using [Competitor X]" comes up on 34% of calls this quarter, up from 22% last quarter. That is a market signal. Your competitive positioning may need updating. Your [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) might surface the same trend from support tickets.
 
@@ -92,7 +92,7 @@ This data feeds directly into call prep. When a rep is about to get on a call wi
 
 ## Competitor Mentions: Real-Time Competitive Intelligence
 
-Most competitive intelligence is stale by the time it reaches your team. Market reports are months old. Win/loss analyses happen quarterly. By the time you update your battle cards, the competitor has shipped a new feature.
+Most competitive intelligence is stale by the time it reaches your team. Market reports are months old. Win/loss analyses happen quarterly. By the time you update your battle cards, the competitor has shipped a new feature. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 AI conversation intelligence gives you competitive intelligence that updates daily. Every time a prospect mentions a competitor on a call, the platform captures it — the name, the context, and the sentiment.
 

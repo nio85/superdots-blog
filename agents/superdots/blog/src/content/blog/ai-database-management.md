@@ -99,13 +99,13 @@ That level of analysis would take a DBA hours. AI does it in minutes.
 
 ### Unused index detection
 
-Indexes that are never used waste storage and slow down writes. AI monitors index usage over time and flags indexes that can be safely dropped:
+Indexes that are never used waste storage and slow down writes. AI monitors index usage over time and flags indexes that can be safely dropped: For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 "The index `idx_orders_legacy_status` has not been used by any query in the last 90 days. It consumes 800MB and adds ~1ms to every insert. Recommended: drop after confirming no batch jobs or reports use it."
 
 ### Schema optimization
 
-AI can analyze your schema and suggest structural improvements:
+AI can analyze your schema and suggest structural improvements: If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 - **Normalization issues.** Redundant data that could cause consistency problems.
 - **Data type mismatches.** A VARCHAR(255) for a field that never exceeds 10 characters. A TEXT field for what should be an ENUM.

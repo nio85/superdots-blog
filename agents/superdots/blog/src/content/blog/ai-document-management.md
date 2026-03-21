@@ -62,7 +62,7 @@ This distinction deserves its own section because it is the single biggest quali
 
 ### How keyword search fails
 
-Keyword search works when you know exactly what you are looking for and remember the exact terms used. It fails when:
+Keyword search works when you know exactly what you are looking for and remember the exact terms used. It fails when: For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 - You remember the concept but not the exact words
 - The document uses different terminology than your search

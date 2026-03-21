@@ -86,7 +86,7 @@ An AI revenue forecasting model typically pulls data from three sources:
 - **CRM and pipeline data.** Current deals in progress, win rates by stage, average deal size, sales cycle length.
 - **External signals.** Market conditions, competitor activity, economic indicators relevant to your industry.
 
-The model trains on your historical patterns — what combination of factors led to strong quarters versus weak ones — and then applies those patterns to current conditions. If your pipeline looks similar to Q2 2024 but the market conditions match Q4 2025, the model weighs both signals instead of defaulting to a simple trend line.
+The model trains on your historical patterns — what combination of factors led to strong quarters versus weak ones — and then applies those patterns to current conditions. If your pipeline looks similar to Q2 2024 but the market conditions match Q4 2025, the model weighs both signals instead of defaulting to a simple trend line. For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 ### What you actually get
 

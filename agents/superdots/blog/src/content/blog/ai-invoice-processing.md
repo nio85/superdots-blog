@@ -66,13 +66,13 @@ When everything matches, the invoice flows straight to payment. No human touch n
 
 ### Step 3: Exception handling
 
-Not every invoice matches perfectly. AI handles exceptions too:
+Not every invoice matches perfectly. AI handles exceptions too: For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 - **Flagging discrepancies.** "This invoice charges $27.50 per unit, but the PO specifies $25.00. The difference is $250 across 100 units."
 - **Suggesting resolutions.** "The PO was amended on March 3rd to $27.50/unit. This invoice appears to reflect the amended price."
 - **Routing to the right person.** Price discrepancies go to procurement. Quantity discrepancies go to the receiving team. Policy exceptions go to the controller.
 
-The AI does not just flag problems — it gives the reviewer context so they can resolve the exception in seconds instead of investigating from scratch.
+The AI does not just flag problems — it gives the reviewer context so they can resolve the exception in seconds instead of investigating from scratch. For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 ### Step 4: Approval routing and payment
 

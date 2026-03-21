@@ -46,7 +46,7 @@ Instead of manually creating tasks after a meeting, AI can extract action items 
 
 ### 3. Task prioritization and scheduling
 
-When you have 50 tasks and limited team capacity, AI can help you decide what to work on first.
+When you have 50 tasks and limited team capacity, AI can help you decide what to work on first. For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
 
 **What it does**: Analyzes deadlines, dependencies, team workload, and historical velocity to suggest task order and resource allocation.
 
@@ -74,7 +74,7 @@ AI can spot problems before they become crises by analyzing patterns across your
 
 ### 5. Natural language project queries
 
-Instead of building complex filters and reports, ask your PM tool questions in plain English.
+Instead of building complex filters and reports, ask your PM tool questions in plain English. For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 **What it does**: You type "What tasks are overdue in Project X?" or "Show me everything assigned to the design team due this month" and get an instant answer.
 

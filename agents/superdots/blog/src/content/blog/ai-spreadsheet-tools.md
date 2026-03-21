@@ -51,12 +51,12 @@ Data cleaning is the task that eats more time than actual analysis. AI handles t
 
 ### Generate formulas from descriptions
 
-When you do need a formula, AI writes it for you:
+When you do need a formula, AI writes it for you: For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
 
 - "Write a formula that calculates the running average of column C for the last 7 entries"
 - "Create a conditional format that turns cells red if the value is more than 2 standard deviations from the mean"
 
-The AI generates the formula, you paste it in and verify. This is faster than Googling the syntax and adapting a Stack Overflow answer to your specific spreadsheet. And unlike copying a formula from the internet, AI-generated formulas reference your actual column names and data structure.
+The AI generates the formula, you paste it in and verify. This is faster than Googling the syntax and adapting a Stack Overflow answer to your specific spreadsheet. And unlike copying a formula from the internet, AI-generated formulas reference your actual column names and data structure. For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
 
 ### Build reports and dashboards
 

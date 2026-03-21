@@ -75,7 +75,7 @@ When evaluating AI legal research tools, these capabilities matter most.
 
 ### Case law search
 
-The core function. Evaluate:
+The core function. Evaluate: If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 - **Semantic understanding.** Does the tool return relevant results when you describe your issue in plain language? Test with several queries from your practice area.
 - **Jurisdictional coverage.** Does it cover the jurisdictions you practice in? Federal and state? International?
@@ -92,7 +92,7 @@ Beyond case law, you need to research statutes, regulations, and administrative 
 
 ### Brief and document analysis
 
-Some tools analyze your own documents:
+Some tools analyze your own documents: Our guide on [Best AI Contract Management Software in 2026](/blog/ai-contract-management/) explores this further.
 
 - **Brief analysis.** Upload a draft brief and the tool identifies the legal issues, finds supporting and opposing authority, and flags weaknesses in your argument.
 - **Opposing brief analysis.** Upload the opposing counsel's brief and get an analysis of their arguments, the authorities they cite, and potential counter-arguments.

@@ -58,7 +58,7 @@ This hybrid approach gives you the speed of automation for 80-90% of tickets whi
 
 ## Key Features to Evaluate in AI Routing Tools
 
-Not all AI routing tools are equal. Here is what separates the good ones from the ones that will frustrate your team.
+Not all AI routing tools are equal. Here is what separates the good ones from the ones that will frustrate your team. For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
 
 ### Must-haves
 
@@ -84,7 +84,7 @@ Not all AI routing tools are equal. Here is what separates the good ones from th
 
 ## Implementation Checklist
 
-Setting up AI ticket routing is not a one-click install. Here is what you need before you start, and the steps to get it running.
+Setting up AI ticket routing is not a one-click install. Here is what you need before you start, and the steps to get it running. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
 
 ### Before you start
 
