@@ -8,12 +8,13 @@ import RelatedArticles from '../components/RelatedArticles.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import ShareButtons from '../components/ShareButtons.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
+type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug, readingTime } = Astro.props;
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -131,6 +132,18 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 									(Updated: <FormattedDate date={updatedDate} />)
 								</span>
 							)}
+							{readingTime && (
+								<>
+									<span class="separator">&middot;</span>
+									<span class="reading-time">
+										<svg class="reading-time-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+											<circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+											<path d="M8 4.5V8l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										{readingTime} min read
+									</span>
+								</>
+							)}
 						</div>
 						<ShareButtons url={articleUrl} title={title} description={description} />
 					</div>
@@ -158,6 +171,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
+		<TableOfContents />
 		<Footer />
 		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
 		<template id="midpost-cta-template">
@@ -408,6 +422,19 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 	.updated {
 		font-style: italic;
 	}
+	/* Reading time badge */
+	.reading-time {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+	}
+	.reading-time-icon {
+		flex-shrink: 0;
+		opacity: 0.6;
+	}
 	.hero-image {
 		margin: var(--space-6) 0;
 		border-radius: var(--radius-lg);
@@ -448,6 +475,12 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		margin-bottom: var(--space-4);
 		font-size: var(--text-2xl);
 		letter-spacing: -0.02em;
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-border);
+	}
+	.prose :global(h2:first-child) {
+		border-top: none;
+		padding-top: 0;
 	}
 	.prose :global(h3) {
 		font-family: var(--font-display);
@@ -482,13 +515,70 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		border-radius: var(--radius-lg);
 		margin: var(--space-6) 0;
 	}
-	/* Better blockquote treatment in articles */
+	/* Pull quotes — use > **"Quote text"** in markdown */
 	.prose :global(blockquote) {
 		border-left: 4px solid var(--color-primary);
 		padding: var(--space-4) var(--space-5);
 		margin: var(--space-8) 0;
 		background: var(--color-bg-dim);
 		border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+		position: relative;
+	}
+	.prose :global(blockquote p) {
+		margin: 0;
+	}
+	.prose :global(blockquote strong) {
+		font-size: var(--text-xl);
+		line-height: var(--leading-snug);
+		letter-spacing: -0.01em;
+	}
+	/* Callout boxes — tables with emoji headers become callout-style visually */
+	.prose :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: var(--space-6) 0;
+		font-size: var(--text-base);
+	}
+	.prose :global(th) {
+		text-align: left;
+		font-weight: var(--weight-semibold);
+		font-family: var(--font-display);
+		padding: var(--space-3) var(--space-4);
+		background: var(--color-bg-dim);
+		border-bottom: 2px solid var(--color-primary);
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		color: var(--color-text-strong);
+	}
+	.prose :global(td) {
+		padding: var(--space-3) var(--space-4);
+		border-bottom: 1px solid var(--color-border);
+		vertical-align: top;
+	}
+	.prose :global(tr:last-child td) {
+		border-bottom: none;
+	}
+	/* Code block refinements */
+	.prose :global(pre) {
+		border-radius: var(--radius-lg);
+		margin: var(--space-6) 0;
+		border: 1px solid var(--color-border);
+	}
+	.prose :global(code:not(pre code)) {
+		font-family: var(--font-mono);
+		font-size: 0.875em;
+		background: var(--color-bg-dim);
+		padding: 0.15em 0.4em;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--color-border);
+	}
+	/* Horizontal rules as section separators */
+	.prose :global(hr) {
+		border: none;
+		height: 1px;
+		background: var(--color-border);
+		margin: var(--space-10) 0;
+		position: relative;
 	}
 
 	@media (max-width: 720px) {
