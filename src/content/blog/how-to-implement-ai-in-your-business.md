@@ -21,7 +21,7 @@ faqs:
     answer: "Track time saved (hours per week), cost reduction (headcount avoidance, error reduction), revenue impact (faster lead response, higher conversion), and quality improvement (fewer errors, faster service). Set baseline metrics before implementing so you can measure the change."
   - question: "What if our team resists AI adoption?"
     answer: "Resistance usually comes from fear (job loss) or frustration (tool doesn't work). Address both: communicate clearly that AI handles tedious tasks so people can do more interesting work. And start with tools that obviously help — once people save two hours a week, resistance disappears."
-heroImage: '/images/blog/how-to-implement-ai-in-your-business.webp'
+heroImage: "/images/blog/how-to-implement-ai-in-your-business.webp"
 ---
 
 You know AI can help your business. You've seen the headlines, tried ChatGPT, and watched competitors talk about their "AI strategy."

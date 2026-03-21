@@ -21,7 +21,7 @@ faqs:
     answer: "Yes. Tools like Whisper-based services support 90+ languages. Otter.ai focuses on English, while Fireflies.ai and Sonix support 30-40 languages. Check language support before committing if your team works across regions."
   - question: "What is the difference between AI transcription and human transcription?"
     answer: "AI transcription is faster (minutes vs. hours) and cheaper ($0.006-0.03 per minute vs. $1-3 per minute for human). Human transcription is more accurate for difficult audio. Many teams use AI for everyday meetings and human transcription for legal or compliance-critical recordings."
-heroImage: '/images/blog/ai-transcription-tools.webp'
+heroImage: "/images/blog/ai-transcription-tools.webp"
 ---
 
 Your team spends hours in meetings every week. But the notes? They're either incomplete, late, or missing entirely.

@@ -21,7 +21,7 @@ faqs:
     answer: "Review SOPs quarterly or whenever the process changes — new tools, new team members, new regulations. AI makes updates fast: paste the current SOP and describe what changed, and the AI generates an updated version in minutes."
   - question: "Can AI help create SOPs for regulated industries?"
     answer: "AI can draft SOPs that follow regulatory frameworks (ISO, HIPAA, SOX), but a compliance expert must review the output. AI helps with structure and completeness. Humans ensure regulatory accuracy."
-heroImage: '/images/blog/ai-sop-generator.webp'
+heroImage: "/images/blog/ai-sop-generator.webp"
 ---
 
 Every team has processes that live in someone's head. When that person is on vacation, sick, or leaves the company, the process breaks.
