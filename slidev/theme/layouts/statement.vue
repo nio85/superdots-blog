@@ -5,6 +5,7 @@
 <template>
   <div class="slidev-layout sd-statement">
     <div class="sd-glow" />
+    <div class="sd-dots" />
     <div class="sd-top-line" />
 
     <div class="sd-body">
@@ -34,6 +35,14 @@ import SdIcon from '../components/SdIcon.vue'
   height: 400px;
   background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.06) 0%, transparent 65%);
   filter: blur(80px);
+  z-index: 0;
+}
+
+.sd-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
   z-index: 0;
 }
 

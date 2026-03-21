@@ -41,7 +41,7 @@ import SdIcon from '../components/SdIcon.vue'
 
 .sd-logo-mark {
   position: absolute;
-  top: 2rem;
+  bottom: 2rem;
   right: 2.5rem;
   width: 24px;
   height: 24px;
@@ -59,7 +59,7 @@ import SdIcon from '../components/SdIcon.vue'
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 3.5rem 3rem;
 }
 

@@ -19,13 +19,8 @@
       </h1>
     </div>
 
-    <SdIcon class="sd-logo-mark" :size="24" :opacity="0.2" />
   </div>
 </template>
-
-<script setup>
-import SdIcon from '../components/SdIcon.vue'
-</script>
 
 <style scoped>
 .sd-section {
@@ -38,21 +33,21 @@ import SdIcon from '../components/SdIcon.vue'
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 600px;
   height: 500px;
-  background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.08) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.12) 0%, rgba(232, 54, 59, 0.04) 35%, transparent 70%);
   filter: blur(80px);
   z-index: 1;
 }
 
 .sd-glow-teal {
   position: absolute;
-  bottom: 10%;
-  right: 20%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.04) 0%, transparent 65%);
-  filter: blur(60px);
+  bottom: 5%;
+  right: 15%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.06) 0%, transparent 65%);
+  filter: blur(70px);
   z-index: 1;
 }
 
@@ -108,11 +103,11 @@ import SdIcon from '../components/SdIcon.vue'
 }
 
 .sd-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: #E8363B;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(232, 54, 59, 0.5);
+  box-shadow: 0 0 20px rgba(232, 54, 59, 0.6), 0 0 40px rgba(232, 54, 59, 0.2);
 }
 
 h1 {
@@ -126,13 +121,4 @@ h1 {
   margin: 0;
 }
 
-.sd-logo-mark {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  width: 24px;
-  height: 24px;
-  opacity: 0.2;
-  z-index: 5;
-}
 </style>
