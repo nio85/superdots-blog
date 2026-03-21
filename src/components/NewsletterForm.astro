@@ -28,8 +28,8 @@ const btnText: Record<string, string> = {
 ---
 
 <div class:list={['newsletter', `newsletter--${variant}`]} data-source={source}>
-	{(variant === 'banner' || variant === 'midpost') && <div class="newsletter-dots" aria-hidden="true"></div>}
-	{(variant === 'banner' || variant === 'midpost') && <div class="newsletter-glow" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost' || variant === 'hero') && <div class="newsletter-dots" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost' || variant === 'hero') && <div class="newsletter-glow" aria-hidden="true"></div>}
 	<div class="newsletter-inner">
 		{variant !== 'compact' && variant !== 'hero' && (
 			<div class="newsletter-text">
@@ -142,8 +142,69 @@ const btnText: Record<string, string> = {
 		background: var(--color-primary);
 	}
 	.newsletter--banner {
-		background: var(--color-bg-dim);
-		border-color: var(--color-border);
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: var(--space-10) var(--space-8);
+		text-align: center;
+	}
+	.newsletter--banner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: linear-gradient(90deg, var(--color-primary), var(--sd-teal, #14B8A6));
+	}
+	.newsletter--banner::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: linear-gradient(90deg, var(--sd-teal, #14B8A6), var(--color-primary));
+	}
+	.newsletter--banner .newsletter-inner {
+		max-width: 460px;
+		margin: 0 auto;
+	}
+	.newsletter--banner .newsletter-text {
+		margin-bottom: var(--space-6);
+	}
+	.newsletter--banner .newsletter-text .superdot {
+		width: 10px;
+		height: 10px;
+		margin-bottom: var(--space-3);
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
+	}
+	.newsletter--banner .newsletter-heading {
+		font-size: var(--text-2xl);
+		letter-spacing: -0.025em;
+	}
+	.newsletter--banner .newsletter-desc {
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-weight: var(--weight-medium);
+		opacity: 0.7;
+	}
+	.newsletter--banner .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--banner .newsletter-field input {
+		max-width: 240px;
+	}
+	.newsletter--banner .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--banner .newsletter-status {
+		text-align: center;
 	}
 	.newsletter--inline {
 		background: transparent;
@@ -181,12 +242,15 @@ const btnText: Record<string, string> = {
 		font-size: var(--text-xs);
 		opacity: 0.7;
 	}
-	/* Hero variant — inline in hero, centered, no border/background */
+	/* Hero variant — premium inline signup in hero section */
 	.newsletter--hero {
-		background: transparent;
-		border: none;
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 40%, rgba(20, 184, 166, 0.02) 100%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
 		margin: 0;
-		padding: 0;
+		padding: var(--space-6) var(--space-8);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
 	}
 	.newsletter--hero::before {
 		display: none;
@@ -200,9 +264,13 @@ const btnText: Record<string, string> = {
 		font-size: var(--text-sm);
 		font-weight: var(--weight-semibold);
 		color: var(--color-text-muted);
-		margin: 0 0 var(--space-3);
-		letter-spacing: -0.01em;
+		margin: 0 0 var(--space-4);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
 		text-align: center;
+	}
+	.newsletter-hero-label .dot-accent {
+		color: var(--color-primary);
 	}
 	.newsletter--hero .newsletter-field {
 		justify-content: center;
@@ -211,9 +279,11 @@ const btnText: Record<string, string> = {
 		max-width: 260px;
 		border-color: var(--color-border-strong);
 		background: var(--color-bg);
+		border-radius: var(--radius-md);
 	}
 	.newsletter--hero .newsletter-field button {
 		padding: var(--space-3) var(--space-6);
+		border-radius: var(--radius-md);
 	}
 	.newsletter--hero .newsletter-legal {
 		text-align: center;
@@ -334,12 +404,64 @@ const btnText: Record<string, string> = {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
 		filter: blur(40px);
 	}
+	/* Banner variant — dots bottom-left, glow centered like midpost */
+	.newsletter--banner .newsletter-dots {
+		top: auto;
+		bottom: -10px;
+		left: -10px;
+		right: auto;
+		width: 100px;
+		height: 100px;
+		opacity: 0.2;
+	}
+	.newsletter--banner .newsletter-glow {
+		top: -30%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
+		filter: blur(40px);
+	}
+	/* Hero variant — subtle dot + glow decorations */
+	.newsletter--hero .newsletter-dots {
+		top: auto;
+		bottom: -6px;
+		right: -6px;
+		width: 80px;
+		height: 80px;
+		opacity: 0.15;
+	}
+	.newsletter--hero .newsletter-glow {
+		top: -40%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 300px;
+		height: 300px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, rgba(20, 184, 166, 0.02) 50%, transparent 70%);
+		filter: blur(30px);
+	}
 	:global([data-theme="dark"]) .newsletter-glow {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+	}
+	:global([data-theme="dark"]) .newsletter--hero {
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 40%, rgba(20, 184, 166, 0.04) 100%);
+		border-color: var(--color-border);
+	}
+	:global([data-theme="dark"]) .newsletter--banner {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
 	}
 	@media (prefers-color-scheme: dark) {
 		:global([data-theme="auto"]) .newsletter-glow {
 			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+		}
+		:global([data-theme="auto"]) .newsletter--hero {
+			background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 40%, rgba(20, 184, 166, 0.04) 100%);
+			border-color: var(--color-border);
 		}
 	}
 	.newsletter-inner {
@@ -447,6 +569,21 @@ const btnText: Record<string, string> = {
 			font-size: var(--text-xl);
 		}
 		.newsletter--midpost .newsletter-field input {
+			max-width: 100%;
+		}
+		.newsletter--banner {
+			padding: var(--space-8) var(--space-5);
+		}
+		.newsletter--banner .newsletter-heading {
+			font-size: var(--text-xl);
+		}
+		.newsletter--banner .newsletter-field input {
+			max-width: 100%;
+		}
+		.newsletter--hero {
+			padding: var(--space-5) var(--space-4);
+		}
+		.newsletter--hero .newsletter-field input {
 			max-width: 100%;
 		}
 		.newsletter-dots {
