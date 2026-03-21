@@ -10,10 +10,6 @@ const allPosts = (await getCollection('blog'))
 
 const latestPosts = allPosts.slice(0, 6);
 
-const totalArticles = allPosts.length;
-const departments = new Set(allPosts.map(p => p.data.department));
-const totalDepartments = departments.size;
-
 const pillarGuides = [
 	{
 		title: 'AI for Marketing',
@@ -77,23 +73,6 @@ const popularPosts = allPosts
 			<a href="#newsletter" class="btn btn-secondary btn-lg">Subscribe</a>
 		</div>
 
-		<!-- Social proof stats -->
-		<div class="hero-stats">
-			<div class="stat">
-				<span class="stat-number">{totalArticles}+</span>
-				<span class="stat-label">Articles</span>
-			</div>
-			<span class="stat-divider" aria-hidden="true"></span>
-			<div class="stat">
-				<span class="stat-number">{totalDepartments}</span>
-				<span class="stat-label">Departments</span>
-			</div>
-			<span class="stat-divider" aria-hidden="true"></span>
-			<div class="stat">
-				<span class="stat-number">{pillarGuides.length}</span>
-				<span class="stat-label">Complete guides</span>
-			</div>
-		</div>
 	</section>
 
 	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
@@ -332,53 +311,6 @@ const popularPosts = allPosts
 		font-size: var(--text-lg);
 	}
 
-	/* Social proof stats */
-	.hero-stats {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: var(--space-6);
-		margin-top: var(--space-12);
-		padding-top: var(--space-8);
-	}
-	.hero-stats::before {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 40px;
-		height: 2px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-		opacity: 0.6;
-	}
-	.stat {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: var(--space-1);
-	}
-	.stat-number {
-		font-family: var(--font-display);
-		font-size: var(--text-3xl);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-strong);
-		letter-spacing: -0.02em;
-		line-height: 1;
-	}
-	.stat-label {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		font-weight: var(--weight-medium);
-	}
-	.stat-divider {
-		width: 1px;
-		height: 32px;
-		background: var(--color-border);
-	}
 
 	/* Guides Carousel */
 	.guides-carousel {
@@ -551,28 +483,10 @@ const popularPosts = allPosts
 		.hero-sub {
 			font-size: var(--text-lg);
 		}
-		.hero-stats {
-			gap: var(--space-4);
-		}
-		.stat-number {
-			font-size: var(--text-2xl);
-		}
 	}
 	@media (max-width: 480px) {
 		.hero h1 {
 			font-size: var(--text-3xl);
-		}
-		.hero-stats {
-			gap: var(--space-3);
-		}
-		.stat-number {
-			font-size: var(--text-xl);
-		}
-		.stat-label {
-			font-size: var(--text-xs);
-		}
-		.stat-divider {
-			height: 24px;
 		}
 		.dept-grid {
 			grid-template-columns: repeat(2, 1fr);
