@@ -219,3 +219,5 @@ AI also won't tell you what to do with the data. It surfaces signals. You still 
 
 Finally, monitoring is not the same as engagement. Knowing that someone mentioned your brand negatively is step one. Responding, fixing the underlying issue, and following up is where value is created. The tool is only as good as the team behind it.
 
+For the full picture of how AI supports every marketing function — from brand monitoring and market research to content and SEO — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).
+

@@ -181,6 +181,7 @@ Sales proposals should reflect your strategic thinking — not consume it. AI ha
 
 ## Related reads:
 
+- [AI for Sales: Complete Guide](/blog/ai-for-sales-complete-guide) — The complete guide to AI across every sales function.
 - [AI Sales Emails](/blog/ai-sales-emails)
 - [AI CRM Tools](/blog/ai-crm-tools)
 - [AI Content Creation](/blog/ai-content-creation)

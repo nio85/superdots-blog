@@ -170,3 +170,5 @@ Only if you use AI to send more spam. AI-assisted emails that are relevant, pers
 ### Which AI tools work best for sales emails?
 
 General-purpose tools like ChatGPT and Claude work well with good prompts. Sales-specific tools like Lavender, Regie.ai, and Smartwriter add features like prospect research integration, email scoring, and CRM sync. Enterprise teams often run these alongside platforms like [Outreach](https://www.outreach.io) or [Salesloft](https://www.salesloft.com) for sequencing and analytics. For most reps starting out, a general AI tool plus your existing CRM is enough. Add specialized tools once you have a workflow that works.
+
+For the complete picture of how AI is transforming every stage of the sales process — from prospecting to forecasting — see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).

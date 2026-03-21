@@ -153,3 +153,5 @@ Here's a 15-minute exercise that will change how you prep for calls:
 6. Afterward, honestly assess: were you more prepared than usual? Did you ask better questions?
 
 Five minutes of AI-assisted prep beats thirty minutes of manual research. Every time. And once you see the difference, you'll never go back to winging it.
+
+For the complete picture of how AI supports every stage of the sales process — from prospecting and scoring to forecasting and deal intelligence — see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).

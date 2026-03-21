@@ -261,6 +261,7 @@ Start with one task. Get it right. Then expand. That is how you get the efficien
 
 **Related reads:**
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI-powered people operations across recruiting, onboarding, and beyond.
 - [AI Employee Onboarding](/blog/ai-employee-onboarding) — Once you have hired the right people, make their first experience just as smooth.
 - [AI Performance Reviews](/blog/ai-performance-reviews) — Write better feedback for the people you worked so hard to hire.
 - [AI Skills Gap Analysis](/blog/ai-skills-gap-analysis) — Identify workforce skill shortages before they become hiring emergencies.

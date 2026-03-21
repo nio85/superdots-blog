@@ -183,3 +183,5 @@ Skills gap analysis only works if business leaders are involved. HR can run the 
 
 A skills gap analysis that happens annually is a compliance exercise, not a strategic tool. The value comes from continuous monitoring and rapid response. Set up quarterly reviews at minimum, with AI providing real-time alerts for critical gaps.
 
+For a comprehensive look at how AI supports every stage of the employee lifecycle — from recruiting to workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).
+

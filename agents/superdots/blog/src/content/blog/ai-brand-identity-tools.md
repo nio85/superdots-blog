@@ -226,3 +226,5 @@ Consider hiring a human designer or agency when:
 
 The sweet spot for most businesses is using AI brand identity tools to build a strong foundation, then bringing in a human designer for refinement if and when the budget allows.
 
+For the complete picture of how AI supports every marketing function — from brand and content to SEO and analytics — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).
+

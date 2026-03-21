@@ -175,3 +175,5 @@ AI video editing tools have eliminated the biggest barrier to video content: the
 Start with one video. Pick whatever you've been meaning to edit but haven't gotten around to. Upload it, let the AI clean it up, add captions, and export it. The whole process should take under an hour for a 10-minute video. If you're also looking at creating video from scratch, check out our guide to [AI video marketing tools](/blog/ai-video-marketing-tools/) for text-to-video and AI avatar platforms.
 
 The tools are good enough. Your footage is good enough. Stop waiting for a "real editor" and start publishing.
+
+For the full picture of how AI supports every marketing function — from video and content to SEO and analytics — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).
