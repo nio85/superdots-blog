@@ -17,6 +17,7 @@ faqs:
     answer: "Trying to automate everything at once. The companies that get the best results start with one high-impact workflow — usually email, data entry, or reporting — run a 30-day pilot, measure the time saved, then expand. Companies that buy five tools simultaneously end up with shallow adoption, tool fatigue, and wasted budget. The second biggest mistake is automating a broken process. Fix the process first, then automate it."
   - question: "Will AI automation replace jobs?"
     answer: "AI automation replaces tasks, not jobs. It handles the repetitive, low-value work that employees don't want to do — data entry, email sorting, report formatting, invoice matching. This frees people to focus on judgment calls, relationship building, creative problem-solving, and strategic work. McKinsey research shows industries with high AI adoption see 3x higher revenue growth per worker — that growth comes from people doing more valuable work, not from fewer people."
+heroImage: "/images/blog/ai-automation-for-business-complete-guide.webp"
 ---
 
 The average knowledge worker spends [60% of their time on "work about work"](https://asana.com/resources/anatomy-of-work) — status updates, email management, data entry, searching for information, and other tasks that feel productive but don't actually move the business forward. That's 25 hours a week spent on busywork for every person on your team.
