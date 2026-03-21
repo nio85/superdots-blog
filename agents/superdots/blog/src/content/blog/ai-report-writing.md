@@ -21,7 +21,7 @@ faqs:
     answer: "Some AI tools generate charts directly (ChatGPT with Code Interpreter, Claude with analysis mode). For professional-grade visualizations, AI tools like Julius and Tableau AI create publication-ready charts from your data."
   - question: "What's the best AI tool for recurring reports?"
     answer: "For weekly or monthly reports with consistent formats, set up templates in tools like Notion AI or Google Docs with Gemini. For data-heavy reports, use Python-based tools like Julius that can process updated datasets automatically."
-heroImage: '/images/blog/ai-report-writing.webp'
+heroImage: "/images/blog/ai-report-writing.webp"
 ---
 
 Report writing eats time. You pull data from three systems, format it into a spreadsheet, write an analysis, build charts, draft an executive summary, and review it twice. For a quarterly report, that's a full day — sometimes more.
