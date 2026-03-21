@@ -15,7 +15,7 @@ faqs:
   - question: "What data do I need for AI churn prediction?"
     answer: "At minimum: customer activity data (logins, feature usage), support interaction history, and billing/payment history. The more behavioral signals you have, the better the model performs. Most teams need 12-18 months of historical data to train an effective model."
   - question: "How much does reducing churn impact revenue?"
-    answer: "Significantly. Research shows that reducing churn by just 5% can increase profits by 25-95%, due to the compounding effect of customer lifetime value. Acquiring a new customer costs 5-7x more than retaining an existing one. Companies implementing AI churn prediction have seen retention improve by up to 40% within six months, according to ChurnZero case studies."
+    answer: "Significantly. According to [Reichheld and Sasser (Harvard Business Review, 1990)](https://hbr.org/1990/09/zero-defections-quality-comes-to-services), reducing churn by just 5% can increase profits by 25-95%, due to the compounding effect of customer lifetime value. Acquiring a new customer costs 5-7x more than retaining an existing one. Companies implementing AI churn prediction have reported retention improvements of up to 40% within six months, according to vendor case studies from ChurnZero."
   - question: "What tools are best for AI churn prediction?"
     answer: "Dedicated customer success platforms like ChurnZero, Gainsight, and Totango offer built-in AI models that train on your data — the fastest path to production-ready churn prediction. For teams with data science resources, custom models built on your data warehouse provide more flexibility. Start with your existing CRM and product analytics before investing in specialized tools — you need clean, connected data before any model will work."
 ---
@@ -32,7 +32,7 @@ AI changes this. Not by making retention automatic, but by making at-risk custom
 
 The math is simple but worth stating clearly.
 
-**A 5% increase in retention can boost profits by 25-95%**, according to research cited by [Gartner](https://www.gartner.com). This comes from the compounding effect of customer lifetime value. A customer who stays three years is not just 3x more valuable than a one-year customer — they spend more per year, cost less to support, and refer others.
+**A 5% increase in retention can boost profits by 25-95%**, according to [Reichheld and Sasser's landmark research](https://hbr.org/1990/09/zero-defections-quality-comes-to-services) published in Harvard Business Review. This comes from the compounding effect of customer lifetime value. A customer who stays three years is not just 3x more valuable than a one-year customer — they spend more per year, cost less to support, and refer others.
 
 **Churn compounds too.** If you lose 5% of customers per month, you are replacing your entire customer base every 20 months. Your acquisition team is running just to stand still. Improve retention by just a few percentage points and you free up growth budget for actual growth.
 
@@ -70,7 +70,7 @@ The model assigns each customer a churn risk score — typically a percentage or
 
 This score is not a prediction that the customer will definitely leave. It is a signal that the customer's behavior pattern matches historical churn patterns. The higher the score, the more the customer's recent behavior looks like past churners.
 
-Real companies are already proving this works at scale. Salesforce implemented a churn prediction system that analyzes over 300 variables to flag at-risk accounts up to six months before renewal — boosting their gross retention rate by 3 percentage points over 18 months and preserving hundreds of millions in revenue. On the smaller end, SaaS startup Groove reduced churn by 71% by identifying key behavioral metrics and sending targeted emails to at-risk customers. The tools differ, but the principle is the same: see the signals early, act before the customer decides to leave.
+Real companies are already proving this works at scale. Enterprise platforms like Salesforce Einstein and Gainsight use hundreds of behavioral variables to flag at-risk accounts months before renewal, giving customer success teams time to intervene. On the smaller end, SaaS startup [Groove reduced churn by 71%](https://www.groovehq.com/blog/churn) by identifying key behavioral metrics — first-session length and login frequency — and sending targeted emails to at-risk customers. The tools differ, but the principle is the same: see the signals early, act before the customer decides to leave.
 
 ## AI for Early Warning Signals
 
@@ -207,7 +207,7 @@ Here is what to do next:
 
 1. **Connect your product analytics, support data, and billing data this week.** Without a unified data foundation, no churn model will work. Start with the integration, even if it is messy.
 2. **Build a simple health score using your existing tools.** Even a spreadsheet formula that combines login frequency, support ticket sentiment, and payment status is better than nothing. You do not need a machine learning model to start seeing at-risk customers.
-3. **Set up one automated intervention.** Pick your most common churn signal — usage decline, failed payment, or low NPS score — and trigger a targeted response. Proactive engagement can lower churn by up to 36%, according to industry research.
+3. **Set up one automated intervention.** Pick your most common churn signal — usage decline, failed payment, or low NPS score — and trigger a targeted response. Proactive engagement consistently reduces churn — Groove cut theirs by 71% with targeted emails alone.
 
 **Related reads:**
 
