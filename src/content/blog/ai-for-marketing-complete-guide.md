@@ -3,6 +3,7 @@ title: 'AI for Marketing: The Complete Guide to AI-Powered Marketing'
 description: 'How marketing teams use AI to create content, personalize campaigns, optimize SEO, and track brand performance — without sacrificing authenticity or blowing the budget.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'
+pillar: true
 department: 'marketing'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-marketing', 'ai-marketing', 'ai-content-creation', 'ai-email-marketing', 'ai-seo', 'ai-social-media', 'ai-brand-monitoring']

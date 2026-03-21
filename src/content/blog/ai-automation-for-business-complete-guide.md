@@ -3,6 +3,7 @@ title: 'AI Automation for Business: The Complete Guide to Working Smarter'
 description: 'How teams use AI to automate repetitive work across email, operations, finance, and supply chain — saving 20+ hours per month without writing code.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'
+pillar: true
 department: 'operations'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-operations', 'ai-automation', 'ai-productivity', 'ai-project-management', 'ai-email', 'ai-supply-chain', 'ai-procurement', 'ai-data-analysis']

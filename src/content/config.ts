@@ -10,6 +10,7 @@ const blog = defineCollection({
 		author: z.string().default('Superdots Team'),
 		department: z.enum(['engineering', 'marketing', 'sales', 'hr', 'finance', 'operations', 'legal', 'customer-support', 'design']),
 		useCase: z.enum(['automation', 'analysis', 'writing', 'communication']),
+		pillar: z.boolean().default(false),
 		tags: z.array(z.string()).default([]),
 		heroImage: z.union([image(), z.string()]).optional(),
 		faqs: z.array(z.object({
