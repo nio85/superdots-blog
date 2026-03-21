@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
 const guides = [
 	{
@@ -76,6 +77,7 @@ const guides = [
 			)
 		))}
 	</section>
+	<NewsletterForm variant="banner" source="guides-listing" />
 </Base>
 
 <style>

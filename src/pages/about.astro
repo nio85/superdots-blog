@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 ---
 
 <Base title="About | Superdots" description="About Superdots — practical AI guides for every department.">
@@ -39,6 +40,7 @@ import Base from '../layouts/Base.astro';
 			that can save you hours every week. We'll show you how.
 		</p>
 	</div>
+	<NewsletterForm variant="banner" source="about" />
 </Base>
 
 <style>

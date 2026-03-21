@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 import { TAGS } from '../../consts';
 
 export async function getStaticPaths() {
@@ -44,7 +45,7 @@ const posts = (await getCollection('blog', ({ data }) => (data.tags ?? []).inclu
 	<div class="page-header">
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;" aria-hidden="true"></div>
 		<a href="/tags/" class="back">&larr; Tags</a>
-		<h1>{label}<span class="dot-accent">.</span></h1>
+		<h1>{label}<span class="dot-accent">.</span> <span class="article-count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span></h1>
 		<p class="subtitle">{description}</p>
 	</div>
 
@@ -66,6 +67,7 @@ const posts = (await getCollection('blog', ({ data }) => (data.tags ?? []).inclu
 			))}
 		</div>
 	)}
+	<NewsletterForm variant="banner" source={`tag-${tag}`} />
 </Base>
 
 <style>
@@ -79,6 +81,19 @@ const posts = (await getCollection('blog', ({ data }) => (data.tags ?? []).inclu
 	}
 	.dot-accent {
 		color: var(--color-primary);
+	}
+	.article-count {
+		display: inline-block;
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-full);
+		vertical-align: middle;
+		letter-spacing: 0;
 	}
 	.back {
 		font-family: var(--font-display);
