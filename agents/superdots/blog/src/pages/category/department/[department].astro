@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
 import NewsletterForm from '../../../components/NewsletterForm.astro';
-import { DEPARTMENTS } from '../../../consts';
+import { DEPARTMENTS, USE_CASES } from '../../../consts';
 
 const DEPARTMENT_INTROS: Record<string, string> = {
 	engineering: 'Guides that help engineering teams ship faster with AI — from smarter code reviews to automated documentation.',
@@ -28,14 +28,34 @@ const { department } = Astro.params;
 const { label } = Astro.props;
 const intro = DEPARTMENT_INTROS[department!] || `AI guides for ${label.toLowerCase()} teams.`;
 
-const posts = (await getCollection('blog', ({ data }) => data.department === department))
+const allPosts = await getCollection('blog');
+const posts = allPosts
+	.filter(({ data }) => data.department === department)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Compute related use cases: which use cases appear in this department's articles
+const useCaseCounts = new Map<string, number>();
+for (const post of posts) {
+	const uc = post.data.useCase;
+	if (uc) useCaseCounts.set(uc, (useCaseCounts.get(uc) || 0) + 1);
+}
+const relatedUseCases = USE_CASES
+	.filter((u) => useCaseCounts.has(u.slug))
+	.map((u) => ({ ...u, count: useCaseCounts.get(u.slug)! }))
+	.sort((a, b) => b.count - a.count);
 ---
 
 <Base title={`${label} | Superdots`} description={`AI guides for ${label} teams.`}>
+	<nav class="breadcrumb" aria-label="Breadcrumb">
+		<a href="/">Home</a>
+		<span aria-hidden="true">/</span>
+		<a href="/category/">Categories</a>
+		<span aria-hidden="true">/</span>
+		<span aria-current="page">{label}</span>
+	</nav>
+
 	<div class="page-header">
 		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;" aria-hidden="true"></div>
-		<a href="/category/" class="back">&larr; Categories</a>
 		<h1>{label}<span class="dot-accent">.</span> <span class="article-count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span></h1>
 		<p class="subtitle">{intro}</p>
 	</div>
@@ -58,10 +78,47 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 			))}
 		</div>
 	)}
+
+	{relatedUseCases.length > 0 && (
+		<section class="related-section">
+			<h2 class="related-heading">Related use cases</h2>
+			<div class="related-chips">
+				{relatedUseCases.map((u) => (
+					<a href={`/category/use-case/${u.slug}/`} class="related-chip">
+						<span class="related-chip-label">{u.label}</span>
+						<span class="related-chip-count">{u.count}</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+
 	<NewsletterForm variant="banner" source={`dept-${department}`} />
 </Base>
 
 <style>
+	/* Breadcrumb */
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		padding-top: var(--space-4);
+	}
+	.breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+	}
+	.breadcrumb a:hover {
+		color: var(--color-primary);
+	}
+	.breadcrumb span[aria-current] {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-medium);
+	}
+
 	.page-header {
 		position: relative;
 		overflow: hidden;
@@ -86,18 +143,6 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 		vertical-align: middle;
 		letter-spacing: 0;
 	}
-	.back {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-medium);
-		color: var(--color-text-muted);
-		display: inline-block;
-		margin-bottom: var(--space-4);
-	}
-	.back:hover {
-		color: var(--color-primary);
-		text-decoration: none;
-	}
 	.subtitle {
 		color: var(--color-text-muted);
 		margin-bottom: var(--space-6);
@@ -110,6 +155,52 @@ const posts = (await getCollection('blog', ({ data }) => data.department === dep
 		display: grid;
 		gap: var(--space-5);
 	}
+
+	/* Related use cases section */
+	.related-section {
+		padding: var(--space-8) 0;
+		border-top: 1px solid var(--color-border);
+		margin-top: var(--space-8);
+	}
+	.related-heading {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-4);
+	}
+	.related-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+	.related-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-5);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		text-decoration: none;
+		font-family: var(--font-display);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-strong);
+		background: var(--color-bg);
+		transition: all var(--transition-fast);
+	}
+	.related-chip:hover {
+		border-color: var(--sd-teal);
+		color: var(--sd-teal);
+		text-decoration: none;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-sm);
+	}
+	.related-chip-count {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		padding: 2px var(--space-2);
+		border-radius: var(--radius-full);
+	}
+
 	@media (min-width: 640px) {
 		.post-grid { grid-template-columns: repeat(2, 1fr); }
 	}
