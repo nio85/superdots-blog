@@ -4,26 +4,26 @@
 <template>
   <div class="slidev-layout sd-brand">
     <div class="sd-top-accent" />
-    <img src="/brand/superdots-icon-white.svg" alt="" class="sd-logo-mark" />
+    <SdIcon class="sd-logo-mark" :size="24" :opacity="0.2" />
 
     <div class="sd-body">
       <h2 class="sd-title">Brand Assets</h2>
       <div class="sd-cards">
         <div class="sd-card">
           <div class="sd-preview sd-dark">
-            <img src="/brand/superdots-logo-white.svg" alt="Superdots logo" class="sd-logo-img" />
+            <SdLogo :height="22" variant="white" :opacity="1" />
           </div>
           <p class="sd-label">Logo — dark bg</p>
         </div>
         <div class="sd-card">
           <div class="sd-preview sd-light">
-            <img src="/brand/superdots-logo.svg" alt="Superdots logo" class="sd-logo-img" />
+            <SdLogo :height="22" variant="dark" :opacity="1" />
           </div>
           <p class="sd-label">Logo — light bg</p>
         </div>
         <div class="sd-card">
           <div class="sd-preview sd-dark">
-            <img src="/brand/superdots-icon-white.svg" alt="Superdots icon" class="sd-icon-img" />
+            <SdIcon :size="30" :opacity="1" />
           </div>
           <p class="sd-label">Icon mark</p>
         </div>
@@ -34,6 +34,11 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import SdIcon from '../components/SdIcon.vue'
+import SdLogo from '../components/SdLogo.vue'
+</script>
 
 <style scoped>
 .sd-brand {
