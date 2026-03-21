@@ -36,6 +36,26 @@ export default defineConfig({
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
 				item.lastmod = lastmod || buildDate;
+
+				const url = item.url;
+				if (url === 'https://superdots.sh/') {
+					item.changefreq = 'weekly';
+					item.priority = 1.0;
+				} else if (url === 'https://superdots.sh/blog/') {
+					item.changefreq = 'daily';
+					item.priority = 0.9;
+				} else if (url.includes('/blog/ai-for-')) {
+					// Pillar pages
+					item.changefreq = 'weekly';
+					item.priority = 0.8;
+				} else if (url.includes('/blog/')) {
+					item.changefreq = 'monthly';
+					item.priority = 0.7;
+				} else {
+					item.changefreq = 'monthly';
+					item.priority = 0.5;
+				}
+
 				return item;
 			},
 		}),
