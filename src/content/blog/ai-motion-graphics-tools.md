@@ -1,6 +1,6 @@
 ---
-title: "AI Motion Graphics and Animation Tools for Design Teams"
-description: "Create professional motion graphics and animations without After Effects expertise. The best AI tools for design teams in 2026."
+title: "Best AI Motion Graphics Tools in 2026 (No After Effects Needed)"
+description: "Skip the After Effects learning curve. Compare the best AI motion graphics tools that let any designer create professional animations in minutes, not days."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "design"
