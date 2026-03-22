@@ -29,6 +29,7 @@ for (const file of fs.readdirSync(blogDir)) {
 
 export default defineConfig({
 	site: 'https://superdots.sh',
+	trailingSlash: 'always',
 	compressHTML: true,
 	integrations: [
 		mdx(),
