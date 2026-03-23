@@ -12,6 +12,10 @@ export async function onRequestGet(context) {
 	const { env, request } = context;
 	const { RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID } = env;
 
+	if (!RESEND_API_KEY || !NEWSLETTER_SECRET || !RESEND_AUDIENCE_ID) {
+		return errorPage('Server misconfigured. Please try again later.');
+	}
+
 	const url = new URL(request.url);
 	const email = (url.searchParams.get('email') || '').trim().toLowerCase();
 	const ts = parseInt(url.searchParams.get('ts') || '0', 10);
