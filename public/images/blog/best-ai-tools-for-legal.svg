@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1222"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#8B5CF6"/>
+  <g>
+    <circle cx="842" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="864" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="908" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="930" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="974" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="996" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1040" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1062" cy="40" r="2" fill="#8B5CF6" opacity="0.12"/>
+    <circle cx="820" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="842" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="886" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="908" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="952" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="974" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1018" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1040" cy="62" r="2" fill="#8B5CF6" opacity="0.12"/>
+    <circle cx="820" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="864" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="886" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="930" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="952" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="996" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1018" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1062" cy="84" r="2" fill="#8B5CF6" opacity="0.12"/>
+    <circle cx="842" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="864" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="908" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="930" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="974" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="996" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1040" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1062" cy="106" r="2" fill="#8B5CF6" opacity="0.12"/>
+    <circle cx="820" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="842" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="886" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="908" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="952" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="974" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1018" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/><circle cx="1040" cy="128" r="2" fill="#8B5CF6" opacity="0.12"/>
+  </g>
+  <g>
+    <circle cx="980" cy="380" r="90" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.2"/>
+    <circle cx="1020" cy="320" r="8" fill="#8B5CF6" opacity="0.3"/>
+    <line x1="990" y1="500" x2="1110" y2="420" stroke="#8B5CF6" stroke-width="1.5" opacity="0.15"/>
+    <rect x="1060" y="504" width="40" height="40" rx="4" fill="none" stroke="#C4B5FD" stroke-width="1" opacity="0.15" transform="rotate(25, 1080, 524)"/>
+  </g>
+  <rect x="80" y="540" width="120" height="3" rx="1.5" fill="#8B5CF6" opacity="0.6"/>
+  <circle cx="92" cy="80" r="8" fill="#E8363B"/>
+  <text x="112" y="87" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="600" fill="#FFFFFF" letter-spacing="-0.02em">superdots</text>
+  <rect x="80" y="140" width="78" height="28" rx="14" fill="#8B5CF6" opacity="0.15"/>
+  <text x="98" y="159" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#C4B5FD" letter-spacing="0.08em">LEGAL</text>
+  <rect x="166" y="140" width="118" height="28" rx="14" fill="#334155" opacity="0.5"/>
+  <text x="178" y="159" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#94A3B8" letter-spacing="0.06em">AUTOMATION</text>
+  <text x="80" y="270" font-family="'Space Grotesk', sans-serif" font-size="48" font-weight="700" fill="#FFFFFF" letter-spacing="-0.03em">Best AI Tools</text>
+  <text x="80" y="330" font-family="'Space Grotesk', sans-serif" font-size="48" font-weight="700" fill="#FFFFFF" letter-spacing="-0.03em">for Legal<tspan fill="#E8363B">.</tspan></text>
+  <text x="80" y="390" font-family="'Inter', sans-serif" font-size="22" fill="#94A3B8" letter-spacing="-0.01em">10 Tools Lawyers Actually Use</text>
+  <text x="80" y="580" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#64748B" letter-spacing="0.04em">superdots.sh</text>
+  <rect x="1160" y="590" width="8" height="8" rx="4" fill="#8B5CF6" opacity="0.4"/>
+</svg>

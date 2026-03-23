@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "writing"
 tags: ['ai-tools', 'ai-for-design']
+heroImage: "/images/blog/best-ai-tools-for-design.svg"
 faqs:
   - question: "What is the best AI tool for graphic design?"
     answer: "For professional graphic design, Canva's Magic Studio offers the best all-around experience — AI image generation, background removal, Magic Resize, and brand kit management in one platform. For AI-native image generation specifically, Midjourney produces the highest-quality outputs. Adobe Firefly integrates directly into Creative Cloud for designers already in that ecosystem."
@@ -29,16 +30,16 @@ But the landscape is fragmented. Some tools excel at image generation but have n
 
 | Tool | Best For | Starting Price | Key Feature |
 |------|----------|---------------|-------------|
-| [Canva (Magic Studio)]([affiliate link placeholder]) | All-in-one design + AI | Free; Pro $15/mo | Magic Design + brand kits |
-| [Midjourney]([affiliate link placeholder]) | AI image generation | $10/mo | Highest-quality image outputs |
-| [Adobe Firefly]([affiliate link placeholder]) | AI in Creative Cloud | $10/mo (standalone) | Generative Fill & Expand |
-| [Figma (with AI)]([affiliate link placeholder]) | Collaborative UI design | Free; $15/editor/mo | AI-powered auto-layout |
-| [Galileo AI]([affiliate link placeholder]) | AI UI/UX generation | Free beta; Pro $19/mo | Text-to-UI design |
-| [Uizard]([affiliate link placeholder]) | AI wireframing | Free; Pro $19/user/mo | Sketch-to-wireframe conversion |
-| [Looka]([affiliate link placeholder]) | AI brand identity | $20 one-time | Logo + full brand kit generation |
-| [Runway]([affiliate link placeholder]) | AI video & motion | Free; Standard $15/user/mo | Gen-3 video generation |
-| [Framer]([affiliate link placeholder]) | AI website builder | Free; Mini $5/mo | AI site generation |
-| [Maze]([affiliate link placeholder]) | AI user research | Free; Org $99/user/mo | AI usability analysis |
+| Canva (Magic Studio) | All-in-one design + AI | Free; Pro $15/mo | Magic Design + brand kits |
+| Midjourney | AI image generation | $10/mo | Highest-quality image outputs |
+| Adobe Firefly | AI in Creative Cloud | $10/mo (standalone) | Generative Fill & Expand |
+| Figma (with AI) | Collaborative UI design | Free; $15/editor/mo | AI-powered auto-layout |
+| Galileo AI | AI UI/UX generation | Free beta; Pro $19/mo | Text-to-UI design |
+| Uizard | AI wireframing | Free; Pro $19/user/mo | Sketch-to-wireframe conversion |
+| Looka | AI brand identity | $20 one-time | Logo + full brand kit generation |
+| Runway | AI video & motion | Free; Standard $15/user/mo | Gen-3 video generation |
+| Framer | AI website builder | Free; Mini $5/mo | AI site generation |
+| Maze | AI user research | Free; Org $99/user/mo | AI usability analysis |
 
 ## The 10 best AI design tools, reviewed
 
