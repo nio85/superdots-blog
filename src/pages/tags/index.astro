@@ -73,25 +73,47 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 		</section>
 	)}
 
-	{/* Other tags — compact grid */}
+	{/* Other tags — compact grid with show more */}
 	{otherTags.length > 0 && (
 		<section class="other-section" aria-label="More tags">
 			<div class="section-label section-label--muted">
 				More Topics
 			</div>
-			<div class="tag-grid">
-				{otherTags.map((t) => (
-					<a href={`/tags/${t.slug}/`} class="tag-card">
+			<div class="tag-grid" id="other-tags-grid">
+				{otherTags.map((t, i) => (
+					<a href={`/tags/${t.slug}/`} class="tag-card" data-tag-index={i} style={i >= 12 ? 'display:none' : ''}>
 						<span class="tag-label">{t.label}</span>
 						<span class="tag-count">{t.count} {t.count === 1 ? 'article' : 'articles'}</span>
 					</a>
 				))}
 			</div>
+			{otherTags.length > 12 && (
+				<div class="show-more-wrap">
+					<button class="btn-show-more" id="show-more-tags" type="button">
+						Show all topics
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+				</div>
+			)}
 		</section>
 	)}
 
 	<NewsletterForm variant="banner" source="tags-listing" />
 </Base>
+
+<script>
+	const btn = document.getElementById('show-more-tags');
+	if (btn) {
+		btn.addEventListener('click', () => {
+			const grid = document.getElementById('other-tags-grid');
+			if (!grid) return;
+			grid.querySelectorAll('.tag-card[style]').forEach((el) => {
+				(el as HTMLElement).style.display = '';
+			});
+			btn.parentElement?.remove();
+		});
+	}
+</script>
 
 <style>
 	/* Section labels */
@@ -215,6 +237,32 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 	}
 	.popular-card:hover .popular-cta {
 		gap: var(--space-2);
+	}
+
+	/* Show more */
+	.show-more-wrap {
+		display: flex;
+		justify-content: center;
+		padding-top: var(--space-4);
+	}
+	.btn-show-more {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-5);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+		background: transparent;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+	}
+	.btn-show-more:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
 	}
 
 	/* Other tags — compact grid */
