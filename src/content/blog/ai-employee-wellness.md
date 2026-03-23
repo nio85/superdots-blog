@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'hr'
 useCase: 'analysis'
 tags: ['ai-for-hr', 'ai-tools', 'ai-hr', 'ai-employee-wellness']
+heroImage: "/images/blog/ai-employee-wellness.webp"
 faqs:
   - question: "How much do AI employee wellness programs cost?"
     answer: "Costs range widely. Calm Business and Headspace start around $5-12 per employee per month for mindfulness and self-guided support. Clinical platforms like Spring Health or Lyra Health run $10-30 per employee per month with access to therapy and coaching. Budget-conscious teams can start with a group subscription to Headspace or Calm for under $1,000/year for a 20-person team. The ROI typically exceeds the investment within the first year — companies report $3-6 in healthcare savings for every dollar spent."

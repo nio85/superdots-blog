@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
 tags: ['ai-for-hr', 'ai-tools', 'ai-hiring', 'ai-resume-screening']
+heroImage: "/images/blog/ai-resume-screening.webp"
 faqs:
   - question: "How accurate is AI resume screening compared to human recruiters?"
     answer: "AI resume screening using semantic analysis improves candidate-job fit accuracy by about 60% compared to keyword-only systems, according to MIT CSAIL research. But accuracy depends heavily on setup. Well-configured AI catches qualified candidates that keyword filters miss — especially career changers with transferable skills. The key is using AI to create a ranked shortlist for human review, not to make final decisions. Companies report 25% better shortlist accuracy when combining AI screening with human judgment on the final cut."

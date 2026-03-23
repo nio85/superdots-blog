@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "design"
 useCase: "writing"
 tags: ['ai-tools', 'ai-for-design']
-heroImage: "/images/blog/best-ai-tools-for-design.svg"
+heroImage: "/images/blog/best-ai-tools-for-design.webp"
 faqs:
   - question: "What is the best AI tool for graphic design?"
     answer: "For professional graphic design, Canva's Magic Studio offers the best all-around experience — AI image generation, background removal, Magic Resize, and brand kit management in one platform. For AI-native image generation specifically, Midjourney produces the highest-quality outputs. Adobe Firefly integrates directly into Creative Cloud for designers already in that ecosystem."

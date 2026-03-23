@@ -6,6 +6,7 @@ author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
 tags: ['ai-for-hr', 'ai-tools', 'ai-hiring', 'ai-interview-scheduling']
+heroImage: "/images/blog/ai-interview-scheduling.webp"
 faqs:
   - question: "How much time does AI interview scheduling actually save?"
     answer: "Recruiters typically spend 10-15 hours per week on scheduling logistics. AI scheduling tools cut that by 80% or more. S&P Global reduced scheduling time from 30 minutes to 5 minutes per interview using GoodTime. Pfizer saw an 80% decrease in scheduling time with Paradox. For panel interviews involving 3-5 interviewers, the savings are even more dramatic — what used to take 20+ emails and multiple days now happens in minutes."

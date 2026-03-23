@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "legal"
 useCase: "automation"
 tags: ['ai-tools', 'ai-for-legal']
-heroImage: "/images/blog/best-ai-tools-for-legal.svg"
+heroImage: "/images/blog/best-ai-tools-for-legal.webp"
 faqs:
   - question: "What AI tools do lawyers actually use?"
     answer: "The most widely adopted AI legal tools are contract review platforms (Ironclad, Juro), legal research assistants (Westlaw AI, CoCounsel), and document automation tools (Clio, PracticePanther). Adoption is accelerating in 2026, with over 60% of large law firms reporting active AI use. The biggest use cases are contract analysis, due diligence, legal research, and billing optimization."

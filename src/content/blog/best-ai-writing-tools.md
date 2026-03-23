@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
 tags: ['ai-tools', 'ai-writing']
-heroImage: "/images/blog/best-ai-writing-tools.svg"
+heroImage: "/images/blog/best-ai-writing-tools.webp"
 faqs:
   - question: "What is the best AI writing tool for business?"
     answer: "For most business writing needs, Claude is the best overall choice — it produces the most natural-sounding long-form content and handles complex instructions well. Jasper is strongest for marketing teams that need brand voice consistency across multiple writers. Grammarly is essential for anyone who writes business emails and documents. The best choice depends on whether you need content creation, editing, or both."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ['ai-tools', 'ai-for-operations']
-heroImage: "/images/blog/best-ai-tools-for-operations.svg"
+heroImage: "/images/blog/best-ai-tools-for-operations.webp"
 faqs:
   - question: "What AI tools help with business operations?"
     answer: "The most impactful AI operations tools fall into four categories: workflow automation (Zapier, Make, Microsoft Power Automate), project management (Monday.com, Asana, ClickUp), process mining (Celonis), and document processing (Docsumo, Rossum). Most operations teams start with workflow automation to connect existing tools, then add AI-powered analytics for process optimization."

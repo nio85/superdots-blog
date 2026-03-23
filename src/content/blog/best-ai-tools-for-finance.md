@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
 tags: ['ai-tools', 'ai-for-finance']
-heroImage: "/images/blog/best-ai-tools-for-finance.svg"
+heroImage: "/images/blog/best-ai-tools-for-finance.webp"
 faqs:
   - question: "What AI tools do accountants use?"
     answer: "Accountants primarily use AI for bookkeeping automation (Vic.ai, Docyt), expense management (Brex, Ramp), invoice processing (Tipalti), and financial close (FloQast). Most modern accounting platforms like QuickBooks and Xero now include AI features for categorization and reconciliation. The trend is toward AI handling routine data entry so accountants focus on advisory work."
