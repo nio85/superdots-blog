@@ -43,7 +43,7 @@ We evaluated 12 platforms across pricing, AI capabilities, integration depth, an
 
 ## Individual reviews
 
-### 1. Intercom — best AI-first customer platform
+### 1. Intercom — Best AI-first customer platform
 
 Intercom has rebuilt itself around AI. Its Fin AI Agent handles customer conversations end-to-end, drawing answers from your help center, past conversations, and custom data sources. It does not just surface articles — it composes natural responses, follows up, and resolves issues autonomously.
 
@@ -57,7 +57,7 @@ The AI copilot sits alongside human agents, suggesting responses, summarizing co
 
 **Best for:** Teams that want AI handling the front line of support with seamless human handoff.
 
-### 2. Zendesk — best enterprise help desk with AI
+### 2. Zendesk — Best enterprise help desk with AI
 
 Zendesk remains the dominant help desk for large support teams, and its AI layer has matured significantly. AI-powered triage automatically categorizes, prioritizes, and routes incoming tickets. The agent copilot suggests responses, surfaces relevant knowledge base articles, and summarizes long conversation threads.
 
@@ -71,7 +71,7 @@ The newer outcome-based AI pricing model charges $1.50-$2.00 per automated resol
 
 **Best for:** Enterprise teams with 50+ agents that need AI across the full support workflow.
 
-### 3. Freshdesk — best budget-friendly help desk with AI
+### 3. Freshdesk — Best budget-friendly help desk with AI
 
 Freshdesk delivers solid help desk fundamentals with AI features at a price point that does not punish growing teams. Freddy AI handles ticket triage, auto-assigns conversations, suggests canned responses, and powers a customer-facing chatbot — all included in the higher-tier plans rather than charged as an add-on.
 
@@ -85,7 +85,7 @@ The free plan supports up to 2 agents with basic ticketing, which makes it a gen
 
 **Best for:** Growing teams that want solid AI features without enterprise pricing.
 
-### 4. Tidio — best for small business live chat
+### 4. Tidio — Best for small business live chat
 
 Tidio combines live chat, chatbot automation, and AI in a package designed for small businesses and e-commerce stores. The standout feature is Lyro, an AI chatbot that learns from your FAQ content and support docs to handle customer conversations automatically.
 
@@ -99,7 +99,7 @@ The visual chatbot builder lets you create conversation flows without code. You 
 
 **Best for:** Small businesses and e-commerce stores that need live chat with basic AI, fast.
 
-### 5. Ada — best for high-volume AI automation
+### 5. Ada — Best for high-volume AI automation
 
 Ada takes a different approach than most tools on this list. It is an AI-first automation platform, not a help desk. You build an AI agent that handles customer conversations across chat, email, phone, and social — measured entirely on resolution rate rather than deflection.
 
@@ -113,7 +113,7 @@ The no-code builder lets support teams (not just engineers) create and refine AI
 
 **Best for:** Companies with high ticket volume that want to automate the majority of customer interactions.
 
-### 6. Help Scout — best simple help desk for small teams
+### 6. Help Scout — Best simple help desk for small teams
 
 Help Scout is the anti-Zendesk. It keeps things deliberately simple: shared inbox, knowledge base, live chat, and now AI features layered on top. There is no complex routing engine or multi-tier triage system — just a clean interface that lets small teams manage customer conversations without drowning in configuration.
 
@@ -127,7 +127,7 @@ The AI features include draft generation (AI writes a response for the agent to 
 
 **Best for:** Small teams that value simplicity and want AI to assist agents rather than replace them.
 
-### 7. Gorgias — best for e-commerce support
+### 7. Gorgias — Best for e-commerce support
 
 Gorgias is built specifically for e-commerce. It integrates deeply with Shopify, BigCommerce, and Magento, pulling order data, customer history, and product information directly into the support interface. Agents see everything they need without switching tabs.
 
@@ -141,7 +141,7 @@ The AI automation handles common e-commerce requests — order status, shipping 
 
 **Best for:** E-commerce teams on Shopify or BigCommerce that want AI to handle order-related support automatically.
 
-### 8. Kustomer — best for CRM-powered support
+### 8. Kustomer — Best for CRM-powered support
 
 Kustomer merges CRM and help desk into a single platform. Instead of separate ticket views and customer profiles, every conversation lives on a customer timeline that shows the full history — purchases, previous tickets, account changes, and interactions across every channel.
 
@@ -155,7 +155,7 @@ AI features include automatic classification (categorizing and prioritizing inco
 
 **Best for:** Teams that want a unified CRM and support platform with AI, especially for subscription or relationship-driven businesses.
 
-### 9. Forethought — best for AI-powered support triage and automation
+### 9. Forethought — Best for AI-powered support triage and automation
 
 Forethought is an AI layer that sits on top of your existing help desk (Zendesk, Salesforce, ServiceNow). It adds four products: Triage (automatic ticket classification and routing), Solve (customer-facing AI agent), Assist (agent copilot), and Discover (insights from support data).
 
@@ -169,7 +169,7 @@ The approach is modular — you can start with just Triage and add Solve or Assi
 
 **Best for:** Enterprise teams on Zendesk or Salesforce that want to add AI without migrating to a new help desk.
 
-### 10. BoldDesk — best affordable help desk with AI
+### 10. BoldDesk — Best affordable help desk with AI
 
 BoldDesk is a newer entrant that competes on price and simplicity. It covers the core help desk needs — ticketing, knowledge base, live chat, and customer portal — with AI features that punch above their price point.
 
