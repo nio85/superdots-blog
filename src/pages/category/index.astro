@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
 
@@ -30,17 +31,12 @@ for (const post of posts) {
 ---
 
 <Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
-	<nav class="breadcrumb" aria-label="Breadcrumb">
-		<a href="/">Home</a>
-		<span aria-hidden="true">/</span>
-		<span aria-current="page">Categories</span>
-	</nav>
-
-	<div class="page-header">
-		<div class="dots dots-md" style="top: -15%; right: 0;" aria-hidden="true"></div>
-		<h1>Categories<span class="dot-accent">.</span></h1>
-		<p class="page-desc">Browse guides by the team you're on or the problem you're solving. Pick a department or use case to find what's relevant to your work.</p>
-	</div>
+	<PageHeader
+		title="Categories"
+		kicker="Browse topics"
+		subtitle="Browse guides by the team you're on or the problem you're solving. Pick a department or use case to find what's relevant to your work."
+		breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Categories', href: '/category/' }]}
+	/>
 
 	<section class="category-section">
 		<h2>By department</h2>
@@ -87,32 +83,6 @@ for (const post of posts) {
 </Base>
 
 <style>
-	.breadcrumb {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		padding-top: var(--space-4);
-	}
-	.breadcrumb a {
-		color: var(--color-text-muted);
-		text-decoration: none;
-	}
-	.breadcrumb a:hover {
-		color: var(--color-primary);
-	}
-	.breadcrumb span[aria-current] {
-		color: var(--color-text-strong);
-		font-weight: var(--weight-medium);
-	}
-	.page-desc {
-		color: var(--color-text-muted);
-		font-size: var(--text-lg);
-		margin-bottom: var(--space-6);
-		line-height: var(--leading-snug);
-	}
 	.category-section {
 		margin-bottom: var(--space-10);
 	}
