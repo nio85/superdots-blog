@@ -161,7 +161,6 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 					</div>
 				)}
 				<div class="article-divider" aria-hidden="true"><span class="superdot"></span></div>
-				<TableOfContents />
 				<div class="prose" id="article-prose">
 					<slot />
 				</div>
@@ -172,6 +171,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
+		<TableOfContents />
 		<Footer />
 		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
 		<template id="midpost-cta-template">
