@@ -6,12 +6,15 @@ import FormattedDate from '../components/FormattedDate.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
+type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug, readingTime } = Astro.props;
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -26,18 +29,20 @@ const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/
 const tagMeta = (tags ?? [])
 	.map((t: string) => TAGS.find((tm) => tm.slug === t))
 	.filter(Boolean);
+
+const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
 <html lang="en" data-theme="auto">
 	<head>
-		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} />
+		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Article",
 			"headline": title,
 			"description": description,
-			"author": { "@type": "Person", "name": author },
+			"author": { "@type": "Organization", "name": author },
 			"datePublished": pubDate.toISOString(),
 			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
 			...(ogImageSrc && { "image": new URL(ogImageSrc, Astro.url).toString() }),
@@ -117,15 +122,30 @@ const tagMeta = (tags ?? [])
 					</div>
 					<h1>{title}<span class="dot-accent">.</span></h1>
 					<p class="description">{description}</p>
-					<div class="byline">
-						<span class="author">{author}</span>
-						<span class="separator">&middot;</span>
-						<FormattedDate date={pubDate} />
-						{updatedDate && (
-							<span class="updated">
-								(Updated: <FormattedDate date={updatedDate} />)
-							</span>
-						)}
+					<div class="byline-row">
+						<div class="byline">
+							<span class="author">{author}</span>
+							<span class="separator">&middot;</span>
+							<FormattedDate date={pubDate} />
+							{updatedDate && (
+								<span class="updated">
+									(Updated: <FormattedDate date={updatedDate} />)
+								</span>
+							)}
+							{readingTime && (
+								<>
+									<span class="separator">&middot;</span>
+									<span class="reading-time">
+										<svg class="reading-time-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+											<circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+											<path d="M8 4.5V8l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+										{readingTime} min read
+									</span>
+								</>
+							)}
+						</div>
+						<ShareButtons url={articleUrl} title={title} description={description} />
 					</div>
 				</div>
 				{heroImage && (
@@ -141,14 +161,106 @@ const tagMeta = (tags ?? [])
 					</div>
 				)}
 				<div class="article-divider" aria-hidden="true"><span class="superdot"></span></div>
-				<div class="prose">
+				<div class="prose" id="article-prose">
 					<slot />
 				</div>
+				{faqs && faqs.length > 0 && (
+					<FaqAccordion faqs={faqs} />
+				)}
 			</article>
-			<NewsletterForm variant="banner" source="article" />
+			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
+		<TableOfContents />
 		<Footer />
+		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
+		<template id="midpost-cta-template">
+			<aside class="newsletter newsletter--midpost" data-source="article-inline" aria-label="Newsletter signup">
+				<div class="newsletter-dots" aria-hidden="true"></div>
+				<div class="newsletter-glow" aria-hidden="true"></div>
+				<div class="newsletter-inner">
+					<div class="newsletter-text">
+						<span class="superdot"></span>
+						<h3 class="newsletter-heading">Enjoying this? Get one like it every week<span class="dot-accent">.</span></h3>
+						<p class="newsletter-desc">Practical AI guides for your team — delivered every Tuesday.</p>
+					</div>
+					<form class="newsletter-form" aria-label="Newsletter signup">
+						<div class="newsletter-field">
+							<label for="newsletter-email-midpost" class="sr-only">Email address</label>
+							<input type="email" id="newsletter-email-midpost" name="email" placeholder="you@company.com" required autocomplete="email" data-clarity-mask="true" />
+							<button type="submit" class="btn btn-primary">Count me in</button>
+						</div>
+						<p class="newsletter-legal">No spam, unsubscribe anytime. Includes <a href="/privacy#newsletter">email tracking</a>.</p>
+						<div class="newsletter-status" role="status" aria-live="polite"></div>
+					</form>
+				</div>
+			</aside>
+		</template>
+		<script>
+			// Inject mid-article CTA at ~40% of prose content
+			(function() {
+				const prose = document.getElementById('article-prose');
+				const tpl = document.getElementById('midpost-cta-template') as HTMLTemplateElement | null;
+				if (!prose || !tpl) return;
+
+				const children = Array.from(prose.children);
+				if (children.length < 6) return; // Skip short articles
+
+				const targetIndex = Math.floor(children.length * 0.4);
+				// Find nearest heading break for clean placement
+				let insertIndex = targetIndex;
+				for (let i = targetIndex; i < Math.min(targetIndex + 4, children.length); i++) {
+					const tag = children[i].tagName;
+					if (tag === 'H2' || tag === 'H3') {
+						insertIndex = i;
+						break;
+					}
+				}
+
+				const cta = tpl.content.cloneNode(true);
+				children[insertIndex].before(cta);
+
+				// Bind form submit for the injected CTA
+				const injectedForm = prose.querySelector('.newsletter--midpost .newsletter-form');
+				if (injectedForm) {
+					injectedForm.addEventListener('submit', async (e) => {
+						e.preventDefault();
+						const el = e.currentTarget as HTMLFormElement;
+						const input = el.querySelector('input[type="email"]') as HTMLInputElement;
+						const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
+						const status = el.querySelector('.newsletter-status') as HTMLElement;
+						const email = input.value.trim();
+						if (!email) return;
+						btn.disabled = true;
+						btn.textContent = 'Sending...';
+						status.textContent = '';
+						status.className = 'newsletter-status';
+						try {
+							const res = await fetch('/api/subscribe', {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ email, source: 'article-inline' }),
+							});
+							const data = await res.json();
+							if (res.ok) {
+								status.textContent = 'Check your inbox to confirm.';
+								status.classList.add('newsletter-status--success');
+								input.value = '';
+							} else {
+								status.textContent = data.error || 'Something went wrong.';
+								status.classList.add('newsletter-status--error');
+							}
+						} catch {
+							status.textContent = 'Network error. Please try again.';
+							status.classList.add('newsletter-status--error');
+						} finally {
+							btn.disabled = false;
+							btn.textContent = 'Count me in';
+						}
+					});
+				}
+			})();
+		</script>
 	</body>
 </html>
 
@@ -252,9 +364,6 @@ const tagMeta = (tags ?? [])
 		margin: var(--space-4) 0 var(--space-3);
 		line-height: 1.1;
 	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
 	.description {
 		position: relative;
 		color: var(--color-text-muted);
@@ -287,8 +396,15 @@ const tagMeta = (tags ?? [])
 		color: var(--color-text-strong);
 		text-decoration: none;
 	}
-	.byline {
+	.byline-row {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+	.byline {
 		color: var(--color-text-muted);
 		font-size: var(--text-sm);
 		display: flex;
@@ -302,6 +418,19 @@ const tagMeta = (tags ?? [])
 	}
 	.updated {
 		font-style: italic;
+	}
+	/* Reading time badge */
+	.reading-time {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+	}
+	.reading-time-icon {
+		flex-shrink: 0;
+		opacity: 0.6;
 	}
 	.hero-image {
 		margin: var(--space-6) 0;
@@ -343,6 +472,12 @@ const tagMeta = (tags ?? [])
 		margin-bottom: var(--space-4);
 		font-size: var(--text-2xl);
 		letter-spacing: -0.02em;
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--color-border);
+	}
+	.prose :global(h2:first-child) {
+		border-top: none;
+		padding-top: 0;
 	}
 	.prose :global(h3) {
 		font-family: var(--font-display);
@@ -377,13 +512,123 @@ const tagMeta = (tags ?? [])
 		border-radius: var(--radius-lg);
 		margin: var(--space-6) 0;
 	}
-	/* Better blockquote treatment in articles */
+	/* Pull quotes — use > **"Quote text"** in markdown */
 	.prose :global(blockquote) {
 		border-left: 4px solid var(--color-primary);
 		padding: var(--space-4) var(--space-5);
 		margin: var(--space-8) 0;
 		background: var(--color-bg-dim);
 		border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+		position: relative;
+	}
+	.prose :global(blockquote p) {
+		margin: 0;
+	}
+	.prose :global(blockquote strong) {
+		font-size: var(--text-xl);
+		line-height: var(--leading-snug);
+		letter-spacing: -0.01em;
+	}
+	/* Responsive table wrapper — wraps every <table> via rehype plugin */
+	.prose :global(.table-scroll) {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: var(--space-6) 0;
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		/* Scroll affordance — subtle shadow on right edge */
+		background:
+			linear-gradient(to right, var(--color-bg) 30%, transparent),
+			linear-gradient(to left, var(--color-bg) 30%, transparent),
+			linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent 15px),
+			linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent 15px);
+		background-position: left center, right center, left center, right center;
+		background-repeat: no-repeat;
+		background-size: 20px 100%, 20px 100%, 15px 100%, 15px 100%;
+		background-attachment: local, local, scroll, scroll;
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar) {
+		height: 6px;
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-track) {
+		background: var(--color-bg-dim);
+		border-radius: var(--radius-full);
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-thumb) {
+		background: var(--color-border-strong);
+		border-radius: var(--radius-full);
+	}
+	.prose :global(.table-scroll::-webkit-scrollbar-thumb:hover) {
+		background: var(--color-text-muted);
+	}
+	/* Table base styles */
+	.prose :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: var(--text-base);
+		margin: 0; /* margin handled by .table-scroll wrapper */
+	}
+	.prose :global(th) {
+		text-align: left;
+		font-weight: var(--weight-semibold);
+		font-family: var(--font-display);
+		padding: var(--space-3) var(--space-4);
+		background: var(--color-bg-dim);
+		border-bottom: 2px solid var(--color-primary);
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		color: var(--color-text-strong);
+		white-space: nowrap;
+	}
+	.prose :global(td) {
+		padding: var(--space-3) var(--space-4);
+		border-bottom: 1px solid var(--color-border);
+		vertical-align: top;
+	}
+	.prose :global(tr:last-child td) {
+		border-bottom: none;
+	}
+	.prose :global(tr:hover td) {
+		background: var(--color-bg-dim);
+	}
+	/* Mobile table adjustments */
+	@media (max-width: 768px) {
+		.prose :global(.table-scroll) {
+			margin: var(--space-4) calc(-1 * var(--space-4));
+			border-radius: 0;
+			border-left: none;
+			border-right: none;
+		}
+		.prose :global(th),
+		.prose :global(td) {
+			padding: var(--space-2) var(--space-3);
+			font-size: var(--text-sm);
+		}
+		.prose :global(th) {
+			font-size: var(--text-xs);
+		}
+	}
+	/* Code block refinements */
+	.prose :global(pre) {
+		border-radius: var(--radius-lg);
+		margin: var(--space-6) 0;
+		border: 1px solid var(--color-border);
+	}
+	.prose :global(code:not(pre code)) {
+		font-family: var(--font-mono);
+		font-size: 0.875em;
+		background: var(--color-bg-dim);
+		padding: 0.15em 0.4em;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--color-border);
+	}
+	/* Horizontal rules as section separators */
+	.prose :global(hr) {
+		border: none;
+		height: 1px;
+		background: var(--color-border);
+		margin: var(--space-10) 0;
+		position: relative;
 	}
 
 	@media (max-width: 720px) {
@@ -395,6 +640,189 @@ const tagMeta = (tags ?? [])
 		}
 		.description {
 			font-size: var(--text-lg);
+		}
+	}
+
+	/* Midpost CTA — injected from <template>, needs :global since elements lack scoped attributes */
+	:global(.newsletter--midpost) {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: var(--space-10) var(--space-8);
+		margin: var(--space-12) 0;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+	}
+	:global(.newsletter--midpost)::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	:global(.newsletter--midpost)::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	:global(.newsletter--midpost .newsletter-dots) {
+		position: absolute;
+		bottom: -10px;
+		left: -10px;
+		width: 100px;
+		height: 100px;
+		background-image: radial-gradient(circle, var(--color-border-strong) 1px, transparent 1px);
+		background-size: 14px 14px;
+		opacity: 0.2;
+		pointer-events: none;
+	}
+	:global(.newsletter--midpost .newsletter-glow) {
+		position: absolute;
+		top: -30%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
+		filter: blur(40px);
+		pointer-events: none;
+	}
+	:global(.newsletter--midpost .newsletter-inner) {
+		max-width: 440px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+	:global(.newsletter--midpost .newsletter-text) {
+		margin-bottom: var(--space-6);
+	}
+	:global(.newsletter--midpost .newsletter-text .superdot) {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		margin-bottom: var(--space-3);
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
+	}
+	:global(.newsletter--midpost .newsletter-heading) {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+		letter-spacing: -0.025em;
+		line-height: var(--leading-tight);
+	}
+	:global(.newsletter--midpost .newsletter-desc) {
+		color: var(--color-text-muted);
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-weight: var(--weight-medium);
+		opacity: 0.7;
+		margin: 0;
+	}
+	:global(.newsletter--midpost .newsletter-field) {
+		display: flex;
+		gap: var(--space-2);
+		justify-content: center;
+	}
+	:global(.newsletter--midpost .newsletter-field input) {
+		flex: 1;
+		max-width: 240px;
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--text-base);
+		font-family: inherit;
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-md);
+		background: var(--color-bg);
+		color: var(--color-text);
+		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+		min-width: 0;
+	}
+	:global(.newsletter--midpost .newsletter-field input:focus) {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: var(--shadow-glow);
+	}
+	:global(.newsletter--midpost .newsletter-field input::placeholder) {
+		color: var(--color-text-muted);
+		opacity: 0.6;
+	}
+	:global(.newsletter--midpost .newsletter-field button) {
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+	:global(.newsletter--midpost .newsletter-legal) {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: var(--space-2) 0 0;
+		line-height: var(--leading-relaxed);
+		text-align: center;
+	}
+	:global(.newsletter--midpost .newsletter-legal a) {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	:global(.newsletter--midpost .newsletter-legal a:hover) {
+		color: var(--color-primary);
+	}
+	:global(.newsletter--midpost .newsletter-status) {
+		font-size: var(--text-sm);
+		margin-top: var(--space-2);
+		min-height: 1.4em;
+		text-align: center;
+	}
+	:global(.newsletter--midpost .newsletter-status--success) {
+		color: var(--sd-teal, #14B8A6);
+	}
+	:global(.newsletter--midpost .newsletter-status--error) {
+		color: var(--color-primary);
+	}
+	/* Dark mode adjustments for midpost */
+	:global([data-theme="dark"] .newsletter--midpost) {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, rgba(15, 23, 42, 0.8) 50%, var(--color-bg-dim) 100%);
+		border-color: var(--color-border);
+	}
+	:global([data-theme="dark"] .newsletter--midpost .newsletter-glow) {
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"] .newsletter--midpost) {
+			background: linear-gradient(135deg, var(--color-bg-dim) 0%, rgba(15, 23, 42, 0.8) 50%, var(--color-bg-dim) 100%);
+			border-color: var(--color-border);
+		}
+		:global([data-theme="auto"] .newsletter--midpost .newsletter-glow) {
+			background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
+		}
+	}
+	/* Midpost mobile */
+	@media (max-width: 480px) {
+		:global(.newsletter--midpost) {
+			padding: var(--space-8) var(--space-5);
+		}
+		:global(.newsletter--midpost .newsletter-heading) {
+			font-size: var(--text-xl);
+		}
+		:global(.newsletter--midpost .newsletter-field) {
+			flex-direction: column;
+		}
+		:global(.newsletter--midpost .newsletter-field input) {
+			max-width: 100%;
 		}
 	}
 </style>

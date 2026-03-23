@@ -38,7 +38,7 @@ Most territory planning happens once a year, in a conference room, with a spread
 
 The process usually looks like this: someone pulls an account list, groups accounts by geography or industry, eyeballs rep capacity, and divides things up. It takes weeks. It satisfies no one. And within six months, the market has shifted enough that the plan is already out of date.
 
-The fundamental problem is complexity. Territory planning is an optimization problem with dozens of interdependent variables:
+The fundamental problem is complexity. As [Gartner](https://www.gartner.com) research confirms, territory planning is an optimization problem with dozens of interdependent variables:
 
 - **Account potential** — not all accounts are equal. A 50-person company in fintech isn't the same as a 50-person company in retail.
 - **Rep capacity** — how many accounts can a rep meaningfully cover? What's their average deal cycle? Their close rate?
@@ -57,7 +57,7 @@ Think of it as constraint-based optimization. You define the variables and the l
 
 ### Step 1: Account Scoring
 
-Before you can distribute accounts, you need to know what each account is worth. AI tools pull data from your CRM, firmographic databases, and intent signals to assign each account a potential score.
+Before you can distribute accounts, you need to know what each account is worth. AI tools pull data from your CRM (such as [Salesforce](https://www.salesforce.com)), firmographic databases, and intent signals to assign each account a potential score.
 
 This isn't just company size. It combines:
 
@@ -104,13 +104,13 @@ This is where territory planning becomes a hiring plan. You're not guessing wher
 
 ## The Variables That Matter Most
 
-Not all inputs carry equal weight. Here's what moves the needle.
+Not all inputs carry equal weight. Here's what moves the needle. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 ### Account Potential vs. Account Count
 
 The most common mistake is distributing accounts by count. "Each rep gets 100 accounts" sounds fair. It isn't.
 
-A rep with 100 mid-market fintech accounts has a completely different workload and opportunity than a rep with 100 small retail accounts. Distribute by potential, not headcount.
+A rep with 100 mid-market fintech accounts has a completely different workload and opportunity than a rep with 100 small retail accounts. Distribute by potential, not headcount. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 
 AI tools let you set weighted targets. You define that each territory should contain roughly equal total addressable revenue, then adjust for rep seniority and capacity. A senior enterprise rep might have 20 accounts worth $10M each. A mid-market rep might have 150 accounts worth $200K each. Both territories have similar revenue potential but very different management styles.
 
@@ -211,7 +211,7 @@ The category is evolving fast. When evaluating tools, focus on these capabilitie
 
 **Data connectivity.** Can it pull directly from your CRM? Enrich accounts with third-party data? The quality of the output depends entirely on the quality of the input.
 
-**Scenario modeling.** Can you define different optimization objectives and compare outcomes? You want to see multiple options, not just one recommendation.
+**Scenario modeling.** Tools like [Xactly](https://www.xactly.com) let you define different optimization objectives and compare outcomes. You want to see multiple options, not just one recommendation.
 
 **Constraint handling.** Can you set rules that the optimizer must respect? If it reassigns everything without guardrails, it's not production-ready.
 
@@ -231,6 +231,7 @@ AI doesn't eliminate the judgment calls. It gives you better information to make
 
 ## Related reads
 
+- [AI for Sales: Complete Guide](/blog/ai-for-sales-complete-guide) — The complete guide to AI across every sales function.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting)
 - [AI Sales Prospecting](/blog/ai-sales-prospecting)
 - [AI Data Analysis for Non-Technical Teams](/blog/ai-data-analysis-for-non-technical-teams)

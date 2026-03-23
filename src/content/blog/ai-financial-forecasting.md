@@ -38,7 +38,7 @@ Here is what happens in practice:
 4. By June, the forecast has been patched so many times that nobody trusts the numbers anymore.
 5. Leadership makes decisions based on gut feel because the "official" forecast feels stale.
 
-This cycle repeats every year in most companies. According to Gartner, 58% of finance functions now use some form of AI — in large part because this cycle is unsustainable as business conditions change faster.
+This cycle repeats every year in most companies. According to [Gartner](https://www.gartner.com), 58% of finance functions now use some form of AI — in large part because this cycle is unsustainable as business conditions change faster.
 
 ### What gets missed
 
@@ -47,7 +47,7 @@ Spreadsheet models typically work with 5-10 variables. Revenue growth rate, cost
 But real business outcomes depend on hundreds of variables interacting in ways that are hard to model manually:
 
 - **Customer payment timing.** Not just whether customers pay, but when. A shift from 30-day to 45-day average payment terms changes your cash position dramatically.
-- **Market signals.** Competitor pricing changes, regulatory shifts, commodity price movements — all of these affect your numbers but rarely make it into a spreadsheet model.
+- **Market signals.** Competitor pricing changes, regulatory shifts, commodity price movements — all of these affect your numbers but rarely make it into a spreadsheet model. Data providers like [Bloomberg](https://www.bloomberg.com) and [S&P Global](https://www.spglobal.com) offer feeds that AI models can ingest directly.
 - **Internal patterns.** Hiring velocity, sales pipeline movement, seasonal variations in operational costs — these create ripple effects that static formulas miss.
 
 No human can track all of these simultaneously. That is not a criticism — it is just math. And it is exactly where AI forecasting adds value.
@@ -86,7 +86,7 @@ An AI revenue forecasting model typically pulls data from three sources:
 - **CRM and pipeline data.** Current deals in progress, win rates by stage, average deal size, sales cycle length.
 - **External signals.** Market conditions, competitor activity, economic indicators relevant to your industry.
 
-The model trains on your historical patterns — what combination of factors led to strong quarters versus weak ones — and then applies those patterns to current conditions. If your pipeline looks similar to Q2 2024 but the market conditions match Q4 2025, the model weighs both signals instead of defaulting to a simple trend line.
+The model trains on your historical patterns — what combination of factors led to strong quarters versus weak ones — and then applies those patterns to current conditions. If your pipeline looks similar to Q2 2024 but the market conditions match Q4 2025, the model weighs both signals instead of defaulting to a simple trend line. For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 ### What you actually get
 
@@ -114,7 +114,7 @@ Traditional cash flow models use averages — "average days sales outstanding is
 
 ### Payment timing prediction
 
-JP Morgan's treasury research highlights that AI-driven cash flow forecasting improves accuracy by modeling individual payment behaviors rather than portfolio averages. Instead of assuming all receivables will come in at the average rate, the model predicts each customer's likely payment date based on their specific history.
+[McKinsey](https://www.mckinsey.com) and JP Morgan's treasury research highlight that AI-driven cash flow forecasting improves accuracy by modeling individual payment behaviors rather than portfolio averages. Instead of assuming all receivables will come in at the average rate, the model predicts each customer's likely payment date based on their specific history.
 
 This matters most for companies with lumpy cash flows — those with a few large customers, seasonal revenue patterns, or long payment cycles. A two-week shift in when a major customer pays can be the difference between making payroll comfortably and scrambling for a bridge loan.
 

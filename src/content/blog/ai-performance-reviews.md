@@ -20,7 +20,7 @@ The problem is not that managers do not care. It is that the format demands a ty
 - **Specificity under time pressure**: You need to recall six months of work and cite specific examples. Your memory is unreliable, and your notes are scattered across Slack, email, and a doc you started in January and abandoned by February.
 - **Balanced tone**: Too positive and the review is useless. Too critical and it damages the relationship. Finding the right balance for each person takes real thought.
 - **Consistency across reports**: Your first review is detailed and thoughtful. By the eighth, you are recycling phrases and phoning it in. Your team can tell who got reviewed first.
-- **Bias creep**: Recency bias, halo effect, similarity bias — these are real, documented problems that affect even well-intentioned managers. You remember the big win from last month but forget the steady contributions from Q1.
+- **Bias creep**: Recency bias, halo effect, similarity bias — these are real, documented problems that affect even well-intentioned managers. [Gallup](https://www.gallup.com) research shows that traditional annual reviews fail to improve performance for the majority of employees. You remember the big win from last month but forget the steady contributions from Q1.
 
 AI does not eliminate these problems. But it addresses the mechanics — drafting, structuring, phrasing — so you can focus on the judgment calls that actually require a human.
 
@@ -58,11 +58,11 @@ This step is the most important. AI can turn rough notes into polished prose, bu
 
 ### Step 2: Draft with AI (10 minutes per person)
 
-Use a prompt like this:
+Use a prompt like this: Our guide on [AI Skills Gap Analysis: Find and Fix Workforce Skill Shortages Before They Hurt](/blog/ai-skills-gap-analysis/) explores this further.
 
 *"I'm writing a performance review for a [role] on my team. Here are my notes on their performance this period: [paste bullet points]. Write a performance review that includes: specific accomplishments with impact, areas for growth with actionable suggestions, and an overall assessment. Use a professional but direct tone. Avoid vague language — every statement should reference a specific behavior or outcome."*
 
-The AI will produce a first draft. It will be decent but generic. That is expected.
+The AI will produce a first draft. It will be decent but generic. That is expected. If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 ### Step 3: Edit for truth and nuance (10 minutes per person)
 
@@ -105,7 +105,7 @@ Writing a negative or mixed review is where most managers struggle the most. AI 
 
 **General-purpose AI** (ChatGPT, Claude): Best for most managers. Use them with the prompts above. Free or low-cost, works with any review format.
 
-**Dedicated review platforms**: Lattice, 15Five, and Culture Amp now include AI features that draft reviews from continuous feedback data you have already entered. If your company already uses one of these, the AI features are worth enabling.
+**Dedicated review platforms**: [Lattice](https://lattice.com), [15Five](https://www.15five.com), and Culture Amp now include AI features that draft reviews from continuous feedback data you have already entered. If your company already uses one of these, the AI features are worth enabling.
 
 **Bias detection**: Textio analyzes review language for bias patterns and suggests alternatives. Particularly useful for large teams where consistency matters.
 
@@ -136,3 +136,5 @@ Here is what this looks like in practice for a manager with eight direct reports
 You save roughly half the time — and the reviews are more specific and consistent because the AI forced you to start with structured input instead of staring at a blank page.
 
 The time you save is not the point. The point is that you spend your time on the parts that matter — the judgment, the nuance, the knowledge of your people — instead of the writing mechanics. That makes the reviews better for everyone.
+
+For the full picture of how AI supports every HR function — from recruiting and onboarding to reviews and workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).

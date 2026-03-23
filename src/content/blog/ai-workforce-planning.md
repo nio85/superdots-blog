@@ -22,7 +22,7 @@ And every year, the answer comes from the same place: a spreadsheet. Someone pul
 
 It is wrong because traditional workforce planning is reactive. It looks backward, applies crude assumptions, and ignores the signals that actually predict what your workforce will need.
 
-AI workforce planning is different. It connects business data to people data and produces forecasts that update as conditions change. It does not eliminate the need for judgment — you still make the decisions — but it gives you something better than a spreadsheet to base those decisions on.
+AI workforce planning is different. As [McKinsey](https://www.mckinsey.com) research has shown, organizations that use data-driven workforce planning outperform peers on talent outcomes. It connects business data to people data and produces forecasts that update as conditions change. It does not eliminate the need for judgment — you still make the decisions — but it gives you something better than a spreadsheet to base those decisions on.
 
 ## Why Traditional Workforce Planning Fails
 
@@ -85,11 +85,11 @@ Then expand to other departments. Engineering is harder (headcount is project-dr
 
 ## AI for Skills Gap Analysis and Internal Mobility
 
-Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?"
+Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?" If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 ### Skills inventory
 
-AI can build a skills inventory from data you already have:
+AI can build a skills inventory from data you already have: For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 - **Resume and profile data.** What skills did employees list when they were hired?
 - **Project history.** What have they actually worked on? A developer who has been writing Python for two years has Python skills regardless of what their resume says.
@@ -181,8 +181,8 @@ This shifts the workforce planning conversation from "how many people" to "what 
 
 ### Tool options
 
-- **Dedicated platforms** (Visier, Orgvue, Anaplan) offer built-in AI models for workforce planning. Fastest path to production.
-- **HRIS add-ons** (Workday Adaptive Planning, BambooHR) integrate workforce planning into your existing HR system.
+- **Dedicated platforms** ([Visier](https://www.visier.com), Orgvue, Anaplan) offer built-in AI models for workforce planning. Fastest path to production.
+- **HRIS add-ons** ([Workday](https://www.workday.com) Adaptive Planning, BambooHR) integrate workforce planning into your existing HR system.
 - **General analytics** (Python + your data warehouse) for custom models. More flexible, requires data science resources.
 
 Start with the simplest tool that connects to your data. You can upgrade later. The bottleneck is usually data quality, not tool capability.
@@ -201,6 +201,7 @@ The goal is not a perfect prediction. It is a data-driven starting point that ma
 
 **Related reads:**
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI-powered people operations, from recruiting to offboarding.
 - [AI for Recruiting](/blog/ai-for-recruiting) — Once you know what roles to fill, here is how AI speeds up the hiring process.
 - [AI Performance Reviews](/blog/ai-performance-reviews) — Turn performance data into actionable workforce insights.
 - [AI Data Analysis for Non-Technical Teams](/blog/ai-data-analysis-for-non-technical-teams) — The broader guide to using AI for analysis without writing code.

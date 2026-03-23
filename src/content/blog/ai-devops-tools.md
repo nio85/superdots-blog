@@ -38,7 +38,7 @@ The problem is not that monitoring is too sensitive. It is that monitoring is no
 
 Every engineering team has them. Tests that pass sometimes and fail sometimes, for reasons nobody has time to investigate. Flaky tests erode confidence in the test suite. Engineers start ignoring test failures ("oh, that one's flaky, just re-run it"), which means real failures get missed.
 
-Studies show that 10-30% of test failures in large codebases are caused by flaky tests. That is an enormous amount of wasted investigation time and re-run compute.
+An estimated 10-30% of test failures in large codebases are caused by flaky tests. That is an enormous amount of wasted investigation time and re-run compute.
 
 ### Manual pipeline tuning
 
@@ -75,7 +75,7 @@ AI identifies flaky tests by analyzing historical test results. It looks for tes
 - Fail on specific infrastructure (one CI runner but not others)
 - Correlate with time-of-day or system load rather than code changes
 
-Once identified, AI can quarantine flaky tests — running them separately so they do not block the main pipeline — and provide diagnostic data to help engineers fix the root cause.
+Once identified, AI can quarantine flaky tests — running them separately so they do not block the main pipeline — and provide diagnostic data to help engineers fix the root cause. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 **The impact:** Engineers stop wasting time investigating false failures. The test suite becomes trustworthy again. Real failures get caught immediately instead of being assumed flaky.
 
@@ -186,7 +186,7 @@ The most powerful observability feature: AI correlates logs, metrics, and traces
 
 ### What to look for
 
-**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and incident management tools. An AI tool that requires you to change your infrastructure is not worth the overhead.
+**Integration with your stack.** The tool needs to work with your CI/CD platform, cloud provider, monitoring system, and [AI infrastructure monitoring](/blog/ai-infrastructure-monitoring) tools. Whether you use [Kubernetes](https://kubernetes.io) for orchestration, [Terraform](https://www.terraform.io) for infrastructure as code, or [Docker](https://www.docker.com) for containerization, the AI layer should integrate without requiring you to change your stack. An AI tool that requires you to change your infrastructure is not worth the overhead.
 
 **Learning period and accuracy.** AI tools need historical data to learn patterns. Ask: how much data does the model need? How long until it is useful? What is the accuracy after the learning period?
 
@@ -205,7 +205,7 @@ The most powerful observability feature: AI correlates logs, metrics, and traces
 
 ## Key Takeaways
 
-DevOps bottlenecks — alert fatigue, slow pipelines, manual infrastructure management — are scale problems. AI is the tool designed for scale problems.
+DevOps bottlenecks — alert fatigue, slow pipelines, manual infrastructure management — are scale problems. AI is the tool designed for scale problems. The [DORA metrics](https://dora.dev) framework confirms this: the highest-performing teams automate the data-heavy work that slows down deployment frequency and time to recovery.
 
 Start with alert noise reduction. It is the fastest win and has the biggest quality-of-life improvement for on-call engineers. Then optimize CI/CD with predictive test selection — it cuts pipeline time by 60-80% without reducing coverage.
 
@@ -218,3 +218,4 @@ Measure everything. Pipeline times, alert volumes, incident response times, infr
 - [AI Code Review Tools](/blog/ai-code-review-tools) — Catch bugs before they hit the pipeline.
 - [AI Test Generation](/blog/ai-test-generation) — Generate the tests that AI-powered CI will intelligently select.
 - [AI Automation Guide](/blog/ai-automation-guide) — The broader playbook for automating repetitive work.
+

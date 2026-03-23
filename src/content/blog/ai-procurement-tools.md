@@ -84,7 +84,7 @@ AI tools scan multiple data sources — supplier databases, industry directories
 
 You define what you need: "IT managed services provider, 100+ employees, SOC 2 certified, experience with healthcare clients, based in the US or Canada." The AI returns a ranked list of matching suppliers with summary profiles.
 
-This takes minutes instead of the days or weeks of manual research. More importantly, it surfaces suppliers you would not have found through your existing network.
+This takes minutes instead of the days or weeks of manual research. More importantly, it surfaces suppliers you would not have found through your existing network. For related guidance, see our guide on [AI Document Management: Organize, Search, and Retrieve Files Faster](/blog/ai-document-management/).
 
 ### Supplier evaluation
 
@@ -97,7 +97,7 @@ Once you have a list of potential suppliers, AI helps evaluate them across multi
 
 ### Supplier comparison
 
-AI creates standardized comparison frameworks across suppliers. Instead of manually extracting data from proposals and building comparison spreadsheets, AI reads the proposals, extracts key data points, and presents them in a structured comparison.
+AI creates standardized comparison frameworks across suppliers. Instead of manually extracting data from proposals and building comparison spreadsheets, AI reads the proposals, extracts key data points, and presents them in a structured comparison. If this applies to your team, our [AI Fleet Management: Optimize Routes, Maintenance, and Costs](/blog/ai-fleet-management/) guide covers the details.
 
 "Supplier A offers 99.9% uptime SLA with $500/incident credits. Supplier B offers 99.95% uptime SLA with service-level rebates. Supplier C offers 99.9% uptime with no financial guarantees."
 
@@ -204,7 +204,7 @@ This is the foundation. Connect your purchasing data (ERP, credit cards, expense
 
 **Expected outcome:** Complete spend map, 5-15% in identified savings opportunities, and the data you need for every subsequent procurement improvement.
 
-**Tools:** Coupa, Zip, SpendHQ, and Sievo all offer AI-powered spend analysis.
+**Tools:** [Coupa](https://www.coupa.com), Zip, SpendHQ, and Sievo all offer AI-powered spend analysis.
 
 ### Priority 2: Supplier comparison for active sourcing (Weeks 5-8)
 
@@ -220,7 +220,7 @@ Set up continuous monitoring for your top 20 vendors by spend. Configure alerts 
 
 ### Priority 4: Contract intelligence (Months 5+)
 
-Integrate procurement AI with your [contract management](/blog/ai-contract-management) system. Use AI for price benchmarking in negotiations, clause analysis during contract review, and total cost modeling for vendor decisions.
+Integrate procurement AI with your [contract management](/blog/ai-contract-management) system. Platforms like [SAP Ariba](https://www.sap.com/products/procurement.html) and [Jaggaer](https://www.jaggaer.com) offer end-to-end procurement suites that combine sourcing, contract management, and supplier management in one platform. Use AI for price benchmarking in negotiations, clause analysis during contract review, and total cost modeling for vendor decisions.
 
 **Expected outcome:** Better negotiation outcomes, faster contract cycles, and consistent terms across vendor agreements.
 

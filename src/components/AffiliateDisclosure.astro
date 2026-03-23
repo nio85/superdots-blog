@@ -1,0 +1,67 @@
+---
+/**
+ * AffiliateDisclosure — FTC-compliant disclosure banner for comparison/review pages.
+ *
+ * Place at the top of any page containing affiliate links.
+ *
+ * Usage:
+ *   <AffiliateDisclosure />
+ *   <AffiliateDisclosure text="Custom disclosure text here." />
+ */
+
+interface Props {
+	text?: string;
+}
+
+const { text } = Astro.props;
+
+const defaultText = 'Some links on this page are affiliate links. If you purchase through them, we may earn a small commission at no extra cost to you. This does not influence our evaluations — all opinions are our own. See our editorial policy for details.';
+const displayText = text || defaultText;
+---
+
+<aside class="affiliate-disclosure" role="note" aria-label="Affiliate disclosure">
+	<div class="affiliate-disclosure-inner">
+		<svg class="affiliate-disclosure-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+			<circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+			<path d="M8 7v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			<circle cx="8" cy="5" r="0.75" fill="currentColor"/>
+		</svg>
+		<p class="affiliate-disclosure-text">{displayText}</p>
+	</div>
+</aside>
+
+<style>
+	.affiliate-disclosure {
+		margin: var(--space-6) 0;
+		padding: var(--space-4) var(--space-5);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		border-left: 3px solid var(--color-text-muted);
+		border-radius: 0 var(--radius-md) var(--radius-md) 0;
+	}
+	.affiliate-disclosure-inner {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-3);
+	}
+	.affiliate-disclosure-icon {
+		flex-shrink: 0;
+		color: var(--color-text-muted);
+		margin-top: 2px;
+	}
+	.affiliate-disclosure-text {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-normal);
+		margin: 0;
+	}
+
+	@media (max-width: 480px) {
+		.affiliate-disclosure {
+			padding: var(--space-3) var(--space-4);
+		}
+		.affiliate-disclosure-text {
+			font-size: var(--text-xs);
+		}
+	}
+</style>

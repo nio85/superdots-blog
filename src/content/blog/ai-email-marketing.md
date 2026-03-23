@@ -78,11 +78,11 @@ Here is the workflow that works:
 
 Basic personalization ("Hi Sarah") stopped impressing people a decade ago. AI-powered personalization works at a different level:
 
-- **Behavioral triggers**: Someone browsed your pricing page three times this week? Send them a case study about ROI, not a generic newsletter.
+- **Behavioral triggers**: Someone browsed your pricing page three times this week? Send them a case study about ROI, not a generic newsletter. This kind of trigger works even better when paired with [AI customer journey mapping](/blog/ai-customer-journey-mapping) that tracks how subscribers move through your funnel.
 - **Content blocks that swap**: The same email can show different product recommendations, testimonials, or CTAs based on what the subscriber has engaged with before.
 - **Dynamic send frequency**: AI learns that some subscribers prefer weekly emails while others engage more with biweekly sends — and adjusts automatically.
 
-This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like Klaviyo, HubSpot, and Braze have built-in AI that handles this without requiring you to set up complex rules.
+This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like [Klaviyo](https://www.klaviyo.com), [HubSpot](https://www.hubspot.com), and Braze have built-in AI that handles this without requiring you to set up complex rules.
 
 ### Send-time optimization
 
@@ -140,7 +140,7 @@ Total time: under an hour for a campaign that would have taken half a day.
 
 ### Over-automating everything
 
-AI is a tool, not a strategy. If you automate every touchpoint without human oversight, your subscribers will notice. They will feel like they are interacting with a machine — because they are.
+AI is a tool, not a strategy. If you automate every touchpoint without human oversight, your subscribers will notice. They will feel like they are interacting with a machine — because they are. The same principle applies to [AI ad copy](/blog/ai-ad-copy-tools) — automation speeds up production, but human review keeps the output sharp.
 
 **The fix**: Automate the repetitive parts (drafting, testing, timing) but keep a human in the loop for strategy, brand voice, and anything that touches sensitive topics. For more on building automation workflows that actually work, check out our [AI automation guide](/blog/ai-automation-guide/).
 
@@ -166,7 +166,7 @@ AI makes it easy to create more campaigns. That does not mean you should. Subscr
 
 You do not need a dedicated AI email marketing platform to get started. Here is what works at different levels:
 
-**If you already use an email platform**: Most major platforms (Mailchimp, HubSpot, Klaviyo, ActiveCampaign) now include AI features for subject lines, content generation, and send-time optimization. Start there before adding new tools.
+**If you already use an email platform**: Most major platforms ([Mailchimp](https://mailchimp.com), HubSpot, Klaviyo, ActiveCampaign) now include AI features for subject lines, content generation, and send-time optimization. Start there before adding new tools.
 
 **If you want better copy**: Jasper, Copy.ai, and Writer all have email-specific templates. They are particularly good for teams that send high volumes and need consistent quality.
 
@@ -183,3 +183,6 @@ Start small. Use AI for subject line testing on your next campaign. Then try AI-
 The marketers who figure this out now will have a serious advantage. The ones who keep doing everything manually will spend three hours writing an email that gets a 2% click rate — while their competitors spend 45 minutes and get 5%.
 
 Your call.
+
+For the complete picture of how AI supports every marketing function — from content creation and SEO to social media and brand — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).
+

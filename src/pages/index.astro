@@ -3,11 +3,51 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
-import { SITE_DESCRIPTION, DEPARTMENTS, USE_CASES } from '../consts';
+import { SITE_DESCRIPTION, DEPARTMENTS } from '../consts';
 
-const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 6);
+const allPosts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const latestPosts = allPosts.slice(0, 6);
+
+const pillarGuides = [
+	{
+		title: 'AI for Marketing',
+		description: 'Create content, personalize campaigns, optimize SEO, and track brand performance at scale.',
+		href: '/blog/ai-for-marketing-complete-guide/',
+		department: 'Marketing',
+	},
+	{
+		title: 'AI for Sales',
+		description: 'Automate prospecting, personalize outreach, forecast revenue, and close more deals.',
+		href: '/blog/ai-for-sales-complete-guide/',
+		department: 'Sales',
+	},
+	{
+		title: 'AI for HR',
+		description: 'Automate recruiting, onboarding, performance reviews, and workforce planning.',
+		href: '/blog/ai-for-hr/',
+		department: 'HR',
+	},
+	{
+		title: 'AI for Customer Service',
+		description: 'Build faster support with AI chatbots, sentiment analysis, and automated ticket resolution.',
+		href: '/blog/ai-for-customer-service-complete-guide/',
+		department: 'Customer Service',
+	},
+	{
+		title: 'AI Business Automation',
+		description: 'Streamline workflows across departments with practical AI-powered automation.',
+		href: '/blog/ai-automation-for-business-complete-guide/',
+		department: 'Operations',
+	},
+];
+
+// Popular articles: pick top articles from key departments (not pillar pages)
+const pillarSlugs = new Set(pillarGuides.map(g => g.href.replace(/^\/blog\//, '').replace(/\/$/, '')));
+const popularPosts = allPosts
+	.filter(p => !pillarSlugs.has(p.slug))
+	.slice(0, 4);
 ---
 
 <Base title="Superdots — Practical AI for Work" description={SITE_DESCRIPTION}>
@@ -24,25 +64,50 @@ const posts = (await getCollection('blog'))
 			AI guides that actually help
 		</p>
 		<h1>Cut through the noise<span class="dot-accent">.</span><br/>Work smarter with AI<span class="dot-accent">.</span></h1>
-		<p class="hero-sub">
+		<h2 class="hero-sub">
 			Practical, no-fluff guides on using AI across every department.
 			Real techniques you can apply today — not hype, not theory.
-		</p>
+		</h2>
 		<div class="hero-actions">
-			<a href="/blog" class="btn btn-primary btn-lg">Browse articles</a>
-			<a href="#newsletter" class="btn btn-ghost btn-lg">Get the newsletter</a>
+			<a href="/blog/" class="btn btn-primary btn-lg">Browse articles</a>
+			<a href="#newsletter" class="btn btn-secondary btn-lg">Subscribe</a>
+		</div>
+
+	</section>
+
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
+	<!-- Popular Articles -->
+	<section class="popular">
+		<div class="section-header">
+			<h2>Popular articles<span class="dot-accent">.</span></h2>
+			<a href="/blog/" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
+		</div>
+		<div class="post-grid">
+			{popularPosts.map((post) => (
+				<PostCard
+					title={post.data.title}
+					description={post.data.description}
+					pubDate={post.data.pubDate}
+					department={post.data.department}
+					useCase={post.data.useCase}
+					slug={post.slug}
+					tags={post.data.tags}
+				/>
+			))}
 		</div>
 	</section>
 
 	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
 
+	<!-- Latest Articles -->
 	<section class="latest">
 		<div class="section-header">
 			<h2>Latest articles<span class="dot-accent">.</span></h2>
-			<a href="/blog" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
+			<a href="/blog/" class="view-all">View all <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="post-grid">
-			{posts.map((post) => (
+			{latestPosts.map((post) => (
 				<PostCard
 					title={post.data.title}
 					description={post.data.description}
@@ -64,10 +129,33 @@ const posts = (await getCollection('blog'))
 
 	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
 
+	<!-- Pillar Guides Carousel -->
+	<section class="guides-carousel" id="guides">
+		<div class="section-header">
+			<h2>Complete AI guides<span class="dot-accent">.</span></h2>
+			<a href="/guides/" class="view-all">All guides <span aria-hidden="true">&rarr;</span></a>
+		</div>
+		<div class="carousel-track">
+			{pillarGuides.map((guide) => (
+				<div class="carousel-item">
+					<PostCard
+						title={guide.title}
+						description={guide.description}
+						department={guide.department}
+						href={guide.href}
+						variant="guide"
+					/>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
 	<section class="browse">
 		<div class="section-header">
 			<h2>Browse by department<span class="dot-accent">.</span></h2>
-			<a href="/category" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
+			<a href="/category/" class="view-all">All categories <span aria-hidden="true">&rarr;</span></a>
 		</div>
 		<div class="dept-grid">
 			{DEPARTMENTS.map((d) => (
@@ -82,20 +170,31 @@ const posts = (await getCollection('blog'))
 </Base>
 
 <style>
-	/* Hero */
+	/* Hero — full-bleed breakout from main container */
 	.hero {
 		position: relative;
 		text-align: center;
-		padding: var(--space-20) 0 var(--space-16);
-		overflow: clip;
+		padding: var(--space-20) var(--space-4) var(--space-16);
+		overflow-x: clip;
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-top: calc(-1 * var(--space-8));
+		-webkit-mask-image:
+			linear-gradient(to bottom, black calc(100% - 120px), transparent),
+			linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+		-webkit-mask-composite: destination-in;
+		mask-image:
+			linear-gradient(to bottom, black calc(100% - 120px), transparent),
+			linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+		mask-composite: intersect;
 	}
-	/* Radial glow behind hero */
 	.hero-glow {
 		position: absolute;
 		top: -30%;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 800px;
+		width: 100%;
+		max-width: 1200px;
 		height: 600px;
 		border-radius: 50%;
 		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
@@ -104,9 +203,10 @@ const posts = (await getCollection('blog'))
 	}
 	.hero-glow-secondary {
 		position: absolute;
-		bottom: -40%;
-		right: -10%;
-		width: 500px;
+		bottom: -20%;
+		right: 0;
+		width: 50%;
+		max-width: 600px;
 		height: 500px;
 		border-radius: 50%;
 		background: radial-gradient(ellipse, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
@@ -165,9 +265,6 @@ const posts = (await getCollection('blog'))
 		margin-right: auto;
 		letter-spacing: -0.03em;
 	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
 	.hero-sub {
 		position: relative;
 		color: var(--color-text-muted);
@@ -183,16 +280,72 @@ const posts = (await getCollection('blog'))
 		justify-content: center;
 		flex-wrap: wrap;
 	}
-	/* Primary CTA glow on hover */
-	.hero-actions .btn-primary {
-		position: relative;
-	}
 	.hero-actions .btn-primary:hover {
 		box-shadow: var(--shadow-md), 0 0 20px rgba(232, 54, 59, 0.2);
 	}
+	.btn-secondary {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-size: var(--text-base);
+		padding: var(--space-3) var(--space-6);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text-strong);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		cursor: pointer;
+	}
+	.btn-secondary:hover {
+		border-color: var(--color-text-muted);
+		box-shadow: var(--shadow-sm);
+		text-decoration: none;
+		color: var(--color-text-strong);
+	}
+	.btn-secondary.btn-lg {
+		padding: var(--space-4) var(--space-8);
+		font-size: var(--text-lg);
+	}
 
-	/* Latest Section */
-	.latest {
+
+	/* Guides Carousel */
+	.guides-carousel {
+		padding: var(--space-4) 0 var(--space-8);
+	}
+	.carousel-track {
+		display: flex;
+		gap: var(--space-4);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		padding-bottom: var(--space-2);
+		margin: 0 calc(-1 * var(--space-4));
+		padding-left: var(--space-4);
+		padding-right: var(--space-4);
+	}
+	.carousel-track::-webkit-scrollbar {
+		display: none;
+	}
+	.carousel-item {
+		flex: 0 0 280px;
+		scroll-snap-align: start;
+	}
+	.carousel-item :global(.post-card) {
+		height: 100%;
+	}
+	@media (min-width: 640px) {
+		.carousel-item {
+			flex: 0 0 300px;
+		}
+	}
+
+	/* Popular / Latest Section */
+	.popular, .latest {
 		padding: var(--space-4) 0 var(--space-8);
 	}
 	.section-header {
@@ -200,6 +353,7 @@ const posts = (await getCollection('blog'))
 		align-items: baseline;
 		justify-content: space-between;
 		margin-bottom: var(--space-6);
+		gap: var(--space-4);
 	}
 	.section-header h2 {
 		margin: 0;
@@ -213,6 +367,7 @@ const posts = (await getCollection('blog'))
 		align-items: center;
 		gap: var(--space-1);
 		transition: gap var(--transition-fast);
+		flex-shrink: 0;
 	}
 	.view-all:hover {
 		text-decoration: none;
@@ -222,21 +377,9 @@ const posts = (await getCollection('blog'))
 		display: grid;
 		gap: var(--space-5);
 	}
-
 	@media (min-width: 640px) {
 		.post-grid {
 			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	@media (max-width: 720px) {
-		.hero {
-			padding: var(--space-12) 0 var(--space-10);
-		}
-		.hero h1 {
-			font-size: var(--text-4xl);
-		}
-		.hero-sub {
-			font-size: var(--text-lg);
 		}
 	}
 
@@ -248,7 +391,7 @@ const posts = (await getCollection('blog'))
 		margin: 0;
 	}
 
-	/* Browse by Department — Card Grid */
+	/* Browse by Department */
 	.browse {
 		padding: var(--space-4) 0 var(--space-12);
 	}
@@ -329,6 +472,18 @@ const posts = (await getCollection('blog'))
 		transform: translateX(0);
 	}
 
+	/* Responsive */
+	@media (max-width: 720px) {
+		.hero {
+			padding: var(--space-12) var(--space-4) var(--space-10);
+		}
+		.hero h1 {
+			font-size: var(--text-4xl);
+		}
+		.hero-sub {
+			font-size: var(--text-lg);
+		}
+	}
 	@media (max-width: 480px) {
 		.hero h1 {
 			font-size: var(--text-3xl);

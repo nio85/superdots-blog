@@ -62,7 +62,7 @@ Not all AI accounting tools are equal. Here is what separates the useful from th
 
 ### Integration with your existing stack
 
-The tool needs to connect to your current accounting software (QuickBooks, Xero, Sage, NetSuite) and your bank accounts. If it requires you to change your accounting system or manually export data, the efficiency gains evaporate in integration work. Check that the integration is bidirectional — the AI should read from and write to your accounting system, not just pull data into a separate dashboard.
+The tool needs to connect to your current accounting software ([QuickBooks](https://quickbooks.intuit.com), [Xero](https://www.xero.com), [Sage](https://www.sage.com), [NetSuite](https://www.netsuite.com)) and your bank accounts. If it requires you to change your accounting system or manually export data, the efficiency gains evaporate in integration work. Check that the integration is bidirectional — the AI should read from and write to your accounting system, not just pull data into a separate dashboard.
 
 ### Categorization accuracy and learning
 
@@ -74,7 +74,7 @@ Every AI-generated categorization, reconciliation match, and anomaly flag needs 
 
 ### Compliance features
 
-Depending on your industry and jurisdiction, you may need specific compliance features: tax code mapping, multi-currency handling, revenue recognition rules, or industry-specific chart of accounts. Make sure the AI understands your compliance context, not just generic bookkeeping.
+Depending on your industry and jurisdiction, you may need specific compliance features: tax code mapping, multi-currency handling, revenue recognition rules, or industry-specific chart of accounts. If tax season is a major pain point, our guide to [AI tax preparation](/blog/ai-tax-preparation) covers how AI streamlines that process. Make sure the AI understands your compliance context, not just generic bookkeeping.
 
 ### Pricing that scales reasonably
 
@@ -181,3 +181,4 @@ For a small or mid-size team, that means your one or two finance people can focu
 Start with auto-categorization. It is the quickest win and the foundation for everything else. If your bookkeeper is spending Monday mornings categorizing transactions, that Monday morning is about to open up.
 
 For more ways AI can help your business operations, explore our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+

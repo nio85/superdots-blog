@@ -1,2 +1,6 @@
 # Redirect www to apex
 https://www.superdots.sh/* https://superdots.sh/:splat 301
+
+# Favicon fallback for browsers that request .ico or .png
+/favicon.ico /favicon.svg 301
+/favicon.png /favicon.svg 301

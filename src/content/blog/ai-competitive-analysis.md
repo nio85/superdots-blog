@@ -19,13 +19,13 @@ Most sales teams know competitive research matters. The problem isn't awareness.
 
 ### The 8-12 hours per month problem
 
-A 2025 Crayon study found that the average sales rep spends 8-12 hours per month on competitor research. That's a full day and a half — scattered across browser tabs, Slack threads, and half-read newsletters.
+A 2025 [Crayon](https://www.crayon.co) study found that the average sales rep spends 8-12 hours per month on competitor research. That's a full day and a half — scattered across browser tabs, Slack threads, and half-read newsletters.
 
 Here's what that research typically looks like:
 
 - Checking competitor websites for pricing or feature changes
 - Scanning review sites like G2 and Capterra for sentiment shifts
-- Reading industry news and analyst reports
+- Reading industry news and analyst reports from firms like [Gartner](https://www.gartner.com)
 - Updating internal battlecards (or more likely, not updating them)
 - Asking colleagues "hey, has anyone seen what [Competitor X] is doing?"
 
@@ -104,7 +104,7 @@ Check your CRM notes, ask the prospect directly, or look at the prospect's tech 
 
 **Step 2: Pull your latest battlecard (30 seconds)**
 
-If you have one. If it's more than 60 days old, treat it as unreliable and supplement with Step 3.
+If you have one. If it's more than 60 days old, treat it as unreliable and supplement with Step 3. If this applies to your team, our [AI Sales Forecasting: Predict Revenue Without a Data Team](/blog/ai-sales-forecasting/) guide covers the details.
 
 **Step 3: Generate a fresh competitive snapshot (2 minutes)**
 
@@ -117,7 +117,7 @@ Use this prompt with any AI assistant that has web access:
 > 3. Top complaints in their recent G2/Capterra reviews
 > 4. How their positioning differs from ours: [one sentence about your positioning]
 > 5. Two specific weaknesses I can probe during the call
-> 6. One area where they're genuinely strong that I should be ready to acknowledge
+> 6. One area where they're genuinely strong that I should be ready to acknowledge For more on this topic, check out [AI Conversation Intelligence: Extract Real Insights From Every Sales Call](/blog/ai-conversation-intelligence/).
 
 That last point matters. Reps who acknowledge a competitor's strength and then redirect the conversation earn more trust than reps who pretend the competitor has zero advantages.
 
@@ -188,7 +188,7 @@ Every quarter, do a full audit. Have AI compare your current battlecards against
 
 ### Teams using monthly updates see 59% win rate lift
 
-Klue's 2025 State of Competitive Intelligence report found that sales teams updating battlecards monthly had a 59% win rate in competitive deals — compared to 41% for teams updating quarterly or less.
+[Klue](https://klue.com)'s 2025 State of Competitive Intelligence report found that sales teams updating battlecards monthly had a 59% win rate in competitive deals — compared to 41% for teams updating quarterly or less.
 
 That's not a small difference. It's the gap between a team that hits quota and one that doesn't.
 
@@ -214,8 +214,8 @@ Total cost: $0-20/month. Total time: about 3-4 hours/month for one person to mai
 
 When you're ready to invest, these tools add automation and structure:
 
-- **Klue** ($): Purpose-built for competitive intelligence. Automated web monitoring, battlecard management, and integrations with CRMs and Slack. Good for teams of 20+ reps.
-- **Crayon** ($): Similar to Klue with strong analytics on competitor messaging changes. Useful if positioning shifts matter a lot in your market.
+- **[Klue](https://klue.com)** ($): Purpose-built for competitive intelligence. Automated web monitoring, battlecard management, and integrations with CRMs and Slack. Good for teams of 20+ reps.
+- **[Crayon](https://www.crayon.co)** ($): Similar to Klue with strong analytics on competitor messaging changes. Useful if positioning shifts matter a lot in your market.
 - **Kompyte** ($): More affordable entry point. Solid automated tracking with AI-powered summaries.
 - **Cipher** ($): Focuses on competitive landscape mapping. Good if you have many competitors and need to prioritize which ones to track closely.
 
@@ -276,4 +276,5 @@ You don't need to build the whole system at once. Here's a sequence that gets yo
 4. **This month**: Share the battlecards with your team. Run a 30-minute session on the 3-sentence positioning framework.
 5. **Ongoing**: Spend 30 minutes per week reviewing alerts and updating your competitive briefs. Schedule a monthly review analysis refresh.
 
-The reps who prep smarter don't just know more — they sell with more confidence. And confidence, combined with current information, is what wins competitive deals. If your team is also drowning in email during deal cycles, pair this with an [AI email triage workflow](/blog/automate-email-triage-with-ai) to keep your inbox from eating into research time.
+The reps who prep smarter don't just know more — they sell with more confidence. And confidence, combined with current information, is what wins competitive deals. For the complete picture of how AI supports every sales function, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide). If your team is also drowning in email during deal cycles, pair this with an [AI email triage workflow](/blog/automate-email-triage-with-ai) to keep your inbox from eating into research time.
+

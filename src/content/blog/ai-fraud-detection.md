@@ -50,7 +50,7 @@ These patterns are invisible to rules and hard to spot in manual review. They re
 
 ### The timing problem
 
-Most fraud is detected months or years after it occurs. The median time to detect occupational fraud is 12 months. By that point, the damage is done and recovery is unlikely.
+Most fraud is detected months or years after it occurs. According to the [Association of Certified Fraud Examiners (ACFE)](https://www.acfe.com), the median time to detect occupational fraud is 12 months. By that point, the damage is done and recovery is unlikely.
 
 Manual detection is batch-oriented — someone reviews last month's transactions next month. AI can monitor continuously, flagging suspicious patterns in real time or near-real time.
 
@@ -68,7 +68,7 @@ Then it flags deviations. Not every deviation is fraud — most are legitimate b
 
 ### Pattern matching
 
-AI identifies known fraud patterns in your data:
+AI identifies known fraud patterns in your data: For more on this topic, check out [Best AI Accounting Software for Small and Mid-Size Teams](/blog/ai-accounting-software/).
 
 - **Round number transactions.** Expenses that are always round numbers ($100, $500, $1,000) can indicate fabricated receipts.
 - **Just-below-threshold amounts.** Transactions consistently just below approval limits suggest someone is gaming the controls.
@@ -78,7 +78,7 @@ AI identifies known fraud patterns in your data:
 
 ### Behavioral analysis
 
-AI builds behavioral profiles for employees, vendors, and accounts. It tracks how each entity normally transacts and flags changes:
+AI builds behavioral profiles for employees, vendors, and accounts. It tracks how each entity normally transacts and flags changes: For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 - An employee who typically submits $500/month in expenses suddenly submitting $2,000/month
 - A vendor whose payment terms shift from net-30 to immediate payment
@@ -215,7 +215,7 @@ Your goal: below 10% false positive rate within 3 months of implementation.
 **Choose a tool.** Options by complexity:
 - **Expense management with built-in AI** (Ramp, Brex, SAP Concur). If your primary concern is expense fraud, these platforms include fraud detection as a feature.
 - **AP automation with fraud detection** (Tipalti, Bill.com, AvidXchange). If invoice and payment fraud are the priority.
-- **Dedicated fraud detection** (Oversight, AppZen, MindBridge). For comprehensive fraud detection across all transaction types.
+- **Dedicated fraud detection** (Oversight, AppZen, MindBridge). For comprehensive fraud detection across all transaction types. Specialized vendors like [Featurespace](https://www.featurespace.com) and [NICE Actimize](https://www.niceactimize.com) serve organizations with higher transaction volumes and more complex risk profiles.
 
 ### Month 2: Baseline and configuration
 

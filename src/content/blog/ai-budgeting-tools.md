@@ -70,7 +70,7 @@ You do not have to ask for these insights. The AI surfaces them proactively, the
 
 ### Visual dashboards from raw data
 
-Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and dashboards automatically:
+Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and dashboards automatically: If this applies to your team, our [AI Cash Flow Forecasting: Predict Your Cash Position With Confidence](/blog/ai-cash-flow-forecasting/) guide covers the details.
 
 - Upload a CSV of monthly expenses and get a trend chart in seconds.
 - Ask for a breakdown of spending by category and get a pie chart.
@@ -195,11 +195,11 @@ When you have multiple budgets, shared expenses, and need to collaborate:
 
 For larger organizations with complex budgeting needs:
 
-- **Anaplan.** Enterprise planning platform with AI-powered forecasting. Connects across departments for company-wide budget visibility.
-- **Workday Adaptive Planning.** AI-enhanced budgeting and forecasting that integrates with HR and finance data. Good for organizations that need workforce planning tied to budget planning.
+- **[Anaplan](https://www.anaplan.com).** Enterprise planning platform with AI-powered forecasting. Connects across departments for company-wide budget visibility.
+- **[Workday Adaptive Planning](https://www.workday.com/en-us/products/adaptive-planning).** AI-enhanced budgeting and forecasting that integrates with HR and finance data. Good for organizations that need workforce planning tied to budget planning.
 - **Oracle Cloud EPM.** Full enterprise performance management with AI scenario modeling. Heavy investment, but handles the complexity of large organizations.
 
-**Best for:** Companies with 500+ employees, multi-department budgets, and the need for audit trails and compliance. These are not tools you try this week — they are platforms you evaluate over months.
+**Best for:** Companies with 500+ employees, multi-department budgets, and the need for audit trails and compliance. These are not tools you try this week — they are platforms you evaluate over months. [Gartner](https://www.gartner.com) regularly publishes evaluations of enterprise planning platforms if you need help narrowing the field.
 
 ## When to loop in finance (and when you don't need to)
 
@@ -234,3 +234,4 @@ That single question will tell you more about your budget in 30 seconds than mos
 If you are already using AI to [streamline other parts of your workflow](/blog/automate-email-triage-with-ai), adding budget tracking is a natural extension. The hardest part is not learning the tools — it is breaking the habit of reaching for a spreadsheet formula when a plain-English question would work just as well.
 
 Budget tracking does not have to be painful. It does not have to be approximate. And it definitely does not have to involve a broken VLOOKUP that nobody knows how to fix. AI gives you a better way — just like it is transforming [project management](/blog/ai-project-management-features-guide) and [presentation building](/blog/ai-presentation-maker) across teams. Use it.
+

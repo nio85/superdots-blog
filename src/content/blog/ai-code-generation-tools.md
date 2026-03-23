@@ -21,7 +21,7 @@ faqs:
     answer: "GitHub Copilot: $10-39/month. Cursor: $20/month. Cody Pro: $9/month. Claude Pro: $20/month. Codex: included with ChatGPT Pro ($200/month) or Plus ($20/month). Most teams spend $20-40 per developer per month."
   - question: "Will AI code generation replace developers?"
     answer: "No. AI code tools amplify developers — they don't replace them. AI handles the repetitive parts (boilerplate, tests, documentation) so developers spend more time on architecture, design, debugging complex issues, and understanding business requirements. The best developers are the ones who use AI tools most effectively."
-heroImage: '/images/blog/ai-code-generation-tools.webp'
+heroImage: "/images/blog/ai-code-generation-tools.webp"
 ---
 
 GitHub Copilot showed the world that AI could write code. Two years later, the landscape looks very different. Copilot now has serious competition — and in some areas, it's no longer the best option.

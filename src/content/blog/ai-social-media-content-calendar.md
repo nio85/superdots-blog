@@ -61,13 +61,13 @@ Now turn each idea into an actual post. This is where most people stall — and 
 
 ### For LinkedIn posts
 
-LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post:
+LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post: For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
 
 *"Write a LinkedIn post about [topic]. The audience is [target]. Keep it under 200 words. Start with a hook — a surprising fact, a contrarian opinion, or a relatable frustration. End with a question or call to action. Tone: conversational, direct, no buzzwords."*
 
 ### For X/Twitter posts
 
-Short, punchy, opinionated. Prompt:
+Short, punchy, opinionated. Prompt: For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 *"Write a tweet about [topic] for [audience]. Maximum 280 characters. Make it specific and slightly provocative — something worth replying to."*
 
@@ -111,10 +111,10 @@ Pick one or two platforms where your audience actually is. You can expand later.
 
 Batch-schedule everything so posts go out automatically:
 
-- **Buffer**: Simple, affordable, works for individuals and small teams. AI caption writing built in.
+- **[Buffer](https://buffer.com)**: Simple, affordable, works for individuals and small teams. AI caption writing built in.
 - **Later**: Strong for Instagram-first creators. Visual calendar planning.
 - **Typefully**: Best for X/Twitter power users. AI-assisted drafting and thread creation.
-- **Hootsuite**: Enterprise option if you manage multiple brands or team members.
+- **[Hootsuite](https://www.hootsuite.com)**: Enterprise option if you manage multiple brands or team members.
 
 Schedule the entire month in one sitting. When posts go out automatically, you do not need to think about social media daily — just check in weekly to respond to comments and engagement.
 
@@ -152,7 +152,7 @@ That is it. 30 minutes a week to maintain a consistent social media presence. Co
 
 **Optimizing for engagement over value.** Controversial hot takes get likes. But if every post is clickbait, you attract an audience that does not buy. Focus on genuinely useful content that builds trust with potential customers.
 
-**Ignoring what works.** Check your analytics monthly. Double down on content types that get engagement. Stop doing what does not work. AI can help here: "Here are my top 5 posts this month and my bottom 5. What patterns do you see in the ones that performed well?"
+**Ignoring what works.** Check your analytics monthly using your platform's built-in insights or a tool like [Sprout Social](https://sproutsocial.com). Double down on content types that get engagement. Stop doing what does not work. AI can help here: "Here are my top 5 posts this month and my bottom 5. What patterns do you see in the ones that performed well?"
 
 **Overthinking it.** Social media rewards consistency over perfection. A good post published today beats a perfect post you never finish. Use AI to lower the bar for getting content out the door, then improve as you learn what resonates.
 
@@ -162,4 +162,4 @@ Building a social media content calendar with AI is not about automating away yo
 
 The workflow: define your pillars once, generate ideas monthly, draft and edit in batches, schedule everything in advance, check in weekly. Total time investment: one afternoon per month plus 30 minutes per week.
 
-That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. For a broader look at how AI tools help across your business, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).
+That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. For the full picture of how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).

@@ -19,7 +19,7 @@ Here is how to use AI to generate tests that are actually useful, and how to avo
 
 ## The testing debt problem
 
-A 2024 survey by Testim found that 62% of development teams ship code with less test coverage than their own standards require. The reason is almost always time pressure.
+Industry surveys suggest that over 60% of development teams ship code with less test coverage than their own standards require. The reason is almost always time pressure.
 
 Writing a solid unit test suite for a single function can take as long as writing the function itself. Edge cases, error paths, mock setups — it adds up. When the deadline hits, tests are the first thing that gets cut.
 
@@ -75,7 +75,7 @@ The catch: AI often generates integration tests that look correct but make wrong
 
 ### Mock generation
 
-AI is surprisingly good at generating mock objects and test fixtures. It reads your interfaces and produces realistic test data that covers the shapes you need. This alone can save significant setup time.
+AI is surprisingly good at generating mock objects and test fixtures. It reads your interfaces and produces realistic test data that covers the shapes you need. This alone can save significant setup time. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 ## Step by step: using AI to generate tests for existing code
 
@@ -85,11 +85,11 @@ Do not try to generate tests for your entire codebase at once. Pick one file —
 
 ### Step 2: Provide context
 
-Give the AI tool:
+Give the AI tool: If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 - The source file you want to test
 - Any interfaces or types it depends on
-- Your testing framework (Jest, pytest, Go testing, etc.)
+- Your testing framework ([Jest](https://jestjs.io), pytest, Go testing, etc.)
 - Your project's test conventions (file naming, describe/it structure, assertion style)
 
 **Example prompt:**
@@ -163,7 +163,7 @@ When you find a prompt that produces good tests for your codebase, save it. Buil
 
 ### Run mutation testing
 
-If you want to verify that your AI-generated tests actually catch bugs, run a mutation testing tool (Stryker for JS/TS, mutmut for Python, go-mutesting for Go). These tools intentionally introduce bugs into your code and check whether your tests catch them. AI-generated tests often score lower on mutation testing than hand-written tests — which tells you exactly where to add manual tests.
+If you want to verify that your AI-generated tests actually catch bugs, run a mutation testing tool (Stryker for JS/TS, mutmut for Python, go-mutesting for Go). For end-to-end testing, frameworks like [Playwright](https://playwright.dev) and [Selenium](https://www.selenium.dev) can validate AI-generated test scenarios against your running application. These tools intentionally introduce bugs into your code and check whether your tests catch them. AI-generated tests often score lower on mutation testing than hand-written tests — which tells you exactly where to add manual tests.
 
 ## Frequently asked questions
 

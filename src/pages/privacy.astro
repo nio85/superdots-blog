@@ -6,15 +6,14 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Privacy Policy | Superdots"
 	description="Privacy policy for superdots.sh — how we handle your data."
 	pageTitle="Privacy Policy"
-	lastUpdated="17 March 2026"
+	lastUpdated="21 March 2026"
 >
 
 	<h2>1. Who we are</h2>
 	<p>
-		<!-- TODO: Replace placeholder legal entity details with real ones once available -->
-		The data controller is <strong>[COMPANY NAME] S.r.l.</strong>,
-		with registered office at [REGISTERED ADDRESS], Italy
-		(P.IVA: [XXXXXXXXXX]), operating under the brand name "Superdots" ("we", "us").
+	The data controller is <strong>Superdots S.r.l.</strong>,
+		with registered office at Via Ferrini 11, Paderno Dugnano (MI), Italy
+		(P.IVA: 09171640965), operating under the brand name "Superdots" ("we", "us").
 		We operate the website <a href="https://superdots.sh">superdots.sh</a> (the "Site").
 	</p>
 	<p>
@@ -36,6 +35,11 @@ import LegalPage from '../layouts/LegalPage.astro';
 			<tr>
 				<td>Usage analytics (page views, referrer, device type) via Google Analytics 4</td>
 				<td>Understand which content is useful so we can improve the Site</td>
+				<td>Consent — Art. 6(1)(a)</td>
+			</tr>
+			<tr>
+				<td>Heatmaps and session recordings via Microsoft Clarity</td>
+				<td>Understand how visitors interact with pages so we can improve usability</td>
 				<td>Consent — Art. 6(1)(a)</td>
 			</tr>
 			<tr>
@@ -62,7 +66,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h2>3. Cookies and similar technologies</h2>
 	<p>
-		See our <a href="/cookie-policy">Cookie Policy</a> for the full list of cookies,
+		See our <a href="/cookie-policy/">Cookie Policy</a> for the full list of cookies,
 		their purposes, durations, and how to manage them.
 	</p>
 
@@ -84,10 +88,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy</a></td>
 			</tr>
 			<tr>
-				<td>Google Fonts</td>
-				<td>Web fonts</td>
-				<td>IP address, HTTP headers sent with font requests</td>
-				<td><a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google Privacy</a></td>
+				<td>Microsoft Clarity</td>
+				<td>Heatmaps &amp; session recordings</td>
+				<td>Pseudonymised interaction data (clicks, scrolls, mouse movements)</td>
+				<td><a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy</a></td>
 			</tr>
 			<tr>
 				<td>Cloudflare Pages</td>
@@ -106,7 +110,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h2>5. International data transfers</h2>
 	<p>
-		Google, Cloudflare, and Resend process data in the United States. All three providers are
+		Google, Microsoft, Cloudflare, and Resend process data in the United States. All four providers are
 		certified under the <strong>EU–US Data Privacy Framework</strong> (DPF) and incorporate
 		<strong>Standard Contractual Clauses (SCCs)</strong> in their data processing agreements
 		as additional transfer safeguards. Resend's DPA also includes UK SCCs for ex-UK transfers.
@@ -114,6 +118,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	<p>
 		You can review each provider's transfer documentation:
 		<a href="https://policies.google.com/privacy/frameworks" rel="noopener noreferrer" target="_blank">Google</a>,
+		<a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft</a>,
 		<a href="https://www.cloudflare.com/cloudflare-customer-dpa/" rel="noopener noreferrer" target="_blank">Cloudflare</a>,
 		<a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">Resend</a>.
 	</p>
@@ -122,6 +127,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	<ul>
 		<li><strong>Google Analytics data:</strong> retained for 14 months (GA4 default), then automatically deleted.</li>
 		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
+		<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
 		<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
 		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email is deleted from our mailing list within 30 days. Transactional logs (delivery receipts) may be retained by Resend for up to 30 days per their data retention policy.</li>
 	</ul>

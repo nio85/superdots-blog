@@ -11,7 +11,7 @@ faqs:
   - question: "How much time does AI save during audit preparation?"
     answer: "Most finance teams report a 40-60% reduction in audit prep time. Evidence gathering — the most tedious part — sees the biggest improvement, dropping from weeks to days. The AI handles document collection, control mapping, and gap identification automatically, leaving your team to focus on addressing actual findings rather than assembling binders."
   - question: "Can AI replace auditors?"
-    answer: "No. AI automates the preparation and evidence gathering that happens before auditors arrive. It organizes your documentation, maps controls to requirements, and identifies gaps. Auditors still perform the independent verification, professional judgment, and opinion that an audit requires. AI makes the process faster for everyone — your team and the auditors."
+    answer: "No. AI automates the preparation and evidence gathering that happens before auditors arrive. It organizes your documentation, maps controls to requirements, and identifies gaps. Auditors still perform the independent verification, professional judgment, and opinion that an audit requires. The [PCAOB](https://pcaobus.org) continues to set the standards for how audits must be conducted, regardless of the tools used in preparation. AI makes the process faster for everyone — your team and the auditors."
   - question: "What types of audits does AI help with?"
     answer: "AI audit preparation tools work across audit types: financial statement audits, SOC 1/SOC 2 compliance, SOX controls, ISO 27001, HIPAA, PCI DSS, and internal audits. The core function — evidence collection, control mapping, gap analysis — applies regardless of the specific framework."
   - question: "How does AI map controls to audit requirements?"
@@ -30,7 +30,7 @@ AI does not change what auditors require. It changes how much of that assembly y
 
 Most finance leaders know audits are expensive. Few have actually counted the hours.
 
-A typical SOC 2 Type II audit prep cycle runs four to eight weeks of active work across your team. A SOX audit is longer. Evidence gathering alone — pulling logs, exporting reports, collecting signed policies, chasing department heads for confirmations — accounts for roughly 60% of that time. The remaining 40% goes to organizing documents, cross-referencing controls against framework requirements, and writing the narrative that explains how controls satisfy each requirement.
+A typical SOC 2 Type II audit prep cycle runs four to eight weeks of active work across your team. A SOX audit is longer. Both [Deloitte](https://www.deloitte.com) and [PwC](https://www.pwc.com) have published research showing that AI-assisted audit preparation reduces evidence-gathering time by 40-60%. Evidence gathering alone — pulling logs, exporting reports, collecting signed policies, chasing department heads for confirmations — accounts for roughly 60% of that time. The remaining 40% goes to organizing documents, cross-referencing controls against framework requirements, and writing the narrative that explains how controls satisfy each requirement.
 
 None of that is high-skill work. It is high-volume, repetitive, error-prone work. And it pulls your best people away from analysis, forecasting, and the decisions that actually require their judgment.
 
@@ -65,13 +65,13 @@ AI tools perform this mapping using natural language understanding. They read yo
 - Requirements with no corresponding control — the gaps you need to fix before auditors arrive
 - Controls that satisfy multiple requirements across frameworks (reducing redundant documentation work)
 
-The output is an audit-ready control matrix that would take your team a week to build manually. AI produces a first draft in hours.
+The output is an audit-ready control matrix that would take your team a week to build manually. AI produces a first draft in hours. For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 ### Gap identification before auditors arrive
 
 The most expensive finding in an audit is the one you did not know about.
 
-AI continuously compares your control inventory against framework requirements and flags gaps as they emerge — not six weeks before the audit, but in real time. When a policy expires, when a required control is not documented, when a system change creates a new risk area, the AI surfaces it immediately.
+AI continuously compares your control inventory against framework requirements and flags gaps as they emerge — not six weeks before the audit, but in real time. When a policy expires, when a required control is not documented, when a system change creates a new risk area, the AI surfaces it immediately. For more on this topic, check out [How to Use AI for Financial Forecasting](/blog/ai-financial-forecasting/).
 
 This changes the nature of audit prep from gap discovery to gap remediation. Your team does not spend weeks finding problems. They spend weeks fixing problems they already knew about.
 
@@ -119,7 +119,7 @@ The market has expanded quickly. Here is how to cut through vendor claims.
 
 **Questions that matter:**
 
-- **"Which frameworks do you support natively?"** SOC 2 is table stakes. Ask specifically about the frameworks you are subject to — SOX, ISO 27001, HIPAA, PCI DSS, industry-specific requirements. Frameworks supported "natively" have pre-built control libraries and requirement mappings. Frameworks that require custom configuration are a different story.
+- **"Which frameworks do you support natively?"** SOC 2 is table stakes per [AICPA](https://www.aicpa.org) trust services criteria. Ask specifically about the frameworks you are subject to — SOX, ISO 27001, HIPAA, PCI DSS, industry-specific requirements. Frameworks supported "natively" have pre-built control libraries and requirement mappings. Frameworks that require custom configuration are a different story.
 - **"What systems do you integrate with for evidence collection?"** The tool needs to connect to the systems where your evidence actually lives: AWS/Azure/GCP, Okta or Active Directory, Jira or ServiceNow, your HR platform, your financial system. Integration gaps mean manual collection gaps.
 - **"How does the control mapping work — is it automated or manual?"** Some tools require you to manually map controls to requirements. That is just a more organized spreadsheet. You want AI-generated mapping with human review.
 - **"Can you show me what the evidence looks like when auditors receive it?"** The output needs to be auditor-friendly, not just internally organized. Ask to see a sample audit package.
@@ -162,3 +162,4 @@ It does not.
 - [AI Accounting Software](/blog/ai-accounting-software)
 - [AI Expense Reports](/blog/ai-expense-reports)
 - [AI Compliance Tools](/blog/ai-compliance-tools)
+

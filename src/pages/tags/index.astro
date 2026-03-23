@@ -1,9 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 import { TAGS } from '../../consts';
 
 const posts = await getCollection('blog');
+const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
+
+function slugToLabel(slug: string): string {
+	return slug
+		.split('-')
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(' ');
+}
 
 // Count articles per tag
 const tagCounts = new Map<string, number>();
@@ -12,45 +21,236 @@ for (const post of posts) {
 		tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
 	}
 }
+
+// Build tag list with metadata
+const allTagSlugs = new Set([...tagCounts.keys(), ...TAGS.map((t) => t.slug)]);
+const allTags = [...allTagSlugs]
+	.map((slug) => ({
+		slug,
+		label: tagLookup.get(slug)?.label ?? slugToLabel(slug),
+		description: tagLookup.get(slug)?.description ?? '',
+		count: tagCounts.get(slug) ?? 0,
+	}))
+	.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+const POPULAR_THRESHOLD = 5;
+const popularTags = allTags.filter((t) => t.count >= POPULAR_THRESHOLD);
+const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 ---
 
 <Base title="Tags | Superdots" description="Browse AI guides by topic tag.">
+	<nav class="breadcrumb" aria-label="Breadcrumb">
+		<a href="/">Home</a>
+		<span aria-hidden="true">/</span>
+		<span aria-current="page">Tags</span>
+	</nav>
+
 	<div class="page-header">
-		<div class="dots dots-md" style="top: -15%; right: 0;"></div>
+		<div class="dots dots-md" style="top: -15%; right: 0;" aria-hidden="true"></div>
 		<h1>Tags<span class="dot-accent">.</span></h1>
 		<p class="page-desc">Browse guides by topic — pick a tag to find articles that match your interest.</p>
 	</div>
 
-	<div class="tag-grid">
-		{TAGS.map((t) => {
-			const count = tagCounts.get(t.slug) ?? 0;
-			return (
-				<a href={`/tags/${t.slug}/`} class="tag-card">
-					<span class="tag-label">{t.label}</span>
-					<span class="tag-count">{count} {count === 1 ? 'article' : 'articles'}</span>
-				</a>
-			);
-		})}
-	</div>
+	{/* Popular tags — larger cards with descriptions */}
+	{popularTags.length > 0 && (
+		<section class="popular-section" aria-label="Popular tags">
+			<div class="section-label">
+				<span class="superdot"></span>
+				Popular Topics
+			</div>
+			<div class="popular-grid">
+				{popularTags.map((t) => (
+					<a href={`/tags/${t.slug}/`} class="popular-card">
+						<div class="popular-card-header">
+							<span class="popular-label">{t.label}</span>
+							<span class="popular-count">{t.count}</span>
+						</div>
+						{t.description && (
+							<p class="popular-desc">{t.description}</p>
+						)}
+						<span class="popular-cta">
+							Browse articles <span aria-hidden="true">&rarr;</span>
+						</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+
+	{/* Other tags — compact grid */}
+	{otherTags.length > 0 && (
+		<section class="other-section" aria-label="More tags">
+			<div class="section-label section-label--muted">
+				More Topics
+			</div>
+			<div class="tag-grid">
+				{otherTags.map((t) => (
+					<a href={`/tags/${t.slug}/`} class="tag-card">
+						<span class="tag-label">{t.label}</span>
+						<span class="tag-count">{t.count} {t.count === 1 ? 'article' : 'articles'}</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+
+	<NewsletterForm variant="banner" source="tags-listing" />
 </Base>
 
 <style>
-	.page-header {
-		position: relative;
-		overflow: hidden;
-		padding: var(--space-6) 0 var(--space-2);
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		padding-top: var(--space-4);
 	}
-	.page-header h1 {
-		margin-bottom: var(--space-2);
+	.breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
 	}
-	.dot-accent {
+	.breadcrumb a:hover {
 		color: var(--color-primary);
+	}
+	.breadcrumb span[aria-current] {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-medium);
 	}
 	.page-desc {
 		color: var(--color-text-muted);
 		font-size: var(--text-lg);
 		margin-bottom: var(--space-6);
 		line-height: var(--leading-snug);
+	}
+
+	/* Section labels */
+	.section-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-4);
+	}
+	.section-label .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.section-label--muted {
+		color: var(--color-text-muted);
+	}
+
+	/* Popular tags — large cards */
+	.popular-section {
+		margin-bottom: var(--space-8);
+	}
+	.popular-grid {
+		display: grid;
+		gap: var(--space-4);
+	}
+	@media (min-width: 640px) {
+		.popular-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (min-width: 960px) {
+		.popular-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.popular-card {
+		display: flex;
+		flex-direction: column;
+		padding: var(--space-5) var(--space-6);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		position: relative;
+		overflow: hidden;
+	}
+	.popular-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 0;
+		background: var(--color-primary);
+		border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+		transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.popular-card:hover {
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-md);
+		border-color: var(--color-primary);
+		text-decoration: none;
+	}
+	.popular-card:hover::before {
+		height: 100%;
+	}
+	.popular-card-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: var(--space-2);
+	}
+	.popular-label {
+		font-family: var(--font-display);
+		font-weight: var(--weight-bold);
+		font-size: var(--text-lg);
+		color: var(--color-text-strong);
+		transition: color var(--transition-fast);
+	}
+	.popular-card:hover .popular-label {
+		color: var(--color-primary);
+	}
+	.popular-count {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		color: var(--color-primary);
+		line-height: 1;
+		opacity: 0.25;
+	}
+	.popular-desc {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+		margin: 0 0 var(--space-3);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.popular-cta {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		margin-top: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		transition: gap var(--transition-fast);
+	}
+	.popular-card:hover .popular-cta {
+		gap: var(--space-2);
+	}
+
+	/* Other tags — compact grid */
+	.other-section {
+		margin-bottom: var(--space-6);
 	}
 	.tag-grid {
 		display: grid;

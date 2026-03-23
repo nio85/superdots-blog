@@ -32,13 +32,13 @@ AI changes that equation completely.
 
 Traditional salary surveys have three structural problems that no amount of consultant polish can fix.
 
-**They're backward-looking.** Major surveys — Radford, Mercer, Willis Towers Watson — collect data once a year. Publication lags collection by three to six months. By the time you're using the data, market conditions may have shifted significantly, especially in fast-moving fields like software engineering, data science, or product management.
+**They're backward-looking.** Major surveys — Radford, [Mercer](https://www.mercer.com), Willis Towers Watson — collect data once a year. Publication lags collection by three to six months. By the time you're using the data, market conditions may have shifted significantly, especially in fast-moving fields like software engineering, data science, or product management.
 
 **They're coarse.** A "Software Engineer III in the Bay Area" bucket might contain 200 data points spanning companies from three-person startups to Fortune 50 enterprises. Those companies aren't competing for the same talent. Averaging them gives you a number that's wrong for almost everyone in the bucket.
 
 **They're expensive.** Full survey subscriptions run $15,000 to $40,000 per year. Add a compensation consulting engagement and you're looking at $50,000 to $150,000 for an analysis that will be partially obsolete before you act on it.
 
-Small and mid-size companies typically can't justify that spend. So they wing it — using Glassdoor, LinkedIn Salary, and gut instinct. Which means they're either overpaying to compensate for uncertainty, or losing candidates to offers they could have matched.
+Small and mid-size companies typically can't justify that spend. So they wing it — using Glassdoor, [LinkedIn](https://www.linkedin.com) Salary, and gut instinct. Which means they're either overpaying to compensate for uncertainty, or losing candidates to offers they could have matched.
 
 ## What AI Compensation Benchmarking Actually Does
 
@@ -51,7 +51,7 @@ The best AI tools pull from multiple live sources simultaneously:
 - **Job posting data.** Millions of active job listings include salary ranges, especially since pay transparency laws expanded across US states and the EU. AI scrapes and normalizes this data continuously.
 - **Verified payroll data.** Some platforms aggregate anonymized, verified compensation data directly from HRIS and payroll integrations — not self-reported estimates.
 - **Public filings.** H-1B visa applications, proxy statements, and public sector salary disclosures are legally required to include compensation data. AI can mine these at scale.
-- **Crowdsourced databases.** Platforms like Levels.fyi (tech), Glassdoor, and LinkedIn Salary contain self-reported data. AI tools assess source reliability and weight accordingly.
+- **Crowdsourced databases.** Platforms like Levels.fyi (tech), Glassdoor, and [Salary.com](https://www.salary.com) contain self-reported data. AI tools assess source reliability and weight accordingly.
 
 The result is a composite benchmark drawn from hundreds of thousands of data points, refreshed weekly or even daily.
 
@@ -96,13 +96,13 @@ The more granular, the better. Add performance ratings, reporting structure dept
 
 This is where most DIY comp audits break down. Your internal job architecture probably doesn't map cleanly to market benchmarks.
 
-AI tools handle this in one of two ways. Some use title-matching algorithms trained on millions of job descriptions to find the closest market equivalent. Better tools ask you to provide a brief role description and use that to match against scope, not title.
+AI tools handle this in one of two ways. Some use title-matching algorithms trained on millions of job descriptions to find the closest market equivalent. Better tools ask you to provide a brief role description and use that to match against scope, not title. For related guidance, see our guide on [How AI Can Reduce Bias in Hiring (And Where It Falls Short)](/blog/ai-diversity-hiring/).
 
 Be critical here. If the tool is matching "Product Manager II" to a generic PM bucket without accounting for whether they manage a single feature or an entire product line, the benchmark will be off. Review a sample of mappings manually before trusting the output.
 
 ### Step 3: Run the Benchmark Analysis
 
-With roles mapped, run your full workforce against market data. A good AI tool will output:
+With roles mapped, run your full workforce against market data. A good AI tool will output: Our guide on [Best AI Tools for Employee Engagement in 2026](/blog/ai-employee-engagement/) explores this further.
 
 - Each role's 25th, 50th, 75th, and 90th market percentile for base and total cash
 - Where each employee falls relative to market (their "compa-ratio")
@@ -158,7 +158,7 @@ Second, investigate root cause. Common causes of apparent gaps:
 - **Structural inequity in promotion.** If women in engineering are being promoted at lower rates, they'll cluster at lower levels and lower pay. The gap shows up in compensation but the root cause is in promotion decisions.
 - **Manager discretion in merit increases.** If merit increase percentages vary widely by manager, and managers are not demographically representative, bias can enter through the merit cycle.
 
-Third, act and document. If you find a legitimate gap, correct it. Document your analysis, your findings, and your remediation steps. In many jurisdictions, proactive remediation — before a complaint or audit — is a meaningful legal protection.
+Third, act and document. If you find a legitimate gap, correct it. Document your analysis, your findings, and your remediation steps. In many jurisdictions, proactive remediation — before a complaint or audit — is a meaningful legal protection. [SHRM](https://www.shrm.org) and [PayScale](https://www.payscale.com) both publish detailed guidance on conducting pay equity audits.
 
 ## The Tools Worth Knowing
 
@@ -206,6 +206,8 @@ The HR teams that treat compensation as a continuous data practice — rather th
 
 ## Related reads:
 
+- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI across every HR function.
 - [AI Workforce Planning](/blog/ai-workforce-planning)
 - [AI Performance Reviews](/blog/ai-performance-reviews)
 - [AI Budgeting Tools](/blog/ai-budgeting-tools)
+

@@ -21,7 +21,7 @@ faqs:
     answer: "Yes. Zapier connects to 7,000+ apps, Make to 1,500+, and n8n to 400+ with custom API support. If your software has an API, you can connect it. Common integrations include Slack, Gmail, Salesforce, HubSpot, Google Sheets, and Notion."
   - question: "Are automated workflows reliable enough for business-critical processes?"
     answer: "Yes, with proper setup. All major platforms offer error handling, retry logic, and notifications when workflows fail. For critical processes, add monitoring and human review steps. Enterprise plans include SLAs and priority support."
-heroImage: '/images/blog/ai-workflow-automation.webp'
+heroImage: "/images/blog/ai-workflow-automation.webp"
 ---
 
 You're doing the same ten tasks every day. Copy data from email to spreadsheet. Route support tickets. Send follow-up messages. Update the CRM after calls.

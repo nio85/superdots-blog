@@ -1,22 +1,45 @@
 ---
 interface Props {
-	variant?: 'inline' | 'banner' | 'compact';
+	variant?: 'inline' | 'banner' | 'compact' | 'hero' | 'midpost';
 	source?: string;
 }
 
 const { variant = 'banner', source = 'unknown' } = Astro.props;
+
+const headingText: Record<string, string> = {
+	banner: 'Get smarter about AI at work',
+	inline: 'Get AI tips that actually help at work',
+	hero: 'Join 2,000+ professionals getting smarter about AI',
+	midpost: 'Enjoying this? Get one like it every week',
+};
+const descText: Record<string, string> = {
+	banner: 'One practical email per week. Real techniques, no hype.',
+	inline: 'One email per week. Practical guides, no fluff.',
+	hero: '',
+	midpost: 'Practical AI guides for your team — delivered every Tuesday.',
+};
+const btnText: Record<string, string> = {
+	banner: 'Subscribe',
+	inline: 'Subscribe',
+	compact: 'Join',
+	hero: 'Get the newsletter',
+	midpost: 'Count me in',
+};
 ---
 
 <div class:list={['newsletter', `newsletter--${variant}`]} data-source={source}>
-	{variant === 'banner' && <div class="newsletter-dots" aria-hidden="true"></div>}
-	{variant === 'banner' && <div class="newsletter-glow" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost' || variant === 'hero') && <div class="newsletter-dots" aria-hidden="true"></div>}
+	{(variant === 'banner' || variant === 'midpost' || variant === 'hero') && <div class="newsletter-glow" aria-hidden="true"></div>}
 	<div class="newsletter-inner">
-		{variant !== 'compact' && (
+		{variant !== 'compact' && variant !== 'hero' && (
 			<div class="newsletter-text">
 				<span class="superdot"></span>
-				<h3 class="newsletter-heading">Get AI tips that actually help at work<span class="dot-accent">.</span></h3>
-				<p class="newsletter-desc">One email per week. Practical guides, no fluff.</p>
+				<h3 class="newsletter-heading">{headingText[variant] || headingText.banner}<span class="dot-accent">.</span></h3>
+				{descText[variant] && <p class="newsletter-desc">{descText[variant]}</p>}
 			</div>
+		)}
+		{variant === 'hero' && (
+			<p class="newsletter-hero-label">{headingText.hero}<span class="dot-accent">.</span></p>
 		)}
 		{variant === 'compact' && (
 			<p class="newsletter-compact-label">Get the newsletter<span class="dot-accent">.</span></p>
@@ -32,17 +55,18 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 					required
 					autocomplete="email"
 					aria-describedby={`newsletter-legal-${variant}`}
+					data-clarity-mask="true"
 				/>
-				<button type="submit" class="btn btn-primary">{variant === 'compact' ? 'Join' : 'Subscribe'}</button>
+				<button type="submit" class="btn btn-primary">{btnText[variant] || 'Subscribe'}</button>
 			</div>
-			{variant !== 'compact' && (
+			{variant !== 'compact' && variant !== 'hero' && (
 				<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
-					By subscribing, you agree to receive our newsletter. We'll use your email address solely to send you articles about AI at work &mdash; no spam, no sharing. Emails include open and click tracking to help us improve content. You can unsubscribe anytime. See our <a href="/privacy#newsletter">Privacy Policy</a>.
+					No spam, unsubscribe anytime. Includes <a href="/privacy#newsletter">email tracking</a>.
 				</p>
 			)}
-			{variant === 'compact' && (
+			{(variant === 'compact' || variant === 'hero') && (
 				<p class="newsletter-legal newsletter-legal--compact" id={`newsletter-legal-${variant}`}>
-					No spam. Includes <a href="/privacy#newsletter">email tracking</a>.
+					No spam, ever. <a href="/privacy#newsletter">Privacy</a>.
 				</p>
 			)}
 			<div class="newsletter-status" role="status" aria-live="polite"></div>
@@ -80,6 +104,15 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 					status.textContent = 'Check your inbox to confirm your subscription.';
 					status.classList.add('newsletter-status--success');
 					input.value = '';
+
+					// GA4 conversion event: newsletter signup
+					if (typeof window.gtag === 'function') {
+						window.gtag('event', 'generate_lead', {
+							event_category: 'newsletter',
+							event_label: source,
+							value: 1,
+						});
+					}
 				} else {
 					status.textContent = data.error || 'Something went wrong. Please try again.';
 					status.classList.add('newsletter-status--error');
@@ -89,7 +122,8 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 				status.classList.add('newsletter-status--error');
 			} finally {
 				btn.disabled = false;
-				btn.textContent = 'Subscribe';
+				const isCompact = el.closest('.newsletter')?.classList.contains('newsletter--compact');
+				btn.textContent = isCompact ? 'Join' : 'Subscribe';
 			}
 		});
 	});
@@ -103,6 +137,8 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		margin: var(--space-12) 0;
 		position: relative;
 		overflow: hidden;
+		content-visibility: auto;
+		contain-intrinsic-size: auto 320px;
 	}
 	/* Red left accent bar */
 	.newsletter::before {
@@ -115,8 +151,69 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		background: var(--color-primary);
 	}
 	.newsletter--banner {
-		background: var(--color-bg-dim);
-		border-color: var(--color-border);
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: var(--space-10) var(--space-8);
+		text-align: center;
+	}
+	.newsletter--banner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--banner::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--banner .newsletter-inner {
+		max-width: 460px;
+		margin: 0 auto;
+	}
+	.newsletter--banner .newsletter-text {
+		margin-bottom: var(--space-6);
+	}
+	.newsletter--banner .newsletter-text .superdot {
+		width: 10px;
+		height: 10px;
+		margin-bottom: var(--space-3);
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
+	}
+	.newsletter--banner .newsletter-heading {
+		font-size: var(--text-2xl);
+		letter-spacing: -0.025em;
+	}
+	.newsletter--banner .newsletter-desc {
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-weight: var(--weight-medium);
+		opacity: 0.7;
+	}
+	.newsletter--banner .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--banner .newsletter-field input {
+		max-width: 240px;
+	}
+	.newsletter--banner .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--banner .newsletter-status {
+		text-align: center;
 	}
 	.newsletter--inline {
 		background: transparent;
@@ -154,7 +251,125 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		font-size: var(--text-xs);
 		opacity: 0.7;
 	}
-	/* Dot pattern decoration — banner variant only */
+	/* Hero variant — premium inline signup in hero section */
+	.newsletter--hero {
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 60%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		margin: 0;
+		padding: var(--space-6) var(--space-8);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+	}
+	.newsletter--hero::before {
+		display: none;
+	}
+	.newsletter--hero .newsletter-inner {
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	.newsletter-hero-label {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-4);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.newsletter-hero-label .dot-accent {
+		color: var(--color-primary);
+	}
+	.newsletter--hero .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--hero .newsletter-field input {
+		max-width: 260px;
+		border-color: var(--color-border-strong);
+		background: var(--color-bg);
+		border-radius: var(--radius-md);
+	}
+	.newsletter--hero .newsletter-field button {
+		padding: var(--space-3) var(--space-6);
+		border-radius: var(--radius-md);
+	}
+	.newsletter--hero .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--hero .newsletter-status {
+		text-align: center;
+	}
+	/* Midpost variant — eye-catching inline CTA for mid-article */
+	.newsletter--midpost {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: var(--space-10) var(--space-8);
+		margin: var(--space-12) 0;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+	}
+	.newsletter--midpost::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--midpost::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--midpost .newsletter-inner {
+		max-width: 440px;
+		margin: 0 auto;
+	}
+	.newsletter--midpost .newsletter-text {
+		margin-bottom: var(--space-6);
+	}
+	.newsletter--midpost .newsletter-text .superdot {
+		width: 10px;
+		height: 10px;
+		margin-bottom: var(--space-3);
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
+	}
+	.newsletter--midpost .newsletter-heading {
+		font-size: var(--text-2xl);
+		letter-spacing: -0.025em;
+	}
+	.newsletter--midpost .newsletter-desc {
+		font-size: var(--text-sm);
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-weight: var(--weight-medium);
+		opacity: 0.7;
+	}
+	.newsletter--midpost .newsletter-field {
+		justify-content: center;
+	}
+	.newsletter--midpost .newsletter-field input {
+		max-width: 240px;
+	}
+	.newsletter--midpost .newsletter-legal {
+		text-align: center;
+	}
+	.newsletter--midpost .newsletter-status {
+		text-align: center;
+	}
+	/* Dot pattern decoration */
 	.newsletter-dots {
 		position: absolute;
 		top: -10px;
@@ -166,7 +381,16 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		opacity: 0.3;
 		pointer-events: none;
 	}
-	/* Subtle gradient glow — banner variant only */
+	.newsletter--midpost .newsletter-dots {
+		top: auto;
+		bottom: -10px;
+		left: -10px;
+		right: auto;
+		width: 100px;
+		height: 100px;
+		opacity: 0.2;
+	}
+	/* Subtle gradient glow */
 	.newsletter-glow {
 		position: absolute;
 		bottom: -40%;
@@ -178,12 +402,75 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		filter: blur(30px);
 		pointer-events: none;
 	}
+	.newsletter--midpost .newsletter-glow {
+		top: -30%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
+		filter: blur(40px);
+	}
+	/* Banner variant — dots bottom-left, glow centered like midpost */
+	.newsletter--banner .newsletter-dots {
+		top: auto;
+		bottom: -10px;
+		left: -10px;
+		right: auto;
+		width: 100px;
+		height: 100px;
+		opacity: 0.2;
+	}
+	.newsletter--banner .newsletter-glow {
+		top: -30%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
+		filter: blur(40px);
+	}
+	/* Hero variant — subtle dot + glow decorations */
+	.newsletter--hero .newsletter-dots {
+		top: auto;
+		bottom: -6px;
+		right: -6px;
+		width: 80px;
+		height: 80px;
+		opacity: 0.15;
+	}
+	.newsletter--hero .newsletter-glow {
+		top: -40%;
+		bottom: auto;
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+		width: 300px;
+		height: 300px;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, transparent 70%);
+		filter: blur(30px);
+	}
 	:global([data-theme="dark"]) .newsletter-glow {
 		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+	}
+	:global([data-theme="dark"]) .newsletter--hero {
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
+		border-color: var(--color-border);
+	}
+	:global([data-theme="dark"]) .newsletter--banner {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
 	}
 	@media (prefers-color-scheme: dark) {
 		:global([data-theme="auto"]) .newsletter-glow {
 			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+		}
+		:global([data-theme="auto"]) .newsletter--hero {
+			background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
+			border-color: var(--color-border);
 		}
 	}
 	.newsletter-inner {
@@ -213,9 +500,6 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 	}
 	.newsletter--inline .newsletter-heading {
 		font-size: var(--text-lg);
-	}
-	.dot-accent {
-		color: var(--color-primary);
 	}
 	.newsletter-desc {
 		color: var(--color-text-muted);
@@ -283,6 +567,30 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 		}
 		.newsletter {
 			padding: var(--space-6) var(--space-4);
+		}
+		.newsletter--midpost {
+			padding: var(--space-8) var(--space-5);
+		}
+		.newsletter--midpost .newsletter-heading {
+			font-size: var(--text-xl);
+		}
+		.newsletter--midpost .newsletter-field input {
+			max-width: 100%;
+		}
+		.newsletter--banner {
+			padding: var(--space-8) var(--space-5);
+		}
+		.newsletter--banner .newsletter-heading {
+			font-size: var(--text-xl);
+		}
+		.newsletter--banner .newsletter-field input {
+			max-width: 100%;
+		}
+		.newsletter--hero {
+			padding: var(--space-5) var(--space-4);
+		}
+		.newsletter--hero .newsletter-field input {
+			max-width: 100%;
 		}
 		.newsletter-dots {
 			width: 80px;

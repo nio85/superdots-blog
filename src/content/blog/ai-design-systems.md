@@ -18,7 +18,7 @@ faqs:
 
 Design systems are supposed to bring consistency. In practice, they start strong and slowly fall apart.
 
-A team ships a button variant that does not match the spec. Someone hard-codes a hex value instead of using the token. A new product launches with components that look almost right but use slightly different spacing. The documentation says one thing, the code says another, and the Figma file says something else entirely.
+A team ships a button variant that does not match the spec. Someone hard-codes a hex value instead of using the token. A new product launches with components that look almost right but use slightly different spacing. The documentation says one thing, the code says another, and the [Figma](https://www.figma.com) file says something else entirely.
 
 This is the maintenance problem. Building a design system is hard. Keeping it consistent across five teams, three platforms, and hundreds of components is harder. And the bigger your system gets, the faster it drifts.
 
@@ -60,9 +60,9 @@ These tools scan your codebase, your Figma files, or both, and flag components t
 
 ### How to set this up
 
-Start with visual regression testing. It gives you the biggest return with the least setup.
+Start with visual regression testing. It gives you the biggest return with the least setup. If you are building new components or pages alongside this, [AI wireframing tools](/blog/ai-wireframing-tools) can generate initial layouts that already conform to your system's spacing and structure.
 
-1. **Pick a tool.** Chromatic (built by the Storybook team) or Applitools Eyes are the two strongest options. Both use AI to reduce false positives in visual comparisons.
+1. **Pick a tool.** Chromatic (built by the [Storybook](https://storybook.js.org) team) or Applitools Eyes are the two strongest options. Both use AI to reduce false positives in visual comparisons.
 2. **Connect it to your component library.** If you use Storybook, both tools integrate directly. They render every story, screenshot it, and compare against the last approved version.
 3. **Run it in CI.** Set up the visual checks to run on every pull request. When a component changes visually, the tool flags it for review. Intentional changes get approved. Unintentional changes get caught.
 4. **Expand to code scanning.** Once visual checks are running, add a custom linter or use a tool like Knapsack to scan for hard-coded values and naming inconsistencies.
@@ -113,7 +113,7 @@ The best AI documentation tools analyze your component source code and produce:
 
 ### Tools that do this
 
-**Storybook with autodocs.** Storybook 7+ generates documentation pages from your stories and component source. It pulls prop types, default values, and descriptions automatically.
+**[Storybook](https://storybook.js.org) with autodocs.** Storybook 7+ generates documentation pages from your stories and component source. It pulls prop types, default values, and descriptions automatically.
 
 **AI-assisted writing.** GitHub Copilot and similar tools can draft documentation from component code. Write the component, highlight it, and ask for documentation. Edit the output for accuracy and voice, then commit it alongside the code.
 
@@ -138,7 +138,7 @@ This is the hardest problem to catch manually because each individual deviation 
 
 **Visual scanning.** AI tools can crawl your production applications and compare rendered UI against your design system specs. They flag elements that look like they are using design system components but have been modified — wrong spacing, different colors, custom overrides.
 
-**Code analysis.** Static analysis tools can scan your product codebases and find components that override design system styles. If a product team has `!important` overrides on system components, that is drift worth investigating.
+**Code analysis.** Static analysis tools can scan your product codebases and find components that override design system styles. If a product team has `!important` overrides on system components, that is drift worth investigating. This kind of analysis is especially valuable during [AI design handoff](/blog/ai-design-handoff), where discrepancies between design specs and implementation are most likely to appear.
 
 **Usage analytics.** Some design system platforms track which components are used across products and which are substituted with custom implementations. AI can analyze these patterns and identify products that are drifting away from the system.
 
@@ -187,10 +187,11 @@ AI does not replace your design systems team. It handles the tedious, repetitive
 
 Start with visual regression testing. It is the fastest win. Then layer in token management, documentation automation, and drift detection as your needs grow.
 
-The best design system is not the one with the most components. It is the one that stays consistent. AI helps you get there.
+The best design system is not the one with the most components. It is the one that stays consistent. AI helps you get there. For teams building on established frameworks like [Material Design](https://m3.material.io), the maintenance burden is lighter from the start — but even well-structured systems need automated oversight at scale.
 
 **Related reads:**
 
 - [AI Design Tools for Non-Designers](/blog/ai-design-tools-non-designers) — If your team needs to create visuals without a designer, this is where to start.
 - [AI Automation Guide](/blog/ai-automation-guide) — The broader playbook for automating repetitive work across your team.
 - [AI Tools for Business Guide](/blog/ai-tools-for-business-guide) — A department-by-department look at which AI tools actually deliver value.
+

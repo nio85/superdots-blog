@@ -21,7 +21,7 @@ Before we get into the AI approach, it helps to understand why debugging eats so
 
 ### The context-switching tax
 
-You hit a bug. You open the logs. You switch to the code. You check the database. You open the browser dev tools. You go back to the logs. Every switch costs you mental context. Studies show it takes 15–25 minutes to regain deep focus after a context switch. A single debugging session can involve dozens of them.
+You hit a bug. You open the logs. You switch to the code. You check the database. You open the browser dev tools (like [Chrome DevTools](https://developer.chrome.com/docs/devtools)). You go back to the logs. Every switch costs you mental context. Studies show it takes 15–25 minutes to regain deep focus after a context switch. A single debugging session can involve dozens of them.
 
 ### The log-hunting spiral
 
@@ -47,7 +47,7 @@ AI does not have access to your running application. It cannot set breakpoints o
 
 When you paste an error message and some code into an AI tool, it draws on patterns from millions of code examples, bug reports, Stack Overflow answers, and documentation. It has seen your error before — probably thousands of times, in dozens of variations. That is why it can often identify the issue faster than you can: not because it is smarter, but because it has more context about common failure modes.
 
-Think of it as having a senior developer sitting next to you who has worked in every language, every framework, and every codebase. They may not know your specific application, but they instantly recognize common patterns and anti-patterns.
+Think of it as having a senior developer sitting next to you who has worked in every language, every framework, and every codebase. They may not know your specific application, but they instantly recognize common patterns and anti-patterns. This is the same principle behind [AI pair programming](/blog/ai-pair-programming) — the AI augments your thinking rather than replacing it.
 
 ## Step-by-step: using AI to debug
 
@@ -61,7 +61,7 @@ Before you open an AI tool, get the actual error. Not "it does not work." The sp
 - The exact input that triggers the bug
 - What you expected to happen vs. what actually happened
 
-This matters because the quality of AI debugging output is directly proportional to the quality of your input. Vague descriptions get vague answers.
+This matters because the quality of AI debugging output is directly proportional to the quality of your input. Vague descriptions get vague answers. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 **Example of a bad prompt:**
 
@@ -164,7 +164,7 @@ AI is not a replacement for all debugging. It has real limitations:
 - **Performance bugs.** AI can suggest optimizations, but it cannot profile your running code. If the bug is "this page takes 8 seconds to load," you still need your profiler. For broader productivity improvements, check out the [AI productivity guide](/blog/ai-productivity-guide).
 - **Business logic bugs.** If the code runs correctly but produces the wrong business result, the AI needs to understand the domain rules to help. You have to explain what "correct" means.
 
-For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis, and good old rubber duck debugging.
+For these cases, use AI as one tool alongside traditional debugging: breakpoints, profilers, log analysis tools like [Sentry](https://sentry.io) or [Datadog](https://www.datadoghq.com), and good old rubber duck debugging. When bugs escalate into production outages, having an [AI incident management](/blog/ai-incident-management) workflow in place helps your team respond systematically instead of scrambling.
 
 ## Building AI debugging into your workflow
 
@@ -179,20 +179,3 @@ This flips the traditional debugging workflow. Instead of starting broad (adding
 
 Teams that maintain an [internal knowledge base](/blog/ai-knowledge-base-for-teams) get even more value here, because the AI can reference past incidents and known issues specific to your codebase.
 
-## FAQ
-
-### Can AI debug any programming language?
-
-AI tools handle all major languages well — JavaScript, Python, Java, Go, Rust, C++, TypeScript, and more. They are strongest in languages with the most open-source training data (JavaScript, Python), but capable across the board. The debugging workflow is the same regardless of language.
-
-### Will AI replace developers for debugging?
-
-No. AI speeds up the process of finding and understanding bugs, but it cannot reproduce issues, understand business context, or make judgment calls about the right fix. Think of it as a very fast research assistant, not a replacement.
-
-### Is it safe to paste proprietary code into AI tools?
-
-Check your company's policy and the AI tool's data handling terms. Many enterprise-grade AI tools do not use your code for training. For sensitive code, consider self-hosted AI options or tools that explicitly guarantee data privacy. Either way, avoid pasting secrets, API keys, or credentials into any external tool.
-
-### How accurate are AI debugging suggestions?
-
-For common errors and well-known patterns, accuracy is very high — often 80–90% for the first suggestion. For complex, domain-specific bugs, accuracy drops. Always verify suggestions before applying them. The more context you provide, the more accurate the results.

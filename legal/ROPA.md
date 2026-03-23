@@ -3,7 +3,7 @@
 **Controller:** Superdots (superdots.sh)
 **Contact:** privacy@superdots.sh
 **Date created:** 17 March 2026
-**Last reviewed:** 17 March 2026
+**Last reviewed:** 18 March 2026
 
 Required under Art. 30 GDPR. This document records all personal data processing activities carried out by Superdots in connection with the blog at superdots.sh.
 
@@ -63,20 +63,22 @@ Required under Art. 30 GDPR. This document records all personal data processing 
 
 ---
 
-## 4. Web Fonts
+## 4. Heatmaps & Session Recordings
 
 | Field | Details |
 |-------|---------|
-| **Processing activity** | Loading web fonts from Google Fonts |
-| **Purpose** | Display typography on the website |
-| **Legal basis** | Legitimate interest — Art. 6(1)(f) GDPR (standard web functionality). Note: self-hosting fonts would eliminate this processing activity entirely |
-| **Data subjects** | All website visitors |
-| **Categories of personal data** | IP address, HTTP headers sent with font requests |
-| **Source of data** | Collected automatically when fonts are loaded |
-| **Recipients / processors** | Google LLC |
-| **International transfers** | USA — Google. Transfer safeguards: SCCs, EU-US Data Privacy Framework |
-| **Retention period** | Google does not store personal data from font requests beyond standard server log retention |
-| **Technical & organisational measures** | HTTPS delivery; no cookies set by Google Fonts |
+| **Processing activity** | Heatmaps and session recordings via Microsoft Clarity |
+| **Purpose** | Understand how visitors interact with pages to improve usability |
+| **Legal basis** | Consent — Art. 6(1)(a) GDPR (loaded only after user consent via cookie banner, as required by Art. 5(3) ePrivacy Directive) |
+| **Data subjects** | Website visitors who consent to analytics |
+| **Categories of personal data** | Pseudonymised interaction data (clicks, scrolls, mouse movements, DOM snapshots), IP address, device/browser metadata |
+| **Source of data** | Collected automatically from consenting visitors via Clarity JavaScript tag |
+| **Recipients / processors** | Microsoft Corporation — analytics processor |
+| **International transfers** | USA — Microsoft. Transfer safeguards: SCCs, EU-US Data Privacy Framework (Microsoft is DPF-certified) |
+| **Retention period** | 30 days (Microsoft Clarity default), then automatically deleted |
+| **Technical & organisational measures** | Consent-gated loading (no tracking without opt-in); built-in input masking for form fields; Microsoft SOC 2 and ISO 27001 certified; cookies: `_clck` (1yr), `_clsk` (1d), `CLID` (1yr) |
+| **Data processor agreement** | Microsoft Online Services DPA: https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA |
+| **DPIA status** | **Completed** — see `legal/DPIA-CLARITY.md` (18 March 2026). Next review: September 2026 |
 
 ---
 

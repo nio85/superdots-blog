@@ -6,7 +6,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Cookie Policy | Superdots"
 	description="Cookie policy for superdots.sh — what cookies we use and why."
 	pageTitle="Cookie Policy"
-	lastUpdated="17 March 2026"
+	lastUpdated="18 March 2026"
 >
 
 	<h2>What are cookies?</h2>
@@ -43,6 +43,20 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td>Until cleared</td>
 			</tr>
 			<tr>
+				<td><code>sd-cookie-consent</code></td>
+				<td>superdots.sh</td>
+				<td>Records your cookie consent choice (accepted or rejected)</td>
+				<td>localStorage</td>
+				<td>Until cleared</td>
+			</tr>
+			<tr>
+				<td><code>sd-cookie-consent-date</code></td>
+				<td>superdots.sh</td>
+				<td>Timestamp of when you gave or refused cookie consent</td>
+				<td>localStorage</td>
+				<td>Until cleared</td>
+			</tr>
+			<tr>
 				<td><code>__cf_bm</code></td>
 				<td>Cloudflare</td>
 				<td>Bot management — distinguishes humans from automated traffic</td>
@@ -54,10 +68,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h3>Analytics (consent required)</h3>
 	<p>
-		These cookies are set by Google Analytics 4 to help us understand how visitors
-		use the Site. They are only activated <strong>after you give consent</strong>
-		via the cookie banner, as required by Art. 5(3) ePrivacy Directive and
-		Art. 6(1)(a) GDPR.
+		These cookies are set by Google Analytics 4 and Microsoft Clarity to help us
+		understand how visitors use the Site. They are only activated <strong>after you
+		give consent</strong> via the cookie banner, as required by Art. 5(3) ePrivacy
+		Directive and Art. 6(1)(a) GDPR.
 	</p>
 	<table>
 		<thead>
@@ -84,6 +98,27 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td>HTTP cookie</td>
 				<td>2 years</td>
 			</tr>
+			<tr>
+				<td><code>_clck</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Persists the Clarity user ID and preferences</td>
+				<td>HTTP cookie</td>
+				<td>1 year</td>
+			</tr>
+			<tr>
+				<td><code>_clsk</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Connects page views into a single Clarity session recording</td>
+				<td>HTTP cookie</td>
+				<td>1 day</td>
+			</tr>
+			<tr>
+				<td><code>CLID</code></td>
+				<td>Microsoft Clarity</td>
+				<td>Identifies the first-time Clarity saw this user on any site</td>
+				<td>HTTP cookie</td>
+				<td>1 year</td>
+			</tr>
 		</tbody>
 	</table>
 
@@ -107,14 +142,13 @@ import LegalPage from '../layouts/LegalPage.astro';
 	</p>
 	<ul>
 		<li>
-			<strong>Google Fonts</strong> (<code>fonts.googleapis.com</code>,
-			<code>fonts.gstatic.com</code>) — loads the typefaces used on this Site.
-			Google receives your IP address with each font request.
-			<a href="https://developers.google.com/fonts/faq/privacy" rel="noopener noreferrer" target="_blank">Google Fonts privacy FAQ</a>.
-		</li>
-		<li>
 			<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
 			only loaded after consent. Sends pseudonymised usage data to Google.
+		</li>
+		<li>
+			<strong>Microsoft Clarity</strong> (<code>www.clarity.ms</code>) —
+			only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability.
+			<a href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent" rel="noopener noreferrer" target="_blank">Clarity privacy info</a>.
 		</li>
 	</ul>
 

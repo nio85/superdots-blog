@@ -46,7 +46,7 @@ This takes 5-10 minutes but makes the difference between generic content and con
 
 ### Step 2: Use AI for the parts that slow you down
 
-Different people get stuck at different points. Use AI for your specific bottlenecks:
+Different people get stuck at different points. Use AI for your specific bottlenecks: For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
 
 **If you struggle with structure**: Give AI your rough ideas and ask it to suggest an outline. "Here are my thoughts on X. Organize these into a logical article structure with headings." You can even use [AI presentation tools](/blog/ai-presentation-maker/) to turn that outline into slides.
 
@@ -58,11 +58,11 @@ Different people get stuck at different points. Use AI for your specific bottlen
 
 ### Step 3: Train AI on your voice
 
-Most modern AI tools let you provide context about your writing style. Use this. Give it:
+Most modern AI tools let you provide context about your writing style. Use this. Give it: For more on this topic, check out [How to Build an AI Social Media Content Calendar (Even If You're Not a Marketer)](/blog/ai-social-media-content-calendar/).
 
 - 3-5 examples of your published writing
 - A style brief: "Direct. Short sentences. No jargon. Use concrete examples instead of abstract advice."
-- Words and phrases to avoid: "Do not use the words 'delve,' 'unlock,' 'harness,' or 'game-changer.'"
+- Words and phrases to avoid: "Do not use the words 'delve,' 'unlock,' 'harness,' or 'game-changer.'" Style guides like the [AP Stylebook](https://www.apstylebook.com) can help you define clear rules for your AI prompts.
 
 Claude, ChatGPT, and Jasper all support custom instructions or system prompts where you can set this once and have it apply to every session.
 
@@ -115,11 +115,13 @@ This pass takes 10-15 minutes and is the difference between "AI-assisted" and "A
 - **Claude**: Strong at following style instructions and maintaining a consistent tone across long documents.
 - **ChatGPT**: Good for brainstorming and generating variations. Custom GPTs let you build a personalized writing assistant.
 - **Jasper**: Built for marketing teams. Brand voice training is a core feature.
-- **Grammarly**: Not generative AI, but excellent at cleaning up your writing while keeping your voice.
-- **Hemingway Editor**: Highlights overly complex sentences. Useful as a second pass after AI drafting.
+- **[Grammarly](https://www.grammarly.com)**: Not generative AI, but excellent at cleaning up your writing while keeping your voice.
+- **[Hemingway Editor](https://hemingwayapp.com)**: Highlights overly complex sentences. Useful as a second pass after AI drafting.
 
 ## The test that matters
 
 After you finish any AI-assisted piece, ask yourself: "Could I defend every sentence in this article as something I believe and would say?" If the answer is no, you have let the AI take too much control.
 
 The goal is not to hide that you use AI. It is to use AI in a way that makes your writing better without making it generic. Speed without sacrifice. These same principles apply whether you are crafting marketing copy or [writing technical documentation](/blog/writing-better-docs-with-ai/).
+
+For the full picture of how AI is transforming every marketing function — from content creation and SEO to email and brand — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).

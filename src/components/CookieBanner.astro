@@ -3,8 +3,8 @@
 		<div class="cookie-banner-content">
 			<p class="cookie-banner-title">We value your privacy</p>
 			<p class="cookie-banner-text">
-				We use Google Analytics cookies to understand how you use our site and improve our content.
-				No personal data is collected. <a href="/cookie-policy">Learn more</a>
+				We use analytics cookies (Google Analytics and Microsoft Clarity) to understand how you use our site and improve our content.
+				No personal data is collected. <a href="/cookie-policy/">Learn more</a>
 			</p>
 		</div>
 		<div class="cookie-banner-actions">
@@ -50,6 +50,10 @@
 			window.gtag('consent', 'update', {
 				analytics_storage: 'granted'
 			});
+		}
+		// Start Clarity if available
+		if (window.SD_startClarity) {
+			window.SD_startClarity();
 		}
 	});
 

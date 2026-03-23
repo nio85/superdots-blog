@@ -11,7 +11,7 @@ faqs:
   - question: "What data sources should a sentiment dashboard include?"
     answer: "At minimum: support tickets, app/product reviews, NPS survey responses, and social media mentions. For a complete picture, add live chat transcripts, community forum posts, sales call notes, and email feedback. The more signals you aggregate, the more accurate your sentiment trends become."
   - question: "How accurate is AI sentiment analysis?"
-    answer: "General-purpose sentiment analysis achieves 80-85% accuracy. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
+    answer: "General-purpose sentiment analysis typically achieves 80-85% accuracy — roughly matching [human interrater agreement](https://www.lexalytics.com/blog/sentiment-accuracy-baseline-testing/) on the same task. Domain-trained models (tuned to your product vocabulary and customer language) reach 90-95%. The main challenge is sarcasm, mixed sentiment, and context-dependent language. Human review of edge cases improves accuracy over time."
   - question: "How quickly can AI detect a sentiment shift?"
     answer: "Real-time dashboards can detect sentiment shifts within minutes of a spike in negative feedback. Most tools process incoming signals every 1-5 minutes. Alerting thresholds let you set sensitivity — for example, alert when negative sentiment in a product area increases 20% above the 7-day average."
   - question: "What is the difference between sentiment analysis and customer feedback analysis?"
@@ -25,6 +25,8 @@ Your product shipped a backend update on Tuesday. By Wednesday afternoon, three 
 That four-day gap is what a sentiment dashboard eliminates.
 
 When you aggregate customer signals into one AI-powered view, slow load times show up as a trending topic within hours — not days. Your team gets an alert. Someone investigates. The problem gets fixed before it reaches the CEO's inbox.
+
+For a comprehensive look at how AI is transforming customer support across all channels, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide).
 
 This guide walks you through how to build that system: what to connect, how the AI layer works, and what to actually do with the output.
 
@@ -44,7 +46,7 @@ A useful sentiment dashboard starts with four core data sources. Each captures a
 
 Tickets are the highest-signal source you have. Customers who submit a ticket are already frustrated enough to take action. The language they use — the specific features they name, the urgency in their tone — tells you a lot.
 
-Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
+Connect your helpdesk ([Qualtrics](https://www.qualtrics.com), Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
 
 ### App and Product Reviews
 
@@ -77,13 +79,15 @@ Each incoming signal gets tagged. The AI assigns:
 - **Urgency level** — is this a one-off complaint or a pattern?
 - **Intent signal** — is the customer at churn risk? Expressing loyalty? Making a feature request?
 
-For domain-specific vocabulary (your product's feature names, internal jargon, industry terms), out-of-the-box models underperform. Fine-tuning on your historical tickets and reviews pushes accuracy from the 80% range into the low 90s.
+For domain-specific vocabulary (your product's feature names, internal jargon, industry terms), out-of-the-box models underperform. Fine-tuning on your historical tickets and reviews pushes accuracy from the 80% range into the low 90s. For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
 
 ### Trend Detection
 
-Individual data points aren't the goal. Trends are.
+Individual data points aren't the goal. Trends are. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
 
 The AI baseline your normal sentiment distribution — what percentage of tickets are negative on an average week, which product areas generate the most friction. Then it flags deviations. If billing-related negative sentiment doubles in 48 hours, that's the signal. Without a baseline, you'd have no way to know whether 30 negative billing tickets is unusual or normal.
+
+Companies with large app install bases use this approach at scale. By building automated review analysis pipelines that process customer feedback across app stores and support channels, product teams can track sentiment trends around specific features — playback quality, onboarding flows, billing experience — and detect when a product change degrades the user experience within hours, not weeks. The result: faster issue detection and more data-driven product decisions.
 
 Trend detection needs at least 60-90 days of historical data to establish reliable baselines. The longer the history, the better the anomaly detection.
 
@@ -113,7 +117,7 @@ This is where sentiment scoring and classification happen. Three approaches:
 
 **Managed APIs** — OpenAI, Anthropic, or Google's NLP APIs handle the inference. You send text, they return sentiment scores and categories. Low setup cost, pay-per-use pricing. Good for early-stage or lower-volume use.
 
-**Specialized sentiment platforms** — Tools like MonkeyLearn, Lexalytics, or Chattermill are purpose-built for customer sentiment. They include pre-built classifiers, topic modeling, and dashboards out of the box. Faster time to value, less custom work.
+**Specialized sentiment platforms** — Tools like MonkeyLearn, Lexalytics, [Sprinklr](https://www.sprinklr.com), or Chattermill are purpose-built for customer sentiment. They include pre-built classifiers, topic modeling, and dashboards out of the box. Faster time to value, less custom work.
 
 **Self-hosted models** — Fine-tune an open-source model (BERT, RoBERTa) on your own data. Higher accuracy for domain-specific language, full data control, higher setup cost. Worth it at scale.
 
@@ -185,6 +189,12 @@ That's a working sentiment system. It's not pretty. It doesn't cover every sourc
 
 The full dashboard comes later. The insight starts now.
 
+Here is what to do next:
+
+1. **Connect your helpdesk to a sentiment API today.** Run the last 30 days of tickets through it. You will have your top five negative themes within an hour.
+2. **Pull your last 90 days of reviews and compare.** Do the themes match your tickets? If so, you have a validated signal. If not, you have a blind spot to investigate.
+3. **Set one alert this week.** Notify the support lead when negative sentiment in any category spikes 25% above the previous week. That single alert is worth more than a month of spreadsheet reviews.
+
 ---
 
 ## Related reads
@@ -192,3 +202,4 @@ The full dashboard comes later. The insight starts now.
 - [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis)
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot)
 - [AI Data Visualization Tools](/blog/ai-data-visualization-tools)
+

@@ -13,7 +13,7 @@ Your inventory spreadsheet is lying to you. Not on purpose — it just cannot ke
 
 Meanwhile, you are sitting on $40K of product that is not moving and out of stock on the three SKUs your biggest customer actually wants.
 
-This is not a discipline problem. It is a tools problem. AI inventory management fixes it by turning your messy, lagging data into demand forecasts, automatic reorder triggers, and early warnings — without requiring a data science team or a six-figure software budget.
+This is not a discipline problem. It is a tools problem. AI inventory management fixes it by turning your messy, lagging data into demand forecasts, automatic reorder triggers, and early warnings — without requiring a data science team or a six-figure software budget. When combined with [AI supply chain management](/blog/ai-supply-chain-management), it gives operations teams end-to-end visibility from supplier to shelf.
 
 ## The real cost of "good enough" inventory tracking
 
@@ -41,7 +41,7 @@ That difference — 30 units — is the difference between a stockout and a smoo
 
 Most inventory systems have reorder points — when stock drops below X, order more. The problem is that X is usually a static number someone set once and never updated.
 
-AI reorder systems adjust dynamically. They factor in current demand velocity, supplier lead times, upcoming promotions, and seasonal shifts. If your supplier's lead time just went from 14 days to 21 days (because they emailed you about a delay and you forgot to update the system), an AI tool watching that data adjusts your reorder point automatically.
+AI reorder systems adjust dynamically. They factor in current demand velocity, supplier lead times, upcoming promotions, and seasonal shifts. If your supplier's lead time just went from 14 days to 21 days (because they emailed you about a delay and you forgot to update the system), an AI tool watching that data adjusts your reorder point automatically. If this applies to your team, our [AI Process Mining: Discover Bottlenecks and Optimization Opportunities Automatically](/blog/ai-process-mining/) guide covers the details.
 
 This is where AI shines brightest for operations teams. Not in flashy dashboards, but in the boring, critical work of making sure the right reorder happens at the right time.
 
@@ -51,7 +51,7 @@ AI is particularly good at spotting things that do not fit the pattern:
 
 - **Demand spikes**: A product that normally sells 10 units per week suddenly sells 40. Is it a trend or a one-time event? AI flags it so you can investigate before your next reorder.
 - **Shrinkage patterns**: Stock levels that consistently drop faster than sales would explain. Could be theft, damage, or counting errors — AI surfaces the discrepancy.
-- **Supplier reliability shifts**: A vendor that used to deliver in 10 days is now averaging 16. AI detects the drift before it causes a stockout.
+- **Supplier reliability shifts**: A vendor that used to deliver in 10 days is now averaging 16. AI detects the drift before it causes a stockout. Teams that manage complex vendor networks may also benefit from [AI procurement tools](/blog/ai-procurement-tools) that evaluate supplier performance systematically.
 
 ### Seasonal pattern recognition
 
@@ -83,11 +83,11 @@ Here is the good news: you do not need perfect data. You need minimum viable dat
 
 ## How to evaluate AI inventory management tools
 
-Not all tools are built for the same user. Enterprise platforms like Blue Yonder or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
+Not all tools are built for the same user. Enterprise platforms like Blue Yonder, [NetSuite](https://www.netsuite.com), or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
 
 **Must-haves:**
 
-- **Integrations with your existing systems.** Your POS, ERP, or e-commerce platform. If the tool cannot pull data automatically, you will be back to manual exports within a month.
+- **Integrations with your existing systems.** Your POS, ERP, or e-commerce platform. If the tool cannot pull data automatically, you will be back to manual exports within a month. Tools like [Fishbowl](https://www.fishbowlinventory.com) and [Shopify](https://www.shopify.com) offer built-in integrations for common e-commerce and warehouse systems.
 - **Demand forecasting with automatic reorder suggestions.** This is the core value. If a tool does not do this well, nothing else matters.
 - **A clear UI that ops people (not data scientists) can use.** You should be able to understand the forecast, see why it made a recommendation, and override it when you know something the AI does not.
 

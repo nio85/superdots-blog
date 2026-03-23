@@ -48,7 +48,7 @@ The term "AI handoff" gets used loosely. Let's be specific about the four distin
 
 AI reads design files and produces written specifications automatically. Feed it a Figma component and it returns documented spacing values, typography settings, color references, border properties, shadow values, and responsive behavior.
 
-Tools like Zeplin's AI layer, Supernova, and the emerging generation of Figma plugins with AI backends do this today. The output is not a PDF full of screenshots. It is structured data: exact values, token references, and context — the kind of thing a developer can act on without a follow-up conversation.
+Tools like [Zeplin](https://zeplin.io)'s AI layer, Supernova, and the emerging generation of [Figma](https://www.figma.com) plugins with AI backends do this today. The output is not a PDF full of screenshots. It is structured data: exact values, token references, and context — the kind of thing a developer can act on without a follow-up conversation.
 
 The practical benefit is that designers stop writing specs by hand. They design, mark it ready, and the spec exists. What used to take an hour per screen now takes seconds.
 
@@ -62,11 +62,11 @@ Some tools go further: they flag when a designer has used a raw hex value where 
 
 ### 3. Code Generation from Design
 
-This is the most visible AI capability in handoff, and also the most misunderstood.
+This is the most visible AI capability in handoff, and also the most misunderstood. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
 
 AI can look at a designed component and generate functional code for it — HTML and CSS, React JSX, Tailwind utility classes, SwiftUI, Jetpack Compose. The quality varies by component complexity. For a standard card with a heading, subtext, and a button? The output is genuinely close to production-ready. For a complex multi-state dropdown with custom animation? It needs significant developer refinement.
 
-The honest framing: AI-generated code is a strong starting point, not a finished product. Teams report 70-85% of the code being directly usable for standard UI components. That percentage drops for complex interactive patterns.
+The honest framing: AI-generated code is a strong starting point, not a finished product. Teams report 70-85% of the code being directly usable for standard UI components. That percentage drops for complex interactive patterns. For related guidance, see our guide on [AI Design Tools for Non-Designers: Create Pro Visuals Fast](/blog/ai-design-tools-non-designers/).
 
 The tools worth knowing here include Locofy, Builder.io's AI, Anima, and GitHub Copilot when given the right context about your design system. Each has different strengths — Locofy tends to produce cleaner React output, Builder.io integrates well with CMS workflows, Anima handles Figma-to-HTML translation.
 
@@ -102,9 +102,9 @@ There is no single platform that handles all four jobs well. Most teams combine 
 
 **For token management:** Supernova and Token Studio handle the extraction and sync workflow. Supernova in particular has strong CI/CD integration — tokens update in your codebase automatically when the Figma variables change.
 
-**For visual regression and drift detection:** Percy, Chromatic, and Applitools have added AI layers to their visual testing products. Chromatic integrates cleanly with Storybook if your team already uses it.
+**For visual regression and drift detection:** Percy, Chromatic, and Applitools have added AI layers to their visual testing products. Chromatic integrates cleanly with [Storybook](https://storybook.js.org) if your team already uses it.
 
-**For teams that want to consolidate:** Zeplin's newer AI features cover spec generation and comment-based annotation well. Not the best at code generation, but strong as a communication layer between design and development.
+**For teams that want to consolidate:** [Zeplin](https://zeplin.io)'s newer AI features cover spec generation and comment-based annotation well. Not the best at code generation, but strong as a communication layer between design and development.
 
 ## What Changes for Designers
 
@@ -153,3 +153,4 @@ The design-to-dev handoff is not a communication problem that needs better meeti
 - [AI Design Systems](/blog/ai-design-systems)
 - [AI UX Design Tools](/blog/ai-ux-design-tools)
 - [AI Code Review Tools](/blog/ai-code-review-tools)
+

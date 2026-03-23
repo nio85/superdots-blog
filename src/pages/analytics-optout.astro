@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Analytics Opt-Out | Superdots" description="Exclude your browsing from Superdots analytics tracking.">
+	<article class="optout-page">
+		<header class="optout-header">
+			<div class="dots dots-md dots-brand" style="top: 0; right: 0;"></div>
+			<p class="optout-label">
+				<span class="superdot"></span>
+				Internal
+			</p>
+			<h1>Analytics Opt-Out<span class="dot-accent">.</span></h1>
+			<p class="optout-desc">
+				This page lets you exclude your browsing from our analytics.
+				Useful for team members and frequent visitors who don't want to skew traffic data.
+			</p>
+		</header>
+
+		<div class="optout-body">
+			<div class="status-card" id="status-card">
+				<p class="status-label">Current status</p>
+				<p class="status-value" id="status-value">Checking…</p>
+			</div>
+
+			<div class="optout-actions">
+				<button id="btn-optout" class="btn btn-primary">Opt Out of Analytics</button>
+				<button id="btn-enable" class="btn btn-secondary">Re-enable Analytics</button>
+			</div>
+
+			<p class="optout-note" id="confirm-msg" hidden></p>
+		</div>
+	</article>
+</Base>
+
+<script is:inline>
+(function() {
+	var KEY = 'sd-analytics-optout';
+	var statusValue = document.getElementById('status-value');
+	var statusCard = document.getElementById('status-card');
+	var btnOptout = document.getElementById('btn-optout');
+	var btnEnable = document.getElementById('btn-enable');
+	var confirmMsg = document.getElementById('confirm-msg');
+
+	function update() {
+		var opted = localStorage.getItem(KEY) === 'true';
+		statusValue.textContent = opted ? 'Analytics disabled' : 'Analytics active';
+		statusCard.setAttribute('data-opted-out', opted ? 'true' : 'false');
+		btnOptout.disabled = opted;
+		btnEnable.disabled = !opted;
+	}
+
+	btnOptout.addEventListener('click', function() {
+		localStorage.setItem(KEY, 'true');
+		update();
+		confirmMsg.textContent = 'Done — analytics will be skipped on all future page loads in this browser.';
+		confirmMsg.hidden = false;
+	});
+
+	btnEnable.addEventListener('click', function() {
+		localStorage.removeItem(KEY);
+		update();
+		confirmMsg.textContent = 'Done — analytics are active again. Reload any open tabs for the change to take effect.';
+		confirmMsg.hidden = false;
+	});
+
+	update();
+})();
+</script>
+
+<style>
+	.optout-page {
+		max-width: var(--max-width-prose);
+		margin: 0 auto;
+	}
+
+	.optout-header {
+		position: relative;
+		overflow: hidden;
+		padding: var(--space-12) 0 var(--space-8);
+		border-bottom: 2px solid var(--color-border);
+		margin-bottom: var(--space-8);
+	}
+	.optout-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-4);
+	}
+	.optout-desc {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin-top: var(--space-3);
+		line-height: var(--leading-relaxed);
+	}
+
+	.optout-body {
+		padding: var(--space-8) 0;
+	}
+
+	.status-card {
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+		padding: var(--space-5) var(--space-6);
+		margin-bottom: var(--space-6);
+	}
+	.status-card[data-opted-out="true"] {
+		border-color: var(--color-primary);
+	}
+	.status-label {
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-1) 0;
+	}
+	.status-value {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0;
+	}
+
+	.optout-actions {
+		display: flex;
+		gap: var(--space-3);
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		padding: var(--space-3) var(--space-5);
+		border-radius: var(--radius-md);
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: opacity 0.15s;
+	}
+	.btn:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+	.btn-primary {
+		background: var(--color-primary);
+		color: var(--color-bg);
+	}
+	.btn-secondary {
+		background: var(--color-bg-dim);
+		color: var(--color-text);
+		border-color: var(--color-border);
+	}
+
+	.optout-note {
+		margin-top: var(--space-4);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-relaxed);
+	}
+
+	@media (max-width: 720px) {
+		.optout-header {
+			padding: var(--space-8) 0 var(--space-6);
+		}
+	}
+</style>

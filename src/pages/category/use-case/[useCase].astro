@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
-import { USE_CASES } from '../../../consts';
+import NewsletterForm from '../../../components/NewsletterForm.astro';
+import { USE_CASES, DEPARTMENTS } from '../../../consts';
 
 const USE_CASE_INTROS: Record<string, string> = {
 	automation: 'Guides for automating the repetitive stuff — email triage, data entry, routine approvals — so your team can focus on work that matters.',
@@ -22,15 +23,35 @@ const { useCase } = Astro.params;
 const { label } = Astro.props;
 const intro = USE_CASE_INTROS[useCase!] || `AI-powered ${label.toLowerCase()} guides.`;
 
-const posts = (await getCollection('blog', ({ data }) => data.useCase === useCase))
+const allPosts = await getCollection('blog');
+const posts = allPosts
+	.filter(({ data }) => data.useCase === useCase)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Compute related departments for this use case
+const deptCounts = new Map<string, number>();
+for (const post of posts) {
+	const d = post.data.department;
+	if (d) deptCounts.set(d, (deptCounts.get(d) || 0) + 1);
+}
+const relatedDepts = DEPARTMENTS
+	.filter((d) => deptCounts.has(d.slug))
+	.map((d) => ({ ...d, count: deptCounts.get(d.slug)! }))
+	.sort((a, b) => b.count - a.count);
 ---
 
 <Base title={`${label} | Superdots`} description={`AI guides for ${label.toLowerCase()}.`}>
+	<nav class="breadcrumb" aria-label="Breadcrumb">
+		<a href="/">Home</a>
+		<span aria-hidden="true">/</span>
+		<a href="/category/">Categories</a>
+		<span aria-hidden="true">/</span>
+		<span aria-current="page">{label}</span>
+	</nav>
+
 	<div class="page-header">
-		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;"></div>
-		<a href="/category" class="back">&larr; Categories</a>
-		<h1>{label}<span class="dot-accent">.</span></h1>
+		<div class="dots dots-sm dots-fine" style="top: 0; right: 0;" aria-hidden="true"></div>
+		<h1>{label}<span class="dot-accent">.</span> <span class="article-count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span></h1>
 		<p class="subtitle">{intro}</p>
 	</div>
 
@@ -47,35 +68,64 @@ const posts = (await getCollection('blog', ({ data }) => data.useCase === useCas
 					useCase={post.data.useCase}
 					slug={post.slug}
 					tags={post.data.tags}
+					headingLevel="h2"
 				/>
 			))}
 		</div>
 	)}
+
+	{relatedDepts.length > 0 && (
+		<section class="related-section">
+			<h2 class="related-heading">Related departments</h2>
+			<div class="related-chips">
+				{relatedDepts.map((d) => (
+					<a href={`/category/department/${d.slug}/`} class="related-chip">
+						<span class="related-chip-label">{d.label}</span>
+						<span class="related-chip-count">{d.count}</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+
+	<NewsletterForm variant="banner" source={`usecase-${useCase}`} />
 </Base>
 
 <style>
-	.page-header {
-		position: relative;
-		overflow: hidden;
-		padding: var(--space-6) 0 var(--space-2);
+	/* Breadcrumb */
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		padding-top: var(--space-4);
 	}
-	.page-header h1 {
-		margin-bottom: var(--space-2);
+	.breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
 	}
-	.dot-accent {
+	.breadcrumb a:hover {
 		color: var(--color-primary);
 	}
-	.back {
-		font-family: var(--font-display);
+	.breadcrumb span[aria-current] {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-medium);
+	}
+
+	.article-count {
+		display: inline-block;
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: var(--weight-medium);
 		color: var(--color-text-muted);
-		display: inline-block;
-		margin-bottom: var(--space-4);
-	}
-	.back:hover {
-		color: var(--color-primary);
-		text-decoration: none;
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-full);
+		vertical-align: middle;
+		letter-spacing: 0;
 	}
 	.subtitle {
 		color: var(--color-text-muted);
@@ -89,6 +139,52 @@ const posts = (await getCollection('blog', ({ data }) => data.useCase === useCas
 		display: grid;
 		gap: var(--space-5);
 	}
+
+	/* Related departments section */
+	.related-section {
+		padding: var(--space-8) 0;
+		border-top: 1px solid var(--color-border);
+		margin-top: var(--space-8);
+	}
+	.related-heading {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-4);
+	}
+	.related-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+	.related-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-5);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		text-decoration: none;
+		font-family: var(--font-display);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-strong);
+		background: var(--color-bg);
+		transition: all var(--transition-fast);
+	}
+	.related-chip:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+		text-decoration: none;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-sm);
+	}
+	.related-chip-count {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		padding: var(--space-0-5) var(--space-2);
+		border-radius: var(--radius-full);
+	}
+
 	@media (min-width: 640px) {
 		.post-grid { grid-template-columns: repeat(2, 1fr); }
 	}

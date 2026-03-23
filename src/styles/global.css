@@ -74,6 +74,7 @@
 	--weight-bold: 700;
 
 	/* Spacing Scale (4px base) */
+	--space-0-5: 0.125rem; /* 2px */
 	--space-1: 0.25rem;  /* 4px */
 	--space-2: 0.5rem;   /* 8px */
 	--space-3: 0.75rem;  /* 12px */
@@ -481,6 +482,24 @@ hr {
 	padding: var(--space-6);
 }
 
+/* --- Page Header — Shared listing/section header --- */
+
+.page-header {
+	position: relative;
+	overflow: hidden;
+	padding: var(--space-6) 0 var(--space-2);
+}
+
+.page-header h1 {
+	margin-bottom: var(--space-2);
+}
+
+/* --- Dot Accent — Brand color for punctuation in headings --- */
+
+.dot-accent {
+	color: var(--color-primary);
+}
+
 /* --- Section Utilities --- */
 
 .section {
@@ -671,5 +690,184 @@ hr {
 		opacity: 1;
 		transform: none;
 		transition: none;
+	}
+}
+
+/* --- FAQ Accordion --- */
+
+.faq-section {
+	margin: var(--space-12) 0 var(--space-8);
+}
+
+.faq-header {
+	display: flex;
+	align-items: center;
+	gap: var(--space-4);
+	margin-bottom: var(--space-6);
+}
+
+.faq-header h2 {
+	font-family: var(--font-display);
+	font-size: var(--text-2xl);
+	font-weight: var(--weight-bold);
+	letter-spacing: -0.02em;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.faq-header-line {
+	flex: 1;
+	height: 1px;
+	background: var(--color-border);
+}
+
+.faq-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.faq-item {
+	border-bottom: 1px solid var(--color-border);
+	position: relative;
+}
+
+.faq-item:first-child {
+	border-top: 1px solid var(--color-border);
+}
+
+.faq-item::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: var(--color-primary);
+	border-radius: var(--radius-full);
+	opacity: 0;
+	transition: opacity var(--transition-base);
+}
+
+.faq-item[open]::before {
+	opacity: 1;
+}
+
+.faq-question {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-5) var(--space-4);
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+	transition: background var(--transition-fast);
+}
+
+.faq-question::-webkit-details-marker {
+	display: none;
+}
+
+.faq-question::marker {
+	display: none;
+	content: '';
+}
+
+.faq-question:hover {
+	background: var(--color-bg-dim);
+}
+
+.faq-question:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+	border-radius: var(--radius-sm);
+}
+
+.faq-q-index {
+	font-family: var(--font-mono);
+	font-size: var(--text-xs);
+	color: var(--color-primary);
+	font-weight: var(--weight-semibold);
+	opacity: 0.6;
+	flex-shrink: 0;
+	min-width: 1.5em;
+}
+
+.faq-q-text {
+	flex: 1;
+	font-family: var(--font-display);
+	font-size: var(--text-lg);
+	font-weight: var(--weight-semibold);
+	color: var(--color-text-strong);
+	line-height: var(--leading-snug);
+}
+
+.faq-chevron {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border-radius: var(--radius-full);
+	color: var(--color-text-muted);
+	transition: transform var(--transition-base), color var(--transition-base), background var(--transition-base);
+}
+
+.faq-item[open] .faq-chevron {
+	transform: rotate(180deg);
+	color: var(--color-primary);
+	background: rgba(232, 54, 59, 0.08);
+}
+
+.faq-answer {
+	overflow: hidden;
+	animation: faq-expand var(--transition-slow) ease;
+}
+
+.faq-answer p {
+	padding: 0 var(--space-4) var(--space-6);
+	padding-left: calc(var(--space-4) + 1.5em + var(--space-3));
+	margin: 0;
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	color: var(--color-text);
+}
+
+@keyframes faq-expand {
+	from {
+		opacity: 0;
+		transform: translateY(-8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.faq-answer {
+		animation: none;
+	}
+	.faq-chevron {
+		transition: none;
+	}
+	.faq-item::before {
+		transition: none;
+	}
+}
+
+@media (max-width: 720px) {
+	.faq-question {
+		padding: var(--space-4) var(--space-3);
+		gap: var(--space-2);
+	}
+	.faq-q-text {
+		font-size: var(--text-base);
+	}
+	.faq-answer p {
+		padding: 0 var(--space-3) var(--space-5);
+		padding-left: calc(var(--space-3) + 1.5em + var(--space-2));
+		font-size: var(--text-sm);
 	}
 }

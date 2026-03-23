@@ -11,7 +11,7 @@ faqs:
   - question: "Is AI hiring really less biased than human hiring?"
     answer: "It depends entirely on how the AI is built and used. AI can consistently apply the same criteria to every candidate, eliminating the human inconsistency that causes some reviewers to give more scrutiny to certain names or backgrounds. But AI trained on historical hiring data often encodes exactly the same biases it was supposed to fix — if your past hires skewed toward one demographic, the model learns to replicate that pattern. The honest answer is that AI is less biased than humans at some tasks (consistent resume scoring, removing gendered language from job posts) and potentially more biased at others (pattern matching on historical data that reflects systemic inequality). The key is treating AI as a tool that requires ongoing auditing, not a one-time fix."
   - question: "What laws regulate AI in hiring?"
-    answer: "Regulation is growing fast. New York City's Local Law 144 requires annual bias audits for automated employment decision tools and notice to candidates. Illinois requires consent before AI analyzes video interviews. Maryland restricts facial recognition in hiring. The EU AI Act classifies AI hiring tools as high-risk, requiring conformity assessments, transparency obligations, and human oversight. Colorado and several other states have similar laws in progress. At the federal level, the EEOC has issued guidance that employers are liable for discriminatory outcomes from AI tools even if a vendor built the tool. The practical takeaway: if you use AI in hiring, you need a compliance strategy, not just a vendor contract."
+    answer: "Regulation is growing fast. New York City's Local Law 144 requires annual bias audits for automated employment decision tools and notice to candidates. Illinois requires consent before AI analyzes video interviews. Maryland restricts facial recognition in hiring. The EU AI Act classifies AI hiring tools as high-risk, requiring conformity assessments, transparency obligations, and human oversight. Colorado and several other states have similar laws in progress. At the federal level, the [EEOC](https://www.eeoc.gov) has issued guidance that employers are liable for discriminatory outcomes from AI tools even if a vendor built the tool. The practical takeaway: if you use AI in hiring, you need a compliance strategy, not just a vendor contract."
   - question: "How can I audit my AI hiring tools for bias?"
     answer: "Start by analyzing shortlist composition — what percentage of candidates advancing past AI screening are from different demographic groups, compared to your applicant pool? If the AI shortlists a significantly lower proportion of any protected group than applied, you have a disparity that needs investigating. Run a name-swap test: take rejected resumes, replace names that signal gender or ethnicity with neutral ones, and resubmit. If scores change, the tool is using name as a proxy signal. Track outcomes through the full funnel — screening, interview, offer, acceptance — by demographic group. Many jurisdictions now legally require these audits. Run them at least quarterly, document the results, and hold your vendors accountable for the outcomes."
 ---
@@ -62,7 +62,7 @@ Not all AI hiring tools handle bias the same way. Here is a realistic breakdown.
 
 ### For job description analysis
 
-**Textio** is the most established tool in this category. It flags gendered language, credential inflation, reading level issues, and language that discourages specific groups from applying. The before-and-after data from companies using it consistently shows applicant pool diversification within one to two hiring cycles.
+[Textio](https://textio.com) is the most established tool in this category. It flags gendered language, credential inflation, reading level issues, and language that discourages specific groups from applying. The before-and-after data from companies using it consistently shows applicant pool diversification within one to two hiring cycles. If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 **Gender Decoder** is a free, open-source tool that checks for masculine and feminine coded language. It is basic but useful for teams without budget for Textio.
 
@@ -78,13 +78,13 @@ Not all AI hiring tools handle bias the same way. Here is a realistic breakdown.
 
 ### For sourcing
 
-**SeekOut and Findem** use AI to search across professional networks beyond LinkedIn, which can surface candidates from underrepresented groups who are not actively job-seeking on traditional platforms. Diversity-specific filters let you focus sourcing on specific demographic targets where legally permissible.
+**SeekOut and Findem** use AI to search across professional networks beyond [LinkedIn](https://www.linkedin.com), which can surface candidates from underrepresented groups who are not actively job-seeking on traditional platforms. Diversity-specific filters let you focus sourcing on specific demographic targets where legally permissible.
 
 The sourcing stage is underrated in the AI diversity conversation. Bias in your pipeline is partly a bias in where you look. If your sourcing defaults to the same 20 universities and 30 companies, AI cannot fix a lack-of-diversity problem that starts with who you find. Expanding sourcing geographically and institutionally often delivers larger gains than optimizing screening of a narrow pool.
 
 ## How to audit your AI hiring tools
 
-Adopting an AI tool without auditing it is worse than not using AI at all — you get the same biased outcomes with false confidence in a "fair" process. Auditing is not complicated, but it requires consistency.
+Adopting an AI tool without auditing it is worse than not using AI at all — you get the same biased outcomes with false confidence in a "fair" process. Auditing is not complicated, but it requires consistency. Our guide on [Best AI Tools for Employee Engagement in 2026](/blog/ai-employee-engagement/) explores this further.
 
 ### Quarterly output analysis
 
@@ -108,7 +108,7 @@ Create matched pairs of resumes — identical qualifications, different backgrou
 
 ### Document everything
 
-Compliance requirements for AI hiring tools are tightening. New York City's Local Law 144 requires employers using AI hiring tools to conduct and publish annual bias audits. Illinois, Maryland, and the EU AI Act (which classifies AI hiring tools as high-risk) have specific requirements. Keeping documentation of your testing, results, and corrective actions is both good practice and increasingly a legal requirement.
+Compliance requirements for AI hiring tools are tightening. New York City's Local Law 144 requires employers using AI hiring tools to conduct and publish annual bias audits. [SHRM](https://www.shrm.org) maintains up-to-date compliance guidance on AI in employment decisions. Illinois, Maryland, and the EU AI Act (which classifies AI hiring tools as high-risk) have specific requirements. Keeping documentation of your testing, results, and corrective actions is both good practice and increasingly a legal requirement.
 
 ## Building a practical diversity-focused AI workflow
 
@@ -143,3 +143,6 @@ The difference between these outcomes is not the technology. It is the rigor you
 - **Run a name-swap test on your current AI screening tool.** If results differ, you have a problem to fix before you trust the tool.
 - **Ask every AI hiring vendor for independent bias audit results.** If they cannot provide them, that is your answer.
 - **Set a quarterly reminder to review your shortlist composition.** Bias auditing only works if it happens consistently, not just at implementation.
+
+For a comprehensive overview of how AI is transforming every aspect of people operations — from recruiting to offboarding — see our [complete guide to AI for HR](/blog/ai-for-hr).
+

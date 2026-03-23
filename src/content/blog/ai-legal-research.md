@@ -75,7 +75,7 @@ When evaluating AI legal research tools, these capabilities matter most.
 
 ### Case law search
 
-The core function. Evaluate:
+The core function. Evaluate: If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 - **Semantic understanding.** Does the tool return relevant results when you describe your issue in plain language? Test with several queries from your practice area.
 - **Jurisdictional coverage.** Does it cover the jurisdictions you practice in? Federal and state? International?
@@ -92,7 +92,7 @@ Beyond case law, you need to research statutes, regulations, and administrative 
 
 ### Brief and document analysis
 
-Some tools analyze your own documents:
+Some tools analyze your own documents: Our guide on [Best AI Contract Management Software in 2026](/blog/ai-contract-management/) explores this further.
 
 - **Brief analysis.** Upload a draft brief and the tool identifies the legal issues, finds supporting and opposing authority, and flags weaknesses in your argument.
 - **Opposing brief analysis.** Upload the opposing counsel's brief and get an analysis of their arguments, the authorities they cite, and potential counter-arguments.
@@ -152,11 +152,11 @@ This section matters more than any other. AI legal research tools are powerful, 
 
 AI language models can generate case citations that do not exist. The case name sounds real. The citation format is correct. The holding is plausible. But the case is fictional. This has already caused problems — lawyers have been sanctioned for citing AI-hallucinated cases in court filings.
 
-The risk is lower with purpose-built legal AI tools (Westlaw Edge, Lexis+ AI, CoCounsel) than with general-purpose AI (ChatGPT, Claude), because legal tools are connected to verified case databases. But the risk is not zero.
+The risk is lower with purpose-built legal AI tools (Westlaw Edge, [LexisNexis](https://www.lexisnexis.com) Lexis+ AI, [Casetext](https://casetext.com) CoCounsel) than with general-purpose AI (ChatGPT, Claude), because legal tools are connected to verified case databases. But the risk is not zero.
 
 ### Mitigation strategies
 
-**Always verify citations against primary sources.** Every case the AI surfaces should be confirmed in the actual database before you cite it. This adds time, but it is non-negotiable.
+**Always verify citations against primary sources.** Every case the AI surfaces should be confirmed in the actual database before you cite it. [Thomson Reuters](https://www.thomsonreuters.com) Westlaw and LexisNexis remain the gold standard for primary source verification. This adds time, but it is non-negotiable.
 
 **Use tools connected to verified databases.** Westlaw Edge and Lexis+ AI search actual case databases, not AI-generated text. CoCounsel and Harvey also integrate with verified legal databases. General-purpose AI tools do not.
 

@@ -1,5 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { DEPARTMENTS } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 4);
 ---
 
 <Base title="Page not found | Superdots" description="The page you're looking for doesn't exist.">
@@ -14,7 +21,35 @@ import Base from '../layouts/Base.astro';
 		</p>
 		<div class="not-found-actions">
 			<a href="/" class="btn btn-primary">Go home</a>
-			<a href="/blog" class="btn btn-ghost">Browse articles</a>
+			<a href="/blog/" class="btn btn-ghost">Browse articles</a>
+		</div>
+	</section>
+
+	<section class="popular-section">
+		<h2 class="popular-heading">Popular articles<span class="dot-accent">.</span></h2>
+		<div class="popular-grid">
+			{posts.map((post) => (
+				<PostCard
+					title={post.data.title}
+					description={post.data.description}
+					pubDate={post.data.pubDate}
+					department={post.data.department}
+					useCase={post.data.useCase}
+					slug={post.slug}
+					tags={post.data.tags}
+					headingLevel="h3"
+				/>
+			))}
+		</div>
+	</section>
+
+	<section class="discover-section">
+		<h2 class="discover-heading">Browse by department<span class="dot-accent">.</span></h2>
+		<div class="dept-links">
+			{DEPARTMENTS.map((d) => (
+				<a href={`/category/department/${d.slug}/`} class="dept-chip">{d.label}</a>
+			))}
+			<a href="/category/" class="dept-chip dept-chip--all">All categories &rarr;</a>
 		</div>
 	</section>
 </Base>
@@ -22,7 +57,7 @@ import Base from '../layouts/Base.astro';
 <style>
 	.not-found {
 		text-align: center;
-		padding: var(--space-16) 0 var(--space-12);
+		padding: var(--space-16) 0 var(--space-10);
 	}
 	.not-found-label {
 		display: inline-flex;
@@ -48,9 +83,6 @@ import Base from '../layouts/Base.astro';
 		line-height: 1.1;
 		margin-bottom: var(--space-6);
 	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
 	.not-found-text {
 		color: var(--color-text-muted);
 		font-size: var(--text-xl);
@@ -63,6 +95,73 @@ import Base from '../layouts/Base.astro';
 		gap: var(--space-4);
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+
+	/* Popular articles section */
+	.popular-section {
+		padding: var(--space-10) 0;
+		border-top: 1px solid var(--color-border);
+	}
+	.popular-heading {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		margin-bottom: var(--space-6);
+		letter-spacing: -0.02em;
+	}
+	.popular-grid {
+		display: grid;
+		gap: var(--space-5);
+	}
+
+	/* Browse by department */
+	.discover-section {
+		padding: var(--space-8) 0 var(--space-12);
+		border-top: 1px solid var(--color-border);
+	}
+	.discover-heading {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		margin-bottom: var(--space-5);
+		letter-spacing: -0.02em;
+	}
+	.dept-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+	.dept-chip {
+		display: inline-block;
+		padding: var(--space-2) var(--space-4);
+		border-radius: var(--radius-full);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-decoration: none;
+		background: var(--sd-red-light);
+		color: var(--sd-red-dark);
+		transition: all var(--transition-base);
+	}
+	.dept-chip:hover {
+		background: var(--sd-red);
+		color: #FFFFFF;
+		transform: translateY(-1px);
+		text-decoration: none;
+	}
+	.dept-chip--all {
+		background: var(--color-bg-dim);
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
+	}
+	.dept-chip--all:hover {
+		background: var(--color-text-strong);
+		color: var(--color-bg);
+		border-color: var(--color-text-strong);
+	}
+
+	@media (min-width: 640px) {
+		.popular-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	@media (max-width: 720px) {
 		.not-found {

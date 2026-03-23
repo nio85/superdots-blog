@@ -28,7 +28,7 @@ AI coding assistance exists on a spectrum. Understanding where different capabil
 
 ### Level 1: Autocomplete (basic)
 
-The AI predicts what you are about to type and suggests completions — line by line or block by block. This is GitHub Copilot's original value proposition and it works well. It saves keystrokes on boilerplate, fills in common patterns, and reduces the cognitive load of remembering exact syntax.
+The AI predicts what you are about to type and suggests completions — line by line or block by block. This is [GitHub Copilot](https://github.com/features/copilot)'s original value proposition and it works well. It saves keystrokes on boilerplate, fills in common patterns, and reduces the cognitive load of remembering exact syntax.
 
 Time savings: moderate. Value for experienced developers: low to moderate. The code you type fast is rarely the bottleneck.
 
@@ -48,7 +48,7 @@ Time savings: hard to measure but substantial. Value: highest for learning, arch
 
 AI agents that can navigate a codebase, make changes across multiple files, run tests, and iterate based on test results. You describe the task ("add pagination to the user list API") and the AI handles the implementation end-to-end, asking clarifying questions when needed.
 
-This is the current frontier. Tools like Claude Code, Cursor Agent, and Devin operate at this level with varying degrees of reliability. The technology is advancing fast, but human oversight remains essential.
+This is the current frontier. Tools like Claude Code, Cursor Agent, and Devin operate at this level with varying degrees of reliability. IDEs like [VS Code](https://code.visualstudio.com) and [JetBrains](https://www.jetbrains.com) editors are adding native support for these agent workflows. The technology is advancing fast, but human oversight remains essential.
 
 ## Use Cases That Deliver Value
 

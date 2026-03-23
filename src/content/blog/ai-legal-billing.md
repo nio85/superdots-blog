@@ -70,7 +70,7 @@ The review takes 5-10 minutes instead of 20-30. You catch things you would have 
 
 ## Anomaly Detection: Catching Errors Before the Client Does
 
-Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both.
+Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 ### What anomaly detection looks for
 
@@ -88,7 +88,7 @@ Manual billing creates errors in both directions — hours underreported due to 
 
 These are not hypothetical errors. They show up in manual billing systems at every firm. The difference is whether someone catches them before or after the client receives the invoice.
 
-Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean.
+Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean. For more on this topic, check out [AI for Intellectual Property Management: Track and Protect Your IP](/blog/ai-ip-management/).
 
 ## Generating Client-Ready Invoices
 
@@ -123,11 +123,11 @@ AI billing tools do not replace your practice management system. They layer on t
 
 Most tools integrate with the major platforms:
 
-**Mid-market:** Clio, PracticePanther, MyCase, Rocket Matter. These are the most commonly integrated platforms. Setup is typically an OAuth connection and matter sync.
+**Mid-market:** [Clio](https://www.clio.com), PracticePanther, MyCase, Rocket Matter. These are the most commonly integrated platforms. Setup is typically an OAuth connection and matter sync.
 
-**Enterprise:** Aderant, Elite 3E, Thomson Reuters eBillingHub. Integrations here are deeper and often require IT involvement, but enterprise firms have more complex billing requirements that justify it.
+**Enterprise:** Aderant, Elite 3E, [Thomson Reuters](https://www.thomsonreuters.com) eBillingHub. Integrations here are deeper and often require IT involvement, but enterprise firms have more complex billing requirements that justify it.
 
-**Client billing portals:** LEDES format export for e-billing clients. Many large corporate clients require invoices submitted through platforms like TyMetrix, Serengeti, or BillerXpert. AI billing tools that output LEDES-compliant files eliminate manual reformatting for these submissions.
+**Client billing portals:** [LEDES](https://ledes.org) format export for e-billing clients. Many large corporate clients require invoices submitted through platforms like TyMetrix, Serengeti, or BillerXpert. AI billing tools that output LEDES-compliant files eliminate manual reformatting for these submissions.
 
 When evaluating any AI billing tool, test the integration depth. Some tools only push finalized invoices in one direction. Better tools sync bidirectionally — matter budgets flow in, time entries flow in for approval, finalized invoices flow back. When the integration is shallow, you end up with a parallel system instead of a unified one.
 

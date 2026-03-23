@@ -54,7 +54,7 @@ Studies from Google's SRE team and others have shown that teams with high alert-
 
 ## How AI monitoring differs from traditional approaches
 
-AI infrastructure monitoring does not throw out your existing monitoring tools. It adds an intelligence layer on top of them. Three capabilities separate it from traditional threshold-based monitoring.
+AI infrastructure monitoring does not throw out your existing monitoring tools like [Prometheus](https://prometheus.io), [Grafana](https://grafana.com), or [Datadog](https://www.datadoghq.com). It adds an intelligence layer on top of them. Three capabilities separate it from traditional threshold-based monitoring.
 
 ### Anomaly detection instead of thresholds
 
@@ -80,13 +80,13 @@ That single correlated alert contains more useful information than five separate
 
 ## Key capabilities that deliver real value
 
-Not all AI monitoring features deliver equal value. Here are the capabilities that engineering teams actually use day to day.
+Not all AI monitoring features deliver equal value. Here are the capabilities that engineering teams actually use day to day. For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
 
 ### Predictive alerting
 
 This is the difference between "your disk is full" and "your disk will be full in 6 hours at the current growth rate."
 
-AI models analyze metric trends and predict where they are heading. If a memory leak is slowly consuming RAM on your application servers, the model spots the upward trend long before it hits any threshold. If database connection pool usage is growing faster than usual, the model flags it while you still have time to act.
+AI models analyze metric trends and predict where they are heading. If a memory leak is slowly consuming RAM on your application servers, the model spots the upward trend long before it hits any threshold. If database connection pool usage is growing faster than usual, the model flags it while you still have time to act. If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
 
 Predictive alerting turns incidents from emergencies into planned maintenance. Instead of scrambling at 2 AM when the disk fills up, you get a Slack message at 2 PM saying you should probably add storage or clean up old logs before tomorrow.
 
@@ -132,7 +132,7 @@ Organizations using AI-powered monitoring report preventing significantly more o
 
 When AI monitoring tracks actual resource utilization patterns, it reveals how much capacity you are wasting. That production cluster running at 15% average CPU utilization? You are paying for six times more compute than you need. The database instance sized for peak traffic that only hits peak four hours a week? That is money burning.
 
-AI-driven capacity recommendations help engineering teams right-size their infrastructure spending. Some teams report 20-35% cost reductions from eliminating over-provisioned resources they did not realize they had.
+AI-driven capacity recommendations help engineering teams right-size their infrastructure spending. Platforms like [New Relic](https://newrelic.com) provide AI-powered cost analysis alongside performance monitoring. Some teams report 20-35% cost reductions from eliminating over-provisioned resources they did not realize they had.
 
 ## Limitations to know about
 

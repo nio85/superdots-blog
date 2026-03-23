@@ -2,8 +2,12 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { rehypeLazyImages } from './src/plugins/rehype-lazy-images.mjs';
+import { rehypeResponsiveTables } from './src/plugins/rehype-responsive-tables.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
+
+// Build-time date for static pages without explicit lastmod
+const buildDate = new Date().toISOString().slice(0, 10);
 
 // Build a slug → lastmod map from blog frontmatter at config time
 const blogDir = path.resolve('./src/content/blog');
@@ -25,13 +29,38 @@ for (const file of fs.readdirSync(blogDir)) {
 
 export default defineConfig({
 	site: 'https://superdots.sh',
+	trailingSlash: 'always',
+	compressHTML: true,
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !page.includes('/design-system'),
+			filter: (page) => !page.includes('/design-system') && !page.includes('/analytics-optout'),
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
-				if (lastmod) item.lastmod = lastmod;
+				item.lastmod = lastmod || buildDate;
+
+				const url = item.url;
+				if (url === 'https://superdots.sh/') {
+					item.changefreq = 'weekly';
+					item.priority = 1.0;
+				} else if (url === 'https://superdots.sh/blog/') {
+					item.changefreq = 'daily';
+					item.priority = 0.9;
+				} else if (url === 'https://superdots.sh/guides/') {
+					item.changefreq = 'weekly';
+					item.priority = 0.85;
+				} else if (url.includes('/blog/ai-for-')) {
+					// Pillar pages
+					item.changefreq = 'weekly';
+					item.priority = 0.8;
+				} else if (url.includes('/blog/')) {
+					item.changefreq = 'monthly';
+					item.priority = 0.7;
+				} else {
+					item.changefreq = 'monthly';
+					item.priority = 0.5;
+				}
+
 				return item;
 			},
 		}),
@@ -41,7 +70,7 @@ export default defineConfig({
 		service: { entrypoint: 'astro/assets/services/sharp' },
 	},
 	markdown: {
-		rehypePlugins: [rehypeLazyImages],
+		rehypePlugins: [rehypeResponsiveTables, rehypeLazyImages],
 	},
 	server: {
 		host: '0.0.0.0',

@@ -2,17 +2,24 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+import { DEPARTMENTS } from '../../consts';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const pillarPosts = posts.filter((p) => p.data.pillar);
+const regularPosts = posts.filter((p) => !p.data.pillar);
+
+const POSTS_PER_PAGE = 12;
 ---
 
-<Base title="All Articles | Superdots" description="Browse all practical AI guides.">
+<Base title="Practical AI Guides & Tools | Superdots" description="Browse all practical AI guides and tools for every business team.">
 	<script slot="head" type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		"name": "All Articles",
-		"description": "Browse all practical AI guides.",
+		"name": "Practical AI Guides & Tools",
+		"description": "Browse all practical AI guides and tools for every business team.",
 		"url": "https://superdots.sh/blog",
 		"mainEntity": {
 			"@type": "ItemList",
@@ -25,50 +32,322 @@ const posts = (await getCollection('blog'))
 		}
 	})} />
 	<div class="page-header">
-		<div class="dots dots-md dots-loose" style="top: 5%; right: 3%;"></div>
-		<h1>All articles<span class="dot-accent">.</span></h1>
+		<div class="dots dots-md dots-loose" style="top: 5%; right: 3%;" aria-hidden="true"></div>
+		<h1>Practical AI Guides & Tools<span class="dot-accent">.</span></h1>
 		<p class="page-desc">Step-by-step AI guides for every team — from sales call prep to contract review. No theory, no hype. Just techniques you can use today.</p>
 	</div>
-	<div class="post-grid">
-		{posts.map((post) => (
-			<PostCard
-				title={post.data.title}
-				description={post.data.description}
-				pubDate={post.data.pubDate}
-				department={post.data.department}
-				useCase={post.data.useCase}
-				slug={post.slug}
-				tags={post.data.tags}
-			/>
+
+	{/* Department filter chips */}
+	<div class="filter-bar" role="toolbar" aria-label="Filter by department">
+		<button class="filter-chip active" data-dept="all" type="button">
+			All <span class="chip-count">{regularPosts.length}</span>
+		</button>
+		{DEPARTMENTS.map((dept) => {
+			const count = regularPosts.filter((p) => p.data.department === dept.slug).length;
+			return count > 0 ? (
+				<button class="filter-chip" data-dept={dept.slug} type="button">
+					{dept.label} <span class="chip-count">{count}</span>
+				</button>
+			) : null;
+		})}
+	</div>
+
+	{/* Article grid with load-more */}
+	<div class="post-grid" id="post-grid">
+		{regularPosts.map((post, i) => (
+			<div
+				class="post-item"
+				data-dept={post.data.department}
+				data-index={i}
+				style={i >= POSTS_PER_PAGE ? 'display:none' : ''}
+			>
+				<PostCard
+					title={post.data.title}
+					description={post.data.description}
+					pubDate={post.data.pubDate}
+					department={post.data.department}
+					useCase={post.data.useCase}
+					slug={post.slug}
+					tags={post.data.tags}
+					headingLevel="h2"
+				/>
+			</div>
 		))}
 	</div>
+
+	<div class="load-more-wrap" id="load-more-wrap">
+		<button class="btn-load-more" id="load-more-btn" type="button">
+			Show more articles
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+		</button>
+		<p class="showing-count" id="showing-count" aria-live="polite"></p>
+	</div>
+
+	{/* Guides carousel */}
+	{pillarPosts.length > 0 && (
+		<section class="guides-carousel" aria-label="Complete AI guides">
+			<div class="carousel-header">
+				<h2>Complete AI guides<span class="dot-accent">.</span></h2>
+				<a href="/guides/" class="view-all">All guides <span aria-hidden="true">&rarr;</span></a>
+			</div>
+			<div class="carousel-track">
+				{pillarPosts.map((post) => (
+					<div class="carousel-item">
+						<PostCard
+							title={post.data.title}
+							description={post.data.description}
+							pubDate={post.data.pubDate}
+							department={post.data.department}
+							useCase={post.data.useCase}
+							slug={post.slug}
+							tags={post.data.tags}
+							headingLevel="h2"
+							variant="guide"
+						/>
+					</div>
+				))}
+			</div>
+		</section>
+	)}
+
+	<NewsletterForm variant="banner" source="blog-listing" />
 </Base>
 
+<script define:vars={{ POSTS_PER_PAGE }}>
+	const grid = document.getElementById('post-grid');
+	const items = Array.from(grid.querySelectorAll('.post-item'));
+	const loadMoreBtn = document.getElementById('load-more-btn');
+	const loadMoreWrap = document.getElementById('load-more-wrap');
+	const showingCount = document.getElementById('showing-count');
+	const filterChips = document.querySelectorAll('.filter-chip');
+
+	let activeDept = 'all';
+	let visibleCount = POSTS_PER_PAGE;
+
+	function getFilteredItems() {
+		if (activeDept === 'all') return items;
+		return items.filter((el) => el.dataset.dept === activeDept);
+	}
+
+	function render() {
+		const filtered = getFilteredItems();
+		const total = filtered.length;
+
+		// Hide all first
+		items.forEach((el) => {
+			el.style.display = 'none';
+			el.style.opacity = '0';
+			el.style.transform = 'translateY(12px)';
+		});
+
+		// Show visible slice with staggered animation
+		filtered.slice(0, visibleCount).forEach((el, i) => {
+			el.style.display = '';
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					el.style.opacity = '1';
+					el.style.transform = 'translateY(0)';
+				});
+			});
+		});
+
+		// Update button visibility
+		if (visibleCount >= total) {
+			loadMoreBtn.style.display = 'none';
+		} else {
+			loadMoreBtn.style.display = '';
+		}
+
+		// Update count text
+		const shown = Math.min(visibleCount, total);
+		showingCount.textContent = `Showing ${shown} of ${total} articles`;
+	}
+
+	// Filter chip click
+	filterChips.forEach((chip) => {
+		chip.addEventListener('click', () => {
+			filterChips.forEach((c) => c.classList.remove('active'));
+			chip.classList.add('active');
+			activeDept = chip.dataset.dept;
+			visibleCount = POSTS_PER_PAGE;
+			render();
+		});
+	});
+
+	// Load more
+	loadMoreBtn.addEventListener('click', () => {
+		visibleCount += POSTS_PER_PAGE;
+		render();
+	});
+
+	// Initial render
+	render();
+</script>
+
 <style>
-	.page-header {
-		position: relative;
-		overflow: hidden;
-		padding: var(--space-6) 0 var(--space-2);
-	}
-	.page-header h1 {
-		margin-bottom: var(--space-2);
-	}
-	.dot-accent {
-		color: var(--color-primary);
-	}
 	.page-desc {
 		color: var(--color-text-muted);
 		font-size: var(--text-lg);
 		margin-bottom: var(--space-6);
 		line-height: var(--leading-snug);
 	}
+
+	/* Guides carousel */
+	.guides-carousel {
+		padding: var(--space-8) 0;
+	}
+	.carousel-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		margin-bottom: var(--space-4);
+	}
+	.carousel-header h2 {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		margin: 0;
+	}
+	.view-all {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.view-all:hover {
+		text-decoration: underline;
+	}
+	.carousel-track {
+		display: flex;
+		gap: var(--space-4);
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		padding-bottom: var(--space-2);
+		margin: 0 calc(-1 * var(--space-4));
+		padding-left: var(--space-4);
+		padding-right: var(--space-4);
+	}
+	.carousel-track::-webkit-scrollbar {
+		display: none;
+	}
+	.carousel-item {
+		flex: 0 0 280px;
+		scroll-snap-align: start;
+	}
+	.carousel-item :global(.post-card) {
+		height: 100%;
+	}
+	@media (min-width: 640px) {
+		.carousel-item {
+			flex: 0 0 300px;
+		}
+	}
+
+	/* Filter bar */
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-bottom: var(--space-6);
+		padding-bottom: var(--space-4);
+		border-bottom: 1px solid var(--color-border);
+	}
+	.filter-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: var(--space-1) var(--space-3);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: transparent;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-fast);
+		white-space: nowrap;
+	}
+	.filter-chip:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+	}
+	.filter-chip.active {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+		color: #fff;
+	}
+	.filter-chip.active .chip-count {
+		background: rgba(255, 255, 255, 0.2);
+		color: #fff;
+	}
+	.chip-count {
+		font-size: var(--text-xs);
+		background: var(--color-bg-dim);
+		color: var(--color-text-muted);
+		padding: 0 var(--space-1);
+		border-radius: var(--radius-full);
+		min-width: 1.25rem;
+		text-align: center;
+		transition: all var(--transition-fast);
+	}
+
+	/* Post grid */
 	.post-grid {
 		display: grid;
 		gap: var(--space-5);
+	}
+	.post-item {
+		transition: opacity var(--transition-slow), transform var(--transition-slow);
 	}
 	@media (min-width: 640px) {
 		.post-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
+	}
+
+	/* Load more */
+	.load-more-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-8) 0 var(--space-4);
+	}
+	.btn-load-more {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-6);
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		background: transparent;
+		border: 2px solid var(--color-primary);
+		border-radius: var(--radius-full);
+		cursor: pointer;
+		transition: all var(--transition-base);
+	}
+	.btn-load-more:hover {
+		background: var(--color-primary);
+		color: #fff;
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-md);
+	}
+	.btn-load-more svg {
+		transition: transform var(--transition-base);
+	}
+	.btn-load-more:hover svg {
+		transform: translateY(2px);
+	}
+	.showing-count {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		margin: 0;
 	}
 </style>

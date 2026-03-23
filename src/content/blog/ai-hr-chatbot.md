@@ -81,9 +81,9 @@ Tools like Notion, Confluence, and Google Drive all have integrations with major
 
 Several platforms are purpose-built for HR chatbot deployments:
 
-**Leena AI** specializes in HR service delivery and integrates natively with major HRIS platforms (Workday, SAP SuccessFactors, Oracle). Strong on workflow automation beyond just Q&A.
+**Leena AI** specializes in HR service delivery and integrates natively with major HRIS platforms ([Workday](https://www.workday.com), SAP SuccessFactors, Oracle). Strong on workflow automation beyond just Q&A.
 
-**Moveworks** is an enterprise-grade AI platform with deep Slack and Teams integration. It handles cross-functional IT and HR queries and has strong natural language capabilities out of the box.
+**[ServiceNow](https://www.servicenow.com)** and **Moveworks** are enterprise-grade AI platforms with deep Slack and Teams integration. Moveworks handles cross-functional IT and HR queries and has strong natural language capabilities out of the box.
 
 **Espressive Barista** is another enterprise option with a focus on HR and IT service delivery, with sophisticated policy-based answer configuration.
 
@@ -143,8 +143,10 @@ And on the talent acquisition side, chatbots are increasingly used in [AI recrui
 - **Audit your HR inbox first.** Export 90 days of HR email and Slack queries. Categorize them. The top 10 question types should become your chatbot's initial knowledge base.
 - **Start with read-only, then add HRIS integration.** Get the static Q&A working well before layering in live data lookups.
 - **Pick a platform that fits your stack.** Slack-heavy? Moveworks or a Copilot Studio deployment in Teams. Already in a major HRIS? Leena AI or Espressive likely have pre-built connectors.
-- **Assign a knowledge base owner.** This isn't a one-time project. Policy updates, benefits changes, and new processes need to be reflected within days, not months.
+- **Assign a knowledge base owner.** This isn't a one-time project. Policy updates, benefits changes, and new processes need to be reflected within days, not months. [SHRM](https://www.shrm.org) recommends quarterly knowledge base reviews as a best practice for HR service delivery.
 - **Measure deflection rate and satisfaction separately.** A chatbot that deflects 80% of queries but has a 40% satisfaction rate is failing — employees are getting wrong answers and giving up. Both metrics matter.
 - **Use the logs.** The chatbot's interaction history is your best source of truth about where HR communication is breaking down. Review it quarterly.
 
 The goal isn't to eliminate HR — it's to eliminate the part of HR that feels like a human search engine. When your team isn't spending half their day answering the same ten questions, they have capacity for the work that actually takes a person.
+
+For the full picture of how AI is transforming people operations — from chatbots to recruiting, onboarding, and workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).

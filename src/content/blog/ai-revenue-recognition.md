@@ -22,7 +22,7 @@ faqs:
 
 It's the last week of the quarter. Your revenue accountant is buried in spreadsheets, cross-referencing 200 contracts against your ASC 606 policy. Three contracts have modifications that were never flagged to accounting. Two others have variable consideration that someone estimated differently last quarter. The auditors are three weeks away.
 
-This is the reality for most finance teams. Revenue recognition under ASC 606 is not conceptually difficult — but executing it across a real contract portfolio, consistently, every quarter, is genuinely hard. The five-step model sounds clean in a textbook. In practice, it involves hundreds of judgment calls, contract-specific nuances, and a paper trail that auditors will pick through in detail.
+This is the reality for most finance teams. Revenue recognition under [ASC 606](https://www.fasb.org) is not conceptually difficult — but executing it across a real contract portfolio, consistently, every quarter, is genuinely hard. The five-step model sounds clean in a textbook. In practice, it involves hundreds of judgment calls, contract-specific nuances, and a paper trail that auditors will pick through in detail.
 
 AI does not eliminate the judgment. But it eliminates the manual work that surrounds it — and it applies whatever judgment you program into it with perfect consistency, every time.
 
@@ -72,19 +72,19 @@ SSP determination is one of the most judgment-intensive parts of ASC 606. AI hel
 
 First, it can analyze your historical transaction data to derive observable SSPs where you have sold elements separately. It surfaces the range of prices at which you have sold each obligation on a standalone basis and flags outliers.
 
-Second, for elements without observable data, it applies your configured estimation methodology — adjusted market assessment or cost-plus — and documents the basis. When SSPs change over time, the system tracks the change and can retroactively show auditors the SSP in effect at the contract's inception.
+Second, for elements without observable data, it applies your configured estimation methodology — adjusted market assessment or cost-plus — and documents the basis. When SSPs change over time, the system tracks the change and can retroactively show auditors the SSP in effect at the contract's inception. For more on this topic, check out [How AI Automates Accounts Receivable and Gets You Paid Faster](/blog/ai-accounts-receivable/).
 
 ### Transaction Price Allocation
 
 Once performance obligations and SSPs are established, the system allocates the transaction price. Discounts get allocated proportionally across obligations unless you have specific guidance requiring allocation to a subset. Variable consideration gets estimated and constrained.
 
-The allocation updates automatically when contracts are modified. If a customer adds a new obligation mid-contract, the system recalculates the allocation and determines whether the modification creates a separate contract or modifies the existing one under ASC 606-10-25-12.
+The allocation updates automatically when contracts are modified. If a customer adds a new obligation mid-contract, the system recalculates the allocation and determines whether the modification creates a separate contract or modifies the existing one under ASC 606-10-25-12. For more on this topic, check out [How to Use AI for Financial Forecasting](/blog/ai-financial-forecasting/).
 
 ### Revenue Schedule Generation
 
 The output is a period-by-period revenue schedule for each contract, broken down by performance obligation. The system shows what revenue will be recognized in each reporting period, what is deferred, what accelerates, and why.
 
-This feeds directly into your general ledger entries. Most tools integrate with NetSuite, Sage Intacct, QuickBooks, or your ERP of choice to post journal entries automatically.
+This feeds directly into your general ledger entries. Most tools integrate with NetSuite, Sage Intacct, QuickBooks, or your ERP of choice to post journal entries automatically. Subscription billing platforms like [Zuora](https://www.zuora.com) also offer native revenue recognition modules that connect directly to your GL.
 
 ## Contract Modifications: The Hard Part AI Handles Well
 
@@ -154,7 +154,7 @@ The ROI case is strongest for:
 
 **Manufacturers and hardware companies** with bundled arrangements — equipment, installation, extended warranties, and maintenance — where obligation separation and SSP estimation require consistent methodology across a large customer base.
 
-**Companies preparing for audit or IPO** where the documentation standards jump significantly. If you are planning a first audit or transitioning from private to public reporting, building a proper ASC 606 infrastructure now is far less painful than retroactively documenting a manual process.
+**Companies preparing for audit or IPO** where the documentation standards jump significantly. Major firms like [Deloitte](https://www.deloitte.com) and [PwC](https://www.pwc.com) have published extensive ASC 606 implementation guidance that can inform your policy configuration. If you are planning a first audit or transitioning from private to public reporting, building a proper ASC 606 infrastructure now is far less painful than retroactively documenting a manual process.
 
 ## What AI Does Not Replace
 
