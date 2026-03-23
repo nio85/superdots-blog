@@ -6,7 +6,7 @@
  *
  * Output: JSON report to /tmp/debug-external-latest.json
  * Exit: 0 = all pass, 1 = any failure
- * On critical failure (site down, SSL <14 days): sends alert email via Gmail SMTP.
+ * On critical failure (site down, SSL <14 days): sends alert email via Resend SMTP.
  */
 
 import { writeFileSync } from 'fs';
@@ -236,7 +236,7 @@ async function checkCloudflareDeploy() {
 
 async function sendAlert(criticals) {
   if (!SMTP_PASS) {
-    console.error('Cannot send alert: GMAIL_APP_PASSWORD not set');
+    console.error('Cannot send alert: RESEND_SMTP_API_KEY not set');
     return;
   }
 

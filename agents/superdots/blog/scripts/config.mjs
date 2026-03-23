@@ -61,13 +61,14 @@ export const AGENTS = {
   FOUNDING_ENGINEER: '11e3188a-5eda-49d8-acd4-8815456d9a0f',
 };
 
-// --- SMTP ---
+// --- SMTP (Resend) ---
 
-export const SMTP_HOST = 'smtp.gmail.com';
+export const SMTP_HOST = 'smtp.resend.com';
 export const SMTP_PORT = 587;
-export const SMTP_USER = process.env.SMTP_USER || 'lucavittorio.bartoccini@gmail.com';
-export const SMTP_PASS = process.env.GMAIL_APP_PASSWORD;
-export const TO_EMAIL = process.env.TO_EMAIL || SMTP_USER;
+export const SMTP_USER = 'resend';
+export const SMTP_PASS = process.env.RESEND_SMTP_API_KEY;
+export const MAIL_FROM = process.env.MAIL_FROM || 'notifications@superdots.sh';
+export const TO_EMAIL = process.env.TO_EMAIL || 'lucavittorio.bartoccini@gmail.com';
 
 // --- Syndication ---
 
@@ -100,7 +101,7 @@ export function getPaperclipApiKey(agentId = AGENTS.CEO) {
   return process.env.PAPERCLIP_API_KEY || createPaperclipJwt(agentId) || null;
 }
 
-// --- SMTP Helper ---
+// --- SMTP Helper (Resend) ---
 
 export function createSmtpTransport(nodemailer) {
   return nodemailer.createTransport({
