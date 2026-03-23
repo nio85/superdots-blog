@@ -1,14 +1,36 @@
 ---
 /**
- * Sticky table of contents sidebar.
+ * In-article table of contents — accordion style.
  * Auto-generated from article headings via client-side JS.
- * Hidden on short articles (<4 headings) and on mobile.
+ * Hidden on short articles (<4 headings).
  */
 ---
 
-<nav class="toc" aria-label="Table of contents" id="article-toc">
-	<div class="toc-inner">
-		<p class="toc-title">Contents<span class="dot-accent">.</span></p>
+<nav class="toc-accordion" aria-label="Table of contents" id="article-toc">
+	<button
+		class="toc-toggle"
+		type="button"
+		aria-expanded="false"
+		aria-controls="toc-panel"
+		id="toc-toggle"
+	>
+		<div class="toc-toggle-left">
+			<span class="toc-icon" aria-hidden="true">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="9" y2="18"/>
+				</svg>
+			</span>
+			<span class="toc-toggle-label">Table of contents</span>
+		</div>
+		<div class="toc-toggle-right">
+			<span class="toc-count" id="toc-count"></span>
+			<svg class="toc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+		</div>
+	</button>
+	<div class="toc-panel" id="toc-panel" hidden>
+		<div class="toc-progress-track" aria-hidden="true">
+			<div class="toc-progress-bar" id="toc-progress"></div>
+		</div>
 		<ol class="toc-list" id="toc-list">
 			<!-- Populated by client JS -->
 		</ol>
@@ -20,12 +42,21 @@
 		const prose = document.getElementById('article-prose');
 		const tocList = document.getElementById('toc-list');
 		const tocNav = document.getElementById('article-toc');
-		if (!prose || !tocList || !tocNav) return;
+		const tocToggle = document.getElementById('toc-toggle');
+		const tocPanel = document.getElementById('toc-panel');
+		const tocCount = document.getElementById('toc-count');
+		const tocProgress = document.getElementById('toc-progress');
+		if (!prose || !tocList || !tocNav || !tocToggle || !tocPanel) return;
 
 		const headings = prose.querySelectorAll('h2, h3');
 		if (headings.length < 4) {
 			tocNav.style.display = 'none';
 			return;
+		}
+
+		// Show heading count
+		if (tocCount) {
+			tocCount.textContent = `${headings.length} sections`;
 		}
 
 		// Build TOC links
@@ -35,10 +66,65 @@
 			li.className = h.tagName === 'H3' ? 'toc-item toc-item--sub' : 'toc-item';
 			const a = document.createElement('a');
 			a.href = `#${h.id}`;
-			a.textContent = h.textContent?.replace(/\.$/, '') || '';
 			a.className = 'toc-link';
+
+			// Number for h2 items
+			if (h.tagName === 'H2') {
+				const num = document.createElement('span');
+				num.className = 'toc-num';
+				const h2Count = Array.from(headings).slice(0, i + 1).filter(el => el.tagName === 'H2').length;
+				num.textContent = String(h2Count).padStart(2, '0');
+				a.appendChild(num);
+			}
+
+			const text = document.createElement('span');
+			text.className = 'toc-text';
+			text.textContent = h.textContent?.replace(/\.$/, '') || '';
+			a.appendChild(text);
+
 			li.appendChild(a);
 			tocList.appendChild(li);
+		});
+
+		// Toggle accordion
+		tocToggle.addEventListener('click', () => {
+			const isExpanded = tocToggle.getAttribute('aria-expanded') === 'true';
+			tocToggle.setAttribute('aria-expanded', String(!isExpanded));
+
+			if (isExpanded) {
+				tocPanel.style.maxHeight = '0';
+				tocPanel.style.opacity = '0';
+				setTimeout(() => { tocPanel.hidden = true; }, 300);
+			} else {
+				tocPanel.hidden = false;
+				tocPanel.style.maxHeight = '0';
+				tocPanel.style.opacity = '0';
+				requestAnimationFrame(() => {
+					requestAnimationFrame(() => {
+						tocPanel.style.maxHeight = tocPanel.scrollHeight + 'px';
+						tocPanel.style.opacity = '1';
+					});
+				});
+			}
+		});
+
+		// Smooth scroll on link click — also close accordion on mobile
+		tocList.addEventListener('click', (e) => {
+			const link = (e.target as HTMLElement).closest('a');
+			if (!link) return;
+			e.preventDefault();
+			const id = link.getAttribute('href')?.slice(1);
+			const target = id ? document.getElementById(id) : null;
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				// Close accordion after clicking on mobile
+				if (window.innerWidth < 768) {
+					tocToggle.setAttribute('aria-expanded', 'false');
+					tocPanel.style.maxHeight = '0';
+					tocPanel.style.opacity = '0';
+					setTimeout(() => { tocPanel.hidden = true; }, 300);
+				}
+			}
 		});
 
 		// Intersection observer for active state
@@ -63,101 +149,213 @@
 		headings.forEach((h) => observer.observe(h));
 
 		// Progress bar
-		const progressBar = document.createElement('div');
-		progressBar.className = 'toc-progress';
-		tocNav.querySelector('.toc-inner')?.prepend(progressBar);
-
-		function updateProgress() {
-			const rect = prose.getBoundingClientRect();
-			const total = prose.offsetHeight;
-			const scrolled = Math.max(0, -rect.top);
-			const pct = Math.min(100, (scrolled / (total - window.innerHeight)) * 100);
-			progressBar.style.setProperty('--progress', `${pct}%`);
+		if (tocProgress) {
+			function updateProgress() {
+				const rect = prose!.getBoundingClientRect();
+				const total = prose!.offsetHeight;
+				const scrolled = Math.max(0, -rect.top);
+				const pct = Math.min(100, (scrolled / (total - window.innerHeight)) * 100);
+				tocProgress!.style.width = `${pct}%`;
+			}
+			window.addEventListener('scroll', updateProgress, { passive: true });
+			updateProgress();
 		}
-		window.addEventListener('scroll', updateProgress, { passive: true });
-		updateProgress();
 	})();
 </script>
 
 <style>
-	.toc {
-		display: none;
+	.toc-accordion {
+		margin: var(--space-4) 0 var(--space-8);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		background: var(--color-bg);
+		overflow: hidden;
+		transition: box-shadow var(--transition-base), border-color var(--transition-base);
+	}
+	.toc-accordion:hover {
+		border-color: var(--color-border-strong);
 	}
 
-	/* Only show on wide viewports */
-	@media (min-width: 1200px) {
-		.toc {
-			display: block;
-			position: fixed;
-			top: 120px;
-			left: calc(50% + var(--max-width-prose) / 2 + 48px);
-			width: 220px;
-			max-height: calc(100vh - 160px);
-			overflow-y: auto;
-			z-index: 10;
+	/* Toggle button */
+	.toc-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: var(--space-4) var(--space-5);
+		background: var(--color-bg-dim);
+		border: none;
+		cursor: pointer;
+		transition: background var(--transition-fast);
+		gap: var(--space-3);
+	}
+	.toc-toggle:hover {
+		background: var(--color-bg-dim);
+	}
+	.toc-toggle-left {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.toc-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: var(--radius-md);
+		background: var(--color-primary);
+		color: #fff;
+		flex-shrink: 0;
+	}
+	.toc-toggle-label {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-bold);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-text-strong);
+	}
+	.toc-toggle-right {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.toc-count {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		background: var(--color-bg);
+		padding: var(--space-0-5) var(--space-2);
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--color-border);
+	}
+	.toc-chevron {
+		color: var(--color-text-muted);
+		transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+		flex-shrink: 0;
+	}
+	.toc-toggle[aria-expanded="true"] .toc-chevron {
+		transform: rotate(180deg);
+	}
+
+	/* Panel */
+	.toc-panel {
+		overflow: hidden;
+		transition: max-height 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease;
+	}
+
+	/* Progress track */
+	.toc-progress-track {
+		height: 2px;
+		background: var(--color-border);
+		margin: 0 var(--space-5);
+	}
+	.toc-progress-bar {
+		height: 100%;
+		width: 0;
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+		border-radius: 1px;
+		transition: width 100ms linear;
+	}
+
+	/* List */
+	.toc-list {
+		list-style: none;
+		padding: var(--space-3) var(--space-5) var(--space-5);
+		margin: 0;
+		columns: 1;
+	}
+	@media (min-width: 640px) {
+		.toc-list {
+			columns: 2;
+			column-gap: var(--space-6);
 		}
 	}
 
-	.toc-inner {
-		position: relative;
-		padding-left: var(--space-4);
-		border-left: 2px solid var(--color-border);
-	}
-
-	.toc-progress {
-		position: absolute;
-		left: -2px;
-		top: 0;
-		width: 2px;
-		height: var(--progress, 0%);
-		background: var(--color-primary);
-		transition: height 100ms linear;
-		border-radius: 1px;
-	}
-
-	.toc-title {
-		font-family: var(--font-display);
-		font-size: var(--text-xs);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--color-text-muted);
-		margin: 0 0 var(--space-3) 0;
-	}
-
-	.toc-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
 	.toc-item {
-		margin-bottom: var(--space-1);
+		break-inside: avoid;
+		margin-bottom: 0;
 	}
 
 	.toc-item--sub {
-		padding-left: var(--space-3);
+		padding-left: var(--space-6);
 	}
 
+	/* Links */
 	.toc-link {
-		display: block;
-		font-size: var(--text-xs);
+		display: flex;
+		align-items: baseline;
+		gap: var(--space-2);
+		font-size: var(--text-sm);
 		line-height: var(--leading-snug);
 		color: var(--color-text-muted);
 		text-decoration: none;
-		padding: var(--space-0-5) 0;
-		transition: color var(--transition-fast);
+		padding: var(--space-1-5) var(--space-2);
+		border-radius: var(--radius-md);
+		transition: all var(--transition-fast);
+	}
+	.toc-link:hover {
+		color: var(--color-text-strong);
+		background: var(--color-bg-dim);
+	}
+	.toc-link.is-active {
+		color: var(--color-primary);
+		font-weight: var(--weight-semibold);
+		background: rgba(232, 54, 59, 0.06);
+	}
+
+	/* Numbering */
+	.toc-num {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-primary);
+		opacity: 0.5;
+		flex-shrink: 0;
+		min-width: 1.5em;
+	}
+	.toc-link.is-active .toc-num {
+		opacity: 1;
+	}
+
+	.toc-text {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	.toc-link:hover {
-		color: var(--color-text);
+	/* Dark mode */
+	:global([data-theme="dark"]) .toc-accordion {
+		background: var(--color-bg);
+	}
+	:global([data-theme="dark"]) .toc-icon {
+		box-shadow: 0 0 12px rgba(232, 54, 59, 0.2);
+	}
+	:global([data-theme="dark"]) .toc-link.is-active {
+		background: rgba(232, 54, 59, 0.1);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .toc-accordion {
+			background: var(--color-bg);
+		}
+		:global([data-theme="auto"]) .toc-icon {
+			box-shadow: 0 0 12px rgba(232, 54, 59, 0.2);
+		}
+		:global([data-theme="auto"]) .toc-link.is-active {
+			background: rgba(232, 54, 59, 0.1);
+		}
 	}
 
-	.toc-link.is-active {
-		color: var(--color-primary);
-		font-weight: var(--weight-semibold);
+	/* Mobile adjustments */
+	@media (max-width: 480px) {
+		.toc-toggle {
+			padding: var(--space-3) var(--space-4);
+		}
+		.toc-list {
+			padding: var(--space-2) var(--space-4) var(--space-4);
+		}
+		.toc-progress-track {
+			margin: 0 var(--space-4);
+		}
 	}
 </style>
