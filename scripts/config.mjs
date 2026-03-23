@@ -12,7 +12,7 @@ import { homedir } from 'node:os';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const BLOG_ROOT = resolve(__dirname, '..');
-export const MONO_ROOT = resolve(BLOG_ROOT, '..', '..', '..');
+export const MONO_ROOT = BLOG_ROOT;  // blog is now a standalone worktree, not nested in monorepo
 
 // --- Load .env files (blog + paperclip) into process.env ---
 
@@ -36,9 +36,8 @@ export const CF_PROJECT_NAME = 'superdots-blog';
 
 // --- GitHub ---
 
-export const GH_REMOTE = 'superdots-blog';
+export const GH_REMOTE = 'origin';
 export const GH_REPO_URL = 'https://github.com/nio85/superdots-blog.git';
-export const SUBTREE_PREFIX = 'agents/superdots/blog';
 
 // --- Site ---
 

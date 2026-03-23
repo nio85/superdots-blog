@@ -4,7 +4,7 @@
  *
  * Strategy (in order of preference):
  *   1. Wrangler direct upload to Cloudflare Pages (needs CLOUDFLARE_API_TOKEN)
- *   2. Git subtree push to nio85/superdots-blog (needs GITHUB_TOKEN with repo scope)
+ *   2. Git push to origin/main (needs GITHUB_TOKEN with repo scope)
  *
  * Post-deploy verification:
  *   - Polls CF Pages API to confirm deployment succeeded
@@ -14,7 +14,7 @@
  * Usage:
  *   node scripts/deploy.mjs                          # auto-detect method
  *   node scripts/deploy.mjs --wrangler               # force wrangler
- *   node scripts/deploy.mjs --git                    # force subtree push
+ *   node scripts/deploy.mjs --git                    # force git push to origin/main
  *   node scripts/deploy.mjs --dry-run                # build only, skip deploy
  *   node scripts/deploy.mjs --skip-verify            # skip post-deploy verification
  *   node scripts/deploy.mjs --verify-slugs=a,b,c     # verify only specific slugs
@@ -24,9 +24,9 @@ import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
-  BLOG_ROOT, MONO_ROOT,
+  BLOG_ROOT,
   CF_ACCOUNT_ID, CF_PROJECT_NAME,
-  GH_REMOTE, GH_REPO_URL, SUBTREE_PREFIX,
+  GH_REMOTE, GH_REPO_URL,
   PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID, SITE_URL,
   getPaperclipApiKey,
 } from './config.mjs';
@@ -152,39 +152,21 @@ function deployWrangler(distDir) {
 }
 
 function deployGit() {
-  console.log('\n== Deploying via git subtree push ==');
+  console.log('\n== Deploying via git push to origin/main ==');
+
+  // Ensure remote URL has auth token
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) throw new Error('GITHUB_TOKEN not set');
+
+  const authUrl = `https://x-access-token:${token}@github.com/nio85/superdots-blog.git`;
+  run(`git remote set-url ${GH_REMOTE} "${authUrl}"`, { cwd: BLOG_ROOT });
 
   try {
-    runCapture(`git remote get-url ${GH_REMOTE}`, { cwd: MONO_ROOT });
-  } catch {
-    run(`git remote add ${GH_REMOTE} ${GH_REPO_URL}`, { cwd: MONO_ROOT });
-  }
-
-  const currentUrl = runCapture(`git remote get-url ${GH_REMOTE}`, { cwd: MONO_ROOT });
-  if (currentUrl !== GH_REPO_URL) {
-    run(`git remote set-url ${GH_REMOTE} "${GH_REPO_URL}"`, { cwd: MONO_ROOT });
-  }
-
-  let needsCleanup = false;
-  try {
-    runCapture(`git ls-remote --heads ${GH_REMOTE} main`, { cwd: MONO_ROOT });
-  } catch {
-    const token = process.env.GITHUB_TOKEN;
-    if (!token) throw new Error('GITHUB_TOKEN not set and credential helper failed');
-    const authUrl = `https://x-access-token:${token}@github.com/nio85/superdots-blog.git`;
-    run(`git remote set-url ${GH_REMOTE} "${authUrl}"`, { cwd: MONO_ROOT });
-    needsCleanup = true;
-  }
-
-  try {
-    run(`git subtree push --prefix=${SUBTREE_PREFIX} ${GH_REMOTE} main`, {
-      cwd: MONO_ROOT,
-    });
-    console.log('\nDeploy complete (subtree push -> Cloudflare Pages CI/CD).');
+    run(`git push ${GH_REMOTE} main`, { cwd: BLOG_ROOT });
+    console.log('\nDeploy complete (git push -> Cloudflare Pages CI/CD).');
   } finally {
-    if (needsCleanup) {
-      run(`git remote set-url ${GH_REMOTE} "${GH_REPO_URL}"`, { cwd: MONO_ROOT });
-    }
+    // Clean up auth token from remote URL
+    run(`git remote set-url ${GH_REMOTE} "${GH_REPO_URL}"`, { cwd: BLOG_ROOT });
   }
 }
 
@@ -580,23 +562,23 @@ async function main() {
       deployWrangler(distDir);
     } else if (forceGit) {
       if (!canGit()) {
-        console.error('GITHUB_TOKEN not set or invalid. Cannot deploy via subtree push.');
+        console.error('GITHUB_TOKEN not set or invalid. Cannot deploy via git push.');
         process.exit(1);
       }
-      method = 'subtree-push';
+      method = 'git-push';
       deployGit();
     } else {
       if (canWrangler()) {
         method = 'wrangler';
         deployWrangler(distDir);
       } else if (canGit()) {
-        method = 'subtree-push';
+        method = 'git-push';
         deployGit();
       } else {
         console.error(
           '\nNo deploy credentials available.\n' +
           'Set CLOUDFLARE_API_TOKEN for Wrangler direct upload, or\n' +
-          'set GITHUB_TOKEN (with repo scope) for subtree push.\n'
+          'set GITHUB_TOKEN (with repo scope) for git push.\n'
         );
         process.exit(1);
       }
