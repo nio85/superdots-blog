@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { getReadingTime } from '../../utils/readingTime';
 
@@ -71,15 +72,12 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 ---
 
 <Base title="Guides | Superdots" description="In-depth AI guides for every department. Comprehensive playbooks covering tools, strategies, and real implementation advice.">
-	<div class="page-header">
-		<div class="dots dots-md" style="top: -15%; right: 0;" aria-hidden="true"></div>
-		<p class="page-label">
-			<span class="superdot"></span>
-			Complete guides
-		</p>
-		<h1>AI playbooks for<br/>every team<span class="dot-accent">.</span></h1>
-		<p class="page-desc">Deep-dive guides covering tools, strategies, and real implementation advice. Each guide is a comprehensive resource for bringing AI into your department.</p>
-	</div>
+	<PageHeader
+		title="AI playbooks for every team"
+		kicker="Complete guides"
+		subtitle="Deep-dive guides covering tools, strategies, and real implementation advice. Each guide is a comprehensive resource for bringing AI into your department."
+		centered
+	/>
 
 
 	{/* Guide cards with expandable chapters */}
@@ -199,45 +197,6 @@ const comingSoonGuides = guides.filter((g) => !g.available);
 </script>
 
 <style>
-	.page-header {
-		padding: var(--space-8) 0 var(--space-4);
-		text-align: center;
-		max-width: 640px;
-		margin: 0 auto;
-	}
-	.page-label {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-primary);
-		margin-bottom: var(--space-4);
-	}
-	.page-label .superdot {
-		width: 8px;
-		height: 8px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		display: inline-block;
-	}
-	.page-header h1 {
-		font-size: var(--text-4xl);
-		line-height: 1.1;
-		margin-bottom: var(--space-4);
-		letter-spacing: -0.03em;
-	}
-	.page-desc {
-		color: var(--color-text-muted);
-		font-size: var(--text-lg);
-		line-height: var(--leading-snug);
-		margin: 0;
-	}
-
-
 	/* Guide cards */
 	.guides-list {
 		display: flex;

@@ -1,0 +1,154 @@
+---
+export interface Props {
+	title: string;
+	subtitle?: string;
+	kicker?: string;
+	breadcrumbs?: Array<{ label: string; href: string }>;
+	centered?: boolean;
+	count?: number;
+	countLabel?: string;
+}
+
+const { title, subtitle, kicker, breadcrumbs, centered = false, count, countLabel } = Astro.props;
+---
+
+{breadcrumbs && breadcrumbs.length > 0 && (
+	<nav class="ph-breadcrumb" aria-label="Breadcrumb">
+		{breadcrumbs.map((crumb, i) => (
+			<>
+				{i > 0 && <span aria-hidden="true">/</span>}
+				{i < breadcrumbs.length - 1 ? (
+					<a href={crumb.href}>{crumb.label}</a>
+				) : (
+					<span aria-current="page">{crumb.label}</span>
+				)}
+			</>
+		))}
+	</nav>
+)}
+
+<div class:list={['page-header', { 'page-header--centered': centered }]}>
+	<div class="dots dots-md" style={centered ? 'top: -15%; right: 0;' : 'top: 5%; right: 3%;'} aria-hidden="true"></div>
+
+	{kicker && (
+		<p class="page-kicker">
+			<span class="superdot-pulse" aria-hidden="true"></span>
+			{kicker}
+		</p>
+	)}
+
+	<h1>{title}<span class="dot-accent">.</span></h1>
+
+	{count !== undefined && countLabel && (
+		<p class="page-count">{count} {countLabel}</p>
+	)}
+
+	{subtitle && (
+		<p class="page-subtitle">{subtitle}</p>
+	)}
+
+	<slot />
+</div>
+
+<style>
+	/* Breadcrumb */
+	.ph-breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		padding-top: var(--space-4);
+	}
+	.ph-breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+	}
+	.ph-breadcrumb a:hover {
+		color: var(--color-primary);
+	}
+	.ph-breadcrumb span[aria-current] {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-medium);
+	}
+
+	/* Header container */
+	.page-header {
+		position: relative;
+		overflow: hidden;
+		padding: var(--space-8) 0 var(--space-4);
+	}
+	.page-header--centered {
+		text-align: center;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	/* Kicker */
+	.page-kicker {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--color-primary);
+		margin-bottom: var(--space-4);
+	}
+
+	/* Pulsing superdot */
+	.superdot-pulse {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+		display: inline-block;
+		animation: superdot-pulse 2s ease-in-out infinite;
+	}
+	@keyframes superdot-pulse {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.4; }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.superdot-pulse {
+			animation: none;
+		}
+	}
+
+	/* Title */
+	.page-header h1 {
+		font-size: var(--text-4xl);
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+		margin-bottom: var(--space-3);
+	}
+
+	/* Count */
+	.page-count {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		margin-bottom: var(--space-2);
+	}
+
+	/* Subtitle */
+	.page-subtitle {
+		color: var(--color-text-muted);
+		font-size: var(--text-lg);
+		line-height: var(--leading-snug);
+		margin: 0 0 var(--space-6);
+	}
+	.page-header:not(.page-header--centered) .page-subtitle {
+		max-width: 540px;
+	}
+
+	@media (max-width: 480px) {
+		.page-header h1 {
+			font-size: var(--text-3xl);
+		}
+	}
+</style>
