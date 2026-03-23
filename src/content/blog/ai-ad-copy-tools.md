@@ -11,7 +11,7 @@ faqs:
   - question: "Can AI write ad copy that converts?"
     answer: "AI can generate effective ad copy, but not by default. The key is using AI to produce many variations quickly, then testing them against real audiences. The best-performing AI ad copy typically goes through 2-3 rounds of generation, testing, and iteration."
   - question: "What is the best AI ad copy generator?"
-    answer: "It depends on your workflow. For high-volume Google Ads, tools like [Copy.ai](https://www.copy.ai) and [Jasper](https://www.jasper.ai) integrate well with ad platforms. For social ads, Anyword and Persado offer performance prediction. The best tool is the one that fits your testing and iteration process."
+    answer: "It depends on your workflow. For high-volume Google Ads, tools like Copy.ai and Jasper integrate well with ad platforms. For social ads, Anyword and Persado offer performance prediction. The best tool is the one that fits your testing and iteration process."
   - question: "Does AI ad copy outperform human-written copy?"
     answer: "In A/B tests, AI-generated variations often match or beat human-written copy — not because AI writes better, but because AI lets you test 20 variations where a human would test 3. More tests means faster discovery of what resonates."
 ---
@@ -60,17 +60,17 @@ A human copywriter might produce 5 solid variations in an hour. AI produces 20 i
 
 ### Adapt across platforms
 
-Write one core message, and AI adapts it for [Google Ads](https://ads.google.com) (character-limited headlines + descriptions), [Meta Ads](https://www.facebook.com/business/ads) (punchy hooks for short attention spans), LinkedIn (professional but human), and email (subject line + preview text + body). Each version matches the platform's constraints and audience expectations.
+Write one core message, and AI adapts it for Google Ads (character-limited headlines + descriptions), Meta (punchy hooks for short attention spans), LinkedIn (professional but human), and email (subject line + preview text + body). Each version matches the platform's constraints and audience expectations.
 
 ### Iterate from performance data
 
 This is where AI shines brightest. Feed it your test results: "Variation A got 2.1% CTR. Variation B got 0.9% CTR. Variation C got 1.8% CTR." Ask it to generate new variations that combine the elements of A and C while avoiding the patterns in B. The AI identifies what worked (specific numbers, urgency language, problem-first framing) and generates new copy that emphasizes those elements.
 
-Each testing round gets smarter because the AI learns from your audience's actual behavior, not from generic best practices. For related guidance, see our guide on [How to Create Marketing Content with AI (Without Sounding Generic)](/blog/ai-content-creation/).
+Each testing round gets smarter because the AI learns from your audience's actual behavior, not from generic best practices.
 
 ## The AI Ad Copy Workflow That Works
 
-Here is the step-by-step process that produces high-converting ad copy consistently. If this applies to your team, our [AI for Market Research: Faster Insights, Better Decisions](/blog/ai-market-research/) guide covers the details.
+Here is the step-by-step process that produces high-converting ad copy consistently.
 
 ### Step 1: Write the brief (human, 15 minutes)
 
@@ -210,8 +210,28 @@ Iterate constantly. Ad fatigue is real and AI makes it economical to refresh cre
 
 **Related reads:**
 
-- [AI for Marketing: Complete Guide](/blog/ai-for-marketing-complete-guide) — The complete guide to AI across content, ads, email, and every marketing function.
 - [AI Email Marketing](/blog/ai-email-marketing) — Apply the same test-and-iterate approach to email campaigns.
 - [AI Writing Assistant: Keep Your Voice](/blog/ai-writing-assistant-keep-your-voice) — Maintain brand consistency across high-volume AI-generated copy.
 - [AI Sales Emails](/blog/ai-sales-emails) — Use AI for outbound sales copy that gets responses.
 
+## FAQ
+
+### How much does AI ad copy software cost?
+
+Most AI ad copy tools range from $30-$150/month for individual plans and $200-$500/month for team plans. Tools like Copy.ai and Jasper offer free tiers with limited generations. The cost is marginal compared to ad spend — if AI helps you find a winning variation even one week faster, the saved ad budget far exceeds the tool subscription.
+
+### Can AI write ad copy for regulated industries?
+
+AI can generate draft ad copy for regulated industries like finance, healthcare, and legal, but compliance review is non-negotiable. AI does not understand advertising regulations (FDA guidelines, FINRA rules, HIPAA restrictions) and will generate claims that violate them. Use AI for the creative variation work, then run every variation through your compliance team before publishing.
+
+### How many ad variations should I test at once?
+
+Test 5-8 meaningfully different variations per campaign. Each variation should test a distinct angle — different hooks, value propositions, or emotional registers — not just slightly different wording. You need at least 1,000 impressions per variation for statistical significance, so running too many variations at once with a small budget dilutes your data.
+
+### What is the best AI tool for Google Ads copy?
+
+For Google Ads specifically, tools that understand character limits and responsive search ad structure work best. Copy.ai and Jasper both have Google Ads templates that generate headline and description combinations within character constraints. Google's own Performance Max campaigns also use AI to generate and test variations, though you have less control over the output.
+
+### How often should I refresh ad creative with AI?
+
+Refresh your ad creative every 2-4 weeks to combat ad fatigue. Monitor frequency metrics — when your audience has seen the same ad 3-4 times, click-through rates typically start declining. AI makes frequent refreshes practical by cutting the time from brief to new variations from days to hours.

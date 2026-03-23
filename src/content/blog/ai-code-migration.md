@@ -125,9 +125,9 @@ This gives you a scope document. You know what you're getting into before a sing
 
 This is where migrations go wrong. The syntax changes are easy to find. The behavioral changes are not.
 
-Ask AI specifically: For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
+Ask AI specifically:
 
-> "Between [source] and [target], what behavioral changes exist — not just syntax changes — that could cause bugs without throwing errors? Focus on: type coercion, integer handling, timezone behavior, string encoding, default parameter changes." For more on this topic, check out [AI for DevOps: Automate Your CI/CD Pipeline](/blog/ai-devops-tools/).
+> "Between [source] and [target], what behavioral changes exist — not just syntax changes — that could cause bugs without throwing errors? Focus on: type coercion, integer handling, timezone behavior, string encoding, default parameter changes."
 
 For a Python 2→3 migration, AI will flag things like:
 - `int / int` now returns a float in Python 3 (silent logic bugs)
@@ -207,7 +207,7 @@ Be honest about the limits.
 
 **AI cannot test in production.** It generates tests, but it can't know which edge cases matter in your specific deployment environment. Real-world data has surprises that no prompt can anticipate.
 
-**AI can hallucinate library APIs.** When migrating between versions of a library, AI sometimes generates calls to methods that don't exist in the target version. Always verify generated code against the actual changelog and documentation on [GitHub](https://github.com) or the library's official release notes.
+**AI can hallucinate library APIs.** When migrating between versions of a library, AI sometimes generates calls to methods that don't exist in the target version. Always verify generated code against the actual changelog and documentation of the target version.
 
 **AI struggles with highly stateful code.** Anything that relies on complex shared state, side effects, or execution order is harder to migrate accurately. The more global state in the original code, the more careful you need to be with AI-generated output.
 
@@ -215,7 +215,7 @@ Be honest about the limits.
 
 If you're trying to justify AI-assisted migration to stakeholders, the numbers are concrete.
 
-A framework migration that a 4-person team would spend 3 months on — 480 person-days of effort — can be reduced to 6-8 weeks. Organizations migrating to cloud platforms like [AWS](https://aws.amazon.com) or [Google Cloud](https://cloud.google.com) see similar acceleration when AI handles the boilerplate conversion work. The mechanical conversion work drops from weeks to days. Engineers spend their time on the 20% of the migration that actually requires judgment.
+A framework migration that a 4-person team would spend 3 months on — 480 person-days of effort — can be reduced to 6-8 weeks. The mechanical conversion work drops from weeks to days. Engineers spend their time on the 20% of the migration that actually requires judgment.
 
 That's not a marginal improvement. That's the difference between a migration that's worth doing and one that gets deferred indefinitely because the cost is too high.
 
@@ -237,3 +237,24 @@ The goal isn't to automate the entire migration. It's to change the economics of
 - [AI Debugging Guide](/blog/ai-debugging-guide)
 - [AI Test Generation](/blog/ai-test-generation)
 
+## FAQ
+
+### What programming languages can AI migrate between?
+
+AI handles migrations between languages with similar paradigms most effectively: Java to Kotlin, JavaScript to TypeScript, Python 2 to Python 3, C# .NET Framework to .NET Core, and Objective-C to Swift. Cross-paradigm migrations (e.g., imperative to functional) are possible but require significantly more human oversight. The closer the source and target languages are in structure and concepts, the higher the accuracy of the automated translation.
+
+### How do I know if my codebase is ready for AI-assisted migration?
+
+Start with an AI audit: ask the tool to scan your codebase and identify all instances of deprecated patterns, breaking API changes, and behavioral differences between source and target. If you have a test suite with reasonable coverage, you are in good shape — the tests serve as a behavioral verification net. If you have no tests, generate them for critical paths before migrating, so you can verify the migrated code behaves identically.
+
+### Can AI migrate a monolith to microservices?
+
+AI assists with the code transformation aspects of a monolith-to-microservices migration, but it cannot make the architectural decisions. Where to draw service boundaries, how to handle data ownership, and which communication patterns to use are design decisions that require understanding your domain, team structure, and operational constraints. Use AI for the mechanical extraction and refactoring once the architecture is decided.
+
+### What is the biggest risk of AI code migration?
+
+The biggest risk is subtle behavioral changes that pass syntax checks but introduce logic bugs. Integer division behavior, string encoding differences, timezone handling, and floating point precision can all change between language versions without throwing errors. Always generate migration-specific tests that verify behavioral equivalence, and pay special attention to code that handles money, dates, or concurrency.
+
+### Should I migrate all at once or incrementally?
+
+Incremental migration is almost always safer. Migrate in layers — utilities first, then data models, then business logic, then entry points. For language migrations like JavaScript to TypeScript, most languages support gradual adoption so you can convert file by file while keeping the system running. This approach limits blast radius when something goes wrong and makes it easier to identify which specific change introduced a problem.

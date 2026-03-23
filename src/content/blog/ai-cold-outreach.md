@@ -70,7 +70,7 @@ For each prospect, pull together:
 - Any public content the prospect has written or shared
 - Job postings that signal priorities or pain points
 
-Tools like Clay, [Apollo](https://www.apollo.io), and Phantombuster can automate much of this enrichment at scale. For individual high-value prospects, a five-minute manual review of their LinkedIn and company news page still produces the best results. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
+Tools like Clay, Apollo, and Phantombuster can automate much of this enrichment at scale. For individual high-value prospects, a five-minute manual review of their LinkedIn and company news page still produces the best results.
 
 The output is a short brief — five to seven bullet points — that gives AI enough context to write something specific.
 
@@ -108,11 +108,11 @@ The last message in the sequence should be explicit about ending the outreach. "
 
 ## The tools that make AI cold outreach work
 
-**For research and enrichment:** Clay is the most powerful option for building data-enriched prospect lists with AI-generated context. Apollo and ZoomInfo handle contact enrichment. [LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions) is still essential for understanding individual prospects. For more on finding the right prospects before you write a word, see our guide on [AI sales prospecting](/blog/ai-sales-prospecting).
+**For research and enrichment:** Clay is the most powerful option for building data-enriched prospect lists with AI-generated context. Apollo and ZoomInfo handle contact enrichment. LinkedIn Sales Navigator is still essential for understanding individual prospects. For more on finding the right prospects before you write a word, see our guide on [AI sales prospecting](/blog/ai-sales-prospecting).
 
 **For writing:** Claude and ChatGPT work well with good prompts for individual emails and sequence drafting. Lavender and Regie.ai are purpose-built for sales email generation and include email scoring that tells you if your draft is likely to perform. Smartwriter.ai specializes in AI-personalized opening lines at scale.
 
-**For sending and sequencing:** [Outreach](https://www.outreach.io) and Salesloft handle enterprise-scale sequences with AI-powered reply detection and next-step suggestions. Instantly and Lemlist are better for smaller teams and offer AI warm-up features that protect deliverability. Apollo's built-in sequencing is solid if you are already using it for prospecting.
+**For sending and sequencing:** Outreach and Salesloft handle enterprise-scale sequences with AI-powered reply detection and next-step suggestions. Instantly and Lemlist are better for smaller teams and offer AI warm-up features that protect deliverability. Apollo's built-in sequencing is solid if you are already using it for prospecting.
 
 **For timing optimization:** Some platforms (Outreach, Salesloft, HubSpot Sales Hub) use AI to determine the best send time for each individual recipient based on their historical email engagement patterns. This alone can improve open rates by 15-20%.
 
@@ -167,5 +167,26 @@ For a broader view of how AI feeds into your sales process beyond outreach, see 
 
 The reps who will win with AI cold outreach are not the ones who use it to send more emails. They are the ones who use it to send fewer emails that are worth reading. The technology makes that possible. The strategy is still yours.
 
-For related approaches that connect outreach to the broader sales process, see our guides on [AI sales emails](/blog/ai-sales-emails), [AI for sales call prep](/blog/ai-for-sales-call-prep), and [AI lead scoring](/blog/ai-lead-scoring). For the full picture, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).
+For related approaches that connect outreach to the broader sales process, see our guides on [AI sales emails](/blog/ai-sales-emails), [AI for sales call prep](/blog/ai-for-sales-call-prep), and [AI lead scoring](/blog/ai-lead-scoring).
 
+## FAQ
+
+### How many cold emails should I send per day with AI?
+
+Keep daily volume under 150 emails per sending domain to avoid triggering spam filters. If you need higher volume, use multiple warmed-up domains. Quality matters more than quantity — teams sending 50 highly personalized emails per day consistently outperform teams blasting 500 generic ones. Start with 20-30 per day while you dial in your messaging, then scale up once you have a proven angle.
+
+### What is the best AI tool for cold outreach?
+
+It depends on your workflow. For research and enrichment, Clay is the most powerful option. For email writing, Claude and ChatGPT work well with good prompts, while Lavender and Regie.ai are purpose-built for sales emails with performance scoring. For sending and sequencing, Outreach and Salesloft handle enterprise scale, while Instantly and Lemlist suit smaller teams. Most effective setups combine 2-3 tools across research, writing, and sending.
+
+### How do I avoid my AI cold emails going to spam?
+
+Warm up new sending domains for 2-3 weeks before launching campaigns. Keep daily volume per domain under 150 emails. Use email validation to remove invalid addresses before sending. Monitor bounce rates (keep under 3%) and spam complaint rates (keep under 0.1%). Avoid spam trigger words, excessive links, and image-heavy emails. Authenticate your domain with SPF, DKIM, and DMARC records.
+
+### How long should a cold outreach email be?
+
+Keep cold emails under 120 words. Shorter emails force specificity, and specificity earns replies. A 200-word email about your product reads like an essay that gets skimmed. A 90-word email about the prospect's specific situation reads like a conversation opener. Include one clear call-to-action that asks for something small — 15 minutes, not a demo of your entire platform.
+
+### How many follow-ups should a cold outreach sequence include?
+
+Send 3-5 follow-ups spaced 3-5 business days apart. Most replies come after the second or third touch, so stopping after one email leaves significant value on the table. Each follow-up should add new value — a case study, a relevant insight, or a different angle — rather than just asking "did you see my last email?" The final message should explicitly offer an opt-out, which paradoxically increases engagement.

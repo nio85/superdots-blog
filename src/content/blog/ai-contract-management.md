@@ -22,7 +22,7 @@ Nobody knows exactly how many active contracts you have. Nobody knows which ones
 
 This is the contract management problem. It is not that contracts are hard to write. It is that managing a portfolio of contracts over their full lifecycle — creation, negotiation, execution, obligation tracking, and renewal — is a volume problem that breaks at scale.
 
-AI contract management tools — platforms like [Ironclad](https://ironcladapp.com), [Agiloft](https://www.agiloft.com), and others — solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated.
+AI contract management tools solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated.
 
 ## Why Contract Management Is Broken
 
@@ -156,7 +156,7 @@ A contract management tool that does not connect to your other systems is just a
 
 **CRM (Salesforce, HubSpot).** Sales contracts should flow from the CRM into the contract system automatically. When a deal closes, the signed contract gets indexed and tracked. When a renewal is approaching, the account owner sees it in their CRM workflow.
 
-**E-signature ([DocuSign](https://www.docusign.com), Adobe Sign).** Signed documents should automatically flow into the contract repository. No manual upload step. No "I'll file it later" that never happens.
+**E-signature (DocuSign, Adobe Sign).** Signed documents should automatically flow into the contract repository. No manual upload step. No "I'll file it later" that never happens.
 
 **ERP and finance (NetSuite, SAP, QuickBooks).** Contract values and payment schedules should sync with finance systems. When a contract renews at a higher rate, the budget forecast should update.
 
@@ -188,7 +188,7 @@ Here is what to measure and what good looks like.
 
 ## Key Takeaways
 
-Contract management is not a legal problem. It is an operational problem that happens to involve legal documents. Research from [WorldCC](https://www.worldcc.com) (formerly IACCM) consistently shows that poor contract management costs organizations 9% or more of annual revenue. When contracts are scattered, untracked, and unmanaged, every department pays the price.
+Contract management is not a legal problem. It is an operational problem that happens to involve legal documents. When contracts are scattered, untracked, and unmanaged, every department pays the price.
 
 AI contract management tools solve the volume problem. They centralize, extract, track, and alert — at a scale no spreadsheet or paralegal can match.
 
@@ -202,3 +202,24 @@ The goal is not to eliminate legal review. It is to make sure your legal team sp
 - [AI Compliance Tools](/blog/ai-compliance-tools) — How AI helps with regulatory compliance beyond contracts.
 - [AI Tools for Business Guide](/blog/ai-tools-for-business-guide) — Department-by-department look at which AI tools deliver real value.
 
+## FAQ
+
+### How long does it take to implement AI contract management?
+
+A phased approach works best. Phase 1 (centralizing contracts and extracting metadata) takes 2-4 weeks. Phase 2 (automating renewals and alerts) takes another 3-4 weeks. Full implementation including obligation tracking and creation workflows typically takes 3-4 months. Start with centralization and renewal tracking for the fastest measurable ROI.
+
+### What is the difference between AI contract review and AI contract management?
+
+Contract review analyzes a single document for risks, non-standard clauses, and key terms. Contract management covers the full lifecycle: creation from templates, negotiation and redline tracking, execution and storage, obligation monitoring, renewal management, and portfolio-level reporting. Review is one step within the broader management process.
+
+### How much does AI contract management software cost?
+
+Entry-level platforms for small legal teams start around $500 to $1,500 per month. Mid-market CLM tools with full lifecycle management and integrations range from $2,000 to $8,000 per month. Enterprise platforms like Icertis and Ironclad can cost significantly more depending on contract volume and feature requirements. The biggest financial return usually comes from catching auto-renewal clauses on unfavorable contracts.
+
+### What CRM and business tool integrations should I look for?
+
+Critical integrations include your CRM (Salesforce, HubSpot) for automatic contract flow from closed deals, e-signature tools (DocuSign, Adobe Sign) for automated filing of signed documents, and ERP or finance systems (NetSuite, SAP) for syncing contract values with budgets. Slack or Teams integration for renewal alerts and project management tools for obligation tracking are valuable additions.
+
+### Can AI contract management handle scanned or legacy contracts?
+
+Yes, but with caveats. AI tools use OCR to process scanned documents before extracting data. Clean scans produce accurate results, but faded photocopies or older documents may have lower extraction accuracy. Most tools flag low-confidence extractions for manual review. Prioritize digitizing and uploading clean documents first, then tackle legacy contracts in batches.

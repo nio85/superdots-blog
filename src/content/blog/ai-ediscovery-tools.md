@@ -34,7 +34,7 @@ Here is how AI eDiscovery tools work across every phase of the process, which to
 
 ## The eDiscovery Lifecycle — Where AI Fits
 
-eDiscovery follows a well-established framework: the [EDRM](https://edrm.net) (Electronic Discovery Reference Model). AI eDiscovery tools now touch every stage. Some stages benefit more than others.
+eDiscovery follows a well-established framework: the EDRM (Electronic Discovery Reference Model). AI eDiscovery tools now touch every stage. Some stages benefit more than others.
 
 ### Identification
 
@@ -84,11 +84,11 @@ Relativity's Analytics, Everlaw's Clustering, and Brainspace (now part of Reveal
 
 AI eDiscovery tools reconstruct email conversations into threads, identifying the most inclusive message in each chain. Instead of reviewing 12 separate emails in a thread, reviewers see the final, most complete version. Coding decisions can propagate up or down the thread automatically.
 
-This alone reduces review volumes by 30-50% in email-heavy matters. For related guidance, see our guide on [AI Compliance Tools: What Non-Technical Teams Need to Know](/blog/ai-compliance-tools/).
+This alone reduces review volumes by 30-50% in email-heavy matters.
 
 #### Sentiment and Communication Analysis
 
-Newer AI eDiscovery tools analyze communication patterns and sentiment. Who was talking to whom, and when? Which conversations shifted in tone around key dates? These tools surface behavioral patterns that keyword searches miss entirely. For related guidance, see our guide on [AI Contract Review for Non-Lawyers: Cut Review Time by 70%](/blog/ai-contract-review-non-lawyers/).
+Newer AI eDiscovery tools analyze communication patterns and sentiment. Who was talking to whom, and when? Which conversations shifted in tone around key dates? These tools surface behavioral patterns that keyword searches miss entirely.
 
 This capability is especially relevant in investigations — internal misconduct, regulatory inquiries, whistleblower matters — where the pattern of communication matters as much as the content.
 
@@ -110,7 +110,7 @@ For broader document management workflows that feed into eDiscovery, see our gui
 
 ### Relativity (and RelativityOne)
 
-[Relativity](https://www.relativity.com) is the industry standard. RelativityOne is the cloud-hosted version. It offers TAR 2.0 (Active Learning), conceptual analytics, email threading, sentiment analysis, and communication visualization. Its marketplace includes hundreds of third-party integrations.
+The industry standard. RelativityOne is the cloud-hosted version. It offers TAR 2.0 (Active Learning), conceptual analytics, email threading, sentiment analysis, and communication visualization. Its marketplace includes hundreds of third-party integrations.
 
 Best for: Large firms and corporations handling complex, high-volume matters. The learning curve is steep, and you will likely need dedicated Relativity administrators.
 
@@ -132,7 +132,7 @@ Best for: Investigations, regulatory matters, and internal reviews where underst
 
 ### Logikcull (now part of Relativity)
 
-Self-service eDiscovery for smaller matters. [Logikcull](https://www.logikcull.com) simplifies the process — upload documents, and the platform handles processing, de-duplication, and basic review. Limited AI capabilities compared to full-featured platforms, but the simplicity is the point.
+Self-service eDiscovery for smaller matters. Logikcull simplifies the process — upload documents, and the platform handles processing, de-duplication, and basic review. Limited AI capabilities compared to full-featured platforms, but the simplicity is the point.
 
 Best for: Small firms, in-house legal teams handling routine litigation, and organizations that want to bring eDiscovery in-house without hiring specialists.
 
@@ -204,3 +204,24 @@ The question is not whether to use AI eDiscovery tools. It is how quickly your t
 
 For related guides, explore [AI legal document review](/blog/ai-legal-document-review), [AI legal research](/blog/ai-legal-research), and [AI document management](/blog/ai-document-management).
 
+## FAQ
+
+### How much do AI eDiscovery tools cost compared to manual review?
+
+For a mid-size matter with one million documents, traditional manual review costs approximately $2.1-$2.4 million, while AI-assisted review costs roughly $570,000-$730,000, a 65-70% reduction. The savings come primarily from reducing the number of documents humans need to review. AI prioritizes the most relevant 10-20% of documents, and the rest can be validated through statistical sampling rather than exhaustive manual review.
+
+### Are AI eDiscovery tools accepted by courts?
+
+Yes. Courts have broadly accepted technology-assisted review since the 2012 ruling in Da Silva Moore v. Publicis Groupe. Since then, courts in the US, UK, Ireland, and Australia have endorsed TAR workflows. The key requirement is transparency: you need to document your methodology, validate recall rates through statistical sampling, and be prepared to defend your approach if challenged by opposing counsel.
+
+### What is the difference between TAR 1.0 and TAR 2.0?
+
+TAR 1.0 uses a batch-based approach where the system presents document batches for review, retrains after each batch, and continues until the model stabilizes. TAR 2.0 uses continuous active learning, updating the model in real time as reviewers code documents and prioritizing the most likely relevant documents first. TAR 2.0 is the current standard because it front-loads important documents, typically finding 80-90% of relevant material after reviewing just 20-30% of the collection.
+
+### Can small law firms use AI eDiscovery tools?
+
+Yes. Platforms like Logikcull and Everlaw offer self-service models without requiring dedicated litigation support staff. Cloud-based pricing eliminates upfront infrastructure costs. A solo practitioner or small firm handling a 50,000-document matter can realistically use these tools for $2,000-$5,000 per month, which is far less than outsourcing to a traditional eDiscovery vendor.
+
+### What is the biggest mistake teams make when adopting AI eDiscovery?
+
+Under-investing in the training phase. TAR is only as good as the seed set of documents used to train it. If a junior associate without sufficient subject matter knowledge trains the model, the results will be poor. Investing senior attorney time in reviewing the initial 200-500 document training set pays for itself many times over in review accuracy and completeness.

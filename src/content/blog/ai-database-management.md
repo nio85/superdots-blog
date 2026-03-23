@@ -99,13 +99,13 @@ That level of analysis would take a DBA hours. AI does it in minutes.
 
 ### Unused index detection
 
-Indexes that are never used waste storage and slow down writes. AI monitors index usage over time and flags indexes that can be safely dropped: For related guidance, see our guide on [How to Generate API Documentation with AI](/blog/ai-api-documentation/).
+Indexes that are never used waste storage and slow down writes. AI monitors index usage over time and flags indexes that can be safely dropped:
 
 "The index `idx_orders_legacy_status` has not been used by any query in the last 90 days. It consumes 800MB and adds ~1ms to every insert. Recommended: drop after confirming no batch jobs or reports use it."
 
 ### Schema optimization
 
-AI can analyze your schema and suggest structural improvements: If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
+AI can analyze your schema and suggest structural improvements:
 
 - **Normalization issues.** Redundant data that could cause consistency problems.
 - **Data type mismatches.** A VARCHAR(255) for a field that never exceeds 10 characters. A TEXT field for what should be an ENUM.
@@ -206,15 +206,15 @@ AI can generate migration rollback scripts automatically, verify that forward an
 
 Run your slow query log for a week. Most databases can enable this with a configuration change:
 
-- **[PostgreSQL](https://www.postgresql.org):** Set `log_min_duration_statement` to a reasonable threshold (e.g., 100ms)
+- **PostgreSQL:** Set `log_min_duration_statement` to a reasonable threshold (e.g., 100ms)
 - **MySQL:** Enable the slow query log with `long_query_time = 0.1`
-- **[MongoDB](https://www.mongodb.com):** Set the profiling level to log slow operations
+- **MongoDB:** Set the profiling level to log slow operations
 
 Look at the results. You will find a handful of queries responsible for most of your database load. These are your optimization targets.
 
 ### Week 2: Set up monitoring
 
-If you do not already have database monitoring, set it up. Cloud providers offer built-in options ([AWS RDS](https://aws.amazon.com/rds) Performance Insights, Cloud SQL Insights, Azure Database Analytics). Third-party tools like Datadog, pganalyze (for PostgreSQL), or Percona Monitoring and Management provide deeper AI-powered analysis.
+If you do not already have database monitoring, set it up. Cloud providers offer built-in options (RDS Performance Insights, Cloud SQL Insights, Azure Database Analytics). Third-party tools like Datadog, pganalyze (for PostgreSQL), or Percona Monitoring and Management provide deeper AI-powered analysis.
 
 ### Week 3: Optimize the top offenders
 
@@ -247,3 +247,24 @@ Monitor continuously, not reactively. AI anomaly detection catches performance d
 - [AI Debugging Guide](/blog/ai-debugging-guide) — When database performance issues cause application bugs, here is how to trace them.
 - [AI Spreadsheet Tools](/blog/ai-spreadsheet-tools) — For teams still using spreadsheets when they should be querying a database.
 
+## FAQ
+
+### Can AI optimize my SQL queries automatically?
+
+Yes. AI tools analyze slow queries, identify inefficiencies like missing indexes, suboptimal joins, and unnecessary full table scans, and suggest rewrites that achieve the same result faster. Some tools auto-apply optimizations in a staging environment for you to review before deploying to production. Even general-purpose AI tools like Claude can analyze a slow query, explain why it is slow, and suggest a faster alternative.
+
+### Do I still need a DBA if I use AI database tools?
+
+For most small-to-mid-size teams, AI tools cover roughly 80% of what a dedicated DBA handles — query optimization, index management, monitoring, and basic tuning. For complex workloads, multi-database architectures, database migrations, or highly regulated environments, you still benefit from DBA expertise. AI tools are best thought of as making every developer more capable at database work, not as a complete replacement for deep specialization.
+
+### What is natural language to SQL and who should use it?
+
+Natural language to SQL lets you write database queries in plain English instead of SQL syntax. You type "show me all customers who signed up last month and have not made a purchase" and the tool generates the correct SQL query. It is most valuable for business analysts, product managers, support teams, and executives who need answers from the database without waiting for an engineer to write a custom query.
+
+### How do I find the queries that are slowing down my database?
+
+Enable your database's slow query log — PostgreSQL uses `log_min_duration_statement`, MySQL uses the slow query log with `long_query_time`. Run it for a week and look at the results. You will typically find a small number of queries responsible for most of your database load. Feed these to an AI tool for optimization suggestions, starting with the top 5 offenders by resource consumption.
+
+### What are the most common database performance mistakes AI can catch?
+
+AI catches missing indexes on frequently queried columns, N+1 query patterns generated by ORMs, over-fetching (selecting all columns when only a few are needed), unused indexes that waste storage and slow writes, and queries that degrade as tables grow because they rely on full table scans. These are the same issues an experienced DBA would spot, but AI finds them automatically and continuously.

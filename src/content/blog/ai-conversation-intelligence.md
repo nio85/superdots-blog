@@ -42,7 +42,7 @@ At its core, AI conversation intelligence platforms do four things:
 
 **Surface insights.** The platform highlights what matters: deals where objections spiked, reps who are talking too much, calls where a competitor was mentioned, moments where sentiment turned negative. Managers get a dashboard instead of a stack of recordings.
 
-This is not futuristic. [Gong](https://www.gong.io), Chorus (now [ZoomInfo](https://www.zoominfo.com)), Clari Copilot, and several other platforms have been doing this for years. The technology is mature. The question is not whether it works — it is whether your team is using it.
+This is not futuristic. Gong, Chorus (now ZoomInfo), Clari Copilot, and several other platforms have been doing this for years. The technology is mature. The question is not whether it works — it is whether your team is using it.
 
 ## Call Recording and Transcription: The Foundation
 
@@ -80,7 +80,7 @@ Every sales team hits the same objections repeatedly. Pricing. Timing. Competito
 
 AI conversation intelligence changes this. Platforms like Gong and Chorus detect objections automatically using natural language processing. They categorize them, track frequency, and — critically — show what happened next.
 
-Here is what this looks like in practice: If this applies to your team, our [AI Sales Forecasting: Predict Revenue Without a Data Team](/blog/ai-sales-forecasting/) guide covers the details.
+Here is what this looks like in practice:
 
 **Frequency analysis.** You discover that "we are already using [Competitor X]" comes up on 34% of calls this quarter, up from 22% last quarter. That is a market signal. Your competitive positioning may need updating. Your [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) might surface the same trend from support tickets.
 
@@ -92,7 +92,7 @@ This data feeds directly into call prep. When a rep is about to get on a call wi
 
 ## Competitor Mentions: Real-Time Competitive Intelligence
 
-Most competitive intelligence is stale by the time it reaches your team. Market reports are months old. Win/loss analyses happen quarterly. By the time you update your battle cards, the competitor has shipped a new feature. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
+Most competitive intelligence is stale by the time it reaches your team. Market reports are months old. Win/loss analyses happen quarterly. By the time you update your battle cards, the competitor has shipped a new feature.
 
 AI conversation intelligence gives you competitive intelligence that updates daily. Every time a prospect mentions a competitor on a call, the platform captures it — the name, the context, and the sentiment.
 
@@ -190,7 +190,7 @@ AI conversation intelligence does not live in isolation. The insights it generat
 - **Deal intelligence.** Call-level signals roll up into [AI deal intelligence](/blog/ai-deal-intelligence) platforms that score pipeline health. A deal where sentiment has been declining across calls gets flagged before it stalls.
 - **Call prep.** Before a follow-up call, [AI for sales call prep](/blog/ai-for-sales-call-prep) can pull the transcript from the last conversation, highlight unresolved objections, and suggest talking points.
 - **Customer feedback.** Post-sale, the same conversation analysis applies to customer success calls. [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) surfaces churn risk signals and expansion opportunities from ongoing conversations.
-- **CRM enrichment.** Conversation data flows back into [Salesforce](https://www.salesforce.com), HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
+- **CRM enrichment.** Conversation data flows back into Salesforce, HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
 - **Forecasting.** Conversation-level signals (sentiment, engagement, next step quality) improve forecast accuracy when combined with pipeline data.
 
 ## Actionable Takeaways
@@ -204,5 +204,24 @@ AI conversation intelligence does not live in isolation. The insights it generat
 
 The gap between good sales teams and great ones is not talent. It is information. Great teams know what is happening on every call, across every rep, every day. AI conversation intelligence is how you close that gap.
 
-For the full picture of how AI supports every stage of the sales cycle, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).
+## FAQ
 
+### How much does AI conversation intelligence software cost?
+
+Pricing varies by platform and team size. Fireflies.ai and Otter.ai offer free tiers with paid plans starting at $10-$19 per user per month for basic transcription and analytics. Enterprise platforms like Gong typically cost $100-$150 per user per month and include deep call analytics, deal-level insights, and coaching capabilities. Most vendors require annual contracts for the best pricing.
+
+### What is a good talk ratio for sales calls?
+
+On discovery calls, top-performing reps speak about 40-46% of the time and let the prospect talk 54-60%. On demo calls, rep talk time shifts to 60-65%, but the best performers pause frequently for questions. During negotiation calls, deals where the buyer talks more close at higher rates. If your reps are above 65% talk time on discovery calls, that is a clear coaching opportunity.
+
+### Can conversation intelligence work with phone calls, not just video?
+
+Yes. Most AI conversation intelligence platforms integrate with phone dialers like Outreach, Aircall, and RingCentral in addition to video tools like Zoom, Teams, and Google Meet. Some platforms also offer mobile apps that route calls through the system for recording. The analysis capabilities work the same regardless of whether the conversation happened on video, phone, or in person.
+
+### How do I get sales reps to adopt conversation intelligence tools?
+
+Start with a lightweight tool like Fireflies.ai to build the habit of recording calls. Focus on one or two metrics first, typically talk ratio and objection tracking. Position the tool as a coaching aid, not a surveillance system. Let reps review their own call analytics before managers do. The key mistake is buying an enterprise platform on day one and overwhelming the team before they see value in basic transcription.
+
+### Does recording sales calls create legal issues?
+
+Recording laws vary by jurisdiction. Some US states require only one-party consent, while others require all parties to agree. The EU requires explicit consent under GDPR. Most conversation intelligence platforms handle this automatically by displaying a visible recording notice in video calls and playing an audio disclaimer on phone calls. Have your legal team review the consent configuration before going live.

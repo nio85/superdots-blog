@@ -34,11 +34,11 @@ You do not need a 40-page brand guidelines document. You need four things:
 
 ### Setting it up
 
-In **[Canva](https://www.canva.com)**, go to Brand Kit (available on Pro plans). Upload your logo, enter your hex codes, and select your fonts. Every template you open will now offer your brand colors and fonts first.
+In **Canva**, go to Brand Kit (available on Pro plans). Upload your logo, enter your hex codes, and select your fonts. Every template you open will now offer your brand colors and fonts first.
 
 In **Microsoft Designer**, your brand assets carry over from your Microsoft 365 account. If your company uses Microsoft 365, your brand fonts and colors may already be configured.
 
-In **[Adobe Express](https://www.adobe.com/express)**, the Brand Kit feature works similarly to Canva. Upload logos, set colors, choose fonts. The advantage is tight integration with Adobe Fonts — thousands of professional typefaces included.
+In **Adobe Express**, the Brand Kit feature works similarly to Canva. Upload logos, set colors, choose fonts. The advantage is tight integration with Adobe Fonts — thousands of professional typefaces included.
 
 Once your brand kit is set, every design you create starts on-brand instead of starting from scratch.
 
@@ -69,17 +69,17 @@ Now rebuild with your content, your brand colors, your images. You are using the
 
 This is where the AI part actually helps. Need a background image? Use the built-in AI image generator. Need to extend a photo to fit a wider format? Use Magic Expand in Canva or the generative fill in Adobe Express. Need to remove a distracting background from a product photo? One click.
 
-The key constraint: **use AI for elements, not for the whole design.** AI-generated full designs look generic. AI-generated elements inside a human-directed layout look intentional. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
+The key constraint: **use AI for elements, not for the whole design.** AI-generated full designs look generic. AI-generated elements inside a human-directed layout look intentional.
 
 ### Step 4: Resize for other platforms
 
-Once your primary design is done, use the magic resize feature (Canva calls it Magic Switch, Adobe Express calls it Resize). It will reflow your design into other dimensions. You will need to adjust text placement and check that nothing got cut off, but it beats starting over for each platform. For related guidance, see our guide on [How AI Streamlines Design-to-Dev Handoff](/blog/ai-design-handoff/).
+Once your primary design is done, use the magic resize feature (Canva calls it Magic Switch, Adobe Express calls it Resize). It will reflow your design into other dimensions. You will need to adjust text placement and check that nothing got cut off, but it beats starting over for each platform.
 
 ## Presentation Slides That Do Not Scream "Made by an Engineer"
 
 We wrote an entire guide on [making AI presentations that don't look AI-generated](/blog/ai-presentation-maker). Here is the non-designer-specific version.
 
-The problem with most non-designer presentations is not ugliness — it is clutter. Too many bullet points, too many fonts, too many colors, too much text on each slide. For more on this topic, check out [How AI Helps Maintain Design Systems at Scale](/blog/ai-design-systems/).
+The problem with most non-designer presentations is not ugliness — it is clutter. Too many bullet points, too many fonts, too many colors, too much text on each slide.
 
 ### The three rules
 
@@ -165,7 +165,7 @@ AI design tools are not going to replace professional designers. But they will �
 - **Complex infographics and data visualization.** AI can generate simple charts, but turning complex data into a clear visual story requires design thinking that tools do not have yet.
 - **Anything that requires originality.** If you need a visual concept that has never been done before, you need a human creative. AI remixes existing patterns — it does not invent new ones.
 
-The smartest approach: hire a designer to build your brand system in a tool like [Figma](https://www.figma.com) — logo, colors, fonts, templates, and guidelines. Then use AI tools to execute within that system for everyday content. You get professional quality at scale without a full-time design hire.
+The smartest approach: hire a designer to build your brand system — logo, colors, fonts, templates, and guidelines. Then use AI tools to execute within that system for everyday content. You get professional quality at scale without a full-time design hire.
 
 ## Start Here
 
@@ -183,3 +183,24 @@ Your visuals will not win design awards. But they will be consistent, profession
 
 *Need help with content that goes alongside your visuals? Learn how to [keep your voice when writing with AI](/blog/ai-writing-assistant-keep-your-voice), or read our deep dive on [AI presentations that don't look AI-generated](/blog/ai-presentation-maker).*
 
+## FAQ
+
+### What is the best free AI design tool for non-designers?
+
+Canva's free tier is the most accessible starting point for non-designers. It includes thousands of templates, basic AI image generation, and background removal. Microsoft Designer is another strong free option, especially if you already use Microsoft 365. For simple tasks like removing image backgrounds or generating quick graphics, both tools handle the basics without requiring a paid plan.
+
+### How do I make AI-generated designs look professional?
+
+Set up a brand kit first with your logo, 2-3 brand colors, and 1-2 fonts. Start with a template for its layout structure, then strip it back and rebuild with your own content and brand elements. Use AI for supporting elements like background generation or photo editing rather than generating the entire design. Follow three core principles: use whitespace generously, align every element to a grid, and limit your color palette.
+
+### Can AI design tools replace a professional graphic designer?
+
+AI design tools can handle routine, high-volume visuals like social media posts, blog headers, internal presentations, and email graphics. They cannot replace a designer for brand identity work, high-stakes external materials like investor decks, complex data visualizations, or anything requiring original creative concepts. The best approach is hiring a designer to build your brand system, then using AI tools to execute within that system for everyday content.
+
+### How do I create consistent social media graphics with AI tools?
+
+Set up your brand kit in Canva or Adobe Express with your colors, fonts, and logo. Find 3-5 templates with layouts you like and save them as your go-to starting points. Design for your primary platform first, then use the magic resize feature to reflow the design for other platforms. This process takes under five minutes per graphic once your templates are established.
+
+### What is the difference between Canva, Adobe Express, and Microsoft Designer?
+
+Canva offers the largest template library and strongest brand kit features, making it ideal for teams producing high volumes of social content. Adobe Express provides tight integration with Adobe Fonts and the broader Adobe ecosystem, which is an advantage if your team already uses Creative Cloud. Microsoft Designer integrates with Microsoft 365 and carries over existing brand assets automatically, making it the easiest option for organizations already in the Microsoft ecosystem.

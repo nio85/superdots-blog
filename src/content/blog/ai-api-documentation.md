@@ -32,7 +32,7 @@ AI tools attack the problem from two angles: generating the first draft from exi
 
 ## Generating Docs from Your OpenAPI Spec
 
-If you're already writing an [OpenAPI spec](https://swagger.io) (and you should be), you have a machine-readable description of every endpoint, parameter, and response schema. AI tools can turn that into readable prose.
+If you're already writing an OpenAPI spec (and you should be), you have a machine-readable description of every endpoint, parameter, and response schema. AI tools can turn that into readable prose.
 
 **Speakeasy** and **Fern** are both code-generation tools that also produce SDK documentation from your OpenAPI spec. Speakeasy in particular has invested heavily in generating usage examples in multiple languages — it reads your spec and produces idiomatic Python, TypeScript, Go, and Java snippets that actually work, not just copy-pasted curl commands with placeholder values.
 
@@ -50,9 +50,9 @@ The fix is simple: use AI to generate the skeleton, then do a pass where you ann
 
 ## AI Writing Assistants in Your Editor
 
-For teams writing docs in Markdown or MDX (as most modern doc platforms like Mintlify, Docusaurus, or Astro-based setups do), GitHub Copilot is already useful without any special setup. If this applies to your team, our [AI Code Migration: Upgrade Legacy Codebases Without the Pain](/blog/ai-code-migration/) guide covers the details.
+For teams writing docs in Markdown or MDX (as most modern doc platforms like Mintlify, Docusaurus, or Astro-based setups do), GitHub Copilot is already useful without any special setup.
 
-Copilot learns from the patterns in your codebase and existing docs. If you've written ten endpoint descriptions with a consistent structure, Copilot will autocomplete the eleventh following the same pattern — parameter descriptions, example values, return type explanations. It's not always right, but it's right often enough that writing docs in this workflow feels like pair programming rather than solo documentation duty. For more on this topic, check out [How to Debug Faster with AI (Step-by-Step Guide)](/blog/ai-debugging-guide/).
+Copilot learns from the patterns in your codebase and existing docs. If you've written ten endpoint descriptions with a consistent structure, Copilot will autocomplete the eleventh following the same pattern — parameter descriptions, example values, return type explanations. It's not always right, but it's right often enough that writing docs in this workflow feels like pair programming rather than solo documentation duty.
 
 More targeted tools:
 
@@ -80,7 +80,7 @@ This connects to [writing better docs with AI](/blog/writing-better-docs-with-ai
 
 Static docs are fine for reference. But the fastest path to "I understand how this API works" is sending a real request and seeing a real response.
 
-Both **[ReadMe](https://readme.com)** and **Mintlify** support interactive API explorers where developers can fill in parameters and make live API calls from the docs page. Swagger UI and Redoc do the same. These features aren't AI-specific, but AI is starting to show up here too: **Mintlify's Playground** lets you describe in natural language what you want to do ("get all orders placed in the last 7 days for user ID 12345") and generates the correct API call. That's genuinely useful for discovery — understanding which endpoint to use before you understand how to use it.
+Both **ReadMe** and **Mintlify** support interactive API explorers where developers can fill in parameters and make live API calls from the docs page. Swagger UI and Redoc do the same. These features aren't AI-specific, but AI is starting to show up here too: **Mintlify's Playground** lets you describe in natural language what you want to do ("get all orders placed in the last 7 days for user ID 12345") and generates the correct API call. That's genuinely useful for discovery — understanding which endpoint to use before you understand how to use it.
 
 The practical implication for teams: if you're choosing a doc platform in 2025, interactive features and AI-assisted exploration are table stakes. Static HTML reference docs are a step backward.
 
@@ -90,7 +90,7 @@ Here's a stack that works well for an API team that wants AI-assisted documentat
 
 1. **Source of truth**: OpenAPI spec committed to the repo, auto-generated from code annotations where possible (FastAPI, tsoa, Springdoc).
 2. **Reference docs**: Mintlify or ReadMe, importing the spec via CI on every merge to main. Reference section is auto-generated; guides and tutorials are human-written with AI assistance.
-3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations. Tools like [Postman](https://www.postman.com) can also help validate API examples in your docs against live endpoints.
+3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations.
 4. **Sync enforcement**: A GitHub Actions check that compares the committed spec against the running service's `/openapi.json` endpoint and fails the build on drift.
 5. **Review integration**: A step in your PR template that asks "did you update the spec?" for any PR touching an API endpoint. Pair this with an AI reviewer that checks the diff and flags missing spec changes.
 
@@ -109,3 +109,24 @@ This workflow pairs naturally with [AI test generation](/blog/ai-test-generation
 
 The goal isn't perfect documentation generated by AI — it's documentation that's good enough to be useful and maintained consistently enough to stay accurate. AI makes that achievable for teams that previously didn't have the bandwidth.
 
+## FAQ
+
+### What is the best AI tool for API documentation?
+
+It depends on your needs. Mintlify and ReadMe are the strongest options for hosted doc sites with AI writing assistance built in. Speakeasy and Fern are better if you need SDK generation alongside documentation. For teams already using GitHub Copilot or Cursor, those tools work well for writing prose documentation in Markdown without adding another platform.
+
+### Can AI generate code examples for API docs?
+
+Yes, and this is one of AI's strongest capabilities for API documentation. Tools like Speakeasy generate idiomatic code samples in Python, TypeScript, Go, and Java directly from your OpenAPI spec. The generated examples use your actual endpoint paths and parameter names, not generic placeholders. Always test generated code samples before publishing — AI occasionally references methods that do not exist in the target SDK version.
+
+### How do I keep API docs in sync with code changes?
+
+Treat your OpenAPI spec as the single source of truth and regenerate documentation from it on every deploy. Tools like ReadMe's API Registry and Fern integrate with your CI/CD pipeline to update docs automatically when the spec changes. Add a GitHub Actions check that compares your spec against the running API and fails the build on drift.
+
+### Is an OpenAPI spec required for AI API documentation?
+
+An OpenAPI spec is not strictly required, but it dramatically improves the quality and automation potential of AI-generated docs. Without a spec, AI tools rely on reading your source code directly, which works but produces less structured output. If you do not have an OpenAPI spec yet, writing one should be your first step before investing in any documentation tooling.
+
+### How accurate are AI-generated API docs?
+
+For structural elements like endpoints, parameters, types, and status codes, AI-generated docs are typically 90%+ accurate when working from a well-typed codebase or OpenAPI spec. Accuracy drops for descriptions that require business context, edge case documentation, and authentication flow explanations. The biggest risk is not inaccuracy but incompleteness — technically correct but shallow documentation that misses the context developers actually need.

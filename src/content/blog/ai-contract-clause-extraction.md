@@ -32,7 +32,7 @@ Here is exactly how it works, what it does well, and where you still need human 
 
 Clause extraction is not keyword search. Searching a contract for the word "termination" finds every time the word appears — in headings, definitions, cross-references, and actual termination provisions alike. That is noise.
 
-AI clause extraction uses natural language processing to understand context. Platforms like [Kira Systems](https://kirasystems.com) and [Ironclad](https://ironcladapp.com) have pioneered this approach. It identifies the clause that governs termination rights, extracts the substantive terms (who can terminate, under what conditions, with how much notice), and structures that information in a way you can compare across contracts.
+AI clause extraction uses natural language processing to understand context. It identifies the clause that governs termination rights, extracts the substantive terms (who can terminate, under what conditions, with how much notice), and structures that information in a way you can compare across contracts.
 
 The process has three steps.
 
@@ -66,13 +66,13 @@ This is especially valuable during due diligence. When a company is being acquir
 
 Termination provisions determine how a contract ends — and under what circumstances you can exit without liability. They vary in ways that matter enormously.
 
-Some contracts allow termination for convenience with 30 days notice. Others require 90 days and impose fees if you exit early. Some allow termination for cause only — meaning you can only exit if the other party materially breaches. Some auto-renew with a narrow termination window you will miss if you are not watching. For more on this topic, check out [AI for Intellectual Property Management: Track and Protect Your IP](/blog/ai-ip-management/).
+Some contracts allow termination for convenience with 30 days notice. Others require 90 days and impose fees if you exit early. Some allow termination for cause only — meaning you can only exit if the other party materially breaches. Some auto-renew with a narrow termination window you will miss if you are not watching.
 
 AI extraction maps all of this across your portfolio. You can filter to see every contract that auto-renews, every contract with a termination fee, every contract where you lack termination for convenience rights. That view helps you prioritize renegotiation and manage renewal risk.
 
 ### Non-compete and non-solicitation clauses
 
-Employment agreements, partnership agreements, and acquisition documents often include restrictions on competitive activity. The scope varies — geography, duration, industry, and whether it covers employees, customers, or both. For more on this topic, check out [How AI Automates Legal Billing and Time Tracking](/blog/ai-legal-billing/).
+Employment agreements, partnership agreements, and acquisition documents often include restrictions on competitive activity. The scope varies — geography, duration, industry, and whether it covers employees, customers, or both.
 
 AI extracts the key parameters: the duration of the restriction, the geographic scope, and what activities are restricted. For a company managing hundreds of employment agreements, this creates an auditable record of who is bound by what restrictions — important for workforce planning and defensible in enforcement situations.
 
@@ -158,7 +158,7 @@ Use AI to handle the volume. Use lawyers to handle the judgment.
 
 ## The Time Math
 
-A legal team reviewing a portfolio of 500 contracts manually — just to extract key clause terms — spends roughly 200-400 attorney hours on the project, depending on contract complexity. [Thomson Reuters](https://www.thomsonreuters.com) research on legal department efficiency confirms the scale of this burden. At loaded attorney costs, that is significant.
+A legal team reviewing a portfolio of 500 contracts manually — just to extract key clause terms — spends roughly 200-400 attorney hours on the project, depending on contract complexity. At loaded attorney costs, that is significant.
 
 AI clause extraction processes the same 500 contracts in a few hours. Your legal team spends another day verifying flagged items and reviewing edge cases. Total: two days instead of two months.
 
@@ -172,3 +172,24 @@ For recurring work — quarterly contract audits, annual renewal reviews, ad hoc
 - [AI Legal Document Review](/blog/ai-legal-document-review)
 - [AI Compliance Tools](/blog/ai-compliance-tools)
 
+## FAQ
+
+### How much does AI contract clause extraction cost?
+
+Pricing varies by vendor and contract volume. Lightweight tools for occasional use start at a few hundred dollars per month. Enterprise platforms that handle thousands of contracts with full portfolio analytics typically run $2,000 to $10,000 or more per month. The ROI calculation is straightforward: compare the tool cost against the attorney hours saved on manual review.
+
+### Can AI extract clauses from contracts in languages other than English?
+
+Many enterprise AI clause extraction tools support multiple languages, including German, French, Spanish, and Mandarin. Accuracy varies by language and the amount of training data the tool has for that language. English-language extraction is the most mature. For multilingual portfolios, test the tool on a sample of contracts in each language before committing.
+
+### How do I get started with AI clause extraction?
+
+Start by defining which clause types matter most for your business, such as indemnification, termination, and liability caps. Upload a batch of 20-30 contracts and compare the AI extractions against the actual contract language to calibrate accuracy. Correct any errors so the system learns your contract styles. Then scale to your full portfolio, prioritizing high-value and high-risk contracts first.
+
+### What file formats does AI clause extraction support?
+
+Most tools handle PDF, Word documents, and scanned images. For native digital documents, extraction is straightforward and highly accurate. Scanned contracts require an OCR step first, which adds processing time and may reduce accuracy depending on scan quality. Faded photocopies and handwritten documents produce the lowest confidence results and typically need manual verification.
+
+### Is AI clause extraction accurate enough for due diligence?
+
+AI extraction achieves 90-95% accuracy on standard contract formats, making it highly effective for initial due diligence review. However, due diligence always requires human verification of flagged items and edge cases. The practical value is compressing weeks of manual review into days: AI does the extraction and categorization, and attorneys verify the output and handle interpretation.

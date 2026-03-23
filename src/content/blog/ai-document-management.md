@@ -16,7 +16,7 @@ faqs:
     answer: "AI auto-classification typically achieves 85-90% accuracy out of the box for common document types (contracts, invoices, reports, presentations). Accuracy improves to 95%+ after 2-3 months of corrections and training on your specific document patterns. The remaining edge cases — unusual formats, ambiguous documents, handwritten notes — still benefit from human review."
 ---
 
-The file you need is somewhere. You know it exists. It was in a shared drive, or attached to an email, or uploaded to Slack, or saved locally on someone's laptop. Maybe it was in the old [SharePoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint) folder before the team moved to Google Drive. Or maybe it was renamed and you are searching for the wrong title.
+The file you need is somewhere. You know it exists. It was in a shared drive, or attached to an email, or uploaded to Slack, or saved locally on someone's laptop. Maybe it was in the old SharePoint folder before the team moved to Google Drive. Or maybe it was renamed and you are searching for the wrong title.
 
 This is not a technology problem. It is an organization problem that technology made worse. Every new tool gives teams another place to store files and another set of folders to search through. The average knowledge worker spends nearly 20% of their time looking for information they need to do their job.
 
@@ -46,7 +46,7 @@ For more on building accessible knowledge systems, see our guide on [AI knowledg
 
 ### Version tracking
 
-Enterprise document management platforms like [M-Files](https://www.m-files.com) and [DocuWare](https://www.docuware.com) use AI to track document versions and relationships — which version is current, who changed what, and how the document evolved over time. When multiple versions of a contract exist across email, shared drives, and a DocuSign folder, AI identifies the most recent version and flags potential conflicts.
+AI tracks document versions and relationships — which version is current, who changed what, and how the document evolved over time. When multiple versions of a contract exist across email, shared drives, and a DocuSign folder, AI identifies the most recent version and flags potential conflicts.
 
 ### Duplicate detection
 
@@ -62,7 +62,7 @@ This distinction deserves its own section because it is the single biggest quali
 
 ### How keyword search fails
 
-Keyword search works when you know exactly what you are looking for and remember the exact terms used. It fails when: For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
+Keyword search works when you know exactly what you are looking for and remember the exact terms used. It fails when:
 
 - You remember the concept but not the exact words
 - The document uses different terminology than your search
@@ -161,3 +161,24 @@ Start by connecting your existing storage. Let AI classify what you already have
 
 For more on AI-powered productivity workflows, explore our [AI productivity guide](/blog/ai-productivity-guide) and our [AI automation guide](/blog/ai-automation-guide). For a comprehensive overview, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
 
+## FAQ
+
+### What is AI document management?
+
+AI document management adds an intelligence layer to your existing file storage. It auto-classifies documents by type (contract, invoice, report), tags them with attributes like client name and date, and enables semantic search so you can find files by meaning rather than exact keywords. It works on top of tools like Google Drive, SharePoint, and Dropbox without requiring you to migrate files.
+
+### How does semantic search differ from keyword search?
+
+Keyword search only matches exact words, so searching for "Q4 revenue projections" will not find a document titled "FY2025 Financial Forecast -- October through December." Semantic search understands meaning, so it matches conceptually related queries to relevant documents regardless of the specific terms used. This shifts the experience from remembering exact file names to simply describing what you need.
+
+### How accurate is AI at auto-classifying documents?
+
+AI auto-classification typically achieves 85-90% accuracy out of the box for common document types like contracts, invoices, reports, and presentations. After 2-3 months of corrections and training on your specific document patterns, accuracy improves to 95% or higher. Edge cases like unusual formats or ambiguous documents still benefit from human review.
+
+### Can AI document management help with compliance?
+
+Yes. AI applies retention policies automatically based on document classification, scans for personally identifiable information to flag documents for appropriate handling under GDPR, CCPA, or HIPAA, maintains audit trails of every document action, and identifies documents with inappropriate access levels. This turns compliance from a manual exercise into an automated, ongoing process.
+
+### How do I get started with AI document management?
+
+Connect your primary document storage (Google Drive, SharePoint, or Dropbox) and let AI index and classify your existing files. Spend the second week reviewing and correcting classifications for your most important document types. Then connect additional sources like email and chat platforms. Once classification is working well, establish it as the standard for new documents going forward.
