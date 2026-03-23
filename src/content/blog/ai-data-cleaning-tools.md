@@ -4,7 +4,7 @@ description: "AI data cleaning tools fix duplicates, inconsistent formats, and m
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
-useCase: "data-management"
+useCase: "analysis"
 tags: ["ai-tools", "ai-data", "ai-productivity"]
 heroImage: "/images/blog/ai-data-cleaning-tools.webp"
 faqs:

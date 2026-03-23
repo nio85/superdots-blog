@@ -4,7 +4,7 @@ description: "AI report generator tools turn raw data into polished business rep
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
-useCase: "reporting"
+useCase: "writing"
 tags: ["ai-tools", "ai-reporting", "ai-productivity"]
 heroImage: "/images/blog/ai-report-generator.webp"
 faqs:
