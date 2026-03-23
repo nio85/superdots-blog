@@ -52,12 +52,17 @@ async function handleUnsubscribe(context) {
 	}
 
 	// Also remove from Mautic (GDPR Art. 17 — delete contact and engagement history)
-	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
+	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET } = env;
 	if (MAUTIC_API_URL && MAUTIC_USERNAME && MAUTIC_PASSWORD) {
 		try {
+			const authHeaders = { 'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`) };
+			if (CF_ACCESS_CLIENT_ID && CF_ACCESS_CLIENT_SECRET) {
+				authHeaders['CF-Access-Client-Id'] = CF_ACCESS_CLIENT_ID;
+				authHeaders['CF-Access-Client-Secret'] = CF_ACCESS_CLIENT_SECRET;
+			}
 			// Find contact by email
 			const searchRes = await fetch(`${MAUTIC_API_URL}/api/contacts?search=email:${encodeURIComponent(email)}&limit=1`, {
-				headers: { 'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`) },
+				headers: authHeaders,
 			});
 			if (searchRes.ok) {
 				const searchData = await searchRes.json();
@@ -67,7 +72,7 @@ async function handleUnsubscribe(context) {
 					// Hard delete the contact (not just unsubscribe)
 					await fetch(`${MAUTIC_API_URL}/api/contacts/${contactId}/delete`, {
 						method: 'DELETE',
-						headers: { 'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`) },
+						headers: authHeaders,
 					});
 				}
 			}

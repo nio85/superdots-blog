@@ -59,15 +59,20 @@ export async function onRequestGet(context) {
 	}
 
 	// Sync confirmed contact to Mautic for campaign management
-	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
+	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET } = env;
 	if (MAUTIC_API_URL && MAUTIC_USERNAME && MAUTIC_PASSWORD) {
 		try {
+			const headers = {
+				'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+				'Content-Type': 'application/json',
+			};
+			if (CF_ACCESS_CLIENT_ID && CF_ACCESS_CLIENT_SECRET) {
+				headers['CF-Access-Client-Id'] = CF_ACCESS_CLIENT_ID;
+				headers['CF-Access-Client-Secret'] = CF_ACCESS_CLIENT_SECRET;
+			}
 			const mauticRes = await fetch(`${MAUTIC_API_URL}/api/contacts/new`, {
 				method: 'POST',
-				headers: {
-					'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
-					'Content-Type': 'application/json',
-				},
+				headers,
 				body: JSON.stringify({
 					email,
 					tags: ['newsletter', 'double-opt-in'],
