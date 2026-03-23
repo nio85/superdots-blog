@@ -42,7 +42,12 @@ const CF_ZONE_ID = '3d468514d9fe7a1716404c16f05818d8';
 const CF_GQL = 'https://api.cloudflare.com/client/v4/graphql';
 
 const GCP_KEY_FILE = process.env.GCP_KEY_FILE
-  || resolve(__dirname, '..', '..', '.secrets', 'gdrive-service-account.json');
+  || [
+    resolve(__dirname, '..', '.secrets', 'gdrive-service-account.json'),
+    resolve(__dirname, '..', '..', '.secrets', 'gdrive-service-account.json'),
+    '/home/luca/paperclip/agents/superdots/.secrets/gdrive-service-account.json',
+  ].find(p => existsSync(p))
+  || resolve(__dirname, '..', '.secrets', 'gdrive-service-account.json');
 const GA4_PROPERTY_ID = '528512942';
 const GSC_SITE_URL = 'sc-domain:superdots.sh';
 
