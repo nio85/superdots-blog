@@ -37,6 +37,8 @@ const allTags = [...allTagSlugs]
 const POPULAR_THRESHOLD = 5;
 const popularTags = allTags.filter((t) => t.count >= POPULAR_THRESHOLD);
 const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
+
+const TAGS_PER_PAGE = 12;
 ---
 
 <Base title="Tags | Superdots" description="Browse AI guides by topic tag.">
@@ -81,18 +83,19 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 			</div>
 			<div class="tag-grid" id="other-tags-grid">
 				{otherTags.map((t, i) => (
-					<a href={`/tags/${t.slug}/`} class="tag-card" data-tag-index={i} style={i >= 12 ? 'display:none' : ''}>
+					<a href={`/tags/${t.slug}/`} class="tag-card" data-tag-index={i} style={i >= TAGS_PER_PAGE ? 'display:none' : ''}>
 						<span class="tag-label">{t.label}</span>
 						<span class="tag-count">{t.count} {t.count === 1 ? 'article' : 'articles'}</span>
 					</a>
 				))}
 			</div>
-			{otherTags.length > 12 && (
-				<div class="show-more-wrap">
-					<button class="btn-show-more" id="show-more-tags" type="button">
-						Show all topics
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+			{otherTags.length > TAGS_PER_PAGE && (
+				<div class="load-more-wrap" id="load-more-wrap">
+					<button class="btn-load-more" id="load-more-tags" type="button">
+						Show more topics
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
 					</button>
+					<p class="showing-count" id="showing-count" aria-live="polite"></p>
 				</div>
 			)}
 		</section>
@@ -101,17 +104,50 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 	<NewsletterForm variant="banner" source="tags-listing" />
 </Base>
 
-<script>
-	const btn = document.getElementById('show-more-tags');
-	if (btn) {
-		btn.addEventListener('click', () => {
-			const grid = document.getElementById('other-tags-grid');
-			if (!grid) return;
-			grid.querySelectorAll('.tag-card[style]').forEach((el) => {
-				(el as HTMLElement).style.display = '';
-			});
-			btn.parentElement?.remove();
+<script define:vars={{ TAGS_PER_PAGE }}>
+	const grid = document.getElementById('other-tags-grid');
+	const items = grid ? Array.from(grid.querySelectorAll('.tag-card')) : [];
+	const loadMoreBtn = document.getElementById('load-more-tags');
+	const showingCount = document.getElementById('showing-count');
+	const total = items.length;
+
+	let visibleCount = TAGS_PER_PAGE;
+
+	function render() {
+		items.forEach((el, i) => {
+			if (i < visibleCount) {
+				el.style.display = '';
+				el.style.opacity = '0';
+				el.style.transform = 'translateY(12px)';
+				requestAnimationFrame(() => {
+					requestAnimationFrame(() => {
+						el.style.opacity = '1';
+						el.style.transform = 'translateY(0)';
+					});
+				});
+			} else {
+				el.style.display = 'none';
+			}
 		});
+
+		if (loadMoreBtn) {
+			loadMoreBtn.style.display = visibleCount >= total ? 'none' : '';
+		}
+		if (showingCount) {
+			const shown = Math.min(visibleCount, total);
+			showingCount.textContent = `Showing ${shown} of ${total} topics`;
+		}
+	}
+
+	if (loadMoreBtn) {
+		loadMoreBtn.addEventListener('click', () => {
+			visibleCount += TAGS_PER_PAGE;
+			render();
+		});
+	}
+
+	if (total > TAGS_PER_PAGE) {
+		render();
 	}
 </script>
 
@@ -239,30 +275,45 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 		gap: var(--space-2);
 	}
 
-	/* Show more */
-	.show-more-wrap {
+	/* Load more */
+	.load-more-wrap {
 		display: flex;
-		justify-content: center;
-		padding-top: var(--space-4);
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-2);
+		padding: var(--space-6) 0 var(--space-4);
 	}
-	.btn-show-more {
+	.btn-load-more {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-2);
-		padding: var(--space-2) var(--space-5);
+		padding: var(--space-3) var(--space-6);
 		font-family: var(--font-display);
-		font-size: var(--text-sm);
+		font-size: var(--text-base);
 		font-weight: var(--weight-semibold);
-		color: var(--color-text-muted);
+		color: var(--color-primary);
 		background: transparent;
-		border: 1px solid var(--color-border);
+		border: 2px solid var(--color-primary);
 		border-radius: var(--radius-full);
 		cursor: pointer;
-		transition: all var(--transition-fast);
+		transition: all var(--transition-base);
 	}
-	.btn-show-more:hover {
-		border-color: var(--color-primary);
-		color: var(--color-primary);
+	.btn-load-more:hover {
+		background: var(--color-primary);
+		color: #fff;
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-md);
+	}
+	.btn-load-more svg {
+		transition: transform var(--transition-base);
+	}
+	.btn-load-more:hover svg {
+		transform: translateY(2px);
+	}
+	.showing-count {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		margin: 0;
 	}
 
 	/* Other tags — compact grid */
@@ -283,7 +334,7 @@ const otherTags = allTags.filter((t) => t.count < POPULAR_THRESHOLD);
 		background: var(--color-bg-dim);
 		border: 1px solid var(--color-border);
 		text-decoration: none;
-		transition: all var(--transition-base);
+		transition: all var(--transition-base), opacity var(--transition-slow), transform var(--transition-slow);
 	}
 	.tag-card:hover {
 		transform: translateY(-2px);
