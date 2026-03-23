@@ -73,6 +73,23 @@ python3 scripts/gdrive.py share <file_id> <email> [role]      # Share (reader/wr
 
 **Naming conventions**: Use lowercase with hyphens for file names (e.g. `weekly-report-2026-03-20`). Prefix agent-created files with the agent role (e.g. `engineer-architecture-doc`, `engineer-deploy-runbook`).
 
+## Email Infrastructure
+
+All transactional email (daily summaries, notifications) uses **Resend** as the sole SMTP provider. Postal has been removed entirely.
+
+- **SMTP host**: `smtp.resend.com:587`
+- **Auth**: user `resend`, password from `RESEND_SMTP_API_KEY` env var
+- **From address**: `notifications@superdots.sh` (override via `MAIL_FROM`)
+- **Recipient**: `TO_EMAIL` env var
+- **Config**: `scripts/config.mjs` centralizes SMTP settings and exports `createSmtpTransport(nodemailer)`
+
+**Active email crons** (in system crontab):
+
+| Schedule | Script | Purpose |
+|---|---|---|
+| 07:28 daily | `send-daily-summary.mjs` | Morning status email |
+| 20:15 daily | `send-daily-summary.mjs` | Evening status email |
+
 ## Safety
 
 - Never exfiltrate secrets or private data.
