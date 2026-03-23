@@ -24,14 +24,19 @@
  * Output: JSON report at /tmp/daily-seo-check.json
  */
 
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE_URL, BLOG_ROOT } from './config.mjs';
+import { createHash } from 'node:crypto';
+import {
+  SITE_URL, BLOG_ROOT, PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID,
+  PAPERCLIP_PROJECT_ID, AGENTS, getPaperclipApiKey,
+} from './config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = resolve(BLOG_ROOT, 'src/content/blog');
 const REPORT_PATH = '/tmp/daily-seo-check.json';
+const LAST_FINDINGS_PATH = '/tmp/daily-seo-last-findings.json';
 
 const args = process.argv.slice(2);
 const JSON_OUTPUT = args.includes('--json');
@@ -396,6 +401,139 @@ async function checkImageSizes(sitemapUrls) {
   return findings;
 }
 
+// --- Paperclip Task Creation ---
+
+/** Checks that map to Founding Engineer (infra/technical issues) */
+const ENGINEER_CHECKS = new Set([
+  'broken-links', 'sitemap', 'robots.txt', 'structured-data', 'page-fetch', 'rss',
+]);
+
+/** Hash a finding for dedup purposes */
+function findingKey(f) {
+  const str = `${f.severity}|${f.check}|${f.message}`;
+  return createHash('sha256').update(str).digest('hex').slice(0, 16);
+}
+
+/** Load previously seen finding keys */
+function loadLastFindings() {
+  try {
+    if (existsSync(LAST_FINDINGS_PATH)) {
+      return new Set(JSON.parse(readFileSync(LAST_FINDINGS_PATH, 'utf-8')));
+    }
+  } catch {}
+  return new Set();
+}
+
+/** Save current finding keys for next run dedup */
+function saveLastFindings(keys) {
+  writeFileSync(LAST_FINDINGS_PATH, JSON.stringify([...keys], null, 2));
+}
+
+/** Create a Paperclip task for a group of findings */
+async function createPaperclipTask(findings, severity) {
+  const apiKey = getPaperclipApiKey(AGENTS.FOUNDING_ENGINEER);
+  if (!apiKey) {
+    log('WARNING: No Paperclip API key available, skipping task creation');
+    return null;
+  }
+
+  // Group by check type for the title
+  const checkTypes = [...new Set(findings.map(f => f.check))];
+  const title = `[SEO Alert] ${findings.length} ${severity} finding(s): ${checkTypes.join(', ')}`;
+
+  // Determine assignee: engineer for infra issues, SEO expert for content/meta issues
+  const hasEngineerIssues = findings.some(f => ENGINEER_CHECKS.has(f.check));
+  const hasContentIssues = findings.some(f => !ENGINEER_CHECKS.has(f.check));
+
+  // If mixed, assign to engineer (they can delegate)
+  const assigneeAgentId = hasEngineerIssues ? AGENTS.FOUNDING_ENGINEER : AGENTS.SEO_EXPERT;
+
+  // Build description
+  const lines = [
+    `## Auto-detected SEO ${severity} findings`,
+    '',
+    `**Date:** ${new Date().toISOString().slice(0, 16)} UTC`,
+    `**Site:** ${SITE_URL}`,
+    '',
+    '### Findings',
+    '',
+  ];
+  for (const f of findings) {
+    lines.push(`- **[${f.check}]** ${f.message}${f.url ? ` — ${f.url}` : ''}`);
+    if (f.details) {
+      const detailStr = typeof f.details === 'string' ? f.details : JSON.stringify(f.details, null, 2);
+      lines.push(`  \`\`\`\n  ${detailStr}\n  \`\`\``);
+    }
+  }
+
+  const priority = severity === 'critical' ? 'high' : 'medium';
+
+  const body = {
+    title: title.slice(0, 200),
+    description: lines.join('\n'),
+    status: 'todo',
+    priority,
+    assigneeAgentId,
+    projectId: PAPERCLIP_PROJECT_ID,
+  };
+
+  try {
+    const res = await fetch(`${PAPERCLIP_API_URL}/api/companies/${PAPERCLIP_COMPANY_ID}/issues`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const errText = await res.text();
+      log(`WARNING: Failed to create Paperclip task (${res.status}): ${errText}`);
+      return null;
+    }
+    const issue = await res.json();
+    log(`Created Paperclip task: ${issue.identifier} — ${title}`);
+    return issue;
+  } catch (e) {
+    log(`WARNING: Paperclip API error: ${e.message}`);
+    return null;
+  }
+}
+
+/** Create tasks for new critical/warning findings, deduplicating against previous run */
+async function createTasksForFindings(allFindings) {
+  const critical = allFindings.filter(f => f.severity === SEV.critical);
+  const warnings = allFindings.filter(f => f.severity === SEV.warning);
+
+  // Only create tasks for critical findings (per requirements)
+  if (critical.length === 0) {
+    log('No critical findings — skipping Paperclip task creation');
+    return;
+  }
+
+  const previousKeys = loadLastFindings();
+  const currentKeys = new Set();
+
+  // Track all critical+warning keys for the cache
+  for (const f of [...critical, ...warnings]) {
+    currentKeys.add(findingKey(f));
+  }
+
+  // Filter to only NEW critical findings
+  const newCritical = critical.filter(f => !previousKeys.has(findingKey(f)));
+
+  // Save current keys for next run
+  saveLastFindings(currentKeys);
+
+  if (newCritical.length === 0) {
+    log('All critical findings already reported — no new tasks created');
+    return;
+  }
+
+  log(`\nCreating Paperclip task for ${newCritical.length} new critical finding(s)...`);
+  await createPaperclipTask(newCritical, 'critical');
+}
+
 // --- Main ---
 
 async function main() {
@@ -523,6 +661,9 @@ async function main() {
 
     log(`Report saved to ${REPORT_PATH}`);
   }
+
+  // Create Paperclip tasks for new critical findings
+  await createTasksForFindings(allFindings);
 
   // Exit with non-zero if critical issues found
   if (critical.length > 0) {
