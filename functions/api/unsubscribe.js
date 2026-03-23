@@ -1,8 +1,10 @@
 /**
  * GET /api/unsubscribe?email=...&token=...
- * One-click unsubscribe. Verifies HMAC token and removes subscriber from Resend audience.
+ * One-click unsubscribe. Verifies HMAC token and removes subscriber from Resend audience
+ * and Mautic contacts (GDPR Art. 17 — right to erasure).
  * Also handles POST for List-Unsubscribe-Post (RFC 8058).
- * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID
+ * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID,
+ *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD
  */
 
 export async function onRequestGet(context) {
@@ -43,6 +45,31 @@ async function handleUnsubscribe(context) {
 	if (!res.ok && res.status !== 404) {
 		console.error('Resend contact deletion error:', await res.text());
 		return errorPage('Something went wrong. Please try again or contact us.');
+	}
+
+	// Also remove from Mautic (GDPR Art. 17 — delete contact and engagement history)
+	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
+	if (MAUTIC_API_URL && MAUTIC_USERNAME && MAUTIC_PASSWORD) {
+		try {
+			// Find contact by email
+			const searchRes = await fetch(`${MAUTIC_API_URL}/api/contacts?search=email:${encodeURIComponent(email)}&limit=1`, {
+				headers: { 'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`) },
+			});
+			if (searchRes.ok) {
+				const searchData = await searchRes.json();
+				const contacts = searchData.contacts || {};
+				const contactId = Object.keys(contacts)[0];
+				if (contactId) {
+					// Hard delete the contact (not just unsubscribe)
+					await fetch(`${MAUTIC_API_URL}/api/contacts/${contactId}/delete`, {
+						method: 'DELETE',
+						headers: { 'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`) },
+					});
+				}
+			}
+		} catch (err) {
+			console.error('Mautic contact deletion failed:', err.message);
+		}
 	}
 
 	return successPage();

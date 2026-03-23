@@ -1,7 +1,9 @@
 /**
  * GET /api/confirm?email=...&ts=...&token=...
  * Verifies the HMAC token and activates the subscriber in Resend.
- * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID
+ * Also syncs the confirmed contact to Mautic for campaign management.
+ * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID,
+ *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD
  */
 
 const TOKEN_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -50,6 +52,30 @@ export async function onRequestGet(context) {
 	if (!res.ok) {
 		console.error('Resend update error:', await res.text());
 		return errorPage('Something went wrong. Please try again.');
+	}
+
+	// Sync confirmed contact to Mautic for campaign management
+	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
+	if (MAUTIC_API_URL && MAUTIC_USERNAME && MAUTIC_PASSWORD) {
+		try {
+			const mauticRes = await fetch(`${MAUTIC_API_URL}/api/contacts/new`, {
+				method: 'POST',
+				headers: {
+					'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email,
+					tags: ['newsletter', 'double-opt-in'],
+					ipAddress: request.headers.get('CF-Connecting-IP') || '',
+				}),
+			});
+			if (!mauticRes.ok) {
+				console.error('Mautic sync error:', await mauticRes.text());
+			}
+		} catch (err) {
+			console.error('Mautic sync failed:', err.message);
+		}
 	}
 
 	return successPage();
