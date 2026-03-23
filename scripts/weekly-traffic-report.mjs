@@ -768,7 +768,7 @@ function buildHtmlEmail(cfCurrent, cfPrevious, ga4, gsc, week) {
 
 async function sendReportEmail(cfCurrent, cfPrevious, ga4, gsc, week) {
   if (!SMTP_PASS) {
-    console.error('Missing GMAIL_APP_PASSWORD — cannot send email');
+    console.error('Missing RESEND_SMTP_API_KEY — cannot send email');
     return false;
   }
   const nodemailer = (await import('nodemailer')).default;

@@ -112,10 +112,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td>Self-hosted on infrastructure controlled by Superdots — no third-party data sharing</td>
 			</tr>
 			<tr>
-				<td>Postal (self-hosted)</td>
-				<td>SMTP relay — email delivery</td>
+				<td>Resend</td>
+				<td>SMTP relay — email delivery (newsletters and transactional)</td>
 				<td>Email address, delivery metadata (bounce/open events)</td>
-				<td>Self-hosted on infrastructure controlled by Superdots — no third-party data sharing</td>
+				<td>US-based, EU–US DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a></td>
 			</tr>
 		</tbody>
 	</table>
@@ -128,9 +128,9 @@ import LegalPage from '../layouts/LegalPage.astro';
 		as additional transfer safeguards.
 	</p>
 	<p>
-		Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic and delivered
-		by Postal, both self-hosted on servers located in the European Union. No newsletter data is transferred
-		outside the EU/EEA except for the initial double opt-in confirmation email sent via Resend.
+		Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic (self-hosted
+		on servers located in the European Union) and delivered via Resend. Resend is US-based and
+		DPF-certified — see their <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a> for transfer safeguards.
 	</p>
 	<p>
 		You can review each provider's transfer documentation:
@@ -146,7 +146,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
 		<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
 		<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
-		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from both our mailing list (Resend) and marketing automation system (Mautic). Delivery logs are retained on our self-hosted Postal server for up to 30 days, then automatically purged.</li>
+		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from both our mailing list (Resend) and marketing automation system (Mautic).</li>
 	</ul>
 
 	<h2 id="newsletter">7. Newsletter</h2>
@@ -159,7 +159,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>What we send:</strong> New articles, curated links, and practical guides about AI at work — no more than once per week. We do not send promotional or product marketing content via the newsletter.</li>
 		<li><strong>Tracking:</strong> Our marketing automation system (Mautic, self-hosted) uses a tracking pixel (a tiny invisible image) to detect email opens, and link rewriting to measure which links you click. This data is associated with your email address and used solely to improve our content. You can prevent open tracking by disabling remote image loading in your email client.</li>
 		<li><strong>Unsubscribe:</strong> Every email contains a one-click unsubscribe link. You can also email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a> to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from all systems.</li>
-		<li><strong>Data processors:</strong> Confirmation emails are sent via <a href="https://resend.com" rel="noopener noreferrer" target="_blank">Resend</a> (US-based, DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a>). Campaign emails are managed by Mautic and delivered by Postal, both self-hosted by Superdots on EU servers — no third-party has access to subscriber data for these communications.</li>
+		<li><strong>Data processors:</strong> All emails (confirmation and campaign) are delivered via <a href="https://resend.com" rel="noopener noreferrer" target="_blank">Resend</a> (US-based, DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a>). Campaign management and subscriber segmentation are handled by Mautic, self-hosted by Superdots on EU servers.</li>
 	</ul>
 
 	<h2>8. Your rights</h2>

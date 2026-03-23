@@ -1,30 +1,36 @@
 ---
 /**
- * Sticky table of contents sidebar.
+ * Inline collapsible table of contents.
  * Auto-generated from article headings via client-side JS.
- * Hidden on short articles (<4 headings) and on mobile.
+ * Hidden on short articles (<4 headings).
+ * Rendered as a <details> accordion at the top of the article prose.
  */
 ---
 
-<nav class="toc" aria-label="Table of contents" id="article-toc">
-	<div class="toc-inner">
-		<p class="toc-title">Contents<span class="dot-accent">.</span></p>
+<details class="toc" id="article-toc">
+	<summary class="toc-summary">
+		<span class="toc-summary-text">Table of contents</span>
+		<svg class="toc-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+			<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</summary>
+	<nav class="toc-inner" aria-label="Table of contents">
 		<ol class="toc-list" id="toc-list">
 			<!-- Populated by client JS -->
 		</ol>
-	</div>
-</nav>
+	</nav>
+</details>
 
 <script>
 	(function () {
 		const prose = document.getElementById('article-prose');
 		const tocList = document.getElementById('toc-list');
-		const tocNav = document.getElementById('article-toc');
-		if (!prose || !tocList || !tocNav) return;
+		const tocDetails = document.getElementById('article-toc');
+		if (!prose || !tocList || !tocDetails) return;
 
 		const headings = prose.querySelectorAll('h2, h3');
 		if (headings.length < 4) {
-			tocNav.style.display = 'none';
+			tocDetails.style.display = 'none';
 			return;
 		}
 
@@ -41,123 +47,96 @@
 			tocList.appendChild(li);
 		});
 
-		// Intersection observer for active state
-		const links = tocList.querySelectorAll('.toc-link');
-		let current = 0;
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const idx = Array.from(headings).indexOf(entry.target as Element);
-						if (idx !== -1) current = idx;
-					}
-				});
-				links.forEach((link, i) => {
-					link.classList.toggle('is-active', i === current);
-				});
-			},
-			{ rootMargin: '-80px 0px -70% 0px', threshold: 0 }
-		);
-
-		headings.forEach((h) => observer.observe(h));
-
-		// Progress bar
-		const progressBar = document.createElement('div');
-		progressBar.className = 'toc-progress';
-		tocNav.querySelector('.toc-inner')?.prepend(progressBar);
-
-		function updateProgress() {
-			const rect = prose.getBoundingClientRect();
-			const total = prose.offsetHeight;
-			const scrolled = Math.max(0, -rect.top);
-			const pct = Math.min(100, (scrolled / (total - window.innerHeight)) * 100);
-			progressBar.style.setProperty('--progress', `${pct}%`);
-		}
-		window.addEventListener('scroll', updateProgress, { passive: true });
-		updateProgress();
+		// Close accordion on link click (smooth scroll still works)
+		tocList.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+			if (target.classList.contains('toc-link')) {
+				tocDetails.removeAttribute('open');
+			}
+		});
 	})();
 </script>
 
 <style>
 	.toc {
-		display: none;
+		margin-bottom: var(--space-6);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg-dim);
+		overflow: hidden;
 	}
 
-	/* Only show on wide viewports */
-	@media (min-width: 1200px) {
-		.toc {
-			display: block;
-			position: fixed;
-			top: 120px;
-			left: calc(50% + var(--max-width-prose) / 2 + 48px);
-			width: 220px;
-			max-height: calc(100vh - 160px);
-			overflow-y: auto;
-			z-index: 10;
-		}
+	.toc-summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--space-3) var(--space-4);
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+		letter-spacing: 0.02em;
+		transition: color var(--transition-fast);
+	}
+
+	.toc-summary::-webkit-details-marker {
+		display: none;
+	}
+	.toc-summary::marker {
+		display: none;
+		content: '';
+	}
+
+	.toc-summary:hover {
+		color: var(--color-text);
+	}
+
+	.toc-chevron {
+		flex-shrink: 0;
+		transition: transform var(--transition-fast);
+		opacity: 0.5;
+	}
+
+	.toc[open] .toc-chevron {
+		transform: rotate(180deg);
 	}
 
 	.toc-inner {
-		position: relative;
-		padding-left: var(--space-4);
-		border-left: 2px solid var(--color-border);
-	}
-
-	.toc-progress {
-		position: absolute;
-		left: -2px;
-		top: 0;
-		width: 2px;
-		height: var(--progress, 0%);
-		background: var(--color-primary);
-		transition: height 100ms linear;
-		border-radius: 1px;
-	}
-
-	.toc-title {
-		font-family: var(--font-display);
-		font-size: var(--text-xs);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--color-text-muted);
-		margin: 0 0 var(--space-3) 0;
+		padding: 0 var(--space-4) var(--space-4);
 	}
 
 	.toc-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		border-top: 1px solid var(--color-border);
+		padding-top: var(--space-3);
 	}
 
 	.toc-item {
-		margin-bottom: var(--space-1);
+		margin-bottom: var(--space-0-5);
 	}
 
 	.toc-item--sub {
-		padding-left: var(--space-3);
+		padding-left: var(--space-4);
 	}
 
 	.toc-link {
 		display: block;
-		font-size: var(--text-xs);
+		font-size: var(--text-sm);
 		line-height: var(--leading-snug);
 		color: var(--color-text-muted);
 		text-decoration: none;
-		padding: var(--space-0-5) 0;
-		transition: color var(--transition-fast);
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		padding: var(--space-1) var(--space-2);
+		border-radius: var(--radius-sm);
+		transition: color var(--transition-fast), background var(--transition-fast);
 	}
 
 	.toc-link:hover {
 		color: var(--color-text);
-	}
-
-	.toc-link.is-active {
-		color: var(--color-primary);
-		font-weight: var(--weight-semibold);
+		background: var(--color-bg);
 	}
 </style>

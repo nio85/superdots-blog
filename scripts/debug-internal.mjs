@@ -183,7 +183,7 @@ async function checkDeployHealth() {
 }
 
 async function checkEmailDelivery() {
-  if (!SMTP_PASS) return skip('email_delivery', 'GMAIL_APP_PASSWORD not set');
+  if (!SMTP_PASS) return skip('email_delivery', 'RESEND_SMTP_API_KEY not set');
   try {
     const transporter = createSmtpTransport(nodemailer);
     await transporter.verify();

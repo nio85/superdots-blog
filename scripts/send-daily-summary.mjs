@@ -5,7 +5,7 @@
  *   1. API mode (within heartbeats): uses PAPERCLIP_API_URL + PAPERCLIP_API_KEY
  *   2. DB-direct mode (system cron): uses PAPERCLIP_DB_URL to query postgres directly
  *
- * Requires: GMAIL_APP_PASSWORD (loaded from .env if not in env)
+ * Requires: RESEND_SMTP_API_KEY (loaded from .env if not in env)
  * Optional: PAPERCLIP_COMPANY_ID
  */
 
@@ -26,13 +26,15 @@ try {
   }
 } catch {}
 
-const SMTP_USER = 'lucavittorio.bartoccini@gmail.com';
-const SMTP_PASS = process.env.GMAIL_APP_PASSWORD;
-const TO_EMAIL = 'lucavittorio.bartoccini@gmail.com';
-const DB_URL = process.env.PAPERCLIP_DB_URL || 'postgresql://luca:paperclip123@localhost:5432/paperclip';
+const SMTP_HOST = 'smtp.resend.com';
+const SMTP_USER = 'resend';
+const SMTP_PASS = process.env.RESEND_SMTP_API_KEY;
+const MAIL_FROM = process.env.MAIL_FROM || 'notifications@superdots.sh';
+const TO_EMAIL = process.env.TO_EMAIL || 'lucavittorio.bartoccini@gmail.com';
+const DB_URL = process.env.PAPERCLIP_DB_URL || 'postgresql://luca:a8gMWZJg9HVEFTutPDxuJ1iy225b1Wzd@localhost:5432/paperclip';
 
 if (!SMTP_PASS) {
-  console.error('Missing GMAIL_APP_PASSWORD');
+  console.error('Missing RESEND_SMTP_API_KEY');
   process.exit(1);
 }
 
@@ -331,7 +333,7 @@ async function main() {
 </body></html>`;
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: SMTP_HOST,
     port: 587,
     secure: false,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
@@ -340,7 +342,7 @@ async function main() {
   const subject = `Superdots ${label} — ${inProgress.length} in corso, ${recentDone.length} completati, ${blocked.length} bloccati`;
 
   const info = await transporter.sendMail({
-    from: `"Superdots" <${SMTP_USER}>`,
+    from: `"Superdots" <${MAIL_FROM}>`,
     to: TO_EMAIL,
     subject,
     text,
