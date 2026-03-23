@@ -12,45 +12,95 @@ export interface Props {
 const { title, subtitle, kicker, breadcrumbs, centered = false, count, countLabel } = Astro.props;
 ---
 
-{breadcrumbs && breadcrumbs.length > 0 && (
-	<nav class="ph-breadcrumb" aria-label="Breadcrumb">
-		{breadcrumbs.map((crumb, i) => (
-			<>
-				{i > 0 && <span aria-hidden="true">/</span>}
-				{i < breadcrumbs.length - 1 ? (
-					<a href={crumb.href}>{crumb.label}</a>
-				) : (
-					<span aria-current="page">{crumb.label}</span>
-				)}
-			</>
-		))}
-	</nav>
-)}
+<div class="ph-banner">
+	<div class="ph-banner-glow" aria-hidden="true"></div>
+	<div class="dots dots-lg dots-fine" style="top: 10%; right: 2%; opacity: 0.08;" aria-hidden="true"></div>
+	<div class="dots dots-sm" style="bottom: 15%; left: 5%; opacity: 0.06;" aria-hidden="true"></div>
 
-<div class:list={['page-header', { 'page-header--centered': centered }]}>
-	<div class="dots dots-md" style={centered ? 'top: -15%; right: 0;' : 'top: 5%; right: 3%;'} aria-hidden="true"></div>
+	<div class="ph-banner-inner">
+		{breadcrumbs && breadcrumbs.length > 0 && (
+			<nav class="ph-breadcrumb" aria-label="Breadcrumb">
+				{breadcrumbs.map((crumb, i) => (
+					<>
+						{i > 0 && <span aria-hidden="true">/</span>}
+						{i < breadcrumbs.length - 1 ? (
+							<a href={crumb.href}>{crumb.label}</a>
+						) : (
+							<span aria-current="page">{crumb.label}</span>
+						)}
+					</>
+				))}
+			</nav>
+		)}
 
-	{kicker && (
-		<p class="page-kicker">
-			<span class="superdot-pulse" aria-hidden="true"></span>
-			{kicker}
-		</p>
-	)}
+		<div class:list={['page-header', { 'page-header--centered': centered }]}>
+			{kicker && (
+				<p class="page-kicker">
+					<span class="superdot-pulse" aria-hidden="true"></span>
+					{kicker}
+				</p>
+			)}
 
-	<h1>{title}<span class="dot-accent">.</span></h1>
+			<h1>{title}<span class="dot-accent">.</span></h1>
 
-	{count !== undefined && countLabel && (
-		<p class="page-count">{count} {countLabel}</p>
-	)}
+			{count !== undefined && countLabel && (
+				<p class="page-count">{count} {countLabel}</p>
+			)}
 
-	{subtitle && (
-		<p class="page-subtitle">{subtitle}</p>
-	)}
+			{subtitle && (
+				<p class="page-subtitle">{subtitle}</p>
+			)}
 
-	<slot />
+			<slot />
+		</div>
+	</div>
 </div>
 
 <style>
+	/* Full-width banner — breaks out of main container */
+	.ph-banner {
+		position: relative;
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-top: calc(-1 * var(--space-8));
+		padding: var(--space-12) var(--space-4) var(--space-8);
+		overflow: hidden;
+		-webkit-mask-image:
+			linear-gradient(to bottom, black calc(100% - 40px), transparent);
+		mask-image:
+			linear-gradient(to bottom, black calc(100% - 40px), transparent);
+	}
+
+	/* Subtle radial glow */
+	.ph-banner-glow {
+		position: absolute;
+		top: -40%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		max-width: 1000px;
+		height: 500px;
+		border-radius: 50%;
+		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.04) 0%, transparent 70%);
+		filter: blur(50px);
+		pointer-events: none;
+	}
+	:global([data-theme="dark"]) .ph-banner-glow {
+		background: radial-gradient(ellipse, rgba(232, 54, 59, 0.07) 0%, transparent 70%);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .ph-banner-glow {
+			background: radial-gradient(ellipse, rgba(232, 54, 59, 0.07) 0%, transparent 70%);
+		}
+	}
+
+	/* Inner container — stays within content max-width */
+	.ph-banner-inner {
+		width: 100%;
+		max-width: var(--max-width-content);
+		margin: 0 auto;
+	}
+
 	/* Breadcrumb */
 	.ph-breadcrumb {
 		display: flex;
@@ -59,7 +109,7 @@ const { title, subtitle, kicker, breadcrumbs, centered = false, count, countLabe
 		font-family: var(--font-display);
 		font-size: var(--text-sm);
 		color: var(--color-text-muted);
-		padding-top: var(--space-4);
+		margin-bottom: var(--space-4);
 	}
 	.ph-breadcrumb a {
 		color: var(--color-text-muted);
@@ -76,8 +126,6 @@ const { title, subtitle, kicker, breadcrumbs, centered = false, count, countLabe
 	/* Header container */
 	.page-header {
 		position: relative;
-		overflow: hidden;
-		padding: var(--space-8) 0 var(--space-4);
 	}
 	.page-header--centered {
 		text-align: center;
@@ -140,13 +188,16 @@ const { title, subtitle, kicker, breadcrumbs, centered = false, count, countLabe
 		color: var(--color-text-muted);
 		font-size: var(--text-lg);
 		line-height: var(--leading-snug);
-		margin: 0 0 var(--space-6);
+		margin: 0 0 var(--space-2);
 	}
 	.page-header:not(.page-header--centered) .page-subtitle {
 		max-width: 540px;
 	}
 
 	@media (max-width: 480px) {
+		.ph-banner {
+			padding: var(--space-8) var(--space-4) var(--space-6);
+		}
 		.page-header h1 {
 			font-size: var(--text-3xl);
 		}
