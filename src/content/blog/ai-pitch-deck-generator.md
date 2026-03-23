@@ -4,7 +4,7 @@ description: "AI pitch deck generators turn your business idea into investor-rea
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "sales"
-useCase: "communication"
+useCase: "presentations"
 tags: ["ai-tools", "ai-presentations", "ai-sales"]
 heroImage: "/images/blog/ai-pitch-deck-generator.webp"
 faqs:
@@ -62,7 +62,7 @@ Not every AI tool that makes slides is good at pitch decks. Here is what separat
 
 ### Slidebean
 
-Best for founders who want both deck design and business guidance. Slidebean combines AI-powered slide design with startup expertise — their templates are built from studying thousands of successful fundraising decks. The AI handles layout and design while you focus on content. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
+Best for founders who want both deck design and business guidance. Slidebean combines AI-powered slide design with startup expertise — their templates are built from studying thousands of successful fundraising decks. The AI handles layout and design while you focus on content.
 
 **Best for:** First-time founders who need guidance on what investors expect.
 
@@ -72,7 +72,7 @@ Best for founders who want both deck design and business guidance. Slidebean com
 
 ### PitchBob
 
-Best for turning a rough idea into a structured deck. PitchBob uses a conversational interview process — it asks you questions about your startup, then generates a complete pitch deck from your answers. No blank-slide anxiety. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
+Best for turning a rough idea into a structured deck. PitchBob uses a conversational interview process — it asks you questions about your startup, then generates a complete pitch deck from your answers. No blank-slide anxiety.
 
 **Best for:** Early-stage founders who know their business but do not know how to structure a deck.
 
@@ -178,4 +178,4 @@ A well-customized AI deck does not just look good. It communicates that you are 
 
 Build your first draft with AI. Spend your time on the story and the numbers. That is where deals get done.
 
-For more on AI-powered presentations beyond pitch decks, see our guide on [how to make AI presentations that don't look AI-generated](/blog/ai-presentation-maker). If you are also building proposals, check out our [AI proposal generator](/blog/ai-proposal-generator) guide. For the complete picture of AI across the sales function, see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).
+For more on AI-powered presentations beyond pitch decks, see our guide on [how to make AI presentations that don't look AI-generated](/blog/ai-presentation-maker). If you are also building proposals, check out our [AI proposal generator](/blog/ai-proposal-generator) guide.
