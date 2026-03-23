@@ -55,6 +55,14 @@ const displayText = text || defaultText;
 		line-height: var(--leading-normal);
 		margin: 0;
 	}
+	.affiliate-disclosure-text :global(a) {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.affiliate-disclosure-text :global(a:hover) {
+		color: var(--color-text);
+	}
 
 	@media (max-width: 480px) {
 		.affiliate-disclosure {
