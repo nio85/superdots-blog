@@ -178,5 +178,3 @@ One honest warning: the biggest wins from AI pricing often come from eliminating
 5. **The biggest barrier is sales team trust.** Involve them early, explain the logic behind recommendations, and let them challenge edge cases. Technical implementation is the easy part.
 
 Pricing is one of the highest-leverage levers in your business. Most companies adjust it far less often than they should, using far less data than they have available. AI doesn't make pricing decisions for you — it makes sure the decisions you do make are grounded in what the market is actually telling you.
-
-For the complete picture of how AI supports every stage of the sales process — from prospecting and scoring to deal intelligence and forecasting — see our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide).

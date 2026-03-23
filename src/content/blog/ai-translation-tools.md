@@ -223,5 +223,3 @@ The right mental model: AI is a first-draft machine. For internal use and high-v
 4. **A glossary is the single biggest quality improvement you can make.** Build it before you translate a single document. Maintain it as your product and brand evolve.
 
 5. **Data privacy matters — check where your documents are processed.** Before uploading contracts, employee data, or proprietary content, read the tool's data processing agreement. Private processing mode is worth paying for.
-
-For the complete picture of how AI supports every marketing function — from translation and localization to content, SEO, and analytics — see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide).
