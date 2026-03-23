@@ -1,0 +1,159 @@
+{
+  "model": "black-forest-labs/flux-1.1-pro",
+  "imageSize": {
+    "width": 1200,
+    "height": 630
+  },
+  "outputFormat": "webp",
+  "outputQuality": 85,
+
+  "_styleGuide": {
+    "philosophy": "Warm, human, practical. We reject cold-blue AI clichés, stock photo aesthetics, and corporate sterility. Every image should feel like it belongs to a brand that is direct, confident, and a little unexpected.",
+    "doThis": [
+      "Use warm tones — reds, ambers, warm teals against deep navy",
+      "Abstract geometric compositions with clear focal points",
+      "Layered flat shapes with subtle depth through overlapping planes",
+      "Generous negative space — let the composition breathe",
+      "Centered subject with breathing room for text overlay",
+      "Subtle dot/grid textures that echo the Superdot brand mark",
+      "Warm lighting that feels inviting, not clinical"
+    ],
+    "neverDoThis": [
+      "Robots, android faces, or sci-fi imagery",
+      "Cold blue AI aesthetics or matrix-style visuals",
+      "Photorealistic people or stock-photo compositions",
+      "Busy, cluttered scenes with too many competing elements",
+      "Text, words, logos, or watermarks in the image",
+      "Clip art, cartoonish, or low-effort illustration",
+      "Generic tech imagery (random circuit boards, floating screens)"
+    ],
+    "colorRationale": {
+      "background": "#0B1222 deep navy provides contrast and sophistication without going pure black",
+      "red": "#E8363B is the primary brand accent — use for hero focal elements and energy",
+      "teal": "#14B8A6 is the secondary accent — use for supporting elements and calm/analytical topics",
+      "amber": "#F59E0B is the tertiary accent — use for warmth, highlights, and optimistic topics",
+      "gradients": "Subtle dark-to-darker navy gradients. Never bright or neon gradients."
+    }
+  },
+
+  "brandStyle": {
+    "basePrompt": "Warm, modern abstract illustration. Bold geometric shapes with layered depth. Deep navy background (#0B1222). Subtle warm lighting. No text, no words, no letters, no logos. Human and approachable, not cold or clinical. Flat design with overlapping planes creating depth. Generous negative space. Centered composition with clear focal point.",
+    "negativeElements": "text, words, letters, logos, watermarks, signatures, photorealistic faces, stock photo style, clip art, cartoonish, busy, cluttered, low quality, robots, android, sci-fi, matrix, neon, cold blue, corporate sterile, circuit board cliché"
+  },
+
+  "departments": {
+    "engineering": {
+      "accent": "#14B8A6",
+      "mood": "precise, structured, elegant",
+      "promptHint": "Clean code-editor-inspired shapes, structured grid patterns, terminal-like layered panels, teal accent glow against navy. Think architect's blueprint, not hacker movie.",
+      "icon": "geometric brackets and nodes"
+    },
+    "marketing": {
+      "accent": "#E8363B",
+      "mood": "energetic, bold, forward-moving",
+      "promptHint": "Upward-trending abstract shapes, bold red focal elements, dynamic diagonal compositions, growth and momentum. Warm and confident energy.",
+      "icon": "abstract trend arrows"
+    },
+    "sales": {
+      "accent": "#F59E0B",
+      "mood": "warm, optimistic, human connection",
+      "promptHint": "Warm amber highlights, abstract handshake or bridge motifs, flowing pipeline shapes, golden light accents conveying trust and opportunity.",
+      "icon": "abstract diamond shapes"
+    },
+    "hr": {
+      "accent": "#14B8A6",
+      "mood": "human, connected, supportive",
+      "promptHint": "Abstract human silhouettes as simple geometric forms, interconnected network nodes, organizational tree patterns with teal accents. Warm and people-centered.",
+      "icon": "connected nodes representing people"
+    },
+    "finance": {
+      "accent": "#F59E0B",
+      "mood": "structured, trustworthy, clear",
+      "promptHint": "Abstract bar charts and ledger grids, currency-inspired geometric forms, amber accent lighting suggesting value and precision. Clean and orderly.",
+      "icon": "abstract grid patterns"
+    },
+    "operations": {
+      "accent": "#14B8A6",
+      "mood": "systematic, flowing, efficient",
+      "promptHint": "Interlocking shapes, smooth workflow arrows, process-flow inspired compositions with teal accents. Conveys systems working in harmony.",
+      "icon": "interlocking geometric shapes"
+    },
+    "legal": {
+      "accent": "#E8363B",
+      "mood": "balanced, authoritative, clear",
+      "promptHint": "Abstract balance/scale motifs, layered document planes, section-symbol-inspired geometry with red accents. Structured and decisive.",
+      "icon": "balanced geometric forms"
+    },
+    "customer-support": {
+      "accent": "#F59E0B",
+      "mood": "responsive, helpful, accessible",
+      "promptHint": "Abstract speech-bubble shapes, radiating help-signal patterns, warm amber tones suggesting availability and responsiveness.",
+      "icon": "abstract speech shapes"
+    },
+    "design": {
+      "accent": "#E8363B",
+      "mood": "creative, intentional, crafted",
+      "promptHint": "Color-swatch abstractions, grid-and-layout compositions, design-tool-inspired shapes with bold red accents. Deliberate and refined.",
+      "icon": "abstract star shapes"
+    },
+    "strategy": {
+      "accent": "#E8363B",
+      "mood": "visionary, decisive, high-level",
+      "promptHint": "Abstract chess-piece or compass motifs, bird's-eye-view map compositions, red focal elements suggesting direction and leadership.",
+      "icon": "abstract compass or arrow"
+    },
+    "technology": {
+      "accent": "#14B8A6",
+      "mood": "innovative, clean, capable",
+      "promptHint": "Abstract chip or node-network patterns, layered interface panels, teal data-flow accents. Modern and capable, never dystopian.",
+      "icon": "layered panels and nodes"
+    }
+  },
+
+  "useCases": {
+    "automation": "Smooth flowing arrows, interlocking gear-like abstract shapes, conveyor-belt-inspired patterns suggesting effortless motion",
+    "analysis": "Abstract data visualization shapes, bar-and-line chart motifs, magnifying-glass geometry suggesting insight and clarity",
+    "writing": "Layered document planes, abstract pen-stroke flowing lines, text-block shapes arranged with editorial elegance",
+    "communication": "Radiating signal waves, interconnected node clusters, abstract broadcasting patterns suggesting reach and connection",
+    "planning": "Abstract calendar grids, roadmap-inspired horizontal lanes, milestone markers suggesting organized forward progress",
+    "integration": "Puzzle-piece abstractions, bridge and connector motifs, converging paths suggesting unified systems",
+    "monitoring": "Abstract dashboard panels, pulse-line patterns, radar-sweep motifs suggesting vigilance and awareness"
+  },
+
+  "promptTemplates": {
+    "_description": "These templates show the full prompt structure. The generation script builds prompts by combining basePrompt + topic + department hints + use case hints + composition.",
+    "heroImage": "{basePrompt} Topic: {title}. Context: {description}. Department visual style: {department.promptHint}. Accent color: {department.accent}. Visual motifs: {useCase}. Aspect ratio 1200x630, widescreen banner composition. Centered focal point with breathing room.",
+    "socialCard": "{basePrompt} Topic: {title}. {department.promptHint}. Accent color: {department.accent}. Square composition 1200x1200. Bold central element. Extra negative space for social media text overlay.",
+    "newsletterHeader": "{basePrompt} Abstract warm geometric pattern. {department.promptHint}. Accent color: {department.accent}. Wide panoramic strip composition 1200x300. Subtle and atmospheric, designed as background texture."
+  },
+
+  "qualityCalibration": {
+    "_description": "Guidelines for evaluating generated images against brand standards.",
+    "goodSignals": [
+      "Deep navy dominates with warm accent colors popping against it",
+      "Clear focal point — you instantly know what the image is about",
+      "Generous whitespace/negative space — the composition breathes",
+      "Geometric shapes feel intentional and layered, not randomly scattered",
+      "Warm undertones even in the dark areas",
+      "Could sit naturally on the blog next to the Space Grotesk headlines",
+      "Looks distinctive — you wouldn't confuse it with a generic tech blog"
+    ],
+    "badSignals": [
+      "Cold blue dominates — feels like every other AI company",
+      "Cluttered with too many small elements competing for attention",
+      "Photorealistic elements mixed with abstract (inconsistent style)",
+      "Text or letter-like artifacts in the image",
+      "Generic circuit-board or floating-screen imagery",
+      "Pure black background instead of deep navy (loses warmth)",
+      "Robot or android imagery",
+      "Neon or overly saturated colors that clash with the brand palette"
+    ],
+    "regenerateIf": [
+      "Any visible text, letters, or logo-like artifacts",
+      "Cold blue is the dominant color instead of warm accents on navy",
+      "The image looks like a stock photo or clip art",
+      "No clear focal point — the eye wanders with nothing to anchor on",
+      "Robots, faces, or recognizable real-world objects that break the abstract style"
+    ]
+  }
+}

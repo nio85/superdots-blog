@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+import { DEPARTMENTS } from '../consts';
+
+interface Props {
+	currentSlug: string;
+	department: string;
+	useCase: string;
+	tags?: string[];
+}
+
+const { currentSlug, department, useCase, tags = [] } = Astro.props;
+const deptLabel = DEPARTMENTS.find((d) => d.slug === department)?.label ?? department;
+
+const allPosts = await getCollection('blog');
+const others = allPosts.filter((p) => p.slug !== currentSlug);
+
+// Score each post: same department = 2, same useCase = 2, shared tag = 1 each
+function score(post: (typeof others)[0]) {
+	let s = 0;
+	if (post.data.department === department) s += 2;
+	if (post.data.useCase === useCase) s += 2;
+	for (const t of post.data.tags ?? []) {
+		if (tags.includes(t)) s += 1;
+	}
+	return s;
+}
+
+const related = others
+	.map((p) => ({ post: p, score: score(p) }))
+	.filter((r) => r.score > 0)
+	.sort((a, b) => b.score - a.score || b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf())
+	.slice(0, 3)
+	.map((r) => r.post);
+---
+
+{related.length > 0 && (
+	<aside class="related-articles">
+		<h2>Related articles<span class="dot-accent">.</span></h2>
+		<ul>
+			{related.map((post) => (
+				<li>
+					<a href={`/blog/${post.slug}/`}>
+						<span class="related-title">{post.data.title}</span>
+						<span class="related-meta">
+							<span class="badge badge-dept">{post.data.department}</span>
+							<FormattedDate date={post.data.pubDate} />
+						</span>
+					</a>
+				</li>
+			))}
+		</ul>
+		<a href={`/category/department/${department}/`} class="explore-dept">
+			Explore all {deptLabel} guides <span aria-hidden="true">&rarr;</span>
+		</a>
+	</aside>
+)}
+
+<style>
+	.related-articles {
+		margin-top: var(--space-12);
+		padding-top: var(--space-8);
+		border-top: 2px solid var(--color-border);
+		content-visibility: auto;
+		contain-intrinsic-size: auto 400px;
+	}
+	.related-articles h2 {
+		font-family: var(--font-display);
+		font-size: var(--text-2xl);
+		font-weight: var(--weight-bold);
+		letter-spacing: -0.02em;
+		margin-bottom: var(--space-6);
+	}
+	.related-articles ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: var(--space-4);
+	}
+	.related-articles li a {
+		display: block;
+		padding: var(--space-4) var(--space-5);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		text-decoration: none;
+		transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	}
+	.related-articles li a:hover {
+		border-color: var(--color-primary);
+		box-shadow: 0 2px 8px rgba(232, 54, 59, 0.08);
+	}
+	.related-title {
+		display: block;
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		font-size: var(--text-base);
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-snug);
+	}
+	.related-meta {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
+	.explore-dept {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin-top: var(--space-5);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-primary);
+		text-decoration: none;
+		transition: gap var(--transition-fast);
+	}
+	.explore-dept:hover {
+		gap: var(--space-2);
+		text-decoration: none;
+	}
+</style>

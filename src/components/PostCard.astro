@@ -1,0 +1,225 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import { TAGS } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	pubDate?: Date;
+	department: string;
+	useCase?: string;
+	slug?: string;
+	href?: string;
+	tags?: string[];
+	headingLevel?: 'h2' | 'h3';
+	variant?: 'article' | 'guide';
+	readingTime?: number;
+	relatedCount?: number;
+}
+
+const {
+	title,
+	description,
+	pubDate,
+	department,
+	useCase,
+	slug,
+	href,
+	tags = [],
+	headingLevel = 'h3',
+	variant = 'article',
+	readingTime,
+	relatedCount,
+} = Astro.props;
+const Heading = headingLevel;
+
+const linkHref = href || `/blog/${slug}/`;
+const isGuide = variant === 'guide';
+const ctaText = isGuide ? 'Read guide' : 'Read article';
+
+const tagMeta = tags
+	.map((t) => TAGS.find((tm) => tm.slug === t))
+	.filter(Boolean)
+	.slice(0, 3);
+---
+
+<article class:list={['post-card', { 'post-card--guide': isGuide }]}>
+	<a href={linkHref}>
+		<div class="meta">
+			<span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>
+			{!isGuide && useCase && <span class="badge badge-usecase">{useCase}</span>}
+			{!isGuide && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
+		</div>
+		<Heading class="card-title">{title}</Heading>
+		<p>{description}</p>
+		{isGuide && (readingTime || relatedCount) ? (
+			<div class="guide-meta">
+				{readingTime && readingTime > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+						{readingTime} min read
+					</span>
+				)}
+				{relatedCount && relatedCount > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+						+{relatedCount} related articles
+					</span>
+				)}
+			</div>
+		) : null}
+		{tagMeta.length > 0 && (
+			<div class="tag-pills">
+				{tagMeta.map((t) => (
+					<a href={`/tags/${t!.slug}/`} class="badge badge-tag" onclick="event.stopPropagation()">{t!.label}</a>
+				))}
+			</div>
+		)}
+		<span class="read-more">{ctaText} <span aria-hidden="true">&rarr;</span></span>
+	</a>
+</article>
+
+<style>
+	.post-card {
+		--card-accent: var(--color-primary);
+		--card-accent-light: var(--sd-red-light);
+		--card-accent-rgb: 232, 54, 59;
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		transition: all var(--transition-base);
+		position: relative;
+		overflow: hidden;
+	}
+	.post-card--guide {
+		--card-accent: var(--color-secondary);
+		--card-accent-light: var(--sd-teal-light);
+		--card-accent-rgb: 20, 184, 166;
+	}
+	/* Left border — grows on hover */
+	.post-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 0;
+		background: var(--card-accent);
+		border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+		transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	/* Subtle gradient wash on hover */
+	.post-card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(var(--card-accent-rgb), 0.03) 0%, transparent 50%);
+		opacity: 0;
+		transition: opacity var(--transition-base);
+		pointer-events: none;
+		z-index: 0;
+	}
+	.post-card:hover {
+		border-color: var(--card-accent);
+		box-shadow: var(--shadow-md), 0 4px 16px rgba(var(--card-accent-rgb), 0.06);
+		transform: translateY(-3px);
+	}
+	.post-card:hover::before {
+		height: 100%;
+	}
+	.post-card:hover::after {
+		opacity: 1;
+	}
+	.post-card a {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
+	.post-card a:hover {
+		text-decoration: none;
+	}
+	.post-card .card-title {
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+		margin: var(--space-3) 0 var(--space-2);
+		color: var(--color-text-strong);
+		letter-spacing: -0.02em;
+		transition: color var(--transition-fast);
+		line-height: var(--leading-tight);
+	}
+	.post-card:hover .card-title {
+		color: var(--card-accent);
+	}
+	.post-card p {
+		color: var(--color-text-muted);
+		font-size: var(--text-base);
+		margin: 0 0 var(--space-4);
+		line-height: var(--leading-snug);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		flex-wrap: wrap;
+	}
+	.date {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin-left: auto;
+	}
+	.badge-guide-dept {
+		background: var(--sd-teal-light);
+		color: var(--sd-teal-dark);
+	}
+	.guide-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+	.guide-meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+	}
+	.tag-pills {
+		display: flex;
+		gap: var(--space-1);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-3);
+	}
+	.tag-pills .badge-tag {
+		font-size: var(--text-xs);
+		cursor: pointer;
+		text-decoration: none;
+		transition: all var(--transition-fast);
+	}
+	.tag-pills .badge-tag:hover {
+		background: var(--color-border-strong);
+		color: var(--color-text-strong);
+		text-decoration: none;
+	}
+	.read-more {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--card-accent);
+		transition: gap var(--transition-fast), letter-spacing var(--transition-fast);
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+	.post-card:hover .read-more {
+		gap: var(--space-2);
+	}
+</style>

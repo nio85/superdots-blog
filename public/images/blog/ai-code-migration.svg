@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg31" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1222"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="accent31" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#14B8A600"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg31)"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="#14B8A6"/>
+
+  <!-- Dot pattern -->
+  <g>
+    <circle cx="842" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="864" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="930" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="996" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1062" cy="40" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="820" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="842" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="886" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="952" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1018" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="62" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="820" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="864" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="886" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="930" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="952" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="996" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1018" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1062" cy="84" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="842" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="864" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="930" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="996" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1062" cy="106" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="820" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="842" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="886" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="952" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1018" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="128" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="820" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="864" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="886" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="930" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="952" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="996" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1018" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1062" cy="150" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="842" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="864" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="930" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="996" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1062" cy="172" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="820" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="842" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="886" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="908" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="952" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="974" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1018" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+    <circle cx="1040" cy="194" r="2" fill="#14B8A6" opacity="0.12"/>
+  </g>
+
+  <!-- Decorative geometry -->
+  <g>
+    <circle cx="1020" cy="380" r="75" fill="none" stroke="#14B8A6" stroke-width="2" opacity="0.2"/>
+    <circle cx="1060" cy="320" r="8" fill="#14B8A6" opacity="0.3"/>
+    <line x1="915" y1="520" x2="1035" y2="440" stroke="#14B8A6" stroke-width="1.5" opacity="0.15"/>
+    <rect x="1030" y="492" width="40" height="40" rx="4" fill="none" stroke="#5EEAD4" stroke-width="1" opacity="0.15" transform="rotate(22, 1050, 512)"/>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="80" y="540" width="120" height="3" rx="1.5" fill="#14B8A6" opacity="0.6"/>
+
+  <!-- Superdots brand dot -->
+  <circle cx="92" cy="80" r="8" fill="#E8363B"/>
+  <text x="112" y="87" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="600" fill="#FFFFFF" letter-spacing="-0.02em">superdots</text>
+
+  <!-- Department badge -->
+  <rect x="80" y="140" width="138" height="28" rx="14" fill="#14B8A6" opacity="0.15"/>
+  <text x="94" y="159" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#5EEAD4" letter-spacing="0.08em">ENGINEERING</text>
+
+  <!-- Use case badge -->
+  <rect x="226" y="140" width="114" height="28" rx="14" fill="#334155" opacity="0.5"/>
+  <text x="238" y="159" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="600" fill="#94A3B8" letter-spacing="0.06em">AUTOMATION</text>
+
+  <!-- Title -->
+  <text x="80" y="290" font-family="'Space Grotesk', sans-serif" font-size="54" font-weight="700" fill="#FFFFFF" letter-spacing="-0.03em">AI Code Migration<tspan fill="#E8363B">.</tspan></text>
+
+  <!-- Subtitle -->
+  <text x="80" y="370" font-family="'Inter', sans-serif" font-size="22" fill="#94A3B8" letter-spacing="-0.01em">Upgrade Legacy Codebases Without the Pain</text>
+
+  <!-- Bottom brand -->
+  <text x="80" y="580" font-family="'Space Grotesk', sans-serif" font-size="14" fill="#64748B" letter-spacing="0.04em">superdots.sh</text>
+
+  <!-- Corner accent -->
+  <rect x="1160" y="590" width="8" height="8" rx="4" fill="#14B8A6" opacity="0.4"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "name": "slidev-theme-superdots",
+  "version": "0.3.0",
+  "engines": {
+    "slidev": ">=0.48.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "fonts": {
+        "sans": "Space Grotesk, Inter, system-ui, sans-serif",
+        "serif": "Inter, system-ui, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      }
+    }
+  }
+}

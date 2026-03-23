@@ -1,0 +1,242 @@
+/* Superdots Slidev Theme v3 — Premium Dark Presentation System */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --sd-red: #E8363B;
+  --sd-red-glow: rgba(232, 54, 59, 0.15);
+  --sd-navy: #0F172A;
+  --sd-navy-deep: #0B1222;
+  --sd-teal: #14B8A6;
+  --sd-white: #FFFFFF;
+  --sd-light: #F1F5F9;
+  --sd-slate: #94A3B8;
+  --sd-slate-dark: #64748B;
+  --sd-surface: #1E293B;
+  --sd-border: rgba(148, 163, 184, 0.08);
+  --sd-border-light: rgba(148, 163, 184, 0.12);
+
+  --slidev-theme-primary: #E8363B;
+  --slidev-theme-accents-yellow: #14B8A6;
+}
+
+/* ─── Base Reset ─── */
+
+/* Override ALL Slidev wrapper backgrounds so no parent container bleeds through */
+html, body,
+#app, #slide-content,
+.slidev-slides,
+.slidev-slide-container,
+.slidev-page {
+  background: var(--sd-navy-deep) !important;
+}
+
+.slidev-layout {
+  background: var(--sd-navy-deep) !important;
+  color: #CBD5E1 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Typography System ─── */
+
+.slidev-layout h1 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--sd-white) !important;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+}
+
+.slidev-layout h2 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--sd-white) !important;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.75rem 0;
+}
+
+.slidev-layout h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--sd-light) !important;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.slidev-layout p {
+  color: var(--sd-slate) !important;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.slidev-layout ul, .slidev-layout ol {
+  color: var(--sd-slate) !important;
+  line-height: 1.65;
+}
+
+.slidev-layout li {
+  margin-bottom: 0.35rem;
+}
+
+.slidev-layout li::marker {
+  color: var(--sd-red) !important;
+}
+
+.slidev-layout strong {
+  color: var(--sd-white) !important;
+  font-weight: 600;
+}
+
+.slidev-layout a {
+  color: var(--sd-teal) !important;
+  text-decoration: none;
+}
+
+.slidev-layout code {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--sd-surface);
+  color: var(--sd-teal);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.slidev-layout pre {
+  background: var(--sd-navy-deep) !important;
+  border: 1px solid var(--sd-border-light);
+  border-radius: 8px;
+}
+
+/* ─── Tables ─── */
+
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.slidev-layout th {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--sd-white) !important;
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 2px solid var(--sd-red);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.slidev-layout td {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--sd-border);
+  color: #CBD5E1 !important;
+  font-size: 0.95rem;
+}
+
+.slidev-layout td:first-child {
+  color: var(--sd-light) !important;
+  font-weight: 500;
+}
+
+.slidev-layout tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─── Metric Cards ─── */
+
+.sd-metric {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid var(--sd-border);
+  border-radius: 12px;
+}
+
+.sd-metric .value {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: var(--sd-white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+}
+
+.sd-metric.accent .value {
+  color: var(--sd-red);
+}
+
+.sd-metric .label {
+  color: var(--sd-slate);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.sd-metric .sublabel {
+  color: var(--sd-slate-dark);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ─── Slide Number ─── */
+
+.slidev-page-number {
+  color: #334155 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.6rem !important;
+}
+
+/* ─── Utility: Shared Logo Watermark ─── */
+
+.sd-logo-mark {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  width: 28px;
+  height: 28px;
+  opacity: 0.35;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ─── Utility: Top accent line ─── */
+
+.sd-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sd-red) 0%, var(--sd-red) 30%, transparent 100%);
+  z-index: 10;
+}
+
+/* ─── Utility: Dot pattern overlay ─── */
+
+.sd-dots-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* ─── Utility: Subtle ambient glow ─── */
+
+.sd-ambient-glow {
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(232, 54, 59, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}

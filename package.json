@@ -1,48 +1,28 @@
 {
-  "name": "paperclip",
-  "private": true,
+  "name": "superdots-blog",
   "type": "module",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "node scripts/dev-runner.mjs watch",
-    "dev:watch": "node scripts/dev-runner.mjs watch",
-    "dev:once": "node scripts/dev-runner.mjs dev",
-    "dev:server": "pnpm --filter @paperclipai/server dev",
-    "dev:ui": "pnpm --filter @paperclipai/ui dev",
-    "build": "pnpm -r build",
-    "typecheck": "pnpm -r typecheck",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "db:generate": "pnpm --filter @paperclipai/db generate",
-    "db:migrate": "pnpm --filter @paperclipai/db migrate",
-    "secrets:migrate-inline-env": "tsx scripts/migrate-inline-env-secrets.ts",
-    "db:backup": "./scripts/backup-db.sh",
-    "paperclipai": "node cli/node_modules/tsx/dist/cli.mjs cli/src/index.ts",
-    "build:npm": "./scripts/build-npm.sh",
-    "release:start": "./scripts/release-start.sh",
-    "release": "./scripts/release.sh",
-    "release:preflight": "./scripts/release-preflight.sh",
-    "release:github": "./scripts/create-github-release.sh",
-    "release:rollback": "./scripts/rollback-latest.sh",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "check:tokens": "node scripts/check-forbidden-tokens.mjs",
-    "docs:dev": "cd docs && npx mintlify dev",
-    "smoke:openclaw-join": "./scripts/smoke/openclaw-join.sh",
-    "smoke:openclaw-docker-ui": "./scripts/smoke/openclaw-docker-ui.sh",
-    "smoke:openclaw-sse-standalone": "./scripts/smoke/openclaw-sse-standalone.sh",
-    "test:e2e": "npx playwright test --config tests/e2e/playwright.config.ts",
-    "test:e2e:headed": "npx playwright test --config tests/e2e/playwright.config.ts --headed"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:dry": "node scripts/deploy.mjs --dry-run",
+    "generate-images": "node scripts/generate-ai-images.mjs",
+    "generate-images:dry": "node scripts/generate-ai-images.mjs --dry-run",
+    "generate-images:all": "node scripts/generate-ai-images.mjs --all"
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.30.0",
-    "cross-env": "^10.1.0",
-    "@playwright/test": "^1.58.2",
-    "esbuild": "^0.27.3",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "packageManager": "pnpm@9.15.4"
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.0",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^4.16.0",
+    "docx": "^9.6.1",
+    "image-size": "^2.0.2",
+    "nodemailer": "^8.0.2",
+    "replicate": "^1.4.0",
+    "sharp": "^0.34.5",
+    "tweetnacl": "^1.0.3"
+  }
 }

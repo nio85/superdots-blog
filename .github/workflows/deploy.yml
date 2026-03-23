@@ -1,0 +1,97 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Frontmatter lint — verify required fields exist
+      - name: Lint frontmatter
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const dir = 'src/content/blog';
+          const required = ['title', 'description', 'pubDate', 'author', 'tags'];
+          let failures = 0;
+          for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
+            const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+            const match = content.match(/^---\s*\n([\s\S]*?)\n---/);
+            if (!match) { console.error('NO FRONTMATTER: ' + file); failures++; continue; }
+            const fm = match[1];
+            for (const field of required) {
+              if (!fm.includes(field + ':')) {
+                console.error('MISSING ' + field + ': ' + file);
+                failures++;
+              }
+            }
+          }
+          if (failures) { console.error(failures + ' frontmatter issue(s)'); process.exit(1); }
+          console.log('Frontmatter OK');
+          "
+
+      # Build
+      - run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - uses: actions/upload-artifact@v4
+        if: hashFiles('functions/') != ''
+        with:
+          name: functions
+          path: functions/
+
+  deploy:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: functions
+          path: functions/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/ --project-name=superdots-blog
+
+      - name: Smoke test
+        continue-on-error: true
+        run: |
+          sleep 10
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 SuperdotsCI/1.0" https://superdots.sh)
+          echo "Smoke test: HTTP $STATUS"
+          if [ "$STATUS" = "200" ]; then echo "✅ Site is live"; fi
