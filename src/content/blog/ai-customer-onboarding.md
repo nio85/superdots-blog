@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
 tags: ["ai-tools", "ai-customer-support", "ai-onboarding", "ai-automation"]
-heroImage: "/images/blog/ai-customer-onboarding.svg"
+heroImage: "/images/blog/ai-customer-onboarding.webp"
 faqs:
   - question: "How does AI improve customer onboarding?"
     answer: "AI improves customer onboarding by personalizing each journey based on customer data, automating repetitive tasks like welcome emails and account setup, detecting at-risk accounts through behavioral signals, and providing self-service resources exactly when customers need them. The result is faster time-to-value and lower early-stage churn."

@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "communication"
 tags: ["ai-tools", "ai-hr", "ai-change-management", "ai-adoption"]
-heroImage: "/images/blog/ai-change-management.svg"
+heroImage: "/images/blog/ai-change-management.webp"
 faqs:
   - question: "What is AI change management?"
     answer: "AI change management is the practice of using AI tools and methods to plan, communicate, and execute organizational change — including the adoption of AI itself. It combines traditional change management principles with AI-powered analytics, communication tools, and sentiment tracking to make change initiatives faster, more targeted, and measurable."

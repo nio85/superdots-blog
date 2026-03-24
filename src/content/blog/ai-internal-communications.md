@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "hr"
 useCase: "communication"
 tags: ["ai-tools", "ai-hr", "ai-internal-communications", "ai-employee-engagement"]
-heroImage: "/images/blog/ai-internal-communications.svg"
+heroImage: "/images/blog/ai-internal-communications.webp"
 faqs:
   - question: "How is AI used in internal communications?"
     answer: "AI is used to personalize messages for different employee segments, automate routine communications like policy updates and event reminders, analyze engagement metrics to optimize timing and channels, provide real-time sentiment analysis on employee feedback, translate messages for multilingual workforces, and generate first drafts that comms teams can refine."
