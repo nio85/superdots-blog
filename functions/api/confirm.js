@@ -71,6 +71,22 @@ export async function onRequestGet(context) {
 	const mauticData = await mauticRes.json();
 	const contactId = mauticData.contact?.id;
 
+	// Explicitly remove newsletter-pending tag (upsert `-tag` syntax is unreliable in Mautic)
+	if (contactId) {
+		try {
+			const tagPatchRes = await fetch(`${mauticBase}/api/contacts/${contactId}/edit`, {
+				method: 'PATCH',
+				headers: mauticHeaders,
+				body: JSON.stringify({ tags: ['-newsletter-pending'] }),
+			});
+			if (!tagPatchRes.ok) {
+				console.error('Tag removal error:', await tagPatchRes.text());
+			}
+		} catch (tagErr) {
+			console.error('Tag removal failed:', tagErr);
+		}
+	}
+
 	// Remove DNC so the confirmed contact can receive emails
 	if (contactId) {
 		try {
