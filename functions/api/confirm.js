@@ -86,6 +86,21 @@ export async function onRequestGet(context) {
 			console.error('DNC remove failed:', err);
 			return errorPage('Something went wrong confirming your subscription. Please try again.');
 		}
+
+		// GDPR audit trail: log confirmation note on the contact
+		const noteText = `Double opt-in confirmed. IP: ${clientIp}. Timestamp: ${new Date().toISOString()}. Consent status: confirmed.`;
+		try {
+			const noteRes = await fetch(`${mauticBase}/api/contacts/${contactId}/notes/new`, {
+				method: 'POST',
+				headers: mauticHeaders,
+				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),
+			});
+			if (!noteRes.ok) {
+				console.error('Mautic note error (confirm):', await noteRes.text());
+			}
+		} catch (noteErr) {
+			console.error('Mautic note failed (confirm):', noteErr);
+		}
 	}
 
 	return successPage();

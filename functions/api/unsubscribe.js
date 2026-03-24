@@ -64,6 +64,21 @@ async function handleUnsubscribe(context) {
 	const contactId = Object.keys(contacts)[0];
 
 	if (contactId) {
+		// GDPR audit trail: log unsubscribe note BEFORE deleting the contact
+		const noteText = `Unsubscribe requested. Contact and engagement history will be hard-deleted (GDPR Art. 17).`;
+		try {
+			const noteRes = await fetch(`${mauticBase}/api/contacts/${contactId}/notes/new`, {
+				method: 'POST',
+				headers: { ...mauticHeaders, 'Content-Type': 'application/json' },
+				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),
+			});
+			if (!noteRes.ok) {
+				console.error('Mautic note error (unsubscribe):', await noteRes.text());
+			}
+		} catch (noteErr) {
+			console.error('Mautic note failed (unsubscribe):', noteErr);
+		}
+
 		// Hard delete the contact (not just unsubscribe — GDPR Art. 17)
 		const deleteRes = await fetch(`${mauticBase}/api/contacts/${contactId}/delete`, {
 			method: 'DELETE',
