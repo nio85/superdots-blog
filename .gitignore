@@ -9,3 +9,6 @@ syndication-output-*.md
 
 # Secrets
 .secrets/
+
+# Backups
+resend-audience-backup-*.json

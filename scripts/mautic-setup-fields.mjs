@@ -123,9 +123,9 @@ const CUSTOM_FIELDS = [
 
 const SEGMENTS = [
   {
-    name: 'Confirmed Subscribers',
-    alias: 'confirmed-subscribers',
-    description: 'Contacts who completed double opt-in confirmation',
+    name: 'Newsletter Subscribers',
+    alias: 'newsletter-subscribers',
+    description: 'Confirmed subscribers — the ONLY segment for newsletter sends',
     isPublished: true,
     filters: [
       {
