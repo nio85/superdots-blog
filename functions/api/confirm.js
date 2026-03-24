@@ -1,18 +1,18 @@
 /**
  * GET /api/confirm?email=...&ts=...&token=...
- * Verifies the HMAC token and activates the subscriber in Resend.
- * Also syncs the confirmed contact to Mautic for campaign management.
- * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID,
- *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD
+ * Verifies the HMAC token and confirms the subscriber in Mautic (single source of truth).
+ * Env vars: NEWSLETTER_SECRET,
+ *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD,
+ *           CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET (optional, for CF Access)
  */
 
 const TOKEN_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 export async function onRequestGet(context) {
 	const { env, request } = context;
-	const { RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID } = env;
+	const { NEWSLETTER_SECRET, MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
 
-	if (!RESEND_API_KEY || !NEWSLETTER_SECRET || !RESEND_AUDIENCE_ID) {
+	if (!NEWSLETTER_SECRET || !MAUTIC_API_URL || !MAUTIC_USERNAME || !MAUTIC_PASSWORD) {
 		return errorPage('Server misconfigured. Please try again later.');
 	}
 
@@ -36,55 +36,48 @@ export async function onRequestGet(context) {
 		return errorPage('Invalid confirmation link.');
 	}
 
-	// Update contact in Resend to subscribed
-	const res = await fetch(`https://api.resend.com/audiences/${RESEND_AUDIENCE_ID}/contacts/${encodeURIComponent(email)}`, {
-		method: 'PATCH',
-		headers: {
-			'Authorization': `Bearer ${RESEND_API_KEY}`,
-			'Content-Type': 'application/json',
-		},
+	// Update contact in Mautic: set consent_status to confirmed
+	const mauticBase = MAUTIC_API_URL.replace(/\/$/, '');
+	const mauticHeaders = {
+		'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+		'Content-Type': 'application/json',
+	};
+	if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
+		mauticHeaders['CF-Access-Client-Id'] = env.CF_ACCESS_CLIENT_ID;
+		mauticHeaders['CF-Access-Client-Secret'] = env.CF_ACCESS_CLIENT_SECRET;
+	}
+
+	const clientIp = request.headers.get('CF-Connecting-IP') || '';
+
+	// Use /api/contacts/new which creates or updates by email (Mautic upsert behavior)
+	const mauticRes = await fetch(`${mauticBase}/api/contacts/new`, {
+		method: 'POST',
+		headers: mauticHeaders,
 		body: JSON.stringify({
-			unsubscribed: false,
-			data: {
-				consent_pending: 'false',
-				confirmed_at: new Date().toISOString(),
-				confirmed_ip: request.headers.get('CF-Connecting-IP') || 'unknown',
-			},
+			email,
+			consent_status: 'confirmed',
+			confirmed_at: new Date().toISOString(),
+			confirmed_ip: clientIp,
+			tags: ['newsletter', 'double-opt-in'],
+			ipAddress: clientIp,
 		}),
 	});
 
-	if (!res.ok) {
-		console.error('Resend update error:', await res.text());
-		return errorPage('Something went wrong. Please try again.');
+	if (!mauticRes.ok) {
+		console.error('Mautic confirm error:', await mauticRes.text());
+		return errorPage('Something went wrong confirming your subscription. Please try again.');
 	}
 
-	// Sync confirmed contact to Mautic for campaign management
-	const { MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD, CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET } = env;
-	if (MAUTIC_API_URL && MAUTIC_USERNAME && MAUTIC_PASSWORD) {
-		try {
-			const headers = {
-				'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
-				'Content-Type': 'application/json',
-			};
-			if (CF_ACCESS_CLIENT_ID && CF_ACCESS_CLIENT_SECRET) {
-				headers['CF-Access-Client-Id'] = CF_ACCESS_CLIENT_ID;
-				headers['CF-Access-Client-Secret'] = CF_ACCESS_CLIENT_SECRET;
-			}
-			const mauticRes = await fetch(`${MAUTIC_API_URL}/api/contacts/new`, {
-				method: 'POST',
-				headers,
-				body: JSON.stringify({
-					email,
-					tags: ['newsletter', 'double-opt-in'],
-					ipAddress: request.headers.get('CF-Connecting-IP') || '',
-				}),
-			});
-			if (!mauticRes.ok) {
-				console.error('Mautic sync error:', await mauticRes.text());
-			}
-		} catch (err) {
-			console.error('Mautic sync failed:', err.message);
-		}
+	// Remove the newsletter-pending tag from the contact
+	const mauticData = await mauticRes.json();
+	const contactId = mauticData.contact?.id;
+	if (contactId) {
+		// Remove pending tag (best-effort, non-blocking)
+		fetch(`${mauticBase}/api/contacts/${contactId}/edit`, {
+			method: 'PATCH',
+			headers: mauticHeaders,
+			body: JSON.stringify({ tags: ['-newsletter-pending'] }),
+		}).catch(() => {});
 	}
 
 	return successPage();

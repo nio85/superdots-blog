@@ -1,7 +1,10 @@
 /**
  * POST /api/subscribe
  * Accepts { email, source } and sends a double opt-in confirmation email via Resend.
- * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID
+ * Contacts are stored in Mautic (single source of truth). Resend is used only for email delivery.
+ * Env vars: RESEND_API_KEY, NEWSLETTER_SECRET,
+ *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD,
+ *           CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET (optional, for CF Access)
  */
 
 const CORS_HEADERS = {
@@ -16,9 +19,9 @@ export async function onRequestOptions() {
 
 export async function onRequestPost(context) {
 	const { env, request } = context;
-	const { RESEND_API_KEY, NEWSLETTER_SECRET, RESEND_AUDIENCE_ID } = env;
+	const { RESEND_API_KEY, NEWSLETTER_SECRET, MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD } = env;
 
-	if (!RESEND_API_KEY || !NEWSLETTER_SECRET || !RESEND_AUDIENCE_ID) {
+	if (!RESEND_API_KEY || !NEWSLETTER_SECRET || !MAUTIC_API_URL || !MAUTIC_USERNAME || !MAUTIC_PASSWORD) {
 		return json({ error: 'Server misconfigured' }, 500);
 	}
 
@@ -36,41 +39,44 @@ export async function onRequestPost(context) {
 
 	const source = body.source || 'unknown';
 	const timestamp = Date.now();
+	const clientIp = request.headers.get('CF-Connecting-IP') || 'unknown';
 
 	// Create HMAC token for confirmation link
 	const token = await createToken(email, timestamp, 'confirm', NEWSLETTER_SECRET);
 	const siteUrl = 'https://superdots.sh';
 	const confirmUrl = `${siteUrl}/api/confirm?email=${encodeURIComponent(email)}&ts=${timestamp}&token=${token}`;
 
-	// Add contact to Resend audience as unsubscribed (pending confirmation)
-	const contactRes = await fetch(`https://api.resend.com/audiences/${RESEND_AUDIENCE_ID}/contacts`, {
+	// Create contact in Mautic with pending consent status
+	const mauticHeaders = {
+		'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+		'Content-Type': 'application/json',
+	};
+	if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
+		mauticHeaders['CF-Access-Client-Id'] = env.CF_ACCESS_CLIENT_ID;
+		mauticHeaders['CF-Access-Client-Secret'] = env.CF_ACCESS_CLIENT_SECRET;
+	}
+
+	const mauticRes = await fetch(`${MAUTIC_API_URL.replace(/\/$/, '')}/api/contacts/new`, {
 		method: 'POST',
-		headers: {
-			'Authorization': `Bearer ${RESEND_API_KEY}`,
-			'Content-Type': 'application/json',
-		},
+		headers: mauticHeaders,
 		body: JSON.stringify({
 			email,
-			unsubscribed: true,
-			data: {
-				source,
-				consent_pending: 'true',
-				signup_timestamp: new Date(timestamp).toISOString(),
-				signup_ip: request.headers.get('CF-Connecting-IP') || 'unknown',
-			},
+			consent_status: 'pending',
+			signup_source: source,
+			signup_ip: clientIp,
+			signup_timestamp: new Date(timestamp).toISOString(),
+			tags: ['newsletter-pending'],
+			ipAddress: clientIp,
 		}),
 	});
 
-	if (!contactRes.ok) {
-		const err = await contactRes.text();
-		// 409 = already exists, which is fine — re-send confirmation
-		if (contactRes.status !== 409) {
-			console.error('Resend contact error:', err);
-			return json({ error: 'Failed to process subscription' }, 500);
-		}
+	if (!mauticRes.ok) {
+		const err = await mauticRes.text();
+		console.error('Mautic contact error:', err);
+		return json({ error: 'Failed to process subscription' }, 500);
 	}
 
-	// Send confirmation email via Resend
+	// Send confirmation email via Resend (email delivery only)
 	const emailRes = await fetch('https://api.resend.com/emails', {
 		method: 'POST',
 		headers: {
