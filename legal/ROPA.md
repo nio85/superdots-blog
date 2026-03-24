@@ -13,16 +13,16 @@ Required under Art. 30 GDPR. This document records all personal data processing 
 
 | Field | Details |
 |-------|---------|
-| **Processing activity** | Newsletter subscription, contact management, and email delivery |
+| **Processing activity** | Newsletter double opt-in flow, contact management, and email delivery |
 | **Purpose** | Send subscribers weekly editorial content about AI at work |
-| **Legal basis** | Consent — Art. 6(1)(a) GDPR, confirmed via double opt-in |
+| **Legal basis** | **Pre-confirmation (pending contacts):** Art. 6(1)(b) GDPR — processing necessary to perform the steps requested by the data subject before entering into an agreement (sending and processing the confirmation email). **Post-confirmation (active subscribers):** Art. 6(1)(a) GDPR — consent, confirmed via double opt-in |
 | **Data subjects** | Newsletter subscribers (EU/EEA and international visitors) |
 | **Categories of personal data** | Email address, IP address (at signup and confirmation), signup timestamp, confirmation timestamp, subscription status, consent metadata (consent source, consent timestamp, opt-in IP), email engagement data (opens, clicks) |
 | **Source of data** | Collected directly from data subjects via subscription form on superdots.sh |
 | **Recipients / processors** | **Mautic (self-hosted, EU)** — primary contact database and marketing automation processor (sole storage of subscriber data). **Resend (Plus Five Five, Inc.)** — SMTP relay processor (email delivery only; does not store subscriber contact data) |
 | **International transfers** | Subscriber contact data is stored exclusively in Mautic on EU servers (no international transfer). Email delivery via Resend (US-based). Transfer safeguards for Resend: EU Standard Contractual Clauses (SCCs) incorporated in Resend DPA, EU-US Data Privacy Framework (self-certified by Resend) |
-| **Retention period** | Email address and contact data in Mautic: retained until unsubscribe, then immediately deleted. Transactional logs in Resend (delivery receipts): up to 30 days per Resend retention policy. Resend does not retain subscriber contact data beyond SMTP transit |
-| **Technical & organisational measures** | Double opt-in with HMAC-signed confirmation tokens (7-day expiry); HTTPS/TLS encryption in transit; Mautic instance access-controlled and hosted on EU infrastructure; Resend SOC 2 Type II and ISO 27001 certified; one-click unsubscribe in every email; Mautic tracking pixel for open/click analytics (consent-based) |
+| **Retention period** | **Unconfirmed (pending) contacts:** 30 days from signup, then automatically deleted. **Confirmed (active) subscribers:** retained until unsubscribe, then immediately deleted. Transactional logs in Resend (delivery receipts): up to 30 days per Resend retention policy. Resend does not retain subscriber contact data beyond SMTP transit |
+| **Technical & organisational measures** | Double opt-in with HMAC-signed confirmation tokens (7-day expiry); HTTPS/TLS encryption in transit; Mautic instance access-controlled and hosted on EU infrastructure; Resend SOC 2 Type II and ISO 27001 certified; one-click unsubscribe in every email; Mautic tracking pixel for open/click analytics (consent-based); **DNC (Do Not Contact) status for pending contacts** — unconfirmed contacts are placed on the Do Not Contact list, preventing any newsletter delivery until confirmation; **segment-based targeting** — only confirmed subscribers are included in campaign segments; **automatic purge** — scheduled task removes unconfirmed contacts after 30 days |
 | **Data processor agreement** | Resend DPA: https://resend.com/legal/dpa (accepted via Resend Terms of Service). Mautic: self-hosted — no third-party DPA required (data remains under controller's direct control) |
 
 ---
