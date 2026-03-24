@@ -67,7 +67,7 @@ async function handleUnsubscribe(context) {
 		// GDPR audit trail: log unsubscribe note BEFORE deleting the contact
 		const noteText = `Unsubscribe requested. Contact and engagement history will be hard-deleted (GDPR Art. 17).`;
 		try {
-			const noteRes = await fetch(`${mauticBase}/api/contacts/${contactId}/notes/new`, {
+			const noteRes = await fetch(`${mauticBase}/api/notes/new`, {
 				method: 'POST',
 				headers: { ...mauticHeaders, 'Content-Type': 'application/json' },
 				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),

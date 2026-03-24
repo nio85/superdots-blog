@@ -96,7 +96,7 @@ export async function onRequestPost(context) {
 		// GDPR audit trail: log consent note on the contact
 		const noteText = `Newsletter signup. Source: ${source}. IP: ${clientIp}. Timestamp: ${new Date(timestamp).toISOString()}. Consent text: 'Subscribe to receive new articles, curated links, and practical AI guides. Max 1 email/week. Unsubscribe anytime.'`;
 		try {
-			const noteRes = await fetch(`${MAUTIC_API_URL.replace(/\/$/, '')}/api/contacts/${contactId}/notes/new`, {
+			const noteRes = await fetch(`${MAUTIC_API_URL.replace(/\/$/, '')}/api/notes/new`, {
 				method: 'POST',
 				headers: mauticHeaders,
 				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),

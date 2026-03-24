@@ -90,7 +90,7 @@ export async function onRequestGet(context) {
 		// GDPR audit trail: log confirmation note on the contact
 		const noteText = `Double opt-in confirmed. IP: ${clientIp}. Timestamp: ${new Date().toISOString()}. Consent status: confirmed.`;
 		try {
-			const noteRes = await fetch(`${mauticBase}/api/contacts/${contactId}/notes/new`, {
+			const noteRes = await fetch(`${mauticBase}/api/notes/new`, {
 				method: 'POST',
 				headers: mauticHeaders,
 				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),
