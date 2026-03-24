@@ -3,7 +3,7 @@
 **Controller:** Superdots (superdots.sh)
 **Contact:** privacy@superdots.sh
 **Date created:** 17 March 2026
-**Last reviewed:** 18 March 2026
+**Last reviewed:** 24 March 2026
 
 Required under Art. 30 GDPR. This document records all personal data processing activities carried out by Superdots in connection with the blog at superdots.sh.
 
@@ -13,17 +13,17 @@ Required under Art. 30 GDPR. This document records all personal data processing 
 
 | Field | Details |
 |-------|---------|
-| **Processing activity** | Newsletter subscription and email delivery |
+| **Processing activity** | Newsletter subscription, contact management, and email delivery |
 | **Purpose** | Send subscribers weekly editorial content about AI at work |
 | **Legal basis** | Consent — Art. 6(1)(a) GDPR, confirmed via double opt-in |
 | **Data subjects** | Newsletter subscribers (EU/EEA and international visitors) |
-| **Categories of personal data** | Email address, IP address (at signup and confirmation), signup timestamp, confirmation timestamp, email engagement data (opens, clicks) |
+| **Categories of personal data** | Email address, IP address (at signup and confirmation), signup timestamp, confirmation timestamp, subscription status, consent metadata (consent source, consent timestamp, opt-in IP), email engagement data (opens, clicks) |
 | **Source of data** | Collected directly from data subjects via subscription form on superdots.sh |
-| **Recipients / processors** | Resend (Plus Five Five, Inc.) — email delivery processor |
-| **International transfers** | USA — Resend is a US-based processor. Transfer safeguards: EU Standard Contractual Clauses (SCCs) incorporated in Resend DPA, EU-US Data Privacy Framework (self-certified by Resend) |
-| **Retention period** | Email address: retained until unsubscribe, then deleted within 30 days. Transactional logs (delivery receipts): up to 30 days per Resend retention policy. Engagement data: retained by Resend per their data retention schedule |
-| **Technical & organisational measures** | Double opt-in with HMAC-signed confirmation tokens (7-day expiry); HTTPS/TLS encryption in transit; Resend SOC 2 Type II and ISO 27001 certified; one-click unsubscribe in every email; access restricted to Resend API key holders |
-| **Data processor agreement** | Resend DPA: https://resend.com/legal/dpa (accepted via Resend Terms of Service) |
+| **Recipients / processors** | **Mautic (self-hosted, EU)** — primary contact database and marketing automation processor (sole storage of subscriber data). **Resend (Plus Five Five, Inc.)** — SMTP relay processor (email delivery only; does not store subscriber contact data) |
+| **International transfers** | Subscriber contact data is stored exclusively in Mautic on EU servers (no international transfer). Email delivery via Resend (US-based). Transfer safeguards for Resend: EU Standard Contractual Clauses (SCCs) incorporated in Resend DPA, EU-US Data Privacy Framework (self-certified by Resend) |
+| **Retention period** | Email address and contact data in Mautic: retained until unsubscribe, then immediately deleted. Transactional logs in Resend (delivery receipts): up to 30 days per Resend retention policy. Resend does not retain subscriber contact data beyond SMTP transit |
+| **Technical & organisational measures** | Double opt-in with HMAC-signed confirmation tokens (7-day expiry); HTTPS/TLS encryption in transit; Mautic instance access-controlled and hosted on EU infrastructure; Resend SOC 2 Type II and ISO 27001 certified; one-click unsubscribe in every email; Mautic tracking pixel for open/click analytics (consent-based) |
+| **Data processor agreement** | Resend DPA: https://resend.com/legal/dpa (accepted via Resend Terms of Service). Mautic: self-hosted — no third-party DPA required (data remains under controller's direct control) |
 
 ---
 
