@@ -58,7 +58,7 @@ export async function onRequestGet(context) {
 			consent_status: 'confirmed',
 			confirmed_at: new Date().toISOString(),
 			confirmed_ip: clientIp,
-			tags: ['newsletter', 'double-opt-in'],
+			tags: ['newsletter', 'double-opt-in', '-newsletter-pending'],
 			ipAddress: clientIp,
 		}),
 	});
@@ -68,16 +68,24 @@ export async function onRequestGet(context) {
 		return errorPage('Something went wrong confirming your subscription. Please try again.');
 	}
 
-	// Remove the newsletter-pending tag from the contact
 	const mauticData = await mauticRes.json();
 	const contactId = mauticData.contact?.id;
+
+	// Remove DNC so the confirmed contact can receive emails
 	if (contactId) {
-		// Remove pending tag (best-effort, non-blocking)
-		fetch(`${mauticBase}/api/contacts/${contactId}/edit`, {
-			method: 'PATCH',
-			headers: mauticHeaders,
-			body: JSON.stringify({ tags: ['-newsletter-pending'] }),
-		}).catch(() => {});
+		try {
+			const dncRes = await fetch(`${mauticBase}/api/contacts/${contactId}/dnc/email/remove`, {
+				method: 'POST',
+				headers: mauticHeaders,
+			});
+			if (!dncRes.ok) {
+				console.error('DNC remove error:', await dncRes.text());
+				return errorPage('Something went wrong confirming your subscription. Please try again.');
+			}
+		} catch (err) {
+			console.error('DNC remove failed:', err);
+			return errorPage('Something went wrong confirming your subscription. Please try again.');
+		}
 	}
 
 	return successPage();

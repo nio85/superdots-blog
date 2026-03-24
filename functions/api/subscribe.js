@@ -76,6 +76,24 @@ export async function onRequestPost(context) {
 		return json({ error: 'Failed to process subscription' }, 500);
 	}
 
+	// Add DNC so pending contacts cannot receive campaign emails
+	const mauticData = await mauticRes.json();
+	const contactId = mauticData.contact?.id;
+	if (contactId) {
+		try {
+			const dncRes = await fetch(`${MAUTIC_API_URL.replace(/\/$/, '')}/api/contacts/${contactId}/dnc/email/add`, {
+				method: 'POST',
+				headers: mauticHeaders,
+				body: JSON.stringify({ reason: 3, comments: 'Pending double opt-in confirmation' }),
+			});
+			if (!dncRes.ok) {
+				console.error('DNC add error:', await dncRes.text());
+			}
+		} catch (err) {
+			console.error('DNC add failed:', err);
+		}
+	}
+
 	// Send confirmation email via Resend (email delivery only)
 	const emailRes = await fetch('https://api.resend.com/emails', {
 		method: 'POST',
