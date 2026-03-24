@@ -92,6 +92,21 @@ export async function onRequestPost(context) {
 		} catch (err) {
 			console.error('DNC add failed:', err);
 		}
+
+		// GDPR audit trail: log consent note on the contact
+		const noteText = `Newsletter signup. Source: ${source}. IP: ${clientIp}. Timestamp: ${new Date(timestamp).toISOString()}. Consent text: 'Subscribe to receive new articles, curated links, and practical AI guides. Max 1 email/week. Unsubscribe anytime.'`;
+		try {
+			const noteRes = await fetch(`${MAUTIC_API_URL.replace(/\/$/, '')}/api/contacts/${contactId}/notes/new`, {
+				method: 'POST',
+				headers: mauticHeaders,
+				body: JSON.stringify({ lead: contactId, type: 'general', text: noteText }),
+			});
+			if (!noteRes.ok) {
+				console.error('Mautic note error (subscribe):', await noteRes.text());
+			}
+		} catch (noteErr) {
+			console.error('Mautic note failed (subscribe):', noteErr);
+		}
 	}
 
 	// Send confirmation email via Resend (email delivery only)
