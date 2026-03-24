@@ -6,7 +6,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Privacy Policy | Superdots"
 	description="Privacy policy for superdots.sh — how we handle your data."
 	pageTitle="Privacy Policy"
-	lastUpdated="23 March 2026"
+	lastUpdated="24 March 2026"
 >
 
 	<h2>1. Who we are</h2>
@@ -100,21 +100,15 @@ import LegalPage from '../layouts/LegalPage.astro';
 				<td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">Cloudflare Privacy</a></td>
 			</tr>
 			<tr>
-				<td>Resend</td>
-				<td>Newsletter double opt-in confirmation emails</td>
-				<td>Email address</td>
-				<td><a href="https://resend.com/legal/privacy-policy" rel="noopener noreferrer" target="_blank">Resend Privacy</a></td>
-			</tr>
-			<tr>
 				<td>Mautic (self-hosted)</td>
-				<td>Newsletter campaign management &amp; marketing automation</td>
-				<td>Email address, subscription preferences, email engagement data (opens, clicks)</td>
-				<td>Self-hosted on infrastructure controlled by Superdots — no third-party data sharing</td>
+				<td>Newsletter contact management, subscription lifecycle, and marketing automation — sole contact database</td>
+				<td>Email address, subscription status, consent metadata (timestamp, IP, source), email engagement data (opens, clicks)</td>
+				<td>Self-hosted on EU infrastructure controlled by Superdots — no third-party data sharing</td>
 			</tr>
 			<tr>
 				<td>Resend</td>
-				<td>SMTP relay — email delivery (newsletters and transactional)</td>
-				<td>Email address, delivery metadata (bounce/open events)</td>
+				<td>Email delivery (SMTP relay only) — Resend does not store subscriber contact data</td>
+				<td>Email address (transit only), delivery metadata (bounce/open events)</td>
 				<td>US-based, EU–US DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a></td>
 			</tr>
 		</tbody>
@@ -146,7 +140,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
 		<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
 		<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
-		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from both our mailing list (Resend) and marketing automation system (Mautic).</li>
+		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).</li>
 	</ul>
 
 	<h2 id="newsletter">7. Newsletter</h2>
@@ -158,8 +152,8 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>Opt-in:</strong> We use a confirmed opt-in process. After entering your email, you will receive a confirmation email. Your subscription is only active once you click the confirmation link.</li>
 		<li><strong>What we send:</strong> New articles, curated links, and practical guides about AI at work — no more than once per week. We do not send promotional or product marketing content via the newsletter.</li>
 		<li><strong>Tracking:</strong> Our marketing automation system (Mautic, self-hosted) uses a tracking pixel (a tiny invisible image) to detect email opens, and link rewriting to measure which links you click. This data is associated with your email address and used solely to improve our content. You can prevent open tracking by disabling remote image loading in your email client.</li>
-		<li><strong>Unsubscribe:</strong> Every email contains a one-click unsubscribe link. You can also email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a> to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from all systems.</li>
-		<li><strong>Data processors:</strong> All emails (confirmation and campaign) are delivered via <a href="https://resend.com" rel="noopener noreferrer" target="_blank">Resend</a> (US-based, DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a>). Campaign management and subscriber segmentation are handled by Mautic, self-hosted by Superdots on EU servers.</li>
+		<li><strong>Unsubscribe:</strong> Every email contains a one-click unsubscribe link. You can also email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a> to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from Mautic.</li>
+		<li><strong>Data processors:</strong> Your subscriber data (email, consent records, engagement history) is stored exclusively in Mautic, self-hosted by Superdots on EU servers. All emails (confirmation and campaign) are delivered via <a href="https://resend.com" rel="noopener noreferrer" target="_blank">Resend</a> (US-based, DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a>), which acts as an SMTP relay only and does not retain subscriber contact data.</li>
 	</ul>
 
 	<h2>8. Your rights</h2>
