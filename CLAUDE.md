@@ -16,14 +16,97 @@ Site: https://superdots.sh
 - **Email transport**: Resend SMTP only (`smtp.resend.com:587`). No Postal, no Gmail.
 - **DNS/CDN**: Cloudflare (superdots.sh + bartoccini.cloud)
 
-## Git Rules
+## Git Publishing Procedure (mandatory for ALL agents)
 
-- **Repository**: `github.com/nio85/superdots-blog`
-- **Single branch**: `main` — there is NO `master` branch
-- **Feature branches**: `content/YYYY-MM-DD_slug`, `fix/description`, `feat/description`, `design/description`
-- **PRs always target `main`**. Merging triggers CI + Cloudflare Pages deploy.
+### Repository
+- **Repo**: `github.com/nio85/superdots-blog`
+- **Default branch**: `main` — there is NO `master` branch
+- **Deploy**: merge to `main` → GitHub Actions → Cloudflare Pages → https://superdots.sh
 - **Branch auto-delete**: GitHub deletes branches after PR merge automatically.
-- **Deploy**: `node scripts/deploy.mjs` from this directory, or automatic via GitHub Actions on push to main.
+
+### Authentication
+Before any `gh` or `git push` command:
+```bash
+source /home/luca/superdots-blog/.env
+export GH_TOKEN="$GITHUB_TOKEN"
+```
+
+### Branch naming
+| Change type | Prefix | Example |
+|---|---|---|
+| Blog article | `content/YYYY-MM-DD_slug` | `content/2026-03-25_ai-email-assistant` |
+| Bug fix | `fix/description` | `fix/broken-rss-feed` |
+| Feature | `feat/description` | `feat/newsletter-double-optin` |
+| Design/CSS | `design/description` | `design/new-article-layout` |
+
+### The Procedure
+
+**NEVER commit directly to `main`. NEVER push to `main`. ALL changes go through branch → PR → review → merge.**
+
+Step 1 — Start clean.
+```bash
+cd /home/luca/superdots-blog
+git checkout main && git pull origin main
+```
+
+Step 2 — Create a feature branch.
+```bash
+git checkout -b <prefix>/<name>
+```
+
+Step 3 — Do your work. Stage ONLY the files you changed:
+```bash
+git add <specific-files>
+```
+
+Step 4 — Commit.
+```bash
+git commit -m "<type>: <short description> (SUP-XXX)"
+```
+
+Step 5 — Push and open PR.
+```bash
+source .env && export GH_TOKEN="$GITHUB_TOKEN"
+git push -u origin <branch>
+gh pr create --repo nio85/superdots-blog --base main \
+  --title "<type>: <short description> (SUP-XXX)" \
+  --body "Paperclip task: SUP-XXX"
+```
+
+Step 6 — If CI fails, fix on your branch and push again.
+
+Step 7 — Post PR URL as comment on Paperclip task. Set status to `in_review`.
+
+Step 8 — You do NOT merge your own PRs. Wait for the designated reviewer.
+
+### Multi-agent collaboration on the same PR
+Multiple agents may work on the same branch/PR sequentially (e.g. Copywriter writes article, then Designer adds images on the same branch). When working on another agent's branch:
+```bash
+git fetch origin
+git checkout <existing-branch>
+git pull origin <existing-branch>
+# do your work, commit, push
+```
+
+### Review and merge matrix
+| PR type | Reviewer | Fallback |
+|---|---|---|
+| `content/*` | Content Manager | CEO |
+| `fix/*`, `feat/*` | Founding Engineer | CEO |
+| `design/*` | Founding Engineer | Content Manager |
+| Legal pages | CEO | Founding Engineer |
+
+Reviewers: merge only after CI passes. Verify deploy at https://superdots.sh.
+
+### Hotfix exception (CEO only)
+The CEO may commit directly to `main` ONLY for critical production fixes that cannot wait.
+Must: git pull first, commit as `hotfix: description (SUP-XXX)`, push, document why in task comment.
+
+### Workspace conflict prevention
+- Always start from `git checkout main && git pull origin main`
+- Never leave uncommitted work on `main`
+- If checkout fails due to another agent's uncommitted changes: `git stash` first
+- If rebase conflicts: set task to `blocked`, comment with conflict details
 
 ## Content Standards
 

@@ -61,15 +61,32 @@ function parseFrontmatter(filePath) {
 
 // --- Build prompt from article metadata + style config ---
 
+function extractHeadings(filePath) {
+  try {
+    const content = readFileSync(filePath, 'utf-8');
+    // Remove frontmatter
+    const body = content.replace(/^---[\s\S]*?---/, '');
+    const headings = [];
+    for (const line of body.split('\n')) {
+      const m = line.match(/^#{2,3}\s+(.+)/);
+      if (m && !m[1].toLowerCase().includes('faq')) headings.push(m[1].trim());
+    }
+    return headings.slice(0, 5).join(', ');
+  } catch { return ''; }
+}
+
 function buildPrompt(article) {
-  const { title, description, department, useCase } = article;
+  const { title, description, department, useCase, imageHint, filePath } = article;
   const dept = styleConfig.departments[department] || styleConfig.departments.operations;
   const useCaseHint = styleConfig.useCases[useCase] || '';
+  const headings = extractHeadings(filePath);
 
   const parts = [
     styleConfig.brandStyle.basePrompt,
     `Topic: ${title}.`,
+    imageHint ? `Scene: ${imageHint}.` : '',
     description ? `Context: ${description.slice(0, 120)}.` : '',
+    headings ? `Key sections: ${headings}.` : '',
     `Department visual style: ${dept.promptHint}.`,
     `Accent color: ${dept.accent}.`,
     useCaseHint ? `Visual motifs: ${useCaseHint}.` : '',
@@ -187,6 +204,7 @@ function getArticles() {
       description: frontmatter.description || '',
       department: frontmatter.department || 'operations',
       useCase: frontmatter.useCase || 'automation',
+      imageHint: frontmatter.imageHint || '',
       heroImage: frontmatter.heroImage || '',
       hasAiImage,
     });
