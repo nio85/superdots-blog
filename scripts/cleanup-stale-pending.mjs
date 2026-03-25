@@ -7,19 +7,23 @@
  * from Mautic. Confirmation tokens expire after 7 days; 30 days is a
  * generous buffer before cleanup.
  *
+ * After each run, sends a report email to the configured recipient.
+ *
  * Required env vars:
  *   MAUTIC_API_URL          - e.g. https://mautic.bartoccini.cloud
  *   MAUTIC_USERNAME         - HTTP Basic Auth username
  *   MAUTIC_PASSWORD         - HTTP Basic Auth password
+ *   RESEND_SMTP_API_KEY     - Resend SMTP key for email report
  *   CF_ACCESS_CLIENT_ID     - (optional) Cloudflare Access service token
  *   CF_ACCESS_CLIENT_SECRET - (optional)
  *
  * Usage:
- *   node scripts/cleanup-stale-pending.mjs            # Delete stale contacts
- *   node scripts/cleanup-stale-pending.mjs --dry-run   # Preview only
+ *   node scripts/cleanup-stale-pending.mjs            # Delete stale contacts + send report
+ *   node scripts/cleanup-stale-pending.mjs --dry-run   # Preview only (no email)
  */
 
 import { config } from 'dotenv';
+import { createTransport } from 'nodemailer';
 config();
 
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -33,7 +37,11 @@ const {
   MAUTIC_PASSWORD,
   CF_ACCESS_CLIENT_ID,
   CF_ACCESS_CLIENT_SECRET,
+  RESEND_SMTP_API_KEY,
 } = process.env;
+
+const MAIL_FROM = process.env.MAIL_FROM || 'notifications@superdots.sh';
+const TO_EMAIL = process.env.TO_EMAIL || 'lucavittorio.bartoccini@gmail.com';
 
 if (!MAUTIC_API_URL || !MAUTIC_USERNAME || !MAUTIC_PASSWORD) {
   console.error('Missing required env vars: MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD');
@@ -80,10 +88,28 @@ function cutoffDate() {
   return d.toISOString().split('T')[0]; // YYYY-MM-DD
 }
 
+async function fetchTotalContacts() {
+  const res = await mauticApi('GET', '/api/contacts?limit=1');
+  if (res.ok && res.data?.total != null) return parseInt(res.data.total, 10);
+  return -1;
+}
+
+async function fetchPendingCount() {
+  const res = await mauticApi('GET', `/api/contacts?search=${encodeURIComponent('consent_status:pending')}&limit=1`);
+  if (res.ok && res.data?.total != null) return parseInt(res.data.total, 10);
+  return -1;
+}
+
+async function fetchConfirmedCount() {
+  const res = await mauticApi('GET', `/api/contacts?search=${encodeURIComponent('consent_status:confirmed')}&limit=1`);
+  if (res.ok && res.data?.total != null) return parseInt(res.data.total, 10);
+  return -1;
+}
+
 async function fetchStalePending() {
   const cutoff = cutoffDate();
   // Mautic search: consent_status=pending AND date_added before cutoff
-  const search = `consent_status:pending date_added:!${cutoff}`;
+  const search = `consent_status:pending date_added:<${cutoff}`;
   const contacts = [];
   let start = 0;
 
@@ -93,7 +119,13 @@ async function fetchStalePending() {
 
     if (!res.ok) {
       console.error(`Failed to fetch contacts (start=${start}):`, res.status, res.data);
-      break;
+      process.exit(1);
+    }
+
+    if (typeof res.data !== 'object' || !res.data.contacts) {
+      console.error('Unexpected API response (possible CF Access block). Check CF_ACCESS_CLIENT_ID/SECRET.');
+      console.error('Response:', typeof res.data === 'string' ? res.data.substring(0, 200) : JSON.stringify(res.data).substring(0, 200));
+      process.exit(1);
     }
 
     const batch = res.data.contacts;
@@ -123,6 +155,68 @@ async function deleteContact(contactId) {
   return mauticApi('DELETE', `/api/contacts/${contactId}/delete`);
 }
 
+async function sendReport(report) {
+  if (!RESEND_SMTP_API_KEY) {
+    console.warn('No RESEND_SMTP_API_KEY — skipping email report');
+    return;
+  }
+
+  const transport = createTransport({
+    host: 'smtp.resend.com',
+    port: 587,
+    secure: false,
+    auth: { user: 'resend', pass: RESEND_SMTP_API_KEY },
+  });
+
+  const statusEmoji = report.errors > 0 ? '⚠️' : (report.deleted > 0 ? '🧹' : '✅');
+  const subject = `${statusEmoji} GDPR Cleanup: ${report.deleted} deleted, ${report.staleFound} stale, ${report.totalContacts} total`;
+
+  let html = `<h2>GDPR Stale Pending Contact Cleanup</h2>`;
+  html += `<p><strong>Date:</strong> ${new Date().toISOString().split('T')[0]}</p>`;
+  html += `<p><strong>Cutoff:</strong> ${report.cutoff} (${RETENTION_DAYS} days)</p>`;
+  html += `<hr>`;
+  html += `<h3>Summary</h3>`;
+  html += `<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;">`;
+  html += `<tr><td><strong>Total contacts in Mautic</strong></td><td>${report.totalContacts}</td></tr>`;
+  html += `<tr><td><strong>Confirmed subscribers</strong></td><td>${report.confirmedCount}</td></tr>`;
+  html += `<tr><td><strong>Pending contacts (all)</strong></td><td>${report.pendingCount}</td></tr>`;
+  html += `<tr><td><strong>Stale pending (> ${RETENTION_DAYS} days)</strong></td><td>${report.staleFound}</td></tr>`;
+  html += `<tr><td><strong>Deleted</strong></td><td>${report.deleted}</td></tr>`;
+  html += `<tr><td><strong>Errors</strong></td><td>${report.errors}</td></tr>`;
+  html += `</table>`;
+
+  if (report.deletedContacts.length > 0) {
+    html += `<h3>Deleted Contacts</h3><ul>`;
+    for (const c of report.deletedContacts) {
+      html += `<li><code>${c.email}</code> (id: ${c.id}, added: ${c.dateAdded})</li>`;
+    }
+    html += `</ul>`;
+  }
+
+  if (report.failedContacts.length > 0) {
+    html += `<h3>⚠️ Failed Deletions</h3><ul>`;
+    for (const c of report.failedContacts) {
+      html += `<li><code>${c.email}</code> (id: ${c.id}) — ${c.error}</li>`;
+    }
+    html += `</ul>`;
+  }
+
+  if (report.staleFound === 0) {
+    html += `<p>No stale pending contacts found. Nothing to clean up.</p>`;
+  }
+
+  html += `<hr><p style="color:#888;font-size:12px;">Automated GDPR cleanup — Superdots</p>`;
+
+  await transport.sendMail({
+    from: MAIL_FROM,
+    to: TO_EMAIL,
+    subject,
+    html,
+  });
+
+  console.log(`Report email sent to ${TO_EMAIL}`);
+}
+
 async function main() {
   console.log(`=== Stale Pending Contact Cleanup ===`);
   console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`);
@@ -131,11 +225,36 @@ async function main() {
   console.log(`Mautic: ${baseUrl}`);
   console.log('');
 
+  // Gather DB stats
+  const [totalContacts, pendingCount, confirmedCount] = await Promise.all([
+    fetchTotalContacts(),
+    fetchPendingCount(),
+    fetchConfirmedCount(),
+  ]);
+
+  console.log(`Total contacts: ${totalContacts}`);
+  console.log(`Confirmed: ${confirmedCount}`);
+  console.log(`Pending: ${pendingCount}`);
+  console.log('');
+
   const contacts = await fetchStalePending();
   console.log(`Found ${contacts.length} stale pending contact(s)`);
 
+  const report = {
+    cutoff: cutoffDate(),
+    totalContacts,
+    pendingCount,
+    confirmedCount,
+    staleFound: contacts.length,
+    deleted: 0,
+    errors: 0,
+    deletedContacts: [],
+    failedContacts: [],
+  };
+
   if (contacts.length === 0) {
     console.log('Nothing to clean up.');
+    if (!DRY_RUN) await sendReport(report);
     return;
   }
 
@@ -148,22 +267,22 @@ async function main() {
     return;
   }
 
-  let deleted = 0;
-  let errors = 0;
-
   for (const c of contacts) {
     const res = await deleteContact(c.id);
     if (res.ok) {
-      deleted++;
+      report.deleted++;
+      report.deletedContacts.push(c);
       console.log(`  Deleted [${c.id}] ${c.email}`);
     } else {
-      errors++;
+      report.errors++;
+      report.failedContacts.push({ ...c, error: `${res.status} ${JSON.stringify(res.data)}` });
       console.error(`  Failed [${c.id}] ${c.email}: ${res.status}`, res.data);
     }
     await sleep(RATE_LIMIT_MS);
   }
 
-  console.log(`\nDone. Deleted: ${deleted}, Errors: ${errors}`);
+  console.log(`\nDone. Deleted: ${report.deleted}, Errors: ${report.errors}`);
+  await sendReport(report);
 }
 
 main().catch(err => {
