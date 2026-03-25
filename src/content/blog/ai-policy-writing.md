@@ -6,7 +6,7 @@ author: 'Superdots Team'
 department: 'legal'
 useCase: 'writing'
 tags: ['ai-tools', 'ai-for-legal']
-heroImage: '/images/blog/ai-policy-writing.webp'
+heroImage: "/images/blog/ai-policy-writing.webp"
 faqs:
   - question: "How much do AI policy writing tools cost?"
     answer: "Prices range from free (using general-purpose AI like Claude or ChatGPT) to $5-25 per user per month for dedicated platforms like Waybook or Trainual. Enterprise tools like PowerDMS and PolicyMedical use custom pricing, typically starting at $500-1,000/month for mid-size organizations. Most offer free trials so you can test before committing."

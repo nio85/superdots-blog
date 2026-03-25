@@ -17,6 +17,7 @@ faqs:
     answer: "Yes. Most modern AI event planning platforms support in-person, virtual, and hybrid formats. Tools like Hopin and Bizzabo were built specifically for hybrid events and include virtual stage management, breakout rooms, and cross-format attendee engagement tracking. The AI components — scheduling optimization, attendee matching, and analytics — work across all formats, though some features like venue sourcing are obviously specific to in-person events."
   - question: "How do AI event planning tools measure event ROI?"
     answer: "AI event tools track engagement metrics that manual methods miss — session attendance rates, networking connection quality, content interaction patterns, and attendee sentiment from surveys and social media. Tools like Bizzabo and Splash generate automated ROI reports that connect these engagement metrics to business outcomes like leads generated, deals influenced, and attendee satisfaction scores. The key advantage over manual tracking is real-time data during the event, letting you adjust programming on the fly rather than discovering problems in a post-event debrief."
+heroImage: "/images/blog/ai-event-planning-tools.webp"
 ---
 
 67% of event professionals already use AI in their workflow. The other 33% are still building seating charts in spreadsheets and chasing RSVPs through email threads that stopped making sense three replies ago.
