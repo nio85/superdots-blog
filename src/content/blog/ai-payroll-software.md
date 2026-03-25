@@ -18,6 +18,7 @@ faqs:
     answer: "For small businesses with fewer than 50 employees, Gusto and OnPay offer the best balance of AI features, ease of use, and affordability. Gusto starts at $40/month plus $6/employee and includes automated tax filing, benefits management, and time tracking. OnPay is $40/month plus $6/employee with strong multi-state support. If you need payroll bundled with broader HR features, Rippling starts at $8/employee/month and offers powerful automation across payroll, benefits, and IT management."
   - question: "How does AI payroll handle contractor vs. employee payments?"
     answer: "AI payroll tools manage both employee and contractor payments, but with different workflows. For employees, the tool calculates withholding, deductions, and employer taxes automatically. For contractors, it tracks payments, generates 1099 forms at year-end, and flags payments that might trigger reclassification risk (like a contractor receiving consistent payments that resemble a salary). Some tools also manage international contractor payments with automatic currency conversion and local tax compliance."
+heroImage: "/images/blog/ai-payroll-software.webp"
 ---
 
 Payroll is the one business process you cannot get wrong. Late paychecks destroy trust. Tax errors trigger penalties. Compliance mistakes invite audits. Yet at most growing companies, payroll still runs on a mix of spreadsheets, manual calculations, and a monthly prayer that nobody missed a deduction.
