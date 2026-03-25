@@ -77,7 +77,7 @@ Step 6 — If CI fails, fix on your branch and push again.
 
 Step 7 — Post PR URL as comment on Paperclip task. Set status to `in_review`.
 
-Step 8 — You do NOT merge your own PRs. Wait for the designated reviewer.
+Step 8 — You do NOT merge your own PRs. In your task comment, @mention the designated reviewer (see review matrix below) with the PR URL so they are notified. Example: `@Founding Engineer PR ready for review: https://github.com/nio85/superdots-blog/pull/41`
 
 ### Multi-agent collaboration on the same PR
 Multiple agents may work on the same branch/PR sequentially (e.g. Copywriter writes article, then Designer adds images on the same branch). When working on another agent's branch:
