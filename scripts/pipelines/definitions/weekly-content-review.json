@@ -1,0 +1,136 @@
+{
+  "pipeline": {
+    "name": "weekly-content-review",
+    "description": "Weekly content performance review — SEO audit, growth analysis, and editorial action plan",
+
+    "vars": {
+      "date": "{{TODAY}}",
+      "weekday": "{{WEEKDAY}}"
+    },
+
+    "idempotency": {
+      "query": "[{{date}}] Weekly content review",
+      "matchField": "title"
+    },
+
+    "parent": {
+      "title": "[{{date}}] Weekly content review",
+      "assignee": "CONTENT_MANAGER",
+      "priority": "high",
+      "description": [
+        "## Weekly Content Review — {{date}}",
+        "",
+        "Coordinate the weekly content performance review. You are the orchestrator.",
+        "",
+        "## Your responsibilities",
+        "1. When SEO Expert finishes the performance audit: review findings, then unblock the Growth Analyst task (set it to `todo`)",
+        "2. When Growth Analyst finishes the opportunity analysis: unblock your own action plan task",
+        "3. Create follow-up tasks based on the combined findings (content refreshes, new articles, technical fixes)",
+        "",
+        "Subtasks track the individual steps."
+      ]
+    },
+
+    "tasks": [
+      {
+        "id": "seo_audit",
+        "title": "[{{date}}] SEO performance audit — last 7 days",
+        "assignee": "SEO_EXPERT",
+        "status": "todo",
+        "priority": "high",
+        "description": [
+          "## Weekly Content Review — {{date}}",
+          "",
+          "Audit blog SEO performance for the past 7 days.",
+          "",
+          "## What to check",
+          "- **Google Search Console**: impressions, clicks, CTR, average position for all articles",
+          "- **New articles published this week**: are they indexed? initial ranking signals?",
+          "- **Top performers**: which articles gained the most impressions/clicks?",
+          "- **Declining articles**: which previously strong articles lost traffic?",
+          "- **Technical SEO**: run `node scripts/daily-seo-check.mjs --json` and summarize findings",
+          "- **Broken links, missing meta, structured data issues**",
+          "",
+          "## Output",
+          "Post a structured report as a comment on this task with:",
+          "- Top 5 performing articles (with metrics)",
+          "- Top 5 declining articles (with metrics)",
+          "- Technical SEO issues found",
+          "- Quick wins (easy improvements that could boost traffic)",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** so they can review and unblock the Growth Analyst"
+        ]
+      },
+      {
+        "id": "growth_analysis",
+        "title": "[{{date}}] Growth opportunity analysis",
+        "assignee": "GROWTH_ANALYST",
+        "status": "blocked",
+        "priority": "high",
+        "blockedBy": "seo_audit",
+        "description": [
+          "## Weekly Content Review — {{date}}",
+          "",
+          "Analyze the SEO Expert's audit and identify growth opportunities.",
+          "",
+          "## What to analyze",
+          "- **High-potential articles**: which articles are close to page 1 and could rank with small improvements?",
+          "- **Content gaps**: based on traffic patterns, what topics should we cover next?",
+          "- **Internal linking opportunities**: which new articles could link to/from existing content?",
+          "- **Refresh candidates**: which older articles could benefit from an update?",
+          "- **Conversion analysis**: are articles driving newsletter signups? which ones convert best?",
+          "",
+          "## Output",
+          "Post a prioritized list of recommended actions as a comment:",
+          "1. **Quick wins** (< 1 hour each, high impact)",
+          "2. **Content refreshes** (specific articles + what to update)",
+          "3. **New content ideas** (based on gaps found)",
+          "4. **Technical improvements** (if any)",
+          "",
+          "## Context",
+          "SEO audit findings in [{{seo_audit.identifier}}](/SUP/issues/{{seo_audit.identifier}}).",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** so they can create action tasks",
+          "",
+          "## Blocked on",
+          "SEO audit from [{{seo_audit.identifier}}](/SUP/issues/{{seo_audit.identifier}})."
+        ]
+      },
+      {
+        "id": "action_plan",
+        "title": "[{{date}}] Create action tasks from weekly review",
+        "assignee": "CONTENT_MANAGER",
+        "status": "blocked",
+        "priority": "high",
+        "blockedBy": "growth_analysis",
+        "description": [
+          "## Weekly Content Review — {{date}}",
+          "",
+          "Review the SEO audit and growth analysis, then create concrete action tasks.",
+          "",
+          "## Steps",
+          "1. Read the SEO audit in [{{seo_audit.identifier}}](/SUP/issues/{{seo_audit.identifier}})",
+          "2. Read the growth analysis in [{{growth_analysis.identifier}}](/SUP/issues/{{growth_analysis.identifier}})",
+          "3. Prioritize: pick the top actions for this week",
+          "4. Create Paperclip tasks for each action, assigned to the right agent:",
+          "   - Content refreshes → Copywriter",
+          "   - Technical SEO fixes → Founding Engineer",
+          "   - New article briefs → SEO Expert",
+          "   - Image/design improvements → Frontend Designer",
+          "5. Comment on the parent task [{{_parent.identifier}}](/SUP/issues/{{_parent.identifier}}) with a summary of created tasks",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. Close the parent task [{{_parent.identifier}}](/SUP/issues/{{_parent.identifier}})",
+          "",
+          "## Blocked on",
+          "Growth analysis from [{{growth_analysis.identifier}}](/SUP/issues/{{growth_analysis.identifier}})."
+        ]
+      }
+    ]
+  }
+}
