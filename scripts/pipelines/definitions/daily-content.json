@@ -1,0 +1,198 @@
+{
+  "pipeline": {
+    "name": "daily-content",
+    "description": "Daily editorial content production pipeline",
+
+    "vars": {
+      "date": "{{TODAY}}"
+    },
+
+    "idempotency": {
+      "query": "[{{date}}] Daily content pipeline",
+      "matchField": "title"
+    },
+
+    "parent": {
+      "title": "[{{date}}] Daily content pipeline",
+      "assignee": "CONTENT_MANAGER",
+      "status": "todo",
+      "priority": "high",
+      "description": [
+        "## Daily Content Pipeline — {{date}}",
+        "",
+        "Coordinate today's content production. You are the orchestrator — unblock downstream tasks as each step completes.",
+        "",
+        "## Your responsibilities",
+        "1. When SEO Expert finishes briefs: review them, then unblock the Copywriter task (set it to `todo`)",
+        "2. When Copywriter finishes articles + PRs: unblock the Frontend Designer task (set it to `todo`)",
+        "3. When Designer finishes images: unblock the Legal Expert task (set it to `todo`)",
+        "4. When Legal approves: your merge task gets unblocked — do final review and merge",
+        "",
+        "Subtasks track the individual steps."
+      ]
+    },
+
+    "tasks": [
+      {
+        "id": "seo_brief",
+        "title": "[{{date}}] SEO brief: 3 article topic recommendations",
+        "assignee": "SEO_EXPERT",
+        "status": "todo",
+        "priority": "high",
+        "description": [
+          "## Daily Content Pipeline — {{date}}",
+          "",
+          "Research and provide keyword-backed briefs for 3 blog article topics.",
+          "",
+          "For each topic:",
+          "- **Target keyword** and search volume/difficulty estimate",
+          "- **Headline suggestion** — SEO-optimized and compelling",
+          "- **Content angle** — practical value for non-technical professionals",
+          "- **Recommended structure** — headings, word count, internal links",
+          "",
+          "## Output",
+          "Post 3 briefs as a comment on this task.",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** in a comment so they can review the briefs and unblock the Copywriter",
+          "",
+          "## Deadline",
+          "Complete by 11:00 CET so the Content Manager can review before handing off to the Copywriter."
+        ]
+      },
+      {
+        "id": "write_articles",
+        "title": "[{{date}}] Write articles and open PRs",
+        "assignee": "COPYWRITER",
+        "status": "blocked",
+        "priority": "high",
+        "blockedBy": "seo_brief",
+        "description": [
+          "## Daily Content Pipeline — {{date}}",
+          "",
+          "Write full articles based on article briefs from the Content Manager.",
+          "",
+          "For each article:",
+          "1. Follow the **Git Publishing Procedure** in CLAUDE.md",
+          "2. Create branch `content/{{date}}_<slug>`",
+          "3. Write the article in `src/content/blog/<slug>.md`",
+          "4. Include an `imageHint` field in frontmatter — a short description (10-20 words) of what the hero image should depict, specific to the article content (e.g. `imageHint: \"person at desk comparing two email drafts side by side\"`)",
+          "5. Commit, push, open PR targeting `main`",
+          "6. Post the PR URL as a comment on this task",
+          "",
+          "## Guidelines",
+          "- Write for busy professionals, not academics",
+          "- Voice: direct, conversational, zero corporate fluff",
+          "- Every article MUST have a FAQ section (4-5 questions)",
+          "- One PR per article",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** with all PR URLs so they can unblock the Designer",
+          "",
+          "## Blocked on",
+          "Content Manager review of [{{seo_brief.identifier}}](/SUP/issues/{{seo_brief.identifier}}) SEO briefs."
+        ]
+      },
+      {
+        "id": "hero_images",
+        "title": "[{{date}}] Generate AI hero images for new articles",
+        "assignee": "FRONTEND_DESIGNER",
+        "status": "blocked",
+        "priority": "high",
+        "blockedBy": "write_articles",
+        "description": [
+          "## Daily Content Pipeline — {{date}}",
+          "",
+          "Generate AI hero images for today's new articles and push them to the Copywriter's open PRs.",
+          "",
+          "## Steps",
+          "For each article PR opened by the Copywriter:",
+          "1. `git fetch origin && git checkout <branch-name> && git pull origin <branch-name>`",
+          "2. Run `node scripts/generate-ai-images.mjs --slug <article-slug>` to generate the hero image",
+          "3. Review the generated image against brand guidelines (see `scripts/image-style-config.json` qualityCalibration section). Regenerate if it doesn't meet standards.",
+          "4. Verify the image is specific to the article content, not generic. The article's `imageHint` frontmatter field describes what the image should depict.",
+          "5. Commit the image + updated frontmatter, push to the same branch",
+          "6. Comment on this task confirming images are done",
+          "",
+          "## Requirements",
+          "- `REPLICATE_API_TOKEN` must be set (load from `.env`)",
+          "- Work on the **same branch** as the Copywriter's PR — do NOT create a new branch",
+          "- Check PR URLs in [{{write_articles.identifier}}](/SUP/issues/{{write_articles.identifier}}) task comments",
+          "",
+          "## When done",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** confirming all images are pushed, so they can unblock Legal review",
+          "",
+          "## Blocked on",
+          "Copywriter PRs from [{{write_articles.identifier}}](/SUP/issues/{{write_articles.identifier}}). Look for PR URLs in that task's comments."
+        ]
+      },
+      {
+        "id": "legal_review",
+        "title": "[{{date}}] Legal compliance review of new articles",
+        "assignee": "LEGAL_EXPERT",
+        "status": "blocked",
+        "priority": "medium",
+        "blockedBy": "hero_images",
+        "description": [
+          "## Daily Content Pipeline — {{date}}",
+          "",
+          "Review today's article PRs for legal and compliance issues before publication.",
+          "",
+          "## What to check",
+          "- GDPR compliance: no personal data collection claims without proper disclosure",
+          "- Affiliate/sponsorship disclosure if applicable",
+          "- No misleading claims about AI capabilities",
+          "- Copyright: no copied content, proper attribution",
+          "- Privacy policy consistency: if article references data handling, verify it matches our privacy policy",
+          "",
+          "## Steps",
+          "For each article PR (find PR URLs in [{{hero_images.identifier}}](/SUP/issues/{{hero_images.identifier}}) and [{{write_articles.identifier}}](/SUP/issues/{{write_articles.identifier}}) task comments):",
+          "1. Read the article content in the PR branch",
+          "2. If **approved**: comment on this task \"Approved: PR #XX\" for each PR",
+          "3. If **changes needed**: create a new Paperclip task assigned to the relevant agent (Copywriter for content changes, Designer for image changes) with specific required fixes and a reference to the PR. Set this task to `blocked` until the fix task is done.",
+          "",
+          "## When all PRs are approved",
+          "1. Set this task to `done`",
+          "2. @mention **@Content Manager** confirming legal approval so they can proceed with merge",
+          "",
+          "## Blocked on",
+          "Images added to PRs by Frontend Designer [{{hero_images.identifier}}](/SUP/issues/{{hero_images.identifier}})."
+        ]
+      },
+      {
+        "id": "merge",
+        "title": "[{{date}}] Final review and merge article PRs",
+        "assignee": "CONTENT_MANAGER",
+        "status": "blocked",
+        "priority": "high",
+        "blockedBy": "legal_review",
+        "description": [
+          "## Daily Content Pipeline — {{date}}",
+          "",
+          "Final editorial review and merge of today's article PRs.",
+          "",
+          "## Prerequisites",
+          "- All PRs have article content (Copywriter) + hero images (Designer)",
+          "- Legal review approved ([{{legal_review.identifier}}](/SUP/issues/{{legal_review.identifier}}))",
+          "",
+          "## Steps",
+          "For each article PR:",
+          "1. Final editorial quality check (tone, structure, frontmatter completeness)",
+          "2. Verify hero image is present and appropriate",
+          "3. Verify CI passes",
+          "4. Merge PR to `main` using `gh pr merge <number> --merge --repo nio85/superdots-blog`",
+          "5. Verify deploy succeeded at https://superdots.sh",
+          "",
+          "## After merging all PRs",
+          "Comment on parent task [{{_parent.identifier}}](/SUP/issues/{{_parent.identifier}}) with published article URLs. Close the parent task.",
+          "",
+          "## Blocked on",
+          "Legal approval from [{{legal_review.identifier}}](/SUP/issues/{{legal_review.identifier}})."
+        ]
+      }
+    ]
+  }
+}
