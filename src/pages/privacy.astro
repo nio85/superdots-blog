@@ -140,7 +140,8 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
 		<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
 		<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
-		<li><strong>Newsletter email addresses:</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).</li>
+		<li><strong>Newsletter email addresses (confirmed):</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).</li>
+		<li><strong>Newsletter email addresses (unconfirmed):</strong> retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.</li>
 	</ul>
 
 	<h2 id="newsletter">7. Newsletter</h2>
@@ -150,6 +151,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	</p>
 	<ul>
 		<li><strong>Opt-in:</strong> We use a confirmed opt-in process. After entering your email, you will receive a confirmation email. Your subscription is only active once you click the confirmation link.</li>
+		<li><strong>Pre-confirmation storage:</strong> When you submit the signup form, we temporarily store your email address and related data (IP address, timestamp) to send and process the confirmation email. The legal basis for this pre-confirmation processing is Art. 6(1)(b) GDPR (necessary to perform the steps you requested before entering into an agreement). If you do not confirm within 30 days, your data is automatically deleted. Unconfirmed contacts are technically blocked from receiving any newsletter content.</li>
 		<li><strong>What we send:</strong> New articles, curated links, and practical guides about AI at work — no more than once per week. We do not send promotional or product marketing content via the newsletter.</li>
 		<li><strong>Tracking:</strong> Our marketing automation system (Mautic, self-hosted) uses a tracking pixel (a tiny invisible image) to detect email opens, and link rewriting to measure which links you click. This data is associated with your email address and used solely to improve our content. You can prevent open tracking by disabling remote image loading in your email client.</li>
 		<li><strong>Unsubscribe:</strong> Every email contains a one-click unsubscribe link. You can also email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a> to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from Mautic.</li>
