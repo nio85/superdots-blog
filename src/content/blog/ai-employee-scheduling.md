@@ -18,6 +18,7 @@ faqs:
     answer: "For small businesses with fewer than 50 employees, Homebase and When I Work offer the best combination of features and affordability. Homebase is free for a single location and includes time tracking, team messaging, and basic scheduling. When I Work starts at $2.50/user/month and adds stronger shift-swapping and availability management. If you also need HR features like onboarding and compliance, Connecteam bundles scheduling with broader workforce management starting at $29/month."
   - question: "How much time does automated employee scheduling save?"
     answer: "Managers using AI scheduling tools report saving 5-8 hours per week on schedule creation and adjustment. The biggest time savings come from eliminating the back-and-forth of checking availability (2-3 hours), automated shift swap handling (1-2 hours), and not having to manually track overtime and compliance rules (1-2 hours). For a company with multiple locations, this adds up to 20-30+ hours per week of manager time recovered across the organization."
+heroImage: "/images/blog/ai-employee-scheduling.webp"
 ---
 
 Every Monday morning, a restaurant manager sits down with a spreadsheet and starts building next week's schedule. She checks who requested time off. She looks at last week's sales to guess how many people she needs Friday night. She texts three servers to see if anyone can swap a Tuesday shift. She does math to make sure nobody hits overtime.
