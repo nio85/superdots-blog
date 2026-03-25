@@ -18,6 +18,7 @@ faqs:
     answer: "Teams using AI RFP tools typically see 50-70% reduction in response time (from 20-40 hours down to 8-15 hours per RFP), ability to pursue 2-3x more RFP opportunities with the same team, and improved win rates of 5-15% due to more consistent, polished responses. For a team responding to 10 RFPs per month, saving 15 hours each adds up to 150 hours per month — roughly a full-time employee's worth of capacity recovered."
   - question: "How do AI RFP tools handle security questionnaires?"
     answer: "Security questionnaires are one of the strongest use cases for AI RFP tools because the questions are highly standardized. Tools like Responsive and Loopio maintain dedicated security content libraries that map your certifications, policies, and controls to common questionnaire frameworks (SOC 2, ISO 27001, CAIQ, SIG). The AI matches each question to the right answer from your library, flags questions that need updated responses, and highlights gaps where you lack a documented answer."
+heroImage: "/images/blog/ai-rfp-response-tools.webp"
 ---
 
 A 200-question RFP lands in your inbox on Monday. It is due Friday. Your proposal team already has three other RFPs in progress, plus a security questionnaire that showed up unannounced last week. Half the questions are ones you have answered before — company overview, security certifications, implementation timeline, support SLAs. But they are phrased differently every time, buried in a new spreadsheet format, and the client wants everything in their specific template.
