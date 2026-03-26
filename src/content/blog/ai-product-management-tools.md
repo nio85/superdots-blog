@@ -18,6 +18,7 @@ faqs:
     answer: "No. AI handles the mechanical parts of PM work—writing, summarizing, formatting. The judgment calls—what to build, what to kill, how to navigate stakeholder politics, what users actually need—still require a human. If anything, AI makes strong PMs more productive and exposes weak processes faster."
   - question: "What is the best AI tool for roadmap planning?"
     answer: "There is no single best tool. Linear with AI assist works well for engineering-heavy teams. Productboard is strong for customer-driven prioritization. Notion AI suits teams that already use Notion as their source of truth. The best tool is the one your team will actually use consistently."
+heroImage: "/images/blog/ai-product-management-tools.webp"
 ---
 
 Product managers have always dealt with too much information and not enough time. User interviews to synthesize, PRDs to write, stakeholders to update, backlogs to groom, roadmaps to justify. It never ends.
