@@ -18,6 +18,7 @@ faqs:
     answer: "Reclaim AI is better for solo professionals who want lightweight, flexible task scheduling with habit blocking. Motion is stronger for teams coordinating across multiple people, with more robust project management integration. Both offer free trials—test both against your actual workflow."
   - question: "How do AI time management tools prioritize tasks?"
     answer: "Most AI scheduling tools let you set priority levels, deadlines, and duration estimates for tasks. The AI then fits tasks into available calendar slots based on your rules, energy patterns (morning vs. afternoon), and meeting load. Higher-priority tasks get scheduled first; lower-priority tasks fill gaps."
+heroImage: "/images/blog/ai-time-management-tools.webp"
 ---
 
 You do not have a time management problem. You have a decision fatigue problem.
