@@ -39,6 +39,19 @@ export GH_TOKEN="$GITHUB_TOKEN"
 | Feature | `feat/description` | `feat/newsletter-double-optin` |
 | Design/CSS | `design/description` | `design/new-article-layout` |
 
+### Concurrent Git Safety
+
+**All 9 agents share the same working directory.** To prevent git conflicts, always use the serialized wrapper for checkout/pull operations:
+
+```bash
+bash scripts/git-safe.sh sync     # quick: checkout main + pull (for scripts)
+bash scripts/git-safe.sh pull     # full: stash + checkout main + pull --rebase
+bash scripts/git-safe.sh checkout <branch>  # safe branch switch
+bash scripts/git-safe.sh push     # push current branch
+```
+
+The wrapper uses `flock` to ensure only one agent runs git operations at a time. Direct `git checkout`/`git pull` commands may collide with other agents.
+
 ### The Procedure
 
 **NEVER commit directly to `main`. NEVER push to `main`. ALL changes go through branch → PR → review → merge.**
@@ -46,7 +59,7 @@ export GH_TOKEN="$GITHUB_TOKEN"
 Step 1 — Start clean.
 ```bash
 cd /home/luca/superdots-blog
-git checkout main && git pull origin main
+bash scripts/git-safe.sh pull
 ```
 
 Step 2 — Create a feature branch.
@@ -101,6 +114,13 @@ Reviewers: merge only after CI passes. Verify deploy at https://superdots.sh.
 ### Hotfix exception (CEO only)
 The CEO may commit directly to `main` ONLY for critical production fixes that cannot wait.
 Must: git pull first, commit as `hotfix: description (SUP-XXX)`, push, document why in task comment.
+
+### Branch cleanup
+After a PR is merged, delete the local branch:
+```bash
+git branch -d <merged-branch>
+```
+Do NOT accumulate stale branches locally. Reviewers: after merging, delete the branch.
 
 ### Workspace conflict prevention
 - Always start from `git checkout main && git pull origin main`
