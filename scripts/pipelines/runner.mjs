@@ -81,14 +81,28 @@ export async function runPipeline(name, { dryRun = false, vars = {}, companyId, 
   if (pipeline.description) console.log(`  ${pipeline.description}`);
   console.log();
 
-  // Idempotency check
+  // Idempotency check — skip if pipeline already running with subtasks
   if (pipeline.idempotency && !dryRun) {
     const query = resolve(pipeline.idempotency.query, context);
     const field = pipeline.idempotency.matchField || 'title';
+    const expectedTitle = resolve(pipeline.parent?.title || query, context);
     const existing = await client.searchIssues(query);
-    if (Array.isArray(existing) && existing.some(i => i[field] === resolve(pipeline.parent?.title || query, context))) {
-      console.log(`Pipeline already exists for today. Skipping.`);
-      return { skipped: true };
+    const match = Array.isArray(existing) && existing.find(i => i[field] === expectedTitle);
+
+    if (match) {
+      const childCount = client.countChildren(match.id);
+      if (childCount > 0) {
+        // Pipeline has subtasks — already running or completed, skip
+        console.log(`Pipeline already exists with ${childCount} subtask(s) (${match.identifier}). Skipping.`);
+        return { skipped: true };
+      }
+      if (match.status === 'done' || match.status === 'cancelled') {
+        // Completed/cancelled without subtasks — skip
+        console.log(`Pipeline ${match.identifier} is ${match.status}. Skipping.`);
+        return { skipped: true };
+      }
+      // Parent exists but has NO subtasks and is not done — stale from a crashed run
+      console.warn(`WARNING: Found stale pipeline parent ${match.identifier} (status: ${match.status}, 0 subtasks). Ignoring stale parent and re-creating pipeline.`);
     }
   }
 

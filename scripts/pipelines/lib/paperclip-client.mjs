@@ -3,6 +3,7 @@
  * Extracts the common auth + fetch pattern used across all scripts.
  */
 
+import { execSync } from 'node:child_process';
 import {
   PAPERCLIP_API_URL,
   PAPERCLIP_COMPANY_ID,
@@ -60,6 +61,19 @@ export class PaperclipClient {
 
   async addComment(issueId, body) {
     return this.request('POST', `/api/issues/${issueId}/comments`, { body });
+  }
+
+  /** Count child issues (subtasks) of a parent issue via local DB query */
+  countChildren(parentId) {
+    try {
+      const result = execSync(
+        `psql -U luca -d paperclip -t -A -c "SELECT COUNT(*) FROM issues WHERE parent_id = '${parentId.replace(/'/g, "''")}';"`,
+        { encoding: 'utf-8', uid: 1000 }
+      ).trim();
+      return parseInt(result, 10) || 0;
+    } catch {
+      return -1; // error querying — treat as unknown
+    }
   }
 
   /** Resolve an AGENTS key (e.g. "SEO_EXPERT") to its UUID */
