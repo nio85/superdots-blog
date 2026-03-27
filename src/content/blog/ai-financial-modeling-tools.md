@@ -18,6 +18,7 @@ faqs:
     answer: "Yes, and several are built specifically for that market. Finmark targets early-stage startups with straightforward P&L and runway models. Causal is popular with small finance teams that want powerful scenario modeling without enterprise pricing. Most tools offer tiered pricing, so you're not paying for features you don't need."
   - question: "What skills do I still need if I use AI for financial modeling?"
     answer: "Financial judgment, storytelling, and business context. AI tools handle the mechanical work — data wrangling, formula logic, chart generation — but they can't tell you whether your assumptions are defensible or how to frame a forecast for a skeptical board. The best finance teams use AI to move faster, then apply human judgment to make the output meaningful."
+heroImage: "/images/blog/ai-financial-modeling-tools.webp"
 ---
 
 You've built the model. It took three days, eighteen tabs, and a formula you don't fully trust anymore. Then the CEO asks for a new scenario — what if revenue drops 20%? — and you start over.
