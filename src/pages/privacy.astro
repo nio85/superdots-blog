@@ -6,7 +6,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Privacy Policy | Superdots"
 	description="Privacy policy for superdots.sh — how we handle your data."
 	pageTitle="Privacy Policy"
-	lastUpdated="24 March 2026"
+	lastUpdated="27 March 2026"
 >
 
 	<h2>1. Who we are</h2>
@@ -32,6 +32,11 @@ import LegalPage from '../layouts/LegalPage.astro';
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+				<td>Privacy-friendly analytics (page URL, referrer, browser, OS, device type, country) via Umami Analytics (self-hosted)</td>
+				<td>Understand which content is useful so we can improve the Site — no cookies, no personal data stored, no cross-site tracking</td>
+				<td>Legitimate interest — Art. 6(1)(f)</td>
+			</tr>
 			<tr>
 				<td>Usage analytics (page views, referrer, device type) via Google Analytics 4</td>
 				<td>Understand which content is useful so we can improve the Site</td>
@@ -82,6 +87,12 @@ import LegalPage from '../layouts/LegalPage.astro';
 		</thead>
 		<tbody>
 			<tr>
+				<td>Umami Analytics (self-hosted)</td>
+				<td>Privacy-friendly traffic analytics</td>
+				<td>Aggregated, anonymous page-view metrics only (page URL, referrer, browser, OS, device type, country derived from IP). IP addresses are used for geolocation but never stored. No cookies, no personal data, no cross-site tracking.</td>
+				<td>Self-hosted on Superdots infrastructure (EU) — no third-party data transfer</td>
+			</tr>
+			<tr>
 				<td>Google Analytics 4</td>
 				<td>Traffic analytics</td>
 				<td>Pseudonymised usage data, IP address (anonymised by default in GA4)</td>
@@ -116,6 +127,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h2>5. International data transfers</h2>
 	<p>
+		<strong>Umami Analytics</strong> and <strong>Mautic</strong> are self-hosted on Superdots infrastructure
+		located in the European Union — no international data transfer occurs for these services.
+	</p>
+	<p>
 		Google, Microsoft, Cloudflare, and Resend process data in the United States. All four providers are
 		certified under the <strong>EU–US Data Privacy Framework</strong> (DPF) and incorporate
 		<strong>Standard Contractual Clauses (SCCs)</strong> in their data processing agreements
@@ -136,6 +151,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 
 	<h2>6. Data retention</h2>
 	<ul>
+		<li><strong>Umami Analytics data:</strong> aggregated page-view metrics retained on our self-hosted server. No personal data or IP addresses are stored.</li>
 		<li><strong>Google Analytics data:</strong> retained for 14 months (GA4 default), then automatically deleted.</li>
 		<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
 		<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
@@ -167,7 +183,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 		<li><strong>Restrict processing</strong> (Art. 18)</li>
 		<li><strong>Data portability</strong> (Art. 20)</li>
 		<li><strong>Object</strong> to processing based on legitimate interest (Art. 21)</li>
-		<li><strong>Withdraw consent</strong> at any time for analytics cookies or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3))</li>
+		<li><strong>Withdraw consent</strong> at any time for analytics cookies (GA4/Clarity) or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.</li>
 	</ul>
 	<p>
 		To exercise any of these rights, email
