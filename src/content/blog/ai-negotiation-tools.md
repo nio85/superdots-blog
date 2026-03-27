@@ -18,6 +18,7 @@ faqs:
     answer: "Using AI to prepare is completely standard — it's no different from doing research or running scenarios before a meeting. Using AI in real time during a live negotiation is more nuanced. Tools that give you live coaching (like Gong Assist or Salesably) are increasingly common in sales contexts. Be transparent if the other party asks. The line to avoid: using AI to deceive, fabricate data, or manufacture false urgency."
   - question: "What is the best free AI tool for negotiation practice?"
     answer: "ChatGPT (free tier) or Claude are the most accessible options for negotiation prep. You can run mock negotiations, test counterarguments, build a BATNA, and get feedback on your approach — all without paying for a specialized tool. For teams already using these tools daily, this is the fastest way to improve negotiation preparation without any new software budget."
+heroImage: "/images/blog/ai-negotiation-tools.webp"
 ---
 
 Most people lose negotiations before they walk into the room. Not because they're bad at negotiating — because they didn't prepare.
