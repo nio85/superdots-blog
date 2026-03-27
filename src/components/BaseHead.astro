@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID } from '../consts';
+import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL } from '../consts';
 
 interface Props {
 	title: string;
@@ -165,6 +165,14 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 	}
 }
 </script>
+)}
+
+<!-- Umami Analytics (privacy-friendly, cookie-free — no consent gate needed) -->
+{UMAMI_WEBSITE_ID && (
+<script defer src={`${UMAMI_URL}/script.js`}
+  data-website-id={UMAMI_WEBSITE_ID}
+  data-domains="superdots.sh"
+></script>
 )}
 
 <!-- Organization schema (all pages) -->

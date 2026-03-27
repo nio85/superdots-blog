@@ -2,6 +2,8 @@ export const SITE_TITLE = 'Superdots';
 export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
 export const GA_MEASUREMENT_ID = 'G-DC2BTH9VKX';
 export const CLARITY_PROJECT_ID = 'vxukclgmnh';
+export const UMAMI_WEBSITE_ID = 'ad359e34-1608-4bf6-9e4e-e8200ed04b86';
+export const UMAMI_URL = 'https://umami.bartoccini.cloud';
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering' },
