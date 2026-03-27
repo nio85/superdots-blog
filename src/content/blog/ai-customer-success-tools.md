@@ -18,6 +18,7 @@ faqs:
     answer: "A health score is a composite metric that combines multiple signals into a single number representing how 'healthy' a customer relationship is. Platforms like Gainsight or Vitally let you define which signals matter — product usage, support ticket frequency, NPS response, stakeholder engagement, payment history — and weight them. AI models can make this dynamic, adjusting weights based on what actually correlates with churn or expansion in your customer base. A customer with a falling health score triggers automated playbooks: an email sequence, a check-in task for the CSM, or an escalation alert."
   - question: "How long does it take to see ROI from AI customer success tools?"
     answer: "Most teams see measurable results within 90 days. The fastest wins come from automated playbooks — onboarding sequences, QBR reminders, risk escalations — because they ensure no account falls through the cracks without adding headcount. Churn reduction compounds over time: preventing even one enterprise churn per quarter can justify the tool cost for a full year. Full ROI realization, including expansion revenue from proactive upsell plays, typically takes 6-12 months once the platform is properly configured and the team has adopted it."
+heroImage: "/images/blog/ai-customer-success-tools.webp"
 ---
 
 Customer success teams manage hundreds of accounts. Without AI, that means spreadsheets, manual check-ins, and a constant fear that a key account is about to churn without you knowing. By the time you notice the warning signs, it's often too late.
