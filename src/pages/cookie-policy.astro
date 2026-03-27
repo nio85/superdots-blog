@@ -6,7 +6,7 @@ import LegalPage from '../layouts/LegalPage.astro';
 	title="Cookie Policy | Superdots"
 	description="Cookie policy for superdots.sh — what cookies we use and why."
 	pageTitle="Cookie Policy"
-	lastUpdated="23 March 2026"
+	lastUpdated="27 March 2026"
 >
 
 	<h2>What are cookies?</h2>
@@ -65,6 +65,20 @@ import LegalPage from '../layouts/LegalPage.astro';
 			</tr>
 		</tbody>
 	</table>
+
+	<h3>Cookie-free analytics (no consent required)</h3>
+	<p>
+		<strong>Umami Analytics</strong> is a privacy-friendly, self-hosted analytics tool that
+		<strong>does not use cookies</strong>, does not store IP addresses, and does not collect
+		any personal data. Because Umami does not access or store information on your device,
+		no consent is required under Art. 5(3) of the ePrivacy Directive. The legal basis for
+		this processing is legitimate interest (Art. 6(1)(f) GDPR).
+	</p>
+	<p>
+		Umami collects only aggregated, anonymous metrics: page URL, referrer, browser type,
+		operating system, device type, and country (derived from IP at request time, IP not stored).
+		It is hosted on Superdots infrastructure in the EU — no data is sent to third parties.
+	</p>
 
 	<h3>Analytics (consent required)</h3>
 	<p>
@@ -142,6 +156,10 @@ import LegalPage from '../layouts/LegalPage.astro';
 		that may process your IP address:
 	</p>
 	<ul>
+		<li>
+			<strong>Umami Analytics</strong> (<code>umami.bartoccini.cloud</code>) —
+			loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
+		</li>
 		<li>
 			<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
 			only loaded after consent. Sends pseudonymised usage data to Google.
