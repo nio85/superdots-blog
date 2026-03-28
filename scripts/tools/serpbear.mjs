@@ -13,6 +13,8 @@ import '../config.mjs';
 
 const SERPBEAR_URL = process.env.SERPBEAR_URL || 'http://localhost:3005';
 const SERPBEAR_API_KEY = process.env.SERPBEAR_API_KEY;
+const SERPBEAR_USER = process.env.SERPBEAR_USER || 'luca';
+const SERPBEAR_PASSWORD = process.env.SERPBEAR_PASSWORD || '';
 
 const HELP = `Usage: node serpbear.mjs <command> [options]
 
@@ -50,15 +52,40 @@ function getArg(flag, defaultVal) {
 
 if (!SERPBEAR_API_KEY) err('Missing env var SERPBEAR_API_KEY');
 
+// Session cookie cache for write operations (SerpBear requires session auth for POST/DELETE)
+let _sessionCookie = null;
+
+async function getSessionCookie() {
+  if (_sessionCookie) return _sessionCookie;
+  if (!SERPBEAR_PASSWORD) err('Write operations require SERPBEAR_PASSWORD env var (session auth).');
+  const res = await fetch(`${SERPBEAR_URL}/api/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: SERPBEAR_USER, password: SERPBEAR_PASSWORD }),
+    redirect: 'manual',
+  });
+  const setCookie = res.headers.get('set-cookie') || '';
+  const match = setCookie.match(/token=([^;]+)/);
+  if (!match) throw new Error('Failed to get session cookie from SerpBear login');
+  _sessionCookie = `token=${match[1]}`;
+  return _sessionCookie;
+}
+
 async function api(method, path, body) {
   const url = `${SERPBEAR_URL}${path}`;
-  const opts = {
-    method,
-    headers: {
-      'Authorization': `Bearer ${SERPBEAR_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-  };
+  const needsSession = method !== 'GET';
+  const headers = { 'Content-Type': 'application/json' };
+
+  if (needsSession) {
+    // POST/PUT/DELETE require session cookie auth
+    const cookie = await getSessionCookie();
+    headers['Cookie'] = cookie;
+  } else {
+    // GET works with Bearer token
+    headers['Authorization'] = `Bearer ${SERPBEAR_API_KEY}`;
+  }
+
+  const opts = { method, headers };
   if (body) opts.body = JSON.stringify(body);
 
   const res = await fetch(url, opts);
@@ -94,14 +121,17 @@ async function main() {
       if (tagsFilter) {
         const filterTags = tagsFilter.split(',').map(t => t.trim().toLowerCase());
         kws = kws.filter(k => {
-          const kwTags = (k.tags || '').split(',').map(t => t.trim().toLowerCase());
+          const raw = k.tags || '';
+          const kwTags = Array.isArray(raw) ? raw.map(t => t.toLowerCase()) : raw.split(',').map(t => t.trim().toLowerCase());
           return filterTags.some(ft => kwTags.includes(ft));
         });
       }
       if (jsonOutput) { out(kws); break; }
       if (kws.length === 0) { log('No keywords found.'); break; }
       for (const k of kws) {
-        const tags = k.tags ? ` [${k.tags}]` : '';
+        const rawTags = k.tags || '';
+        const tagsStr = Array.isArray(rawTags) ? rawTags.join(',') : rawTags;
+        const tags = tagsStr ? ` [${tagsStr}]` : '';
         log(`  ${k.ID || k.id}  pos:${k.position ?? '-'}  ${k.keyword}${tags}`);
       }
       log(`\n  Total: ${kws.length} keywords`);
