@@ -17,16 +17,19 @@ const SERPBEAR_API_KEY = process.env.SERPBEAR_API_KEY;
 const HELP = `Usage: node serpbear.mjs <command> [options]
 
 Commands:
-  domains                    List tracked domains
-  keywords <domain>          List keywords for a domain
-  keyword <id>               Get keyword with history
-  refresh <id>               Refresh a single keyword
-  scrape                     Trigger full scrape
-  insight <domain>           GSC insights for domain
-  search-console <domain>    Search Console data for domain
+  domains                              List tracked domains
+  keywords <domain> [--tags <t1,t2>]   List keywords for a domain (optionally filter by tags)
+  keyword <id>                         Get keyword with full history
+  refresh <id>                         Refresh a single keyword position
+  scrape                               Trigger full scrape of all keywords
+  add-keywords <domain> <json>         Add keywords (JSON array: [{"keyword":"...","tags":"t1,t2","country":"US","device":"desktop"}])
+  delete-keywords <id1,id2,...>         Delete keywords by comma-separated IDs
+  search-console <domain>              Search Console data for domain
+  insight <domain>                     GSC insights for domain
 
 Options:
   --json    Output as JSON
+  --tags    Filter keywords by tag (comma-separated)
   --help    Show this help`;
 
 const args = process.argv.slice(2);
@@ -39,6 +42,11 @@ const positional = args.filter(a => !a.startsWith('--'));
 function log(...a) { if (!jsonOutput) console.log(...a); }
 function out(data) { console.log(JSON.stringify(data, null, 2)); }
 function err(msg) { console.error(`Error: ${msg}`); process.exit(1); }
+
+function getArg(flag, defaultVal) {
+  const idx = args.indexOf(flag);
+  return idx !== -1 && args[idx + 1] ? args[idx + 1] : defaultVal;
+}
 
 if (!SERPBEAR_API_KEY) err('Missing env var SERPBEAR_API_KEY');
 
@@ -81,12 +89,22 @@ async function main() {
       const domain = positional[1];
       if (!domain) err('Usage: serpbear.mjs keywords <domain>');
       const data = await api('GET', `/api/keywords?domain=${encodeURIComponent(domain)}`);
-      if (jsonOutput) { out(data); break; }
-      const kws = Array.isArray(data) ? data : data.keywords || [];
+      let kws = Array.isArray(data) ? data : data.keywords || [];
+      const tagsFilter = getArg('--tags', '');
+      if (tagsFilter) {
+        const filterTags = tagsFilter.split(',').map(t => t.trim().toLowerCase());
+        kws = kws.filter(k => {
+          const kwTags = (k.tags || '').split(',').map(t => t.trim().toLowerCase());
+          return filterTags.some(ft => kwTags.includes(ft));
+        });
+      }
+      if (jsonOutput) { out(kws); break; }
       if (kws.length === 0) { log('No keywords found.'); break; }
       for (const k of kws) {
-        log(`  ${k.id}  [${k.position ?? '-'}]  ${k.keyword}`);
+        const tags = k.tags ? ` [${k.tags}]` : '';
+        log(`  ${k.ID || k.id}  pos:${k.position ?? '-'}  ${k.keyword}${tags}`);
       }
+      log(`\n  Total: ${kws.length} keywords`);
       break;
     }
     case 'keyword': {
@@ -111,6 +129,35 @@ async function main() {
       if (jsonOutput) { out(data); break; }
       log('Full scrape triggered.');
       if (data) log(JSON.stringify(data, null, 2));
+      break;
+    }
+    case 'add-keywords': {
+      const domain = positional[1];
+      const jsonArg = positional[2];
+      if (!domain || !jsonArg) err('Usage: serpbear.mjs add-keywords <domain> \'[{"keyword":"...","tags":"t1,t2","country":"US","device":"desktop"}]\'');
+      let keywords;
+      try { keywords = JSON.parse(jsonArg); } catch { err('Invalid JSON. Expected array of keyword objects.'); }
+      if (!Array.isArray(keywords)) err('Expected a JSON array of keyword objects.');
+      // Ensure each keyword has required fields
+      for (const kw of keywords) {
+        if (!kw.keyword) err(`Missing "keyword" field in: ${JSON.stringify(kw)}`);
+        kw.domain = kw.domain || domain;
+        kw.device = kw.device || 'desktop';
+        kw.country = kw.country || 'US';
+        kw.tags = kw.tags || '';
+      }
+      const data = await api('POST', '/api/keywords', { keywords });
+      if (jsonOutput) { out(data); break; }
+      log(`Added ${keywords.length} keyword(s) to ${domain}`);
+      for (const kw of keywords) log(`  + ${kw.keyword} [${kw.tags || 'no tags'}] (${kw.country}, ${kw.device})`);
+      break;
+    }
+    case 'delete-keywords': {
+      const ids = positional[1];
+      if (!ids) err('Usage: serpbear.mjs delete-keywords <id1,id2,...>');
+      const data = await api('DELETE', `/api/keywords?id=${ids}`);
+      if (jsonOutput) { out(data); break; }
+      log(`Deleted keyword(s): ${ids}`);
       break;
     }
     case 'insight': {
