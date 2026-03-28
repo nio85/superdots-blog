@@ -1,0 +1,189 @@
+/* @theme superdots */
+
+@import 'default';
+
+:root {
+  --sd-red: #E8363B;
+  --sd-red-dark: #CC2D32;
+  --sd-teal: #14B8A6;
+  --sd-amber: #F59E0B;
+  --sd-navy: #0B1222;
+  --sd-navy-light: #1E293B;
+  --sd-gray-100: #F1F5F9;
+  --sd-gray-200: #E2E8F0;
+  --sd-gray-500: #64748B;
+  --sd-white: #FFFFFF;
+}
+
+section {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--sd-navy);
+  color: var(--sd-white);
+  padding: 60px 80px;
+  letter-spacing: -0.01em;
+}
+
+section h1 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--sd-white);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+section h2 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--sd-white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--sd-teal);
+  margin-bottom: 16px;
+}
+
+section p, section li {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--sd-gray-200);
+}
+
+section strong {
+  color: var(--sd-white);
+  font-weight: 600;
+}
+
+section em {
+  color: var(--sd-teal);
+  font-style: normal;
+}
+
+section a {
+  color: var(--sd-teal);
+  text-decoration: none;
+}
+
+section code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+section blockquote {
+  border-left: 4px solid var(--sd-red);
+  padding-left: 24px;
+  margin-left: 0;
+  color: var(--sd-gray-200);
+  font-style: italic;
+}
+
+section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+section th {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--sd-white);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--sd-red);
+}
+
+section td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--sd-gray-200);
+}
+
+/* Superdot decoration — bottom right */
+section::after {
+  content: '●';
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  color: var(--sd-red);
+  font-size: 12px;
+}
+
+/* Title slide variant */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+section.title h1 {
+  font-size: 56px;
+}
+
+section.title p {
+  font-size: 24px;
+  color: var(--sd-gray-500);
+}
+
+/* Light slide variant */
+section.light {
+  background: var(--sd-white);
+  color: var(--sd-navy);
+}
+
+section.light h1, section.light h2 {
+  color: var(--sd-navy);
+}
+
+section.light h3 {
+  color: var(--sd-red);
+}
+
+section.light p, section.light li {
+  color: var(--sd-navy-light);
+}
+
+section.light strong {
+  color: var(--sd-navy);
+}
+
+section.light th {
+  background: var(--sd-gray-100);
+  color: var(--sd-navy);
+}
+
+section.light td {
+  color: var(--sd-navy-light);
+  border-bottom-color: var(--sd-gray-200);
+}
+
+section.light::after {
+  color: var(--sd-red);
+}
+
+/* Accent slide variant */
+section.accent {
+  background: var(--sd-red);
+  color: var(--sd-white);
+}
+
+section.accent h1, section.accent h2, section.accent h3 {
+  color: var(--sd-white);
+}
+
+section.accent p, section.accent li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+section.accent::after {
+  color: var(--sd-white);
+}
