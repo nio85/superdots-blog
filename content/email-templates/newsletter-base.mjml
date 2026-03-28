@@ -1,0 +1,119 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" />
+      <mj-text font-size="16px" line-height="1.6" color="#1E293B" />
+      <mj-section background-color="#FFFFFF" />
+    </mj-attributes>
+    <mj-style>
+      a { color: #14B8A6; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .headline a { color: #0B1222; }
+      .superdot { color: #E8363B; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F8FAFC">
+
+    <!-- Header -->
+    <mj-section background-color="#0B1222" padding="24px 32px">
+      <mj-column>
+        <mj-text font-family="'Space Grotesk', Inter, sans-serif" font-size="22px" font-weight="700" color="#FFFFFF" letter-spacing="-0.02em">
+          superdots<span class="superdot"> ●</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Hero -->
+    <mj-section padding="40px 32px 24px">
+      <mj-column>
+        <mj-text font-family="'Space Grotesk', Inter, sans-serif" font-size="28px" font-weight="700" color="#0B1222" letter-spacing="-0.02em" line-height="1.2" padding-bottom="12px">
+          {{headline}}<span class="superdot">.</span>
+        </mj-text>
+        <mj-text font-size="18px" color="#475569" padding-bottom="24px">
+          {{intro_text}}
+        </mj-text>
+        <mj-divider border-color="#E2E8F0" border-width="1px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Article 1 -->
+    <mj-section padding="24px 32px">
+      <mj-column>
+        <mj-text font-size="12px" font-weight="500" color="#E8363B" text-transform="uppercase" letter-spacing="0.08em" padding-bottom="8px">
+          {{article1_department}}
+        </mj-text>
+        <mj-text css-class="headline" font-family="'Space Grotesk', Inter, sans-serif" font-size="22px" font-weight="700" color="#0B1222" letter-spacing="-0.02em" line-height="1.3" padding-bottom="8px">
+          <a href="{{article1_url}}">{{article1_title}}</a>
+        </mj-text>
+        <mj-text font-size="16px" color="#475569" padding-bottom="16px">
+          {{article1_description}}
+        </mj-text>
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="14px" font-weight="600" border-radius="6px" inner-padding="10px 24px" href="{{article1_url}}">
+          Read article →
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 32px">
+      <mj-column><mj-divider border-color="#E2E8F0" border-width="1px" /></mj-column>
+    </mj-section>
+
+    <!-- Article 2 -->
+    <mj-section padding="24px 32px">
+      <mj-column>
+        <mj-text font-size="12px" font-weight="500" color="#14B8A6" text-transform="uppercase" letter-spacing="0.08em" padding-bottom="8px">
+          {{article2_department}}
+        </mj-text>
+        <mj-text css-class="headline" font-family="'Space Grotesk', Inter, sans-serif" font-size="22px" font-weight="700" color="#0B1222" letter-spacing="-0.02em" line-height="1.3" padding-bottom="8px">
+          <a href="{{article2_url}}">{{article2_title}}</a>
+        </mj-text>
+        <mj-text font-size="16px" color="#475569" padding-bottom="16px">
+          {{article2_description}}
+        </mj-text>
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="14px" font-weight="600" border-radius="6px" inner-padding="10px 24px" href="{{article2_url}}">
+          Read article →
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="0 32px">
+      <mj-column><mj-divider border-color="#E2E8F0" border-width="1px" /></mj-column>
+    </mj-section>
+
+    <!-- Article 3 -->
+    <mj-section padding="24px 32px">
+      <mj-column>
+        <mj-text font-size="12px" font-weight="500" color="#E8363B" text-transform="uppercase" letter-spacing="0.08em" padding-bottom="8px">
+          {{article3_department}}
+        </mj-text>
+        <mj-text css-class="headline" font-family="'Space Grotesk', Inter, sans-serif" font-size="22px" font-weight="700" color="#0B1222" letter-spacing="-0.02em" line-height="1.3" padding-bottom="8px">
+          <a href="{{article3_url}}">{{article3_title}}</a>
+        </mj-text>
+        <mj-text font-size="16px" color="#475569" padding-bottom="16px">
+          {{article3_description}}
+        </mj-text>
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="14px" font-weight="600" border-radius="6px" inner-padding="10px 24px" href="{{article3_url}}">
+          Read article →
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#0B1222" padding="32px">
+      <mj-column>
+        <mj-text font-family="'Space Grotesk', Inter, sans-serif" font-size="18px" font-weight="700" color="#FFFFFF" letter-spacing="-0.02em" padding-bottom="8px">
+          superdots<span class="superdot"> ●</span>
+        </mj-text>
+        <mj-text font-size="14px" color="#94A3B8" padding-bottom="16px">
+          Practical AI for every department. No fluff.
+        </mj-text>
+        <mj-text font-size="12px" color="#64748B">
+          You're receiving this because you subscribed at superdots.sh<br/>
+          <a href="{{unsubscribe_url}}" style="color: #64748B; text-decoration: underline;">Unsubscribe</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

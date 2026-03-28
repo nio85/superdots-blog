@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200,height=630">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sd-red: #E8363B;
+    --sd-teal: #14B8A6;
+    --sd-navy: #0B1222;
+    --sd-navy-light: #1E293B;
+    --sd-gray-200: #E2E8F0;
+    --sd-gray-500: #64748B;
+    --sd-white: #FFFFFF;
+  }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--sd-navy);
+    color: var(--sd-white);
+    overflow: hidden;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px 72px;
+    position: relative;
+  }
+
+  /* Decorative dots — top right */
+  .card::before {
+    content: '● ● ●';
+    position: absolute;
+    top: 48px;
+    right: 72px;
+    color: var(--sd-red);
+    font-size: 14px;
+    letter-spacing: 6px;
+  }
+
+  /* Red accent line — left edge */
+  .card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 5px;
+    background: var(--sd-red);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+
+  .badge-dept {
+    background: rgba(232, 54, 59, 0.15);
+    color: #F87171;
+  }
+
+  .badge-usecase {
+    background: rgba(20, 184, 166, 0.15);
+    color: var(--sd-teal);
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--sd-white);
+    max-width: 900px;
+  }
+
+  h1 .dot {
+    color: var(--sd-red);
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--sd-gray-200);
+    max-width: 780px;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-name {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-url {
+    font-size: 16px;
+    color: var(--sd-gray-500);
+  }
+
+  .date {
+    font-size: 15px;
+    color: var(--sd-gray-500);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="badges">
+      <span class="badge badge-dept">{{department}}</span>
+      <span class="badge badge-usecase">{{useCase}}</span>
+    </div>
+
+    <div class="content">
+      <h1>{{title}}<span class="dot">.</span></h1>
+      <p class="description">{{description}}</p>
+    </div>
+
+    <div class="footer">
+      <div class="brand">
+        <span class="brand-name">superdots</span>
+        <span class="brand-url">superdots.sh</span>
+      </div>
+      <span class="date">{{date}}</span>
+    </div>
+  </div>
+</body>
+</html>
