@@ -1,0 +1,7 @@
+{
+  "name": "Superdots Email",
+  "author": "Superdots",
+  "authorUrl": "https://superdots.sh",
+  "builder": ["grapesjsbuilder"],
+  "features": ["email"]
+}

@@ -1,0 +1,189 @@
+<mjml>
+  <mj-head>
+    <mj-title>{subject}</mj-title>
+    <mj-preview>Your weekly dose of practical AI — no fluff, just techniques that work.</mj-preview>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <mj-font name="Space Grotesk" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="'Inter', Arial, Helvetica, sans-serif" />
+      <mj-text font-size="16px" line-height="1.6" color="#334155" />
+      <mj-section padding="0" />
+    </mj-attributes>
+    <mj-style>
+      a { color: #14B8A6; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .cta-link a { color: #FFFFFF !important; text-decoration: none !important; }
+      .footer-link a { color: #94A3B8 !important; font-size: 13px; }
+      .webview-link a { color: #64748B !important; font-size: 12px; }
+      .secondary-title a { color: #0B1222 !important; text-decoration: none; }
+      .secondary-title a:hover { color: #E8363B !important; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F1F5F9" width="620px">
+
+    <!-- Block 1: Header -->
+    <mj-section background-color="#0B1222" padding="16px 24px">
+      <mj-column width="60%" vertical-align="middle">
+        <mj-text align="left" color="#FFFFFF" font-size="22px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" padding="0">
+          <span style="color:#E8363B;">●</span><span style="color:#E8363B; font-size:18px; margin-left:2px;">●</span><span style="color:#E8363B; font-size:14px; margin-left:2px;">●</span>&nbsp;&nbsp;superdots
+        </mj-text>
+      </mj-column>
+      <mj-column width="40%" vertical-align="middle">
+        <mj-text align="right" padding="0" css-class="webview-link">
+          <a href="{webview_url}" style="color:#64748B; font-size:12px;">View in browser</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Accent line -->
+    <mj-section background-color="#E8363B" padding="0">
+      <mj-column>
+        <mj-divider border-color="#E8363B" border-width="3px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Block 2: Intro editorial -->
+    <mj-section background-color="#FFFFFF" padding="36px 24px 28px">
+      <mj-column>
+        <mj-text font-size="17px" line-height="1.7" color="#334155" padding="0">
+          Hi {contactfield=firstname},
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#475569" padding="12px 0 0">
+          Welcome to this week's Superdots newsletter. We've been exploring how AI is reshaping the way teams work — and as always, we're focused on what you can actually use today.
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#475569" padding="8px 0 0">
+          Here's what caught our attention this week.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Block 3: Featured article -->
+    <mj-section background-color="#FFFFFF" padding="0 24px 8px">
+      <mj-column>
+        <mj-image src="https://superdots.sh/images/blog/placeholder-hero.jpg" alt="Featured article" width="572px" border-radius="8px" padding="0 0 20px" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="0 24px 32px">
+      <mj-column>
+        <mj-text font-size="24px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" color="#0B1222" line-height="1.3" padding="0 0 12px">
+          Article Title Goes Here<span style="color:#E8363B;">.</span>
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#475569" padding="0 0 20px">
+          A compelling excerpt that captures the key insight of the article. This should be 2-3 sentences that make the reader want to click through and read the full piece.
+        </mj-text>
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="15px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" border-radius="6px" inner-padding="12px 28px" href="https://superdots.sh/blog/" css-class="cta-link">
+          Read the full article
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider -->
+    <mj-section background-color="#FFFFFF" padding="0 24px">
+      <mj-column>
+        <mj-divider border-color="#E2E8F0" border-width="1px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Block 4: Also this week -->
+    <mj-section background-color="#FFFFFF" padding="28px 24px 8px">
+      <mj-column>
+        <mj-text font-size="13px" font-weight="600" color="#94A3B8" letter-spacing="1.5px" text-transform="uppercase" padding="0 0 16px">
+          Also this week
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Secondary article 1 -->
+    <mj-section background-color="#FFFFFF" padding="0 24px 16px">
+      <mj-column>
+        <mj-text padding="0 0 4px" css-class="secondary-title">
+          <a href="https://superdots.sh/blog/" style="color:#0B1222; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">Secondary Article Title One</a>
+        </mj-text>
+        <mj-text font-size="15px" color="#64748B" line-height="1.5" padding="0">
+          A one-line description of this article and why it matters.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="0 24px">
+      <mj-column>
+        <mj-divider border-color="#E2E8F0" border-width="1px" padding="0 0 16px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Secondary article 2 -->
+    <mj-section background-color="#FFFFFF" padding="0 24px 16px">
+      <mj-column>
+        <mj-text padding="0 0 4px" css-class="secondary-title">
+          <a href="https://superdots.sh/blog/" style="color:#0B1222; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">Secondary Article Title Two</a>
+        </mj-text>
+        <mj-text font-size="15px" color="#64748B" line-height="1.5" padding="0">
+          A one-line description of this article and why it matters.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="0 24px">
+      <mj-column>
+        <mj-divider border-color="#E2E8F0" border-width="1px" padding="0 0 16px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Secondary article 3 -->
+    <mj-section background-color="#FFFFFF" padding="0 24px 28px">
+      <mj-column>
+        <mj-text padding="0 0 4px" css-class="secondary-title">
+          <a href="https://superdots.sh/blog/" style="color:#0B1222; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">Secondary Article Title Three</a>
+        </mj-text>
+        <mj-text font-size="15px" color="#64748B" line-height="1.5" padding="0">
+          A one-line description of this article and why it matters.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Block 5: Quick tip -->
+    <mj-section background-color="#F8FAFC" padding="28px 24px">
+      <mj-column border-left="4px solid #14B8A6" padding-left="16px">
+        <mj-text font-size="14px" font-weight="600" color="#14B8A6" letter-spacing="1px" text-transform="uppercase" padding="0 0 8px">
+          Quick tip
+        </mj-text>
+        <mj-text font-size="18px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" color="#0B1222" line-height="1.4" padding="0 0 8px">
+          Tip Title Goes Here
+        </mj-text>
+        <mj-text font-size="15px" color="#475569" line-height="1.6" padding="0">
+          A short, actionable tip in 2-3 lines. Something the reader can try immediately — practical, specific, and useful. No fluff.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Spacer before footer -->
+    <mj-section background-color="#F1F5F9" padding="8px 0">
+      <mj-column>
+        <mj-text font-size="1px" padding="0">&nbsp;</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Block 6: Footer -->
+    <mj-section background-color="#0B1222" padding="32px 24px 16px">
+      <mj-column>
+        <mj-text align="center" color="#E2E8F0" font-size="15px" font-family="'Space Grotesk', Arial, sans-serif" font-weight="500" padding="0 0 4px">
+          Practical AI for every department<span style="color:#E8363B;">.</span>
+        </mj-text>
+        <mj-text align="center" color="#64748B" font-size="13px" padding="4px 0 0">
+          superdots.sh
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#0B1222" padding="0 24px 32px">
+      <mj-column>
+        <mj-text align="center" padding="16px 0 0" css-class="footer-link">
+          <a href="{unsubscribe_text}" style="color:#94A3B8; font-size:13px;">Unsubscribe</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

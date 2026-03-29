@@ -1,0 +1,12 @@
+{
+  "name": "superdots/mautic-theme-email",
+  "description": "Superdots branded email theme for Mautic newsletters",
+  "type": "mautic-theme",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Superdots",
+      "homepage": "https://superdots.sh"
+    }
+  ]
+}
