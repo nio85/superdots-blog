@@ -1,7 +1,7 @@
 <mjml>
   <mj-head>
-    <mj-title>{{subject}}</mj-title>
-    <mj-preview>{{preview_text}}</mj-preview>
+    <mj-title>Your next event could plan itself (almost)</mj-title>
+    <mj-preview>Plus: the onboarding gap killing your revenue</mj-preview>
     <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
     <mj-font name="Space Grotesk" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" />
     <mj-attributes>
@@ -21,13 +21,10 @@
       .secondary-title a:hover { color: #E8363B !important; }
       /* Brand dot */
       .superdot { color: #E8363B; }
-      /* Logo dots - ascending diagonal */
+      /* Logo dots - ascending diagonal (small→medium→large) */
       .dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; }
       .dot-md { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 3px; }
       .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 6px; }
-      /* Card styling */
-      .article-card { background-color: #111827 !important; border-radius: 8px; }
-      .tip-card { background-color: #0F172A !important; }
     </mj-style>
     <!--[if mso]>
     <style type="text/css">
@@ -69,13 +66,13 @@
     <mj-section background-color="#0B1222" padding="36px 24px 28px">
       <mj-column>
         <mj-text font-size="17px" line-height="1.7" color="#E2E8F0" padding="0">
-          {{greeting}}
+          Hi {contactfield=firstname},
         </mj-text>
         <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="12px 0 0">
-          {{intro_text}}
+          This week we dug into the parts of work that eat time without anyone noticing — event logistics, customer onboarding, negotiations you didn't prepare for, and the chaos that happens when "we're adopting AI" means different things to every team.
         </mj-text>
         <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="8px 0 0">
-          {{intro_hook}}
+          Four articles, four ways to stop winging it<span style="color:#E8363B;">.</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -83,17 +80,20 @@
     <!-- Block 3: Featured article card -->
     <mj-section background-color="#0B1222" padding="8px 16px 8px">
       <mj-column background-color="#111827" border-radius="12px" padding="0">
-        <mj-image src="{{featured_image_url}}" alt="{{featured_image_alt}}" width="588px" border-radius="12px 12px 0 0" padding="0" />
+        <mj-image src="https://superdots.sh/images/blog/ai-event-planning-tools.webp" alt="AI Event Planning Tools" width="588px" border-radius="12px 12px 0 0" padding="0" />
         <mj-text font-size="13px" font-weight="600" color="#E8363B" letter-spacing="1px" text-transform="uppercase" padding="24px 24px 8px">
-          {{featured_department}}
+          Operations
         </mj-text>
         <mj-text font-size="24px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" color="#FFFFFF" line-height="1.3" padding="0 24px 12px">
-          {{featured_title}}<span style="color:#E8363B;">.</span>
+          8 AI Event Planning Tools That Handle the Logistics So You Don't Have To<span style="color:#E8363B;">.</span>
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="0 24px 12px">
+          67% of event pros already use AI in their workflow. The other 33% are still chasing RSVPs through email threads that stopped making sense three replies ago.
         </mj-text>
         <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="0 24px 20px">
-          {{featured_description}}
+          If you run even two corporate events a year, this will change how you think about the prep work<span style="color:#E8363B;">.</span>
         </mj-text>
-        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="15px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" border-radius="6px" inner-padding="12px 28px" href="{{featured_url}}" css-class="cta-link" padding="0 24px 28px" align="left">
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="15px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" border-radius="6px" inner-padding="12px 28px" href="https://superdots.sh/blog/ai-event-planning-tools/" css-class="cta-link" padding="0 24px 28px" align="left">
           Read the full article
         </mj-button>
       </mj-column>
@@ -112,10 +112,10 @@
     <mj-section background-color="#0B1222" padding="0 16px 12px">
       <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #E8363B" padding="20px 24px">
         <mj-text padding="0 0 6px" css-class="secondary-title">
-          <a href="{{article2_url}}" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">{{article2_title}}</a>
+          <a href="https://superdots.sh/blog/ai-customer-onboarding/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Customer Onboarding: Reduce Time-to-Value and Cut Churn</a>
         </mj-text>
         <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
-          {{article2_description}}
+          Your customer signed. Your sales team celebrated. Three weeks later, they've logged in twice and are asking about cancellation terms. Here's how AI closes that gap<span style="color:#E8363B;">.</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -124,10 +124,10 @@
     <mj-section background-color="#0B1222" padding="0 16px 12px">
       <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #14B8A6" padding="20px 24px">
         <mj-text padding="0 0 6px" css-class="secondary-title">
-          <a href="{{article3_url}}" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">{{article3_title}}</a>
+          <a href="https://superdots.sh/blog/ai-negotiation-tools/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Negotiation Tools: Prepare, Practice, and Win Better Deals</a>
         </mj-text>
         <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
-          {{article3_description}}
+          Most people lose negotiations before they walk into the room. These tools compress hours of deal prep into minutes<span style="color:#E8363B;">.</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -136,10 +136,10 @@
     <mj-section background-color="#0B1222" padding="0 16px 12px">
       <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #E8363B" padding="20px 24px">
         <mj-text padding="0 0 6px" css-class="secondary-title">
-          <a href="{{article4_url}}" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">{{article4_title}}</a>
+          <a href="https://superdots.sh/blog/ai-change-management/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Change Management: Lead AI Adoption Without the Chaos</a>
         </mj-text>
         <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
-          {{article4_description}}
+          78% of CHROs say workflows must fundamentally change for AI ROI. Here's why the old playbook fails and what actually works<span style="color:#E8363B;">.</span>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -151,10 +151,10 @@
           Quick tip
         </mj-text>
         <mj-text font-size="18px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" color="#FFFFFF" line-height="1.4" padding="0 0 8px">
-          {{tip_title}}
+          30-second meeting prep hack
         </mj-text>
         <mj-text font-size="15px" color="#94A3B8" line-height="1.6" padding="0">
-          {{tip_body}}
+          Before your next meeting, paste the agenda into ChatGPT or Claude and ask: "What questions am I likely to get, and what data should I have ready?" Takes 30 seconds. Prevents the moment where someone asks a number you should know and you don't<span style="color:#E8363B;">.</span>
         </mj-text>
       </mj-column>
     </mj-section>
