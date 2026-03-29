@@ -3,8 +3,8 @@
 @import 'default';
 
 /* ============================================================
-   SUPERDOTS — Professional Slide Theme (v2)
-   Marp CSS theme using brand tokens from BRAND.md
+   SUPERDOTS — Brand Slide Theme (v3)
+   Navy-only, dot grids, glow effects, glassmorphism
    ============================================================ */
 
 /* --- Google Fonts --- */
@@ -21,6 +21,7 @@
   --sd-amber: #F59E0B;
   --sd-amber-light: #FEF3C7;
   --sd-navy: #0B1222;
+  --sd-navy-mid: #111B2E;
   --sd-navy-light: #1E293B;
   --sd-gray-50: #F8FAFC;
   --sd-gray-100: #F1F5F9;
@@ -30,23 +31,65 @@
   --sd-gray-500: #64748B;
   --sd-gray-600: #475569;
   --sd-white: #FFFFFF;
+
+  /* Glow colors */
+  --glow-red: rgba(232, 54, 59, 0.08);
+  --glow-teal: rgba(20, 184, 166, 0.05);
+  --glow-red-strong: rgba(232, 54, 59, 0.12);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg-strong: rgba(255, 255, 255, 0.08);
+  --glass-border-strong: rgba(255, 255, 255, 0.12);
 }
 
 /* ============================================================
-   BASE SECTION — Dark slides (default)
+   BASE SECTION — Dark navy (default for ALL slides)
    ============================================================ */
 
 section {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--sd-navy);
-  background-image: none;
+  background:
+    radial-gradient(ellipse at top right, var(--glow-red) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, var(--glow-teal) 0%, transparent 50%),
+    var(--sd-navy);
   color: var(--sd-white);
-  padding: 72px 88px 72px 88px;
+  padding: 72px 88px;
   letter-spacing: -0.01em;
   line-height: 1.5;
   width: 1920px;
   height: 1080px;
   position: relative;
+  overflow: hidden;
+}
+
+/* --- Dot grid decoration — top-right corner (default) --- */
+section::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(232, 54, 59, 0.25) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* --- Dot grid decoration — bottom-left corner (subtle gray) --- */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.2) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 /* --- Typography --- */
@@ -59,6 +102,7 @@ section h1 {
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin: 0 0 28px 0;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 section h2 {
@@ -71,6 +115,7 @@ section h2 {
   margin: 0 0 32px 0;
   padding-bottom: 16px;
   border-bottom: 3px solid var(--sd-red);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
 }
 
 section h3 {
@@ -142,24 +187,26 @@ section a {
 }
 
 section code {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg-strong);
   padding: 3px 10px;
   border-radius: 6px;
   font-size: 0.82em;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   color: var(--sd-teal);
+  border: 1px solid var(--glass-border);
 }
 
-/* --- Blockquotes — used for callouts / quotes --- */
+/* --- Blockquotes — glassmorphism callouts --- */
 
 section blockquote {
   border: none;
   border-left: 4px solid var(--sd-red);
-  background: linear-gradient(135deg, rgba(232, 54, 59, 0.08) 0%, rgba(232, 54, 59, 0.02) 100%);
+  background: rgba(30, 41, 59, 0.8);
   border-radius: 0 12px 12px 0;
   padding: 28px 32px;
   margin: 24px 0;
   position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 section blockquote p {
@@ -174,7 +221,7 @@ section blockquote p:last-child {
   margin: 0;
 }
 
-/* --- Tables --- */
+/* --- Tables — glassmorphism with shadow --- */
 
 section table {
   width: 100%;
@@ -183,6 +230,8 @@ section table {
   border-radius: 12px;
   overflow: hidden;
   margin: 16px 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--glass-border);
+  background: var(--glass-bg);
 }
 
 section th {
@@ -213,7 +262,7 @@ section tr:nth-child(even) td {
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* --- Horizontal Rules (slide dividers within content) --- */
+/* --- Horizontal Rules --- */
 
 section hr {
   border: none;
@@ -222,34 +271,23 @@ section hr {
   margin: 32px 0;
 }
 
-/* --- Superdot decoration — bottom right --- */
-
-section::after {
-  content: '●';
-  position: absolute;
-  bottom: 36px;
-  right: 48px;
-  color: var(--sd-red);
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-/* --- Page number --- */
-
-section::before {
-  content: '';
-}
+/* --- Page number with superdot --- */
 
 section[data-marpit-pagination]::after {
   content: attr(data-marpit-pagination) ' ● ';
   position: absolute;
   bottom: 36px;
   right: 48px;
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-size: auto;
   color: var(--sd-gray-500);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.05em;
+  opacity: 1;
 }
 
 /* ============================================================
@@ -265,8 +303,33 @@ section.title {
   background: var(--sd-navy) url('./backgrounds/slide-bg-hero.png') center / cover no-repeat;
 }
 
+/* Three dots brand mark */
+section.title::before {
+  content: '● ● ●';
+  position: absolute;
+  top: 48px;
+  left: 96px;
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-size: auto;
+  color: var(--sd-red);
+  font-size: 16px;
+  letter-spacing: 6px;
+  opacity: 1;
+}
+
+/* Large dot grid — top right */
 section.title::after {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 280px;
+  height: 280px;
+  background-image: radial-gradient(circle, rgba(232, 54, 59, 0.2) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.5;
 }
 
 section.title h1 {
@@ -275,6 +338,7 @@ section.title h1 {
   margin-bottom: 20px;
   max-width: 80%;
   border-bottom: none;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 section.title h2 {
@@ -286,6 +350,7 @@ section.title h2 {
   padding-bottom: 0;
   margin-bottom: 40px;
   font-family: 'Inter', sans-serif;
+  text-shadow: none;
 }
 
 section.title p {
@@ -297,17 +362,6 @@ section.title p {
 section.title p strong {
   color: var(--sd-red);
   font-weight: 700;
-}
-
-/* Three dots brand mark on title slides */
-section.title::before {
-  content: '● ● ●';
-  position: absolute;
-  top: 48px;
-  left: 96px;
-  color: var(--sd-red);
-  font-size: 16px;
-  letter-spacing: 6px;
 }
 
 /* ============================================================
@@ -338,111 +392,71 @@ section.section h2 {
   font-family: 'Inter', sans-serif;
 }
 
+/* Gradient bar left side — override base dot grid */
 section.section::before {
   content: '';
   position: absolute;
-  left: 96px;
+  left: 48px;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
   height: 120px;
   background: linear-gradient(180deg, var(--sd-red) 0%, var(--sd-teal) 100%);
   border-radius: 2px;
-  margin-left: -48px;
+  opacity: 1;
+}
+
+/* Dot grid — bottom right */
+section.section::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 160px;
+  height: 160px;
+  background-image: radial-gradient(circle, rgba(232, 54, 59, 0.2) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.4;
 }
 
 /* ============================================================
-   LIGHT SLIDE — White background for data / content
+   DATA SLIDE — Slightly lighter navy for data-heavy content
+   (replaces the old "light" white-background slide)
    ============================================================ */
 
-section.light {
-  background: var(--sd-white) url('./backgrounds/slide-bg-content.png') center / cover no-repeat;
-  color: var(--sd-navy);
+section.data {
+  background:
+    radial-gradient(ellipse at top right, rgba(232, 54, 59, 0.06) 0%, transparent 50%),
+    var(--sd-navy-mid);
 }
 
-section.light h1 {
-  color: var(--sd-navy);
+section.data::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 160px;
+  height: 160px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.15) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+  opacity: 0.5;
 }
 
-section.light h2 {
-  color: var(--sd-navy);
-  border-bottom-color: var(--sd-red);
+section.data table {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-section.light h3 {
-  color: var(--sd-red);
-}
-
-section.light h4 {
-  color: var(--sd-gray-500);
-}
-
-section.light p, section.light li {
-  color: var(--sd-navy-light);
-}
-
-section.light strong {
-  color: var(--sd-navy);
-}
-
-section.light em {
-  color: var(--sd-red-dark);
-}
-
-section.light code {
-  background: rgba(11, 18, 34, 0.06);
-  color: var(--sd-red-dark);
-}
-
-section.light blockquote {
-  background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, rgba(232, 54, 59, 0.02) 100%);
-}
-
-section.light blockquote p {
-  color: var(--sd-navy-light);
-}
-
-section.light th {
-  background: var(--sd-gray-100);
-  color: var(--sd-navy);
-  border-bottom-color: var(--sd-red);
-}
-
-section.light td {
-  color: var(--sd-navy-light);
-  border-bottom-color: var(--sd-gray-200);
-}
-
-section.light tr:nth-child(even) td {
-  background: var(--sd-gray-50);
-}
-
-section.light ul li::marker {
-  color: var(--sd-red);
-}
-
-section.light ol li::marker {
-  color: var(--sd-red-dark);
-}
-
-section.light::after {
-  color: var(--sd-red);
-}
-
-section.light[data-marpit-pagination]::after {
-  color: var(--sd-gray-400);
-}
-
-section.light hr {
-  background: linear-gradient(90deg, transparent, var(--sd-gray-200), transparent);
+section.data th {
+  background: rgba(232, 54, 59, 0.15);
 }
 
 /* ============================================================
-   ACCENT SLIDE — Red background for emphasis / quotes
+   ACCENT SLIDE — Red gradient emphasis
    ============================================================ */
 
 section.accent {
-  background: linear-gradient(135deg, #E8363B 0%, #CC2D32 100%);
+  background: linear-gradient(135deg, #E8363B 0%, #CC2D32 60%, #A3171B 100%);
   color: var(--sd-white);
   display: flex;
   flex-direction: column;
@@ -484,20 +498,14 @@ section.accent em {
 section.accent blockquote {
   border-left-color: var(--sd-white);
   background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 section.accent blockquote p {
   color: var(--sd-white);
 }
 
-section.accent::after {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-section.accent[data-marpit-pagination]::after {
-  color: rgba(255, 255, 255, 0.5);
-}
-
+/* White dot grid overlay for texture */
 section.accent::before {
   content: '';
   position: absolute;
@@ -505,8 +513,90 @@ section.accent::before {
   right: 0;
   width: 400px;
   height: 400px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.5;
+}
+
+section.accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
-  pointer-events: none;
+  opacity: 1;
+  background-image: none;
+  background-size: auto;
+}
+
+section.accent[data-marpit-pagination]::after {
+  color: rgba(255, 255, 255, 0.5);
+  background: none;
+  background-image: none;
+  width: auto;
+  height: auto;
+}
+
+/* ============================================================
+   TEAL SLIDE — Secondary emphasis
+   ============================================================ */
+
+section.teal {
+  background: linear-gradient(135deg, var(--sd-teal-dark) 0%, var(--sd-teal) 60%, #0FA89A 100%);
+  color: var(--sd-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 88px 120px;
+}
+
+section.teal h1, section.teal h2 {
+  color: var(--sd-white);
+}
+
+section.teal h2 {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+section.teal h3 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+section.teal p, section.teal li {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 24px;
+}
+
+section.teal strong {
+  color: var(--sd-white);
+}
+
+/* White dot grid overlay for teal */
+section.teal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.5;
+}
+
+section.teal::after {
+  color: rgba(255, 255, 255, 0.4);
+  background-image: none;
+  background-size: auto;
+  width: auto;
+  height: auto;
+}
+
+section.teal[data-marpit-pagination]::after {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ============================================================
@@ -549,62 +639,44 @@ section.closing a {
   border-bottom: 2px solid var(--sd-teal);
 }
 
+/* Three dots brand mark centered */
 section.closing::before {
   content: '● ● ●';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -120px);
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-size: auto;
   color: var(--sd-red);
   font-size: 20px;
   letter-spacing: 8px;
+  opacity: 1;
 }
 
+/* Dot grid — centered behind content */
 section.closing::after {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(circle, rgba(232, 54, 59, 0.12) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.3;
 }
 
-/* ============================================================
-   TEAL ACCENT SLIDE — Secondary emphasis
-   ============================================================ */
-
-section.teal {
-  background: linear-gradient(135deg, var(--sd-teal-dark) 0%, var(--sd-teal) 100%);
-  color: var(--sd-white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 88px 120px;
-}
-
-section.teal h1, section.teal h2 {
-  color: var(--sd-white);
-}
-
-section.teal h2 {
-  border-bottom-color: rgba(255, 255, 255, 0.3);
-}
-
-section.teal h3 {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-section.teal p, section.teal li {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 24px;
-}
-
-section.teal strong {
-  color: var(--sd-white);
-}
-
-section.teal::after {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-section.teal[data-marpit-pagination]::after {
-  color: rgba(255, 255, 255, 0.5);
+section.closing[data-marpit-pagination]::after {
+  background-image: none;
+  width: auto;
+  height: auto;
+  transform: none;
+  top: auto;
+  left: auto;
 }
 
 /* ============================================================
@@ -624,27 +696,399 @@ section.split h2 {
 }
 
 /* ============================================================
-   UTILITY: Metric cards for data slides
+   METRIC DASHBOARD — KPI cards grid
    ============================================================ */
 
-section .metric {
-  display: inline-block;
-  text-align: center;
-  padding: 24px 32px;
-  margin: 8px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+section.metrics {
+  background:
+    radial-gradient(ellipse at top center, var(--glow-red-strong) 0%, transparent 50%),
+    var(--sd-navy);
 }
 
-section.light .metric {
-  background: var(--sd-white);
-  border: 1px solid var(--sd-gray-200);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+/* Larger dot grid for metrics */
+section.metrics::before {
+  width: 240px;
+  height: 240px;
+  top: -30px;
+  right: -30px;
+}
+
+section .metric {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 40px;
+  margin: 8px;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  min-width: 200px;
+}
+
+section .metric strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+section .metric em {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sd-gray-400);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Color variants for metric cards */
+section .metric-red strong { color: var(--sd-red); }
+section .metric-teal strong { color: var(--sd-teal); }
+section .metric-amber strong { color: var(--sd-amber); }
+section .metric-white strong { color: var(--sd-white); }
+
+section .metric-red { border-top: 3px solid var(--sd-red); }
+section .metric-teal { border-top: 3px solid var(--sd-teal); }
+section .metric-amber { border-top: 3px solid var(--sd-amber); }
+
+/* Metrics grid container */
+section .metrics-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 /* ============================================================
-   GLOBAL TRANSITIONS & POLISH
+   TIMELINE / ROADMAP
+   ============================================================ */
+
+section .timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin: 32px 0;
+  position: relative;
+}
+
+section .timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sd-red), var(--sd-teal));
+  border-radius: 2px;
+}
+
+section .timeline-item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 16px;
+}
+
+section .timeline-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--sd-red);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--sd-navy), 0 0 16px rgba(232, 54, 59, 0.4);
+}
+
+section .timeline-item:last-child .timeline-dot {
+  background: var(--sd-teal);
+  box-shadow: 0 0 0 4px var(--sd-navy), 0 0 16px rgba(20, 184, 166, 0.4);
+}
+
+section .timeline-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--sd-white);
+  display: block;
+  margin-bottom: 8px;
+}
+
+section .timeline-desc {
+  font-size: 16px;
+  color: var(--sd-gray-400);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   ICON GRID — Feature/capability cards
+   ============================================================ */
+
+section .icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+
+section .icon-card {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+section .icon-card .icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+section .icon-card h3 {
+  font-size: 20px;
+  color: var(--sd-white);
+  margin-bottom: 8px;
+}
+
+section .icon-card p {
+  font-size: 16px;
+  color: var(--sd-gray-400);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   CHART CONTAINERS
+   ============================================================ */
+
+section .chart-container {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+section .chart-container h3 {
+  margin-bottom: 24px;
+}
+
+/* CSS Bar Chart */
+section .bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  height: 300px;
+  padding: 0 16px;
+}
+
+section .bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+section .bar {
+  width: 100%;
+  max-width: 80px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  min-height: 20px;
+  transition: height 0.3s;
+}
+
+section .bar-red { background: linear-gradient(180deg, var(--sd-red) 0%, var(--sd-red-dark) 100%); }
+section .bar-teal { background: linear-gradient(180deg, var(--sd-teal) 0%, var(--sd-teal-dark) 100%); }
+section .bar-amber { background: linear-gradient(180deg, var(--sd-amber) 0%, #D97706 100%); }
+section .bar-gray { background: linear-gradient(180deg, var(--sd-gray-400) 0%, var(--sd-gray-500) 100%); }
+
+/* Bar height classes (since inline styles get sanitized) */
+section .bar-h90 { height: 250px; }
+section .bar-h75 { height: 210px; }
+section .bar-h60 { height: 170px; }
+section .bar-h50 { height: 140px; }
+section .bar-h40 { height: 115px; }
+section .bar-h30 { height: 85px; }
+
+section .bar-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--sd-white);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+section .bar-label {
+  font-size: 14px;
+  color: var(--sd-gray-400);
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* CSS Pie Chart (conic-gradient) */
+section .pie-chart {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  background: conic-gradient(#E8363B 0% 45%, #14B8A6 45% 70%, #F59E0B 70% 88%, #64748B 88% 100%);
+  flex-shrink: 0;
+}
+
+section .pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+section .pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: var(--sd-gray-200);
+}
+
+section .pie-legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* CSS Line Chart area */
+section .line-chart {
+  position: relative;
+  height: 300px;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 0 16px;
+}
+
+/* ============================================================
+   COMPARISON / BEFORE-AFTER SPLIT
+   ============================================================ */
+
+section .comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+section .compare-col {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+section .compare-col h3 {
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--glass-border);
+}
+
+section .compare-before h3 {
+  color: var(--sd-gray-400);
+  border-bottom-color: var(--sd-gray-500);
+}
+
+section .compare-after h3 {
+  color: var(--sd-teal);
+  border-bottom-color: var(--sd-teal);
+}
+
+section .compare-col li {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   FULL-BLEED QUOTE
+   ============================================================ */
+
+section.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 88px 140px;
+  background:
+    radial-gradient(ellipse at center, var(--glow-red-strong) 0%, transparent 60%),
+    var(--sd-navy);
+}
+
+section.quote::before {
+  content: '"';
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  font-family: 'Space Grotesk', serif;
+  font-size: 200px;
+  color: var(--sd-red);
+  opacity: 0.15;
+  line-height: 1;
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-size: auto;
+}
+
+section.quote::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(232, 54, 59, 0.2) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.3;
+}
+
+section.quote h2 {
+  font-size: 44px;
+  font-weight: 600;
+  color: var(--sd-white);
+  border-bottom: none;
+  padding-bottom: 0;
+  line-height: 1.3;
+  max-width: 85%;
+  margin-bottom: 40px;
+}
+
+section.quote p {
+  font-size: 22px;
+  color: var(--sd-gray-400);
+}
+
+section.quote p strong {
+  color: var(--sd-red);
+}
+
+/* ============================================================
+   GLOBAL UTILITIES & POLISH
    ============================================================ */
 
 section img {
@@ -658,3 +1102,65 @@ section input[type="checkbox"] {
   height: 18px;
   margin-right: 8px;
 }
+
+/* Superdot divider utility */
+section .superdot-divider {
+  text-align: center;
+  color: var(--sd-red);
+  font-size: 14px;
+  letter-spacing: 12px;
+  margin: 32px 0;
+  opacity: 0.6;
+}
+
+/* Glass card utility */
+section .glass {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Flex layout helpers for HTML blocks */
+section .flex-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+section .flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+section .flex-1 { flex: 1; }
+section .flex-2 { flex: 2; }
+
+section .text-center { text-align: center; }
+section .text-red { color: var(--sd-red); }
+section .text-teal { color: var(--sd-teal); }
+section .text-amber { color: var(--sd-amber); }
+section .text-muted { color: var(--sd-gray-400); }
+section .text-xl { font-size: 28px; }
+section .text-2xl { font-size: 36px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+section .text-3xl { font-size: 48px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+
+/* Progress bar utility */
+section .progress-bar {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+section .progress-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+section .progress-red { background: linear-gradient(90deg, var(--sd-red-dark), var(--sd-red)); }
+section .progress-teal { background: linear-gradient(90deg, var(--sd-teal-dark), var(--sd-teal)); }
+section .progress-amber { background: linear-gradient(90deg, #D97706, var(--sd-amber)); }
