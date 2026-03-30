@@ -19,7 +19,6 @@ faqs:
     answer: "Most AI guided selling tools are built to integrate with the major CRMs — Salesforce, HubSpot, and Pipedrive cover 80% of teams. The deeper question is data quality: AI recommendations are only as good as your historical deal data. If your CRM is full of incomplete records, stale contacts, and manually entered notes, the AI will struggle to find meaningful patterns. Before rolling out any guided selling tool, spend a few weeks cleaning your pipeline data and making sure reps are logging activity consistently. That groundwork matters more than which tool you pick."
   - question: "What ROI can you expect from AI guided selling?"
     answer: "Numbers vary widely by team size, deal complexity, and how deeply the tool is adopted. That said, published benchmarks are consistent in a few areas: win rates typically improve 10–20%, average deal size increases because the AI spots upsell and cross-sell opportunities reps miss, and ramp time for new hires drops by 30–40% when they have AI prompts guiding their actions. The fastest ROI comes from two specific use cases: reducing no-decisions (deals that just go cold) and tightening follow-up timing. Both are measurable within the first quarter of deployment."
-heroImage: "/images/blog/ai-guided-selling.webp"
 ---
 
 Your sales reps are making hundreds of small decisions every day. Which product to recommend. When to follow up. What to include in a proposal. How to price for this specific buyer.
