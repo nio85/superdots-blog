@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Pre-commit hook: lint frontmatter on staged .md files in src/content/blog/
+
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '^src/content/blog/.*\.md$' || true)
+
+if [ -z "$STAGED_MD" ]; then
+  exit 0
+fi
+
+# Build full paths
+ROOT=$(git rev-parse --show-toplevel)
+FILES=""
+for f in $STAGED_MD; do
+  FILES="$FILES $ROOT/$f"
+done
+
+node "$ROOT/scripts/lint-frontmatter.mjs" $FILES
