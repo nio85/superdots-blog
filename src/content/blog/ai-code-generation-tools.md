@@ -169,7 +169,7 @@ For AI-assisted pair programming practices, see [AI pair programming](/blog/ai-p
 AI-generated code can contain vulnerabilities. Treat AI suggestions like code from a talented but junior developer:
 
 - **Always review.** Don't blindly accept multi-line suggestions. Read the code.
-- **Run security scanners.** Static analysis catches common issues (SQL injection, XSS, insecure crypto).
+- **Run security scanners.** Static analysis catches common issues (SQL injection, XSS, insecure crypto). [AI security scanning tools](/blog/ai-security-scanning/) go further by detecting vulnerabilities in context.
 - **Check dependencies.** AI may suggest importing packages that are deprecated, unmaintained, or malicious.
 - **Test thoroughly.** AI-generated code that works doesn't mean it handles edge cases correctly.
 - **Protect secrets.** Don't paste API keys, tokens, or credentials into AI tools. Use environment variables.
@@ -192,6 +192,6 @@ For comprehensive AI-assisted testing, see [AI test generation](/blog/ai-test-ge
 
 AI code generation is evolving fast. The tools are getting better at understanding full codebases, reasoning about architecture, and executing multi-step tasks autonomously.
 
-The developers who thrive aren't the ones who resist AI tools. They're the ones who learn to use them effectively — knowing when to lean on AI for speed and when to rely on their own judgment for quality.
+The developers who thrive aren't the ones who resist AI tools. They're the ones who learn to use them effectively — knowing when to lean on AI for speed and when to rely on their own judgment for quality. If you're modernizing a legacy codebase, [AI code migration tools](/blog/ai-code-migration/) can handle the heavy lifting of upgrades and language conversions.
 
 Pick one tool from this list. Use it for a week on real work. You'll know within three days whether it fits your workflow. Then experiment with a second tool for the tasks the first one doesn't handle well.
