@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "automation"
 tags: ["ai-tools", "ai-sales", "ai-guided-selling"]
+heroImage: "/images/blog/ai-guided-selling.webp"
 imageHint: "sales rep viewing AI recommendations on screen during customer call"
 faqs:
   - question: "What is AI guided selling and how does it work?"
