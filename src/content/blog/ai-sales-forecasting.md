@@ -145,6 +145,6 @@ If your pipeline data lives in spreadsheets rather than a CRM, [AI data analysis
 
 And if you are already using AI for [sales call prep](/blog/ai-for-sales-call-prep/), forecasting is the natural next step — you are improving how you sell and how you predict what you will sell.
 
-For the complete picture of AI across the sales function, see our [AI for sales complete guide](/blog/ai-for-sales-complete-guide). And if your forecasting challenges extend beyond sales into financial planning, our guide on [AI financial forecasting](/blog/ai-financial-forecasting) covers broader revenue and cash flow prediction.
+For the complete picture of AI across the sales function, see our [AI for sales complete guide](/blog/ai-for-sales-complete-guide/). And if your forecasting challenges extend beyond sales into financial planning, our guide on [AI financial forecasting](/blog/ai-financial-forecasting/) covers broader revenue and cash flow prediction.
 
 The teams that forecast accurately do not just hit their numbers. They plan hiring, allocate resources, and make strategic bets with confidence. AI gets you there faster.

@@ -46,7 +46,7 @@ You can build the best training content in the world. Without reinforcement, it 
 
 ### No connection to actual skill needs
 
-Most training catalogs are built around topics, not skills. "Project Management 101" instead of "the specific project management skills your role requires." Employees browse a catalog, pick something that sounds interesting (or that their manager suggested), and take it. Whether it addresses an actual skill gap in their role is largely a matter of luck. A proper [skills gap analysis](/blog/ai-skills-gap-analysis) would tell you exactly what to train — but most L&D teams skip this step entirely.
+Most training catalogs are built around topics, not skills. "Project Management 101" instead of "the specific project management skills your role requires." Employees browse a catalog, pick something that sounds interesting (or that their manager suggested), and take it. Whether it addresses an actual skill gap in their role is largely a matter of luck. A proper [skills gap analysis](/blog/ai-skills-gap-analysis/) would tell you exactly what to train — but most L&D teams skip this step entirely.
 
 ### Measurement stops at completion
 
@@ -139,7 +139,7 @@ At the team and company level, AI aggregates individual assessment data into a s
 - Which teams are ahead or behind on key competencies
 - How skills are trending over time (improving or declining)
 
-This turns L&D from a cost center into a strategic function. When leadership asks "are we ready to expand into the European market?" you can answer with skill data, not guesses. That same skills heat map also feeds directly into [AI workforce planning](/blog/ai-workforce-planning) — informing hiring decisions, succession planning, and long-term capacity strategy based on where the gaps are most critical.
+This turns L&D from a cost center into a strategic function. When leadership asks "are we ready to expand into the European market?" you can answer with skill data, not guesses. That same skills heat map also feeds directly into [AI workforce planning](/blog/ai-workforce-planning/) — informing hiring decisions, succession planning, and long-term capacity strategy based on where the gaps are most critical.
 
 ## AI for Measuring Training ROI
 
@@ -165,7 +165,7 @@ AI analytics can draw direct lines between training programs and business result
 - "Teams that finished the data analysis program reduced report preparation time by 4 hours per week"
 - "Customer satisfaction scores increased 12 points in departments that completed the communication training"
 
-These are the numbers that justify training budgets. Not "100% completion" but "measurable business improvement." Skill development data also informs [AI resource allocation](/blog/ai-resource-allocation) decisions — knowing which team members have recently leveled up their capabilities helps ops managers match the right people to the right projects, not just the most available ones.
+These are the numbers that justify training budgets. Not "100% completion" but "measurable business improvement." Skill development data also informs [AI resource allocation](/blog/ai-resource-allocation/) decisions — knowing which team members have recently leveled up their capabilities helps ops managers match the right people to the right projects, not just the most available ones.
 
 ## Getting Started: Practical Steps for L&D Teams
 
@@ -187,7 +187,7 @@ Do not try to transform all training at once. Pick one program where:
 - Current training is underperforming (low completion, poor feedback)
 - Leadership cares about the outcome
 
-Good candidates: [new hire onboarding](/blog/ai-employee-onboarding), product knowledge training, compliance training, sales skills.
+Good candidates: [new hire onboarding](/blog/ai-employee-onboarding/), product knowledge training, compliance training, sales skills.
 
 ### Step 3: Choose a platform and configure it (Weeks 5-8)
 
@@ -229,9 +229,9 @@ The $400 billion corporate training industry is not going away. But the companie
 
 **Related reads:**
 
-- [AI for HR: Complete Guide](/blog/ai-for-hr) — The complete guide to AI across recruiting, onboarding, training, and every HR function.
-- [AI Employee Onboarding](/blog/ai-employee-onboarding) — Apply the same personalization principles to new hire training from day one.
-- [AI Performance Reviews](/blog/ai-performance-reviews) — Connect training outcomes to performance data for a complete picture.
-- [AI Knowledge Base for Teams](/blog/ai-knowledge-base-for-teams) — Build the always-available resource that supports ongoing learning.
-- [AI Skills Gap Analysis](/blog/ai-skills-gap-analysis) — Identify exactly which skills your team needs before building training programs.
-- [AI Employee Engagement](/blog/ai-employee-engagement) — Training completion is an engagement signal. Track both together.
+- [AI for HR: Complete Guide](/blog/ai-for-hr/) — The complete guide to AI across recruiting, onboarding, training, and every HR function.
+- [AI Employee Onboarding](/blog/ai-employee-onboarding/) — Apply the same personalization principles to new hire training from day one.
+- [AI Performance Reviews](/blog/ai-performance-reviews/) — Connect training outcomes to performance data for a complete picture.
+- [AI Knowledge Base for Teams](/blog/ai-knowledge-base-for-teams/) — Build the always-available resource that supports ongoing learning.
+- [AI Skills Gap Analysis](/blog/ai-skills-gap-analysis/) — Identify exactly which skills your team needs before building training programs.
+- [AI Employee Engagement](/blog/ai-employee-engagement/) — Training completion is an engagement signal. Track both together.

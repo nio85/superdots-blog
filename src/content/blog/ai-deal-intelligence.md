@@ -70,7 +70,7 @@ Best for: Teams that want deep call analytics alongside deal health. Strong on c
 
 Clari sits more squarely in the revenue operations space. Where Gong starts with call intelligence, Clari starts with pipeline data and CRM signals. It analyzes deal stage velocity, close date movement, and rep activity to generate deal health scores and a bottom-up AI forecast. Its "Deal Inspection" view lets managers drill into any deal and see exactly which signals are driving the health score.
 
-Best for: Revenue operations teams and managers who want AI deal intelligence tightly integrated with forecasting. Strong on pipeline analytics. See how it complements [AI sales forecasting](/blog/ai-sales-forecasting).
+Best for: Revenue operations teams and managers who want AI deal intelligence tightly integrated with forecasting. Strong on pipeline analytics. See how it complements [AI sales forecasting](/blog/ai-sales-forecasting/).
 
 ### People.ai
 
@@ -88,7 +88,7 @@ Best for: Salesforce shops that want basic deal intelligence without a net-new v
 
 HubSpot's Sales Hub includes deal tracking and basic predictive scoring as part of the platform. It is not as deep as Gong or Clari — it lacks call analytics and sophisticated stakeholder mapping — but it surfaces stage duration alerts, activity gaps, and deal health signals in a clean UI. For smaller teams, it covers most of the bases.
 
-Best for: Teams already on HubSpot that want deal intelligence without a separate tool. Pair with [AI CRM tools](/blog/ai-crm-tools) for a full picture.
+Best for: Teams already on HubSpot that want deal intelligence without a separate tool. Pair with [AI CRM tools](/blog/ai-crm-tools/) for a full picture.
 
 ## How Deal Intelligence Changes Pipeline Reviews
 
@@ -110,13 +110,13 @@ Practically, this means:
 
 Deal intelligence does not operate in isolation. It sits at the center of a stack that also includes:
 
-**Lead scoring.** [AI lead scoring](/blog/ai-lead-scoring) tells you which leads are most likely to convert. Deal intelligence tells you what is happening inside the deals those leads became. Together, they give you a full funnel view from first touch to close.
+**Lead scoring.** [AI lead scoring](/blog/ai-lead-scoring/) tells you which leads are most likely to convert. Deal intelligence tells you what is happening inside the deals those leads became. Together, they give you a full funnel view from first touch to close.
 
 **CRM.** Deal intelligence tools read from and write to your CRM. They enrich deal records with engagement signals, activity data, and health scores. This means every rep who opens a deal record in Salesforce or HubSpot sees the deal health score without switching tools.
 
-**Call prep.** Before any high-stakes meeting with a deal that has warning signals, [AI for sales call prep](/blog/ai-for-sales-call-prep) helps reps research what to address and how to re-engage a deal that has gone quiet. Deal intelligence identifies the problem; call prep helps fix it.
+**Call prep.** Before any high-stakes meeting with a deal that has warning signals, [AI for sales call prep](/blog/ai-for-sales-call-prep/) helps reps research what to address and how to re-engage a deal that has gone quiet. Deal intelligence identifies the problem; call prep helps fix it.
 
-**Forecasting.** Deal intelligence data rolls up into [AI sales forecasting](/blog/ai-sales-forecasting). Instead of your forecast relying on rep-reported probabilities, it can incorporate objective deal health signals — making the forecast materially more accurate.
+**Forecasting.** Deal intelligence data rolls up into [AI sales forecasting](/blog/ai-sales-forecasting/). Instead of your forecast relying on rep-reported probabilities, it can incorporate objective deal health signals — making the forecast materially more accurate.
 
 ## What Deal Intelligence Cannot Do
 
@@ -160,10 +160,10 @@ The best sales teams are not better at intuition than everyone else. They are be
 
 **Related reads:**
 
-- [AI Sales Forecasting](/blog/ai-sales-forecasting) — Roll deal health signals into an accurate revenue forecast.
-- [AI CRM Tools](/blog/ai-crm-tools) — The CRM layer that deal intelligence tools sit on top of.
-- [AI Lead Scoring](/blog/ai-lead-scoring) — Prioritize which deals deserve the most attention before they even enter the pipeline.
-- [AI for Sales Call Prep](/blog/ai-for-sales-call-prep) — Use AI to prepare for high-stakes conversations on at-risk deals.
+- [AI Sales Forecasting](/blog/ai-sales-forecasting/) — Roll deal health signals into an accurate revenue forecast.
+- [AI CRM Tools](/blog/ai-crm-tools/) — The CRM layer that deal intelligence tools sit on top of.
+- [AI Lead Scoring](/blog/ai-lead-scoring/) — Prioritize which deals deserve the most attention before they even enter the pipeline.
+- [AI for Sales Call Prep](/blog/ai-for-sales-call-prep/) — Use AI to prepare for high-stakes conversations on at-risk deals.
 - [AI for sales complete guide](/blog/ai-for-sales-complete-guide/) — The full picture of AI across the entire sales function.
 
 ## FAQ
