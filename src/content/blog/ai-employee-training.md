@@ -139,7 +139,7 @@ At the team and company level, AI aggregates individual assessment data into a s
 - Which teams are ahead or behind on key competencies
 - How skills are trending over time (improving or declining)
 
-This turns L&D from a cost center into a strategic function. When leadership asks "are we ready to expand into the European market?" you can answer with skill data, not guesses.
+This turns L&D from a cost center into a strategic function. When leadership asks "are we ready to expand into the European market?" you can answer with skill data, not guesses. That same skills heat map also feeds directly into [AI workforce planning](/blog/ai-workforce-planning) — informing hiring decisions, succession planning, and long-term capacity strategy based on where the gaps are most critical.
 
 ## AI for Measuring Training ROI
 
@@ -165,7 +165,7 @@ AI analytics can draw direct lines between training programs and business result
 - "Teams that finished the data analysis program reduced report preparation time by 4 hours per week"
 - "Customer satisfaction scores increased 12 points in departments that completed the communication training"
 
-These are the numbers that justify training budgets. Not "100% completion" but "measurable business improvement."
+These are the numbers that justify training budgets. Not "100% completion" but "measurable business improvement." Skill development data also informs [AI resource allocation](/blog/ai-resource-allocation) decisions — knowing which team members have recently leveled up their capabilities helps ops managers match the right people to the right projects, not just the most available ones.
 
 ## Getting Started: Practical Steps for L&D Teams
 

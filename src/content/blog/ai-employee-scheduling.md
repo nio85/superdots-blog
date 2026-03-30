@@ -39,7 +39,7 @@ The AI learns from your data. It gets smarter the longer you use it.
 
 AI scheduling tools analyze your historical data — sales volume, foot traffic, order counts, seasonal patterns — and predict how many staff you need for each shift. Not a rough guess. A data-driven forecast that accounts for trends your spreadsheet never could.
 
-A retail store might need 40% more floor staff the week after Thanksgiving. A hospital might need extra nurses on Monday mornings when weekend admissions stack up. The AI spots these patterns automatically.
+A retail store might need 40% more floor staff the week after Thanksgiving. A hospital might need extra nurses on Monday mornings when weekend admissions stack up. The AI spots these patterns automatically. This demand-driven view of staffing connects directly to [AI resource allocation](/blog/ai-resource-allocation) — the broader discipline of matching people to work across your whole organization, not just one shift at a time.
 
 ### Automated schedule generation
 
@@ -65,7 +65,7 @@ Not sure if your current process needs an upgrade? Here is a quick checklist.
 
 **3. You have been surprised by overtime costs.** If overtime shows up on payroll that you did not plan for, your scheduling process is not tracking hours accurately enough. AI tools monitor hours in real time and flag potential overtime before it happens.
 
-**4. Employee turnover is a problem.** Bad schedules are one of the top reasons hourly workers quit. Inconsistent hours, no input on availability, clopens (closing then opening the next morning) — these kill morale. AI scheduling factors in employee preferences and distributes hours more fairly.
+**4. Employee turnover is a problem.** Bad schedules are one of the top reasons hourly workers quit. Inconsistent hours, no input on availability, clopens (closing then opening the next morning) — these kill morale and are a direct driver of disengagement. [AI employee engagement](/blog/ai-employee-engagement) tools often surface scheduling dissatisfaction as a top theme in pulse surveys. AI scheduling factors in employee preferences and distributes hours more fairly.
 
 **5. You operate multiple locations.** When you have two or more locations, manual scheduling becomes exponentially harder. AI tools manage cross-location staffing, letting you move employees between sites when demand shifts.
 

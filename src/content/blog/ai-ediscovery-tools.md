@@ -38,7 +38,7 @@ eDiscovery follows a well-established framework: the EDRM (Electronic Discovery 
 
 ### Identification
 
-Before you collect anything, you need to know where relevant data lives. AI eDiscovery tools help map data sources — email servers, cloud storage, local drives, chat platforms, mobile devices — and estimate volumes before collection begins.
+Before you collect anything, you need to know where relevant data lives. AI eDiscovery tools help map data sources — email servers, cloud storage, local drives, chat platforms, mobile devices — and estimate volumes before collection begins. Contract repositories are a frequently overlooked data source at this stage; organizations using [AI contract management](/blog/ai-contract-management) platforms have a significant advantage because their contracts are already centralized, searchable, and indexed.
 
 Tools like Exterro and Relativity Collect use AI to identify custodians and data sources likely to contain relevant materials based on keywords, date ranges, and communication patterns. This prevents over-collection, which is one of the biggest cost drivers in eDiscovery.
 
@@ -94,7 +94,7 @@ This capability is especially relevant in investigations — internal misconduct
 
 ### Analysis
 
-Analysis overlaps with review but focuses on higher-level pattern recognition. AI eDiscovery tools identify key custodians, map communication networks, flag anomalies (like a sudden spike in document deletion), and surface timeline patterns.
+Analysis overlaps with review but focuses on higher-level pattern recognition. AI eDiscovery tools identify key custodians, map communication networks, flag anomalies (like a sudden spike in document deletion), and surface timeline patterns. Discovery findings frequently reveal compliance gaps — evidence of a missing control, an undocumented process, or a policy violation — and those findings feed directly into remediation work managed by [AI compliance tools](/blog/ai-compliance-tools).
 
 For legal research that complements your eDiscovery analysis, see our guide on [AI legal research](/blog/ai-legal-research).
 
@@ -168,7 +168,7 @@ That is a 65-70% cost reduction. The savings scale with matter size. On a 5-mill
 
 ### Step 1: Assess your current costs
 
-Pull data from your last five matters. What did you spend on review? How many documents were reviewed? What was the relevance rate? If your relevance rate is below 30% (meaning 70%+ of reviewed documents were not relevant), AI eDiscovery tools will deliver immediate value.
+Pull data from your last five matters. What did you spend on review? How many documents were reviewed? What was the relevance rate? If your relevance rate is below 30% (meaning 70%+ of reviewed documents were not relevant), AI eDiscovery tools will deliver immediate value. For context on how eDiscovery fits alongside other legal AI investments, see our roundup of the [best AI tools for legal teams](/blog/best-ai-tools-for-legal).
 
 ### Step 2: Run a pilot on a completed matter
 

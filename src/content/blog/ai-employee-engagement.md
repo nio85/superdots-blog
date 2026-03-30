@@ -42,7 +42,7 @@ This is where AI adds the most value over traditional surveys. Manually reading 
 
 AI models analyze engagement scores, survey trends, behavioral signals, and historical patterns to flag employees and teams at elevated risk of voluntary departure. The models typically identify flight risk 60-90 days before resignation, giving managers time to intervene.
 
-Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction.
+Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction. Many of these same burnout indicators are also tracked by [AI employee wellness](/blog/ai-employee-wellness) platforms, which monitor stress and fatigue signals as a complement to engagement measurement.
 
 ### Manager effectiveness scoring
 
@@ -64,7 +64,7 @@ The key is aggregation. Individual responses remain anonymous. The AI surfaces p
 
 ### Behavioral signal analysis
 
-Some AI engagement tools analyze digital collaboration patterns — meeting frequency, communication responsiveness, cross-team collaboration, after-hours activity. These signals complement survey data by providing continuous, passive measurement that does not require employees to actively respond to surveys.
+Some AI engagement tools analyze digital collaboration patterns — meeting frequency, communication responsiveness, cross-team collaboration, after-hours activity. These signals complement survey data by providing continuous, passive measurement that does not require employees to actively respond to surveys. When the data shows certain teams consistently working after hours or handling disproportionate workloads, that is also a signal for [AI resource allocation](/blog/ai-resource-allocation) — rebalancing who gets assigned what before the engagement cost compounds.
 
 This capability exists on an ethical spectrum. Measuring aggregate team patterns (meeting load is increasing across engineering) is reasonable. Monitoring individual employees' email response times is surveillance. Where your organization draws the line matters.
 

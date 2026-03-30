@@ -142,7 +142,7 @@ Do not roll out to the full team on day one. Pick a team of five to ten reps who
 
 ### Step 3: Build a coaching rhythm around the data
 
-AI coaching only changes behavior if managers use the data to drive conversations. Build a weekly ritual: before 1:1s, managers review the AI call scores and pick one specific moment to discuss. Not "you need to improve your discovery questions" — but "at 8:45 on Wednesday's call, the prospect mentioned budget three times and you moved past it. Let us talk about why and practice a different response."
+AI coaching only changes behavior if managers use the data to drive conversations. Build a weekly ritual: before 1:1s, managers review the AI call scores and pick one specific moment to discuss. Not "you need to improve your discovery questions" — but "at 8:45 on Wednesday's call, the prospect mentioned budget three times and you moved past it. Let us talk about why and practice a different response." Over time, the patterns surfaced in coaching sessions feed directly into [AI guided selling](/blog/ai-guided-selling/) recommendations — turning rep-level insights into next-best-action prompts for the whole team.
 
 ### Step 4: Connect coaching to onboarding
 
@@ -171,7 +171,7 @@ If these are flat, the issue is adoption, not the tool. Fix adoption before you 
 - **Average deal size**: Are reps who complete coaching moving upmarket?
 - **Quota attainment rate**: What percentage of the team hits quota each quarter?
 
-**Segment by coaching activity.** Compare outcomes for reps who actively engage with coaching data (reviewing scorecards, completing practice sessions) against those who do not. The activity-to-outcome correlation is usually the clearest signal that coaching is driving results rather than some other variable.
+**Segment by coaching activity.** Compare outcomes for reps who actively engage with coaching data (reviewing scorecards, completing practice sessions) against those who do not. The activity-to-outcome correlation is usually the clearest signal that coaching is driving results rather than some other variable. If you are using [AI deal intelligence](/blog/ai-deal-intelligence/) alongside coaching, you can also trace how improvements in rep behavior patterns translate into fewer at-risk deals in the pipeline.
 
 **Calculate the dollar value.** If ramp time drops from six months to four months for a rep costing $80,000 per year in salary plus benefits, that is $13,000 in productive capacity gained per new hire. If win rate improves from 22% to 26% on a $1.2M pipeline, that is $48,000 in additional closed revenue. The math is straightforward once you have the baseline data.
 

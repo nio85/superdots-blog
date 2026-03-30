@@ -52,7 +52,7 @@ Winning deals have consistent meeting momentum. They move from discovery to demo
 
 ### Talk ratio and call dynamics
 
-Gong pioneered call analytics that go beyond transcription. Deals where prospects talk more than 40% of the time on sales calls close significantly more often than rep-dominated calls. High-performing reps who ask more questions, use specific language around business outcomes, and avoid certain filler phrases close at higher rates. AI call analytics surfaces this at scale across an entire team.
+Gong pioneered call analytics that go beyond transcription. Deals where prospects talk more than 40% of the time on sales calls close significantly more often than rep-dominated calls. High-performing reps who ask more questions, use specific language around business outcomes, and avoid certain filler phrases close at higher rates. [AI conversation intelligence](/blog/ai-conversation-intelligence/) surfaces this at scale across an entire team, turning raw call recordings into structured risk signals that feed directly into deal scoring.
 
 ### Close date slippage
 
@@ -102,7 +102,7 @@ Practically, this means:
 
 **Better coaching conversations.** Instead of asking "how's it going with Acme?", a manager can say "Gong shows your champion went quiet after the technical demo — what happened in that call and what's your plan?" The conversation is grounded in data.
 
-**Earlier escalation.** If a deal needs an executive sponsor from your side, the window to bring them in is usually 30-60 days before close. Deal intelligence flags the need that early, not at the last minute when a deal is already slipping.
+**Earlier escalation.** If a deal needs an executive sponsor from your side, the window to bring them in is usually 30-60 days before close. Deal intelligence flags the need that early, not at the last minute when a deal is already slipping. Those risk signals can then feed into [AI guided selling](/blog/ai-guided-selling/) systems that surface specific next-best-action recommendations to help reps get the deal back on track.
 
 **Shorter meetings.** When everyone starts from the same data, you spend less time on status updates and more time on the deals that actually need attention. Teams using Clari report pipeline reviews cut from 90 minutes to 45.
 
@@ -164,6 +164,7 @@ The best sales teams are not better at intuition than everyone else. They are be
 - [AI CRM Tools](/blog/ai-crm-tools) — The CRM layer that deal intelligence tools sit on top of.
 - [AI Lead Scoring](/blog/ai-lead-scoring) — Prioritize which deals deserve the most attention before they even enter the pipeline.
 - [AI for Sales Call Prep](/blog/ai-for-sales-call-prep) — Use AI to prepare for high-stakes conversations on at-risk deals.
+- [AI for sales complete guide](/blog/ai-for-sales-complete-guide/) — The full picture of AI across the entire sales function.
 
 ## FAQ
 

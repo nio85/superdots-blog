@@ -22,7 +22,7 @@ Nobody knows exactly how many active contracts you have. Nobody knows which ones
 
 This is the contract management problem. It is not that contracts are hard to write. It is that managing a portfolio of contracts over their full lifecycle — creation, negotiation, execution, obligation tracking, and renewal — is a volume problem that breaks at scale.
 
-AI contract management tools solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated.
+AI contract management tools solve this. Not by replacing lawyers, but by making the entire contract lifecycle visible, searchable, and automated. For a broader look at how contract management fits into the full legal tech stack, see our roundup of the [best AI tools for legal teams](/blog/best-ai-tools-for-legal).
 
 ## Why Contract Management Is Broken
 
@@ -161,6 +161,8 @@ A contract management tool that does not connect to your other systems is just a
 **ERP and finance (NetSuite, SAP, QuickBooks).** Contract values and payment schedules should sync with finance systems. When a contract renews at a higher rate, the budget forecast should update.
 
 **Procurement.** For vendor contracts, the procurement team needs visibility into contract terms, pricing, and renewal status. Integration avoids duplicate effort and conflicting records.
+
+**Litigation support.** Your contract repository is a primary data source when litigation arises. Integrations with [AI eDiscovery tools](/blog/ai-ediscovery-tools) allow contracts to be pulled directly into review workflows rather than re-collected from scattered sources when a dispute surfaces.
 
 ### Nice-to-have integrations
 
