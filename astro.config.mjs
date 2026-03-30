@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { rehypeLazyImages } from './src/plugins/rehype-lazy-images.mjs';
 import { rehypeResponsiveTables } from './src/plugins/rehype-responsive-tables.mjs';
+import { rehypeTrailingSlash } from './src/plugins/rehype-trailing-slash.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -70,7 +71,7 @@ export default defineConfig({
 		service: { entrypoint: 'astro/assets/services/sharp' },
 	},
 	markdown: {
-		rehypePlugins: [rehypeResponsiveTables, rehypeLazyImages],
+		rehypePlugins: [rehypeResponsiveTables, rehypeLazyImages, rehypeTrailingSlash],
 	},
 	server: {
 		host: '0.0.0.0',
