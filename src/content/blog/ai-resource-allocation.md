@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "ai-operations", "ai-resource-allocation"]
+heroImage: "/images/blog/ai-resource-allocation.webp"
 imageHint: "operations manager viewing team workload dashboard with AI suggestions"
 faqs:
   - question: "What is AI resource allocation in project management?"
