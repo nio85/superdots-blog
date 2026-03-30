@@ -73,7 +73,7 @@ Most teams using guided selling tools report a 30–40% reduction in ramp time. 
 
 Your reps are focused on closing the deal in front of them. They're not scanning every account for expansion signals while they're in the middle of a negotiation. The AI is.
 
-When a buyer's behavior or profile matches the pattern of a customer who later upgraded, the tool surfaces that signal: "accounts with this headcount typically add the advanced analytics module within 90 days — mention it in your next call."
+When a buyer's behavior or profile matches the pattern of a customer who later upgraded, the tool surfaces that signal: "accounts with this headcount typically add the advanced analytics module within 90 days — mention it in your next call." This is especially powerful when combined with [AI conversation intelligence](/blog/ai-conversation-intelligence/) that reads deal signals directly from call transcripts.
 
 ### 3. Deals move faster through the pipeline
 
@@ -129,7 +129,7 @@ Don't try to use AI guidance for everything at once. Pick one high-value problem
 
 **Step 4: Make it easy to ignore (at first).**
 
-The fastest way to kill adoption is to make reps feel controlled by the AI. Frame recommendations as suggestions, not mandates. "The AI thinks this case study would land well — your call." Reps who feel trusted are far more likely to start following the guidance than reps who feel micromanaged.
+The fastest way to kill adoption is to make reps feel controlled by the AI. Frame recommendations as suggestions, not mandates. "The AI thinks this case study would land well — your call." Reps who feel trusted are far more likely to start following the guidance than reps who feel micromanaged. [AI sales coaching](/blog/ai-sales-coaching/) tools can help here — pairing guided selling recommendations with call-level feedback builds rep confidence in the AI over time.
 
 **Step 5: Close the feedback loop.**
 

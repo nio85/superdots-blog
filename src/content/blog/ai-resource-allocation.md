@@ -71,9 +71,9 @@ The mechanics vary by tool, but most AI resource management tools follow the sam
 
 **Step 2: Capacity modeling.** The AI builds a real-time model of everyone's availability, factoring in their scheduled hours, existing commitments, and any planned leave. It calculates utilization rates — what percentage of each person's available time is already spoken for.
 
-**Step 3: Pattern recognition.** Over time, the model learns how your team actually works, not just how projects are planned. If your developers consistently run 20% over estimated hours on back-end tasks, the AI adjusts its forecasts accordingly.
+**Step 3: Pattern recognition.** Over time, the model learns how your team actually works, not just how projects are planned. If your developers consistently run 20% over estimated hours on back-end tasks, the AI adjusts its forecasts accordingly. Skill inventories from [AI employee training](/blog/ai-employee-training/) platforms feed directly into this step — when the system knows who has recently developed new capabilities, it can make more accurate fit recommendations, not just availability-based ones.
 
-**Step 4: Conflict detection and suggestions.** When a new project is added or an assignment is made, the tool checks it against the current capacity model and flags any conflicts. Some tools go further and suggest which team members are the best fit based on skills, availability, and workload balance.
+**Step 4: Conflict detection and suggestions.** When a new project is added or an assignment is made, the tool checks it against the current capacity model and flags any conflicts. Some tools go further and suggest which team members are the best fit based on skills, availability, and workload balance. Catching overallocation here matters beyond project delivery — persistent overloading is a leading driver of disengagement, and [AI employee engagement](/blog/ai-employee-engagement/) tools often surface it as a root cause only after the damage is already done.
 
 **Step 5: Scenario planning.** You can model hypothetical situations: "What happens if we take on this new client?" or "If we delay Project X by two weeks, does that free up capacity for Project Y?" The AI runs those scenarios and shows you the impact before you commit.
 
@@ -153,7 +153,7 @@ Once your data is clean, start acting on the tool's suggestions. When it flags a
 
 Use the tool's historical data to inform future project planning. Before committing to a new project, run the capacity check. Before setting a deadline, confirm the team has the bandwidth.
 
-By this point, resource planning has shifted from a manual, gut-feel process to a data-driven one — and that change has a direct impact on project delivery rates, team utilization, and employee satisfaction.
+By this point, resource planning has shifted from a manual, gut-feel process to a data-driven one — and that change has a direct impact on project delivery rates, team utilization, and employee satisfaction. For a broader view of how AI is reshaping people and operations decisions across the business, the [AI for HR complete guide](/blog/ai-for-hr/) covers the full landscape from hiring through workforce planning.
 
 ---
 

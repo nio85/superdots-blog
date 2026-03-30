@@ -42,7 +42,7 @@ This is where AI adds the most value over traditional surveys. Manually reading 
 
 AI models analyze engagement scores, survey trends, behavioral signals, and historical patterns to flag employees and teams at elevated risk of voluntary departure. The models typically identify flight risk 60-90 days before resignation, giving managers time to intervene.
 
-Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction.
+Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction. Many of these same burnout indicators are also tracked by [AI employee wellness](/blog/ai-employee-wellness/) platforms, which monitor stress and fatigue signals as a complement to engagement measurement.
 
 ### Manager effectiveness scoring
 
@@ -64,7 +64,7 @@ The key is aggregation. Individual responses remain anonymous. The AI surfaces p
 
 ### Behavioral signal analysis
 
-Some AI engagement tools analyze digital collaboration patterns — meeting frequency, communication responsiveness, cross-team collaboration, after-hours activity. These signals complement survey data by providing continuous, passive measurement that does not require employees to actively respond to surveys.
+Some AI engagement tools analyze digital collaboration patterns — meeting frequency, communication responsiveness, cross-team collaboration, after-hours activity. These signals complement survey data by providing continuous, passive measurement that does not require employees to actively respond to surveys. When the data shows certain teams consistently working after hours or handling disproportionate workloads, that is also a signal for [AI resource allocation](/blog/ai-resource-allocation/) — rebalancing who gets assigned what before the engagement cost compounds.
 
 This capability exists on an ethical spectrum. Measuring aggregate team patterns (meeting load is increasing across engineering) is reasonable. Monitoring individual employees' email response times is surveillance. Where your organization draws the line matters.
 
@@ -96,7 +96,7 @@ If employees do not trust the anonymity, they will not provide honest feedback. 
 
 GDPR, CCPA, and similar regulations apply to employee engagement data. Ensure your tool handles data residency, consent management, and the right to deletion. This is not optional — it is legal obligation.
 
-For more on AI in HR processes, see our guide on [AI performance reviews](/blog/ai-performance-reviews).
+For more on AI in HR processes, see our guide on [AI performance reviews](/blog/ai-performance-reviews/).
 
 ## What to Look For
 
@@ -136,7 +136,7 @@ The best tools do not just identify problems. They suggest interventions based o
 
 **Fixing cultural problems with technology.** If your engagement problems stem from compensation, leadership, or organizational dysfunction, an AI tool will accurately measure the problem but cannot fix it. Do not confuse measurement with solution.
 
-For more on AI-powered HR workflows, check our guides on [AI employee training](/blog/ai-employee-training) and [AI employee onboarding](/blog/ai-employee-onboarding).
+For more on AI-powered HR workflows, check our guides on [AI employee training](/blog/ai-employee-training/) and [AI employee onboarding](/blog/ai-employee-onboarding/).
 
 ## Getting Started
 
@@ -164,4 +164,4 @@ The annual survey is not dead, but it is no longer sufficient. Continuous measur
 
 Start with surveys. Respect privacy. Focus on teams, not individuals. And always remember: the goal is not better data. It is better workplaces.
 
-For related HR workflows, see our guide on [AI workforce planning](/blog/ai-workforce-planning). For a comprehensive overview of how AI is transforming every HR function, see our [complete guide to AI for HR](/blog/ai-for-hr). For AI across all departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For related HR workflows, see our guide on [AI workforce planning](/blog/ai-workforce-planning/). For a comprehensive overview of how AI is transforming every HR function, see our [complete guide to AI for HR](/blog/ai-for-hr/). For AI across all departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide/).

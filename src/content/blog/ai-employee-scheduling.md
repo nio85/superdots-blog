@@ -39,7 +39,7 @@ The AI learns from your data. It gets smarter the longer you use it.
 
 AI scheduling tools analyze your historical data — sales volume, foot traffic, order counts, seasonal patterns — and predict how many staff you need for each shift. Not a rough guess. A data-driven forecast that accounts for trends your spreadsheet never could.
 
-A retail store might need 40% more floor staff the week after Thanksgiving. A hospital might need extra nurses on Monday mornings when weekend admissions stack up. The AI spots these patterns automatically.
+A retail store might need 40% more floor staff the week after Thanksgiving. A hospital might need extra nurses on Monday mornings when weekend admissions stack up. The AI spots these patterns automatically. This demand-driven view of staffing connects directly to [AI resource allocation](/blog/ai-resource-allocation/) — the broader discipline of matching people to work across your whole organization, not just one shift at a time.
 
 ### Automated schedule generation
 
@@ -53,7 +53,7 @@ When an employee cannot make a shift, the AI finds qualified replacements automa
 
 Labor laws are complicated and getting more complex. Predictive scheduling laws in cities like San Francisco, New York, Chicago, and Seattle require advance notice, premium pay for last-minute changes, and rest periods between shifts. AI scheduling tools bake these rules in. They prevent you from publishing a schedule that violates the law before you even know there is a problem.
 
-For more on how AI helps with broader workforce decisions, see our guide to [AI workforce planning](/blog/ai-workforce-planning).
+For more on how AI helps with broader workforce decisions, see our guide to [AI workforce planning](/blog/ai-workforce-planning/).
 
 ## 5 Signs You Need AI Scheduling
 
@@ -65,7 +65,7 @@ Not sure if your current process needs an upgrade? Here is a quick checklist.
 
 **3. You have been surprised by overtime costs.** If overtime shows up on payroll that you did not plan for, your scheduling process is not tracking hours accurately enough. AI tools monitor hours in real time and flag potential overtime before it happens.
 
-**4. Employee turnover is a problem.** Bad schedules are one of the top reasons hourly workers quit. Inconsistent hours, no input on availability, clopens (closing then opening the next morning) — these kill morale. AI scheduling factors in employee preferences and distributes hours more fairly.
+**4. Employee turnover is a problem.** Bad schedules are one of the top reasons hourly workers quit. Inconsistent hours, no input on availability, clopens (closing then opening the next morning) — these kill morale and are a direct driver of disengagement. [AI employee engagement](/blog/ai-employee-engagement/) tools often surface scheduling dissatisfaction as a top theme in pulse surveys. AI scheduling factors in employee preferences and distributes hours more fairly.
 
 **5. You operate multiple locations.** When you have two or more locations, manual scheduling becomes exponentially harder. AI tools manage cross-location staffing, letting you move employees between sites when demand shifts.
 
@@ -117,7 +117,7 @@ Here are the tools worth evaluating, organized by what they do best.
 
 **Best for:** Companies with engineering teams that want full control over scheduling logic and algorithms.
 
-For a broader look at how AI streamlines operational workflows, see our guide to [AI workflow automation](/blog/ai-workflow-automation).
+For a broader look at how AI streamlines operational workflows, see our guide to [AI workflow automation](/blog/ai-workflow-automation/).
 
 ## How to Choose the Right Tool
 
@@ -164,4 +164,4 @@ Switching to AI scheduling does not need to be complicated. Here is a practical 
 
 The key is to start with one location or team, prove the value, and then roll out. Do not try to switch your entire operation overnight.
 
-For more on how AI helps with HR operations broadly, see our guide to [AI for HR](/blog/ai-for-hr). And if you are looking at AI for meeting and calendar scheduling (a different use case), check out our [AI scheduling assistant](/blog/ai-scheduling-assistant) guide.
+For more on how AI helps with HR operations broadly, see our guide to [AI for HR](/blog/ai-for-hr/). And if you are looking at AI for meeting and calendar scheduling (a different use case), check out our [AI scheduling assistant](/blog/ai-scheduling-assistant/) guide.

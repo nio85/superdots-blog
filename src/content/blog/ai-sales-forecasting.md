@@ -44,7 +44,7 @@ Strip away the marketing buzzwords and AI sales forecasting does three things:
 
 1. **Pulls your historical data.** Every closed-won deal, closed-lost deal, deal stage duration, email activity, meeting frequency, and engagement signal in your CRM becomes training data.
 
-2. **Finds the patterns.** Machine learning models identify what winning deals have in common — and what losing deals share. Things like: deals with a champion who responds within 24 hours close at 3x the rate. Or: deals that skip the technical review stage close but churn within 6 months.
+2. **Finds the patterns.** Machine learning models identify what winning deals have in common — and what losing deals share. Things like: deals with a champion who responds within 24 hours close at 3x the rate. Or: deals that skip the technical review stage close but churn within 6 months. This is where [AI deal intelligence](/blog/ai-deal-intelligence/) adds the most value — translating behavioral signals from emails, calls, and meetings into the deal health indicators the forecast model actually trains on.
 
 3. **Scores your current pipeline.** Each open deal gets a probability score based on how closely it matches historical winners. Roll those up and you get a forecast grounded in data, not wishful thinking.
 
@@ -59,6 +59,7 @@ AI forecasting is only as good as the data you feed it. Here's the minimum your 
 - **Win/loss outcomes.** You need at least 6-12 months of closed deals. More history means better predictions.
 - **Activity data.** Emails sent, meetings held, calls logged. AI uses engagement signals to gauge deal health.
 - **Rep assignments.** Different reps close at different rates. AI accounts for this.
+- **Lead quality signals.** The stronger your [AI lead scoring](/blog/ai-lead-scoring/) data coming into the top of funnel, the more precisely the forecast model can weight deals by fit — not just by stage or rep confidence.
 
 **The uncomfortable truth:** If your CRM data is a mess — reps don't update deals, stages are inconsistent, half the activities aren't logged — AI forecasting won't save you. Fix the data hygiene first. AI amplifies what's there, good or bad.
 
@@ -111,7 +112,7 @@ A forecast number alone isn't useful. Here's how to use AI forecasts to actually
 
 **Watch the trends, not just the number.** If your forecast dropped 12% week over week, that's a signal. Dig into which deals moved, which went dark, and where new risk appeared.
 
-**Focus on the deals AI flags as at-risk.** Most tools highlight deals where activity has dropped, stages have stalled, or close dates keep slipping. These are your intervention points. A well-timed call from a manager or executive sponsor can save a deal the AI flagged weeks ago.
+**Focus on the deals AI flags as at-risk.** Most tools highlight deals where activity has dropped, stages have stalled, or close dates keep slipping. These are your intervention points. A well-timed call from a manager or executive sponsor can save a deal the AI flagged weeks ago. [AI guided selling](/blog/ai-guided-selling/) tools close the loop here — translating forecast risk signals into specific next-best-action recommendations for reps working those at-risk deals.
 
 **Use AI forecasts for scenario planning.** "If we close these three deals, we hit target. If only two close, we need to pull forward pipeline from next quarter." AI gives you the probability-weighted view to make these decisions with confidence.
 
@@ -144,6 +145,6 @@ If your pipeline data lives in spreadsheets rather than a CRM, [AI data analysis
 
 And if you are already using AI for [sales call prep](/blog/ai-for-sales-call-prep/), forecasting is the natural next step — you are improving how you sell and how you predict what you will sell.
 
-For the complete picture of AI across the sales function, see our [AI for sales complete guide](/blog/ai-for-sales-complete-guide). And if your forecasting challenges extend beyond sales into financial planning, our guide on [AI financial forecasting](/blog/ai-financial-forecasting) covers broader revenue and cash flow prediction.
+For the complete picture of AI across the sales function, see our [AI for sales complete guide](/blog/ai-for-sales-complete-guide/). And if your forecasting challenges extend beyond sales into financial planning, our guide on [AI financial forecasting](/blog/ai-financial-forecasting/) covers broader revenue and cash flow prediction.
 
 The teams that forecast accurately do not just hit their numbers. They plan hiring, allocate resources, and make strategic bets with confidence. AI gets you there faster.

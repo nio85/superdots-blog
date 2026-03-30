@@ -82,13 +82,13 @@ AI conversation intelligence changes this. Platforms like Gong and Chorus detect
 
 Here is what this looks like in practice:
 
-**Frequency analysis.** You discover that "we are already using [Competitor X]" comes up on 34% of calls this quarter, up from 22% last quarter. That is a market signal. Your competitive positioning may need updating. Your [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) might surface the same trend from support tickets.
+**Frequency analysis.** You discover that "we are already using [Competitor X]" comes up on 34% of calls this quarter, up from 22% last quarter. That is a market signal. Your competitive positioning may need updating. Your [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/) might surface the same trend from support tickets.
 
 **Response effectiveness.** The AI tracks outcomes after objections. When reps respond to the pricing objection with a specific ROI story, the deal moves forward 60% of the time. When they offer a discount immediately, it moves forward only 35% of the time. Now you know which talk track works.
 
 **Rep-level patterns.** One rep handles the "we need to think about it" objection well — converting 70% of those deals. Another rep loses the deal 80% of the time after that same objection. The AI shows you exactly what each rep says in that moment, so you can turn the winning response into a team playbook.
 
-This data feeds directly into call prep. When a rep is about to get on a call with a prospect who raised a specific objection last time, [AI for sales call prep](/blog/ai-for-sales-call-prep) can surface the best response from your team's history.
+This data feeds directly into call prep. When a rep is about to get on a call with a prospect who raised a specific objection last time, [AI for sales call prep](/blog/ai-for-sales-call-prep/) can surface the best response from your team's history.
 
 ## Competitor Mentions: Real-Time Competitive Intelligence
 
@@ -119,7 +119,7 @@ The AI watches patterns across all calls in a deal and flags risks:
 
 **Multi-threading gaps.** If every call in a deal involves only one contact, the deal is single-threaded and at risk. Platforms track how many unique stakeholders participate across calls and flag deals where engagement is too narrow.
 
-These signals roll up into deal health scores that tools like [AI deal intelligence](/blog/ai-deal-intelligence) platforms use to predict pipeline outcomes. The conversation intelligence layer provides the raw signal. The deal intelligence layer interprets it.
+These signals roll up into deal health scores that tools like [AI deal intelligence](/blog/ai-deal-intelligence/) platforms use to predict pipeline outcomes. The conversation intelligence layer provides the raw signal. The deal intelligence layer interprets it — and feeds those probability-weighted scores directly into [AI sales forecasting](/blog/ai-sales-forecasting/) to make revenue predictions more accurate.
 
 ## Coaching Insights: Turn Every Call Into a Training Opportunity
 
@@ -135,7 +135,7 @@ AI conversation intelligence makes behavior-based coaching scalable.
 
 **Self-coaching.** Reps can review their own call analytics without waiting for a manager. Many platforms send automated call summaries with metrics and highlights. A rep who sees their talk ratio was 73% on a discovery call can self-correct before the next one.
 
-Chorus (ZoomInfo) reports that teams using conversation intelligence for coaching see new reps ramp 30% faster. The mechanism is straightforward: instead of learning by trial and error over months, new hires learn from data-annotated examples of what works.
+Chorus (ZoomInfo) reports that teams using conversation intelligence for coaching see new reps ramp 30% faster. The mechanism is straightforward: instead of learning by trial and error over months, new hires learn from data-annotated examples of what works. For a full breakdown of how platforms operationalize this, see our guide on [AI sales coaching tools](/blog/ai-sales-coaching/).
 
 ## The Main AI Conversation Intelligence Platforms
 
@@ -185,11 +185,11 @@ The key mistake teams make is buying Gong on day one and then struggling with ad
 
 ## Connecting Conversation Intelligence to Your Sales Stack
 
-AI conversation intelligence does not live in isolation. The insights it generates feed into and draw from other parts of your sales infrastructure:
+AI conversation intelligence does not live in isolation. The insights it generates feed into and draw from other parts of your sales infrastructure. For a full picture of how all these pieces fit together, the [complete guide to AI in sales](/blog/ai-for-sales-complete-guide/) covers the entire sales function end to end.
 
-- **Deal intelligence.** Call-level signals roll up into [AI deal intelligence](/blog/ai-deal-intelligence) platforms that score pipeline health. A deal where sentiment has been declining across calls gets flagged before it stalls.
-- **Call prep.** Before a follow-up call, [AI for sales call prep](/blog/ai-for-sales-call-prep) can pull the transcript from the last conversation, highlight unresolved objections, and suggest talking points.
-- **Customer feedback.** Post-sale, the same conversation analysis applies to customer success calls. [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) surfaces churn risk signals and expansion opportunities from ongoing conversations.
+- **Deal intelligence.** Call-level signals roll up into [AI deal intelligence](/blog/ai-deal-intelligence/) platforms that score pipeline health. A deal where sentiment has been declining across calls gets flagged before it stalls.
+- **Call prep.** Before a follow-up call, [AI for sales call prep](/blog/ai-for-sales-call-prep/) can pull the transcript from the last conversation, highlight unresolved objections, and suggest talking points.
+- **Customer feedback.** Post-sale, the same conversation analysis applies to customer success calls. [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/) surfaces churn risk signals and expansion opportunities from ongoing conversations.
 - **CRM enrichment.** Conversation data flows back into Salesforce, HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
 - **Forecasting.** Conversation-level signals (sentiment, engagement, next step quality) improve forecast accuracy when combined with pipeline data.
 
