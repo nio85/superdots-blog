@@ -129,6 +129,32 @@ AI analyzes your infrastructure configuration and identifies:
 - **Configuration inconsistencies.** Differences between environments that could cause bugs.
 - **Cost optimization opportunities.** Workloads that could move to spot instances, reserved instances, or different instance types.
 
+## AIOps: AI-Powered Monitoring and Observability
+
+AIOps — Artificial Intelligence for IT Operations — ties CI/CD automation and infrastructure management together. While CI/CD tools speed up your deployment pipeline and infrastructure tools optimize resources, AIOps watches everything in production and tells you when something is wrong before users notice.
+
+The core difference between traditional monitoring and AIOps: traditional tools alert on static thresholds you configure. AIOps learns what "normal" looks like and alerts on deviations. That distinction matters because modern distributed systems are too complex for static rules. A microservices architecture with 50 services generates millions of data points per hour. No human can write threshold rules that account for every interaction pattern.
+
+### What AIOps platforms do
+
+1. **Ingest everything.** Logs, metrics, traces, events, change records — from every service, infrastructure component, and deployment.
+2. **Correlate across sources.** A CPU spike in Service A, a latency increase in Service B, and a deployment in Service C ten minutes ago are not three separate events. They are one incident.
+3. **Reduce noise.** Group related alerts, suppress known-benign patterns, and surface the signals that actually need human attention.
+4. **Predict problems.** ML models identify patterns that precede outages — disk fill rates, memory leak trajectories, traffic anomalies — and alert before the failure happens.
+
+### AIOps tools worth evaluating
+
+| Tool | Focus | Starting Price |
+|------|-------|---------------|
+| **Datadog AI** | Full-stack observability + AI alerting | From $15/host/mo |
+| **Dynatrace Davis AI** | Automatic root cause analysis | Custom pricing |
+| **New Relic AI** | Anomaly detection + alert intelligence | Free tier + $0.30/GB |
+| **Moogsoft** | Alert correlation and noise reduction | Custom pricing |
+| **BigPanda** | AIOps-focused event correlation | Custom pricing |
+| **Splunk ITSI** | IT service intelligence + predictive analytics | Custom pricing |
+
+Datadog, Dynatrace, and New Relic are full-stack observability platforms that added AI features. Moogsoft and BigPanda are AIOps-first platforms built specifically for [AI incident management](/blog/ai-incident-management). Choose based on whether you need to replace your monitoring stack or layer intelligence on top of it.
+
 ## AI for Incident Detection and Response
 
 Incident management is arguably where AI has the biggest impact on the human side of DevOps.
