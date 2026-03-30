@@ -6,6 +6,7 @@ author: "Superdots Team"
 department: "sales"
 useCase: "communication"
 tags: ["ai-tools", "ai-sales", "ai-sales-coaching"]
+heroImage: "/images/blog/ai-sales-coaching.webp"
 imageHint: "sales manager reviewing AI coaching dashboard with call analytics"
 faqs:
   - question: "How does AI sales coaching analyze sales calls?"
