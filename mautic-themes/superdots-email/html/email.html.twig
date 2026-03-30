@@ -43,15 +43,11 @@
     
     <style type="text/css">
       @media only screen and (min-width:480px) {
-        .mj-column-per-60 { width:60% !important; max-width: 60%; }
-.mj-column-per-40 { width:40% !important; max-width: 40%; }
-.mj-column-per-100 { width:100% !important; max-width: 100%; }
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
       }
     </style>
     <style media="screen and (min-width:480px)">
-      .moz-text-html .mj-column-per-60 { width:60% !important; max-width: 60%; }
-.moz-text-html .mj-column-per-40 { width:40% !important; max-width: 40%; }
-.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }
+      .moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }
     </style>
     
     
@@ -72,18 +68,19 @@
       a:hover { text-decoration: underline; }
       .cta-link a { color: #FFFFFF !important; text-decoration: none !important; }
       .footer-link a { color: #94A3B8 !important; font-size: 13px; }
-      .webview-link a { color: #475569 !important; font-size: 12px; }
       .secondary-title a { color: #F1F5F9 !important; text-decoration: none; }
       .secondary-title a:hover { color: #E8363B !important; }
       /* Brand dot */
       .superdot { color: #E8363B; }
-      /* Logo dots - ascending diagonal */
-      .dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; }
-      .dot-md { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 3px; }
-      .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 6px; }
+      /* Logo dots - ascending diagonal (45-degree) */
+      .dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; position: relative; top: 6px; }
+      .dot-md { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; position: relative; top: 0px; }
+      .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; position: relative; top: -6px; }
       /* Card styling */
       .article-card { background-color: #111827 !important; border-radius: 8px; }
       .tip-card { background-color: #0F172A !important; }
+      /* Numbered card decorators */
+      .card-number { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 32px; font-weight: 700; color: #E8363B; opacity: 0.25; line-height: 1; }
     </style>
     <!--[if mso]>
     <style type="text/css">
@@ -100,7 +97,7 @@
       <div
          aria-label="{{subject}}" aria-roledescription="email" style="background-color:#080E1A;" role="article" lang="und" dir="auto"
       >
-        <!-- Block 1: Header with logo -->
+        <!-- Block 1: Header with logo (full-width, no "View in browser") -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -115,10 +112,10 @@
               <td
                  style="direction:ltr;font-size:0px;padding:20px 24px;text-align:center;"
               >
-                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:343.2px;" ><![endif]-->
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:572px;" ><![endif]-->
             
       <div
-         class="mj-column-per-60 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"
+         class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"
       >
         
       <table
@@ -145,34 +142,6 @@
     
       </div>
     
-          <!--[if mso | IE]></td><td class="" style="vertical-align:middle;width:228.8px;" ><![endif]-->
-            
-      <div
-         class="mj-column-per-40 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"
-      >
-        
-      <table
-         border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:middle;" width="100%"
-      >
-        <tbody>
-          
-              <tr>
-                <td
-                   align="right" class="webview-link" style="font-size:0px;padding:0;word-break:break-word;"
-                >
-                  
-      <div
-         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:right;color:#CBD5E1;"
-      ><a href="{webview_url}" style="color:#475569; font-size:12px;">View in browser</a></div>
-    
-                </td>
-              </tr>
-            
-        </tbody>
-      </table>
-    
-      </div>
-    
           <!--[if mso | IE]></td></tr></table><![endif]-->
               </td>
             </tr>
@@ -184,7 +153,7 @@
       
       <!--[if mso | IE]></td></tr></table><![endif]-->
     
-    <!-- Accent gradient line: red→teal -->
+    <!-- Accent gradient line: red→dark red -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -217,7 +186,7 @@
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
-      ><div style="height:3px; background: linear-gradient(90deg, #E8363B 0%, #14B8A6 100%);"></div></div>
+      ><div style="height:3px; background: linear-gradient(90deg, #E8363B 0%, #8B1A1D 100%);"></div></div>
     
                 </td>
               </tr>
@@ -489,7 +458,7 @@
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;line-height:1.6;text-align:left;text-transform:uppercase;color:#475569;"
-      ><span style="color:#14B8A6;">&#9472;&#9472;</span>&nbsp;&nbsp;Also this week</div>
+      ><span style="color:#E8363B;">&#9472;&#9472;</span>&nbsp;&nbsp;Also this week</div>
     
                 </td>
               </tr>
@@ -510,7 +479,7 @@
       
       <!--[if mso | IE]></td></tr></table><![endif]-->
     
-    <!-- Secondary article 1 -->
+    <!-- Secondary article 1 — numbered card -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -536,13 +505,25 @@
       >
         <tbody>
           <tr>
-            <td  style="background-color:#111827;border-left:3px solid #E8363B;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
+            <td  style="background-color:#111827;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
               
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
           
+              <tr>
+                <td
+                   align="left" class="card-number" style="font-size:0px;padding:0 0 4px;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">01</span></div>
+    
+                </td>
+              </tr>
+            
               <tr>
                 <td
                    align="left" class="secondary-title" style="font-size:0px;padding:0 0 6px;word-break:break-word;"
@@ -557,12 +538,24 @@
             
               <tr>
                 <td
-                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                   align="left" style="font-size:0px;padding:0 0 8px;word-break:break-word;"
                 >
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;text-align:left;color:#94A3B8;"
       >{{article2_description}}</div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></div>
     
                 </td>
               </tr>
@@ -588,7 +581,7 @@
       
       <!--[if mso | IE]></td></tr></table><![endif]-->
     
-    <!-- Secondary article 2 -->
+    <!-- Secondary article 2 — numbered card -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -614,13 +607,25 @@
       >
         <tbody>
           <tr>
-            <td  style="background-color:#111827;border-left:3px solid #14B8A6;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
+            <td  style="background-color:#111827;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
               
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
           
+              <tr>
+                <td
+                   align="left" class="card-number" style="font-size:0px;padding:0 0 4px;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">02</span></div>
+    
+                </td>
+              </tr>
+            
               <tr>
                 <td
                    align="left" class="secondary-title" style="font-size:0px;padding:0 0 6px;word-break:break-word;"
@@ -635,12 +640,24 @@
             
               <tr>
                 <td
-                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                   align="left" style="font-size:0px;padding:0 0 8px;word-break:break-word;"
                 >
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;text-align:left;color:#94A3B8;"
       >{{article3_description}}</div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></div>
     
                 </td>
               </tr>
@@ -666,7 +683,7 @@
       
       <!--[if mso | IE]></td></tr></table><![endif]-->
     
-    <!-- Secondary article 3 -->
+    <!-- Secondary article 3 — numbered card -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -692,13 +709,25 @@
       >
         <tbody>
           <tr>
-            <td  style="background-color:#111827;border-left:3px solid #E8363B;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
+            <td  style="background-color:#111827;border-radius:8px;vertical-align:top;border-collapse:separate;padding:20px 24px;">
               
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
       >
         <tbody>
           
+              <tr>
+                <td
+                   align="left" class="card-number" style="font-size:0px;padding:0 0 4px;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">03</span></div>
+    
+                </td>
+              </tr>
+            
               <tr>
                 <td
                    align="left" class="secondary-title" style="font-size:0px;padding:0 0 6px;word-break:break-word;"
@@ -713,12 +742,24 @@
             
               <tr>
                 <td
-                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                   align="left" style="font-size:0px;padding:0 0 8px;word-break:break-word;"
                 >
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;text-align:left;color:#94A3B8;"
       >{{article4_description}}</div>
+    
+                </td>
+              </tr>
+            
+              <tr>
+                <td
+                   align="left" style="font-size:0px;padding:0;word-break:break-word;"
+                >
+                  
+      <div
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
+      ><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></div>
     
                 </td>
               </tr>
@@ -770,7 +811,7 @@
       >
         <tbody>
           <tr>
-            <td  style="background-color:#0F172A;border-left:4px solid #14B8A6;border-radius:8px;vertical-align:top;border-collapse:separate;padding:24px 24px;">
+            <td  style="background-color:#0F172A;border-left:4px solid #E8363B;border-radius:8px;vertical-align:top;border-collapse:separate;padding:24px 24px;">
               
       <table
          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
@@ -783,7 +824,7 @@
                 >
                   
       <div
-         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;line-height:1.6;text-align:left;text-transform:uppercase;color:#14B8A6;"
+         style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;line-height:1.6;text-align:left;text-transform:uppercase;color:#E8363B;"
       >Quick tip</div>
     
                 </td>
@@ -888,7 +929,7 @@
       
       <!--[if mso | IE]></td></tr></table><![endif]-->
     
-    <!-- Accent gradient line: teal→red -->
+    <!-- Accent gradient line: dark red→red -->
       
       <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:620px;" width="620" bgcolor="#0B1222" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
     
@@ -921,7 +962,7 @@
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:left;color:#CBD5E1;"
-      ><div style="height:2px; background: linear-gradient(90deg, #14B8A6 0%, #E8363B 100%);"></div></div>
+      ><div style="height:2px; background: linear-gradient(90deg, #8B1A1D 0%, #E8363B 100%);"></div></div>
     
                 </td>
               </tr>
@@ -1062,7 +1103,7 @@
                   
       <div
          style="font-family:'Inter', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.6;text-align:center;color:#CBD5E1;"
-      ><a href="{unsubscribe_text}" style="color:#94A3B8; font-size:13px;">Unsubscribe</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a></div>
+      >{unsubscribe_text}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a></div>
     
                 </td>
               </tr>
