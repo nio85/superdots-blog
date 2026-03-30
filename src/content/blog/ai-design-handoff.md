@@ -110,7 +110,7 @@ Here is how a team running an AI-assisted handoff process actually works.
 
 **Step 1: Designer completes the component in Figma using tokens.** No raw values, no undocumented colors. The AI extraction step only works cleanly when the design file is structured properly. This is a discipline shift most designers need about two sprints to internalize.
 
-**Step 2: AI generates specs on file handoff.** When the designer changes the file status to "Ready for development," the AI integration triggers automatically, generates the spec document, and posts it to the relevant Jira or Linear ticket. No manual annotation needed.
+**Step 2: AI generates specs on file handoff.** When the designer changes the file status to "Ready for development," the AI integration triggers automatically, generates the spec document, and posts it to the relevant Jira or Linear ticket. Teams using [AI project management features](/blog/ai-project-management-features-guide/) can automate this handoff notification end-to-end. No manual annotation needed.
 
 **Step 3: AI generates the initial component code.** The developer receives both the spec and a code file with the component implemented in the team's framework. They review it, adjust the parts that need adjustment (usually state management, interaction logic, and API wiring), and move to the next component.
 

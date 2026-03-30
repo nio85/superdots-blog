@@ -19,7 +19,7 @@ Here's what the code review problem actually looks like:
 
 - **PRs wait 1-3 days for a first review.** Meanwhile, the author context-switches to something else. When feedback finally arrives, they've forgotten the details.
 - **Review quality varies wildly.** Your senior engineer catches subtle race conditions. Your junior developer approves with "LGTM" after skimming the diff. Same process, completely different outcomes.
-- **More code is being written than reviewed.** AI coding assistants have accelerated code generation. Review capacity hasn't kept up. Industry estimates suggest a 40% gap between code volume and review throughput in 2026.
+- **More code is being written than reviewed.** [AI code generation tools](/blog/ai-code-generation-tools/) have accelerated how fast teams produce code. Review capacity hasn't kept up. Industry estimates suggest a 40% gap between code volume and review throughput in 2026.
 
 The cost isn't just bugs. It's velocity. Every day a PR sits in review is a day that feature isn't in production.
 
@@ -33,11 +33,11 @@ AI code review tools go further:
 
 **PR summarization.** Every PR gets an auto-generated summary: what changed, why it matters, which files are most critical to review. This saves reviewers 5-10 minutes of orientation per PR.
 
-**Security scanning.** Beyond known CVEs, AI tools spot insecure patterns — hardcoded secrets, SQL injection vectors, improper input validation — in the context of your specific application.
+**Security scanning.** Beyond known CVEs, AI tools spot insecure patterns — hardcoded secrets, SQL injection vectors, improper input validation — in the context of your specific application. For a deeper look at this capability, see how [AI security scanning tools](/blog/ai-security-scanning/) find vulnerabilities that traditional scanners miss.
 
 **Style and standards enforcement.** Not just formatting (your linter already does that) but architectural patterns, naming conventions, and project-specific practices.
 
-**Test gap identification.** AI flags code paths that aren't covered by the existing test suite, especially when new logic is introduced without corresponding tests.
+**Test gap identification.** AI flags code paths that aren't covered by the existing test suite, especially when new logic is introduced without corresponding tests. Teams pairing this with [AI test generation](/blog/ai-test-generation/) can close coverage gaps automatically.
 
 ## Tools worth knowing about
 
@@ -126,7 +126,7 @@ The best teams use AI for the mechanical parts of review — consistency, covera
 1. **Pick one tool and one repository.** Don't roll out to the whole org. Start with CodeRabbit or PR-Agent on a single active repo.
 2. **Run in observation mode.** Most tools let you run without blocking merges. Let it comment for a week and see how useful the feedback is.
 3. **Get team buy-in.** Show the team a few examples where AI caught something real. Nothing convinces engineers like a prevented bug.
-4. **Expand gradually.** Once the team trusts the tool, add more repos and start using it in CI gates.
+4. **Expand gradually.** Once the team trusts the tool, add more repos and start using it in CI gates. Teams running [AI-powered DevOps pipelines](/blog/ai-devops-tools/) can wire code review directly into their CI/CD workflow.
 
 If your team is also looking to improve how you document code alongside reviewing it, [AI writing tools for technical docs](/blog/writing-better-docs-with-ai/) can help keep documentation in sync with the code changes AI is reviewing.
 

@@ -134,7 +134,7 @@ These predictions give you time to act instead of react.
 
 ### Workload change detection
 
-When application changes alter database workload patterns — new queries appear, existing queries change frequency, access patterns shift — AI detects it immediately. This is particularly valuable after deployments:
+When application changes alter database workload patterns — new queries appear, existing queries change frequency, access patterns shift — AI detects it immediately. Teams running [AI infrastructure monitoring](/blog/ai-infrastructure-monitoring/) can correlate database anomalies with broader system health signals. This is particularly valuable after deployments:
 
 "New query detected after deployment v2.45.0: `SELECT * FROM user_sessions WHERE ... `. Running 500 times/minute with 200ms average execution time. No index exists for the filter condition. Estimated impact: 12% increase in database CPU utilization."
 
@@ -156,7 +156,7 @@ The AI:
 
 ### Who benefits
 
-**Business analysts** who currently wait for engineering to write custom queries. They can now get answers in minutes instead of days.
+**Business analysts** who currently wait for engineering to write custom queries. If your analysts are already comfortable with [AI-powered data analysis](/blog/ai-data-analysis-for-non-technical-teams/), natural language SQL is the logical next step — they can get answers in minutes instead of days.
 
 **Product managers** who want to check metrics without asking the data team. "How many users signed up last week from the new landing page?"
 

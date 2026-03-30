@@ -35,7 +35,7 @@ When budget tracking is approximate, bad things happen quietly:
 
 - **Overspending goes unnoticed.** You find out you blew through your Q3 software budget in August — two months too late to do anything about it.
 - **Underspending gets missed too.** You had $15K left in your training budget that expired because nobody realized it was there.
-- **Forecast accuracy drops.** When finance asks for next year's projections, you are guessing based on vibes instead of data.
+- **Forecast accuracy drops.** When finance asks for next year's projections, you are guessing based on vibes instead of data. Teams that need more rigorous predictions should look at dedicated [AI cash flow forecasting tools](/blog/ai-cash-flow-forecasting/).
 - **Approval cycles slow down.** Every purchase request turns into a 30-minute scavenger hunt to figure out if there is budget available.
 
 These are not hypothetical problems. They happen every quarter in every company where budget tracking depends on someone remembering to update a spreadsheet.
