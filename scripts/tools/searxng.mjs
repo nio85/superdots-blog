@@ -19,12 +19,14 @@ Commands:
   search <query>              General web search
   news <query>                News search
   images <query>              Image search
+  top-results <query>         Top N results with position (for CI)
 
 Options:
   --json         Output as JSON
   --time <range> Time filter: day, week, month, year
   --page <n>     Page number (default 1)
   --lang <code>  Language (default en)
+  --limit <n>    Max results for top-results (default 5)
   --help         Show this help`;
 
 const args = process.argv.slice(2);
@@ -98,6 +100,26 @@ async function main() {
       log(`Found ${results.length} image results for "${query}":\n`);
       for (const r of results.slice(0, 10)) {
         log(`  ${r.title} — ${r.img_src || r.url}`);
+      }
+      break;
+    }
+    case 'top-results': {
+      if (!query) err('Usage: searxng.mjs top-results <query> [--limit N] [--json]');
+      const limit = parseInt(getOpt('limit') || '5', 10);
+      const data = await search(query, 'general', timeRange, page, lang);
+      const results = (data.results || []).slice(0, limit).map((r, i) => ({
+        position: i + 1,
+        title: r.title,
+        url: r.url,
+        snippet: (r.content || '').slice(0, 200),
+      }));
+      if (jsonOutput) { out({ query, results }); break; }
+      log(`Top ${results.length} results for "${query}":\n`);
+      for (const r of results) {
+        log(`  #${r.position} ${r.title}`);
+        log(`  ${r.url}`);
+        log(`  ${r.snippet}`);
+        log('');
       }
       break;
     }
