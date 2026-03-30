@@ -98,6 +98,68 @@ async function main() {
   }
 
   console.log(`${mode}Done. ${staleRuns.length} run(s) processed.`);
+
+  // --- Stale agent sessions ---
+  await checkStaleSessions(mode);
+}
+
+async function checkStaleSessions(mode) {
+  console.log(`\n${mode}Checking stale agent sessions...`);
+
+  const rows = psql(`SELECT ars.agent_id, a.name, ars.session_id, MAX(hr.created_at) as last_heartbeat FROM agent_runtime_state ars JOIN agents a ON a.id = ars.agent_id JOIN heartbeat_runs hr ON hr.agent_id = ars.agent_id WHERE ars.session_id IS NOT NULL GROUP BY ars.agent_id, a.name, ars.session_id HAVING MAX(hr.created_at) < NOW() - INTERVAL '24 hours' ORDER BY MAX(hr.created_at)`);
+
+  if (!rows) {
+    console.log(`${mode}No stale agent sessions found. All clear.`);
+    return;
+  }
+
+  const staleSessions = rows.split('\n').filter(Boolean).map(row => {
+    const [agentId, name, sessionId, lastHeartbeat] = row.split('|');
+    return { agentId, name, sessionId, lastHeartbeat };
+  });
+
+  console.log(`${mode}Found ${staleSessions.length} stale agent session(s):\n`);
+
+  for (const s of staleSessions) {
+    console.log(`  ${s.name}`);
+    console.log(`    Agent ID:       ${s.agentId}`);
+    console.log(`    Session ID:     ${s.sessionId?.slice(0, 12)}...`);
+    console.log(`    Last heartbeat: ${s.lastHeartbeat}`);
+
+    if (!DRY_RUN) {
+      psqlExec(`UPDATE agent_runtime_state SET session_id = NULL WHERE agent_id = '${s.agentId}'`);
+      console.log(`    → Session reset`);
+    } else {
+      console.log(`    → Would reset session`);
+    }
+    console.log();
+  }
+
+  if (!DRY_RUN && staleSessions.length > 0) {
+    await sendSessionAlert(staleSessions);
+  }
+
+  console.log(`${mode}Done. ${staleSessions.length} stale session(s) processed.`);
+}
+
+async function sendSessionAlert(staleSessions) {
+  if (!process.env.RESEND_SMTP_API_KEY) return;
+  try {
+    const nodemailer = await import('nodemailer');
+    const transport = createSmtpTransport(nodemailer.default || nodemailer);
+    const lines = staleSessions.map(s =>
+      `- ${s.name}: last heartbeat ${s.lastHeartbeat}, session ${s.sessionId?.slice(0, 12)}...`
+    ).join('\n');
+    await transport.sendMail({
+      from: MAIL_FROM,
+      to: TO_EMAIL,
+      subject: `⚠️ Watchdog: ${staleSessions.length} stale agent session(s) reset`,
+      text: `The following agents had sessions older than 24h without a heartbeat and have been reset:\n\n${lines}\n\nThese agents will start a fresh session on their next heartbeat.`,
+    });
+    console.log('Session alert email sent.');
+  } catch (e) {
+    console.error(`Failed to send session alert: ${e.message}`);
+  }
 }
 
 main().catch(e => {

@@ -363,7 +363,7 @@ switch (command) {
 		}
 		const tracker = loadTracker();
 		if (tracker[slug]?.[platform]) {
-			console.error(`Article ${slug} already syndicated to ${platform} on ${tracker[slug][platform].syndicatedAt}`);
+			console.error(`Article ${slug} already syndicated to ${platform} on ${tracker[slug][platform].syndicatedAt || tracker[slug][platform].publishedAt || 'unknown'}`);
 			process.exit(1);
 		}
 		try {
@@ -411,7 +411,7 @@ switch (command) {
 		for (const slug of slugs) {
 			const platforms = tracker[slug];
 			const entries = Object.entries(platforms)
-				.map(([p, info]) => `${p}: ${info.syndicatedAt.split('T')[0]} → ${info.url}`)
+				.map(([p, info]) => `${p}: ${(info.syndicatedAt || 'unknown').split('T')[0]} → ${info.url || 'n/a'}`)
 				.join('\n    ');
 			console.log(`  ${slug}\n    ${entries}`);
 		}

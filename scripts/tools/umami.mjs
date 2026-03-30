@@ -135,7 +135,7 @@ async function main() {
       break;
     }
     case 'top-pages': {
-      const data = await api(`/api/websites/${siteId}/metrics?startAt=${startAt}&endAt=${endAt}&type=url`);
+      const data = await api(`/api/websites/${siteId}/metrics?startAt=${startAt}&endAt=${endAt}&type=path`);
       if (jsonOutput) { out(data); break; }
       log(`Top pages (last ${days} days):`);
       for (const p of (data || []).slice(0, 20)) {
