@@ -67,7 +67,7 @@ Every department has different automation needs, and the best tool for marketing
 
 ## Email and communication
 
-Email is the universal time sink. The average professional spends [28% of their workday on email](https://hbr.org/2019/01/how-to-spend-way-less-time-on-email) — reading, sorting, responding, and following up. For most people, that's 2-3 hours every day spent in the inbox instead of doing actual work.
+Email is the universal time sink. The average professional spends [28% of their workday on email](https://hbr.org/2019/01/how-to-spend-way-less-time-on-email-every-day) — reading, sorting, responding, and following up. For most people, that's 2-3 hours every day spent in the inbox instead of doing actual work.
 
 AI email tools attack this problem at multiple levels. Automated triage sorts incoming messages by urgency and topic, surfacing what matters and filing what doesn't. Smart compose generates contextual replies based on the email content and your communication patterns. Follow-up tracking ensures nothing falls through the cracks without requiring manual reminder systems.
 

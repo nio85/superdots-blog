@@ -22,7 +22,7 @@ faqs:
 
 When Calendly's own sales team started using AI scheduling internally, their average time-to-book with prospects dropped from 3 days to under 4 hours. Not because the meetings got shorter — because the five-email thread to find a time disappeared entirely.
 
-You spend more time scheduling meetings than you think. A [Doodle study](https://doodle.com/en/resources/research-and-reports/the-state-of-meetings/) found that professionals waste an average of 4.8 hours per week on scheduling logistics — the back-and-forth emails, the timezone math, the "does Tuesday at 3 work for everyone?" threads that stretch across days. [Harvard Business Review](https://hbr.org) research puts the cost of unnecessary meeting coordination at over $25,000 per manager per year in lost productivity.
+You spend more time scheduling meetings than you think. Research from [Doodle](https://doodle.com/) found that professionals waste an average of 4.8 hours per week on scheduling logistics — the back-and-forth emails, the timezone math, the "does Tuesday at 3 work for everyone?" threads that stretch across days. [Harvard Business Review](https://hbr.org) research puts the cost of unnecessary meeting coordination at over $25,000 per manager per year in lost productivity.
 
 That adds up to roughly 250 hours per year. Not in meetings. Just arranging them.
 

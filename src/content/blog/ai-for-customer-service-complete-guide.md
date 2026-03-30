@@ -20,7 +20,7 @@ faqs:
 heroImage: "/images/blog/ai-for-customer-service-complete-guide.webp"
 ---
 
-Customer service teams are stretched thin. The average support agent handles [50+ tickets per day](https://www.zendesk.com/blog/customer-service-statistics/) while customer expectations keep climbing — 73% of consumers expect companies to understand their needs and expectations, and [90% rate an immediate response as important](https://www.hubspot.com/customer-service-statistics) when they have a question.
+Customer service teams are stretched thin. The average support agent handles [50+ tickets per day](https://www.zendesk.com/blog/customer-service-statistics/) while customer expectations keep climbing — 73% of consumers expect companies to understand their needs and expectations, and [90% rate an immediate response as important](https://blog.hubspot.com/service/customer-service-stats) when they have a question.
 
 AI changes what a small support team can handle. Not by replacing agents, but by automating the repetitive work that eats up most of their day. Companies using AI in customer service report [30-50% reduction in first-response times](https://www.mckinsey.com/capabilities/operations/our-insights/the-next-frontier-of-customer-engagement-ai-enabled-customer-service) and up to 40% decrease in ticket volume through self-service deflection.
 
