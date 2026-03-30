@@ -12,19 +12,23 @@
     </mj-attributes>
     <mj-style>
       /* Links */
-      a { color: #14B8A6; text-decoration: none; }
+      a { color: #E8363B; text-decoration: none; }
       a:hover { text-decoration: underline; }
       .cta-link a { color: #FFFFFF !important; text-decoration: none !important; }
       .footer-link a { color: #94A3B8 !important; font-size: 13px; }
-      .webview-link a { color: #475569 !important; font-size: 12px; }
       .secondary-title a { color: #F1F5F9 !important; text-decoration: none; }
       .secondary-title a:hover { color: #E8363B !important; }
       /* Brand dot */
       .superdot { color: #E8363B; }
-      /* Logo dots - ascending diagonal (small→medium→large) */
-      .dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; }
-      .dot-md { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 3px; }
-      .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; margin-bottom: 6px; }
+      /* Logo dots - ascending diagonal (45-degree) */
+      .dot-sm { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; position: relative; top: 6px; }
+      .dot-md { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; position: relative; top: 0px; }
+      .dot-lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background-color: #E8363B; vertical-align: middle; margin-left: 3px; position: relative; top: -6px; }
+      /* Card styling */
+      .article-card { background-color: #111827 !important; border-radius: 8px; }
+      .tip-card { background-color: #0F172A !important; }
+      /* Numbered card decorators */
+      .card-number { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 32px; font-weight: 700; color: #E8363B; opacity: 0.25; line-height: 1; }
     </mj-style>
     <!--[if mso]>
     <style type="text/css">
@@ -36,26 +40,21 @@
 
   <mj-body background-color="#080E1A" width="620px">
 
-    <!-- Block 1: Header with logo -->
+    <!-- Block 1: Header with logo (full-width, no "View in browser") -->
     <mj-section background-color="#0B1222" padding="20px 24px">
-      <mj-column width="60%" vertical-align="middle">
+      <mj-column vertical-align="middle">
         <mj-text align="left" color="#FFFFFF" font-size="22px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" padding="0">
           <!--[if mso]><span style="color:#E8363B; font-size:10px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><span style="color:#E8363B; font-size:18px;">&#9679;</span><![endif]-->
           <!--[if !mso]><!--><span class="dot-sm"></span><span class="dot-md"></span><span class="dot-lg"></span><!--<![endif]-->
           <span style="margin-left: 8px; vertical-align: middle;">superdots</span>
         </mj-text>
       </mj-column>
-      <mj-column width="40%" vertical-align="middle">
-        <mj-text align="right" padding="0" css-class="webview-link">
-          <a href="{webview_url}" style="color:#475569; font-size:12px;">View in browser</a>
-        </mj-text>
-      </mj-column>
     </mj-section>
 
-    <!-- Accent gradient line: red→teal -->
+    <!-- Accent gradient line: red→dark red -->
     <mj-section padding="0" background-color="#0B1222">
       <mj-column>
-        <mj-text padding="0"><div style="height:3px; background: linear-gradient(90deg, #E8363B 0%, #14B8A6 100%);"></div></mj-text>
+        <mj-text padding="0"><div style="height:3px; background: linear-gradient(90deg, #E8363B 0%, #8B1A1D 100%);"></div></mj-text>
       </mj-column>
     </mj-section>
     <!--[if mso]>
@@ -103,51 +102,63 @@
     <mj-section background-color="#0B1222" padding="32px 24px 16px">
       <mj-column>
         <mj-text font-size="13px" font-weight="600" color="#475569" letter-spacing="1.5px" text-transform="uppercase" padding="0">
-          <span style="color:#14B8A6;">&#9472;&#9472;</span>&nbsp;&nbsp;Also this week
+          <span style="color:#E8363B;">&#9472;&#9472;</span>&nbsp;&nbsp;Also this week
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- Secondary article 1 -->
+    <!-- Secondary article 1 — numbered card -->
     <mj-section background-color="#0B1222" padding="0 16px 12px">
-      <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #E8363B" padding="20px 24px">
+      <mj-column background-color="#111827" border-radius="8px" padding="20px 24px">
+        <mj-text padding="0 0 4px" css-class="card-number">
+          <span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">01</span>
+        </mj-text>
         <mj-text padding="0 0 6px" css-class="secondary-title">
           <a href="https://superdots.sh/blog/ai-customer-onboarding/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Customer Onboarding: Reduce Time-to-Value and Cut Churn</a>
         </mj-text>
-        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
+        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0 0 8px">
           Your customer signed. Your sales team celebrated. Three weeks later, they've logged in twice and are asking about cancellation terms. Here's how AI closes that gap<span style="color:#E8363B;">.</span>
         </mj-text>
+        <mj-text padding="0"><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- Secondary article 2 -->
+    <!-- Secondary article 2 — numbered card -->
     <mj-section background-color="#0B1222" padding="0 16px 12px">
-      <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #14B8A6" padding="20px 24px">
+      <mj-column background-color="#111827" border-radius="8px" padding="20px 24px">
+        <mj-text padding="0 0 4px" css-class="card-number">
+          <span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">02</span>
+        </mj-text>
         <mj-text padding="0 0 6px" css-class="secondary-title">
           <a href="https://superdots.sh/blog/ai-negotiation-tools/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Negotiation Tools: Prepare, Practice, and Win Better Deals</a>
         </mj-text>
-        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
+        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0 0 8px">
           Most people lose negotiations before they walk into the room. These tools compress hours of deal prep into minutes<span style="color:#E8363B;">.</span>
         </mj-text>
+        <mj-text padding="0"><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- Secondary article 3 -->
+    <!-- Secondary article 3 — numbered card -->
     <mj-section background-color="#0B1222" padding="0 16px 12px">
-      <mj-column background-color="#111827" border-radius="8px" border-left="3px solid #E8363B" padding="20px 24px">
+      <mj-column background-color="#111827" border-radius="8px" padding="20px 24px">
+        <mj-text padding="0 0 4px" css-class="card-number">
+          <span style="font-family:'Space Grotesk', Arial, sans-serif; font-size:32px; font-weight:700; color:#E8363B; opacity:0.25;">03</span>
+        </mj-text>
         <mj-text padding="0 0 6px" css-class="secondary-title">
           <a href="https://superdots.sh/blog/ai-change-management/" style="color:#F1F5F9; font-size:17px; font-weight:600; font-family:'Space Grotesk', Arial, sans-serif; text-decoration:none;">AI Change Management: Lead AI Adoption Without the Chaos</a>
         </mj-text>
-        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0">
+        <mj-text font-size="15px" color="#94A3B8" line-height="1.5" padding="0 0 8px">
           78% of CHROs say workflows must fundamentally change for AI ROI. Here's why the old playbook fails and what actually works<span style="color:#E8363B;">.</span>
         </mj-text>
+        <mj-text padding="0"><div style="height:2px; width:40px; background-color:#E8363B; border-radius:1px;"></div></mj-text>
       </mj-column>
     </mj-section>
 
     <!-- Block 5: Quick tip -->
     <mj-section background-color="#0B1222" padding="20px 16px 8px">
-      <mj-column background-color="#0F172A" border-radius="8px" border-left="4px solid #14B8A6" padding="24px 24px">
-        <mj-text font-size="13px" font-weight="600" color="#14B8A6" letter-spacing="1px" text-transform="uppercase" padding="0 0 10px">
+      <mj-column background-color="#0F172A" border-radius="8px" border-left="4px solid #E8363B" padding="24px 24px">
+        <mj-text font-size="13px" font-weight="600" color="#E8363B" letter-spacing="1px" text-transform="uppercase" padding="0 0 10px">
           Quick tip
         </mj-text>
         <mj-text font-size="18px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" color="#FFFFFF" line-height="1.4" padding="0 0 8px">
@@ -166,10 +177,10 @@
       </mj-column>
     </mj-section>
 
-    <!-- Accent gradient line: teal→red -->
+    <!-- Accent gradient line: dark red→red -->
     <mj-section padding="0" background-color="#0B1222">
       <mj-column>
-        <mj-text padding="0"><div style="height:2px; background: linear-gradient(90deg, #14B8A6 0%, #E8363B 100%);"></div></mj-text>
+        <mj-text padding="0"><div style="height:2px; background: linear-gradient(90deg, #8B1A1D 0%, #E8363B 100%);"></div></mj-text>
       </mj-column>
     </mj-section>
 
@@ -195,7 +206,7 @@
           You're receiving this because you subscribed at superdots.sh
         </mj-text>
         <mj-text align="center" padding="0" css-class="footer-link">
-          <a href="{unsubscribe_text}" style="color:#94A3B8; font-size:13px;">Unsubscribe</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a>
+          {unsubscribe_text}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a>
         </mj-text>
       </mj-column>
     </mj-section>
