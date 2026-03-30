@@ -12,7 +12,7 @@
     </mj-attributes>
     <mj-style>
       /* Links */
-      a { color: #14B8A6; text-decoration: none; }
+      a { color: #E8363B; text-decoration: none; }
       a:hover { text-decoration: underline; }
       .cta-link a { color: #FFFFFF !important; text-decoration: none !important; }
       .footer-link a { color: #94A3B8 !important; font-size: 13px; }
