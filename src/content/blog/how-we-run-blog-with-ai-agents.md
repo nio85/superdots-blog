@@ -6,6 +6,7 @@ author: "Luca Bartoccini"
 department: "operations"
 useCase: "automation"
 tags: ["ai agents", "content operations", "behind the scenes", "paperclip", "ai workflow"]
+heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
 faqs:
   - question: "Can one person actually run a media company with AI agents?"
