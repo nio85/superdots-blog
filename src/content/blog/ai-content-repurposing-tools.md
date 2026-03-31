@@ -86,7 +86,7 @@ For clipping longer videos into shorts, **Opus Clip** (from $15/month, 60 free c
 
 **Tool: Claude or ChatGPT** (for content) + Canva or your design tool (for layout)
 
-LinkedIn carousels get 1.5-3x the reach of text posts, according to multiple marketing benchmarks from 2025-2026. They're also the format where AI repurposing works best, because the constraint (one idea per slide, 8-12 slides) forces the AI to be concise.
+LinkedIn carousels get 1.5-3x the reach of text posts, according to multiple marketing benchmarks from 2025-2026. If your team also creates [AI-assisted ad copy](/blog/ai-ad-copy-tools/), the carousel format works well for both organic and promoted content. They're also the format where AI repurposing works best, because the constraint (one idea per slide, 8-12 slides) forces the AI to be concise.
 
 The prompt that works: "Extract the 8 most important points from this blog post. Write each one as a single sentence. Add a hook slide and a CTA slide."
 
@@ -131,7 +131,7 @@ Here's every tool mentioned above, plus a few we tested and have opinions about.
 
 **Castmagic**: The standout for podcast-to-content workflows. Upload a recording and it generates show notes, social posts, email content, and blog draft sections. If you have a podcast, this is the best $29/month you'll spend. If you don't have audio content, it's not the right tool.
 
-**Lately**: The most interesting and the most divisive tool we tested. Lately builds a "Voice Model" from your historical content and uses it to generate social posts that sound like your brand. The results are genuinely better than generic AI output — after 20-40 hours of training. That's the catch. The setup investment is significant, the pricing is enterprise-level, and it only makes sense if you're publishing at high volume and brand consistency matters more than speed.
+**Lately**: The most interesting and the most divisive tool we tested. Lately builds a "Voice Model" from your historical content and uses it to generate social posts that sound like your brand — a challenge we cover in depth in our guide on [keeping your voice when using AI writing tools](/blog/ai-writing-assistant-keep-your-voice/). The results are genuinely better than generic AI output — after 20-40 hours of training. That's the catch. The setup investment is significant, the pricing is enterprise-level, and it only makes sense if you're publishing at high volume and brand consistency matters more than speed.
 
 ## When AI Repurposing Doesn't Work
 
@@ -160,7 +160,7 @@ The honest math, based on our workflow:
 
 You trade roughly 20-30% in quality for a 75% reduction in time. For most marketing teams, especially small ones, that's a trade worth making — because the alternative isn't "spend 6 hours and get 100% quality." The alternative is "don't repurpose at all and leave distribution value on the table."
 
-The sweet spot: use AI for the first draft of everything, then spend your editing time on the 2-3 pieces that matter most. The LinkedIn carousel and the best social post get careful human editing. The email digest and audiogram get a quick pass. This is where the best AI tools to repurpose content actually deliver — not by replacing your judgment, but by eliminating the blank-page problem across five formats simultaneously.
+The sweet spot: use AI for the first draft of everything — choosing from the [best AI writing tools](/blog/best-ai-writing-tools/) for your workflow — then spend your editing time on the 2-3 pieces that matter most. The LinkedIn carousel and the best social post get careful human editing. The email digest and audiogram get a quick pass. This is where the best AI tools to repurpose content actually deliver — not by replacing your judgment, but by eliminating the blank-page problem across five formats simultaneously.
 
 ## The 5-Minute Version: Try This Today
 

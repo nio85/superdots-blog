@@ -143,13 +143,13 @@ For a deeper guide to AI-powered support chatbots, see [AI customer service chat
 
 The chatbot should feel like part of your support system, not a separate tool.
 
-**Ticket creation:** When the bot can't resolve an issue, it should create a ticket in your help desk with the full conversation, customer details, and issue classification.
+**Ticket creation:** When the bot can't resolve an issue, it should create a ticket in your help desk with the full conversation, customer details, and issue classification. Pairing this with [AI ticket routing](/blog/ai-ticket-routing/) ensures the ticket reaches the right agent instantly.
 
 **Agent assist:** The best platforms give your human agents AI-suggested responses. The agent reviews and sends — faster than typing from scratch.
 
-**Knowledge base feedback:** Track which questions the bot can't answer. These are content gaps. Fill them, and the bot gets smarter.
+**Knowledge base feedback:** Track which questions the bot can't answer. These are content gaps — the same gaps that [AI knowledge base tools](/blog/ai-knowledge-base-for-teams/) help identify and fill systematically. Address them, and the bot gets smarter.
 
-**Reporting integration:** Chatbot metrics should flow into your existing support dashboards. Resolution rate, handling time, CSAT — all in one place.
+**Reporting integration:** Chatbot metrics should flow into your existing support dashboards — and if you're managing support across multiple channels, [AI omnichannel support](/blog/ai-omnichannel-support/) platforms unify chatbot, email, and phone data in one place.
 
 For self-service beyond chatbots, see [AI customer self-service](/blog/ai-customer-self-service/). For help desk-specific AI features, see [AI help desk software](/blog/ai-help-desk-software/).
 
@@ -188,4 +188,4 @@ Start with your most frequently asked questions — the ones your team answers o
 
 You'll know quickly whether the platform works for your team. Most businesses see 30-50% ticket reduction within the first month, and the chatbot only gets better as you improve the knowledge base behind it.
 
-The goal isn't replacing your support team. It's freeing them to do the work that actually requires a human.
+The goal isn't replacing your support team. It's freeing them to do the work that actually requires a human. For the full picture of how chatbots fit alongside other AI support tools, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide/).

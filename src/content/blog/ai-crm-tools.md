@@ -62,7 +62,7 @@ This matters for two reasons. First, it saves research time — 10 minutes per p
 
 After a 30-minute sales call, AI can generate a summary with key points, objections raised, next steps, and action items. After a long email thread, it pulls out the essential information.
 
-This is useful for reps (faster call notes) and for managers (understanding deal context without listening to every call). HubSpot's conversation intelligence and Salesforce's Einstein Conversation Insights both offer this.
+This is useful for reps (faster call notes) and for managers (understanding deal context without listening to every call). HubSpot's conversation intelligence and Salesforce's Einstein Conversation Insights both offer this — for a deeper look at how these tools analyze sales calls, see our guide on [AI conversation intelligence](/blog/ai-conversation-intelligence/).
 
 The summaries are not perfect. They miss nuance and sometimes emphasize the wrong points. But they are a better starting point than no notes at all, which is what most reps produce for most calls.
 
@@ -70,7 +70,7 @@ The summaries are not perfect. They miss nuance and sometimes emphasize the wron
 
 AI analyzes the current deal stage, recent activities, and historical patterns to suggest what a rep should do next. "Send a follow-up email — deals at this stage that go more than 5 days without contact close at half the rate." "Schedule a demo — prospects who see a demo at this stage convert 3x more often."
 
-These nudges work because they are specific and data-backed, not generic sales advice. They are especially valuable for newer reps who do not yet have the pattern recognition that experienced sellers develop over years.
+These nudges work because they are specific and data-backed, not generic sales advice. They complement [AI guided selling](/blog/ai-guided-selling/) platforms that take this concept further — coaching reps through entire deal cycles rather than individual touchpoints. They are especially valuable for newer reps who do not yet have the pattern recognition that experienced sellers develop over years.
 
 For more on AI-powered lead prioritization, see our deep dive on [AI lead scoring](/blog/ai-lead-scoring).
 
@@ -80,7 +80,7 @@ Not every AI feature deserves your attention. These are the ones that sound bett
 
 ### Customer-facing chatbots (built into CRM)
 
-CRM vendors love to promote their built-in chatbots. In practice, most CRM chatbots handle simple routing ("Let me connect you with sales") but frustrate customers when asked anything nuanced. If you need a chatbot, get a purpose-built one. The CRM add-on is usually an afterthought.
+CRM vendors love to promote their built-in chatbots. In practice, most CRM chatbots handle simple routing ("Let me connect you with sales") but frustrate customers when asked anything nuanced. If you need a chatbot, get a [purpose-built chatbot platform](/blog/ai-chatbot-builder/). The CRM add-on is usually an afterthought.
 
 ### Sentiment analysis on emails
 
@@ -152,5 +152,5 @@ Start with automatic activity capture and deal scoring — they deliver the fast
 
 The goal is not to use every AI feature your CRM offers. It is to use the right ones so consistently that your team cannot imagine working without them.
 
-For a broader view of AI across the sales function, check our guides on [AI sales forecasting](/blog/ai-sales-forecasting) and [AI for sales call prep](/blog/ai-for-sales-call-prep). And for a complete overview of AI tools across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For a broader view of AI across the sales function, check our [complete guide to AI for sales](/blog/ai-for-sales-complete-guide/), plus deep dives on [AI sales forecasting](/blog/ai-sales-forecasting/) and [AI for sales call prep](/blog/ai-for-sales-call-prep/). And for a complete overview of AI tools across departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
 
