@@ -18,6 +18,7 @@ faqs:
     answer: "A 2,000-word blog post can realistically produce 8-12 usable pieces: 3-4 social media posts (LinkedIn, X/Twitter thread, Instagram caption), 1 email newsletter digest, 1 video script or audiogram script, 2-3 carousel slides, and 1-2 quote graphics. Not all of these will be publish-ready without editing — expect about 60-70% to need only minor tweaks, and 20-30% to need substantial rewriting. The remaining pieces may not be worth using at all. Quantity claims of '20+ pieces from one post' usually count variations that are too similar to publish across channels."
   - question: "Is AI-repurposed content bad for SEO — does it count as duplicate content?"
     answer: "Repurposed content across different platforms (your blog, LinkedIn, email) is not a duplicate content problem — Google only penalizes near-identical content on the same domain competing for the same queries. Publishing a social media summary of your blog post on LinkedIn doesn't hurt your blog's SEO. What does hurt: using AI to create multiple blog posts from the same source content targeting similar keywords on your own site. Keep the long-form version on your blog, distribute adapted versions everywhere else, and you won't have a duplicate content issue."
+heroImage: "/images/blog/ai-content-repurposing-tools.webp"
 ---
 
 Elena runs content marketing for a B2B analytics startup — four people, one blog, and a CEO who keeps asking why their best posts get 2,000 reads and zero distribution beyond the website.
