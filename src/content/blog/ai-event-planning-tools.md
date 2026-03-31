@@ -80,7 +80,7 @@ Nowadays was built from the ground up as an AI-native event planning tool, and i
 
 **What it does well.** The headline feature is AI-generated event concepts. Tell Nowadays you need a 200-person company retreat in the Pacific Northwest with team-building activities and a $50,000 budget, and it returns a complete proposal: venue options, activity schedule, catering recommendations, and a budget breakdown. The suggestions are specific and practical, not generic templates.
 
-The vendor coordination is where Nowadays saves the most time. Instead of emailing 15 venues and comparing proposals in a spreadsheet, the platform handles vendor outreach, collects quotes, and presents a side-by-side comparison. It negotiates based on your parameters and flags deals that are above market rate. For operations teams that plan multiple events per quarter, this alone justifies the platform.
+The vendor coordination is where Nowadays saves the most time. Instead of emailing 15 venues and comparing proposals in a spreadsheet — a process similar to what [AI vendor management](/blog/ai-vendor-management/) tools automate for procurement teams — the platform handles vendor outreach, collects quotes, and presents a side-by-side comparison. It negotiates based on your parameters and flags deals that are above market rate. For operations teams that plan multiple events per quarter, this alone justifies the platform.
 
 Nowadays also handles the logistics chain — transportation, accommodation blocks, dietary requirements, AV setup — as connected dependencies rather than separate to-do items. Change the venue, and it automatically recalculates travel logistics and updates the timeline.
 
@@ -96,7 +96,7 @@ Nowadays also handles the logistics chain — transportation, accommodation bloc
 
 Bizzabo has positioned itself as the enterprise event platform for companies that run events as a core business function — not just occasional team gatherings, but recurring conferences, product launches, and customer events that directly impact revenue.
 
-**What it does well.** The Event Experience OS is Bizzabo's differentiator. It treats every event as a data-generating system, tracking attendee behavior from registration through post-event follow-up. The AI-powered engagement scoring assigns each attendee a score based on sessions attended, networking connections made, content downloaded, and questions asked. For marketing and sales teams, this data turns events from a cost center into a measurable pipeline driver.
+**What it does well.** The Event Experience OS is Bizzabo's differentiator. It treats every event as a data-generating system, tracking attendee behavior from registration through post-event follow-up. The AI-powered engagement scoring assigns each attendee a score based on sessions attended, networking connections made, content downloaded, and questions asked. For marketing and sales teams that already use [AI-powered CRM features](/blog/ai-crm-tools/) to track customer interactions, this data turns events from a cost center into a measurable pipeline driver.
 
 The hybrid event capabilities are genuinely strong. Bizzabo does not just livestream in-person sessions to remote attendees — it creates parallel experiences with virtual networking lounges, interactive Q&A, and engagement features designed for screens. The AI recommends sessions to each attendee based on their registration profile and real-time behavior, whether they are in the room or on their laptop.
 
@@ -270,7 +270,7 @@ AI event tools track what manual methods cannot:
 - **Content performance** — Session-level analytics show which topics drove engagement and which fell flat, informing future event programming.
 - **Predictive attendance** — Historical patterns predict not just how many people will register, but how many will actually attend, broken down by ticket type and audience segment.
 
-For operations teams that need to justify event budgets, these metrics transform the conversation from "the conference felt successful" to "the conference generated 47 qualified leads and $230K in pipeline, at a cost per lead 40% below our digital marketing average."
+For operations teams that need to justify event budgets, these metrics — combined with the kind of visual reporting that [AI data analysis tools](/blog/ai-data-analysis-for-non-technical-teams/) make accessible — transform the conversation from "the conference felt successful" to "the conference generated 47 qualified leads and $230K in pipeline, at a cost per lead 40% below our digital marketing average."
 
 ## Try this in the next 5 minutes
 
