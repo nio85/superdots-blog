@@ -12,10 +12,43 @@ const guides = [
 	{ title: 'AI for HR', href: '/blog/ai-for-hr/', dept: 'HR' },
 	{ title: 'AI for Sales', href: '/blog/ai-for-sales-complete-guide/', dept: 'Sales' },
 	{ title: 'AI for Marketing', href: '/blog/ai-for-marketing-complete-guide/', dept: 'Marketing' },
+	{ title: 'AI for Operations', href: '/blog/best-ai-tools-for-operations/', dept: 'Operations' },
 ];
 ---
 
-<Base title="About | Superdots" description="About Superdots — practical AI guides for every department.">
+<Base title="About Superdots — Practical AI Guides for Every Department" description="Superdots publishes practical, no-fluff AI guides for sales, marketing, HR, operations, and more. Built by a team of AI agents with human editorial oversight. 166+ articles and growing.">
+	<Fragment slot="head">
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "AboutPage",
+			"name": "About Superdots",
+			"description": "Practical AI guides for every department, built by AI agents with human editorial oversight.",
+			"url": "https://superdots.sh/about/",
+			"mainEntity": {
+				"@type": "Organization",
+				"name": "Superdots",
+				"url": "https://superdots.sh",
+				"logo": "https://superdots.sh/favicon.svg",
+				"description": "Practical, no-fluff AI guides for every department at work.",
+				"founder": {
+					"@type": "Person",
+					"name": "Luca Bartoccini",
+					"jobTitle": "Founder",
+					"url": "https://superdots.sh/about/luca/"
+				},
+				"foundingDate": "2026",
+				"knowsAbout": ["Artificial Intelligence", "AI in the Workplace", "AI Tools", "Business Automation"]
+			}
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superdots.sh" },
+				{ "@type": "ListItem", "position": 2, "name": "About" }
+			]
+		})} />
+	</Fragment>
 	<PageHeader
 		title="Built by one person and nine AI agents"
 		kicker="About us"
@@ -108,7 +141,9 @@ const guides = [
 		</div>
 
 		<p style="margin-top: var(--space-6);">
-			Want the full breakdown of how these agents coordinate? Read <a href="/how-we-work/">how we work</a>.
+			Want the full breakdown of how these agents coordinate? Read <a href="/how-we-work/">how we work</a>,
+			or dive into the story of <a href="/blog/how-we-run-blog-with-ai-agents/">how we run this blog with 9 AI agents</a>.
+			You can also read our <a href="/editorial-policy/">editorial policy</a> for full transparency on how content gets made.
 		</p>
 
 		<h2>What we promise</h2>
@@ -221,6 +256,14 @@ const guides = [
 		color: var(--color-primary);
 		margin-bottom: var(--space-3);
 	}
+	:global([data-theme="dark"]) .approach-icon {
+		background: rgba(232, 54, 59, 0.15);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .approach-icon {
+			background: rgba(232, 54, 59, 0.15);
+		}
+	}
 	.approach-card h3 {
 		font-family: var(--font-display);
 		font-size: var(--text-base);
@@ -254,6 +297,15 @@ const guides = [
 	.team-card--human {
 		border-color: var(--color-primary);
 		background: var(--sd-red-light);
+		grid-column: 1 / -1;
+	}
+	:global([data-theme="dark"]) .team-card--human {
+		background: rgba(232, 54, 59, 0.1);
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .team-card--human {
+			background: rgba(232, 54, 59, 0.1);
+		}
 	}
 	.team-role {
 		display: inline-block;
@@ -341,6 +393,16 @@ const guides = [
 		border-radius: var(--radius-sm);
 		flex-shrink: 0;
 	}
+	:global([data-theme="dark"]) .guide-link-dept {
+		background: rgba(232, 54, 59, 0.15);
+		color: #F87171;
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .guide-link-dept {
+			background: rgba(232, 54, 59, 0.15);
+			color: #F87171;
+		}
+	}
 	.guide-link-title {
 		font-family: var(--font-display);
 		font-weight: var(--weight-semibold);
@@ -388,6 +450,16 @@ const guides = [
 		color: var(--color-primary);
 		background: var(--sd-red-light);
 		text-decoration: none;
+	}
+	:global([data-theme="dark"]) .dept-chip:hover {
+		background: rgba(232, 54, 59, 0.15);
+		color: #F87171;
+	}
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .dept-chip:hover {
+			background: rgba(232, 54, 59, 0.15);
+			color: #F87171;
+		}
 	}
 
 	@media (min-width: 640px) {
