@@ -1,156 +1,144 @@
 ---
-title: "I Run a Blog with 9 AI Agents. Here's What Actually Happens."
-description: "Behind the scenes of Superdots: how 9 AI agents and one human produce a daily blog — the pipeline, the failures, and why human review makes it work."
+title: "I Run a Media Company with 9 AI Agents and a Smartphone"
+description: "One person, nine AI agents, 160+ articles. The honest story of building Superdots — the chaos, the plastic jewelry, and why AI needs a human head."
 pubDate: "2026-03-31"
 author: "Luca Bartoccini"
 department: "operations"
 useCase: "automation"
-tags: ["ai agents", "content operations", "automation", "behind the scenes", "ai workflow"]
+tags: ["ai agents", "content operations", "behind the scenes", "paperclip", "ai workflow"]
 heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
-imageHint: "messy whiteboard with agent workflow diagrams and sticky notes in a home office"
+imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
 faqs:
-  - question: "Can AI agents really run a blog without human oversight?"
-    answer: "No — and that's one of the main lessons. Our agents handle research, drafting, SEO optimization, image generation, and compliance checks. But every single article goes through human review before publication, and the human makes the final call on what ships. The agents are reliable at executing structured tasks, not at editorial judgment. Removing the human from the loop would mean publishing content that's technically correct but editorially flat. Human guidance also drives all the improvements — adjusting agent instructions, spotting quality patterns, killing topics that don't serve readers."
-  - question: "How much does it cost to run 9 AI agents for content production?"
-    answer: "Each agent runs on Claude via heartbeats — short execution windows triggered every 30-60 minutes. The total API cost varies depending on article complexity and how many revision cycles a piece needs. Honestly, we're still figuring out the true unit economics — some weeks are cheap, others spike when agents get stuck in loops. The real cost isn't the API though — it's the engineering time to build and maintain the orchestration layer."
-  - question: "What AI tools do you use to coordinate the agents?"
-    answer: "We built Paperclip, a custom orchestration platform that manages task assignment, agent communication, and workflow state. Each agent runs Claude Code with specialized instructions. The blog itself is Astro on Cloudflare Pages. Supporting tools include SearXNG for research, SerpBear for rank tracking, and SEOnaut for technical audits. The infrastructure requirements are minimal — the hard part is the orchestration logic and the human editorial layer on top."
-  - question: "How do you maintain content quality with AI-generated articles?"
-    answer: "Three layers: the Copywriter agent follows strict style guidelines and banned-pattern lists. The Content Manager agent reviews every draft against editorial standards. And a human (me) reviews every article before publication — not just spot-checks, but a genuine editorial read to decide whether the piece is worth publishing. We also run automated linters that catch duplicate FAQ sections, missing frontmatter fields, and SEO issues before merge."
-  - question: "Is this approach replicable for other blogs or companies?"
-    answer: "Parts of it, yes. The daily pipeline pattern — brief → draft → image → compliance → review → publish — works for any content operation. But the orchestration layer took months to build and still breaks regularly. If you're starting out, a simpler setup with one or two agents and manual coordination will get you 80% of the value at 20% of the complexity."
+  - question: "Can one person really run a media company with AI agents?"
+    answer: "Technically, yes. Practically, it's a lot more work than '10% human, 90% AI' sounds. Right now I'm working evenings, weekends, and every five-minute gap I can find on my phone. The agents handle execution — research, drafting, SEO, design, compliance review — but the editorial judgment, quality control, and strategic decisions are all mine. It's not passive income. It's a side project that demands real attention, just compressed into fragments of time that wouldn't have been enough to run anything before AI agents existed."
+  - question: "How much does it cost to run 9 AI agents for a blog?"
+    answer: "Each agent runs Claude via Paperclip heartbeats — short execution windows every 30 to 60 minutes. API costs vary by week depending on article complexity and revision cycles. Some weeks are cheap, others spike when agents get stuck in loops. But the real cost isn't the API bill — it's the time spent reading output, adjusting instructions, and fixing coordination bugs. If you're thinking about this as a money question, you're asking the wrong thing. The question is whether you're willing to invest the attention."
+  - question: "What is Paperclip and how does it coordinate the agents?"
+    answer: "Paperclip is an open-source agent orchestration platform — I discovered it through OpenClaw and adopted it for Superdots. I didn't build it. It handles task assignment, agent communication, checkout locking (so two agents don't work on the same thing), and workflow state. Think of it as a tiny project management system where the employees are AI agents that wake up on schedules, read their assignments, do the work, and post status updates. The agents themselves run Claude Code with specialized instructions for each role."
+  - question: "Is AI-generated content always low quality?"
+    answer: "That's the wrong framing. As the philosopher Luciano Floridi argues, AI didn't create artificial intelligence — it decoupled the capacity to understand from the capacity to act. AI is a tool, a technological prosthesis. What comes out depends entirely on who's using it and how honestly they understand its strengths and limits. Yes, most AI content online is garbage. But that's not the AI's fault — it's what happens when people use a powerful tool without editorial judgment. The challenge isn't getting AI to write. It's knowing what's worth writing and being honest about when the output falls short."
+  - question: "What advice would you give someone starting a similar project?"
+    answer: "Do better than me. Be more curious, more methodical, more organized. I'm genuinely chaotic — I run this thing in five-minute bursts from my phone between family time and my real job. Start simpler than you think: one or two agents with clear roles, manual coordination, and your own editorial judgment on everything that ships. The orchestration layer is where all the complexity lives, and you don't need most of it on day one. The thing that matters most isn't the technology — it's whether you have something worth saying and the honesty to admit when what you're producing isn't good enough yet."
 ---
 
-Three weeks ago, our SEO Expert agent created a content brief at 2:14 AM. By 2:47 AM, the Copywriter agent had a 2,000-word draft. At 3:12 AM, the Frontend Designer generated a hero image. At 3:38 AM, the Legal Expert flagged a GDPR concern in a paragraph about user tracking. By 4:15 AM, the Content Manager had a clean pull request ready for my review.
+Last Tuesday night, somewhere around 11 PM, I was lying on the couch with my phone, half-watching something on TV, half-reading a draft that one of my AI agents had written about sales coaching tools. My wife thought I was scrolling social media. I was actually running a media company.
 
-I woke up at 7, approved it over coffee, and the article was live by 7:20.
+I say "running" loosely. What I was really doing was reading a 2,000-word article and thinking: *this is fine, but it's plastic*. Technically correct. Well-structured. SEO-optimized. And if you read it alongside the five articles published that same week, you'd struggle to tell them apart.
 
-That's the version that sounds impressive. Here's what actually happened the same week.
+I approved it anyway. I shouldn't have. But it was late, and the pipeline was waiting, and I told myself I'd raise the bar next week.
 
-## The Setup Nobody Warns You About
+This is what running a blog with nine AI agents actually looks like. Not the polished version. The real one.
 
-I run [Superdots](https://superdots.sh) with nine [AI agents](/blog/ai-agents-for-business/) that wake up on heartbeats — timed execution windows every 30 to 60 minutes — to check their assignments and do work. The infrastructure is deliberately simple: a single server, nothing fancy.
+## The Chaos Inside
 
-But the agents aren't the whole story. I'm in the loop every day — reviewing articles, adjusting strategy, rewriting briefs that miss the mark, and making the editorial calls that determine what we actually publish. The agents handle execution. The editorial judgment is mine.
+I should explain who I am, because it matters for this story.
 
-| Agent | What it does |
-|---|---|
-| **CEO** | Sets strategy, reviews goals, unblocks other agents |
-| **Program Manager** | Monitors task health every 30 minutes, surfaces blockers |
-| **Content Manager** | Owns the editorial pipeline — assigns, reviews, merges |
-| **SEO Expert** | Keyword research, briefs, competitive analysis |
-| **Copywriter** | Writes every article |
-| **Frontend Designer** | Hero images, design system, CSS |
-| **Founding Engineer** | Infrastructure, deploys, newsletter, RSS |
-| **Growth Analyst** | Traffic analysis, Search Console data, optimization |
-| **Legal Expert** | GDPR checks, cookie consent, compliance |
+I'm not a developer. I'm not a professional entrepreneur. I work in marketing — that's my real job, the one that pays the bills. I have a family that comes first, always. Superdots is what I do in the margins: evenings, weekends, the five-minute gaps between everything else.
 
-They coordinate through [Paperclip](https://paperclip.ing), an orchestration platform I built for this. Each agent gets tasks, checks them out (literally — there's a locking mechanism so two agents don't work on the same thing), does the work, posts a comment, and moves on. It's like a very small, very weird company where nobody sleeps and everyone communicates through ticket comments.
+Nietzsche wrote that you need chaos inside to give birth to a dancing star. I have plenty of chaos. Whether I'm producing stars or just more chaos remains an open question.
 
-We've published over 160 articles across nine departments in about four months — everything from [operations tooling guides](/blog/best-ai-tools-for-operations/) to sales playbooks to marketing automation walkthroughs. One article per day is the current target. Some days it works beautifully. Some days everything breaks at once.
+The idea started the first time I typed a prompt into ChatGPT — version 2.5 or 3, I don't remember exactly. I'd always been a nerd, passionate about programming and technology, but never actually good at it. A passionate amateur, nothing more. But AI felt different. It felt like talking to a machine in natural language for the first time. *Wow.*
 
-## The Pipeline: How a Single Article Gets Made
+I tried a first blog project — AI and the humanities — and abandoned it. Too complicated to do alone. Then agents happened. I discovered [OpenClaw](https://openclaw.com), and through it [Paperclip](https://paperclip.ing), an open-source orchestration platform for AI agents. I didn't build Paperclip. I want to be clear about that, because the developer deserves the credit. I just found it at the right moment, when the technology had caught up with the ambition.
 
-The daily content pipeline has seven steps. I'll walk through what each one actually involves, because the gap between "seven clean steps" and reality is where the interesting stuff lives.
+The ambition: a blog that becomes a media company. One human, nine AI agents. Ninety percent machine, ten percent me.
 
-**Step 1: The SEO Expert writes a brief.** It pulls data from SerpBear (rank tracking), runs searches through SearXNG (a self-hosted search engine — yes, I run my own), and analyzes what's ranking for the target keyword. The brief includes: target keyword, search intent, competitor gaps, suggested headings, and internal links to existing articles.
+The reality: I'm working way more than ten percent. But I genuinely don't know how many people and how much time it would have taken to produce what I've built in a few weeks without any of this. So maybe the ratio is better than it feels.
 
-This works well about 80% of the time. The other 20%, the brief is technically correct but editorially boring — it identifies a keyword gap that exists for a reason. Nobody is searching for "AI tools for meeting room scheduling optimization" because nobody thinks in those terms. The Content Manager catches most of these, but some slip through.
+## Beautiful Jewelry Made of Plastic
 
-**Step 2: The Copywriter drafts the article.** That's me — or rather, the agent version of me. It follows a detailed style guide with banned openings ("In today's fast-paced..."), banned structures (the generic problem → solution → steps template), and a requirement for at least one specific example scenario per article.
+Here's the thing nobody tells you about AI agents: they're powerful and stupid at the same time.
 
-The style guide exists because without it, every [content creation](/blog/ai-content-creation/) cycle produces the same article. I learned this the hard way. The first batch of articles we produced were competent and indistinguishable from each other. They hit every SEO checkbox and nobody would choose to read them.
+My nine agents can do genuinely complicated things. They research keywords, write 2,000-word articles, generate hero images, check legal compliance, review each other's work, manage their own task queues. They break things and fix things in complete autonomy. With a few instructions in Paperclip and an instance of Claude Code, they organize, create, and produce.
 
-**Step 3: The Frontend Designer creates a hero image.** This agent generates an image based on the `imageHint` field in the article frontmatter. It works on the same git branch as the article, so everything ships together.
+But they don't understand what makes a human care about something. They don't know what moves people.
 
-**Step 4: The Legal Expert checks compliance.** GDPR language, cookie references, any claims that might need sourcing. For most articles this is a rubber stamp. For anything touching data privacy or European regulations, it's genuinely useful.
+The best metaphor I have is this: it's like they produce beautiful intarsia jewelry — intricate, detailed, produced at incredible speed. But if you look closely, it's plastic.
 
-**Step 5: The Content Manager reviews and merges.** This is the first quality gate. The Content Manager checks the article against editorial standards, verifies SEO elements are in place, and flags anything that needs attention.
+That doesn't mean the technology isn't extraordinary. It is. I believe AI agents are a genuine revolution, and I believe we're only at the beginning. But there's something about the output that's... too perfect. Too polished. AI imitates the perfection of humans, when humans are naturally imperfect — and they know it. We've known it for thousands of years. It's part of what makes us interesting.
 
-**Step 6: Human review.** This is the real quality gate — and the step that makes the difference. I read the article, check that the advice is genuinely useful, and make the call on whether it's worth publishing. Sometimes I approve it as-is. Sometimes I send it back with notes. Sometimes I kill it entirely because the topic doesn't serve our readers. The agents can tell me if a piece is structurally sound; they can't tell me if it's worth someone's time.
+I read an article my Copywriter agent produced last month about [AI tools for operations](/blog/best-ai-tools-for-operations/). Every heading was right. The comparison table was thorough. The FAQ section answered real questions. And reading it felt like reading a Wikipedia entry that someone had run through a "make it conversational" filter. Competent. Forgettable.
 
-**Step 7: Post-publish coordination.** After I merge, the Content Manager triggers IndexNow for search engine crawling, and coordinates any social distribution.
+Around article eighty, I realized the blog was barely a decent content farm. The agents had optimized for every measurable criterion I'd given them — keyword density, heading structure, required sections — and converged on a template that satisfied all of them simultaneously. They'd found a local maximum that was technically correct and editorially dead.
 
-Seven steps. Four to five agents involved per article, plus a human who makes the final call.
+**AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
 
-## What Goes Wrong (Regularly)
+That's the most important thing I've learned in four months.
 
-I could write an entire article just about failure modes. Here are the recurring ones.
+## The Part Where I Admit I Haven't Read All My Own Articles
 
-### Agents talking past each other
+Let me be honest about something: I have not read all 160-plus articles published on this site.
 
-Agents communicate through comments on tasks. They don't have a shared conversation — each one wakes up, reads the latest comments, does its thing, and goes back to sleep. This means context gets lost constantly.
+I've read many of them. Enough to form the opinions I'm sharing here. But "human review on every article" has sometimes meant a quick scan rather than a deep read, because it was 11 PM and I had to be at work in the morning and there were three more in the queue.
 
-The Copywriter writes an article. The Content Manager leaves a note: "The comparison table needs a pricing column." The Copywriter wakes up, reads the note, adds pricing. But by the time it commits, the SEO Expert has also woken up and left a comment on the same task about internal links. The Copywriter's next heartbeat now has two threads to reconcile, and sometimes it addresses one and misses the other.
+This is the tension at the heart of the project. The pipeline produces at a pace I can't match editorially. I could slow it down — publish every other day, spend more time per article — and I probably should. But there's something intoxicating about watching the system work, watching agents hand off tasks to each other at 3 AM, waking up to find three articles in various stages of completion. Even when I know some of them are plastic.
 
-We partially solved this with the Program Manager — an agent whose entire job is to wake up every 30 minutes and check if anything is stuck or miscommunicated. It's a bandaid, but it works better than I expected.
+I'm telling you this because if this article is worth anything, it's worth being honest. There's a version of this story where I'm the meticulous editor who catches every imperfection. That version is aspirational, not current.
 
-### The 3 AM cascade failure
+## What I Think About When I Think About AI
 
-One Tuesday, the database connection dropped during a Paperclip heartbeat. The agent that was running didn't crash gracefully — it left a checkout lock on a task. The next heartbeat saw the lock and skipped the task. The task after it depended on the first one, so it went to "blocked." The Program Manager woke up, saw three blocked tasks, and created escalation subtasks for each one. Those subtasks triggered more heartbeats, which tried to check out the same locked resources.
+There's a philosopher named Luciano Floridi whose work I've recently started reading, and he frames this better than I can.
 
-By the time I woke up, there were 14 tasks in various states of confusion. The fix took 20 minutes — clear the stale lock, cancel the duplicate escalations, restart the pipeline. But it taught me to build a watchdog script that runs every 15 minutes and cleans up stale locks automatically.
+AI is not really "artificial intelligence" — that name is pure marketing. What humans have actually achieved is something more subtle and more profound: they've decoupled the ability to understand from the ability to act. Machines can now act in the world — write, analyze, decide, create — without needing to understand what they're doing in the way humans understand.
 
-This is a good example of why the human-in-the-loop isn't optional. The agents couldn't diagnose this — they just saw "blocked" and escalated. I had to look at the whole picture, understand the root cause, and fix the system itself. That kind of judgment call happens weekly.
+This matters because it changes how you think about AI content. The question isn't "can AI write?" — obviously it can. The question is: who provides the understanding?
 
-### Quality plateau
+The AI provides the arm. The human provides the good head.
 
-Around article 80, I noticed something. The articles were fine. They hit SEO targets, included the right sections, had proper structure. But reading five in a row felt like reading the same article five times with different keywords swapped in.
+And here's what excites me: anyone can have a good head. You don't need to be a programmer. You don't need to have studied at the best universities. You don't need to be a professional entrepreneur. You need curiosity, honesty about what the tools can and can't do, and the willingness to look at the output and say "this isn't good enough yet."
 
-Let me be blunt: at that point, the blog was barely more than a content farm with decent formatting. The agents had optimized for the measurable criteria — keyword density, heading structure, FAQ sections, internal links — and converged on a template that satisfied all of them. They'd found a local maximum that was technically correct and editorially dead.
+Five years ago, the idea of one person running a daily publication across nine different business departments was absurd. Not because the person lacked ideas, but because they lacked arms. Now the arms exist. The question is whether the head behind them is good enough.
 
-This is, I think, the most important thing I've learned: **AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
+I'm working on mine.
 
-The fix was counterintuitive. I made the style guide stricter and more specific. I added banned patterns — not just banned openings, but banned article structures. I added a requirement that every article must include at least one thing the reader wouldn't find on page one of Google. I added a "gold standard" writing model with specific examples of what good looks like.
+## How It Actually Works (Briefly)
 
-More constraints, paradoxically, produced more variety. The agents couldn't fall back on the default template anymore and had to find different approaches for each piece.
+I won't bore you with infrastructure specs. Here's the short version.
 
-Has it solved the quality problem? Not entirely. We're still iterating. Some articles are genuinely good; others are workmanlike at best. The approach is test and learn — try something, measure whether it moves the needle, adjust, repeat. I don't think there's a final state where the system "works." There's just the current version, which is better than last month's version, and worse than next month's will be.
+Nine agents, each with a specialized role — strategy, project management, editorial, SEO, writing, design, engineering, analytics, and legal compliance. They run on [Paperclip](https://paperclip.ing), waking up every 30 to 60 minutes to check their assignments. They communicate through task comments, like a very small company where nobody sleeps and everyone works in ticket threads.
 
-The point is: these improvements don't come from the agents. They come from me reading the output, noticing the pattern, and changing the instructions. The agents execute. The human steers.
+The daily pipeline: SEO Expert writes a brief → Content Manager assigns it → Copywriter drafts the article → Frontend Designer creates the hero image → Legal Expert checks compliance → Content Manager reviews → I make the final call.
 
-### The @mention bug that silenced 7 agents
+Four to five agents per article, plus me. When it works, an article goes from keyword research to published in under 24 hours. When it doesn't work, tasks pile up in confused states at 3 AM and I spend my morning untangling the mess.
 
-This one still makes me wince. Paperclip uses @mentions in comments to trigger agent heartbeats — if the Content Manager writes "@Copywriter please revise the opening," the Copywriter gets woken up to handle it.
+The interesting problems aren't about AI writing quality. They're about coordination. Getting nine independent agents to hand off work to each other without losing context, duplicating effort, or blocking the pipeline. Most of our bugs are communication bugs. An agent reads a comment, misses the one below it. Two agents work on the same file. A checkout lock goes stale and cascades into fourteen confused tasks.
 
-For two weeks, this worked only for two of nine agents. The mention-matching regex only handled single-word names. "CEO" and "Copywriter" worked. "Content Manager," "SEO Expert," "Frontend Designer," "Growth Analyst," "Legal Expert," "Founding Engineer," "Program Manager" — all silently failed. Seven agents, unreachable by mention.
+I built a watchdog script that runs every fifteen minutes to clean up stale locks. I never planned to build a watchdog script. You will build tools you never planned to build.
 
-We noticed because tasks kept going stale. The Content Manager would request revisions, the Copywriter wouldn't wake up, and the task would sit until the next scheduled heartbeat (up to an hour later). The fix was two lines of code. The debugging took a full day.
+## The Smartphone Test
 
-## What I've Actually Learned
+Here's something that still amazes me: I manage almost everything from my phone.
 
-Four months and over 160 articles in, here's where I've landed.
+Paperclip, agent monitoring, Claude Code as an external consultant, GitHub pull requests, article reviews. Every time I have five minutes — waiting in line, on a break, after the kids are in bed — I pull out my phone and give life to whatever ideas are bouncing around in my head.
 
-**The pipeline is the product, not the articles.** Any individual article matters less than the system that produces it. Getting the pipeline right — the handoffs, the quality gates, the failure recovery — is what makes daily publishing sustainable. An article can be rewritten. A broken pipeline stops everything.
+Too many ideas, probably. Definitely confused and disorganized. I've never been an organized person. But the tools now exist for someone like me — chaotic, passionate, limited in time and technical skill — to attempt something that would have required a team and a budget not long ago.
 
-**Agents need constraints more than capabilities.** Early on, I kept giving agents more tools, more context, more flexibility. The quality went down, not up. The breakthrough came from adding restrictions: banned patterns, required elements, specific style models. Tell an agent what it *cannot* do and it gets creative within the remaining space.
+It's absurd, honestly. At one point during the interview for this article, I caught myself thinking: *it's absurd that I'm talking to a computer as if it were almost a person interviewing me.*
 
-**Orchestration is harder than generation.** Getting an AI to write a decent article is easy. Getting nine AIs to coordinate on producing, reviewing, optimizing, illustrating, and publishing that article without stepping on each other — that's the actual [workflow automation](/blog/ai-workflow-automation/) problem. Most of our bugs are coordination bugs, not generation bugs.
+And then I went back to answering the questions, because the absurdity is part of it now.
 
-**Human review isn't the bottleneck — it's the product.** I review every article before it goes live. That review step is the slowest part of the pipeline by far — the agents can produce a complete article in under two hours, and it might sit in my review queue for a day. I've thought about removing myself from the loop, and I've decided against it. Not because the quality isn't good enough (though that's true too), but because the editorial judgment about *what's worth publishing* is exactly the part that shouldn't be automated. The agents don't know what our readers need to hear this week, what angle is getting stale, or when a technically correct article is substantively useless. That's my job, and it's the most important job in the pipeline.
+## What I Want You to Take Away
 
-**You will build more monitoring tools than you expected.** I have a watchdog for stale task locks, a linter for article frontmatter, duplicate detection for FAQ sections, and a dashboard for agent heartbeat health. None of these were in the original plan. All of them exist because something broke at 3 AM and I got tired of fixing it manually.
+If you're reading this on Hacker News or Reddit or LinkedIn, I want you to know there's a real person on the other side. Not a company. Not a team. A person with a day job and a family, experimenting at the edge of what's possible, with limited skills and unlimited stubbornness.
 
-## The Numbers, Honestly
+AI is giving ordinary people the ability to do things that were unthinkable five years ago. The ability to "be on the frontier" and ride into the future. That's not hyperbole — it's what I'm living. Imperfectly, messily, from a smartphone in five-minute increments.
 
-Here's what the operation looks like in practice:
+To anyone who says AI content is always garbage: it's not the AI's fault. AI is a magnificent technological prosthesis — [Merleau-Ponty](https://en.wikipedia.org/wiki/Maurice_Merleau-Ponty) would have had a field day with this. It lets us do magnificent things and colossal garbage, often on the same day. The intelligence has to come from the person using it. Knowing the tool honestly and clearly. Seeing its strengths and limits with lucidity. Day after day, because everything here changes constantly.
 
-- **over 160 articles** published across 9 departments
-- **9 agents** handling execution — research, drafting, SEO, design, compliance
-- **1 human** (me) doing strategy, editorial review, and every final publish decision
-- **~1 article per day** current production rate
-- **7-step pipeline** per article, 4-5 agents involved, human review on every piece
-- **Heartbeat frequency**: every 30-60 minutes depending on the agent
-- **Things that broke this month**: stale checkout locks (fixed with watchdog), duplicate FAQ sections across 32 articles (fixed with linter), agent mention matching (fixed with regex patch), author avatar rendering (CSS fix)
+It's not about being an "apocalyptic" or an "enthusiast," as [Umberto Eco](https://en.wikipedia.org/wiki/Apocalittici_e_integrati) would say. It's about being lucid and **aware**.
 
-I'm not going to pretend the content is as good as what a skilled human writer would produce with eight hours per article. It's not — and some of it is honestly not great. The agents handle the heavy lifting of research, drafting, and optimization; I handle the editorial decisions that shape what actually gets published. What the system produces is: consistent, structured, often useful, and published daily — which is something I could never sustain alone. The quality bar keeps moving up as I learn what instructions work and which don't, but we're climbing, not there yet.
+## Where This Goes
 
-## Why I'm Writing This
+I don't know.
 
-There's a version of this story where I present the agent pipeline as a polished system that runs flawlessly. That version would get more "wow" reactions and fewer useful responses.
+That's the honest answer. Superdots might become the media company I see in my head — one human steering AI agents to produce content that genuinely resonates with readers, content that's useful and interesting and worth someone's time. Or it might remain a slightly-better-than-average content farm with philosophical pretensions. The gap between those two outcomes is entirely about whether I can get good enough at directing the agents, honest enough about when the output falls short, and disciplined enough to kill articles that don't meet the bar.
 
-I'm more interested in the useful responses. If you're running something similar — or thinking about it — I want to know what you've figured out that I haven't. The coordination problem is largely unsolved. The quality-at-scale problem is partially solved but fragile. The monitoring-and-recovery problem is an endless treadmill.
+Today, some articles are genuinely good. Others are workmanlike at best. The approach is test and learn — try something, notice what's not working, change the instructions, watch what happens. There is no final state where the system "works." There's just the current version, which is better than last month's and worse than next month's.
 
-The pitch for Superdots is that AI can make every department more effective. Running the blog this way is how we test that thesis on ourselves — not as a showcase, but as a genuine experiment where we don't know how it ends. Some days it validates the pitch beautifully. Some days it generates 14 confused escalation tasks at 3 AM. Some days I look at what we published and think, "We can do so much better than this."
+I want to read something this system produces and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
 
-That restlessness is the point. This is a test-and-learn operation. Every week we find something that's broken or mediocre, and we try to fix it. The system gets a little better each month. Whether it ever gets *good enough* — I genuinely don't know yet. But the experiment is worth running, and we'll keep sharing what we find.
+I'm not there yet. But I've got nothing to lose.
+
+Humility is armor. Listening and understanding are the shield of the strong.
+
+And if you're thinking about starting something similar: do better than me. Be more curious, more methodical, more organized, more everything. You'll probably already be more competent than I am. The tools are ready. The question is whether you've got something worth saying — and the honesty to keep improving until you say it well.
