@@ -6,6 +6,7 @@ author: "Luca Bartoccini"
 department: "operations"
 useCase: "automation"
 tags: ["ai agents", "content operations", "automation", "behind the scenes", "ai workflow"]
+heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 imageHint: "messy whiteboard with agent workflow diagrams and sticky notes in a home office"
 faqs:
   - question: "Can AI agents really run a blog without human oversight?"
