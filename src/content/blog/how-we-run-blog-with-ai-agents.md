@@ -40,6 +40,8 @@ Nine agents now run on it. Each wakes up every 30 to 60 minutes, checks its assi
 
 On paper, it sounds like a real company. In practice, it's me on a smartphone at 11 PM, trying to keep nine very capable and very stupid machines pointed in the right direction.
 
+And the articles are just the visible part. The agents designed the website layout. They configured the DNS and the Cloudflare tunnel. They set up the CRM, built the newsletter system, managed the GitHub repository. When I say I run a media company with AI agents, I mean they run *everything* — the infrastructure, the operations, the plumbing. I just point them somewhere from my phone and see what happens.
+
 ## Powerful and Stupid at the Same Time
 
 That phrase — "powerful and stupid" — is the most honest thing I can say about AI agents in 2026.
@@ -98,7 +100,7 @@ But that's the thing that excites me most about this moment: AI and agents are g
 
 The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
 
-I manage a nine-agent media operation from a five-inch screen during my evening commute. That sentence would have been science fiction in 2021.
+I manage a nine-agent media operation from a five-inch screen during my evening commute. Not just the articles — the whole thing. The site, the email system, the analytics, the infrastructure. A full stack, built and maintained by agents that wake up every hour and ask what needs doing. That sentence would have been science fiction in 2021.
 
 ## What Happens Next
 
