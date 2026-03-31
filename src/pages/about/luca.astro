@@ -79,7 +79,7 @@ const lucaPosts = allPosts
 
 <style>
 	.author-page {
-		max-width: var(--content-width, 720px);
+		max-width: var(--max-width-prose);
 		margin: 0 auto;
 		padding: 0 var(--space-4);
 	}
@@ -106,7 +106,7 @@ const lucaPosts = allPosts
 		border-bottom: 1px solid var(--color-border);
 	}
 	.author-article-list a {
-		font-weight: 500;
+		font-weight: var(--weight-medium);
 		color: var(--color-text);
 		text-decoration: none;
 	}
@@ -115,7 +115,7 @@ const lucaPosts = allPosts
 	}
 	.author-article-list :global(time) {
 		font-size: var(--text-sm);
-		color: var(--color-text-dim);
+		color: var(--color-text-muted);
 		white-space: nowrap;
 	}
 </style>
