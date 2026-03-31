@@ -13,6 +13,7 @@ const buildDate = new Date().toISOString().slice(0, 10);
 // Build a slug → lastmod map from blog frontmatter at config time
 const blogDir = path.resolve('./src/content/blog');
 const lastmodMap = new Map();
+const noindexSlugs = new Set();
 for (const file of fs.readdirSync(blogDir)) {
 	if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
 	const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
@@ -22,9 +23,12 @@ for (const file of fs.readdirSync(blogDir)) {
 	const updated = fm.match(/updatedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
 	const pub = fm.match(/pubDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
 	const date = updated?.[1] || pub?.[1];
+	const slug = file.replace(/\.(md|mdx)$/, '');
 	if (date) {
-		const slug = file.replace(/\.(md|mdx)$/, '');
 		lastmodMap.set(`https://superdots.sh/blog/${slug}/`, date);
+	}
+	if (/noindex:\s*true/.test(fm)) {
+		noindexSlugs.add(`https://superdots.sh/blog/${slug}/`);
 	}
 }
 
@@ -35,7 +39,7 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !page.includes('/design-system') && !page.includes('/analytics-optout'),
+			filter: (page) => !page.includes('/design-system') && !page.includes('/analytics-optout') && !noindexSlugs.has(page),
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
 				item.lastmod = lastmod || buildDate;
