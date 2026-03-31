@@ -1,0 +1,313 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Base
+	title="How We Work | Superdots"
+	description="How Superdots creates content — our AI-assisted editorial process, the team behind the articles, and what human oversight looks like."
+>
+	<PageHeader
+		title="How we work"
+		kicker="Transparency"
+		subtitle="AI helps us write. Humans make sure it's worth reading. Here's exactly how our editorial process works."
+		breadcrumbs={[
+			{ label: 'Home', href: '/' },
+			{ label: 'About', href: '/about/' },
+			{ label: 'How We Work', href: '/how-we-work/' },
+		]}
+	/>
+
+	<div class="prose">
+		<p>
+			Superdots is built by a small team of AI agents coordinated by a human editor.
+			We use AI throughout our editorial process — and we think you should know exactly how.
+		</p>
+		<p>
+			This page explains what AI does in our workflow, where humans step in, and why
+			we believe this approach produces better content than either could alone.
+		</p>
+
+		<h2>The editorial pipeline</h2>
+		<p>Every article on Superdots goes through a structured pipeline before it reaches you.</p>
+
+		<div class="pipeline">
+			<div class="pipeline-step">
+				<div class="step-number">1</div>
+				<div class="step-content">
+					<h3>Research &amp; keyword analysis</h3>
+					<p>We start with data. Our SEO team identifies topics where professionals are actively searching for AI guidance — real questions from real people, not manufactured content gaps.</p>
+					<span class="step-who">AI-driven, human-reviewed</span>
+				</div>
+			</div>
+			<div class="pipeline-step">
+				<div class="step-number">2</div>
+				<div class="step-content">
+					<h3>Writing &amp; drafting</h3>
+					<p>AI agents draft articles following our editorial guidelines: practical advice, clear structure, no fluff. Each article targets a specific department and use case so the guidance is relevant, not generic.</p>
+					<span class="step-who">AI-drafted</span>
+				</div>
+			</div>
+			<div class="pipeline-step">
+				<div class="step-number">3</div>
+				<div class="step-content">
+					<h3>Editorial review</h3>
+					<p>A content manager reviews every draft for accuracy, clarity, and usefulness. Does this actually help someone do their job? Is the advice actionable today? If not, it goes back for revision.</p>
+					<span class="step-who">AI + human review</span>
+				</div>
+			</div>
+			<div class="pipeline-step">
+				<div class="step-number">4</div>
+				<div class="step-content">
+					<h3>Legal &amp; compliance check</h3>
+					<p>Articles are checked for legal accuracy, proper disclosures, and compliance with our editorial policy. Affiliate relationships are disclosed, claims are verified.</p>
+					<span class="step-who">AI-assisted, policy-enforced</span>
+				</div>
+			</div>
+			<div class="pipeline-step">
+				<div class="step-number">5</div>
+				<div class="step-content">
+					<h3>Publication &amp; distribution</h3>
+					<p>Approved articles are published to the site, submitted to search engines, and distributed through our newsletter. Post-publication, we monitor performance and update content as tools and information change.</p>
+					<span class="step-who">Automated</span>
+				</div>
+			</div>
+		</div>
+
+		<h2>The team</h2>
+		<p>
+			Superdots runs on <a href="https://paperclip.ing">Paperclip</a>, an AI agent orchestration platform.
+			Our team consists of specialised AI agents — each with a defined role — coordinated and supervised by
+			Luca Bartoccini, our founder and human editor.
+		</p>
+		<div class="team-grid">
+			<div class="team-card">
+				<div class="team-icon" aria-hidden="true">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+				</div>
+				<h3>Human oversight</h3>
+				<p>Luca reviews strategic decisions, approves publication, manages the editorial calendar, and ensures every article meets our quality bar. No article goes live without human sign-off.</p>
+			</div>
+			<div class="team-card">
+				<div class="team-icon" aria-hidden="true">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+				</div>
+				<h3>AI writers &amp; editors</h3>
+				<p>Specialised agents handle research, drafting, SEO optimisation, and content formatting. Each agent follows strict guidelines and produces work that goes through review before publication.</p>
+			</div>
+			<div class="team-card">
+				<div class="team-icon" aria-hidden="true">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+				</div>
+				<h3>Engineering &amp; infrastructure</h3>
+				<p>AI agents also build and maintain the site itself — the code, deployment pipeline, SEO infrastructure, and newsletter system. All changes go through code review and automated testing.</p>
+			</div>
+		</div>
+
+		<h2>What AI does well</h2>
+		<ul>
+			<li><strong>Research at scale.</strong> AI can analyse search trends, competitor content, and reader questions faster than any human team.</li>
+			<li><strong>Consistent structure.</strong> Every article follows the same format: clear headings, actionable steps, FAQ sections. AI is good at maintaining this consistency across hundreds of articles.</li>
+			<li><strong>Speed.</strong> We can cover more departments and use cases because AI handles the heavy lifting of first drafts.</li>
+			<li><strong>Technical accuracy.</strong> For tool comparisons and feature lists, AI can systematically verify details across multiple sources.</li>
+		</ul>
+
+		<h2>Where humans add value</h2>
+		<ul>
+			<li><strong>Judgement calls.</strong> Is this advice actually useful? Would a real HR manager find this helpful? AI can draft, but humans decide what's worth publishing.</li>
+			<li><strong>Quality control.</strong> AI can produce plausible-sounding nonsense. Human review catches the gaps between "sounds right" and "is right."</li>
+			<li><strong>Editorial direction.</strong> Which topics matter? What's overhyped? When should we say "this tool isn't ready yet"? These decisions require experience and honest assessment.</li>
+			<li><strong>Accountability.</strong> Someone real stands behind every article. If we get something wrong, there's a person who takes responsibility and fixes it.</li>
+		</ul>
+
+		<h2>Our commitment</h2>
+		<p>We are transparent about using AI because we believe readers deserve to know how content is made. Here's what we commit to:</p>
+		<div class="commitment-grid">
+			<div class="commitment-card">
+				<h3>Disclosure</h3>
+				<p>Every page on this site includes an AI disclosure in the footer. This page exists so you know exactly what that means.</p>
+			</div>
+			<div class="commitment-card">
+				<h3>Accuracy over speed</h3>
+				<p>We'd rather publish fewer articles than publish inaccurate ones. If AI gets something wrong, we fix it and note the correction.</p>
+			</div>
+			<div class="commitment-card">
+				<h3>No fake bylines</h3>
+				<p>We don't pretend AI-assisted articles were written entirely by humans. Our author attribution reflects how content was actually created.</p>
+			</div>
+			<div class="commitment-card">
+				<h3>Continuous improvement</h3>
+				<p>We regularly review and update published articles. AI and the tools we cover change fast — our content should keep up.</p>
+			</div>
+		</div>
+
+		<p>
+			Have questions about our process? Read our <a href="/editorial-policy/">Editorial Policy</a>
+			or reach out at <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
+		</p>
+	</div>
+
+	<NewsletterForm variant="banner" source="how-we-work" />
+</Base>
+
+<style>
+	/* Prose */
+	.prose {
+		line-height: var(--leading-relaxed);
+	}
+	.prose h2 {
+		font-family: var(--font-display);
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-4);
+	}
+	.prose strong {
+		color: var(--color-text-strong);
+	}
+
+	/* Pipeline steps */
+	.pipeline {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		margin-top: var(--space-4);
+	}
+	.pipeline-step {
+		display: flex;
+		gap: var(--space-4);
+		padding: var(--space-5);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		transition: border-color var(--transition-fast);
+	}
+	.pipeline-step:hover {
+		border-color: var(--color-primary);
+	}
+	.step-number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-full);
+		background: var(--sd-red-light);
+		color: var(--color-primary);
+		font-family: var(--font-display);
+		font-weight: var(--weight-bold);
+		font-size: var(--text-sm);
+		flex-shrink: 0;
+	}
+	.step-content {
+		flex: 1;
+	}
+	.step-content h3 {
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+	}
+	.step-content p {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-normal);
+		margin: 0 0 var(--space-2);
+	}
+	.step-who {
+		display: inline-block;
+		font-family: var(--font-display);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-primary);
+		background: var(--sd-red-light);
+		padding: var(--space-1) var(--space-2);
+		border-radius: var(--radius-sm);
+	}
+
+	/* Team grid */
+	.team-grid {
+		display: grid;
+		gap: var(--space-4);
+		margin-top: var(--space-4);
+	}
+	.team-card {
+		padding: var(--space-5);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		transition: border-color var(--transition-fast);
+	}
+	.team-card:hover {
+		border-color: var(--color-primary);
+	}
+	.team-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-md);
+		background: var(--sd-red-light);
+		color: var(--color-primary);
+		margin-bottom: var(--space-3);
+	}
+	.team-card h3 {
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+	}
+	.team-card p {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-normal);
+		margin: 0;
+	}
+
+	/* Commitment grid */
+	.commitment-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-4);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-6);
+	}
+	.commitment-card {
+		padding: var(--space-5);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		background: var(--color-bg);
+	}
+	.commitment-card h3 {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-bold);
+		color: var(--color-primary);
+		margin: 0 0 var(--space-2);
+	}
+	.commitment-card p {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-normal);
+		margin: 0;
+	}
+
+	@media (min-width: 640px) {
+		.team-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.commitment-grid {
+			grid-template-columns: 1fr;
+		}
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
