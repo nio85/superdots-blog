@@ -11,6 +11,7 @@ const blog = defineCollection({
 		department: z.enum(['engineering', 'marketing', 'sales', 'hr', 'finance', 'operations', 'legal', 'customer-support', 'design']),
 		useCase: z.enum(['automation', 'analysis', 'writing', 'communication']),
 		pillar: z.boolean().default(false),
+		noindex: z.boolean().default(false),
 		tags: z.array(z.string()).default([]),
 		heroImage: z.union([image(), z.string()]).optional(),
 		faqs: z.array(z.object({

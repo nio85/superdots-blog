@@ -11,10 +11,11 @@ import ShareButtons from '../components/ShareButtons.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
+import { authors } from '../data/authors';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, slug: propSlug, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, noindex, slug: propSlug, readingTime } = Astro.props;
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -31,18 +32,23 @@ const tagMeta = (tags ?? [])
 	.filter(Boolean);
 
 const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const authorData = authors[author] || authors["Superdots Team"];
+const isPersonalAuthor = author === "Luca Bartoccini";
 ---
 
 <!doctype html>
 <html lang="en" data-theme="auto">
 	<head>
 		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
+		{noindex && <meta name="robots" content="noindex, follow" />}
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Article",
 			"headline": title,
 			"description": description,
-			"author": { "@type": "Organization", "name": author },
+			"author": isPersonalAuthor
+				? { "@type": "Person", "name": author, "url": `${siteUrl}${authorData.url}` }
+				: { "@type": "Organization", "name": author },
 			"datePublished": pubDate.toISOString(),
 			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
 			...(ogImageSrc && { "image": new URL(ogImageSrc, Astro.url).toString() }),
@@ -169,6 +175,14 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 					<FaqAccordion faqs={faqs} />
 				)}
 			</article>
+			<aside class="author-box">
+				<img src={authorData.avatar} alt={authorData.name} class="author-box-avatar" width="64" height="64" loading="lazy" />
+				<div class="author-box-info">
+					<a href={authorData.url} class="author-box-name">{authorData.name}</a>
+					<span class="author-box-role">{authorData.role}</span>
+					<p class="author-box-bio">{authorData.bio}</p>
+				</div>
+			</aside>
 			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
@@ -823,6 +837,53 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		}
 		:global(.newsletter--midpost .newsletter-field input) {
 			max-width: 100%;
+		}
+	}
+
+	/* Author box */
+	.author-box {
+		display: flex;
+		gap: var(--space-4);
+		align-items: flex-start;
+		padding: var(--space-6);
+		margin: var(--space-8) auto;
+		max-width: var(--content-width, 720px);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg, 12px);
+		background: var(--color-bg-dim);
+	}
+	.author-box-avatar {
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+	.author-box-name {
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: var(--text-lg);
+		color: var(--color-text);
+		text-decoration: none;
+	}
+	.author-box-name:hover {
+		color: var(--sd-red);
+	}
+	.author-box-role {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--color-text-dim);
+		margin-bottom: var(--space-2);
+	}
+	.author-box-bio {
+		font-size: var(--text-sm);
+		color: var(--color-text-dim);
+		line-height: 1.5;
+		margin: 0;
+	}
+	@media (max-width: 480px) {
+		.author-box {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
 		}
 	}
 </style>

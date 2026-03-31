@@ -13,13 +13,14 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Block known bad/aggressive bots
+# Allow SEO analysis bots (needed for link building discoverability)
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
 
+# Block known bad/aggressive bots
 User-agent: DotBot
 Disallow: /
 
