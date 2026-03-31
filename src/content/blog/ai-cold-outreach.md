@@ -169,24 +169,3 @@ The reps who will win with AI cold outreach are not the ones who use it to send 
 
 For related approaches that connect outreach to the broader sales process, see our guides on [AI sales emails](/blog/ai-sales-emails), [AI for sales call prep](/blog/ai-for-sales-call-prep), and [AI lead scoring](/blog/ai-lead-scoring).
 
-## FAQ
-
-### How many cold emails should I send per day with AI?
-
-Keep daily volume under 150 emails per sending domain to avoid triggering spam filters. If you need higher volume, use multiple warmed-up domains. Quality matters more than quantity — teams sending 50 highly personalized emails per day consistently outperform teams blasting 500 generic ones. Start with 20-30 per day while you dial in your messaging, then scale up once you have a proven angle.
-
-### What is the best AI tool for cold outreach?
-
-It depends on your workflow. For research and enrichment, Clay is the most powerful option. For email writing, Claude and ChatGPT work well with good prompts, while Lavender and Regie.ai are purpose-built for sales emails with performance scoring. For sending and sequencing, Outreach and Salesloft handle enterprise scale, while Instantly and Lemlist suit smaller teams. Most effective setups combine 2-3 tools across research, writing, and sending.
-
-### How do I avoid my AI cold emails going to spam?
-
-Warm up new sending domains for 2-3 weeks before launching campaigns. Keep daily volume per domain under 150 emails. Use email validation to remove invalid addresses before sending. Monitor bounce rates (keep under 3%) and spam complaint rates (keep under 0.1%). Avoid spam trigger words, excessive links, and image-heavy emails. Authenticate your domain with SPF, DKIM, and DMARC records.
-
-### How long should a cold outreach email be?
-
-Keep cold emails under 120 words. Shorter emails force specificity, and specificity earns replies. A 200-word email about your product reads like an essay that gets skimmed. A 90-word email about the prospect's specific situation reads like a conversation opener. Include one clear call-to-action that asks for something small — 15 minutes, not a demo of your entire platform.
-
-### How many follow-ups should a cold outreach sequence include?
-
-Send 3-5 follow-ups spaced 3-5 business days apart. Most replies come after the second or third touch, so stopping after one email leaves significant value on the table. Each follow-up should add new value — a case study, a relevant insight, or a different angle — rather than just asking "did you see my last email?" The final message should explicitly offer an opt-out, which paradoxically increases engagement.

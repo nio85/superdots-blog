@@ -155,24 +155,3 @@ Sales is still a human skill. The relationship, the read of the room, the judgme
 
 Less guesswork means more wins. That's the whole point.
 
-## FAQ
-
-### What is AI guided selling and how does it work?
-
-AI guided selling is a technology layer that sits on top of your CRM and sales data to give reps real-time recommendations — what to pitch, what to say, how to price, and when to follow up. It works by analyzing historical deal data, buyer behavior, product fit signals, and rep activity patterns, then surfacing the next best action for each specific opportunity. Instead of relying on instinct or tribal knowledge, reps get concrete prompts: "this prospect is a strong fit for Plan B based on their company size and usage patterns" or "deals like this usually stall at legal — send the compliance doc now."
-
-### What are the best AI guided selling tools for small sales teams?
-
-For small teams, the best options are tools that integrate quickly without a six-month implementation project. Zoho Zia is the most accessible entry point if you're already in the Zoho ecosystem — it adds AI recommendations without extra cost on higher tiers. Gong works well for teams of 5+ reps and pays off fast if you're running discovery calls at scale. Highspot is worth considering if your challenge is helping reps find and use the right content during deals. Avoid enterprise-only platforms like PROS or Salesforce Einstein unless you have a dedicated RevOps person to configure and maintain them.
-
-### How is AI guided selling different from a CRM?
-
-A CRM stores and organizes your deal data — contacts, pipeline stages, activity logs. AI guided selling acts on that data. Your CRM tells you that a deal is in the "proposal" stage. An AI guided selling tool tells you that deals at this stage with this buyer profile typically close when you share a case study from their industry within 48 hours. One is a record system, the other is a decision system. Most AI guided selling tools are built as layers on top of existing CRMs rather than replacements for them — they need the CRM data to generate useful recommendations.
-
-### Can AI guided selling work with my existing sales stack?
-
-Most AI guided selling tools are built to integrate with the major CRMs — Salesforce, HubSpot, and Pipedrive cover 80% of teams. The deeper question is data quality: AI recommendations are only as good as your historical deal data. If your CRM is full of incomplete records, stale contacts, and manually entered notes, the AI will struggle to find meaningful patterns. Before rolling out any guided selling tool, spend a few weeks cleaning your pipeline data and making sure reps are logging activity consistently. That groundwork matters more than which tool you pick.
-
-### What ROI can you expect from AI guided selling?
-
-Numbers vary widely by team size, deal complexity, and how deeply the tool is adopted. That said, published benchmarks are consistent in a few areas: win rates typically improve 10–20%, average deal size increases because the AI spots upsell and cross-sell opportunities reps miss, and ramp time for new hires drops by 30–40% when they have AI prompts guiding their actions. The fastest ROI comes from two specific use cases: reducing no-decisions (deals that just go cold) and tightening follow-up timing. Both are measurable within the first quarter of deployment.

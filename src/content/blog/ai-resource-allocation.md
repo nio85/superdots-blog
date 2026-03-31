@@ -157,24 +157,3 @@ By this point, resource planning has shifted from a manual, gut-feel process to 
 
 ---
 
-## FAQ
-
-**What is AI resource allocation in project management?**
-
-AI resource allocation is the use of machine learning and predictive analytics to match people, budget, and equipment to projects based on availability, skills, and workload. Unlike a spreadsheet or manual tracking, an AI system continuously monitors capacity across your team, flags conflicts before they become problems, and suggests reallocation when priorities shift. It works by ingesting data from your project management, HR, and scheduling systems, then modeling likely outcomes — for example, warning you that a developer is already at 110% capacity before you assign them to a new sprint.
-
-**How does AI predict project resource needs?**
-
-AI tools predict resource needs by analyzing historical project data — how long similar tasks actually took, which roles were involved, and where delays happened. Over time the model learns your team's real velocity, not the optimistic estimates in your project plan. Some tools also factor in external variables like holidays, team tenure, and skill gaps. When you kick off a new project, the AI compares it against past projects of a similar type and generates a resource forecast: how many hours per role, over what timeline, and where the likely pinch points are.
-
-**What are the best AI tools for resource management?**
-
-The strongest options right now are Float (visual capacity planning with AI forecasting), Resource Guru (clash detection and availability tracking), Forecast.app (AI-driven project estimates tied to financial data), Runn (real-time utilization with scenario planning), and Productive (agency-focused with built-in profitability tracking). Monday.com and Smartsheet have resource management modules that are useful if you're already on those platforms, though their AI features are less mature than the dedicated tools. The right choice depends on your team size, whether you need financial integration, and how much you want the AI to automate versus surface data for human decisions.
-
-**Can AI resource allocation work for small teams?**
-
-Yes — small teams often see the fastest ROI because every person's capacity matters more when you have fewer people. A team of 10 can't afford to have two people overloaded while others are underutilized, and AI tools surface that imbalance immediately. Float and Runn both have pricing tiers suitable for small teams (under $10/person/month), and setup is lightweight enough that you don't need a dedicated ops person to manage it. The main requirement is that you have some form of project tracking in place — even a basic one — so the AI has data to work with.
-
-**How does AI resource allocation prevent employee burnout?**
-
-Burnout usually starts with invisible overallocation — someone is technically assigned to three projects, each of which assumes they're available full time. Managers don't always see the full picture, and the person affected often doesn't speak up until they're already exhausted. AI resource tools make overallocation visible before it becomes a crisis. They track utilization rates across all active projects, flag anyone consistently running above 80–90% capacity, and can suggest rebalancing options. Some tools send weekly utilization reports to managers, making it a standard ops metric rather than something you only notice when someone burns out or leaves.

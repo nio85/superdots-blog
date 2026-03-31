@@ -163,24 +163,3 @@ Do not wait for the perfect system. A chatbot that handles five things well and 
 
 The goal is not to eliminate your support team. It is to give them a different job — one where they handle the work that genuinely needs a human, and a system handles everything else. That is when support stops being a cost problem and starts being a product differentiator.
 
-## FAQ
-
-### How much can AI self-service reduce support ticket volume?
-
-A well-built AI self-service system typically reduces support tickets by 40-60%. Simple, high-volume requests like password resets, order status checks, and billing questions can reach 80-90% automation rates. The remainder tends to be complex or emotionally charged issues that genuinely need a human. Results depend on your ticket mix and the quality of your knowledge base content.
-
-### What is the difference between an AI self-service portal and a chatbot?
-
-A chatbot is one component of a self-service portal. A full AI self-service system includes smart knowledge base search, conversational AI (the chatbot), automated account actions connected to your backend systems, proactive help suggestions, and clean escalation paths to human agents. The chatbot handles guided resolution; the portal is the entire ecosystem that lets customers solve problems independently.
-
-### Do customers actually prefer self-service over talking to a human?
-
-Research consistently shows that around 67% of customers prefer self-service over speaking to a support representative — but only when self-service actually works. Customers abandon portals that give irrelevant results, trap them in chatbot loops, or make it hard to reach a human when needed. When self-service resolves issues quickly, satisfaction scores match or exceed agent-handled interactions.
-
-### What content do I need to launch an AI self-service portal?
-
-Start with clear, structured articles for your top 50 most-asked questions. Each article should lead with the answer in the first sentence, use the language customers actually use (not internal terminology), and cover one topic per article. Beyond help articles, build troubleshooting decision trees for common technical issues and connect backend integrations so the system can take actions, not just provide information.
-
-### How do I measure whether my AI self-service is working?
-
-Track self-service resolution rate (issues resolved without human contact), ticket deflection rate, time to resolution for self-service interactions (should be seconds to minutes), CSAT for self-service interactions (should be within 10-15 points of agent-handled tickets), and escalation rate by topic. The escalation data is especially valuable — every topic the AI fails on is a gap in your content or a process that needs automation.
