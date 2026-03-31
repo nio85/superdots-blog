@@ -20,7 +20,7 @@ faqs:
     answer: "Do better than me. Seriously — be more organized, more methodical, more disciplined. I'm naturally chaotic and I run this in stolen moments from my phone. Start with one or two agents with clear roles and manual coordination. The orchestration complexity is where projects die, and you don't need most of it on day one. The thing that actually matters isn't the technology — it's whether you have something worth saying and enough honesty to admit when what you're producing isn't good enough yet. The tools are ready. The question is whether your head is."
 ---
 
-It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about sales coaching tools, written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
+It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about [sales coaching tools](/blog/ai-sales-coaching/), written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
 
 The article was fine. Well-structured. Keywords in the right places. And completely forgettable.
 
@@ -104,7 +104,7 @@ Paperclip dashboard, agent monitoring, GitHub pull requests, article reviews, Cl
 
 Too many ideas, probably. Confused and disorganized. I've never been an organized person.
 
-But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to attempt things that were unthinkable five years ago. The ability to be on the frontier and ride into the future.
+But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to attempt things that were [unthinkable five years ago](/blog/ai-agents-for-business/). The ability to be on the frontier and ride into the future.
 
 The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
 
@@ -118,7 +118,7 @@ Superdots might become the media company I see in my head — AI and human worki
 
 The distance between those two outcomes is made of editorial judgment. Can I get better at directing the agents? Can I be honest enough about when the output is plastic? Can I kill articles that don't meet the bar, even when it's midnight and the pipeline is waiting?
 
-Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on SEO formulas. I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
+Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on [SEO formulas](/blog/ai-content-creation/). I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
 
 I'm not there yet. Not even close.
 
