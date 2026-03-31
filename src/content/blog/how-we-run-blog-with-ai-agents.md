@@ -1,6 +1,6 @@
 ---
 title: "I Run a Blog with 9 AI Agents. Here's What Actually Happens."
-description: "Behind the scenes of Superdots: how 9 AI agents produce, edit, optimize, and publish a daily blog — and everything that goes wrong along the way."
+description: "Behind the scenes of Superdots: how 9 AI agents and one human produce a daily blog — the pipeline, the failures, and why human review makes it work."
 pubDate: "2026-03-31"
 author: "Luca Bartoccini"
 department: "operations"
@@ -10,13 +10,13 @@ heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 imageHint: "messy whiteboard with agent workflow diagrams and sticky notes in a home office"
 faqs:
   - question: "Can AI agents really run a blog without human oversight?"
-    answer: "No — and that's one of the main lessons. Our agents handle research, drafting, SEO optimization, image generation, and compliance checks autonomously. But every article goes through a human review before publication. The agents are reliable at executing structured tasks, not at editorial judgment. Removing the human from the loop would mean publishing content that's technically correct but editorially flat."
+    answer: "No — and that's one of the main lessons. Our agents handle research, drafting, SEO optimization, image generation, and compliance checks. But every single article goes through human review before publication, and the human makes the final call on what ships. The agents are reliable at executing structured tasks, not at editorial judgment. Removing the human from the loop would mean publishing content that's technically correct but editorially flat. Human guidance also drives all the improvements — adjusting agent instructions, spotting quality patterns, killing topics that don't serve readers."
   - question: "How much does it cost to run 9 AI agents for content production?"
     answer: "Each agent runs on Claude via heartbeats — short execution windows triggered every 30-60 minutes. The total API cost varies depending on article complexity and how many revision cycles a piece needs. Honestly, we're still figuring out the true unit economics — some weeks are cheap, others spike when agents get stuck in loops. The real cost isn't the API though — it's the engineering time to build and maintain the orchestration layer."
   - question: "What AI tools do you use to coordinate the agents?"
-    answer: "We built Paperclip, a custom orchestration platform that manages task assignment, agent communication, and workflow state. Each agent runs Claude Code with specialized instructions. The blog itself is Astro on Cloudflare Pages. Supporting tools include SearXNG for research, SerpBear for rank tracking, and SEOnaut for technical audits."
+    answer: "We built Paperclip, a custom orchestration platform that manages task assignment, agent communication, and workflow state. Each agent runs Claude Code with specialized instructions. The blog itself is Astro on Cloudflare Pages. Supporting tools include SearXNG for research, SerpBear for rank tracking, and SEOnaut for technical audits. The infrastructure requirements are minimal — the hard part is the orchestration logic and the human editorial layer on top."
   - question: "How do you maintain content quality with AI-generated articles?"
-    answer: "Three layers: the Copywriter agent follows strict style guidelines and banned-pattern lists. The Content Manager agent reviews every draft against editorial standards. And a human (me) spot-checks articles and reviews anything flagged. We also run automated linters that catch duplicate FAQ sections, missing frontmatter fields, and SEO issues before merge."
+    answer: "Three layers: the Copywriter agent follows strict style guidelines and banned-pattern lists. The Content Manager agent reviews every draft against editorial standards. And a human (me) reviews every article before publication — not just spot-checks, but a genuine editorial read to decide whether the piece is worth publishing. We also run automated linters that catch duplicate FAQ sections, missing frontmatter fields, and SEO issues before merge."
   - question: "Is this approach replicable for other blogs or companies?"
     answer: "Parts of it, yes. The daily pipeline pattern — brief → draft → image → compliance → review → publish — works for any content operation. But the orchestration layer took months to build and still breaks regularly. If you're starting out, a simpler setup with one or two agents and manual coordination will get you 80% of the value at 20% of the complexity."
 ---
@@ -29,9 +29,9 @@ That's the version that sounds impressive. Here's what actually happened the sam
 
 ## The Setup Nobody Warns You About
 
-I run [Superdots](https://superdots.sh) from a single Ubuntu VM on a Proxmox homelab in my apartment. Eight gigabytes of RAM. Four CPU cores. Nine [AI agents](/blog/ai-agents-for-business/) that wake up on heartbeats — timed execution windows every 30 to 60 minutes — to check their assignments and do work.
+I run [Superdots](https://superdots.sh) with nine [AI agents](/blog/ai-agents-for-business/) that wake up on heartbeats — timed execution windows every 30 to 60 minutes — to check their assignments and do work. The infrastructure is deliberately simple: a single server, nothing fancy.
 
-The agents aren't a novelty. They're the entire operation.
+But the agents aren't the whole story. I'm in the loop every day — reviewing articles, adjusting strategy, rewriting briefs that miss the mark, and making the editorial calls that determine what we actually publish. The agents handle execution. The editorial judgment is mine.
 
 | Agent | What it does |
 |---|---|
@@ -51,7 +51,7 @@ We've published over 160 articles across nine departments in about four months �
 
 ## The Pipeline: How a Single Article Gets Made
 
-The daily content pipeline has six steps. I'll walk through what each one actually involves, because the gap between "six clean steps" and reality is where the interesting stuff lives.
+The daily content pipeline has seven steps. I'll walk through what each one actually involves, because the gap between "seven clean steps" and reality is where the interesting stuff lives.
 
 **Step 1: The SEO Expert writes a brief.** It pulls data from SerpBear (rank tracking), runs searches through SearXNG (a self-hosted search engine — yes, I run my own), and analyzes what's ranking for the target keyword. The brief includes: target keyword, search intent, competitor gaps, suggested headings, and internal links to existing articles.
 
@@ -65,11 +65,13 @@ The style guide exists because without it, every [content creation](/blog/ai-con
 
 **Step 4: The Legal Expert checks compliance.** GDPR language, cookie references, any claims that might need sourcing. For most articles this is a rubber stamp. For anything touching data privacy or European regulations, it's genuinely useful.
 
-**Step 5: The Content Manager reviews and merges.** This is the quality gate. The Content Manager checks the article against editorial standards, verifies SEO elements are in place, and merges the pull request if everything passes.
+**Step 5: The Content Manager reviews and merges.** This is the first quality gate. The Content Manager checks the article against editorial standards, verifies SEO elements are in place, and flags anything that needs attention.
 
-**Step 6: Post-publish coordination.** The Content Manager triggers IndexNow for search engine crawling, and coordinates any social distribution.
+**Step 6: Human review.** This is the real quality gate — and the step that makes the difference. I read the article, check that the advice is genuinely useful, and make the call on whether it's worth publishing. Sometimes I approve it as-is. Sometimes I send it back with notes. Sometimes I kill it entirely because the topic doesn't serve our readers. The agents can tell me if a piece is structurally sound; they can't tell me if it's worth someone's time.
 
-Six steps. Four to five agents involved per article. All happening on a single VM in my apartment while I'm sleeping or doing other work.
+**Step 7: Post-publish coordination.** After I merge, the Content Manager triggers IndexNow for search engine crawling, and coordinates any social distribution.
+
+Seven steps. Four to five agents involved per article, plus a human who makes the final call.
 
 ## What Goes Wrong (Regularly)
 
@@ -89,7 +91,7 @@ One Tuesday, the database connection dropped during a Paperclip heartbeat. The a
 
 By the time I woke up, there were 14 tasks in various states of confusion. The fix took 20 minutes — clear the stale lock, cancel the duplicate escalations, restart the pipeline. But it taught me to build a watchdog script that runs every 15 minutes and cleans up stale locks automatically.
 
-Infrastructure is the tax you pay for automation. Nobody talks about this part.
+This is a good example of why the human-in-the-loop isn't optional. The agents couldn't diagnose this — they just saw "blocked" and escalated. I had to look at the whole picture, understand the root cause, and fix the system itself. That kind of judgment call happens weekly.
 
 ### Quality plateau
 
@@ -104,6 +106,8 @@ The fix was counterintuitive. I made the style guide stricter and more specific.
 More constraints, paradoxically, produced more variety. The agents couldn't fall back on the default template anymore and had to find different approaches for each piece.
 
 Has it solved the quality problem? Not entirely. We're still iterating. Some articles are genuinely good; others are workmanlike at best. The approach is test and learn — try something, measure whether it moves the needle, adjust, repeat. I don't think there's a final state where the system "works." There's just the current version, which is better than last month's version, and worse than next month's will be.
+
+The point is: these improvements don't come from the agents. They come from me reading the output, noticing the pattern, and changing the instructions. The agents execute. The human steers.
 
 ### The @mention bug that silenced 7 agents
 
@@ -123,7 +127,7 @@ Four months and over 160 articles in, here's where I've landed.
 
 **Orchestration is harder than generation.** Getting an AI to write a decent article is easy. Getting nine AIs to coordinate on producing, reviewing, optimizing, illustrating, and publishing that article without stepping on each other — that's the actual [workflow automation](/blog/ai-workflow-automation/) problem. Most of our bugs are coordination bugs, not generation bugs.
 
-**Humans are still the bottleneck, and that's fine.** I review every article before it goes live. That review step is the slowest part of the pipeline by far — the agents can produce a complete article in under two hours, and it might sit in my review queue for a day. I've thought about removing myself from the loop, and I've decided against it. Not because the quality isn't good enough, but because the editorial judgment about *what's worth publishing* is exactly the part that shouldn't be automated.
+**Human review isn't the bottleneck — it's the product.** I review every article before it goes live. That review step is the slowest part of the pipeline by far — the agents can produce a complete article in under two hours, and it might sit in my review queue for a day. I've thought about removing myself from the loop, and I've decided against it. Not because the quality isn't good enough (though that's true too), but because the editorial judgment about *what's worth publishing* is exactly the part that shouldn't be automated. The agents don't know what our readers need to hear this week, what angle is getting stale, or when a technically correct article is substantively useless. That's my job, and it's the most important job in the pipeline.
 
 **You will build more monitoring tools than you expected.** I have a watchdog for stale task locks, a linter for article frontmatter, duplicate detection for FAQ sections, and a dashboard for agent heartbeat health. None of these were in the original plan. All of them exist because something broke at 3 AM and I got tired of fixing it manually.
 
@@ -132,14 +136,14 @@ Four months and over 160 articles in, here's where I've landed.
 Here's what the operation looks like in practice:
 
 - **over 160 articles** published across 9 departments
-- **9 agents** running on a single 8GB VM
-- **1 human** (me) doing strategy and final review
+- **9 agents** handling execution — research, drafting, SEO, design, compliance
+- **1 human** (me) doing strategy, editorial review, and every final publish decision
 - **~1 article per day** current production rate
-- **6-step pipeline** per article, 4-5 agents involved
+- **7-step pipeline** per article, 4-5 agents involved, human review on every piece
 - **Heartbeat frequency**: every 30-60 minutes depending on the agent
 - **Things that broke this month**: stale checkout locks (fixed with watchdog), duplicate FAQ sections across 32 articles (fixed with linter), agent mention matching (fixed with regex patch), author avatar rendering (CSS fix)
 
-I'm not going to pretend the content is as good as what a skilled human writer would produce with eight hours per article. It's not — and some of it is honestly not great. We're a 90% AI, 10% human operation, and that ratio shows. What the system produces is: consistent, structured, often useful, and published daily — which is something I could never sustain alone. The quality bar keeps moving up, but we're climbing, not there yet.
+I'm not going to pretend the content is as good as what a skilled human writer would produce with eight hours per article. It's not — and some of it is honestly not great. The agents handle the heavy lifting of research, drafting, and optimization; I handle the editorial decisions that shape what actually gets published. What the system produces is: consistent, structured, often useful, and published daily — which is something I could never sustain alone. The quality bar keeps moving up as I learn what instructions work and which don't, but we're climbing, not there yet.
 
 ## Why I'm Writing This
 
