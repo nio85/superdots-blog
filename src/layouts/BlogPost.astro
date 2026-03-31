@@ -176,7 +176,7 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 				)}
 			</article>
 			<aside class="author-box">
-				<img src={authorData.avatar} alt={authorData.name} class="author-box-avatar" width="64" height="64" loading="lazy" />
+				<img src={authorData.avatar} alt={authorData.name} class:list={["author-box-avatar", { "author-box-avatar--icon": !isPersonalAuthor }]} width="40" height="40" loading="lazy" />
 				<div class="author-box-info">
 					<a href={authorData.url} class="author-box-name">{authorData.name}</a>
 					<span class="author-box-role">{authorData.role}</span>
@@ -843,8 +843,8 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 	/* Author box */
 	.author-box {
 		display: flex;
-		gap: var(--space-4);
-		align-items: flex-start;
+		gap: var(--space-3);
+		align-items: center;
 		padding: var(--space-6);
 		margin: var(--space-8) auto;
 		max-width: var(--max-width-prose);
@@ -856,6 +856,10 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 		border-radius: 50%;
 		object-fit: cover;
 		flex-shrink: 0;
+	}
+	.author-box-avatar--icon {
+		border-radius: 0;
+		padding: var(--space-1);
 	}
 	.author-box-name {
 		font-family: var(--font-display);
