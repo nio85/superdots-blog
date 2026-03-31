@@ -1,7 +1,7 @@
 ---
 title: "I Run a Blog with 9 AI Agents. Here's What Actually Happens."
 description: "Behind the scenes of Superdots: how 9 AI agents produce, edit, optimize, and publish a daily blog — and everything that goes wrong along the way."
-pubDate: "2026-04-07"
+pubDate: "2026-03-31"
 author: "Luca Bartoccini"
 department: "operations"
 useCase: "automation"
