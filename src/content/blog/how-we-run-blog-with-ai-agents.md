@@ -12,7 +12,7 @@ faqs:
   - question: "Can AI agents really run a blog without human oversight?"
     answer: "No — and that's one of the main lessons. Our agents handle research, drafting, SEO optimization, image generation, and compliance checks autonomously. But every article goes through a human review before publication. The agents are reliable at executing structured tasks, not at editorial judgment. Removing the human from the loop would mean publishing content that's technically correct but editorially flat."
   - question: "How much does it cost to run 9 AI agents for content production?"
-    answer: "Each agent runs on Claude via heartbeats — short execution windows triggered every 30-60 minutes. The total API cost varies based on article complexity, but it's roughly comparable to a single junior freelancer's monthly rate for significantly higher output. The real cost isn't the API — it's the engineering time to build and maintain the orchestration layer."
+    answer: "Each agent runs on Claude via heartbeats — short execution windows triggered every 30-60 minutes. The total API cost varies depending on article complexity and how many revision cycles a piece needs. Honestly, we're still figuring out the true unit economics — some weeks are cheap, others spike when agents get stuck in loops. The real cost isn't the API though — it's the engineering time to build and maintain the orchestration layer."
   - question: "What AI tools do you use to coordinate the agents?"
     answer: "We built Paperclip, a custom orchestration platform that manages task assignment, agent communication, and workflow state. Each agent runs Claude Code with specialized instructions. The blog itself is Astro on Cloudflare Pages. Supporting tools include SearXNG for research, SerpBear for rank tracking, and SEOnaut for technical audits."
   - question: "How do you maintain content quality with AI-generated articles?"
@@ -47,7 +47,7 @@ The agents aren't a novelty. They're the entire operation.
 
 They coordinate through [Paperclip](https://paperclip.ing), an orchestration platform I built for this. Each agent gets tasks, checks them out (literally — there's a locking mechanism so two agents don't work on the same thing), does the work, posts a comment, and moves on. It's like a very small, very weird company where nobody sleeps and everyone communicates through ticket comments.
 
-We've published 165 articles across nine departments in about four months — everything from [operations tooling guides](/blog/best-ai-tools-for-operations/) to sales playbooks to marketing automation walkthroughs. One article per day is the current target. Some days it works beautifully. Some days everything breaks at once.
+We've published over 160 articles across nine departments in about four months — everything from [operations tooling guides](/blog/best-ai-tools-for-operations/) to sales playbooks to marketing automation walkthroughs. One article per day is the current target. Some days it works beautifully. Some days everything breaks at once.
 
 ## The Pipeline: How a Single Article Gets Made
 
@@ -95,13 +95,15 @@ Infrastructure is the tax you pay for automation. Nobody talks about this part.
 
 Around article 80, I noticed something. The articles were fine. They hit SEO targets, included the right sections, had proper structure. But reading five in a row felt like reading the same article five times with different keywords swapped in.
 
-The agents had optimized for the measurable criteria — keyword density, heading structure, FAQ sections, internal links — and converged on a template that satisfied all of them. They'd found a local maximum that was technically correct and editorially dead.
+Let me be blunt: at that point, the blog was barely more than a content farm with decent formatting. The agents had optimized for the measurable criteria — keyword density, heading structure, FAQ sections, internal links — and converged on a template that satisfied all of them. They'd found a local maximum that was technically correct and editorially dead.
 
 This is, I think, the most important thing I've learned: **AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
 
 The fix was counterintuitive. I made the style guide stricter and more specific. I added banned patterns — not just banned openings, but banned article structures. I added a requirement that every article must include at least one thing the reader wouldn't find on page one of Google. I added a "gold standard" writing model with specific examples of what good looks like.
 
 More constraints, paradoxically, produced more variety. The agents couldn't fall back on the default template anymore and had to find different approaches for each piece.
+
+Has it solved the quality problem? Not entirely. We're still iterating. Some articles are genuinely good; others are workmanlike at best. The approach is test and learn — try something, measure whether it moves the needle, adjust, repeat. I don't think there's a final state where the system "works." There's just the current version, which is better than last month's version, and worse than next month's will be.
 
 ### The @mention bug that silenced 7 agents
 
@@ -113,7 +115,7 @@ We noticed because tasks kept going stale. The Content Manager would request rev
 
 ## What I've Actually Learned
 
-Four months and 165 articles in, here's where I've landed.
+Four months and over 160 articles in, here's where I've landed.
 
 **The pipeline is the product, not the articles.** Any individual article matters less than the system that produces it. Getting the pipeline right — the handoffs, the quality gates, the failure recovery — is what makes daily publishing sustainable. An article can be rewritten. A broken pipeline stops everything.
 
@@ -129,7 +131,7 @@ Four months and 165 articles in, here's where I've landed.
 
 Here's what the operation looks like in practice:
 
-- **165 articles** published across 9 departments
+- **over 160 articles** published across 9 departments
 - **9 agents** running on a single 8GB VM
 - **1 human** (me) doing strategy and final review
 - **~1 article per day** current production rate
@@ -137,7 +139,7 @@ Here's what the operation looks like in practice:
 - **Heartbeat frequency**: every 30-60 minutes depending on the agent
 - **Things that broke this month**: stale checkout locks (fixed with watchdog), duplicate FAQ sections across 32 articles (fixed with linter), agent mention matching (fixed with regex patch), author avatar rendering (CSS fix)
 
-I'm not going to pretend the content is as good as what a skilled human writer would produce with eight hours per article. It's not. What it is: consistent, structured, genuinely useful, and published daily — which is something I could never sustain alone.
+I'm not going to pretend the content is as good as what a skilled human writer would produce with eight hours per article. It's not — and some of it is honestly not great. We're a 90% AI, 10% human operation, and that ratio shows. What the system produces is: consistent, structured, often useful, and published daily — which is something I could never sustain alone. The quality bar keeps moving up, but we're climbing, not there yet.
 
 ## Why I'm Writing This
 
@@ -145,6 +147,6 @@ There's a version of this story where I present the agent pipeline as a polished
 
 I'm more interested in the useful responses. If you're running something similar — or thinking about it — I want to know what you've figured out that I haven't. The coordination problem is largely unsolved. The quality-at-scale problem is partially solved but fragile. The monitoring-and-recovery problem is an endless treadmill.
 
-The pitch for Superdots is that AI can make every department more effective. Running the blog this way is how we test that thesis on ourselves. Some days it validates the pitch beautifully. Some days it generates 14 confused escalation tasks at 3 AM.
+The pitch for Superdots is that AI can make every department more effective. Running the blog this way is how we test that thesis on ourselves — not as a showcase, but as a genuine experiment where we don't know how it ends. Some days it validates the pitch beautifully. Some days it generates 14 confused escalation tasks at 3 AM. Some days I look at what we published and think, "We can do so much better than this."
 
-Both of those are the real story. If you want to follow the experiment as it unfolds, we publish what we learn weekly.
+That restlessness is the point. This is a test-and-learn operation. Every week we find something that's broken or mediocre, and we try to fix it. The system gets a little better each month. Whether it ever gets *good enough* — I genuinely don't know yet. But the experiment is worth running, and we'll keep sharing what we find.
