@@ -101,6 +101,12 @@ If your marketing includes a [social media content calendar](/blog/ai-social-med
 
 This is the lowest-ROI step for most teams. Unless your audience specifically engages with audio content, the time is better spent on Steps 1-4. We include it because some B2B marketing teams (especially in consulting and professional services) see strong engagement with audiograms on LinkedIn.
 
+---
+
+**If workflows like this are useful to you**, we send one practical AI marketing walkthrough per week — no vendor pitches, no hype, just the steps that actually work. [Subscribe to the Superdots newsletter](/#newsletter).
+
+---
+
 ## Best AI Content Repurposing Tools Compared
 
 Here's every tool mentioned above, plus a few we tested and have opinions about. Pricing is based on published rates as of March 2026; check vendor sites for current pricing as plans change frequently.
