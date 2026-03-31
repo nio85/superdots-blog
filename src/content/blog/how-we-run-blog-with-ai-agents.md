@@ -1,5 +1,5 @@
 ---
-title: "I Run a Media Company with 9 AI Agents and a Smartphone"
+title: "I Dream of Running a Media Company with 9 AI Agents and a Smartphone"
 description: "One person, nine AI agents, 160+ articles. The honest story of building Superdots — the chaos, the plastic jewelry, and why AI needs a human head."
 pubDate: "2026-03-31"
 author: "Luca Bartoccini"
@@ -8,20 +8,9 @@ useCase: "automation"
 tags: ["ai agents", "content operations", "behind the scenes", "paperclip", "ai workflow"]
 heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
-faqs:
-  - question: "Can one person actually run a media company with AI agents?"
-    answer: "Yes, but don't confuse 'can' with 'easy.' I manage Superdots entirely from my smartphone in five-minute gaps — between family time, my day job in marketing, and sleep. Nine AI agents handle drafting, SEO, design, legal checks, and coordination through Paperclip, an open-source orchestration platform. But every article still needs my editorial judgment. I'm working far more than the 10% I originally planned. The agents give you arms you never had. They don't give you more hours in the day."
-  - question: "How does a 9-agent AI content pipeline actually work?"
-    answer: "Each agent has a specialized role: SEO research, editorial management, copywriting, frontend design, legal compliance, analytics, engineering, and strategy. They run on Paperclip, waking every 30-60 minutes to check assignments. A typical article flows from SEO brief to copywriter draft to hero image to legal review to editorial sign-off. Four to five agents touch each piece, communicating through task comments like a small company where nobody sleeps. When it works, an article goes from keyword to published in under 24 hours. When it doesn't, I spend my morning untangling confused task states."
-  - question: "Is AI-generated content always low quality?"
-    answer: "The philosopher Luciano Floridi frames this well: AI didn't create artificial intelligence — it decoupled understanding from the capacity to act. Machines can now write, analyze, and create without understanding what they're doing the way humans do. So the quality question isn't about AI. It's about who provides the direction. Most AI content is mediocre because nobody is providing honest editorial judgment. When someone with a clear perspective and genuine expertise guides the process — reviewing, rewriting, rejecting what doesn't meet the bar — AI-assisted content can be genuinely useful. The tool doesn't determine the quality. The person behind it does."
-  - question: "What is Paperclip and why did you choose it for agent orchestration?"
-    answer: "Paperclip is an open-source AI agent orchestration platform. I did not build it — credit goes entirely to its developer. I discovered it through OpenClaw while searching for a way to coordinate multiple AI agents without building everything from scratch. It handles task assignment, agent communication, workflow state, and checkout locking so two agents don't work on the same file. Think of it as project management software where the employees are Claude-powered AI agents with specialized instructions. I chose it because it was the first tool I found that sat at the boundary between simple agents and a full agent operating system."
-  - question: "What advice would you give someone starting a similar AI-powered project?"
-    answer: "Do better than me. Seriously — be more organized, more methodical, more disciplined. I'm naturally chaotic and I run this in stolen moments from my phone. Start with one or two agents with clear roles and manual coordination. The orchestration complexity is where projects die, and you don't need most of it on day one. The thing that actually matters isn't the technology — it's whether you have something worth saying and enough honesty to admit when what you're producing isn't good enough yet. The tools are ready. The question is whether your head is."
 ---
 
-It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about [sales coaching tools](/blog/ai-sales-coaching/), written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
+It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about sales coaching tools, written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
 
 The article was fine. Well-structured. Keywords in the right places. And completely forgettable.
 
@@ -43,9 +32,9 @@ Then agents happened. And the landscape changed so fast I could barely keep up.
 
 ## Finding the Tool, Not Building It
 
-I want to be clear about something: I discovered [Paperclip](https://paperclip.ing). I did not build it. The developer deserves that credit, not me.
+I want to be clear about something: I discovered Paperclip. I did not build it. The developer deserves that credit, not me.
 
-Paperclip is an open-source platform for orchestrating AI agents — assigning tasks, managing handoffs, keeping track of who's working on what. I found it through [OpenClaw](https://openclaw.com), and it sat right at the boundary between simple chatbots and something closer to an agent operating system. Exactly what I needed.
+Paperclip is an open-source platform for orchestrating AI agents — assigning tasks, managing handoffs, keeping track of who's working on what. I found it through OpenClaw, and it sat right at the boundary between simple chatbots and something closer to an agent operating system. Exactly what I needed.
 
 Nine agents now run on it. Each wakes up every 30 to 60 minutes, checks its assignments, does work, posts updates. There's a CEO agent handling strategy, a Content Manager running editorial flow, an SEO Expert writing briefs, a Copywriter drafting articles, a Frontend Designer making hero images, a Legal Expert checking compliance, a Founding Engineer keeping the site running, a Social Media Manager handling distribution, and a Growth Analyst tracking what's working.
 
@@ -87,15 +76,15 @@ I have great chaos inside, and I try to generate dancing stars.
 
 That's Nietzsche, loosely. It's also the most accurate description of how I work. My project management style is: have a thousand ideas, fire them off in five-minute bursts between putting the kids to bed and checking tomorrow's calendar, and hope the agents can make sense of the chaos. They sometimes can. They often can't.
 
-But here's what fascinates me about this moment. The philosopher Luciano Floridi — whom I've recently started reading and genuinely admire — makes a distinction I think about constantly. "Artificial intelligence" is a marketing term, he argues. What we've actually achieved is not the creation of intelligence. We've decoupled intelligence — the capacity to understand, from the Latin *intelligere* — from agency, the capacity to act in the world.
+But here's what fascinates me about this moment. The philosopher Luciano Floridi — whom I've recently started reading and genuinely admire — makes a distinction I think about constantly. "Artificial intelligence" is a marketing term, he argues. What we've actually achieved is not the creation of intelligence. We've decoupled agency — the capacity to act in the world — from intelligence, the capacity to understand (from the Latin *intelligere*). Floridi calls it *agere sine intelligere*: acting without understanding.
 
 Machines can now act. They can write articles, generate images, check legal compliance, manage task queues. They just can't understand what they're doing in the way that a person understands.
 
-So when people tell me AI content is always garbage, I push back. AI is a tool. A magnificent, technological prosthesis — [Merleau-Ponty](https://en.wikipedia.org/wiki/Maurice_Merleau-Ponty) would have loved this — that extends human capability the way a telescope extends sight. You can do magnificent things with it. You can also produce colossal garbage. Usually both in the same week.
+So when people tell me AI content is always garbage, I push back. AI is a tool. A magnificent technological extension of human capability — the way Merleau-Ponty described a blind man's cane becoming part of his perception, AI becomes part of how we think and create. You can do magnificent things with it. You can also produce colossal garbage. Usually both in the same week.
 
 The intelligence has to come from the person holding the prosthesis. Knowing the tool honestly. Seeing its strengths and limits clearly. Day after day, because everything here changes constantly.
 
-[Umberto Eco](https://en.wikipedia.org/wiki/Apocalittici_e_integrati) would say: don't be an "apocalyptic" or an "enthusiast." Be lucid. Be **aware**.
+Umberto Eco wrote about the "apocalittici" and the "integrati" — intellectuals who either reject new media in horror or embrace it uncritically. I don't want to be either. I want to engage with this technology honestly, understand what it does well, and work to improve what it doesn't.
 
 ## The Smartphone and the Frontier
 
@@ -105,7 +94,7 @@ Paperclip dashboard, agent monitoring, GitHub pull requests, article reviews, Cl
 
 Too many ideas, probably. Confused and disorganized. I've never been an organized person.
 
-But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to attempt things that were [unthinkable five years ago](/blog/ai-agents-for-business/). The ability to be on the frontier and ride into the future.
+But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to attempt things that were unthinkable five years ago. The ability to be on the frontier and ride into the future.
 
 The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
 
@@ -119,7 +108,7 @@ Superdots might become the media company I see in my head — AI and human worki
 
 The distance between those two outcomes is made of editorial judgment. Can I get better at directing the agents? Can I be honest enough about when the output is plastic? Can I kill articles that don't meet the bar, even when it's midnight and the pipeline is waiting?
 
-Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on [SEO formulas](/blog/ai-content-creation/). I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
+Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on SEO formulas. I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
 
 I'm not there yet. Not even close.
 
