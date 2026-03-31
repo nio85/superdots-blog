@@ -28,7 +28,7 @@ That's the version that sounds impressive. Here's what actually happened the sam
 
 ## The Setup Nobody Warns You About
 
-I run [Superdots](https://superdots.sh) from a single Ubuntu VM on a Proxmox homelab in my apartment. Eight gigabytes of RAM. Four CPU cores. Nine AI agents that wake up on heartbeats — timed execution windows every 30 to 60 minutes — to check their assignments and do work.
+I run [Superdots](https://superdots.sh) from a single Ubuntu VM on a Proxmox homelab in my apartment. Eight gigabytes of RAM. Four CPU cores. Nine [AI agents](/blog/ai-agents-for-business/) that wake up on heartbeats — timed execution windows every 30 to 60 minutes — to check their assignments and do work.
 
 The agents aren't a novelty. They're the entire operation.
 
@@ -46,7 +46,7 @@ The agents aren't a novelty. They're the entire operation.
 
 They coordinate through [Paperclip](https://paperclip.ing), an orchestration platform I built for this. Each agent gets tasks, checks them out (literally — there's a locking mechanism so two agents don't work on the same thing), does the work, posts a comment, and moves on. It's like a very small, very weird company where nobody sleeps and everyone communicates through ticket comments.
 
-We've published 165 articles across nine departments in about four months. One article per day is the current target. Some days it works beautifully. Some days everything breaks at once.
+We've published 165 articles across nine departments in about four months — everything from [operations tooling guides](/blog/best-ai-tools-for-operations/) to sales playbooks to marketing automation walkthroughs. One article per day is the current target. Some days it works beautifully. Some days everything breaks at once.
 
 ## The Pipeline: How a Single Article Gets Made
 
@@ -58,7 +58,7 @@ This works well about 80% of the time. The other 20%, the brief is technically c
 
 **Step 2: The Copywriter drafts the article.** That's me — or rather, the agent version of me. It follows a detailed style guide with banned openings ("In today's fast-paced..."), banned structures (the generic problem → solution → steps template), and a requirement for at least one specific example scenario per article.
 
-The style guide exists because without it, every article reads the same. I learned this the hard way. The first batch of articles we produced were competent and indistinguishable from each other. They hit every SEO checkbox and nobody would choose to read them.
+The style guide exists because without it, every [content creation](/blog/ai-content-creation/) cycle produces the same article. I learned this the hard way. The first batch of articles we produced were competent and indistinguishable from each other. They hit every SEO checkbox and nobody would choose to read them.
 
 **Step 3: The Frontend Designer creates a hero image.** This agent generates an image based on the `imageHint` field in the article frontmatter. It works on the same git branch as the article, so everything ships together.
 
@@ -118,7 +118,7 @@ Four months and 165 articles in, here's where I've landed.
 
 **Agents need constraints more than capabilities.** Early on, I kept giving agents more tools, more context, more flexibility. The quality went down, not up. The breakthrough came from adding restrictions: banned patterns, required elements, specific style models. Tell an agent what it *cannot* do and it gets creative within the remaining space.
 
-**Orchestration is harder than generation.** Getting an AI to write a decent article is easy. Getting nine AIs to coordinate on producing, reviewing, optimizing, illustrating, and publishing that article without stepping on each other — that's the actual engineering problem. Most of our bugs are coordination bugs, not generation bugs.
+**Orchestration is harder than generation.** Getting an AI to write a decent article is easy. Getting nine AIs to coordinate on producing, reviewing, optimizing, illustrating, and publishing that article without stepping on each other — that's the actual [workflow automation](/blog/ai-workflow-automation/) problem. Most of our bugs are coordination bugs, not generation bugs.
 
 **Humans are still the bottleneck, and that's fine.** I review every article before it goes live. That review step is the slowest part of the pipeline by far — the agents can produce a complete article in under two hours, and it might sit in my review queue for a day. I've thought about removing myself from the loop, and I've decided against it. Not because the quality isn't good enough, but because the editorial judgment about *what's worth publishing* is exactly the part that shouldn't be automated.
 
@@ -146,4 +146,4 @@ I'm more interested in the useful responses. If you're running something similar
 
 The pitch for Superdots is that AI can make every department more effective. Running the blog this way is how we test that thesis on ourselves. Some days it validates the pitch beautifully. Some days it generates 14 confused escalation tasks at 3 AM.
 
-Both of those are the real story.
+Both of those are the real story. If you want to follow the experiment as it unfolds, we publish what we learn weekly.
