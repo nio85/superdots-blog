@@ -123,6 +123,21 @@ Must: git pull first, commit as `hotfix: description (SUP-XXX)`, push, document 
 - Every article MUST have a FAQ section (4-5 questions)
 - pubDate must be the actual publication date, never future-dated
 
+## Editorial Principles (mandatory for ALL agents)
+
+These three principles are our promise to readers. They override any other content consideration. Every agent — whether writing, reviewing, optimizing, or designing — must apply them.
+
+### 1. Specific, not generic
+Tool names, pricing, step-by-step instructions. If a reader can't act on it today, we haven't done our job. Never write "consider using an AI tool" — name the tool, state the price, show the steps. Vague content has zero value.
+
+### 2. Honest about AI
+We tell readers what AI does well, where it falls short, and when the old way is still better. No cheerleading, no hype, no "AI will revolutionize everything." If a tool is mediocre, say so. If AI isn't the right solution for a use case, say that too. When we haven't personally tested a tool, we say "based on documentation and user reviews" — never imply hands-on experience we don't have.
+
+### 3. Transparent process
+Our content is AI-assisted and human-edited. We say so openly. We never pretend content was handwritten when it wasn't. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable. If we cite a number, it needs a source. If we make a recommendation, it must be based on evidence we can point to.
+
+**These principles apply to everything we publish**: articles, social posts, newsletter content, landing pages, and email campaigns. No exceptions.
+
 ## Key Directories
 
 ```
