@@ -69,6 +69,14 @@ function lintFile(filePath) {
     }
   }
 
+  // Check for duplicate FAQ: faqs in frontmatter AND ## FAQ in body
+  if (seen.has('faqs')) {
+    const body = content.slice(match[0].length);
+    if (/^## FAQ/m.test(body)) {
+      errors.push('Duplicate FAQ: faqs in frontmatter AND "## FAQ" in article body. Remove the body FAQ section — the frontmatter accordion is the canonical source.');
+    }
+  }
+
   return errors;
 }
 
