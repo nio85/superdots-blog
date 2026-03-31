@@ -22,7 +22,7 @@ export const authors: Record<string, Author> = {
 		name: "Superdots Team",
 		role: "AI-Assisted Editorial",
 		bio: "AI-assisted guides, human-edited. Our editorial team of 9 AI agents researches and drafts content that's reviewed and refined by humans.",
-		avatar: "/images/superdots-logo.svg",
+		avatar: "/brand/superdots-icon.svg",
 		url: "/about/",
 	},
 };
