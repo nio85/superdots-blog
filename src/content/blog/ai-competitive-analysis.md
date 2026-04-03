@@ -11,7 +11,7 @@ heroImage: "/images/blog/ai-competitive-analysis.webp"
 
 Your biggest competitor just changed their pricing. They announced it Tuesday. Your rep found out Thursday — on a call, from the prospect. That's the kind of moment that loses deals.
 
-AI competitive analysis doesn't just save time. It stops your team from getting blindsided.
+AI competitive analysis doesn't just save time. It stops your team from getting blindsided. For a deeper look at how sales teams specifically use competitive intel to close deals, see our guide on [AI competitive intelligence for sales](/blog/ai-competitive-intelligence-sales).
 
 ## Why competitor research takes so long (and why reps skip it)
 
@@ -78,7 +78,7 @@ This turns hundreds of reviews into a one-page brief. Update it monthly, and you
 
 ### AI search visibility (who's getting cited by ChatGPT/Perplexity)
 
-Here's a competitive angle most teams miss entirely: AI search visibility.
+Here's a competitive angle most teams miss entirely: AI search visibility. If you are already using [AI brand monitoring tools](/blog/ai-brand-monitoring) to track mentions and sentiment, adding AI search visibility to your workflow is a natural next step.
 
 More buyers are starting their research in ChatGPT, Perplexity, or Copilot instead of Google. If a prospect asks "what's the best [your category] tool?" and your competitor gets mentioned but you don't, that shapes the conversation before your rep even picks up the phone.
 
