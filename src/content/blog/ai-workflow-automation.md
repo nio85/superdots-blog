@@ -163,6 +163,21 @@ For more on AI-powered email routing, see [automating email triage with AI](/blo
 
 **Time saved:** 2-3 hours per new hire
 
+### Operations: event planning workflows
+
+**Trigger:** New event request submitted (offsite, conference, team gathering)
+**Steps:**
+1. AI generates task list with timeline based on event type and size
+2. Venue options sourced and ranked by requirements
+3. Vendor outreach sent with RFP details
+4. Responses compiled into comparison dashboard
+5. Budget tracker populated with estimates and actuals
+6. Attendee communication sequence triggered
+
+**Time saved:** 10-15 hours per event
+
+For dedicated [event planning workflows](/blog/ai-event-planning-tools) with AI-powered venue sourcing and attendee management, specialized platforms like Cvent and Nowadays go further than general automation tools.
+
 ## Building your first AI workflow
 
 ### Step 1: Map the current process

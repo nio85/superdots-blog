@@ -71,7 +71,7 @@ Most facilities see 10-25% energy cost reduction in the first year. For a buildi
 
 Occupancy sensors combined with AI analysis reveal how your space is actually used. Not how you designed it to be used — how people actually use it. Meeting rooms booked for eight that consistently hold three. Entire floors nearly empty on Fridays. Collaboration zones used as quiet workspace.
 
-This data drives better decisions about space allocation, desk-sharing ratios, cleaning schedules (clean busy areas more, empty areas less), and future lease negotiations.
+This data drives better decisions about space allocation, desk-sharing ratios, cleaning schedules (clean busy areas more, empty areas less), [event planning and venue management](/blog/ai-event-planning-tools), and future lease negotiations.
 
 ### Automated work order management
 
