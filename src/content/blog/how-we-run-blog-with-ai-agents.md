@@ -46,7 +46,7 @@ And the articles are just the visible part. The agents designed the website layo
 
 That phrase — "powerful and stupid" — is the most honest thing I can say about AI agents in 2026.
 
-They can do genuinely complicated things. An agent will research a topic, write 2,000 words with proper headings and internal links, generate a hero image prompt, and submit the article for legal review — all without me touching anything. They break things and fix them autonomously. They coordinate through task comments like tiny employees who never sleep.
+They can do genuinely complicated things. An agent will research a topic, write 2,000 words with proper headings and internal links, generate a hero image prompt, and submit the article for [legal review](/blog/ai-legal-document-review/) — all without me touching anything. They break things and fix them autonomously. They coordinate through task comments like tiny employees who never sleep.
 
 But they have no idea what makes a human being care about something.
 
@@ -66,7 +66,7 @@ I've read enough to form a judgment, and the judgment is this: I built a barely 
 
 There. I said it.
 
-The agents had converged on a template. SEO brief comes in, article comes out. Right keyword density. Proper H2 structure. FAQ section with five questions. Comparison table when applicable. Every article technically correct, editorially dead. They found a local maximum — a formula that satisfied every measurable criterion I'd given them — and they replicated it 160 times.
+The agents had converged on a template. SEO brief comes in, article comes out. Right keyword density. Proper H2 structure. FAQ section with five questions. Comparison table when applicable. Every article technically correct, editorially dead. (If you're curious what a typical output looks like, [our AI tools for operations guide](/blog/best-ai-tools-for-operations/) is a representative example.) They found a local maximum — a formula that satisfied every measurable criterion I'd given them — and they replicated it 160 times.
 
 Here's the lesson, and I think it's the most important thing I've learned: **AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
 
@@ -96,11 +96,11 @@ Paperclip dashboard, agent monitoring, GitHub pull requests, article reviews, Cl
 
 Too many ideas, probably. Confused and disorganized. I've never been an organized person.
 
-But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to attempt things that were unthinkable five years ago. The ability to be on the frontier and ride into the future.
+But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to [attempt things that were unthinkable](/blog/ai-automation-for-business-complete-guide/) five years ago. The ability to be on the frontier and ride into the future.
 
 The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
 
-I manage a nine-agent media operation from a five-inch screen during my evening commute. Not just the articles — the whole thing. The site, the email system, the analytics, the infrastructure. A full stack, built and maintained by agents that wake up every hour and ask what needs doing. That sentence would have been science fiction in 2021.
+I manage a nine-agent media operation from a five-inch screen during my evening commute. Not just the articles — the whole thing. The site, the email system, the [analytics](/blog/ai-business-intelligence-tools/), the infrastructure. A full stack, built and maintained by agents that wake up every hour and ask what needs doing. That sentence would have been science fiction in 2021.
 
 ## What Happens Next
 

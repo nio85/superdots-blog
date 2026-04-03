@@ -38,7 +38,7 @@ Before you invest time in this, set the right expectations.
 - Make judgment calls on refunds, exceptions, or escalated complaints
 - Work well without good source material to learn from
 
-The realistic outcome: a well-set-up chatbot deflects 40-50% of incoming tickets. Advanced implementations reach 70% or higher. Every ticket the bot resolves saves you $5-15 compared to a human interaction. That math adds up fast.
+The realistic outcome: a well-set-up chatbot deflects 40-50% of incoming tickets. Advanced implementations reach 70% or higher. Every ticket the bot resolves saves you $5-15 compared to a human interaction. That math adds up fast. (For a broader view of AI in support, see our [complete guide to AI for customer service](/blog/ai-for-customer-service-complete-guide/).)
 
 ## How to choose an AI chatbot platform
 
@@ -49,7 +49,7 @@ You do not need to evaluate 30 tools. Focus on these criteria and you will narro
 - **No-code setup.** If it requires API calls or custom code to get started, it is not built for you.
 - **Knowledge base training.** The platform should let you upload help articles, FAQs, and product docs — then use that content to answer questions automatically.
 - **Human handoff.** When the bot cannot help, it needs to transfer the conversation to a live agent smoothly, with full context intact.
-- **Integration with your support tool.** It should connect to whatever you already use — Zendesk, Intercom, Freshdesk, HubSpot, or similar.
+- **Integration with your support tool.** It should connect to whatever you already use — Zendesk, Intercom, Freshdesk, HubSpot, or similar. (See our [AI help desk software](/blog/ai-help-desk-software/) guide for platform comparisons.)
 - **Analytics dashboard.** You need to see what the bot is handling, what it is failing on, and where customers drop off.
 
 ### Nice-to-haves
@@ -99,7 +99,7 @@ Most platforms accept:
 - Spreadsheets of Q&A pairs
 - Existing chatbot conversation logs
 
-Start with your top 50 support topics. These typically cover 80% of incoming questions. You can expand later.
+Start with your top 50 support topics. These typically cover 80% of incoming questions. You can expand later. If you need to build that content from scratch, our guide on [AI knowledge base generators](/blog/ai-knowledge-base-generator/) walks through the process.
 
 ### Test before you launch
 

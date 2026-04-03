@@ -36,7 +36,7 @@ Let's set expectations up front. AI contract review is not a robot lawyer. It is
 
 - Negotiate on your behalf
 - Understand the business context behind a deal
-- Replace legal judgment on complex compliance, IP, or regulatory issues
+- Replace legal judgment on complex [compliance](/blog/ai-compliance-tools/), IP, or regulatory issues
 - Guarantee that a contract is legally sound
 
 Think of it as a first pass. AI handles the 80% that is routine so you can focus your time — and your legal team's time — on the 20% that matters.
@@ -107,7 +107,7 @@ General-purpose AI assistants like ChatGPT or Claude can review contracts when y
 Dedicated contract review platforms like Juro, ContractSafe, or Legly offer built-in AI review, clause libraries, and approval workflows. These connect to your existing tools and track contract status.
 
 **For high-volume teams (500+ contracts/year):**
-Enterprise CLM platforms like Icertis, Sirion, or Ironclad provide full contract lifecycle management with AI review as one feature. These integrate with procurement, finance, and legal systems.
+Enterprise CLM platforms like Icertis, Sirion, or Ironclad provide full [contract lifecycle management](/blog/ai-contract-management/) with AI review as one feature. These integrate with procurement, finance, and legal systems.
 
 **For quick red-flag checks:**
 Tools like goHeather and Flag Red are designed specifically for non-lawyers who need fast risk assessment without the overhead of a full CLM platform.
@@ -139,7 +139,7 @@ AI handles the routine. Lawyers handle the exceptions. Here is a clear line:
 - Extracting and comparing key terms across multiple contracts
 
 **Escalate to legal for:**
-- Contracts involving intellectual property or licensing
+- Contracts involving [intellectual property](/blog/ai-ip-management/) or licensing
 - Deals with regulatory or compliance implications (healthcare, finance, government)
 - Custom terms that deviate significantly from market standards
 - Any contract where the financial exposure exceeds your authority

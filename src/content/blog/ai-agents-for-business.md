@@ -54,7 +54,7 @@ The key differences from traditional AI tools:
 
 ### Customer support: ticket resolution
 
-AI support agents handle the entire ticket lifecycle for routine issues — reading the ticket, looking up the customer's account, checking relevant knowledge base articles, drafting a response, and resolving the ticket.
+AI support agents handle the entire [ticket lifecycle](/blog/ai-ticket-routing/) for routine issues — reading the ticket, looking up the customer's account, checking relevant knowledge base articles, drafting a response, and resolving the ticket.
 
 **What it looks like:** A customer emails about a billing discrepancy. The agent checks the customer's payment history, identifies the issue (a duplicate charge from a failed payment retry), processes the refund, sends a personalized explanation email, and closes the ticket. Total time: 90 seconds. No human involvement.
 
@@ -64,7 +64,7 @@ AI support agents handle the entire ticket lifecycle for routine issues — read
 
 ### Sales: lead research and outreach
 
-Sales agents research prospects, enrich CRM data, and draft personalized outreach — the high-volume work that eats up a rep's first two hours every morning.
+Sales agents research prospects, enrich [CRM data](/blog/ai-crm-tools/), and draft personalized outreach — the high-volume work that eats up a rep's first two hours every morning.
 
 **What it looks like:** You add 100 new leads to your CRM. The agent researches each company (funding, recent news, tech stack, headcount), identifies decision-makers, crafts personalized first-touch emails, and queues them for your review.
 
@@ -86,7 +86,7 @@ Coding agents review pull requests, identify bugs, suggest fixes, and even imple
 
 Operations agents handle multi-step administrative workflows — invoice processing, vendor onboarding, report generation, and compliance checks.
 
-**What it looks like:** An invoice arrives by email. The agent extracts the data, matches it to a purchase order, flags discrepancies, routes for approval, and enters the data into the accounting system. If anything is off, it creates a ticket for the finance team with specific details about the issue.
+**What it looks like:** An invoice arrives by email. The agent extracts the data, matches it to a purchase order, flags discrepancies, routes for approval, and enters the data into the [accounting system](/blog/ai-accounting-software/). If anything is off, it creates a ticket for the finance team with specific details about the issue.
 
 **Where humans step in:** Approvals above threshold amounts, dispute resolution, and vendor relationship management.
 
