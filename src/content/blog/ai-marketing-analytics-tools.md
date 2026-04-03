@@ -218,5 +218,5 @@ The right way to think about AI marketing analytics: it handles the data collect
 
 - [AI for Marketing: The Complete Guide](/blog/ai-for-marketing-complete-guide) — our comprehensive guide to AI across every marketing function
 - [AI SEO Tools](/blog/ai-seo-tools) — how to use AI for search engine optimization specifically
-- [AI Email Marketing](/blog/ai-email-marketing-campaigns) — AI tools and workflows for email campaigns
+- [AI Email Marketing](/blog/ai-email-marketing) — AI tools and workflows for email campaigns
 - [AI Ad Copy Tools](/blog/ai-ad-copy-tools) — using AI for advertising copy that converts
