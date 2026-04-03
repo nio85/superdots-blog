@@ -1,6 +1,6 @@
 ---
 title: >-
-  Ai Competitive Intelligence for Sales: How to Know What Your Rivals Are Doing
+  AI Competitive Intelligence for Sales: How to Know What Your Rivals Are Doing
   Before Your Reps Walk Into the Room
 description: >-
   A practical guide to AI-powered competitive intelligence tools for sales teams
@@ -94,7 +94,7 @@ faqs:
       or shared doc often works just as well.
 ---
 
-tom runs a 12-person sales team at a mid-size cybersecurity company in Austin. Last October, he lost a $340,000 deal to a competitor he barely tracked. The prospect told him after the fact: "They dropped their price 20% two weeks before we signed. Your team never mentioned it."
+tomruns a 12-person sales team at a mid-size cybersecurity company in Austin. Last October, he lost a $340,000 deal to a competitor he barely tracked. The prospect told him after the fact: "They dropped their price 20% two weeks before we signed. Your team never mentioned it."
 
 Tom had heard about the price drop. In a LinkedIn post. Three days after the deal closed.
 
