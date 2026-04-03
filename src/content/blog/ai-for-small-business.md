@@ -140,6 +140,7 @@ At even the conservative end, that's 15 hours per week — almost two full workd
 - **SOPs:** Document your processes with AI. Describe the steps, and AI creates a formatted SOP your team can follow.
 - **Inventory:** AI tools predict demand and flag reorder points based on your sales data.
 - **Document processing:** AI reads invoices, receipts, and contracts — extracts the data you need and files it.
+- **Event planning:** [AI event planning for small teams](/blog/ai-event-planning-tools) automates venue sourcing, vendor coordination, and attendee management — even tools like Monday.com handle this on a free tier.
 
 ### Customer service
 
