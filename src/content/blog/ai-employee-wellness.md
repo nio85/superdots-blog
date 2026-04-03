@@ -57,7 +57,7 @@ The advantage: you see trends as they develop. If a team's sentiment drops after
 This is where the clinical platforms shine. When an employee engages with a wellness tool, AI evaluates their needs — through conversational intake, symptom screening, or behavioral patterns — and routes them to the right level of support:
 
 - **Self-guided content** (meditation, sleep programs, stress management exercises) for mild symptoms
-- **Coaching sessions** for work-related challenges like time management or career transitions
+- **Coaching sessions** for work-related challenges like [time management](/blog/ai-time-management-tools) or career transitions
 - **Therapy with a licensed clinician** for clinical symptoms
 - **Crisis intervention** for urgent situations
 
@@ -133,7 +133,7 @@ The financial case for AI-powered employee wellness is well-documented:
 - [28% reduction in sick days](https://www.wellsteps.com/blog/2025/11/05/employee-wellness-trends-2026-for-employers/) for companies with robust programs
 
 **Better retention:**
-- 25% decrease in turnover compared to companies without wellness programs
+- 25% decrease in turnover compared to companies without wellness programs — improving retention starts with [better onboarding](/blog/ai-employee-onboarding) and continues with ongoing wellness support
 - High-performing programs: 9% voluntary turnover versus 15% for low-performing programs
 
 **Overall ROI:**
@@ -187,6 +187,6 @@ Tell your team exactly what the tool does, what data it collects, who can see wh
 
 ### Week 4: Check in and iterate
 
-Look at adoption rates. If fewer than 30% of employees have tried the tool, the problem is not the tool — it is awareness, trust, or relevance. Talk to the people who did not sign up. Their feedback is more valuable than your analytics dashboard.
+Look at adoption rates. If fewer than 30% of employees have tried the tool, the problem is not the tool — it is awareness, trust, or relevance. Talk to the people who did not sign up. Their feedback is more valuable than your analytics dashboard. Consider using [AI performance review tools](/blog/ai-performance-reviews) to build wellness check-ins into your regular feedback cycles.
 
 For more on building AI into your HR operations, see our complete [AI for HR guide](/blog/ai-for-hr). If burnout on your team is connected to engagement issues, our guide to [AI employee engagement tools](/blog/ai-employee-engagement) covers continuous measurement and early warning systems.

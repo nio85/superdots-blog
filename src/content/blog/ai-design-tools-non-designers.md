@@ -28,7 +28,7 @@ A brand kit solves this. It takes 20 minutes to set up and saves you hours of in
 You do not need a 40-page brand guidelines document. You need four things:
 
 1. **Your logo** in PNG format with a transparent background. If you only have a JPEG on a white background, use the background remover in Canva or Microsoft Designer to fix it.
-2. **Two to three brand colors.** Open your website, right-click any branded element, inspect it, and copy the hex codes. That is your palette.
+2. **Two to three brand colors.** Open your website, right-click any branded element, inspect it, and copy the hex codes. That is your palette. If you need help picking complementary colors, an [AI color palette generator](/blog/ai-color-palette-generator) can suggest combinations that work with your existing brand.
 3. **One or two fonts.** Pick the font from your website or marketing materials. If you cannot figure out what it is, use a tool like WhatFont to identify it. Most AI design tools have close equivalents to popular fonts.
 4. **A few example images** that match your visual style. Are you clean and minimal? Bold and colorful? Dark and sophisticated? Save 5-10 examples of visuals you like.
 
@@ -153,14 +153,14 @@ AI design tools are not going to replace professional designers. But they will �
 
 ### Keep using AI for:
 
-- **Routine social media posts.** The weekly LinkedIn update, the Instagram quote card, the Twitter/X announcement graphic. These are high-volume, low-stakes visuals that follow a repeatable template.
+- **Routine social media posts.** The weekly LinkedIn update, the Instagram quote card, the Twitter/X announcement graphic. These are high-volume, low-stakes visuals that follow a repeatable template. Pair them with an [AI social media content calendar](/blog/ai-social-media-content-calendar) to plan and schedule your posts alongside the graphics.
 - **Internal presentations.** Team meetings, project updates, all-hands decks. Your colleagues care about the content, not the kerning.
 - **Blog and email headers.** Consistent, on-brand, and nobody lingers on them. Perfect for templated AI workflows.
 - **Quick mockups and drafts.** Need to show a stakeholder what you are thinking? A rough AI-generated visual communicates the idea without a design brief.
 
 ### Hire a designer for:
 
-- **Brand identity.** Your logo, visual system, and brand guidelines should be designed by a human who understands your market positioning. This is a one-time investment that makes all your AI-generated content better.
+- **Brand identity.** Your logo, visual system, and brand guidelines should be designed by a human who understands your market positioning — though [AI logo design tools](/blog/ai-logo-design) can give you solid starting concepts to refine. This is a one-time investment that makes all your AI-generated content better.
 - **High-stakes external materials.** Investor decks, product launch pages, trade show booths, annual reports. These represent your company to people who are making decisions about you.
 - **Complex infographics and data visualization.** AI can generate simple charts, but turning complex data into a clear visual story requires design thinking that tools do not have yet.
 - **Anything that requires originality.** If you need a visual concept that has never been done before, you need a human creative. AI remixes existing patterns — it does not invent new ones.

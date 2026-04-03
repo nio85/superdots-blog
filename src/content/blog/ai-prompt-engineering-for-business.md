@@ -138,6 +138,8 @@ Constraints:
 Format: Numbered list with brief explanations
 ```
 
+For more templates specifically designed to turn raw data into polished documents, see our guide on [AI report writing](/blog/ai-report-writing).
+
 ### Operations: meeting summaries
 
 ```
@@ -151,6 +153,8 @@ Format:
 - Open questions for follow-up
 Constraint: Total summary under 300 words
 ```
+
+If you use AI meeting tools that generate transcripts automatically, pair them with these prompts for better summaries — see our guide to [AI meeting notes and action items](/blog/ai-meeting-notes-summaries-action-items).
 
 ## Five techniques that immediately improve results
 
