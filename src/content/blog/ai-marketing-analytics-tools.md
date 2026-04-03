@@ -23,7 +23,7 @@ faqs:
 heroImage: "/images/blog/ai-marketing-analytics-tools.webp"
 ---
 
-Jen runs marketing for a 30-person B2B software company in Austin. Her team is three people. They manage Google Ads, LinkedIn campaigns, a monthly newsletter, SEO content, and the company blog. Every Monday morning, her CEO asks the same question: "What's working?"
+Jen runs marketing for a 30-person B2B software company in Austin. Her team is three people. They manage Google Ads, LinkedIn campaigns, a monthly newsletter, [SEO content](/blog/ai-seo-tools), and the company blog. Every Monday morning, her CEO asks the same question: "What's working?"
 
 Jen's answer usually takes four hours to assemble. She exports data from Google Analytics. Pulls numbers from LinkedIn Campaign Manager. Checks Mailchimp open rates. Copies everything into a Google Sheet. Makes some charts. Writes a summary.
 
@@ -37,7 +37,7 @@ AI changes this equation — not with some futuristic dashboard that reads your 
 
 Most small marketing teams don't lack data. They drown in it.
 
-Google Analytics 4 alone tracks hundreds of dimensions and metrics. Add LinkedIn, Meta Ads, Mailchimp, Google Ads, and your CRM, and you're looking at thousands of data points across half a dozen platforms that don't talk to each other.
+Google Analytics 4 alone tracks hundreds of dimensions and metrics. Add LinkedIn, Meta Ads, Mailchimp, Google Ads, and your [CRM](/blog/ai-crm-tools), and you're looking at thousands of data points across half a dozen platforms that don't talk to each other.
 
 The traditional solution — manual spreadsheet aggregation — works, but it's slow. A 2024 Gartner survey found that marketing analysts spend [roughly 44% of their time collecting and organizing data](https://www.gartner.com/en/marketing/research/marketing-data-analytics-survey) rather than analyzing it. For teams without a dedicated analyst, that number is probably higher, because the person pulling data is also the person writing campaigns.
 
@@ -165,7 +165,7 @@ Forget vanity metrics. Here are the numbers that matter — and why AI is better
 
 **3. Return on ad spend (ROAS) — real, not platform-reported.** Meta will tell you your ROAS is 5:1. Google will tell you the same dollar of revenue is also their 5:1 ROAS. The truth requires deduplication across platforms. AI tools like Triple Whale are built for exactly this problem.
 
-**4. Email revenue per send.** Not open rates. Not click rates. Revenue per email sent, by segment. This is the metric that tells you whether your email program is actually making money or just generating activity.
+**4. Email revenue per send.** Not open rates. Not click rates. Revenue per [email sent](/blog/ai-email-marketing), by segment. This is the metric that tells you whether your email program is actually making money or just generating activity.
 
 **5. Content-to-conversion path.** Which blog posts, landing pages, or resources appear in the journey of customers who actually buy? AI can trace these multi-touch paths across sessions in ways that basic analytics misses.
 
