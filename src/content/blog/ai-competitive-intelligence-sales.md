@@ -94,7 +94,7 @@ faqs:
       or shared doc often works just as well.
 ---
 
-tomruns a 12-person sales team at a mid-size cybersecurity company in Austin. Last October, he lost a $340,000 deal to a competitor he barely tracked. The prospect told him after the fact: "They dropped their price 20% two weeks before we signed. Your team never mentioned it."
+Tom runs a 12-person sales team at a mid-size cybersecurity company in Austin. Last October, he lost a $340,000 deal to a competitor he barely tracked. The prospect told him after the fact: "They dropped their price 20% two weeks before we signed. Your team never mentioned it."
 
 Tom had heard about the price drop. In a LinkedIn post. Three days after the deal closed.
 
