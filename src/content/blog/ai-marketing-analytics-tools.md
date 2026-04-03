@@ -20,6 +20,7 @@ faqs:
     answer: "Traditional dashboards show you what happened — charts, graphs, numbers. You still have to figure out why it happened and what to do about it. AI analytics adds a layer of interpretation: anomaly detection ('your email open rates dropped 15% this week — here is what changed'), pattern recognition ('customers who engage with 3+ blog posts convert at 4x the rate'), and natural language querying ('which ad creative performed best among 25-34 year olds in Q1?'). The dashboard shows data. AI helps you understand it."
   - question: "How do I connect Google Analytics to an AI analytics tool?"
     answer: "Most AI analytics tools offer native Google Analytics 4 integrations — you authorize with your Google account and select the properties to sync. For tools without native integration, Supermetrics ($39/month) acts as a bridge, pulling GA4 data into Google Sheets, Looker Studio, or data warehouses where AI tools can access it. Setup typically takes 10-15 minutes. The free route: export GA4 reports as CSV and upload them to ChatGPT or Claude for ad hoc analysis."
+heroImage: "/images/blog/ai-marketing-analytics-tools.webp"
 ---
 
 Jen runs marketing for a 30-person B2B software company in Austin. Her team is three people. They manage Google Ads, LinkedIn campaigns, a monthly newsletter, SEO content, and the company blog. Every Monday morning, her CEO asks the same question: "What's working?"
