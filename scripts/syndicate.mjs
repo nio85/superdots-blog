@@ -26,7 +26,10 @@
 
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve, basename } from 'node:path';
+import { createRequire } from 'node:module';
 import { SITE_URL, BLOG_ROOT, DEVTO_ORG_ID } from './config.mjs';
+const require = createRequire(import.meta.url);
+const yaml = require('js-yaml');
 
 const BLOG_DIR = resolve(BLOG_ROOT, 'src', 'content', 'blog');
 const TRACKER_PATH = resolve(BLOG_ROOT, 'syndication-tracker.json');
@@ -50,21 +53,7 @@ const PLATFORM_TARGETING = {
 function parseFrontmatter(content) {
 	const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
 	if (!match) throw new Error('No frontmatter found');
-	const fm = {};
-	for (const line of match[1].split('\n')) {
-		const kv = line.match(/^(\w+):\s*['"]?(.*?)['"]?\s*$/);
-		if (kv) fm[kv[1]] = kv[2];
-		// Handle array fields (tags)
-		const arrMatch = line.match(/^(\w+):\s*\[(.*)\]\s*$/);
-		if (arrMatch) {
-			fm[arrMatch[1]] = arrMatch[2]
-				.split(',')
-				.map(t => t.trim().replace(/^['"]|['"]$/g, ''));
-		}
-	}
-	// Parse FAQs block separately (multiline)
-	const faqMatch = match[1].match(/faqs:\s*\n((?:\s+-[\s\S]*?)*)$/m);
-	if (faqMatch) fm._hasFaqs = true;
+	const fm = yaml.load(match[1]) || {};
 	return { frontmatter: fm, body: match[2] };
 }
 
@@ -151,7 +140,7 @@ function convertForDevto(article) {
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
 	const tags = (fm.tags || [])
 		.slice(0, 4) // Dev.to max 4 tags
-		.map(t => t.replace(/^ai-/, '').replace(/-/g, ''));
+		.map(t => t.toLowerCase().replace(/\s+/g, '').replace(/^ai-?/, '').replace(/-/g, ''));
 
 	const cleaned = cleanBodyForSyndication(body, 'devto', slug);
 
@@ -174,7 +163,7 @@ function convertForHashnode(article) {
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
 	const tags = (fm.tags || [])
 		.slice(0, 5)
-		.map(t => ({ name: t.replace(/^ai-/, ''), slug: t }));
+		.map(t => ({ name: t.replace(/^ai-?/i, '').replace(/-/g, ' ').trim(), slug: t.toLowerCase().replace(/\s+/g, '-') }));
 
 	const cleaned = cleanBodyForSyndication(body, 'hashnode', slug);
 
@@ -206,7 +195,7 @@ async function publishToDevto(article) {
 
 	const { frontmatter: fm, body, slug } = article;
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
-	const tags = (fm.tags || []).slice(0, 4).map(t => t.replace(/^ai-/, '').replace(/-/g, ''));
+	const tags = (fm.tags || []).slice(0, 4).map(t => t.toLowerCase().replace(/\s+/g, '').replace(/^ai-?/, '').replace(/-/g, ''));
 	const cleaned = cleanBodyForSyndication(body, 'devto', slug);
 
 	const res = await fetch('https://dev.to/api/articles', {
@@ -242,7 +231,7 @@ async function publishToHashnode(article) {
 
 	const { frontmatter: fm, body, slug } = article;
 	const canonicalUrl = `${SITE_URL}/blog/${slug}/`;
-	const tags = (fm.tags || []).slice(0, 5).map(t => ({ name: t.replace(/^ai-/, ''), slug: t }));
+	const tags = (fm.tags || []).slice(0, 5).map(t => ({ name: t.replace(/^ai-?/i, '').replace(/-/g, ' ').trim(), slug: t.toLowerCase().replace(/\s+/g, '-') }));
 	const cleaned = cleanBodyForSyndication(body, 'hashnode', slug);
 
 	const mutation = `
