@@ -123,11 +123,18 @@ async function checkRobotsTxt() {
     if (!text.includes('Sitemap:')) {
       findings.push({ severity: SEV.warning, check: 'robots.txt', message: 'robots.txt does not reference a sitemap' });
     }
-    if (text.includes('Disallow: /')) {
-      const lines = text.split('\n').filter(l => l.startsWith('Disallow:'));
-      const blockAll = lines.some(l => l.trim() === 'Disallow: /');
-      if (blockAll) {
-        findings.push({ severity: SEV.critical, check: 'robots.txt', message: 'robots.txt blocks all crawlers with "Disallow: /"' });
+    // Check if Disallow: / applies to the wildcard user-agent block (not bot-specific blocks)
+    {
+      let currentAgent = '';
+      for (const line of text.split('\n')) {
+        const trimmed = line.trim();
+        const uaMatch = trimmed.match(/^User-agent:\s*(.+)/i);
+        if (uaMatch) {
+          currentAgent = uaMatch[1].trim();
+        } else if (trimmed.toLowerCase() === 'disallow: /' && currentAgent === '*') {
+          findings.push({ severity: SEV.critical, check: 'robots.txt', message: 'robots.txt blocks all crawlers with "Disallow: /" under User-agent: *' });
+          break;
+        }
       }
     }
     findings.push({ severity: SEV.info, check: 'robots.txt', message: 'robots.txt is accessible and valid' });
