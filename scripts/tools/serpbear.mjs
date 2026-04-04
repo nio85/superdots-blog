@@ -10,6 +10,7 @@
  */
 
 import '../config.mjs';
+import { execSync } from 'child_process';
 
 const SERPBEAR_URL = process.env.SERPBEAR_URL || 'http://localhost:3005';
 const SERPBEAR_API_KEY = process.env.SERPBEAR_API_KEY;
@@ -28,6 +29,7 @@ Commands:
   delete-keywords <id1,id2,...>         Delete keywords by comma-separated IDs
   search-console <domain>              Search Console data for domain
   insight <domain>                     GSC insights for domain
+  health                               Healthcheck JSON (container + API + scraper queue)
 
 Options:
   --json    Output as JSON
@@ -197,6 +199,86 @@ async function main() {
       if (jsonOutput) { out(data); break; }
       log(JSON.stringify(data, null, 2));
       break;
+    }
+    case 'health': {
+      const report = {
+        status: 'ok',
+        container_running: false,
+        api_reachable: false,
+        domains_count: 0,
+        keywords_total: 0,
+        failed_queue_size: null,
+        last_scrape_age_hours: null,
+        db_last_modified: null,
+        scraper_errors_24h: null,
+        errors: [],
+      };
+
+      const safeExec = (cmd) => {
+        try { return execSync(cmd, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim(); }
+        catch (e) { return null; }
+      };
+
+      // 1. Container running
+      const running = safeExec("docker inspect serpbear --format '{{.State.Running}}'");
+      report.container_running = running === 'true';
+      if (!report.container_running) {
+        report.status = 'down';
+        report.errors.push('container not running');
+      }
+
+      // 2. API reachable + domains/keyword count
+      try {
+        const domains = await api('GET', '/api/domains');
+        report.api_reachable = true;
+        const list = Array.isArray(domains) ? domains : (domains.domains || []);
+        report.domains_count = list.length;
+        report.keywords_total = list.reduce((s, d) => s + (d.keywordCount ?? d.keyword_count ?? 0), 0);
+      } catch (e) {
+        report.api_reachable = false;
+        report.errors.push(`api: ${e.message}`);
+        if (report.status === 'ok') report.status = 'down';
+      }
+
+      // 3. failed_queue size
+      if (report.container_running) {
+        const fq = safeExec("docker exec serpbear cat /app/data/failed_queue.json");
+        if (fq !== null) {
+          try { report.failed_queue_size = JSON.parse(fq).length; }
+          catch { report.errors.push('failed_queue.json parse error'); }
+        }
+      }
+
+      // 4. last scrape age (db mtime)
+      if (report.container_running) {
+        const epoch = safeExec("docker exec serpbear stat -c %Y /app/data/database.sqlite");
+        if (epoch) {
+          const ts = parseInt(epoch, 10) * 1000;
+          report.db_last_modified = new Date(ts).toISOString();
+          report.last_scrape_age_hours = +((Date.now() - ts) / 3600000).toFixed(2);
+        }
+      }
+
+      // 5. scraper errors in last 24h
+      if (report.container_running) {
+        const errCount = safeExec("docker logs serpbear --since 24h 2>&1 | grep -c lastUpdateError");
+        if (errCount !== null) report.scraper_errors_24h = parseInt(errCount, 10) || 0;
+      }
+
+      // 6. Derive degraded status
+      if (report.status === 'ok') {
+        const degraded = [];
+        if (report.failed_queue_size !== null && report.failed_queue_size > 20) degraded.push(`failed_queue=${report.failed_queue_size}`);
+        if (report.scraper_errors_24h !== null && report.scraper_errors_24h > 50) degraded.push(`errors24h=${report.scraper_errors_24h}`);
+        if (report.last_scrape_age_hours !== null && report.last_scrape_age_hours > 30) degraded.push(`scrape_age=${report.last_scrape_age_hours}h`);
+        if (degraded.length) {
+          report.status = 'degraded';
+          report.errors.push(...degraded);
+        }
+      }
+
+      out(report);
+      process.exit(report.status === 'down' ? 2 : report.status === 'degraded' ? 1 : 0);
     }
     case 'search-console': {
       const domain = positional[1];
