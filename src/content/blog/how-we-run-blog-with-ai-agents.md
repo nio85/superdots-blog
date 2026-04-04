@@ -62,7 +62,7 @@ Here's Tuesday's article, traced from idea to deployment.
 
 **11:32** — The Content Manager reviews the brief. Checks that the target keyword makes sense, that the department is in our current focus (Operations, Sales, or Marketing only — a strategic constraint we set two weeks ago). If approved, it unblocks the Copywriter's task.
 
-**12:15** — The Copywriter picks up the task. Reads the brief. Writes a full article: 1,500-2,500 words, YAML frontmatter with all required fields, FAQ section with 5 questions, internal links to existing articles. Creates a git branch, commits, pushes, opens a pull request. Posts the PR URL back to the task.
+**12:15** — The Copywriter picks up the task. Reads the brief. Writes a full article: 1,500-2,500 words, YAML frontmatter with all required fields, FAQ section with 5 questions, internal links to existing articles. (Tuesday's article was about [AI workflow automation](/blog/ai-workflow-automation/) — a topic where our competitor analysis found real gaps.) Creates a git branch, commits, pushes, opens a pull request. Posts the PR URL back to the task.
 
 **13:00** — The Frontend Designer finds the PR, reads the article's `imageHint` field, generates a hero image via Replicate's API, commits it to the same branch.
 
@@ -106,7 +106,7 @@ I could pretend this runs like clockwork. It doesn't. Here's a non-exhaustive li
 
 ## Where AI Falls Short
 
-I wrote [a more personal version of this story](/blog/how-we-run-blog-with-ai-agents/) a few days ago, and one line from it keeps bouncing around in my head: the agents produce beautiful plastic jewelry. Intricate. Detailed. Not the real thing.
+One line keeps bouncing around in my head: the agents produce beautiful plastic jewelry. Intricate. Detailed. Not the real thing.
 
 Here's where that shows up operationally:
 
@@ -114,7 +114,7 @@ Here's where that shows up operationally:
 
 **They can't tell when instructions are wrong.** I once gave the Copywriter a brief with a contradictory requirement — the SEO brief said to write about "AI for sales forecasting" but the department field said "operations." The agent wrote the article anyway, mashing both framings together into something incoherent. A human writer would have asked for clarification. The agent just executed.
 
-**Creative risk is nonexistent.** No agent has ever written an article that surprised me with an unexpected angle. They follow instructions with remarkable precision and zero initiative. The best articles on the site — the ones I'm actually proud of — are the ones where I wrote detailed, opinionated instructions that basically pre-decided the creative direction. The agent was a fast typist, not a thinker.
+**Creative risk is nonexistent.** No agent has ever written an article that surprised me with an unexpected angle. They follow instructions with remarkable precision and zero initiative. The best articles on the site — the ones I'm actually proud of — are the ones where I wrote detailed, opinionated instructions that basically pre-decided the creative direction. The agent was a fast typist, not a thinker. (Our piece on [AI agents for business](/blog/ai-agents-for-business/) is a good example — technically solid, but it reads like every other "AI agents" article on the internet.)
 
 **Cost doesn't scale linearly with quality.** Spending more API tokens (longer prompts, more revisions, chain-of-thought reasoning) improves output reliability but doesn't improve output *quality* past a certain point. The ceiling isn't compute — it's the quality of the instructions. And writing good instructions is harder than writing the article yourself.
 
@@ -164,7 +164,7 @@ The technology works. The pipeline is real. The costs are low. But "working" and
 
 An interesting signal appeared this week in the analytics: ChatGPT has become a top referrer, tied with Google. People aren't just searching for our content — AI assistants are citing it. I don't know what that means yet, but it feels like it matters.
 
-If you're thinking about trying something like this — one person, a handful of agents, an actual publication — my honest advice is: start with what you want to say, not with the pipeline to say it. I built the factory before I figured out what the factory should produce. The machinery is impressive. The output is still catching up.
+If you're thinking about trying something like this — one person, a handful of agents, an actual publication — my honest advice is: start with what you want to say, not with the pipeline to say it. We wrote a practical guide on [how to implement AI in your business](/blog/how-to-implement-ai-in-your-business/) that covers the general approach — but the meta-lesson from running this blog is that the hardest part isn't the technology. I built the factory before I figured out what the factory should produce. The machinery is impressive. The output is still catching up.
 
 And if you're reading this on Hacker News or Reddit and thinking "this is just a content farm with extra steps" — you're not entirely wrong. The difference I'm betting on is that the steps get better. The agents improve. The instructions sharpen. The human gets faster at spotting plastic jewelry and demanding the real thing.
 
