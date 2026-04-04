@@ -10,6 +10,7 @@
  */
 
 import { writeFileSync } from 'fs';
+import { execSync } from 'child_process';
 import * as tls from 'tls';
 import * as dns from 'dns/promises';
 import nodemailer from 'nodemailer';
@@ -208,6 +209,30 @@ async function checkPerformance() {
   }
 }
 
+async function checkSerpbearHealth() {
+  try {
+    const raw = execSync('node scripts/tools/serpbear.mjs health', {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+      timeout: 30000,
+    });
+    const health = JSON.parse(raw);
+    const detail = `status=${health.status} kw=${health.keywords_total} fq=${health.failed_queue_size} err24h=${health.scraper_errors_24h} age=${health.last_scrape_age_hours}h`;
+    if (health.status === 'ok') return ok('serpbear_health', detail);
+    return fail('serpbear_health', `${detail}${health.errors?.length ? ' | ' + health.errors.join(', ') : ''}`);
+  } catch (e) {
+    // execSync throws on non-zero exit, but wrapper still prints JSON to stdout — try to parse it
+    const stdout = e.stdout?.toString() || '';
+    try {
+      const health = JSON.parse(stdout);
+      const detail = `status=${health.status} kw=${health.keywords_total} fq=${health.failed_queue_size} err24h=${health.scraper_errors_24h} age=${health.last_scrape_age_hours}h`;
+      return fail('serpbear_health', `${detail}${health.errors?.length ? ' | ' + health.errors.join(', ') : ''}`);
+    } catch {
+      return fail('serpbear_health', `wrapper error: ${e.message}`);
+    }
+  }
+}
+
 async function checkCloudflareDeploy() {
   if (!CF_TOKEN) return { name: 'cf_deploy', status: 'skip', detail: 'CLOUDFLARE_API_TOKEN not set' };
 
@@ -274,6 +299,7 @@ async function main() {
     checkBrokenLinks(),
     checkPerformance(),
     checkCloudflareDeploy(),
+    checkSerpbearHealth(),
   ]);
 
   const report = {
