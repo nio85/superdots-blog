@@ -21,4 +21,25 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const legal = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pageTitle: z.string(),
+		lastUpdated: z.string(),
+	}),
+});
+
+const pages = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pageTitle: z.string(),
+		kicker: z.string().optional(),
+		subtitle: z.string().optional(),
+	}),
+});
+
+export const collections = { blog, legal, pages };

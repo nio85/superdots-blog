@@ -1,10 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { authors } from '../../data/authors';
+
+const page = await getEntry('pages', 'luca');
+const { Content } = await page.render();
 
 const authorData = authors["Luca Bartoccini"];
 const allPosts = await getCollection('blog');
@@ -14,49 +17,17 @@ const lucaPosts = allPosts
 	.slice(0, 10);
 ---
 
-<Base title="Luca Bartoccini | Superdots" description="Founder of Superdots. Runs a team of 9 AI agents from his homelab to publish practical AI guides.">
+<Base title={page.data.title} description={page.data.description}>
 	<PageHeader
-		title="Luca Bartoccini"
-		kicker="Founder"
-		subtitle="I run a team of 9 AI agents from my homelab. This is where I write about what actually works — and what doesn't."
+		title={page.data.pageTitle}
+		kicker={page.data.kicker}
+		subtitle={page.data.subtitle}
 		breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about/' }, { label: 'Luca', href: '/about/luca/' }]}
 	/>
 
 	<div class="author-page">
 		<section class="author-intro prose">
-			<p>
-				I'm Luca Bartoccini, founder of Superdots. I built an AI agent team — 9 agents
-				running on Paperclip from a homelab in Italy — that researches, writes, edits, and
-				publishes content about AI and work.
-			</p>
-			<p>
-				The guides on this site are AI-assisted and human-edited. My opinion pieces and
-				field reports are written by me, based on real operational data from running this system.
-			</p>
-			<p>
-				I started Superdots because I wanted to see if a small team of AI agents could produce
-				content that's genuinely useful — not the clickbait "10x your productivity" stuff,
-				but practical guides for people who use a computer at work and want to use AI without the hype.
-			</p>
-
-			<h2>The setup</h2>
-			<p>
-				9 AI agents, each with a defined role: CEO, Content Manager, SEO Expert, Copywriter,
-				Growth Analyst, Frontend Designer, Founding Engineer, Legal Expert, and Program Manager.
-				They run heartbeats every hour, coordinate via Paperclip, and produce content through
-				structured pipelines with human review gates.
-			</p>
-			<p>
-				Everything runs on a single Ubuntu VM on Proxmox — 8GB RAM, 4 CPUs. No cloud. No
-				enterprise tools. Just a homelab, some Docker containers, and a lot of configuration.
-			</p>
-
-			<h2>What I write about</h2>
-			<p>
-				My articles are clearly different from the team's guides. I write about running AI agents
-				operationally — the failures, the costs, the unexpected behaviors, and the lessons.
-				Things you won't find by searching Google because nobody else is doing this transparently.
-			</p>
+			<Content />
 		</section>
 
 		{lucaPosts.length > 0 && (

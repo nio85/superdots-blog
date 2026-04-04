@@ -1,89 +1,16 @@
 ---
+import { getEntry } from 'astro:content';
 import LegalPage from '../layouts/LegalPage.astro';
+
+const entry = await getEntry('legal', 'terms');
+const { Content } = await entry.render();
 ---
 
 <LegalPage
-	title="Terms of Service | Superdots"
-	description="Terms of service for superdots.sh."
-	pageTitle="Terms of Service"
-	lastUpdated="17 March 2026"
+	title={entry.data.title}
+	description={entry.data.description}
+	pageTitle={entry.data.pageTitle}
+	lastUpdated={entry.data.lastUpdated}
 >
-
-	<h2>1. Acceptance</h2>
-	<p>
-		By accessing <a href="https://superdots.sh">superdots.sh</a> (the "Site"),
-		you agree to these Terms of Service. If you do not agree, please stop using the Site.
-	</p>
-
-	<h2>2. What the Site provides</h2>
-	<p>
-		Superdots publishes free, editorial articles about using AI tools at work.
-		The Site does not sell products, require registration, or collect payment information.
-		You may optionally subscribe to our newsletter to receive articles by email.
-	</p>
-
-	<h2>3. Content and intellectual property</h2>
-	<ul>
-		<li>All articles, text, graphics, and design on the Site are owned by Superdots or its licensors and are protected by copyright law.</li>
-		<li>You may read, share links to, and quote short excerpts of our articles for non-commercial purposes, provided you credit Superdots and link back to the original article.</li>
-		<li>You may <strong>not</strong> reproduce, republish, or redistribute full articles without written permission.</li>
-	</ul>
-
-	<h2>4. User conduct</h2>
-	<p>You agree not to:</p>
-	<ul>
-		<li>Use automated tools to scrape or bulk-download Site content</li>
-		<li>Attempt to interfere with the Site's infrastructure or security</li>
-		<li>Use the Site for any unlawful purpose</li>
-	</ul>
-
-	<h2>5. Disclaimer</h2>
-	<p>
-		Content on the Site is provided <strong>"as is"</strong> for informational purposes only.
-		We do our best to keep articles accurate and up to date, but we make no warranties
-		regarding completeness, accuracy, or fitness for a particular purpose.
-	</p>
-	<p>
-		Our articles are not professional advice. Decisions based on our content are
-		your own responsibility.
-	</p>
-
-	<h2>6. Limitation of liability</h2>
-	<p>
-		To the maximum extent permitted by applicable law, Superdots shall not be liable
-		for any indirect, incidental, or consequential damages arising from your use of the Site.
-	</p>
-
-	<h2>7. Third-party links</h2>
-	<p>
-		Articles may contain links to third-party websites. We are not responsible for their
-		content or privacy practices. Visiting those sites is at your own risk.
-	</p>
-
-	<h2>8. Newsletter</h2>
-	<p>
-		By subscribing to the Superdots newsletter, you agree to receive periodic emails
-		containing articles and updates. You may unsubscribe at any time using the link
-		in every email. See our <a href="/privacy/">Privacy Policy</a> for details on how
-		we handle your email address.
-	</p>
-
-	<h2>9. RSS feed</h2>
-	<p>
-		Our RSS feed at <code>/rss.xml</code> is provided for personal, non-commercial
-		use in feed readers. Automated republication of full feed content is not permitted.
-	</p>
-
-	<h2>10. Changes to these terms</h2>
-	<p>
-		We may update these terms at any time. Changes are effective when posted on this page.
-		Continued use of the Site after a change constitutes acceptance of the new terms.
-	</p>
-
-	<h2>11. Governing law</h2>
-	<p>
-		These terms are governed by Italian law. Any disputes shall be subject to the
-		exclusive jurisdiction of the courts of Italy.
-	</p>
-
+	<Content />
 </LegalPage>
