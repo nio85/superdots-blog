@@ -34,6 +34,18 @@ const { title, description, pageTitle, lastUpdated } = Astro.props;
 	</article>
 </Base>
 
+<script>
+	// Wrap raw HTML tables in .table-scroll for horizontal scrolling.
+	// Legal markdown uses raw <table> tags which bypass the rehype plugin.
+	document.querySelectorAll('.legal-body table').forEach((table) => {
+		if (table.parentElement?.classList.contains('table-scroll')) return;
+		const wrapper = document.createElement('div');
+		wrapper.className = 'table-scroll';
+		table.parentNode!.insertBefore(wrapper, table);
+		wrapper.appendChild(table);
+	});
+</script>
+
 <style>
 	.legal-page {
 		max-width: var(--max-width-prose);
