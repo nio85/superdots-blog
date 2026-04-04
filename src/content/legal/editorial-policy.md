@@ -5,104 +5,76 @@ pageTitle: "Editorial Policy"
 lastUpdated: "31 March 2026"
 ---
 
-<h2>1. Our mission</h2>
-<p>
-	Superdots helps non-technical professionals use AI effectively at work. Every article we
-	publish aims to be practical, honest, and immediately useful. If a piece does not help
-	you do something better today, we have not done our job.
-</p>
+## 1. Our mission
 
-<h2>2. How we create content</h2>
-<p>
-	Superdots is run by <a href="/about/luca/">Luca Bartoccini</a> and a
-	<a href="/about/">team of nine AI agents</a>, each with a specific editorial role.
-	AI agents research topics, draft articles, optimize for search, generate images,
-	and check for legal compliance. Humans — Luca and the Content Manager agent under
-	his oversight — review, edit, and approve every piece before it goes live.
-</p>
-<p>
-	Nothing is published without human sign-off. For a detailed look at the workflow,
-	see <a href="/how-we-work/">how we work</a>.
-</p>
+Superdots helps non-technical professionals use AI effectively at work. Every article we publish aims to be practical, honest, and immediately useful. If a piece does not help you do something better today, we have not done our job.
 
-<h3>Two authorship tiers</h3>
-<p>
-	We use two bylines to make our process transparent:
-</p>
-<ul>
-	<li><strong>"Superdots Team"</strong> — AI-assisted, human-edited guides. AI agents research and draft the article. A human reviews every word, edits for accuracy and clarity, and approves publication.</li>
-	<li><strong>"Luca Bartoccini"</strong> — personally written opinion pieces, field notes, and editorial content. These are written by Luca directly, though AI tools may assist with research or editing.</li>
-</ul>
+## 2. How we create content
 
-<h3>Our content principles</h3>
-<ul>
-	<li><strong>Practical first.</strong> We lead with actions, not theory. Every article should leave you with something you can try right away.</li>
-	<li><strong>Plain language.</strong> We avoid jargon, buzzwords, and unnecessary complexity. If a concept needs explaining, we explain it simply.</li>
-	<li><strong>Evidence-based.</strong> Claims require sources. When we cite a statistic, we link to where it comes from. When we make a recommendation, we explain what it is based on.</li>
-	<li><strong>Up to date.</strong> AI moves fast. We review and update articles regularly to keep them accurate.</li>
-</ul>
+Superdots is run by [Luca Bartoccini](/about/luca/) and a [team of nine AI agents](/about/), each with a specific editorial role. AI agents research topics, draft articles, optimize for search, generate images, and check for legal compliance. Humans — Luca and the Content Manager agent under his oversight — review, edit, and approve every piece before it goes live.
 
-<h2>3. How we evaluate tools</h2>
-<p>
-	When we review or compare AI tools, we are transparent about what we know and how we know it:
-</p>
-<ul>
-	<li><strong>Research-based.</strong> We evaluate tools using publicly available information: official documentation, pricing pages, user reviews, and independent benchmarks. When we have tested a tool hands-on, we say so explicitly. When our evaluation is based on public data and user reports, we say that too.</li>
-	<li><strong>Clear criteria.</strong> We evaluate tools on ease of use, features, pricing, and suitability for the target audience — not on which tool pays us more.</li>
-	<li><strong>Honest assessments.</strong> We include both strengths and weaknesses. If a tool is not a good fit for certain use cases, we say so. If a tool is mediocre, we say that too.</li>
-	<li><strong>Regular updates.</strong> Tools change frequently. We revisit reviews when products receive significant updates.</li>
-</ul>
+Nothing is published without human sign-off. For a detailed look at the workflow, see [how we work](/how-we-work/).
 
-<h2>4. Quality standards</h2>
-<p>
-	Every article passes through multiple review stages before publication:
-</p>
-<ul>
-	<li><strong>SEO review.</strong> The SEO Expert verifies that the article serves real search intent and follows our content brief — keyword targets, structure, and internal linking.</li>
-	<li><strong>Content Manager gate.</strong> The Content Manager reviews every draft for accuracy, tone, structure, and consistency with our editorial standards. Drafts that do not meet the bar are sent back for revision.</li>
-	<li><strong>Legal review.</strong> The Legal Expert checks content for compliance issues — proper disclosures, accurate claims, and appropriate disclaimers.</li>
-	<li><strong>Human final approval.</strong> Luca reviews and approves publication. This is the last check before anything goes live.</li>
-</ul>
+### Two authorship tiers
 
-<h2>5. Affiliate relationships</h2>
-<p>
-	Some articles contain affiliate links. When you click one and make a purchase, we may earn
-	a small commission at no extra cost to you. This is one of the ways we fund our work.
-</p>
-<p>Here is what that means in practice:</p>
-<ul>
-	<li><strong>No pay-for-placement.</strong> Affiliate relationships never determine which tools we recommend, how we rank them, or what we write about them.</li>
-	<li><strong>Disclosure upfront.</strong> Pages with affiliate links include a clear disclosure at the top so you always know when affiliate links are present.</li>
-	<li><strong>Same standards.</strong> Affiliate and non-affiliate tools are evaluated using the same criteria. A tool we earn from gets the same scrutiny as one we do not.</li>
-</ul>
+We use two bylines to make our process transparent:
 
-<h2>6. Editorial independence</h2>
-<p>
-	Our editorial decisions — what to cover, what to recommend, and what to criticise — are made
-	independently of any commercial relationship. Specifically:
-</p>
-<ul>
-	<li>Advertisers and affiliate partners have no input into our editorial content.</li>
-	<li>Our writers and editors are never compensated based on affiliate revenue.</li>
-	<li>We will recommend free alternatives over paid tools when they genuinely serve the reader better.</li>
-	<li>If a commercial relationship could create a perceived conflict, we disclose it.</li>
-</ul>
+- **"Superdots Team"** — AI-assisted, human-edited guides. AI agents research and draft the article. A human reviews every word, edits for accuracy and clarity, and approves publication.
+- **"Luca Bartoccini"** — personally written opinion pieces, field notes, and editorial content. These are written by Luca directly, though AI tools may assist with research or editing.
 
-<h2>7. Corrections and updates</h2>
-<p>
-	We take accuracy seriously. If we get something wrong, we fix it promptly and transparently:
-</p>
-<ul>
-	<li><strong>Minor corrections</strong> (typos, outdated links) are fixed directly.</li>
-	<li><strong>Significant corrections</strong> (factual errors, changed recommendations) are noted with an update notice at the top of the article.</li>
-</ul>
-<p>
-	If you spot an error or have feedback, please contact us at
-	<a href="mailto:editorial@superdots.sh">editorial@superdots.sh</a>.
-</p>
+### Our content principles
 
-<h2>8. Contact</h2>
-<p>
-	Questions about our editorial practices? Reach us at
-	<a href="mailto:editorial@superdots.sh">editorial@superdots.sh</a>.
-</p>
+- **Practical first.** We lead with actions, not theory. Every article should leave you with something you can try right away.
+- **Plain language.** We avoid jargon, buzzwords, and unnecessary complexity. If a concept needs explaining, we explain it simply.
+- **Evidence-based.** Claims require sources. When we cite a statistic, we link to where it comes from. When we make a recommendation, we explain what it is based on.
+- **Up to date.** AI moves fast. We review and update articles regularly to keep them accurate.
+
+## 3. How we evaluate tools
+
+When we review or compare AI tools, we are transparent about what we know and how we know it:
+
+- **Research-based.** We evaluate tools using publicly available information: official documentation, pricing pages, user reviews, and independent benchmarks. When we have tested a tool hands-on, we say so explicitly. When our evaluation is based on public data and user reports, we say that too.
+- **Clear criteria.** We evaluate tools on ease of use, features, pricing, and suitability for the target audience — not on which tool pays us more.
+- **Honest assessments.** We include both strengths and weaknesses. If a tool is not a good fit for certain use cases, we say so. If a tool is mediocre, we say that too.
+- **Regular updates.** Tools change frequently. We revisit reviews when products receive significant updates.
+
+## 4. Quality standards
+
+Every article passes through multiple review stages before publication:
+
+- **SEO review.** The SEO Expert verifies that the article serves real search intent and follows our content brief — keyword targets, structure, and internal linking.
+- **Content Manager gate.** The Content Manager reviews every draft for accuracy, tone, structure, and consistency with our editorial standards. Drafts that do not meet the bar are sent back for revision.
+- **Legal review.** The Legal Expert checks content for compliance issues — proper disclosures, accurate claims, and appropriate disclaimers.
+- **Human final approval.** Luca reviews and approves publication. This is the last check before anything goes live.
+
+## 5. Affiliate relationships
+
+Some articles contain affiliate links. When you click one and make a purchase, we may earn a small commission at no extra cost to you. This is one of the ways we fund our work.
+
+Here is what that means in practice:
+
+- **No pay-for-placement.** Affiliate relationships never determine which tools we recommend, how we rank them, or what we write about them.
+- **Disclosure upfront.** Pages with affiliate links include a clear disclosure at the top so you always know when affiliate links are present.
+- **Same standards.** Affiliate and non-affiliate tools are evaluated using the same criteria. A tool we earn from gets the same scrutiny as one we do not.
+
+## 6. Editorial independence
+
+Our editorial decisions — what to cover, what to recommend, and what to criticise — are made independently of any commercial relationship. Specifically:
+
+- Advertisers and affiliate partners have no input into our editorial content.
+- Our writers and editors are never compensated based on affiliate revenue.
+- We will recommend free alternatives over paid tools when they genuinely serve the reader better.
+- If a commercial relationship could create a perceived conflict, we disclose it.
+
+## 7. Corrections and updates
+
+We take accuracy seriously. If we get something wrong, we fix it promptly and transparently:
+
+- **Minor corrections** (typos, outdated links) are fixed directly.
+- **Significant corrections** (factual errors, changed recommendations) are noted with an update notice at the top of the article.
+
+If you spot an error or have feedback, please contact us at [editorial@superdots.sh](mailto:editorial@superdots.sh).
+
+## 8. Contact
+
+Questions about our editorial practices? Reach us at [editorial@superdots.sh](mailto:editorial@superdots.sh).

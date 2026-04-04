@@ -5,20 +5,16 @@ pageTitle: "Privacy Policy"
 lastUpdated: "27 March 2026"
 ---
 
-<h2>1. Who we are</h2>
-<p>
-The data controller is <strong>Superdots S.r.l.</strong>,
-	with registered office at Via Ferrini 11, Paderno Dugnano (MI), Italy
-	(P.IVA: 09171640965), operating under the brand name "Superdots" ("we", "us").
-	We operate the website <a href="https://superdots.sh">superdots.sh</a> (the "Site").
-</p>
-<p>
-	For questions about this policy or to exercise your data protection rights, contact us at
-	<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
-</p>
+## 1. Who we are
 
-<h2>2. What data we collect</h2>
-<p>We collect the minimum data needed to run this Site:</p>
+The data controller is **Superdots S.r.l.**, with registered office at Via Ferrini 11, Paderno Dugnano (MI), Italy (P.IVA: 09171640965), operating under the brand name "Superdots" ("we", "us"). We operate the website [superdots.sh](https://superdots.sh) (the "Site").
+
+For questions about this policy or to exercise your data protection rights, contact us at [privacy@superdots.sh](mailto:privacy@superdots.sh).
+
+## 2. What data we collect
+
+We collect the minimum data needed to run this Site:
+
 <table>
 	<thead>
 		<tr>
@@ -60,18 +56,15 @@ The data controller is <strong>Superdots S.r.l.</strong>,
 		</tr>
 	</tbody>
 </table>
-<p>
-	We do <strong>not</strong> collect names, payment information, or require user accounts.
-	The only personal data we ask for is your email address if you choose to subscribe to our newsletter.
-</p>
 
-<h2>3. Cookies and similar technologies</h2>
-<p>
-	See our <a href="/cookie-policy/">Cookie Policy</a> for the full list of cookies,
-	their purposes, durations, and how to manage them.
-</p>
+We do **not** collect names, payment information, or require user accounts. The only personal data we ask for is your email address if you choose to subscribe to our newsletter.
 
-<h2>4. Third-party data processors</h2>
+## 3. Cookies and similar technologies
+
+See our [Cookie Policy](/cookie-policy/) for the full list of cookies, their purposes, durations, and how to manage them.
+
+## 4. Third-party data processors
+
 <table>
 	<thead>
 		<tr>
@@ -121,86 +114,58 @@ The data controller is <strong>Superdots S.r.l.</strong>,
 	</tbody>
 </table>
 
-<h2>5. International data transfers</h2>
-<p>
-	<strong>Umami Analytics</strong> and <strong>Mautic</strong> are self-hosted on Superdots infrastructure
-	located in the European Union — no international data transfer occurs for these services.
-</p>
-<p>
-	Google, Microsoft, Cloudflare, and Resend process data in the United States. All four providers are
-	certified under the <strong>EU–US Data Privacy Framework</strong> (DPF) and incorporate
-	<strong>Standard Contractual Clauses (SCCs)</strong> in their data processing agreements
-	as additional transfer safeguards.
-</p>
-<p>
-	Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic (self-hosted
-	on servers located in the European Union) and delivered via Resend. Resend is US-based and
-	DPF-certified — see their <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a> for transfer safeguards.
-</p>
-<p>
-	You can review each provider's transfer documentation:
-	<a href="https://policies.google.com/privacy/frameworks" rel="noopener noreferrer" target="_blank">Google</a>,
-	<a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft</a>,
-	<a href="https://www.cloudflare.com/cloudflare-customer-dpa/" rel="noopener noreferrer" target="_blank">Cloudflare</a>,
-	<a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">Resend</a>.
-</p>
+## 5. International data transfers
 
-<h2>6. Data retention</h2>
-<ul>
-	<li><strong>Umami Analytics data:</strong> aggregated page-view metrics retained on our self-hosted server. No personal data or IP addresses are stored.</li>
-	<li><strong>Google Analytics data:</strong> retained for 14 months (GA4 default), then automatically deleted.</li>
-	<li><strong>localStorage (theme):</strong> persists until you clear your browser data.</li>
-	<li><strong>Microsoft Clarity data:</strong> session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.</li>
-	<li><strong>Cloudflare logs:</strong> retained per Cloudflare's standard retention (typically 72 hours for edge logs).</li>
-	<li><strong>Newsletter email addresses (confirmed):</strong> retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).</li>
-	<li><strong>Newsletter email addresses (unconfirmed):</strong> retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.</li>
-</ul>
+**Umami Analytics** and **Mautic** are self-hosted on Superdots infrastructure located in the European Union — no international data transfer occurs for these services.
 
-<h2 id="newsletter">7. Newsletter</h2>
-<p>
-	If you subscribe to our newsletter, we collect your email address solely to send you
-	articles and updates about AI at work. The legal basis is your explicit consent (Art. 6(1)(a) GDPR).
-</p>
-<ul>
-	<li><strong>Opt-in:</strong> We use a confirmed opt-in process. After entering your email, you will receive a confirmation email. Your subscription is only active once you click the confirmation link.</li>
-	<li><strong>Pre-confirmation storage:</strong> When you submit the signup form, we temporarily store your email address and related data (IP address, timestamp) to send and process the confirmation email. The legal basis for this pre-confirmation processing is Art. 6(1)(b) GDPR (necessary to perform the steps you requested before entering into an agreement). If you do not confirm within 30 days, your data is automatically deleted. Unconfirmed contacts are technically blocked from receiving any newsletter content.</li>
-	<li><strong>What we send:</strong> New articles, curated links, and practical guides about AI at work — no more than once per week. We do not send promotional or product marketing content via the newsletter.</li>
-	<li><strong>Tracking:</strong> Our marketing automation system (Mautic, self-hosted) uses a tracking pixel (a tiny invisible image) to detect email opens, and link rewriting to measure which links you click. This data is associated with your email address and used solely to improve our content. You can prevent open tracking by disabling remote image loading in your email client.</li>
-	<li><strong>Unsubscribe:</strong> Every email contains a one-click unsubscribe link. You can also email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a> to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from Mautic.</li>
-	<li><strong>Data processors:</strong> Your subscriber data (email, consent records, engagement history) is stored exclusively in Mautic, self-hosted by Superdots on EU servers. All emails (confirmation and campaign) are delivered via <a href="https://resend.com" rel="noopener noreferrer" target="_blank">Resend</a> (US-based, DPF-certified; <a href="https://resend.com/legal/dpa" rel="noopener noreferrer" target="_blank">DPA</a>), which acts as an SMTP relay only and does not retain subscriber contact data.</li>
-</ul>
+Google, Microsoft, Cloudflare, and Resend process data in the United States. All four providers are certified under the **EU–US Data Privacy Framework** (DPF) and incorporate **Standard Contractual Clauses (SCCs)** in their data processing agreements as additional transfer safeguards.
 
-<h2>8. Your rights</h2>
-<p>Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have the right to:</p>
-<ul>
-	<li><strong>Access</strong> the personal data we hold about you (Art. 15)</li>
-	<li><strong>Rectification</strong> of inaccurate data (Art. 16)</li>
-	<li><strong>Erasure</strong> ("right to be forgotten") (Art. 17)</li>
-	<li><strong>Restrict processing</strong> (Art. 18)</li>
-	<li><strong>Data portability</strong> (Art. 20)</li>
-	<li><strong>Object</strong> to processing based on legitimate interest (Art. 21)</li>
-	<li><strong>Withdraw consent</strong> at any time for analytics cookies (GA4/Clarity) or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.</li>
-</ul>
-<p>
-	To exercise any of these rights, email
-	<a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.
-	We will respond within 30 days.
-</p>
+Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic (self-hosted on servers located in the European Union) and delivered via Resend. Resend is US-based and DPF-certified — see their [DPA](https://resend.com/legal/dpa) for transfer safeguards.
 
-<h2>9. Complaints</h2>
-<p>
-	If you believe your data protection rights have been violated, you may lodge a complaint with:
-</p>
-<ul>
-	<li>
-		<strong>Garante per la protezione dei dati personali</strong> (Italian Data Protection Authority) —
-		<a href="https://www.garanteprivacy.it" rel="noopener noreferrer" target="_blank">www.garanteprivacy.it</a>
-	</li>
-	<li>Or your local EU supervisory authority under Art. 77 GDPR.</li>
-</ul>
+You can review each provider's transfer documentation: [Google](https://policies.google.com/privacy/frameworks), [Microsoft](https://privacy.microsoft.com/en-us/privacystatement), [Cloudflare](https://www.cloudflare.com/cloudflare-customer-dpa/), [Resend](https://resend.com/legal/dpa).
 
-<h2>10. Changes to this policy</h2>
-<p>
-	We may update this policy from time to time. Changes are effective when posted
-	on this page. The "Last updated" date at the top reflects the most recent revision.
-</p>
+## 6. Data retention
+
+- **Umami Analytics data:** aggregated page-view metrics retained on our self-hosted server. No personal data or IP addresses are stored.
+- **Google Analytics data:** retained for 14 months (GA4 default), then automatically deleted.
+- **localStorage (theme):** persists until you clear your browser data.
+- **Microsoft Clarity data:** session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.
+- **Cloudflare logs:** retained per Cloudflare's standard retention (typically 72 hours for edge logs).
+- **Newsletter email addresses (confirmed):** retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).
+- **Newsletter email addresses (unconfirmed):** retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.
+
+## 7. Newsletter {#newsletter}
+
+If you subscribe to our newsletter, we collect your email address solely to send you articles and updates about AI at work. The legal basis is your explicit consent (Art. 6(1)(a) GDPR).
+
+- **Opt-in:** We use a confirmed opt-in process. After entering your email, you will receive a confirmation email. Your subscription is only active once you click the confirmation link.
+- **Pre-confirmation storage:** When you submit the signup form, we temporarily store your email address and related data (IP address, timestamp) to send and process the confirmation email. The legal basis for this pre-confirmation processing is Art. 6(1)(b) GDPR (necessary to perform the steps you requested before entering into an agreement). If you do not confirm within 30 days, your data is automatically deleted. Unconfirmed contacts are technically blocked from receiving any newsletter content.
+- **What we send:** New articles, curated links, and practical guides about AI at work — no more than once per week. We do not send promotional or product marketing content via the newsletter.
+- **Tracking:** Our marketing automation system (Mautic, self-hosted) uses a tracking pixel (a tiny invisible image) to detect email opens, and link rewriting to measure which links you click. This data is associated with your email address and used solely to improve our content. You can prevent open tracking by disabling remote image loading in your email client.
+- **Unsubscribe:** Every email contains a one-click unsubscribe link. You can also email [privacy@superdots.sh](mailto:privacy@superdots.sh) to be removed. Unsubscription triggers immediate deletion of your contact and engagement data from Mautic.
+- **Data processors:** Your subscriber data (email, consent records, engagement history) is stored exclusively in Mautic, self-hosted by Superdots on EU servers. All emails (confirmation and campaign) are delivered via [Resend](https://resend.com) (US-based, DPF-certified; [DPA](https://resend.com/legal/dpa)), which acts as an SMTP relay only and does not retain subscriber contact data.
+
+## 8. Your rights
+
+Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have the right to:
+
+- **Access** the personal data we hold about you (Art. 15)
+- **Rectification** of inaccurate data (Art. 16)
+- **Erasure** ("right to be forgotten") (Art. 17)
+- **Restrict processing** (Art. 18)
+- **Data portability** (Art. 20)
+- **Object** to processing based on legitimate interest (Art. 21)
+- **Withdraw consent** at any time for analytics cookies (GA4/Clarity) or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
+
+To exercise any of these rights, email [privacy@superdots.sh](mailto:privacy@superdots.sh). We will respond within 30 days.
+
+## 9. Complaints
+
+If you believe your data protection rights have been violated, you may lodge a complaint with:
+
+- **Garante per la protezione dei dati personali** (Italian Data Protection Authority) — [www.garanteprivacy.it](https://www.garanteprivacy.it)
+- Or your local EU supervisory authority under Art. 77 GDPR.
+
+## 10. Changes to this policy
+
+We may update this policy from time to time. Changes are effective when posted on this page. The "Last updated" date at the top reflects the most recent revision.
