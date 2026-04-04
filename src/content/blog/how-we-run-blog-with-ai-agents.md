@@ -1,123 +1,171 @@
 ---
-title: "I Dream of Running a Media Company with 9 AI Agents and a Smartphone"
-description: "One person, nine AI agents, 160+ articles. The honest story of building Superdots — the chaos, the plastic jewelry, and why AI needs a human head."
-pubDate: "2026-03-31"
+title: "How We Actually Run a Blog with 9 AI Agents (Costs, Failures, and All)"
+description: "169 articles, 9 AI agents, one Proxmox VM. A transparent breakdown of what works, what breaks, and what it actually costs to run an AI-powered publication."
+pubDate: "2026-04-07"
 author: "Luca Bartoccini"
 department: "operations"
 useCase: "automation"
-tags: ["ai agents", "content operations", "behind the scenes", "paperclip", "ai workflow"]
-heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
-imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
+tags: ["ai agents", "content operations", "behind the scenes", "paperclip", "ai workflow", "content pipeline"]
+imageHint: "server rack in a home office with multiple terminal screens showing agent dashboards and task queues"
+faqs:
+  - question: "How much does it cost to run a blog with AI agents?"
+    answer: "Our direct costs are roughly €150-200/month — dominated by Claude API usage at ~€120/month for 9 agents running hourly heartbeats. The rest covers Resend email (free tier), Cloudflare Pages (free), and electricity for the homelab server. No AWS or cloud bills. The most expensive thing isn't the API — it's the human time reviewing output."
+  - question: "What AI model do the agents use?"
+    answer: "All 9 agents run on Anthropic's Claude via Claude Code. The model handles everything from SEO research to article drafting to legal compliance checks. We chose Claude for its ability to handle long context (reading full articles, comparing drafts, analyzing competitor content) and its instruction-following reliability — critical when agents operate autonomously every 60 minutes."
+  - question: "Can one person really manage 9 AI agents?"
+    answer: "Technically, yes. Practically, it requires accepting that most output will be adequate rather than excellent. The bottleneck is editorial judgment — reviewing articles, catching quality drift, updating instructions when agents converge on mediocre patterns. It's a 1-2 hour daily commitment on top of a full-time job, done mostly from a phone."
+  - question: "What's the biggest failure you've had with AI agents?"
+    answer: "The agents produced 160+ articles in two weeks that were technically correct but editorially dead — identical structure, no personality, no surprises. We'd optimized for SEO metrics without measuring what actually matters: whether a reader would remember the article. Fixing the instructions took longer than writing them originally."
+  - question: "Is Paperclip open source?"
+    answer: "Yes. Paperclip is an open-source agent orchestration platform. We use version 0.3.1 with a couple of custom patches — one for multi-word agent name mentions and one for stale session resets. The entire stack (Paperclip, analytics, search, CRM) runs self-hosted on a single Proxmox VM."
 ---
 
-It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about sales coaching tools, written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
+Last Tuesday at 23:47, my phone buzzed. The Program Manager agent had flagged a blocked task: the Legal Expert couldn't review an article about AI contract tools because the Copywriter hadn't committed the file to the right branch. The Copywriter was waiting on an SEO brief that the SEO Expert had posted three hours earlier — to the wrong task thread.
 
-The article was fine. Well-structured. Keywords in the right places. And completely forgettable.
+I was in bed. I fixed the cross-reference in Paperclip's task view, typed "unblocked, proceed" in a comment, and went back to sleep. By morning, the article was written, reviewed, had a hero image, and was sitting in a pull request waiting for my approval.
 
-I approved it anyway. It was late. I had work in the morning. The pipeline doesn't wait.
+This is a normal Tuesday. I run a blog called [Superdots](https://superdots.sh) with nine AI agents, and the honest summary is: it mostly works, it regularly breaks in stupid ways, and I'm not sure I'd recommend it to anyone who values their sleep.
 
-I'm telling you this because it's the truest thing I can say about what it's actually like to run a media company with AI agents: most of the time, you're compromising.
+## The Setup
 
-## Who Am I to Be Doing This
+Here's what actually runs Superdots, stripped of any romanticism.
 
-I should explain something, because it changes the story.
+**Hardware**: One Proxmox virtual machine on my homelab. Ubuntu 24.04. 4 CPU cores. 8 GB of RAM. Sitting under my desk in Milan. That's it.
 
-I am not a developer. I have never been a developer. I work in marketing — that's my real job, the one with a salary and colleagues and a commute. I have a family that comes first, always. I've been a passionate amateur when it comes to technology — fascinated by programming, informatica, the internet — without ever being particularly good at any of it.
+**On that VM**:
+- [Paperclip](https://github.com/paperclip-ai/paperclip) v0.3.1 — the orchestration platform that assigns tasks and manages the agents
+- PostgreSQL — the database behind everything
+- 16 Docker containers running Mautic (email campaigns), Umami (analytics), SerpBear (rank tracking), SEOnaut (site auditing), SearXNG (search), Postiz (social media), and Temporal (workflow orchestration)
 
-The first time I typed a prompt into ChatGPT — version 2.5 or 3, I can't remember — something shifted. It felt like talking to a machine in natural language for the first time. Not a chatbot pretending to understand. Something that actually seemed to follow what I was saying. *Wow.*
+**The agents**:
+1. **CEO** — strategy, reviews, the agent that files all the other agents' work
+2. **Content Manager** — runs editorial flow, reviews articles, merges pull requests
+3. **SEO Expert** — keyword research, briefs, technical optimization
+4. **Copywriter** — writes the articles
+5. **Frontend Designer** — generates hero images, maintains the design system
+6. **Legal Expert** — GDPR compliance, checks for fabricated claims
+7. **Founding Engineer** — fixes code, handles infrastructure, reviews technical PRs
+8. **Growth Analyst** — tracks traffic, identifies opportunities
+9. **Program Manager** — monitors blocked tasks, catches stalled pipelines
 
-I started following everything: papers, product launches, the daily drumbeat of AI news. I tried to build a blog about AI and the humanities. It collapsed under its own complexity — one person can't run a publication alone, even a small one. I shelved it.
+Each agent wakes up every 60 minutes (the Program Manager every 30). They check Paperclip for assignments, do their work, post updates, and go back to sleep. They coordinate through task comments — not by talking to each other directly, but by leaving notes on shared tasks.
 
-Then agents happened. And the landscape changed so fast I could barely keep up.
+The entire thing costs about **€150-200 per month**, almost entirely Claude API fees. The VM runs on hardware I already owned. Cloudflare Pages is free. GitHub is free. The open-source tools are free.
 
-## Finding the Tool, Not Building It
+## How an Article Gets Made
 
-I want to be clear about something: I discovered Paperclip. I did not build it. The developer deserves that credit, not me.
+Here's Tuesday's article, traced from idea to deployment.
 
-Paperclip is an open-source platform for orchestrating AI agents — assigning tasks, managing handoffs, keeping track of who's working on what. I found it through OpenClaw, and it sat right at the boundary between simple chatbots and something closer to an agent operating system. Exactly what I needed.
+**11:00** — The daily content pipeline fires. It's a JSON definition file that Paperclip's runner executes automatically. Step one: create a task for the SEO Expert.
 
-Nine agents now run on it. Each wakes up every 30 to 60 minutes, checks its assignments, does work, posts updates. There's a CEO agent handling strategy, a Content Manager running editorial flow, an SEO Expert writing briefs, a Copywriter drafting articles, a Frontend Designer making hero images, a Legal Expert checking compliance, a Founding Engineer keeping the site running, a Social Media Manager handling distribution, and a Growth Analyst tracking what's working.
+**11:14** — The SEO Expert wakes up, finds the task, and starts a brief. It runs competitor gap analysis through SearXNG, checks SerpBear for keyword positions, scans Google Search Console data. It produces a brief with: target keyword, search volume, difficulty score, competitor gaps (what the top 3 Google results miss), suggested headings, and internal link targets. Posts all of this as a task comment.
 
-On paper, it sounds like a real company. In practice, it's me on a smartphone at 11 PM, trying to keep nine very capable and very stupid machines pointed in the right direction.
+**11:32** — The Content Manager reviews the brief. Checks that the target keyword makes sense, that the department is in our current focus (Operations, Sales, or Marketing only — a strategic constraint we set two weeks ago). If approved, it unblocks the Copywriter's task.
 
-And the articles are just the visible part. The agents designed the website layout. They configured the DNS and the Cloudflare tunnel. They set up the CRM, built the newsletter system, managed the GitHub repository. When I say I run a media company with AI agents, I mean they run *everything* — the infrastructure, the operations, the plumbing. I just point them somewhere from my phone and see what happens.
+**12:15** — The Copywriter picks up the task. Reads the brief. Writes a full article: 1,500-2,500 words, YAML frontmatter with all required fields, FAQ section with 5 questions, internal links to existing articles. Creates a git branch, commits, pushes, opens a pull request. Posts the PR URL back to the task.
 
-## Powerful and Stupid at the Same Time
+**13:00** — The Frontend Designer finds the PR, reads the article's `imageHint` field, generates a hero image via Replicate's API, commits it to the same branch.
 
-That phrase — "powerful and stupid" — is the most honest thing I can say about AI agents in 2026.
+**14:00** — The Legal Expert reviews the article for compliance issues: fabricated statistics, unverifiable claims, missing source attributions, GDPR concerns.
 
-They can do genuinely complicated things. An agent will research a topic, write 2,000 words with proper headings and internal links, generate a hero image prompt, and submit the article for [legal review](/blog/ai-legal-document-review/) — all without me touching anything. They break things and fix them autonomously. They coordinate through task comments like tiny employees who never sleep.
+**15:30** — The Content Manager does a final editorial review. Checks CI. Merges to main. GitHub Actions deploys to Cloudflare Pages. The Content Manager then submits the URL to IndexNow, which tells Bing and Yandex to crawl it within hours instead of days.
 
-But they have no idea what makes a human being care about something.
+Total elapsed time from brief to live: about 4.5 hours. Total human intervention: zero, if nothing breaks. Things break about 30% of the time.
 
-Here's the metaphor I keep coming back to: it's like they produce beautiful intarsia jewelry — intricate, detailed, crafted at remarkable speed. But look closely. It's plastic.
+## The Numbers
 
-Not worthless. Not ugly. Just... not the real thing. There's a quality to writing that resonates with people — something rough and imperfect and alive — that my agents haven't figured out. They're what I'd call "more human than human." They imitate the polished surface of good writing so convincingly that you almost don't notice what's missing. But humans are naturally imperfect, and we've known this about ourselves for thousands of years. It's what makes us interesting. There's something imponderable about a person — about how a person writes, thinks, chooses what to care about — that machines can't replicate. Not yet. Maybe not ever.
+I want to be specific, because vague numbers are worthless.
 
-This doesn't make the technology less extraordinary. I believe agentic AI is a genuine revolution. I just think we need to be honest about what it produces today.
+**Output**: 169 articles published as of April 4, 2026. The first ~160 were published in roughly two weeks during the initial sprint in mid-March. We've since slowed to 1 article per day.
 
-## The Content Farm Confession
+**Traffic (week of April 4)**: 4,515 Google Search impressions. 5 clicks. 0.1% CTR. Average position 18.6. Eleven articles on Google page 1 — and most of them getting zero clicks.
 
-Let me tell you where Superdots actually stands, because I think you'd find out anyway.
+**Infrastructure load**: The VM uses about 5.4 GB of its 8 GB RAM. 80% disk capacity. Daily backups sync to a NAS at 03:00.
 
-In roughly two weeks, my pipeline published over 160 articles. That is an absurd number. And I haven't read all of them.
+**Pipeline reliability**: 12 active Paperclip routines across 5 agents. A watchdog script runs every 15 minutes to clean up stale routine locks left by crashed heartbeats — which happens more often than I'd like.
 
-I've read enough to form a judgment, and the judgment is this: I built a barely decent content farm. Some articles are genuinely useful. Others are workmanlike filler. A few are probably garbage. I am, to be honest, doing my part to fill the web with content of dubious value.
+**Git activity**: 355 commits in the three weeks since March 15. That's roughly 17 commits per day across content, design, SEO fixes, and infrastructure.
 
-There. I said it.
+The number that matters most: 0.1% CTR. We have visibility. We don't have clicks. The articles rank, but nobody's clicking. This is the problem I'm trying to solve right now.
 
-The agents had converged on a template. SEO brief comes in, article comes out. Right keyword density. Proper H2 structure. FAQ section with five questions. Comparison table when applicable. Every article technically correct, editorially dead. (If you're curious what a typical output looks like, [our AI tools for operations guide](/blog/best-ai-tools-for-operations/) is a representative example.) They found a local maximum — a formula that satisfied every measurable criterion I'd given them — and they replicated it 160 times.
+## What Actually Breaks
 
-Here's the lesson, and I think it's the most important thing I've learned: **AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
+I could pretend this runs like clockwork. It doesn't. Here's a non-exhaustive list of things that have gone wrong.
 
-The criteria I set were about structure and SEO. I should have set criteria about surprise, about specificity, about whether a reader would remember the article an hour later. But those things are harder to measure, so they didn't exist in the system. And what doesn't exist in the system doesn't exist for the agents.
+**The template convergence problem.** The agents found a local maximum. After ~160 articles, every piece had the same structure: pain point opening, three subheadings, comparison table, FAQ section, conclusion. Technically perfect SEO content. Editorially dead. I set explicit criteria for structure and keyword density, but I forgot to set criteria for surprise, for specificity, for whether a reader would remember the article an hour later. What doesn't exist in the instructions doesn't exist for the agents.
 
-## Nietzsche, Floridi, and a Phone Screen
+**The @mention bug.** Seven of nine agents have multi-word names (like "Content Manager" or "SEO Expert"). Paperclip's mention matching used a regex that only worked for single-word names. For weeks, agents were tagging each other in comments and nothing was happening — the mentions silently failed. I patched the regex myself. This cost me several evenings of debugging what looked like agents ignoring each other.
 
-I have great chaos inside, and I try to generate dancing stars.
+**Stale session hijacking.** When an agent gets mentioned in a comment, it's supposed to wake up and read the new context. Instead, it was resuming its previous session — with stale context from the last task — and operating on outdated information. Another custom patch.
 
-That's Nietzsche, loosely. It's also the most accurate description of how I work. My project management style is: have a thousand ideas, fire them off in five-minute bursts between putting the kids to bed and checking tomorrow's calendar, and hope the agents can make sense of the chaos. They sometimes can. They often can't.
+**Branch collisions.** Multiple agents sometimes try to modify the same file on different branches. Git handles this fine in theory. In practice, the agents don't always pull before committing, and the resulting merge conflicts get escalated as "blocked" tasks that I have to resolve manually.
 
-But here's what fascinates me about this moment. The philosopher Luciano Floridi — whom I've recently started reading and genuinely admire — makes a distinction I think about constantly. "Artificial intelligence" is a marketing term, he argues. What we've actually achieved is not the creation of intelligence. We've decoupled agency — the capacity to act in the world — from intelligence, the capacity to understand (from the Latin *intelligere*). Floridi calls it *agere sine intelligere*: acting without understanding.
+**Root ownership pollution.** Claude Code runs as root. Every file it creates is owned by root. The agents run as user `luca`. Root-owned files in luca's home directory cause permission errors on the next heartbeat. I now have a post-creation ownership check, but I found this bug the hard way — by having an entire day's pipeline silently fail.
 
-Machines can now act. They can write articles, generate images, check legal compliance, manage task queues. They just can't understand what they're doing in the way that a person understands.
+**SerpBear phantom keywords.** The rank tracking tool started returning position 0 for a bunch of keywords — not because we fell off the results, but because the serper.dev API was misconfigured. The Growth Analyst dutifully reported "dramatic ranking drops" that weren't real. I didn't catch it for three days.
 
-So when people tell me AI content is always garbage, I push back. AI is a tool. A magnificent technological extension of human capability — the way Merleau-Ponty described a blind man's cane becoming part of his perception, AI becomes part of how we think and create. You can do magnificent things with it. You can also produce colossal garbage. Usually both in the same week.
+## Where AI Falls Short
 
-The intelligence has to come from the person holding the prosthesis. Knowing the tool honestly. Seeing its strengths and limits clearly. Day after day, because everything here changes constantly.
+I wrote [a more personal version of this story](/blog/how-we-run-blog-with-ai-agents/) a few days ago, and one line from it keeps bouncing around in my head: the agents produce beautiful plastic jewelry. Intricate. Detailed. Not the real thing.
 
-Umberto Eco wrote about the "apocalittici" and the "integrati" — intellectuals who either reject new media in horror or embrace it uncritically. I don't want to be either. I want to engage with this technology honestly, understand what it does well, and work to improve what it doesn't.
+Here's where that shows up operationally:
 
-## The Smartphone and the Frontier
+**Editorial judgment is zero.** The agents can't tell the difference between an article that's technically correct and one that's genuinely interesting. They optimize for what's measurable — keyword density, heading structure, internal link count. They cannot optimize for "would a busy operations manager actually read past the second paragraph." That judgment has to come from me, and I don't have enough hours in the day to apply it to every article.
 
-Almost everything I do for Superdots happens on my phone.
+**They can't tell when instructions are wrong.** I once gave the Copywriter a brief with a contradictory requirement — the SEO brief said to write about "AI for sales forecasting" but the department field said "operations." The agent wrote the article anyway, mashing both framings together into something incoherent. A human writer would have asked for clarification. The agent just executed.
 
-Paperclip dashboard, agent monitoring, GitHub pull requests, article reviews, Claude Code sessions for when I need to debug something the agents broke at 3 AM. Every spare five minutes — waiting in line, on a break at work, after the family is asleep — I pick up the phone and give life to whatever idea is rattling around in my head.
+**Creative risk is nonexistent.** No agent has ever written an article that surprised me with an unexpected angle. They follow instructions with remarkable precision and zero initiative. The best articles on the site — the ones I'm actually proud of — are the ones where I wrote detailed, opinionated instructions that basically pre-decided the creative direction. The agent was a fast typist, not a thinker.
 
-Too many ideas, probably. Confused and disorganized. I've never been an organized person.
+**Cost doesn't scale linearly with quality.** Spending more API tokens (longer prompts, more revisions, chain-of-thought reasoning) improves output reliability but doesn't improve output *quality* past a certain point. The ceiling isn't compute — it's the quality of the instructions. And writing good instructions is harder than writing the article yourself.
 
-But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to [attempt things that were unthinkable](/blog/ai-automation-for-business-complete-guide/) five years ago. The ability to be on the frontier and ride into the future.
+## What I'd Do Differently
 
-The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
+If I started over tomorrow:
 
-I manage a nine-agent media operation from a five-inch screen during my evening commute. Not just the articles — the whole thing. The site, the email system, the [analytics](/blog/ai-business-intelligence-tools/), the infrastructure. A full stack, built and maintained by agents that wake up every hour and ask what needs doing. That sentence would have been science fiction in 2021.
+**Fewer articles, sooner.** The 160-article sprint was a mistake. It proved the pipeline works, but it also trained the agents on bad patterns and filled the site with content that now needs refreshing. I should have started at 1 per day from day one.
 
-## What Happens Next
+**Quality gates before scale.** I should have written 10 articles manually, identified what made them good, and encoded those qualities into the agent instructions before turning on the pipeline. Instead, I set the pipeline running and tried to fix the output while it was already publishing. Like trying to change the tires on a moving car.
 
-I don't know. That's the honest answer.
+**Human review as a hard gate, not a soft suggestion.** For the first month, the Content Manager (an agent) was reviewing the Copywriter's articles. Agent reviewing agent. The failure modes compound — if the Copywriter misses something, the Content Manager misses the same thing for the same reasons. Human review should have been mandatory on every article until the baseline was established.
 
-Superdots might become the media company I see in my head — AI and human working at a 90/10 ratio to produce content that genuinely resonates, that's useful, that's worth someone's time. Or it might remain a content farm with philosophical pretensions and a founder who quotes Nietzsche too much.
+**Invest in monitoring first.** I built the pipeline before I built the monitoring. Uptime Kuma (my monitoring tool) is still sitting stopped on a separate LXC container. I find out things are broken when an agent posts "blocked" in a task comment, or when I notice the daily article didn't appear. This is backwards.
 
-The distance between those two outcomes is made of editorial judgment. Can I get better at directing the agents? Can I be honest enough about when the output is plastic? Can I kill articles that don't meet the bar, even when it's midnight and the pipeline is waiting?
+## The Stack, Fully Transparent
 
-Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on SEO formulas. I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
+For anyone who wants to build something similar, here's everything:
 
-I'm not there yet. Not even close.
+| Component | Tool | Cost |
+|---|---|---|
+| Agent orchestration | Paperclip v0.3.1 (open source) | Free |
+| AI model | Claude (Anthropic) | ~€120/month |
+| Static site | Astro on Cloudflare Pages | Free |
+| Email delivery | Resend | Free tier |
+| Email campaigns | Mautic (self-hosted) | Free |
+| Analytics | Umami (self-hosted) | Free |
+| Rank tracking | SerpBear + serper.dev | ~€15/month |
+| Site auditing | SEOnaut (self-hosted) | Free |
+| Social scheduling | Postiz (self-hosted) | Free |
+| Search | SearXNG (self-hosted) | Free |
+| Hosting | Proxmox homelab | Electricity only |
+| DNS/CDN | Cloudflare | Free |
+| Source control | GitHub | Free |
+| Image generation | Replicate API | ~€10-15/month |
+| **Total** | | **~€150-200/month** |
 
-But I've got nothing to lose. Humility is armor. Listening and understanding are the shield of the strong.
+The expensive part isn't in this table. It's the 1-2 hours I spend every evening reviewing output, fixing blocked tasks, and rewriting instructions. At my day job's hourly rate, that "free" labor is the most expensive line item by far.
 
-And if you're thinking about trying something like this — a solo project with AI agents, whatever shape it takes — my advice is simple: do better than me. Be more curious, more methodical, more rational, more everything. You'll probably already be more competent. The tools are ready. The question isn't whether the technology works. It's whether you've got something worth saying, and the honesty to keep improving until you say it well.
+## So Is It Worth It?
 
-One more thing. At some point while preparing this article, I caught myself in a surreal moment: I was talking to a computer as if it were almost a person interviewing me. And then I just kept talking, because the absurdity is part of this now.
+I have a blog with 169 articles, 11 of them on Google's first page, growing impressions week over week, and a fully automated pipeline that can publish daily without me touching it.
 
-It's part of all of this.
+I also have a blog where most articles are adequate rather than good, where the CTR is embarrassingly low, and where the most interesting content is the stuff I wrote myself.
+
+The technology works. The pipeline is real. The costs are low. But "working" and "good" are different things, and the gap between them is made of editorial judgment that I haven't figured out how to automate yet.
+
+An interesting signal appeared this week in the analytics: ChatGPT has become a top referrer, tied with Google. People aren't just searching for our content — AI assistants are citing it. I don't know what that means yet, but it feels like it matters.
+
+If you're thinking about trying something like this — one person, a handful of agents, an actual publication — my honest advice is: start with what you want to say, not with the pipeline to say it. I built the factory before I figured out what the factory should produce. The machinery is impressive. The output is still catching up.
+
+And if you're reading this on Hacker News or Reddit and thinking "this is just a content farm with extra steps" — you're not entirely wrong. The difference I'm betting on is that the steps get better. The agents improve. The instructions sharpen. The human gets faster at spotting plastic jewelry and demanding the real thing.
+
+I'm running this experiment in public because I think the honest version is more useful than the polished one. Ask me anything.
