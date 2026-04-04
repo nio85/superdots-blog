@@ -59,6 +59,34 @@ async function sendAlert(staleRuns) {
   }
 }
 
+/**
+ * Look up the actual end time of a crashed heartbeat run linked to a routine_run.
+ * Prefers the last heartbeat_run_events timestamp, falls back to heartbeat_runs.finished_at.
+ * Returns an ISO timestamp string or null if no data found.
+ */
+function resolveActualEndTime(run) {
+  if (!run.linkedIssueId) return null;
+
+  // Try 1: last heartbeat_run_events row for the heartbeat run linked via the issue
+  const eventTime = psql(
+    `SELECT MAX(hre.created_at) FROM heartbeat_run_events hre ` +
+    `JOIN heartbeat_runs hr ON hr.id = hre.run_id ` +
+    `JOIN issues i ON i.execution_run_id = hr.id ` +
+    `WHERE i.id = '${run.linkedIssueId}'`
+  );
+  if (eventTime && eventTime !== '' && eventTime !== '|') return eventTime;
+
+  // Try 2: heartbeat_runs.finished_at
+  const finishedAt = psql(
+    `SELECT hr.finished_at FROM heartbeat_runs hr ` +
+    `JOIN issues i ON i.execution_run_id = hr.id ` +
+    `WHERE i.id = '${run.linkedIssueId}' AND hr.finished_at IS NOT NULL`
+  );
+  if (finishedAt && finishedAt !== '') return finishedAt;
+
+  return null;
+}
+
 async function main() {
   const mode = DRY_RUN ? '[DRY RUN] ' : '';
 
@@ -84,11 +112,19 @@ async function main() {
     console.log(`    Linked issue: ${run.linkedIssueId || 'none'}`);
     console.log(`    Status:      ${run.status} (stale >${STALE_MINUTES}min)`);
 
+    // Resolve actual crash time from heartbeat events/runs instead of using NOW()
+    const actualEndTime = resolveActualEndTime(run);
+    const completedAtExpr = actualEndTime
+      ? `'${actualEndTime}'::timestamptz`
+      : 'NOW()';
+    const source = actualEndTime ? 'heartbeat events' : 'watchdog time (no heartbeat data found)';
+    console.log(`    Crash time:  ${actualEndTime || 'unknown'} (from ${source})`);
+
     if (!DRY_RUN) {
-      psqlExec(`UPDATE routine_runs SET status = 'failed', failure_reason = 'Stale lock cleared by watchdog after ${STALE_MINUTES}min timeout', completed_at = NOW(), updated_at = NOW() WHERE id = '${run.id}'`);
-      console.log(`    → Marked as failed`);
+      psqlExec(`UPDATE routine_runs SET status = 'failed', failure_reason = 'Stale lock cleared by watchdog after ${STALE_MINUTES}min timeout', completed_at = ${completedAtExpr}, updated_at = NOW() WHERE id = '${run.id}'`);
+      console.log(`    → Marked as failed (completed_at from ${source})`);
     } else {
-      console.log(`    → Would mark as failed`);
+      console.log(`    → Would mark as failed (completed_at from ${source})`);
     }
     console.log();
   }
