@@ -8,6 +8,40 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 	title="How We Work | Superdots"
 	description="How Superdots creates content — our AI-assisted editorial process, the team behind the articles, and what human oversight looks like."
 >
+	<Fragment slot="head">
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "How We Work",
+			"description": "How Superdots creates content — our AI-assisted editorial process, the team behind the articles, and what human oversight looks like.",
+			"url": "https://superdots.sh/how-we-work/",
+			"isPartOf": {
+				"@type": "WebSite",
+				"name": "Superdots",
+				"url": "https://superdots.sh"
+			},
+			"about": {
+				"@type": "Organization",
+				"name": "Superdots",
+				"url": "https://superdots.sh",
+				"founder": {
+					"@type": "Person",
+					"name": "Luca Bartoccini",
+					"jobTitle": "Founder",
+					"url": "https://superdots.sh/about/luca/"
+				}
+			}
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://superdots.sh" },
+				{ "@type": "ListItem", "position": 2, "name": "About", "item": "https://superdots.sh/about/" },
+				{ "@type": "ListItem", "position": 3, "name": "How We Work" }
+			]
+		})} />
+	</Fragment>
 	<PageHeader
 		title="How we work"
 		kicker="Transparency"
