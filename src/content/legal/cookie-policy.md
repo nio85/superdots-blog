@@ -5,21 +5,16 @@ pageTitle: "Cookie Policy"
 lastUpdated: "27 March 2026"
 ---
 
-<h2>What are cookies?</h2>
-<p>
-	Cookies are small text files stored on your device by your browser.
-	We also use localStorage, a similar browser storage mechanism.
-	This policy covers both.
-</p>
+## What are cookies?
 
-<h2>Cookies we use</h2>
+Cookies are small text files stored on your device by your browser. We also use localStorage, a similar browser storage mechanism. This policy covers both.
 
-<h3>Strictly necessary (no consent required)</h3>
-<p>
-	These are essential for the Site to function. Under Art. 5(3) of the ePrivacy
-	Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento
-	n. 229/2021), strictly necessary cookies do not require consent.
-</p>
+## Cookies we use
+
+### Strictly necessary (no consent required)
+
+These are essential for the Site to function. Under Art. 5(3) of the ePrivacy Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento n. 229/2021), strictly necessary cookies do not require consent.
+
 <table>
 	<thead>
 		<tr>
@@ -62,27 +57,16 @@ lastUpdated: "27 March 2026"
 	</tbody>
 </table>
 
-<h3>Cookie-free analytics (no consent required)</h3>
-<p>
-	<strong>Umami Analytics</strong> is a privacy-friendly, self-hosted analytics tool that
-	<strong>does not use cookies</strong>, does not store IP addresses, and does not collect
-	any personal data. Because Umami does not access or store information on your device,
-	no consent is required under Art. 5(3) of the ePrivacy Directive. The legal basis for
-	this processing is legitimate interest (Art. 6(1)(f) GDPR).
-</p>
-<p>
-	Umami collects only aggregated, anonymous metrics: page URL, referrer, browser type,
-	operating system, device type, and country (derived from IP at request time, IP not stored).
-	It is hosted on Superdots infrastructure in the EU — no data is sent to third parties.
-</p>
+### Cookie-free analytics (no consent required)
 
-<h3>Analytics (consent required)</h3>
-<p>
-	These cookies are set by Google Analytics 4 and Microsoft Clarity to help us
-	understand how visitors use the Site. They are only activated <strong>after you
-	give consent</strong> via the cookie banner, as required by Art. 5(3) ePrivacy
-	Directive and Art. 6(1)(a) GDPR.
-</p>
+**Umami Analytics** is a privacy-friendly, self-hosted analytics tool that **does not use cookies**, does not store IP addresses, and does not collect any personal data. Because Umami does not access or store information on your device, no consent is required under Art. 5(3) of the ePrivacy Directive. The legal basis for this processing is legitimate interest (Art. 6(1)(f) GDPR).
+
+Umami collects only aggregated, anonymous metrics: page URL, referrer, browser type, operating system, device type, and country (derived from IP at request time, IP not stored). It is hosted on Superdots infrastructure in the EU — no data is sent to third parties.
+
+### Analytics (consent required)
+
+These cookies are set by Google Analytics 4 and Microsoft Clarity to help us understand how visitors use the Site. They are only activated **after you give consent** via the cookie banner, as required by Art. 5(3) ePrivacy Directive and Art. 6(1)(a) GDPR.
+
 <table>
 	<thead>
 		<tr>
@@ -132,65 +116,37 @@ lastUpdated: "27 March 2026"
 	</tbody>
 </table>
 
-<h2>Email tracking (newsletter subscribers only)</h2>
-<p>
-	If you subscribe to our newsletter, our marketing automation system (Mautic, self-hosted in the EU)
-	uses a <strong>tracking pixel</strong> (a tiny invisible image) to detect email opens,
-	and <strong>link rewriting</strong> to measure which links you click.
-	This is not a cookie — it operates within the email itself, not on the Site.
-	Mautic associates this data with your email address to help us understand which content resonates.
-</p>
-<p>
-	This tracking is covered by the consent you give when subscribing to the newsletter
-	(Art. 6(1)(a) GDPR). You can prevent open tracking by disabling remote image loading
-	in your email client, or unsubscribe at any time to stop all tracking.
-</p>
+## Email tracking (newsletter subscribers only)
 
-<h2>Third-party requests</h2>
-<p>
-	In addition to cookies, the Site makes requests to third-party servers
-	that may process your IP address:
-</p>
-<ul>
-	<li>
-		<strong>Umami Analytics</strong> (<code>umami.bartoccini.cloud</code>) —
-		loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
-	</li>
-	<li>
-		<strong>Google Analytics</strong> (<code>www.googletagmanager.com</code>) —
-		only loaded after consent. Sends pseudonymised usage data to Google.
-	</li>
-	<li>
-		<strong>Microsoft Clarity</strong> (<code>www.clarity.ms</code>) —
-		only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability.
-		<a href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent" rel="noopener noreferrer" target="_blank">Clarity privacy info</a>.
-	</li>
-</ul>
+If you subscribe to our newsletter, our marketing automation system (Mautic, self-hosted in the EU) uses a **tracking pixel** (a tiny invisible image) to detect email opens, and **link rewriting** to measure which links you click. This is not a cookie — it operates within the email itself, not on the Site. Mautic associates this data with your email address to help us understand which content resonates.
 
-<h2>How to manage cookies</h2>
+This tracking is covered by the consent you give when subscribing to the newsletter (Art. 6(1)(a) GDPR). You can prevent open tracking by disabling remote image loading in your email client, or unsubscribe at any time to stop all tracking.
 
-<h3>Cookie banner</h3>
-<p>
-	When you first visit the Site, a cookie banner lets you accept or refuse
-	analytics cookies. You can change your choice at any time by clicking
-	the "Cookie settings" link in the site footer.
-</p>
+## Third-party requests
 
-<h3>Browser settings</h3>
-<p>You can also control cookies through your browser:</p>
-<ul>
-	<li><a href="https://support.google.com/chrome/answer/95647" rel="noopener noreferrer" target="_blank">Chrome</a></li>
-	<li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" rel="noopener noreferrer" target="_blank">Firefox</a></li>
-	<li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" rel="noopener noreferrer" target="_blank">Safari</a></li>
-	<li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" rel="noopener noreferrer" target="_blank">Edge</a></li>
-</ul>
-<p>
-	To clear localStorage (used for theme preference), use your browser's
-	developer tools or "Clear site data" option.
-</p>
+In addition to cookies, the Site makes requests to third-party servers that may process your IP address:
 
-<h2>Changes to this policy</h2>
-<p>
-	We may update this policy when we add or remove cookies.
-	The "Last updated" date at the top reflects the most recent revision.
-</p>
+- **Umami Analytics** (`umami.bartoccini.cloud`) — loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
+- **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google.
+- **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
+
+## How to manage cookies
+
+### Cookie banner
+
+When you first visit the Site, a cookie banner lets you accept or refuse analytics cookies. You can change your choice at any time by clicking the "Cookie settings" link in the site footer.
+
+### Browser settings
+
+You can also control cookies through your browser:
+
+- [Chrome](https://support.google.com/chrome/answer/95647)
+- [Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer)
+- [Safari](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac)
+- [Edge](https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)
+
+To clear localStorage (used for theme preference), use your browser's developer tools or "Clear site data" option.
+
+## Changes to this policy
+
+We may update this policy when we add or remove cookies. The "Last updated" date at the top reflects the most recent revision.
