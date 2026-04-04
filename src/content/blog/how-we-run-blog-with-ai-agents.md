@@ -18,6 +18,7 @@ faqs:
     answer: "The agents produced 160+ articles in two weeks that were technically correct but editorially dead — identical structure, no personality, no surprises. We'd optimized for SEO metrics without measuring what actually matters: whether a reader would remember the article. Fixing the instructions took longer than writing them originally."
   - question: "Is Paperclip open source?"
     answer: "Yes. Paperclip is an open-source agent orchestration platform. We use version 0.3.1 with a couple of custom patches — one for multi-word agent name mentions and one for stale session resets. The entire stack (Paperclip, analytics, search, CRM) runs self-hosted on a single Proxmox VM."
+heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 ---
 
 Last Tuesday at 23:47, my phone buzzed. The Program Manager agent had flagged a blocked task: the Legal Expert couldn't review an article about AI contract tools because the Copywriter hadn't committed the file to the right branch. The Copywriter was waiting on an SEO brief that the SEO Expert had posted three hours earlier — to the wrong task thread.
