@@ -1,11 +1,11 @@
 ---
-title: "Privacy Policy | Superdots"
-description: "Privacy policy for superdots.sh — how we handle your data."
-pageTitle: "Privacy Policy"
-lastUpdated: "27 March 2026"
+title: Privacy Policy | Superdots
+description: Privacy policy for superdots.sh — how we handle your data.
+pageTitle: Privacy Policy!
+lastUpdated: 27 March 2026
 ---
 
-## 1. Who we are
+## 1. Who we are-
 
 The data controller is **Superdots S.r.l.**, with registered office at Via Ferrini 11, Paderno Dugnano (MI), Italy (P.IVA: 09171640965), operating under the brand name "Superdots" ("we", "us"). We operate the website [superdots.sh](https://superdots.sh) (the "Site").
 
