@@ -20,6 +20,7 @@ faqs:
     answer: "Consider switching when you manage 500+ SKUs, spend more than a day per week maintaining forecast spreadsheets, sell across multiple channels where data lives in separate systems, or when stockouts and overstock are regularly costing you more than a tool subscription. If you have fewer than 100 SKUs, predictable demand, and sell through one channel, a well-maintained spreadsheet is probably still your best option."
   - question: "What's the difference between demand planning and demand forecasting?"
     answer: "Demand forecasting predicts future customer demand using historical data and algorithms. Demand planning is broader — it takes that forecast and turns it into actionable decisions: how much to order, when to order it, where to allocate inventory, and how to coordinate with suppliers. Most tools in this article do both to varying degrees, but some (like Netstock and Flowlity) lean more heavily into the planning side with supplier collaboration and inventory optimization features."
+heroImage: "/images/blog/ai-demand-forecasting-tools-small-business.webp"
 ---
 
 Elena runs a 40-person home goods company in Portland. She sells through her own Shopify store, Amazon, and two regional wholesale accounts. Every Monday morning, she opens a spreadsheet with 800 SKUs, updates last week's sales figures by hand, and tries to guess how many ceramic planters she'll need for the next quarter.
