@@ -211,6 +211,7 @@ async function main() {
         last_scrape_age_hours: null,
         db_last_modified: null,
         scraper_errors_24h: null,
+        keywords_with_errors: 0,
         errors: [],
       };
 
@@ -227,13 +228,20 @@ async function main() {
         report.errors.push('container not running');
       }
 
-      // 2. API reachable + domains/keyword count
+      // 2. API reachable + domains/keyword count (via keywords endpoint for accuracy)
+      let allKeywords = [];
       try {
         const domains = await api('GET', '/api/domains');
         report.api_reachable = true;
         const list = Array.isArray(domains) ? domains : (domains.domains || []);
         report.domains_count = list.length;
-        report.keywords_total = list.reduce((s, d) => s + (d.keywordCount ?? d.keyword_count ?? 0), 0);
+        // Fetch actual keywords — domain.keywordCount is stale (set at creation, never updated)
+        for (const d of list) {
+          const kwResp = await api('GET', `/api/keywords?domain=${encodeURIComponent(d.domain)}`);
+          const kws = Array.isArray(kwResp?.keywords) ? kwResp.keywords : (Array.isArray(kwResp) ? kwResp : []);
+          allKeywords.push(...kws);
+        }
+        report.keywords_total = allKeywords.length;
       } catch (e) {
         report.api_reachable = false;
         report.errors.push(`api: ${e.message}`);
@@ -259,17 +267,20 @@ async function main() {
         }
       }
 
-      // 5. scraper errors in last 24h
+      // 5. scraper errors in last 24h (kept for trending, not used as degraded signal)
       if (report.container_running) {
         const errCount = safeExec("docker logs serpbear --since 24h 2>&1 | grep -c lastUpdateError");
         if (errCount !== null) report.scraper_errors_24h = parseInt(errCount, 10) || 0;
       }
 
+      // 5b. Keywords with current errors (accurate signal from API state)
+      report.keywords_with_errors = allKeywords.filter(k => k.lastUpdateError).length;
+
       // 6. Derive degraded status
       if (report.status === 'ok') {
         const degraded = [];
         if (report.failed_queue_size !== null && report.failed_queue_size > 20) degraded.push(`failed_queue=${report.failed_queue_size}`);
-        if (report.scraper_errors_24h !== null && report.scraper_errors_24h > 50) degraded.push(`errors24h=${report.scraper_errors_24h}`);
+        if (report.keywords_with_errors > 10) degraded.push(`active_errors=${report.keywords_with_errors}`);
         if (report.last_scrape_age_hours !== null && report.last_scrape_age_hours > 30) degraded.push(`scrape_age=${report.last_scrape_age_hours}h`);
         if (degraded.length) {
           report.status = 'degraded';
