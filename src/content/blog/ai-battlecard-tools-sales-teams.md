@@ -20,6 +20,7 @@ faqs:
     answer: "Klue, Crayon, and Mindtickle all integrate with Salesforce. Klue and Crayon also integrate with HubSpot. Kompyte (now part of Semrush) has Salesforce integration. Battlecard by Northr is self-serve and more lightweight — CRM integration is not its primary feature. The most valuable CRM integration is when a competitor is mentioned on a deal record and the relevant battlecard section surfaces automatically — this requires conversation intelligence tools like Gong or Chorus in addition to the battlecard platform."
   - question: "How long does it take to build a battlecard with AI vs. manually?"
     answer: "Manually, building a thorough battlecard takes 3-5 hours per competitor — researching positioning, pricing, reviews, and objection patterns, then formatting it for reps. With a structured ChatGPT or Claude prompt, the same draft takes 20-30 minutes, leaving another 15-20 minutes for review and polish. Dedicated platforms like Klue auto-generate the first draft from monitored data in minutes, though setup and onboarding for enterprise tools can take several weeks."
+heroImage: "/images/blog/ai-battlecard-tools-sales-teams.webp"
 ---
 
 Marcus is three minutes into a discovery call when the prospect says it: "We're also looking at Highspot. Their pricing is pretty attractive right now."
