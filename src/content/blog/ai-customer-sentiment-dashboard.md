@@ -44,7 +44,7 @@ A useful sentiment dashboard starts with four core data sources. Each captures a
 
 Tickets are the highest-signal source you have. Customers who submit a ticket are already frustrated enough to take action. The language they use — the specific features they name, the urgency in their tone — tells you a lot.
 
-Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
+Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard — the same transcripts that power [AI customer service QA](/blog/ai-customer-service-qa/) are your richest sentiment signal. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
 
 ### App and Product Reviews
 
@@ -75,7 +75,7 @@ Each incoming signal gets tagged. The AI assigns:
 - **Sentiment score** — positive, negative, neutral, or a numeric scale (e.g., -1.0 to +1.0)
 - **Topic category** — which product area or feature the feedback is about (onboarding, billing, performance, integrations, etc.)
 - **Urgency level** — is this a one-off complaint or a pattern?
-- **Intent signal** — is the customer at churn risk? Expressing loyalty? Making a feature request?
+- **Intent signal** — is the customer at [churn risk](/blog/ai-customer-retention/)? Expressing loyalty? Making a feature request?
 
 For domain-specific vocabulary (your product's feature names, internal jargon, industry terms), out-of-the-box models underperform. Fine-tuning on your historical tickets and reviews pushes accuracy from the 80% range into the low 90s.
 

@@ -159,7 +159,7 @@ Once accuracy is consistently above 95%, reduce review to exceptions only. Then 
 Once your first automation is running smoothly, expand to related tasks:
 
 - **Email triage** — automatically sort and route incoming emails. See our guide on [automating email triage with AI](/blog/automate-email-triage-with-ai/).
-- **Document management** — auto-file and tag documents as they arrive
+- **[Document management](/blog/ai-document-management/)** — auto-file and tag documents as they arrive
 - **Reporting** — pull data from multiple systems into automated reports
 
 For a broader view of what's possible without code, see our [AI automation guide](/blog/ai-automation-guide/).
