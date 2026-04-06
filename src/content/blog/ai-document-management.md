@@ -79,7 +79,7 @@ Semantic search converts both your query and document content into mathematical 
 - "The presentation Sarah gave at the offsite" finds the right deck based on author, date, and context
 - Natural language questions work: "What is our refund policy?" finds the relevant section in the customer terms document
 
-The experience shifts from "searching" to "asking." You describe what you need, and the system finds it.
+The experience shifts from "searching" to "asking." You describe what you need, and the system finds it — or [AI summarizes it for you](/blog/ai-document-summarizer/) if it's a 50-page policy you'd rather not read end-to-end.
 
 ## Compliance and Governance
 

@@ -188,7 +188,7 @@ Semrush is primarily an SEO and digital marketing platform, but its competitive 
 
 **Where it falls short:** This is a marketing tool repurposed for sales intelligence, not a dedicated CI platform. There are no battlecards, no CRM integration, no rep-facing alerts. Someone on your team needs to pull insights manually and translate them for sales. It also won't catch non-digital signals like pricing changes shared only in sales calls or organizational restructuring.
 
-**Best for:** Sales teams selling to marketers, or any team where understanding competitors' digital strategy directly informs the sales conversation. Pairs well with a DIY battlecard approach.
+**Best for:** Sales teams selling to marketers, or any team where understanding competitors' digital strategy directly informs the sales conversation. Pairs well with a [DIY battlecard workflow](/blog/ai-battlecard-tools-sales-teams/).
 
 ### ChatGPT / Claude (DIY approach)
 

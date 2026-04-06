@@ -82,7 +82,7 @@ Each of these tells a different story and suggests a different intervention.
 
 ### Sentiment shifts
 
-AI-powered sentiment analysis across support conversations, NPS responses, and even social media mentions can detect attitude changes before they become cancellation requests.
+AI-powered [sentiment analysis](/blog/ai-customer-sentiment-dashboard/) across support conversations, NPS responses, and even social media mentions can detect attitude changes before they become cancellation requests.
 
 A customer who rated you 9/10 six months ago and 6/10 last month has not churned yet. But that trajectory is concerning, and AI can flag it automatically.
 
@@ -121,7 +121,7 @@ Not every intervention needs a human. AI can handle:
 - Automated email sequences triggered by specific risk signals
 - In-app messages surfacing relevant features or content
 - Smart dunning for failed payments
-- Self-service resources matched to the customer's specific issue
+- [Self-service resources](/blog/ai-customer-self-service/) matched to the customer's specific issue
 
 Reserve human outreach for high-value accounts, complex situations, and customers whose risk score is spiking. Your CS team cannot call every at-risk customer, but they can call the ones where a conversation will make the biggest difference.
 
