@@ -18,6 +18,7 @@ faqs:
     answer: "Yes. Nearly every AI report generator supports Google Sheets and Excel as data sources. Most offer direct integrations or CSV/XLSX import. Some tools like Polymer and Zoho Analytics also connect to CRMs, marketing platforms, and databases for consolidated reporting across multiple data sources."
   - question: "How long does it take to create a report with AI?"
     answer: "A first draft typically takes 2-5 minutes once your data is connected. Initial setup — connecting data sources, choosing templates, and defining report structure — takes 15-30 minutes. After that, recurring reports can be generated in seconds with a single prompt or scheduled to run automatically."
+imageHint: "analyst reviewing AI-compiled business report with charts and executive summary"
 ---
 
 It is 4 PM on a Friday and you are still copy-pasting numbers into a slide deck that nobody will read past page two. Weekly reports, monthly summaries, board updates — they all eat hours that should go toward actual work.

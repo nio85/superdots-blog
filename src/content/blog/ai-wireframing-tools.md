@@ -7,6 +7,7 @@ department: 'design'
 useCase: 'writing'
 tags: ['ai-tools', 'ai-for-design']
 heroImage: "/images/blog/ai-wireframing-tools.webp"
+imageHint: "product manager viewing AI-generated wireframe from text description in browser"
 ---
 
 A product manager describes a feature in a Slack message. A designer opens Figma, creates an artboard, and starts placing rectangles. Three hours later, there are four wireframe screens ready for review.

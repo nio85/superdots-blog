@@ -18,6 +18,7 @@ faqs:
     answer: "AI translation tools can produce a usable first draft of legal and financial documents, but they should never be the final version. Legal language relies on precise terminology where small wording differences change meaning — AI tools may miss jurisdictional nuances or use terms that carry different legal weight in the target language. Use AI to speed up the process, then have a qualified translator or bilingual legal professional review the output before filing or signing."
   - question: "How much do AI translation tools cost for a small business?"
     answer: "Costs range widely. Free tiers from Google Translate and DeepL cover basic needs. Paid plans start around $8-25 per user per month for tools like DeepL Pro and Smartcat. Enterprise translation platforms like Smartling and Phrase charge based on word volume, typically $0.05-0.15 per word with AI, compared to $0.15-0.30 per word for human translation. For a small business translating a few documents per week, a $25/month plan usually covers it."
+imageHint: "content team reviewing AI-translated marketing copy across multiple language versions"
 ---
 
 Most companies hit the same wall when they start selling internationally. A prospect in Germany asks for a translated proposal. The sales team emails the marketing department. Marketing checks with the vendor. The vendor quotes $500 and a seven-day turnaround. The deal goes cold.

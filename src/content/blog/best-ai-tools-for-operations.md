@@ -18,6 +18,7 @@ faqs:
     answer: "Most modern operations tools offer pre-built connectors for popular business apps (Salesforce, HubSpot, Slack, Google Workspace, Microsoft 365). Zapier and Make specialize in cross-platform integration with thousands of connectors. Enterprise tools like Celonis and UiPath connect directly to ERP systems (SAP, Oracle) via APIs and database connectors."
   - question: "What is the ROI of AI in operations?"
     answer: "Companies typically see 20-40% reduction in manual processing time within the first quarter of deploying AI operations tools. Specific ROI varies by use case: invoice processing automation saves 70-80% of processing time, workflow automation eliminates 10-20 hours per employee per month on routine tasks, and AI-powered inventory management reduces stockouts by 20-30%."
+imageHint: "operations manager reviewing AI workflow automation and analytics tools on dashboard"
 ---
 
 Operations is the connective tissue of a business. It covers everything that keeps work moving — project management, workflow automation, resource planning, procurement, inventory, supply chain logistics, and the hundreds of small processes that nobody thinks about until they break. If you are a COO, ops manager, or anyone responsible for making sure the machine runs, your job is essentially fighting entropy.

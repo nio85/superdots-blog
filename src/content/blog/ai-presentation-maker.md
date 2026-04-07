@@ -7,6 +7,7 @@ department: 'operations'
 useCase: 'writing'
 tags: ['ai-tools', 'productivity', 'ai-design']
 heroImage: "/images/blog/ai-presentation-maker.webp"
+imageHint: "professional polishing AI-generated slide deck with branded template applied"
 ---
 
 You open an AI presentation maker, type "Q3 sales review," and 30 seconds later you have 12 slides. They are clean, organized, and completely generic. Gradient backgrounds, bullet points that say nothing, stock icons that could belong to any company on Earth.

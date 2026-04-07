@@ -18,6 +18,7 @@ faqs:
     answer: "A realistic target is 40-60% containment for a well-implemented system handling appropriate use cases. Advanced AI platforms are reaching 55-70% first-contact resolution rates in production. Higher is not always better — a 90% containment rate might mean you are forcing callers through AI on issues that should go to humans. Focus on containment for simple, transactional calls and seamless handoff for everything else."
   - question: "How much do AI voice assistants cost compared to human agents?"
     answer: "AI voice interactions typically cost $0.50-2.00 per call compared to $5-12 for a human-handled call. The exact savings depend on your call volume and complexity mix. Improving IVR containment rates by 5-20% can reduce call center costs by 10-30%. Most companies see positive ROI within 3-6 months of deployment, primarily from handling after-hours calls and deflecting simple transactional requests."
+imageHint: "customer talking to AI voice assistant while support agent monitors quality in background"
 ---
 
 You have called customer service. You have pressed 1, then 3, then 2, then said "representative" six times, then pressed 0 repeatedly until a human picked up. Everyone has.

@@ -7,6 +7,7 @@ department: 'sales'
 useCase: 'analysis'
 tags: ['ai-for-sales', 'ai-data-analysis']
 heroImage: "/images/blog/ai-competitive-analysis.webp"
+imageHint: "sales professional reviewing AI-generated competitor comparison report before a call"
 ---
 
 Your biggest competitor just changed their pricing. They announced it Tuesday. Your rep found out Thursday — on a call, from the prospect. That's the kind of moment that loses deals.

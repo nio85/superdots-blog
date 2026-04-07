@@ -18,6 +18,7 @@ faqs:
     answer: "Yes, but with caveats. Tools like Jamie and Granola work without joining as a bot — they capture audio from your device's microphone, which works for in-person meetings. Dedicated conference room hardware from vendors like Zoom and Microsoft also supports AI transcription. Audio quality matters more in-person due to room acoustics, distance from microphones, and background noise. A centrally placed microphone helps significantly."
   - question: "Will my team actually adopt AI meeting notes?"
     answer: "Adoption hinges on two things: trust and visibility. Run a 2-week pilot where people review AI summaries alongside their manual notes. Once they see the AI captures things they missed, resistance drops fast. The second factor is pushing notes where your team already works — Slack, Notion, or your project management tool. Notes trapped in a separate dashboard get ignored. Notes that appear in your Slack channel get read."
+imageHint: "professional reviewing AI-generated meeting summary with action items and owner names"
 ---
 
 The average employee spends 392 hours per year in meetings — more than 16 full workdays ([Fellow](https://fellow.ai/blog/meeting-statistics-the-future-of-meetings-report/)). And 67% of those meetings are deemed unproductive. A 2024 London School of Economics report found U.S. businesses lose $259 billion per year to unproductive meetings.

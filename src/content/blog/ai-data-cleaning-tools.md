@@ -18,6 +18,7 @@ faqs:
     answer: "AI data cleaning is highly accurate for formatting, deduplication, and standardization of financial data. However, for value corrections — like fixing transaction amounts — always use human review. The best approach is to let AI handle structural cleaning (formats, duplicates, categorization) and have a human verify any changes to actual financial values."
   - question: "How long does automated data cleaning take compared to manual?"
     answer: "For a typical 10,000-row dataset, manual cleaning takes 4-8 hours. AI tools can process the same dataset in 5-15 minutes, including deduplication, format standardization, and anomaly flagging. The time savings increase with dataset size — a 100,000-row file that would take days manually can be cleaned in under an hour with AI."
+imageHint: "analyst watching AI tool auto-fix duplicate entries and format errors in spreadsheet"
 ---
 
 You just exported 10,000 customer records and half of them are a mess. Duplicate entries, inconsistent formatting, missing fields, "New York" spelled four different ways. You could spend the next two days fixing it manually. Or you could let AI do it in minutes.

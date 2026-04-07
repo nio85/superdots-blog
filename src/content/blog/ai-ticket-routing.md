@@ -18,6 +18,7 @@ faqs:
     answer: "Yes, but the ROI depends on your ticket volume. Teams handling 100+ tickets per day see the fastest payback because misrouting costs compound at scale. Smaller teams (under 50 tickets per day) can still benefit from reduced transfer rates and faster first response times, but the setup effort may not pay off until ticket volume grows."
   - question: "How much historical data does AI ticket routing need?"
     answer: "Most AI routing tools need 3-6 months of historical ticket data to train an effective model. The data should include ticket text, assigned categories, which agent or team resolved it, and resolution outcomes. More data generally means better accuracy — 12 months is ideal. If your historical routing was inconsistent, plan to clean the data before training."
+imageHint: "support operations manager viewing AI automatic ticket assignment with confidence scores"
 ---
 
 A customer submits a ticket about a billing error. It goes to the technical support queue. A tech agent reads it, realizes it is not their problem, and transfers it to billing. The billing agent picks it up 40 minutes later. The customer has now waited an hour for a five-minute fix.

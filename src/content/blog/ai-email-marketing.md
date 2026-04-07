@@ -7,6 +7,7 @@ department: "marketing"
 useCase: "writing"
 tags: ["ai-writing", "ai-tools", "ai-email"]
 heroImage: "/images/blog/ai-email-marketing.webp"
+imageHint: "email marketer reviewing AI-generated campaign copy with subject line A/B options"
 ---
 
 Your marketing team spends hours crafting email campaigns. Open rates hover around 20%. Click-through rates barely crack 3%. Most of those carefully written emails get deleted without a second thought.

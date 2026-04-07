@@ -14,6 +14,7 @@ faqs:
     answer: "AI SEO tools process thousands of keywords in minutes, cluster them by intent, and surface opportunities you would miss manually. Manual research gives you deeper intuition about your audience but does not scale. The best approach combines both: use AI tools to generate and filter keyword opportunities, then apply human judgment to pick the ones worth pursuing."
   - question: "What's the ROI of using AI for SEO?"
     answer: "Most teams report cutting keyword research and content optimization time by 50-70%. The financial ROI depends on your traffic value, but the time savings alone typically justify the cost within the first month. A single marketer with the right AI SEO tools can manage the optimization workload that used to require a small team."
+imageHint: "SEO specialist reviewing AI keyword opportunity report with content gap analysis"
 ---
 
 You know SEO matters. You also know it takes forever.

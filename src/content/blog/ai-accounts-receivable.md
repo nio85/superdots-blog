@@ -14,6 +14,7 @@ faqs:
     answer: "Companies using AI-driven AR automation commonly report DSO reductions of 20-30% within the first six months. The gains come from multiple factors working together: invoices go out faster with fewer errors, payment reminders are timed to when each customer is most likely to pay, disputes get flagged and resolved earlier, and your AR team focuses human effort on the accounts that actually need it. The biggest improvements come from organizations that previously relied on manual, calendar-based follow-up sequences."
   - question: "Will automated follow-ups damage customer relationships?"
     answer: "Not if done well. The key is personalization and timing. AI AR tools do not blast generic reminder emails on a fixed schedule. They analyze each customer's payment history and communication preferences to send the right message at the right time. A customer who always pays on day 28 gets a gentle reminder on day 25, not an aggressive collection notice on day 15. Most customers actually prefer clear, professional payment communication over the alternative — hearing nothing until a frustrated accounts manager calls them weeks past due."
+imageHint: "finance professional reviewing unpaid invoices on dual-monitor workstation"
 ---
 
 Your AR team is spending hours every week sending the same emails to the same customers about the same late invoices. Meanwhile, the invoices that are about to go 60 days overdue are sitting quietly in a spreadsheet, unnoticed.

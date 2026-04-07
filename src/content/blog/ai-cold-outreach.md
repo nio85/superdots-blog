@@ -14,6 +14,7 @@ faqs:
     answer: "Teams using AI-personalized cold outreach typically see reply rates of 5-15%, compared to 1-3% for traditional template-based campaigns. Trigger-based outreach — messages timed to a prospect's funding round, hiring push, or product launch — consistently outperforms generic cold outreach by 3-5x on reply rates. The biggest factor is not the AI itself but how you use it: teams that combine AI research with human editing and clear targeting see the best results. Volume alone does not move the needle; relevance does."
   - question: "How do AI outreach tools personalize emails?"
     answer: "AI outreach tools personalize at several layers. First, they pull prospect data — LinkedIn profiles, company news, job postings, funding announcements, published content — and synthesize it into relevant talking points. Then they generate email drafts that reference those specifics naturally, adjusting tone, proof points, and framing based on the prospect's role and industry. Some tools also optimize send timing based on when each recipient historically engages with email, and tailor follow-up sequences based on whether and how the prospect interacted with previous messages."
+imageHint: "sales rep reading AI-personalized cold email draft with prospect research panel open"
 ---
 
 Cold outreach has always been a numbers game. The problem is that most teams play it wrong — optimizing for volume when what actually drives results is relevance.

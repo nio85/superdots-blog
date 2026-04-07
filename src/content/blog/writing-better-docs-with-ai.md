@@ -7,6 +7,7 @@ department: 'engineering'
 useCase: 'writing'
 tags: ['ai-writing', 'ai-tools']
 heroImage: "/images/blog/writing-better-docs-with-ai.webp"
+imageHint: "technical writer reviewing AI-improved documentation draft with clarity suggestions"
 ---
 
 Good documentation saves thousands of hours. Bad documentation wastes them. AI won't write your docs for you, but it's an excellent writing partner — one that's always available, never gets annoyed at first drafts, and can turn a brain dump into structured prose in minutes.

@@ -14,6 +14,7 @@ faqs:
     answer: "It depends on your workflow. For high-volume Google Ads, tools like Copy.ai and Jasper integrate well with ad platforms. For social ads, Anyword and Persado offer performance prediction. The best tool is the one that fits your testing and iteration process."
   - question: "Does AI ad copy outperform human-written copy?"
     answer: "In A/B tests, AI-generated variations often match or beat human-written copy — not because AI writes better, but because AI lets you test 20 variations where a human would test 3. More tests means faster discovery of what resonates."
+imageHint: "marketer reviewing multiple ad copy variations on screen with analytics sidebar"
 ---
 
 You write an ad. You think it is good. You launch it. It gets a 0.8% click-through rate and a cost per acquisition that makes your CFO wince.

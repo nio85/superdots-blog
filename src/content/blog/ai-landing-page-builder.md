@@ -22,6 +22,7 @@ faqs:
     answer: "Yes. Every major AI landing page builder supports custom domains. Most also support subdomain publishing, so you can host pages at something like offers.yourcompany.com without touching your main website."
   - question: "How do AI landing page builders handle SEO?"
     answer: "Most generate clean HTML with proper heading structure, meta tags, and mobile responsiveness — the basics of technical SEO. Some, like Unbounce and Instapage, also suggest keyword placement and content length. For deep SEO work, you will still want dedicated tools and expertise."
+imageHint: "marketer previewing AI-generated landing page with headline variations side by side"
 ---
 
 You need a landing page for your new campaign. You open a ticket with your dev team. They estimate two weeks. Your designer is booked until next month. Your campaign launches on Friday.

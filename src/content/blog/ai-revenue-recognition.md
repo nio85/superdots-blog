@@ -18,6 +18,7 @@ faqs:
     answer: "AI-generated revenue schedules are auditable when the tool provides a clear audit trail — showing which contract terms drove each calculation, what policies were applied, and where human judgment was exercised. Auditors care about consistency and documentation, both of which AI excels at. Most teams report smoother audits after implementing AI revenue recognition."
   - question: "What size company needs AI for revenue recognition?"
     answer: "Any company with more than 50-100 active contracts with multiple performance obligations will benefit. SaaS companies, professional services firms, and manufacturers with bundled offerings see the most impact. If your team spends more than a week each quarter on revenue calculations, AI will pay for itself quickly."
+imageHint: "accounting team reviewing AI-automated revenue waterfall chart for ASC 606 compliance"
 ---
 
 It's the last week of the quarter. Your revenue accountant is buried in spreadsheets, cross-referencing 200 contracts against your ASC 606 policy. Three contracts have modifications that were never flagged to accounting. Two others have variable consideration that someone estimated differently last quarter. The auditors are three weeks away.

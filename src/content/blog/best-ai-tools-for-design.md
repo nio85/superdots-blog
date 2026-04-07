@@ -18,6 +18,7 @@ faqs:
     answer: "Midjourney produces more aesthetically polished images with better artistic style control — ideal for marketing materials, social media, and brand content. DALL-E (via ChatGPT) is more accessible, better at following precise instructions, and easier to iterate with. For most business use cases, Midjourney wins on quality while DALL-E wins on speed and ease of use."
   - question: "What AI tools do UX designers use?"
     answer: "UX designers primarily use Figma (with AI plugins), Galileo AI for rapid prototyping, Uizard for wireframe-to-design conversion, and Maze for AI-powered usability testing. For user research, tools like Dovetail use AI to analyze interview transcripts and identify patterns. The most impactful AI applications in UX are rapid prototyping and automated usability analysis."
+imageHint: "designer at workstation with multiple AI design tools open across two monitors"
 ---
 
 Design tools have changed more in the last eighteen months than in the previous decade. AI is not just adding filters or suggesting color palettes — it is generating complete UI layouts from text prompts, turning sketches into polished wireframes, creating brand identities from scratch, and producing motion graphics that used to require a full studio team.

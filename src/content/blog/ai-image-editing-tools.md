@@ -22,6 +22,7 @@ faqs:
   - question: "Can AI help with batch editing for e-commerce?"
     answer: "Yes. Tools like PhotoRoom, Pixelcut, and remove.bg offer batch processing — upload dozens or hundreds of product photos and apply consistent editing (background removal, enhancement, resizing) in minutes instead of hours."
 heroImage: "/images/blog/ai-image-editing-tools.webp"
+imageHint: "marketer using AI background removal and image enhancement tools on product photo"
 ---
 
 Your team needs images constantly. Product photos for the website. Headshots for the team page. Social media graphics. Presentation visuals. Banners for email campaigns.

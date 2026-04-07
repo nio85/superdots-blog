@@ -18,6 +18,7 @@ faqs:
   - question: "Is AI facilities management only for large commercial buildings?"
     answer: "No. While enterprise platforms like Siemens and Honeywell target large portfolios, tools like Facilio and 75F work well for mid-size facilities starting at 50,000 square feet. The ROI math works for any building spending more than $50,000 per year on energy and maintenance combined."
 heroImage: "/images/blog/ai-facilities-management.webp"
+imageHint: "facilities manager viewing predictive maintenance alerts and building sensor data"
 ---
 
 Your building is wasting money right now. Not in dramatic ways — no burst pipes or electrical fires. In quiet, steady ways: HVAC systems cooling empty rooms, filters running months past replacement, a rooftop unit drawing 30% more power than it should because a compressor is slowly failing.

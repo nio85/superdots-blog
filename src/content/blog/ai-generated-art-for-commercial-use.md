@@ -7,6 +7,7 @@ department: "marketing"
 useCase: "writing"
 tags: ["ai-tools", "ai-marketing", "ai-art"]
 heroImage: "/images/blog/ai-generated-art-for-commercial-use.webp"
+imageHint: "designer reviewing AI-generated image options alongside licensing information panel"
 ---
 
 Your marketing team needs 20 blog post images by Friday. Your budget for stock photography is $0. Your designer is booked until next month. Sound familiar?

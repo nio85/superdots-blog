@@ -18,6 +18,7 @@ faqs:
     answer: "Senior engineers typically pair an inline assistant (Cursor or Copilot) for fast completions with a reasoning tool (Claude) for architecture, complex debugging, and code review. They also use AI for DevOps (Harness, PagerDuty AIOps), testing (Codium, Mabl), and documentation. The differentiator is knowing when to use AI vs. when to think through a problem yourself."
   - question: "How do AI coding tools handle security?"
     answer: "AI tools can introduce vulnerabilities — SQL injection, XSS, insecure defaults, hardcoded secrets. Tools like Snyk and SonarQube AI scan for these issues. Best practice: run security-focused AI scanning on all AI-generated code, use pre-commit hooks for secret detection, and review AI suggestions as carefully as you would any PR."
+imageHint: "software engineer reviewing AI code suggestions and testing tools on dark IDE"
 ---
 
 The average engineering team in 2026 is not just writing code with AI. They are using it to plan sprints, generate tests, scan for vulnerabilities, deploy with confidence, and diagnose production incidents at 3 AM. Yet most "AI developer tools" roundups only cover one slice: code generation.

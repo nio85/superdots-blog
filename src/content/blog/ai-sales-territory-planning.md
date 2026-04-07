@@ -18,6 +18,7 @@ faqs:
     answer: "Essential: account list with location, revenue potential, industry, and current rep assignment. Valuable additions: CRM activity data, historical win/loss by rep and territory, travel patterns, rep capacity and quota. The more data you provide, the better the optimization. Most tools can start with just accounts and reps, then improve as you add data."
   - question: "How does AI handle territory changes without disrupting rep relationships?"
     answer: "Good AI tools include a relationship continuity constraint — they minimize account reassignment and flag high-relationship accounts for manual review. You can set rules like 'never reassign accounts with active opportunities' or 'keep accounts with rep for at least 12 months.' The AI optimizes within your constraints."
+imageHint: "sales ops manager viewing AI-optimized territory map with revenue potential heatmap"
 ---
 
 Your top rep is sitting on 400 accounts. Your newest hire has 80. Both are hitting the same quota.

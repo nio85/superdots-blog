@@ -7,6 +7,7 @@ department: 'operations'
 useCase: 'communication'
 tags: ['ai-knowledge-management', 'productivity']
 heroImage: "/images/blog/ai-knowledge-base-for-teams.webp"
+imageHint: "team member typing question and receiving instant AI-sourced answer from company docs"
 ---
 
 Your best employee just quit. They took two weeks of vacation before their last day, handed off a bullet-point list of "where stuff lives," and walked out the door. Now three people are scrambling to figure out how a critical process works — and the only documentation is a Slack thread from 2024.

@@ -22,6 +22,7 @@ faqs:
   - question: "Will AI code generation replace developers?"
     answer: "No. AI code tools amplify developers — they don't replace them. AI handles the repetitive parts (boilerplate, tests, documentation) so developers spend more time on architecture, design, debugging complex issues, and understanding business requirements. The best developers are the ones who use AI tools most effectively."
 heroImage: "/images/blog/ai-code-generation-tools.webp"
+imageHint: "developer with AI autocomplete generating function code in dark IDE"
 ---
 
 GitHub Copilot showed the world that AI could write code. Two years later, the landscape looks very different. Copilot now has serious competition — and in some areas, it's no longer the best option.

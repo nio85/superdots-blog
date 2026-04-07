@@ -14,6 +14,7 @@ faqs:
     answer: "Contract review is one step in the process — analyzing a document for risks and terms. Contract management covers the full lifecycle: creation, negotiation, execution, obligation tracking, renewal management, and reporting across your entire contract portfolio."
   - question: "What ROI can I expect from AI contract management?"
     answer: "Most teams see 50-70% reduction in contract cycle time, near-elimination of missed renewals, and 20-40% reduction in legal review hours. The biggest financial impact usually comes from catching auto-renewal clauses on unfavorable contracts."
+imageHint: "legal ops professional reviewing contract status pipeline in lifecycle management tool"
 ---
 
 Your company has hundreds of contracts. Maybe thousands. They live in email threads, shared drives, filing cabinets, and that one folder on the legal team's desktop labeled "Contracts - FINAL - v3 - REAL FINAL."

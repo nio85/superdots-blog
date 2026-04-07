@@ -18,6 +18,7 @@ faqs:
     answer: "No. While enterprise tools like PROS and Zilliant target large companies, several AI pricing tools serve small and mid-sized businesses. Prisync and Competera focus on e-commerce pricing monitoring from $99/month. For SaaS businesses, tools like PriceIntelligently (by Paddle) help optimize subscription tiers. Even using ChatGPT or Claude to analyze your pricing data and competitor positioning can surface insights that improve your pricing strategy."
   - question: "How do AI pricing tools handle competitor price changes in real time?"
     answer: "AI pricing tools use web scraping and data feeds to monitor competitor prices continuously — some check as frequently as every 15 minutes. When a competitor changes price, the tool evaluates the change against your pricing rules and market position, then either recommends an adjustment or automatically updates your price within boundaries you set. You always control the floor and ceiling prices, and most tools let you approve changes before they go live."
+imageHint: "pricing analyst reviewing AI-recommended price adjustments with revenue impact forecast"
 ---
 
 Your prices are probably wrong right now.

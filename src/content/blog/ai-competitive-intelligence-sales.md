@@ -92,6 +92,7 @@ faqs:
       team's existing channels (Slack, Notion, shared drives). CRM integration
       matters most when you have 15+ reps — below that, a pinned Slack channel
       or shared doc often works just as well.
+imageHint: "sales team reviewing competitor intel dashboard with win/loss analysis"
 ---
 
 Tom runs a 12-person sales team at a mid-size cybersecurity company in Austin. Last October, he lost a $340,000 deal to a competitor he barely tracked. The prospect told him after the fact: "They dropped their price 20% two weeks before we signed. Your team never mentioned it."

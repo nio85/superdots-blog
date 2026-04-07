@@ -18,6 +18,7 @@ faqs:
     answer: "AI forecasting is especially strong for subscription businesses because recurring revenue creates predictable patterns. Tools like Clari and Salesforce Einstein can model expansion, contraction, and churn signals alongside new business pipeline. The combination of renewal data and engagement signals gives AI more to work with than one-time deal forecasting."
   - question: "What is the ROI of AI sales forecasting tools?"
     answer: "The primary ROI comes from three areas: more accurate resource planning (hiring, inventory, marketing spend), earlier intervention on at-risk deals, and reduced time spent building forecasts manually. Companies using AI forecasting report saving 5-10 hours per week on pipeline reviews and forecast preparation. The revenue impact is harder to isolate, but better forecast accuracy directly improves strategic decision-making."
+imageHint: "VP of Sales reviewing AI revenue forecast dashboard with pipeline confidence scores"
 ---
 
 Siemens Digital Industries was missing quarterly forecasts by 15-20% — the usual mix of rep sandbagging, stale data, and gut-feel adjustments. After deploying AI-powered forecasting across their sales organization, they narrowed that gap to under 5%. Not because their reps got better at guessing, but because the AI stopped relying on guesses altogether.

@@ -19,6 +19,7 @@ faqs:
   - question: "Will AI automation replace jobs?"
     answer: "AI automation replaces tasks, not jobs. It handles the repetitive, low-value work that employees don't want to do — data entry, email sorting, report formatting, invoice matching. This frees people to focus on judgment calls, relationship building, creative problem-solving, and strategic work. McKinsey research shows industries with high AI adoption see 3x higher revenue growth per worker — that growth comes from people doing more valuable work, not from fewer people."
 heroImage: "/images/blog/ai-automation-for-business-complete-guide.webp"
+imageHint: "operations manager setting up automated workflow on laptop with process diagram"
 ---
 
 The average knowledge worker spends [60% of their time on "work about work"](https://asana.com/resources/anatomy-of-work) — status updates, email management, data entry, searching for information, and other tasks that feel productive but don't actually move the business forward. That's 25 hours a week spent on busywork for every person on your team.

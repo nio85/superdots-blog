@@ -22,6 +22,7 @@ faqs:
     answer: "Modern AI eDiscovery tools handle emails (PST, MBOX, MSG), Office documents (Word, Excel, PowerPoint), PDFs, images (with OCR), chat messages (Slack, Teams, WhatsApp), social media exports, audio and video files (with transcription), databases, and cloud storage files. Coverage for newer formats like ephemeral messaging apps varies by platform."
   - question: "Can small law firms use AI eDiscovery tools, or are they only for large firms?"
     answer: "AI eDiscovery tools are increasingly accessible to smaller firms. Platforms like Logikcull and Everlaw offer self-service models without requiring dedicated litigation support staff. Cloud-based pricing means no upfront infrastructure investment. A solo practitioner or small firm handling a 50,000-document matter can realistically use these tools for $2,000-$5,000 per month — far less than outsourcing to a traditional eDiscovery vendor."
+imageHint: "legal team reviewing AI-prioritized relevant documents for litigation case"
 ---
 
 A typical commercial litigation matter generates 500,000 to 2 million documents. Employment disputes, regulatory investigations, IP cases — they all produce massive volumes of emails, contracts, chat messages, and files that need to be collected, processed, reviewed, and produced.

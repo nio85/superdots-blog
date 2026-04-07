@@ -14,6 +14,7 @@ faqs:
     answer: "Start with spend analysis. AI can categorize and analyze your purchasing data in hours, revealing savings opportunities that take weeks to find manually. Most companies discover 5-15% in addressable spend on the first analysis."
   - question: "Do AI procurement tools work for mid-size companies?"
     answer: "Yes. Many AI procurement tools are designed for companies spending $5M-$100M annually, not just enterprises. Cloud-based platforms like Zip, Coupa, and Fairmarkit offer scalable solutions without requiring a large procurement team."
+imageHint: "procurement manager reviewing AI-scored vendor options with contract terms comparison"
 ---
 
 A procurement manager needs to find a new IT services vendor. She sends RFPs to six companies, receives responses ranging from 20 to 80 pages, and spends three days building a comparison spreadsheet. The spreadsheet has 47 rows, color-coded cells, and a scoring system she invented at 9 PM on a Tuesday.

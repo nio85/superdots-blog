@@ -18,6 +18,7 @@ faqs:
     answer: "Clio is the most complete solution for small firms — it combines practice management, billing, client intake, and AI-powered document drafting in one platform. For firms focused primarily on contract work, Juro offers excellent value. PracticePanther is another strong option with good automation features at a competitive price point."
   - question: "How do legal AI tools handle confidentiality?"
     answer: "Reputable legal AI tools offer SOC 2 Type II compliance, data encryption at rest and in transit, and contractual guarantees about data isolation. Most enterprise tools like Ironclad and Relativity do not use client data to train their models. Always review the vendor's data processing agreement and confirm they meet your jurisdiction's confidentiality requirements before uploading sensitive documents."
+imageHint: "lawyer at desk reviewing AI legal research and contract review tools on laptop"
 ---
 
 Legal teams have a higher bar for adopting new technology than almost any other department. Attorney-client privilege, strict confidentiality obligations, regulatory requirements, and professional conduct rules mean that "move fast and break things" is not an option. When a legal team evaluates AI tools, security and compliance are not nice-to-haves — they are table stakes.

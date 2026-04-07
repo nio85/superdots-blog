@@ -19,6 +19,7 @@ faqs:
   - question: "How do I get my sales team to actually use AI tools?"
     answer: "Adoption fails when tools add work instead of removing it. Choose tools that integrate with your existing CRM and workflow — not ones that require reps to switch tabs or learn new interfaces. Start with your top performers (they'll experiment), show concrete time savings (not abstract ROI), and make the first use case dead simple. If a rep has to spend 20 minutes setting up the tool before it saves them 10 minutes, they won't use it."
 heroImage: "/images/blog/ai-for-sales-complete-guide.webp"
+imageHint: "sales team using AI deal intelligence and pipeline forecasting on multiple screens"
 ---
 
 The average sales rep spends [only 28% of their time actually selling](https://www.salesforce.com/resources/research-reports/state-of-sales/). The rest? Data entry, prospecting research, email drafting, internal meetings, and CRM updates. That means in a 40-hour week, your reps get roughly 11 hours of real selling time.

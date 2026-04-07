@@ -18,6 +18,7 @@ faqs:
     answer: "Initial setup (connecting your ticket data and running the first gap analysis) takes 1-2 weeks. Generating and reviewing the first batch of articles takes another 2-4 weeks. Most companies reach critical mass — enough content to deflect 30% or more of tickets — within 3-6 months. The system improves continuously after that as it learns from new tickets and agent corrections."
   - question: "What data does an AI knowledge base generator need?"
     answer: "At minimum, you need 3-6 months of historical support tickets with resolution notes. Ideally, provide 12 months of data plus chat transcripts, existing help articles, and internal documentation. The AI uses ticket text, agent responses, resolution outcomes, and customer satisfaction scores to identify the best answers and the biggest content gaps. More data means better clustering and higher-quality article drafts."
+imageHint: "support team watching AI turn resolved tickets into searchable knowledge base articles"
 ---
 
 Your support team answers the same questions hundreds of times a month. Every answer lives in a closed ticket. Every closed ticket is a help article that never got written.

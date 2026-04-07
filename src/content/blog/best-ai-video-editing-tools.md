@@ -7,6 +7,7 @@ department: "marketing"
 useCase: "automation"
 tags: ["ai-tools", "ai-video", "productivity"]
 heroImage: "/images/blog/best-ai-video-editing-tools.webp"
+imageHint: "video editor reviewing AI-automated cut and caption options in timeline editor"
 ---
 
 You have raw footage. Maybe it's a webinar recording, a product demo, a conference talk, or a customer interview. You need to turn it into something watchable. But you don't know Premiere Pro, and hiring an editor for every video isn't realistic.

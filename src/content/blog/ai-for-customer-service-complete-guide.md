@@ -18,6 +18,7 @@ faqs:
   - question: "What's the best way to start using AI in customer service?"
     answer: "Identify your highest-volume ticket category — usually order status, password resets, or basic how-to questions — and automate that first. A well-trained chatbot or self-service portal handling your top 5 ticket types can reduce volume by 30-40% in the first month. Then expand to routing, QA, and analytics. Teams that try to automate everything at once usually end up with shallow coverage that frustrates more customers than it helps."
 heroImage: "/images/blog/ai-for-customer-service-complete-guide.webp"
+imageHint: "customer support team reviewing AI-assisted ticket queue with resolution suggestions"
 ---
 
 Customer service teams are stretched thin. The average support agent handles [50+ tickets per day](https://www.zendesk.com/blog/customer-service-statistics/) while customer expectations keep climbing — 73% of consumers expect companies to understand their needs and expectations, and [90% rate an immediate response as important](https://blog.hubspot.com/service/customer-service-stats) when they have a question.

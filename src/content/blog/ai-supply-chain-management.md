@@ -14,6 +14,7 @@ faqs:
     answer: "Yes. Cloud-based AI supply chain tools have brought costs down significantly. Small businesses can start with demand forecasting and inventory optimization for a few hundred dollars per month. The biggest prerequisite is not budget but data — you need clean historical records of sales, inventory levels, and supplier lead times for AI to provide useful predictions."
   - question: "What data is needed for AI supply chain optimization?"
     answer: "At minimum: 2+ years of historical sales data, current inventory levels, supplier lead times, and order history. For better results, add external data like weather patterns, economic indicators, and promotional calendars. The data needs to be clean and consistent — AI models trained on messy data produce messy predictions."
+imageHint: "supply chain analyst viewing AI risk alert for supplier disruption with mitigation options"
 ---
 
 The supply chain that worked fine in 2019 has probably broken at least twice since then.

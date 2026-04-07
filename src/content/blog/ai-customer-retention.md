@@ -14,6 +14,7 @@ faqs:
     answer: "Well-trained models achieve 75-90% accuracy depending on data quality and volume. The key is not perfect prediction — it is catching enough at-risk customers early enough to intervene before they leave."
   - question: "What data do I need for AI churn prediction?"
     answer: "At minimum: customer activity data (logins, feature usage), support interaction history, and billing/payment history. The more behavioral signals you have, the better the model performs. Most teams need 12-18 months of historical data to train an effective model."
+imageHint: "retention analyst viewing churn risk scores and recommended intervention actions"
 ---
 
 Acquiring a new customer costs five to seven times more than keeping an existing one. That is not a new insight. Every business leader knows retention matters.

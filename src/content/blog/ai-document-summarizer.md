@@ -18,6 +18,7 @@ faqs:
     answer: "It varies by tool. Cloud-based summarizers like ChatGPT process documents on external servers, which may not meet compliance requirements for sensitive data. Enterprise-grade options like Microsoft Copilot and private Claude deployments offer data residency guarantees and do not use your documents for training. Always check the tool's data handling policy before uploading confidential files — especially for legal, financial, or HR documents."
   - question: "What is the difference between extractive and abstractive AI summarization?"
     answer: "Extractive summarization pulls the most important sentences directly from the original document — nothing is rewritten. Abstractive summarization generates new text that captures the meaning in fewer words, similar to how a person would write a summary. Extractive is more faithful to the source (better for legal and financial docs), while abstractive produces more readable, concise output (better for quick briefings and meeting recaps)."
+imageHint: "professional reading one-paragraph AI summary of lengthy contract document"
 ---
 
 You get to work. There are 14 documents waiting. A 60-page vendor contract. Two analyst reports. Meeting notes from three calls you missed. A policy update from legal.

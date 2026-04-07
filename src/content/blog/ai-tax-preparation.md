@@ -14,6 +14,7 @@ faqs:
     answer: "AI catches common deductions with 85-95% accuracy for standard business expenses. It excels at catching deductions you might miss — home office, vehicle use, depreciation. But it can also flag deductions that don't apply to your situation or miss nuanced ones that require context about your business. Always review AI-suggested deductions with a tax professional before claiming them."
   - question: "Should I still use a CPA if I have AI tax software?"
     answer: "Yes, for business taxes. AI handles the preparation — categorizing expenses, finding deductions, organizing documents. A CPA handles the strategy — entity structure, timing decisions, multi-year planning, and audit protection. The best approach is AI for prep plus CPA for review and filing. You get faster preparation and expert oversight."
+imageHint: "accountant reviewing AI-extracted tax data from documents alongside blank return"
 ---
 
 April is coming. You have a shoebox of receipts, a spreadsheet that stopped being accurate in June, and a growing sense of dread about what your accountant is going to say about your records.

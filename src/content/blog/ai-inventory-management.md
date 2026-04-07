@@ -7,6 +7,7 @@ department: 'operations'
 useCase: 'automation'
 tags: ['ai-for-operations', 'ai-tools']
 heroImage: "/images/blog/ai-inventory-management.webp"
+imageHint: "warehouse manager reviewing AI reorder recommendations and stock level predictions"
 ---
 
 Your inventory spreadsheet is lying to you. Not on purpose — it just cannot keep up. Someone forgot to log a shipment. The reorder formula references a deleted column. And the "forecast" for Q2 is last year's numbers with 10% added because that felt right.

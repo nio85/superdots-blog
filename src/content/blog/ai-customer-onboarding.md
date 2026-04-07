@@ -18,6 +18,7 @@ faqs:
     answer: "Most teams can implement a basic AI onboarding workflow in 2-4 weeks using existing tools. This includes setting up automated sequences, configuring behavioral triggers, and connecting your CRM. More complex implementations with custom AI models take 2-3 months."
   - question: "What metrics should you track for AI customer onboarding?"
     answer: "Track time-to-value (how quickly customers reach their first success milestone), onboarding completion rate, product adoption at 30/60/90 days, support ticket volume during onboarding, and early-stage churn rate. Compare these metrics before and after AI implementation to measure impact."
+imageHint: "customer success manager reviewing automated onboarding checklist with progress indicators"
 ---
 
 Your customer signed the contract. Your sales team celebrated. And then... silence.

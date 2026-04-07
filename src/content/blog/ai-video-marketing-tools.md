@@ -14,6 +14,7 @@ faqs:
     answer: "A 5-minute video from a text script takes about 15-30 minutes with current AI tools — writing the script, choosing settings, and rendering. Compare that to traditional production: scripting, filming, editing, and post-production typically takes 1-3 weeks for the same length. Repurposing existing content (turning a webinar into clips) is even faster, often under 10 minutes per clip."
   - question: "What's the cost difference between AI video and traditional production?"
     answer: "AI video tools cost between $18-50/month for most plans, with enterprise tiers running $100-300/month. Traditional video production for a single professional video ranges from $1,000 for basic to $10,000+ for polished content. If you produce more than 2-3 videos per month, AI tools pay for themselves immediately. The trade-off is creative ceiling — AI tools produce consistent, competent video, while traditional production can achieve truly distinctive results."
+imageHint: "marketer watching AI-generated product demo video with captions and b-roll inserts"
 ---
 
 You know video works. Every metric says so. Higher engagement, better conversion, longer time on page. Your LinkedIn posts with video get 5x the reach. Your landing pages with video convert better. Platforms like [YouTube](https://www.youtube.com), [Wistia](https://wistia.com), and [Vimeo](https://vimeo.com) make hosting and distributing video easier than ever. Your customers would rather watch a 2-minute explainer than read a 2,000-word guide.

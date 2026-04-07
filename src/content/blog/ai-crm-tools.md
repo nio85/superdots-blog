@@ -14,6 +14,7 @@ faqs:
     answer: "Most AI CRM features need at least 6-12 months of clean historical data to produce reliable predictions. Deal scoring requires enough closed-won and closed-lost deals to identify patterns — typically 200+ completed deals minimum. Contact enrichment and email summarization work immediately since they don't depend on your historical data."
   - question: "Can AI CRM features replace sales reps?"
     answer: "No. AI CRM features automate the administrative parts of selling — data entry, research, scheduling, summarizing. They make reps more productive by removing busywork, not by replacing judgment, relationship building, or negotiation. The best-performing sales teams use AI to free up time for the human work that closes deals."
+imageHint: "sales rep viewing AI-suggested next actions in CRM activity feed"
 ---
 
 Your CRM has AI features. You are probably not using them.

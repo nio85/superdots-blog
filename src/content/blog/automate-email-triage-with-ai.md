@@ -7,6 +7,7 @@ department: 'operations'
 useCase: 'automation'
 tags: ['ai-email', 'productivity']
 heroImage: "/images/blog/automate-email-triage-with-ai.webp"
+imageHint: "professional's inbox showing AI-sorted priority emails with labels and auto-replies"
 ---
 
 Most knowledge workers spend 2+ hours per day on email. A huge chunk of that time goes to sorting, prioritizing, and drafting routine replies. AI can handle most of this — and it takes less than an afternoon to set up.

@@ -7,6 +7,7 @@ department: 'legal'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-compliance-tools.webp"
+imageHint: "compliance officer reviewing flagged regulatory requirements on digital dashboard"
 ---
 
 Regulations are multiplying faster than your team can read them. GDPR, the EU AI Act, SOC 2, HIPAA, state-level privacy laws — every quarter brings new requirements, and every requirement brings new documentation, new audits, and new ways to get fined.

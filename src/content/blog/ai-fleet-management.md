@@ -18,6 +18,7 @@ faqs:
     answer: "At minimum: GPS tracking devices on each vehicle (most modern fleet vehicles have these built in). For predictive maintenance: OBD-II dongles or telematics devices that read engine diagnostics. For driver behavior monitoring: accelerometers (built into most telematics devices). For fuel optimization: fuel card integration. You can start with GPS and add sensors incrementally."
   - question: "Can AI fleet management work for small fleets?"
     answer: "Yes, though the ROI calculation changes. Fleets with 20+ vehicles typically see clear ROI from AI route optimization alone. Smaller fleets (10-20 vehicles) benefit most from predictive maintenance and fuel optimization. Below 10 vehicles, simpler GPS tracking with basic route optimization may be more cost-effective than a full AI platform."
+imageHint: "fleet manager viewing real-time vehicle location map with route optimization overlay"
 ---
 
 It is 6:45 AM. Your dispatcher just got a call: the driver for Route 7 is sick. You have 34 stops to cover, two vehicles available, one driver who can take extra stops before hitting hours-of-service limits, and a customer at stop 22 who has a 9 AM delivery window that cannot slip.

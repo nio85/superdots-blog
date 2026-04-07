@@ -22,6 +22,7 @@ faqs:
   - question: "Should I use a standalone chatbot or my help desk's built-in AI?"
     answer: "If you already use Intercom, Zendesk, or Freshdesk, start with their built-in AI — it integrates natively with your existing tickets, knowledge base, and workflows. Use a standalone chatbot only if your current help desk doesn't offer AI or if you need features it doesn't support."
 heroImage: "/images/blog/ai-chatbot-builder.webp"
+imageHint: "product manager configuring AI chatbot conversation flow in visual drag-drop editor"
 ---
 
 Your support team answers the same questions hundreds of times a week. Password resets. Order status. Return policies. Billing questions.

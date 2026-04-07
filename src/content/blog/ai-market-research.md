@@ -7,6 +7,7 @@ department: "marketing"
 useCase: "analysis"
 tags: ["ai-tools", "ai-marketing", "ai-analysis"]
 heroImage: "/images/blog/ai-market-research.webp"
+imageHint: "strategist reviewing AI-compiled market size report with competitor landscape summary"
 ---
 
 Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a [Gartner](https://www.gartner.com) subscription, or a time machine.

@@ -18,6 +18,7 @@ faqs:
     answer: "Quarterly at minimum, but ideally continuously. An annual skills gap analysis is a compliance exercise — by the time it is complete, the data is already stale and the gaps have shifted. AI enables continuous monitoring, with real-time alerts when critical gaps emerge. Quarterly reviews give you a regular rhythm to prioritize and act on what the AI surfaces."
   - question: "What is the difference between AI and traditional skills gap analysis?"
     answer: "Traditional analysis relies on self-assessment surveys, manual spreadsheet work, and annual cycles — it is slow, subjective, and backward-looking. AI skills gap analysis is faster (hours vs. weeks), more objective (it uses behavioral data rather than self-reporting), continuously updated, and predictive. It does not just show where you are short today — it forecasts which skills your organization will need in 12 to 24 months based on business plans and market trends."
+imageHint: "L&D manager reviewing AI skills gap heatmap by role and department"
 ---
 
 Most companies discover skill gaps the hard way. A critical project stalls because nobody knows Kubernetes. A product launch slips because the data engineering team cannot handle real-time pipelines. A competitor ships faster because their workforce adapted to new tools six months ago.

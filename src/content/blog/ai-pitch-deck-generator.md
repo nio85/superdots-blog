@@ -18,6 +18,7 @@ faqs:
     answer: "The standard investor pitch deck is 10-12 slides: cover, problem, solution, market size, business model, traction, team, financials, competition, and the ask. Some add a slide for partnerships or product demo. More than 15 slides signals you have not distilled your story enough — investors will lose interest."
   - question: "Can AI pitch deck tools include financial projections?"
     answer: "Most AI pitch deck tools generate a financial slide template, but the projections themselves need to come from you. Tools like Slidebean offer integrated financial modeling, and some like Alai can format your numbers into investor-friendly charts. Never rely on AI to generate your actual financial projections — investors will ask detailed questions about every number."
+imageHint: "startup founder reviewing AI-generated investor pitch slide with market size and traction"
 ---
 
 You have a great product, a growing market, and three days until your investor meeting. What you do not have is a designer, a pitch deck, or the patience to fight with PowerPoint templates.

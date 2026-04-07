@@ -14,6 +14,7 @@ faqs:
     answer: "Most teams report 50-70% reduction in contract review time. An NDA that took 30 minutes to review manually can be analyzed by AI in under 2 minutes, with key risks highlighted automatically."
   - question: "Is AI contract review accurate enough to trust?"
     answer: "AI contract review is highly accurate for standard agreements like NDAs and vendor contracts. It catches 85-95% of common risk patterns. However, it should complement — not replace — human review for high-value or unusual contracts."
+imageHint: "business professional reviewing AI-highlighted contract risk areas without legal background"
 ---
 
 You have 12 vendor agreements sitting in your inbox. Legal is backed up for two weeks. The sales team is asking why the partnership deal is stalled. Sound familiar?

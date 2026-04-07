@@ -18,6 +18,7 @@ faqs:
     answer: "This is where most tools struggle. Career changers, self-taught professionals, and candidates with non-linear paths often get filtered out by AI that matches on literal job titles and credentials. Modern semantic screening tools handle this better than keyword matchers — they can recognize that a restaurant manager has transferable project management skills. But no tool is perfect here. Best practice: configure your AI to weight skills and outcomes over titles, and always have a human review borderline candidates."
   - question: "How do I prevent bias in AI resume screening?"
     answer: "Start with three steps. First, audit your training data — if your past hires skew toward one demographic, the AI will learn that bias. Second, run quarterly disparate impact tests comparing shortlist demographics against your applicant pool. Third, blind demographic information before screening. Tools like Textio can also flag biased language in your job descriptions before candidates even apply. NYC and the EU now require these audits by law, but they are good practice everywhere."
+imageHint: "recruiter viewing AI-ranked candidate list with match scores and key criteria met"
 ---
 
 A single job posting on Indeed can pull 250 to 500 applications. At seven seconds per resume — the average recruiter scan time — that is 30 to 60 minutes of pure screening per role. Multiply by 15 open positions and your recruiting team just lost a full work week to reading resumes.
