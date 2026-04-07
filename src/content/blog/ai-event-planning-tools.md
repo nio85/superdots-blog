@@ -1,6 +1,6 @@
 ---
-title: "AI Event Planning Tools: 8 Platforms Compared (2026)"
-description: "Side-by-side comparison of 8 AI event planning tools with pricing, event size fit, and honest assessments. Cvent vs Bizzabo vs Nowadays."
+title: "AI Event Planning & Intelligence Tools: 8 Platforms Compared (2026)"
+description: "Compare 8 AI event management platforms on intelligence features, analytics, and pricing. Bizzabo vs Cvent vs Whova — which platform fits your event size?"
 pubDate: "2026-03-25"
 author: "Superdots Team"
 department: "operations"
