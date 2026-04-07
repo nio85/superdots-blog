@@ -5,7 +5,7 @@ pubDate: "2026-04-05"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
-tags: ["demand forecasting", "ai tools", "operations", "inventory management", "small business", "supply chain"]
+tags: ["demand-forecasting", "ai-tools", "operations", "inventory-management", "small-business", "supply-chain"]
 imageHint: "small warehouse shelf with tablet showing demand forecast graphs and inventory counts"
 faqs:
   - question: "How accurate is AI demand forecasting compared to manual forecasting?"

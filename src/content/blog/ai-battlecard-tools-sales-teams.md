@@ -5,7 +5,7 @@ pubDate: "2026-04-06"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
-tags: ["battlecards", "sales enablement", "competitive intelligence", "ai sales tools", "sales tools 2026"]
+tags: ["battlecards", "sales-enablement", "competitive-intelligence", "ai-sales-tools", "sales-tools-2026"]
 imageHint: "sales rep at laptop reviewing competitive battlecard on screen before a video call"
 faqs:
   - question: "What is an AI battlecard generator and how does it work?"
