@@ -14,6 +14,7 @@ faqs:
     answer: "Yes. Most AI document management tools integrate with Google Drive, SharePoint, OneDrive, Dropbox, and Box. They connect to your existing storage as an intelligence layer rather than replacing it — your files stay where they are, but AI adds classification, tagging, and search capabilities on top. This means no migration is needed to get started."
   - question: "How accurate is AI at auto-classifying documents?"
     answer: "AI auto-classification typically achieves 85-90% accuracy out of the box for common document types (contracts, invoices, reports, presentations). Accuracy improves to 95%+ after 2-3 months of corrections and training on your specific document patterns. The remaining edge cases — unusual formats, ambiguous documents, handwritten notes — still benefit from human review."
+imageHint: "knowledge worker searching company document archive using natural language query"
 ---
 
 The file you need is somewhere. You know it exists. It was in a shared drive, or attached to an email, or uploaded to Slack, or saved locally on someone's laptop. Maybe it was in the old SharePoint folder before the team moved to Google Drive. Or maybe it was renamed and you are searching for the wrong title.

@@ -12,6 +12,7 @@ faqs:
     answer: "Feed the AI examples of your own writing as style references, edit AI drafts with your voice rather than publishing raw output, and use AI for structure and research while writing the final version yourself. The key is treating AI as a writing partner, not a replacement."
   - question: "What is the best way to use an AI writing assistant?"
     answer: "Use AI for the scaffolding — outlines, research, first drafts, and editing suggestions. Then apply your own voice, add personal examples, and cut the generic filler. The best results come from a human-AI collaboration workflow, not fully automated writing."
+imageHint: "writer reviewing AI-suggested edits that preserve original tone and sentence style"
 ---
 
 AI can generate a 1,000-word blog post in 30 seconds. The problem is that it reads like every other AI-generated blog post: polished, generic, and forgettable.

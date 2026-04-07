@@ -18,6 +18,7 @@ faqs:
     answer: "Most teams see measurable improvement within 60-90 days of going live. The implementation timeline depends on your starting point: if you already use a unified platform, enabling AI features takes 2-4 weeks. Migrating from siloed systems with full data migration takes 3-6 months. Full optimization — tuned routing, trained AI models, fully trained agents — takes closer to six months."
   - question: "Do customers actually expect omnichannel experiences?"
     answer: "Yes. According to Salesforce, 76% of customers expect consistent interactions across departments and channels, but only 54% say it actually feels that way. That expectation gap is a competitive opportunity. Companies that close it see 10-15% improvements in CSAT and significant reductions in customer effort scores."
+imageHint: "support manager viewing unified inbox showing email chat and social tickets in one view"
 ---
 
 A customer emails about a billing issue on Monday. They follow up via live chat on Tuesday. By Wednesday, they call in. Each time, they explain the problem from scratch. Each time, a different agent starts from zero.

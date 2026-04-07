@@ -18,6 +18,7 @@ faqs:
     answer: "Track adoption rate (percentage of employees actively using new tools), proficiency growth (skill assessments over time), productivity impact (output metrics before vs. after), employee sentiment (pulse surveys and feedback analysis), and business outcome metrics tied to the specific change initiative."
   - question: "What role does HR play in AI change management?"
     answer: "HR leads workforce readiness assessment, designs training programs, manages communications, monitors employee sentiment, handles resistance and concerns, and ensures the change supports company culture. HR is the bridge between executive AI strategy and day-to-day employee experience."
+imageHint: "team leader facilitating AI adoption workshop with digital roadmap on screen"
 ---
 
 Here is a pattern playing out in thousands of organizations right now: leadership decides to adopt AI. They buy the tools. They announce the initiative. Then they wonder why six months later, only 15% of employees are actually using them.

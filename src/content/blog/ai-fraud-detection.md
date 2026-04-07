@@ -14,6 +14,7 @@ faqs:
     answer: "AI is effective at detecting expense fraud (inflated receipts, personal purchases), invoice fraud (duplicate invoices, vendor manipulation), payment fraud (unauthorized transfers, altered payment details), and financial statement anomalies (unusual journal entries, period-end manipulation)."
   - question: "How many false positives should I expect?"
     answer: "Initial false positive rates are typically 20-40%, dropping to 5-10% after 2-3 months of tuning. The key is a feedback loop — when analysts mark alerts as false positives, the model learns and improves. Tools without this feedback mechanism stay noisy."
+imageHint: "finance analyst reviewing AI-flagged suspicious transaction with risk score breakdown"
 ---
 
 A controller at a 500-person company reviews expense reports manually. She catches the obvious ones — the $200 dinner with no business justification, the duplicate submission from last month. But she processes 400 expense reports per month. She has about 90 seconds per report.

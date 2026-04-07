@@ -18,6 +18,7 @@ faqs:
     answer: "AI reads your control documentation and matches it against audit framework requirements using natural language understanding. It identifies which controls satisfy which requirements, flags requirements without adequate controls, and highlights controls that cover multiple requirements. This eliminates the manual cross-referencing that traditionally takes days."
   - question: "What if our documentation is disorganized?"
     answer: "That is actually where AI adds the most value. AI can crawl your document repositories, identify audit-relevant evidence, categorize it by control area, and flag missing documentation. It turns a messy collection of policies, screenshots, and reports into an organized audit package. The worse your starting point, the more time AI saves."
+imageHint: "auditor organizing evidence folders with AI tool surfacing relevant documents"
 ---
 
 It is six weeks before the auditors arrive. Your controller has just blocked out three weeks of her calendar. Two analysts are pulling access logs from systems they can barely navigate. Someone is on Slack asking where last year's vendor contracts ended up. A shared Google Drive folder called "Audit 2026 — FINAL v3" already has 140 files in it, and the naming conventions are a disaster.

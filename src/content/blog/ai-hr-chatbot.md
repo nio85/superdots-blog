@@ -14,6 +14,7 @@ faqs:
     answer: "A basic deployment covering your top 20 HR questions can be live in 2-4 weeks. This includes configuring the knowledge base, connecting to your messaging platform (Slack, Teams), and testing responses. A more comprehensive setup with HRIS integrations (leave balances, benefits lookups), multi-language support, and custom escalation workflows typically takes 6-8 weeks. The biggest time investment is not the technology — it is curating and updating the HR knowledge base that the chatbot draws from."
   - question: "What questions can an AI HR chatbot answer?"
     answer: "The sweet spot is high-volume, policy-based questions that have clear, consistent answers: PTO balances and leave policies, benefits enrollment dates and plan details, payroll schedules and tax form locations, expense submission procedures, onboarding checklists and IT setup guides, office policies, and company holiday calendars. Most mature deployments handle 60-80% of inbound HR queries without human intervention. The common thread is that these questions have factual, documented answers — the chatbot is surfacing information, not making judgment calls."
+imageHint: "employee typing HR question to AI chatbot and receiving instant policy answer"
 ---
 
 Your HR inbox has 47 unread messages. Fourteen of them ask about the same PTO policy that's already in the employee handbook. Three are about the same open enrollment deadline you announced last week. You've answered these questions so many times you could do it in your sleep — and honestly, that's exactly the problem.

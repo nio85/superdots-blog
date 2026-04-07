@@ -14,6 +14,7 @@ faqs:
     answer: "Traditional monitoring fires an alert every time a metric crosses a threshold. AI monitoring learns what normal looks like for each metric — including daily, weekly, and seasonal patterns — and only alerts when behavior genuinely deviates from that baseline. It also groups related alerts into a single incident rather than paging you separately for CPU, memory, and latency spikes that all stem from the same root cause. Teams typically see 60-90% fewer alerts after deploying AI-based noise reduction."
   - question: "What data does AI monitoring need?"
     answer: "At minimum, AI monitoring needs 2-4 weeks of historical metrics data to establish baseline behavior patterns. The more data types you feed it, the better it performs — metrics (CPU, memory, latency, error rates), logs, traces, and deployment events all help. Most AI monitoring tools integrate with standard observability pipelines (Prometheus, OpenTelemetry, StatsD) so you do not need to re-instrument your stack. The main requirement is consistency — gaps in data collection make it harder for models to learn normal patterns."
+imageHint: "SRE viewing AI anomaly detection alert with correlated metrics on monitoring dashboard"
 ---
 
 It is 3 AM and your phone is buzzing. Again. Five alerts in the last hour. CPU on the payments service hit 85%. Disk usage on the logging cluster crossed 90%. Latency on the API gateway spiked for 47 seconds, then dropped back to normal.

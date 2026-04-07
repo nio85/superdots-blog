@@ -18,6 +18,7 @@ faqs:
     answer: "Google does not penalize AI-generated content per se — it penalizes low-quality content regardless of how it was produced. AI writing tools can produce SEO-friendly content when combined with proper keyword research, original insights, and human editing. Tools like Surfer SEO and Clearscope help optimize AI-written content for search. The biggest risk is producing generic content that adds no unique value."
   - question: "What is the best free AI writing tool?"
     answer: "ChatGPT's free tier is the most capable free AI writing tool — it handles emails, reports, copy, and documentation well. Grammarly's free tier covers basic grammar and clarity suggestions. Google's Gemini offers solid free writing assistance. For longer content, Claude's free tier provides excellent quality with limited daily usage. Most business users find the paid tiers worth the investment within the first week."
+imageHint: "professional writer comparing AI writing assistant outputs side by side on screen"
 ---
 
 Business writing has never been higher-volume or higher-stakes. Marketing teams ship blog posts, ad copy, and landing pages on weekly cadences. Sales teams write proposals and follow-up sequences that need to sound personal at scale. Support teams draft help articles and response templates. And everyone writes emails — far too many emails. AI writing tools have gone from novelty to necessity for teams that need to produce quality content without burning out their best writers.

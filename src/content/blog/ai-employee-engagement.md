@@ -14,6 +14,7 @@ faqs:
     answer: "Current AI attrition models predict voluntary turnover with 70-85% accuracy when they have sufficient data (12+ months of employee history, survey responses, and behavioral signals). Accuracy improves with more data points and is highest for identifying teams at risk rather than specific individuals. No model is perfect — use predictions as early warning signals, not certainties."
   - question: "Can AI engagement tools work for remote teams?"
     answer: "Yes, and in some ways they work better. Remote teams have fewer in-person signals (body language, hallway conversations) but more digital signals (communication patterns, meeting frequency, collaboration tool usage). AI engagement tools designed for remote work analyze these digital signals to surface engagement trends that managers in distributed teams might otherwise miss."
+imageHint: "HR professional reviewing engagement score dashboard with department breakdown"
 ---
 
 Your annual engagement survey takes six weeks to design, three weeks to administer, and four weeks to analyze. By the time the results reach managers, the employees who were most disengaged have already started interviewing elsewhere.

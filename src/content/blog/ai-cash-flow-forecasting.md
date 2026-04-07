@@ -22,6 +22,7 @@ faqs:
     answer: "The ROI comes from three areas: reduced borrowing costs (better cash visibility means you draw less on credit facilities), improved investment returns (you can deploy idle cash more confidently), and labor savings (less time spent building and maintaining spreadsheet models). A company with $50M in annual revenue that reduces unnecessary credit line draws by even 10% can save $50K-150K per year in interest costs alone. Most platforms pay for themselves within 6-12 months."
   - question: "Does AI cash flow forecasting work for small businesses?"
     answer: "Yes, though the tool landscape differs. Enterprise platforms like Kyriba are overkill for a 20-person company. Instead, look at tools like Float, Pulse, or Dryrun that are designed for small businesses and integrate with QuickBooks or Xero. These offer AI-assisted forecasting features at price points that make sense for smaller operations — typically $50-200/month. The core benefits of pattern recognition and scenario modeling still apply at smaller scale."
+imageHint: "CFO looking at 90-day cash flow forecast chart with confidence intervals"
 ---
 
 You checked your bank balance this morning. It looked fine. But you have payroll in eight days, a vendor payment due in twelve, and your biggest client's invoice is sitting at 47 days outstanding. Will you have enough cash on March 25th? What about April 10th?

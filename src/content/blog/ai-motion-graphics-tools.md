@@ -18,6 +18,7 @@ faqs:
     answer: "Most tools export MP4, GIF, WebM, and Lottie (for web animations). Some also export to After Effects or Premiere format for further editing. Check that your tool supports the formats your distribution channels require — social platforms often have specific format and resolution requirements."
   - question: "Are AI-generated animations good enough for client work?"
     answer: "For social media, web content, presentations, and internal communications — absolutely. The quality gap between AI-generated and manually crafted animations has narrowed significantly. For premium brand campaigns or broadcast, you may still want a motion designer to refine AI output."
+imageHint: "video editor reviewing AI-generated motion graphic template in timeline editor"
 ---
 
 Your marketing team needs a product launch animation by Friday. You have a static Figma file, a logo, and zero After Effects skills on the team. Three years ago, that was a problem. You either hired a freelancer, waited two weeks, or shipped a static image instead.

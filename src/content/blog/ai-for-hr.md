@@ -19,6 +19,7 @@ faqs:
   - question: "What's the best way to start using AI in HR?"
     answer: "Pick your highest-volume pain point — usually resume screening or employee Q&A — and solve that first. Avoid trying to automate everything at once. Run a 30-day pilot with one tool, measure time saved and employee satisfaction, then expand. Most successful HR AI implementations started with a single use case and grew organically."
 heroImage: "/images/blog/ai-for-hr.webp"
+imageHint: "HR director reviewing AI-powered people analytics dashboard with workforce insights"
 ---
 
 HR teams are buried in admin. The average HR professional spends [73% of their time on administrative tasks](https://www.shrm.org) — screening resumes, answering the same policy questions, chasing down onboarding paperwork, and compiling performance data. That leaves barely a quarter of their week for the work that actually moves the needle: building culture, developing talent, and making strategic people decisions.

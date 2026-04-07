@@ -22,6 +22,7 @@ faqs:
   - question: "Will AI note-taking apps work for technical notes with code snippets?"
     answer: "Notion, Obsidian, and Reflect all support code blocks with syntax highlighting. For heavy technical documentation, Obsidian with its plugin ecosystem is the most flexible. Notion handles inline code and code blocks well for mixed technical/non-technical teams."
 heroImage: "/images/blog/ai-note-taking-apps.webp"
+imageHint: "professional reviewing structured AI notes from meeting with key decisions highlighted"
 ---
 
 Your notes are scattered across three apps, two notebooks, and a pile of sticky notes that made sense last Tuesday.

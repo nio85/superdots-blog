@@ -22,6 +22,7 @@ faqs:
     answer: "Track three metrics: hours spent on manual monitoring before and after (most teams see a 60-80% reduction), time-to-awareness for new regulatory changes (from weeks to hours), and audit findings related to missed regulatory updates (should drop to near zero). A compliance analyst earning $85,000/year who spends 40% of their time on manual monitoring represents $34,000 in recoverable capacity."
   - question: "Do AI monitoring tools work for non-English regulations?"
     answer: "Some do. Platforms like Corlytics and Cube cover regulations in multiple languages across 100+ jurisdictions. Others focus primarily on English-language jurisdictions (US, UK, Australia, Canada). If you operate globally, verify multi-language coverage before purchasing — do not assume it is included."
+imageHint: "compliance officer viewing AI regulatory change alert with impact assessment summary"
 ---
 
 Your compliance analyst opens her laptop on Monday morning. Over the weekend, three things happened: the SEC published updated guidance on AI-generated financial disclosures, a state legislature passed a new data privacy amendment, and ESMA released a consultation paper affecting your European operations.

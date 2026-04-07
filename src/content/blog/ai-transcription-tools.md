@@ -22,6 +22,7 @@ faqs:
   - question: "What is the difference between AI transcription and human transcription?"
     answer: "AI transcription is faster (minutes vs. hours) and cheaper ($0.006-0.03 per minute vs. $1-3 per minute for human). Human transcription is more accurate for difficult audio. Many teams use AI for everyday meetings and human transcription for legal or compliance-critical recordings."
 heroImage: "/images/blog/ai-transcription-tools.webp"
+imageHint: "professional reviewing accurate AI transcript of recorded meeting with speaker labels"
 ---
 
 Your team spends hours in meetings every week. But the notes? They're either incomplete, late, or missing entirely.

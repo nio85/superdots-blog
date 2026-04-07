@@ -18,6 +18,7 @@ faqs:
     answer: "For teams under 20 people, Calendly (free tier available) handles external scheduling well, while Reclaim.ai (free for individuals) is strong at protecting focus time and balancing internal meetings. Clockwise works best if your entire team is on Google Calendar. The right choice depends on whether your biggest pain point is external scheduling (prospect and client meetings) or internal calendar fragmentation. Most small teams start with Calendly for external meetings and add a focus-time tool later."
   - question: "How much time does an AI scheduling assistant actually save?"
     answer: "Most users report saving 3-5 hours per week on scheduling logistics. The savings come from eliminating back-and-forth emails (5-10 minutes per meeting), automatic timezone handling for distributed teams, and reduced context switching from scheduling interruptions. For roles that schedule 10+ meetings per week — sales, recruiting, executive assistants — the time savings can exceed 6 hours weekly."
+imageHint: "busy professional watching AI book team meeting across multiple conflicting calendars"
 ---
 
 When Calendly's own sales team started using AI scheduling internally, their average time-to-book with prospects dropped from 3 days to under 4 hours. Not because the meetings got shorter — because the five-email thread to find a time disappeared entirely.

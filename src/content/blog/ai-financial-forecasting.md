@@ -14,6 +14,7 @@ faqs:
     answer: "At minimum, you need 2-3 years of historical financial data — revenue figures, expenses, cash inflows and outflows. The more granular, the better. Beyond that, AI models improve when you add external data like market indices, seasonal indicators, customer behavior data, and macroeconomic signals. Most modern tools connect directly to your ERP, CRM, and accounting software to pull this data automatically."
   - question: "Can AI replace financial analysts?"
     answer: "No. AI handles the computational heavy lifting — processing thousands of variables, running scenarios, and spotting patterns in historical data. But financial analysts bring judgment, context, and strategic thinking that models cannot replicate. The best results come from analysts using AI tools to test their assumptions and explore scenarios faster, not from removing humans from the process entirely."
+imageHint: "finance analyst reviewing AI-generated revenue forecast with confidence range chart"
 ---
 
 Your Q3 revenue forecast was off by 22%. Not because your finance team is bad at their job. Because the spreadsheet model they built in January could not account for a supply chain delay in April, a competitor price cut in May, and a sudden spike in demand from a market segment nobody was watching.

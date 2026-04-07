@@ -18,6 +18,7 @@ faqs:
     answer: "AI handles scanned documents through OCR (optical character recognition) before clause extraction. Quality depends on scan resolution — clean scans work well, but faded or handwritten documents may need manual verification. Most tools flag low-confidence extractions for human review."
   - question: "Can AI clause extraction replace lawyers?"
     answer: "No. AI handles the extraction and categorization — the mechanical work. Lawyers handle interpretation, risk assessment, and strategic decisions about what the clauses mean for your business. AI makes lawyers faster and more thorough, not redundant."
+imageHint: "lawyer reviewing extracted contract clauses in structured table on screen"
 ---
 
 Your general counsel asks a simple question: "Do any of our vendor contracts let the vendor assign the agreement without our consent?"

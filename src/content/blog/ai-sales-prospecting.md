@@ -14,6 +14,7 @@ faqs:
     answer: "The best AI enrichment tools (Apollo, ZoomInfo, Cognism) report email accuracy rates of 90-95% and phone accuracy of 70-85%. Accuracy varies by market — US and UK data tends to be more reliable than emerging markets. Always verify enriched data with email validation before large outreach campaigns to protect your sender reputation."
   - question: "Can AI prospecting tools work for small sales teams?"
     answer: "Absolutely. Small teams benefit the most because they have less time for manual research. A single rep with the right AI tool can build a qualified pipeline that would otherwise require a dedicated SDR team. Tools like Apollo and Instantly start under $100/month, making them accessible for small teams."
+imageHint: "SDR reviewing AI-identified prospect list with fit scores and contact details"
 ---
 
 Your sales reps are spending 40% of their time looking for people to sell to. Not selling. Not building relationships. Not closing deals. Searching LinkedIn, reading company websites, guessing at email addresses, and manually logging what they find into your CRM.

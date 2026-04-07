@@ -18,6 +18,7 @@ faqs:
     answer: "Most lawyers spend 15-30 minutes daily on time entry. AI reduces this to 5-10 minutes of review and approval. Over a year, that is 50-100+ hours recovered per attorney — hours that can be billed or used for business development."
   - question: "Does AI billing work with existing practice management software?"
     answer: "Most AI billing tools integrate with major practice management platforms like Clio, PracticePanther, MyCase, and enterprise systems like Aderant and Elite. Check integration depth — some only push data one way, while better tools sync bidirectionally."
+imageHint: "lawyer reviewing AI-generated time entry suggestions from calendar and email activity"
 ---
 
 It is 6:45 PM on a Thursday. You have been in back-to-back client calls since morning, drafted two agreements, and reviewed a term sheet. Now you have to reconstruct every billable minute of your day from memory before you can leave.

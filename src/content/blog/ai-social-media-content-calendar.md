@@ -7,6 +7,7 @@ department: "marketing"
 useCase: "writing"
 tags: ["ai-writing", "ai-tools", "productivity"]
 heroImage: "/images/blog/ai-social-media-content-calendar.webp"
+imageHint: "social media manager reviewing AI-populated monthly content calendar on screen"
 ---
 
 You know your business should be posting on social media. You also know that "should" has turned into opening LinkedIn once a week, staring at the blank post box, closing the tab, and telling yourself you will do it tomorrow.

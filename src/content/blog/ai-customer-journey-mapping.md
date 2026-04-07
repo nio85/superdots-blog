@@ -18,6 +18,7 @@ faqs:
     answer: "AI journey maps can update continuously as new data flows in. Most teams review monthly for tactical adjustments and quarterly for strategic changes. The key advantage over traditional journey maps is that you are always looking at current behavior, not a snapshot from last year's workshop."
   - question: "Do I need a data science team to use AI journey mapping?"
     answer: "No. Modern AI journey mapping tools are designed for marketing teams, not data scientists. They provide visual journey flows, drag-and-drop segmentation, and plain-language insights. You should understand your business metrics and customer segments, but you do not need SQL skills or statistical expertise."
+imageHint: "UX researcher reviewing AI-generated customer journey map with touchpoints and pain points"
 ---
 
 Your team spent three days in a workshop last year. Sticky notes covered every wall. You mapped the ideal customer journey from awareness to purchase — six clean stages, a handful of touchpoints, and a tidy diagram that went into a slide deck.

@@ -18,6 +18,7 @@ faqs:
     answer: "AI tracks open rates, read time, click-through rates, and action completion for each message. Beyond basic metrics, AI analyzes sentiment in employee responses, identifies which topics generate the most engagement or confusion, spots communication gaps by department or location, and correlates comms effectiveness with broader engagement scores."
   - question: "Is AI replacing internal communications professionals?"
     answer: "No. AI automates the repetitive parts — drafting routine updates, scheduling sends, analyzing metrics — so comms professionals can focus on strategy, storytelling, and high-stakes communication. The demand for skilled internal communicators is actually growing as organizations recognize that AI adoption itself requires sophisticated change communication."
+imageHint: "internal comms manager composing targeted employee announcement in AI tool"
 ---
 
 The average employee receives 121 emails per day. Your carefully crafted internal announcement about the new benefits package? It is competing with 120 other messages for attention.

@@ -14,6 +14,7 @@ faqs:
     answer: "Build a prompt library with your brand's visual language documented — preferred colors, styles, moods, subjects, and composition rules. Use style reference images when your tool supports them. Create templates and save successful prompts for reuse. Some tools like Midjourney offer style references that help maintain consistency across generations. The key is treating prompt engineering like a skill your team develops over time."
   - question: "Are AI-generated images good enough for professional marketing?"
     answer: "For many use cases, yes. Conceptual illustrations, blog headers, social media graphics, presentation visuals, and ad creative variations are all viable today. Where AI still falls short: realistic product photography, human faces (consistency across multiple images), text rendering within images, and anything requiring exact brand specifications. Start with lower-stakes content and expand as you develop prompt skills."
+imageHint: "marketing team reviewing AI-generated campaign image options for social media post"
 ---
 
 Your marketing team needs a blog header image by 3 PM. A social media graphic for tomorrow. Six ad creative variations for next week's campaign. And your designer is booked solid for the next two weeks.

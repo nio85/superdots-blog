@@ -22,6 +22,7 @@ faqs:
   - question: "Are automated workflows reliable enough for business-critical processes?"
     answer: "Yes, with proper setup. All major platforms offer error handling, retry logic, and notifications when workflows fail. For critical processes, add monitoring and human review steps. Enterprise plans include SLAs and priority support."
 heroImage: "/images/blog/ai-workflow-automation.webp"
+imageHint: "operations professional building automated approval workflow with drag-and-drop tool"
 ---
 
 You're doing the same ten tasks every day. Copy data from email to spreadsheet. Route support tickets. Send follow-up messages. Update the CRM after calls.

@@ -14,6 +14,7 @@ faqs:
     answer: "AI works well for research-heavy content (industry roundups, comparison articles), structured formats (email sequences, social posts, product descriptions), and high-volume content (ad copy variations, SEO pages). It struggles with thought leadership, personal narratives, and anything requiring original analysis."
   - question: "How much time does AI save on content creation?"
     answer: "Most marketing teams report 40-60% reduction in time from idea to published piece. The savings come from faster research, faster first drafts, and faster iteration — not from eliminating the editing and quality control steps."
+imageHint: "content marketer reviewing AI-drafted blog post with editing toolbar visible"
 ---
 
 You have probably read AI-generated content without knowing it. You have also probably read AI-generated content and known immediately. The difference is not the tool. It is the process.

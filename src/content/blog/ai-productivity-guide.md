@@ -12,6 +12,7 @@ faqs:
   - question: "What is the best AI tool for productivity?"
     answer: "There is no single best tool — it depends on your biggest time sink. For email, tools like SaneBox or Superhuman help most. For meetings, Otter.ai or Fireflies. For writing, Claude or ChatGPT. Start with the task that eats the most of your day."
 heroImage: "/images/blog/ai-productivity-guide.webp"
+imageHint: "knowledge worker reviewing personal AI productivity dashboard with time savings metrics"
 ---
 
 You don't need to overhaul your entire workflow to get more done. According to [McKinsey](https://www.mckinsey.com), AI-assisted workers can complete tasks up to 40% faster. The biggest productivity gains come from speeding up the tasks you already do every day — email, meetings, writing, project management, and presentations.

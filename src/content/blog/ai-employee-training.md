@@ -18,6 +18,7 @@ faqs:
     answer: "Initial platform costs range from $5-15 per user per month for tools like EdApp or Docebo, compared to the $1,200-1,800 per employee that companies typically spend on traditional training annually. The savings come from reduced content development time (AI cuts it by 50-80%), higher completion rates meaning less wasted spend, and measurable skill improvements that justify the investment. PwC research shows organizations using AI learning solutions see a 10% productivity increase and 5% decrease in training costs."
   - question: "How do I measure whether AI training is actually working?"
     answer: "Move beyond completion rates. Track skill progression through adaptive assessments before and after training. Measure knowledge retention at 30 and 60 days using spaced repetition check-ins. Connect training data to business metrics — did sales training improve conversion rates? Did customer service training reduce handle time? AI platforms can correlate these automatically, giving you ROI numbers that justify the budget."
+imageHint: "employee completing adaptive AI training module with progress bar and quiz"
 ---
 
 Corporate training is a $400 billion global industry — and most of it is wasted.

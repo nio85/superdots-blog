@@ -7,6 +7,7 @@ department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "productivity", "ai-data-analysis"]
 heroImage: "/images/blog/ai-tools-for-data-entry.webp"
+imageHint: "office worker reviewing automated data entry output compared to original source document"
 ---
 
 Data entry is one of the most hated tasks in every office. It's repetitive, error-prone, and feels like a waste of time — because it usually is. You're taking information that already exists in one format (a PDF, an email, a handwritten form) and manually typing it into another format (a spreadsheet, a database, a CRM).

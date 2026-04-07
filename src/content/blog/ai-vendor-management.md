@@ -18,6 +18,7 @@ faqs:
     answer: "Start with your vendor list, contracts, and spend data. Better results come from adding performance data (tickets, SLA reports, delivery records), usage data (license utilization, volume consumption), and market benchmarking data. Most AI tools can import contracts and spend from your procurement or AP system."
   - question: "Is AI vendor management only for large enterprises?"
     answer: "No. Mid-size companies with 50-200 vendors see significant value — that is the range where manual tracking breaks down but the cost savings from optimization are substantial. Even smaller companies benefit if they have high-value vendor relationships or complex SLAs to monitor."
+imageHint: "procurement team reviewing AI vendor scorecard with performance and risk metrics"
 ---
 
 Your cloud infrastructure vendor just renewed automatically. Again. The price went up 12%. Nobody noticed until the invoice hit accounts payable.

@@ -7,6 +7,7 @@ department: 'finance'
 useCase: 'analysis'
 tags: ['ai-data-analysis', 'ai-tools']
 heroImage: "/images/blog/ai-data-analysis-for-non-technical-teams.webp"
+imageHint: "non-technical professional typing plain English query into AI analytics tool to get chart"
 ---
 
 You have a spreadsheet with 10,000 rows. Your manager wants to know which product category grew fastest last quarter. In the old world, you would need a pivot table, maybe a VLOOKUP, and an hour of fiddling with formulas.

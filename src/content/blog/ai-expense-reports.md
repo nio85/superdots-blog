@@ -7,6 +7,7 @@ department: "finance"
 useCase: "automation"
 tags: ["ai-for-finance", "ai-tools", "productivity"]
 heroImage: "/images/blog/ai-expense-reports.webp"
+imageHint: "employee photographing receipt with phone while AI auto-fills expense report"
 ---
 
 Nobody likes doing expense reports. Nobody. Not the sales rep taping receipts to a sheet of paper. Not the finance analyst reviewing 200 submissions every month. Not the manager who has to approve them between meetings without any idea whether $47 at "Airport Bistro" was a client lunch or a personal meal.

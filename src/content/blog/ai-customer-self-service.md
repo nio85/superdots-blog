@@ -14,6 +14,7 @@ faqs:
     answer: "Start with your top 50 most-asked questions and build clear, structured articles for each one. Every article should lead with the answer in the first sentence, use the language your customers actually use (not internal product terminology), and cover one topic per article. Beyond help articles, you need troubleshooting decision trees for common technical issues, and ideally API integrations that let the self-service layer take actions — not just provide information. The quality of your knowledge base content is the single biggest factor in self-service success."
   - question: "Do customers actually use self-service portals?"
     answer: "Yes. Research consistently shows that 67% of customers prefer self-service over speaking to a support representative. The key is that self-service has to work — customers abandon portals that give irrelevant results, trap them in chatbot loops, or make it hard to reach a human when needed. When self-service actually resolves the issue quickly, customer satisfaction scores are on par with or higher than agent-handled interactions. The portals that fail are the ones built to deflect customers rather than genuinely help them."
+imageHint: "customer typing question into self-service portal and receiving instant AI answer"
 ---
 
 Your customer submits a ticket at 11pm asking how to change the billing email on their account. The answer is in your help center. It takes a human agent 90 seconds to respond. But the customer waits until morning to get that response — and they are mildly annoyed when they do.

@@ -22,6 +22,7 @@ faqs:
   - question: "How much does business AI translation cost?"
     answer: "Google Translate is free for basic use. DeepL Pro starts at $8.74/month (500,000 characters). Enterprise API pricing is typically $20-25 per million characters. GPT-based tools cost $20/month for general use. Volume-heavy businesses should budget $50-200/month depending on translation volume."
 heroImage: "/images/blog/ai-translation-tools-business.webp"
+imageHint: "global business team reviewing AI-translated contract in side-by-side bilingual view"
 ---
 
 Your next customer, partner, or employee might speak a different language. Whether you're expanding into new markets, working with international teams, or serving a multilingual customer base, translation is no longer optional.

@@ -18,6 +18,7 @@ faqs:
     answer: "Most implementations take 3-6 weeks from setup to first usable scores. You will need 1-2 weeks for data auditing and connection, 1-2 weeks for model training and validation, and another 1-2 weeks for pilot testing with a subset of reps. Meaningful ROI data — higher conversion rates, faster pipeline velocity — typically shows within the first quarter. Companies like Grammarly saw a 30% lift in marketing qualified lead conversions after switching to predictive scoring."
   - question: "What is a good AI lead score conversion rate?"
     answer: "High-performing companies using AI-driven lead scoring achieve up to 6% conversion rates, compared to the average B2B conversion rate of 3.2%. Your A-tier leads should convert at 3-5x the rate of your D-tier leads. If that spread is not happening, the issue is usually dirty CRM data, misaligned scoring criteria, or reps not trusting the scores enough to change their behavior."
+imageHint: "sales manager reviewing AI-ranked leads list with scoring factors explained in sidebar"
 ---
 
 Your sales team has 500 leads in the pipeline. Your reps can work 50 of them this week. Which 50?

@@ -7,6 +7,7 @@ department: 'customer-support'
 useCase: 'analysis'
 tags: ['ai-customer-support', 'ai-data-analysis']
 heroImage: "/images/blog/ai-customer-feedback-analysis.webp"
+imageHint: "CX analyst viewing AI-categorized customer feedback themes and sentiment trend chart"
 ---
 
 Your customers are telling you exactly what they want. The problem is they are saying it in 200 support tickets, 47 app store reviews, a quarterly NPS survey, three social media threads, and a passive-aggressive email to your sales rep.

@@ -20,6 +20,7 @@ faqs:
   - question: "Will AI grammar checkers change my writing voice?"
     answer: "Good AI writing tools improve clarity without flattening your voice. Tools like Writer and Grammarly let you set tone preferences (formal, casual, confident) so suggestions match your intended style. The key is configuring the tool properly."
 heroImage: "/images/blog/ai-grammar-checker-business.webp"
+imageHint: "professional reviewing polished business email with grammar suggestions accepted"
 ---
 
 Spell-check catches typos. AI writing tools catch everything else — unclear sentences, off-brand messaging, inconsistent tone, and the kind of filler that makes professional writing sound amateur.

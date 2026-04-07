@@ -7,6 +7,7 @@ department: "engineering"
 useCase: "automation"
 tags: ["ai-tools", "ai-testing", "ai-engineering"]
 heroImage: "/images/blog/ai-test-generation.webp"
+imageHint: "QA engineer reviewing AI-generated unit test suite with edge case coverage listed"
 ---
 
 Every developer knows the feeling. You finished the feature. It works. The PR is ready. But the test coverage is thin, and you know it.

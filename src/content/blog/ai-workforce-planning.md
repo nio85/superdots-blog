@@ -14,6 +14,7 @@ faqs:
     answer: "Start with your HRIS data (headcount, roles, tenure, compensation), historical attrition data, and business metrics (revenue, project pipeline, seasonal patterns). The more connected your data sources, the better the forecasts."
   - question: "How far ahead can AI forecast headcount needs?"
     answer: "Most AI models forecast reliably 6-12 months ahead. Beyond that, accuracy drops because business conditions change. The value is not perfect prediction — it is having a data-driven starting point instead of guesswork."
+imageHint: "HR strategist reviewing AI headcount forecast by department with hiring timeline"
 ---
 
 Every year, leadership asks HR the same question: "How many people do we need to hire next year?"

@@ -22,6 +22,7 @@ faqs:
   - question: "Do AI agents replace employees?"
     answer: "AI agents handle repetitive, time-consuming tasks so employees can focus on work that requires judgment, creativity, and relationship-building. Most companies report that agents increase team capacity rather than reduce headcount — teams do more with the same people."
 heroImage: "/images/blog/ai-agents-for-business.webp"
+imageHint: "business professional overseeing multiple AI agent task cards on digital dashboard"
 ---
 
 AI chatbots answer questions. AI agents do the work.

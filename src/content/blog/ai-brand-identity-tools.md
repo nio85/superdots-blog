@@ -22,6 +22,7 @@ faqs:
     answer: "It depends on the tool and your jurisdiction. Logos generated purely by AI with no human creative input may face copyright challenges in some countries. However, most AI logo tools produce starting points that you then modify — and that human modification typically makes the result trademarkable. Consult an IP attorney for your specific situation."
   - question: "How long does it take to build a brand identity with AI tools?"
     answer: "A functional brand identity — logo, colors, fonts, and basic guidelines — can be assembled in a single day. A polished one, with variations, templates, and a proper guidelines document, takes about a week of focused work. Compare that to 4-8 weeks with a traditional agency."
+imageHint: "entrepreneur reviewing AI-generated logo variations and color palettes on screen"
 ---
 
 You need a brand identity. You know this because your website uses one blue, your pitch deck uses a different blue, your social media headers were made by three different people, and nobody can find the logo file in the right format.

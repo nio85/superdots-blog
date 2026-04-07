@@ -14,6 +14,7 @@ faqs:
     answer: "For most small-to-mid teams, AI tools cover 80% of what a dedicated DBA does — query optimization, index management, monitoring, and basic tuning. For complex workloads, multi-database architectures, or highly regulated environments, you still benefit from DBA expertise."
   - question: "What is natural language to SQL?"
     answer: "Natural language to SQL tools let you write database queries in plain English instead of SQL. You type 'show me all customers who signed up last month and haven't made a purchase' and the tool generates the correct SQL query. This makes database data accessible to non-technical team members."
+imageHint: "database administrator reviewing AI query optimization suggestions in terminal"
 ---
 
 Your app is slow. Users are complaining. You open your monitoring dashboard and see that database query times have tripled since last week's release. The problem is a query — but which one? And why?

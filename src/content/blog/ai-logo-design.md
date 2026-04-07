@@ -7,6 +7,7 @@ department: "design"
 useCase: "communication"
 tags: ["ai-design", "ai-tools"]
 heroImage: "/images/blog/ai-logo-design.webp"
+imageHint: "founder reviewing four AI-generated logo concepts for their startup brand"
 ---
 
 You started a company, launched a side project, or got handed the rebrand. Now you need a logo. You also need brand colors, social media templates, and a business card that does not look like it was made in Microsoft Paint in 2004.

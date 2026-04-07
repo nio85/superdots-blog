@@ -14,6 +14,7 @@ faqs:
     answer: "No. AI accelerates the research process — finding relevant cases, surfacing patterns, summarizing holdings — but legal judgment, strategy, and analysis remain human work. AI is a research tool, not a legal advisor."
   - question: "What is the best AI tool for legal research?"
     answer: "For case law research, Westlaw Edge and Lexis+ AI are the established leaders with the largest databases. CoCounsel (from Thomson Reuters) and Harvey offer newer AI-native approaches. The best choice depends on your practice area, existing subscriptions, and workflow needs."
+imageHint: "attorney reviewing AI-compiled case law summary with source citations listed"
 ---
 
 A junior associate spends 6 hours researching case law for a motion. They search Westlaw with keyword queries, read through dozens of results, follow citation trails, and compile a memo. The partner reviews it and asks about a line of cases the associate missed. Back to the research.

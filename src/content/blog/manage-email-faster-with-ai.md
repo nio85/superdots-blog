@@ -18,6 +18,7 @@ faqs:
   - question: "Can AI handle confidential or sensitive emails?"
     answer: "AI tools should not be used for highly confidential content like legal matters, HR investigations, or M&A communications without explicit approval from your legal and compliance teams. Most enterprise AI email tools process data under your organization's existing data protection agreements, but the risk is different from standard email — AI may store or process message content to improve its models. For sensitive threads, draft responses manually and reserve AI for the 80% of your inbox that's routine coordination, scheduling, and status updates."
 heroImage: "/images/blog/manage-email-faster-with-ai.webp"
+imageHint: "professional processing inbox rapidly with AI-suggested labels and one-click replies"
 ---
 
 Knowledge workers spend up to 28% of their workweek on email — roughly 11 hours, or more than two full working days. A [2026 study by cloudHQ](https://blog.cloudhq.net/workplace-email-statistics/) found the average professional checks email 15 times per day, about every 37 minutes. Over a 45-year career, that adds up to nearly 3,000 working days spent in your inbox.

@@ -16,6 +16,7 @@ faqs:
     answer: "AIOps (Artificial Intelligence for IT Operations) applies machine learning to operational data — logs, metrics, traces, alerts — to automate monitoring, anomaly detection, and incident response. It is a subset of AI-powered DevOps that focuses specifically on the observability and operations side, complementing CI/CD automation tools."
   - question: "What should I automate first with AI in DevOps?"
     answer: "Start with alert noise reduction. AI-powered alert correlation reduces alert volume by 60-80% by grouping related alerts and filtering false positives. This is the fastest win with the highest quality-of-life improvement for on-call engineers."
+imageHint: "DevOps engineer viewing AI-generated deployment pipeline with anomaly detection alerts"
 ---
 
 The best AI DevOps tools solve three problems that burn engineering hours every week: slow pipelines, noisy alerts, and manual infrastructure tuning.

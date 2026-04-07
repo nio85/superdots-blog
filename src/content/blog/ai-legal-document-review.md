@@ -14,6 +14,7 @@ faqs:
     answer: "Current AI document review tools achieve 85-95% accuracy for standard clause identification and risk flagging on common contract types (NDAs, MSAs, employment agreements, leases). Accuracy drops for unusual contract structures, highly specialized industries, and documents with poor formatting. The practical approach is to use AI as a first pass and have a lawyer verify flagged items — this catches more issues than either approach alone."
   - question: "What types of documents can AI review tools handle?"
     answer: "Most AI review tools handle contracts (NDAs, MSAs, SaaS agreements, employment contracts, leases), regulatory filings, corporate governance documents, and due diligence data rooms. They work best with structured documents in English. Performance varies for handwritten documents, scanned PDFs with poor OCR quality, and documents in less common languages."
+imageHint: "legal professional reviewing AI-annotated contract with risk areas highlighted in red"
 ---
 
 A mid-size M&A deal involves reviewing 500 to 2,000 documents. Contracts, leases, employment agreements, regulatory filings, IP assignments, vendor agreements — all of which need to be read, analyzed, and summarized before anyone can make an informed decision.

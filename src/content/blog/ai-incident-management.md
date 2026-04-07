@@ -22,6 +22,7 @@ faqs:
     answer: "Trying to automate everything at once. Start with alert noise reduction — it is the fastest win and builds trust in the system. Then add root cause suggestions. Then automate simple runbooks. Each step gives the AI more data and gives your team more confidence before you hand it more responsibility."
   - question: "How does AI incident management handle novel incidents it has never seen before?"
     answer: "AI will not automatically resolve a truly novel incident. But it still helps. It eliminates known patterns from the investigation, surfaces relevant telemetry data, and identifies which services are affected. This narrows the search space so the engineer investigating the incident can focus on what is actually new rather than re-discovering what the system already knows."
+imageHint: "on-call engineer reviewing AI-triaged incident with automated root cause analysis"
 ---
 
 Your mean time to detect is 12 minutes. Mean time to acknowledge is another 8. The on-call engineer spends 20 minutes gathering context — checking dashboards, reading logs, figuring out what changed. By the time they start actually fixing the problem, 40 minutes have passed. Your users noticed in the first 30 seconds.

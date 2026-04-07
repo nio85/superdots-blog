@@ -18,6 +18,7 @@ faqs:
     answer: "Most sales teams report cutting proposal creation time by 50-65%. A proposal that took 6-8 hours now takes 2-3 hours. The savings come primarily from eliminating repetitive formatting, boilerplate writing, case study selection, and pricing table assembly."
   - question: "What integrations matter most for AI proposal tools?"
     answer: "CRM integration is essential — the tool needs your deal data and prospect information. Beyond that: document storage (for past proposals and case studies), pricing/CPQ systems, e-signature tools, and your content library. The fewer manual data entries required, the better the output quality."
+imageHint: "sales professional reviewing AI-generated client proposal with company branding applied"
 ---
 
 It's Thursday afternoon. You just got off a call with a promising enterprise prospect. They want a proposal by Monday. Your pipeline already has three open deals you're tracking, two follow-ups pending, and a QBR deck due Friday. You know what this proposal needs to say. You just don't have six hours to write it.

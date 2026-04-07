@@ -18,6 +18,7 @@ faqs:
     answer: "Sentiment analysis measures the emotional tone (positive, negative, neutral) of customer communications. Customer feedback analysis goes deeper — categorizing feedback by topic, extracting specific feature requests, identifying root causes, and tracking themes over time. A good dashboard combines both."
   - question: "Can small teams benefit from a sentiment dashboard?"
     answer: "Yes, especially small teams. When you have limited support staff, you cannot manually read every ticket and review. A sentiment dashboard automatically surfaces the signals that matter — emerging issues, at-risk accounts, trending complaints — so small teams focus their limited time on the highest-impact problems."
+imageHint: "CX team viewing real-time sentiment heatmap with positive and negative score trends"
 ---
 
 Your product shipped a backend update on Tuesday. By Wednesday afternoon, three separate customers complained about slow load times in your app store reviews. Another two mentioned it in support tickets. Someone tweeted about it. You didn't notice until Friday, when a bigger account emailed your CEO.

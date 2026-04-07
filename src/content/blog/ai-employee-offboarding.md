@@ -18,6 +18,7 @@ faqs:
     answer: "Basic automation (access revocation, checklist generation, notification workflows) can be set up in 1-2 weeks. Full integration with HRIS, IT systems, knowledge management, and equipment tracking typically takes 4-8 weeks. Start with the highest-risk items — access revocation and knowledge capture — and expand from there."
   - question: "Does AI offboarding work for remote employees?"
     answer: "Remote offboarding is actually where AI adds the most value. Without physical proximity, it is easier for steps to be missed. AI ensures remote equipment return is tracked, virtual access is revoked across all cloud tools, knowledge transfer happens asynchronously, and the departing employee has a structured exit experience regardless of location."
+imageHint: "HR coordinator tracking departing employee task checklist with automated reminders"
 ---
 
 A ServiceNow case study found that AI-driven offboarding tools reduced HR ticket volume by 25%. Companies that automate the process report up to 65% productivity gains in their HR operations. And yet most organizations still run offboarding on spreadsheets and good intentions.

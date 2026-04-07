@@ -22,6 +22,7 @@ faqs:
   - question: "Can AI help create SOPs for regulated industries?"
     answer: "AI can draft SOPs that follow regulatory frameworks (ISO, HIPAA, SOX), but a compliance expert must review the output. AI helps with structure and completeness. Humans ensure regulatory accuracy."
 heroImage: "/images/blog/ai-sop-generator.webp"
+imageHint: "operations manager reviewing AI-drafted standard operating procedure with numbered steps"
 ---
 
 Every team has processes that live in someone's head. When that person is on vacation, sick, or leaves the company, the process breaks.

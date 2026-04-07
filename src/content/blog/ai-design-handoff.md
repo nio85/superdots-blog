@@ -22,6 +22,7 @@ faqs:
     answer: "Figma Dev Mode with AI features is the most accessible option since it works natively inside Figma. For deeper code generation, Locofy and Anima offer Figma plugins that produce framework-specific output (React, Vue, HTML). For token management, Token Studio integrates directly with Figma variables. The best choice depends on whether you primarily need specs, code, or token sync."
   - question: "How does v0 compare to traditional design handoff tools?"
     answer: "v0 by Vercel takes a different approach — instead of translating existing Figma designs into code, it generates UI components from text or image prompts. This makes it faster for prototyping new components but less suited for pixel-perfect reproduction of complex design systems. Traditional handoff tools like Locofy and Anima are better when you need exact fidelity to a finished Figma design. v0 shines when speed matters more than precision."
+imageHint: "developer and designer reviewing annotated component specs in design handoff tool"
 ---
 
 AI design handoff tools eliminate the back-and-forth that burns days of calendar time on pixel-level miscommunication. A designer marks a Figma file as "ready for dev." A developer opens it, spends twenty minutes guessing padding values, pings the designer on Slack, and waits two days for an answer. The card ships with the wrong spacing. A correction cycle starts. A week wasted on eight pixels.

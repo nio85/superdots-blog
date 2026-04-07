@@ -14,6 +14,7 @@ faqs:
     answer: "Modern AI categorization tools typically reach 85-90% accuracy out of the box, improving to 95%+ after 2-3 months of corrections. Accuracy depends on your transaction mix — simple recurring charges are nearly 100% accurate, while unusual one-time purchases may need manual review. The key is a feedback loop where you correct mistakes and the AI learns from them."
   - question: "What data do I need to get started with AI accounting?"
     answer: "At minimum, you need 6-12 months of categorized transaction history for the AI to learn your patterns. Most tools connect directly to your bank accounts and accounting software (QuickBooks, Xero, etc.) to pull this data automatically. The more history you provide, the better the initial accuracy."
+imageHint: "accountant reviewing financial dashboard on laptop with invoices on desk"
 ---
 
 Your bookkeeper spends Monday mornings categorizing last week's transactions. She opens the bank feed, looks at each charge, and decides: office supplies, software subscription, client entertainment, travel. She does this for 200 transactions. It takes three hours.

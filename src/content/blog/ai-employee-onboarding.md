@@ -18,6 +18,7 @@ faqs:
     answer: "At minimum: the new hire's role, department, and start date. For deeper personalization, feed in your employee handbook, SOPs, team wikis, and training materials. The AI uses this to build role-specific learning paths and answer questions. You do not need to share sensitive employee data — the personalization comes from matching role requirements to your existing company documentation."
   - question: "Can AI onboarding work for remote and hybrid teams?"
     answer: "Remote teams benefit the most from AI onboarding. Without a physical office, new hires cannot tap a neighbor's shoulder with questions — a Q&A bot fills that gap 24/7. Automated document collection eliminates timezone coordination headaches. And AI-generated learning paths ensure remote hires get the same structured experience as in-office employees, regardless of location."
+imageHint: "new hire completing personalized AI-guided onboarding checklist on first day"
 ---
 
 Hitachi cut four full days off their onboarding timeline. Epiq saved 2,000 hours per month and over $500,000 a year. Texans Credit Union went from 15 minutes to grant system access down to under 60 seconds.

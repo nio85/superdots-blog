@@ -22,6 +22,7 @@ faqs:
   - question: "What if our team resists AI adoption?"
     answer: "Resistance usually comes from fear (job loss) or frustration (tool doesn't work). Address both: communicate clearly that AI handles tedious tasks so people can do more interesting work. And start with tools that obviously help — once people save two hours a week, resistance disappears."
 heroImage: "/images/blog/how-to-implement-ai-in-your-business.webp"
+imageHint: "business leader presenting AI adoption roadmap to team with project phases on screen"
 ---
 
 You know AI can help your business. You've seen the headlines, tried ChatGPT, and watched competitors talk about their "AI strategy."

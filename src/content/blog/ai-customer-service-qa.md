@@ -7,6 +7,7 @@ department: 'customer-support'
 useCase: 'analysis'
 tags: ['ai-tools', 'ai-for-customer-support']
 heroImage: "/images/blog/ai-customer-service-qa.webp"
+imageHint: "QA manager reviewing AI-scored support ticket quality against rubric checklist"
 ---
 
 Your QA team reviews maybe 2% of customer interactions. The other 98% go unchecked. You have no idea what happened in those conversations. You do not know if agents followed the script, if customers left angry, or if someone promised a refund they should not have.

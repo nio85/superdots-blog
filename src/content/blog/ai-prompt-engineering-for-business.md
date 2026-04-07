@@ -22,6 +22,7 @@ faqs:
   - question: "Does prompt engineering work the same across different AI tools?"
     answer: "The principles are the same (be specific, give context, provide examples), but each tool has quirks. Claude tends to follow nuanced instructions well. ChatGPT responds well to step-by-step formatting. Test your prompts on the tool your team uses."
 heroImage: "/images/blog/ai-prompt-engineering-for-business.webp"
+imageHint: "business professional testing refined AI prompt and comparing output quality improvement"
 ---
 
 You've tried AI. You typed a question, got a mediocre answer, and thought: "This isn't as useful as everyone says."

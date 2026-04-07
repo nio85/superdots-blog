@@ -7,6 +7,7 @@ department: 'design'
 useCase: 'communication'
 tags: ['ai-tools', 'ai-design']
 heroImage: "/images/blog/ai-design-tools-non-designers.webp"
+imageHint: "non-designer creating professional social media graphic using AI template builder"
 ---
 
 Your company needs visuals. Social posts, pitch decks, blog headers, video thumbnails. You need them this week, not in three sprints when the design team has bandwidth.

@@ -18,6 +18,7 @@ faqs:
     answer: "AI typically reduces migration time by 40-70%, depending on the migration type. A framework upgrade that would take a team 3 months might take 4-6 weeks with AI assistance. The savings come from automated code translation and boilerplate conversion, freeing developers to focus on the complex, judgment-dependent parts of the migration."
   - question: "What migrations work best with AI?"
     answer: "Version upgrades (Python 2→3, Angular 1→2+, .NET Framework→.NET Core) and language translations between similar paradigms (Java→Kotlin, JavaScript→TypeScript) work best. Pattern migrations (callbacks→promises→async/await) also work well. Architectural migrations (monolith→microservices, SQL→NoSQL) benefit from AI assistance but require more human decision-making."
+imageHint: "engineer reviewing legacy code alongside AI-refactored version in split screen"
 ---
 
 You inherited a 200,000-line Python 2.7 codebase. The company runs on it. It hasn't been touched in four years. And someone just told you that the server it runs on hits end-of-life in six months.

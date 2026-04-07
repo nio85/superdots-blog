@@ -18,6 +18,7 @@ faqs:
   - question: "How do I get my team to actually use AI features in our PM tool?"
     answer: "Start with the feature that solves the most obvious pain point — usually automated status reports, because everyone hates writing them. Set it up as the default (auto-generate every Friday) rather than an opt-in experiment. Show concrete time savings with real numbers: 'Status reports now take 5 minutes instead of 45.' Don't introduce multiple AI features at once. Once one feature is habitual, add the next. The 2025 Capterra survey found that 55% of users cited AI functionality as a main reason for purchasing new PM software — the demand is there, you just need to make the first experience frictionless."
 heroImage: "/images/blog/ai-project-management-features-guide.webp"
+imageHint: "project manager using AI to auto-assign tasks and surface blockers in kanban board"
 ---
 
 Every major project management tool now has AI features. Most teams ignore them. A [2025 Capterra survey](https://www.breeze.pm/articles/ai-project-management-statistics) found that 55% of project managers cited AI functionality as a primary reason for purchasing new PM software — but far fewer actually use those features once they're set up.

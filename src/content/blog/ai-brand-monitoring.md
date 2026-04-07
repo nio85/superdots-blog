@@ -22,6 +22,7 @@ faqs:
     answer: "Not necessarily. AI handles the heavy lifting — collecting mentions, scoring sentiment, flagging anomalies. A marketing or comms team member can spend 15-30 minutes daily reviewing alerts and dashboards. For companies with high mention volume (1,000+ per day), a dedicated community or brand manager makes sense. For smaller brands, it fits into an existing role."
   - question: "Can AI brand monitoring measure ROI of PR campaigns?"
     answer: "Yes. Track mention volume, sentiment, share of voice, and reach before and after a campaign launch. Compare those metrics against your baseline. Most tools calculate earned media value (EMV) — an estimate of what equivalent paid coverage would cost. While EMV is imperfect, the directional signal is useful. Pair it with web traffic and conversion data for a more complete picture."
+imageHint: "marketing manager viewing real-time brand mention feed and sentiment graph"
 ---
 
 Someone posted a one-star review of your product on G2 three days ago. A mid-tier tech blogger mentioned your competitor as a "better alternative" in an article yesterday. A customer complained on Reddit this morning, and the thread has 200 upvotes.

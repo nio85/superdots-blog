@@ -18,6 +18,7 @@ faqs:
     answer: "Some tools like DocTract and PowerDMS can flag policies due for review based on schedules you set, but no tool rewrites policies automatically without human input. The typical workflow is: the tool alerts you that a policy needs updating, AI generates a revised draft based on the current version and any regulatory changes, and a human reviews and approves the update."
   - question: "How do AI policy tools integrate with existing HR systems?"
     answer: "Most dedicated policy tools integrate with HR platforms (BambooHR, Workday, ADP) for employee acknowledgment tracking. Waybook and Trainual connect with Slack and Teams for distribution. DocTract and PowerDMS offer API access for custom integrations. If integration is a priority, check the vendor's integration directory before committing — capabilities vary significantly between tools."
+imageHint: "HR professional reviewing AI-drafted remote work policy with suggested compliance checks"
 ---
 
 Your company needs an updated data privacy policy by Friday. Under normal circumstances, that means two weeks of drafting, three rounds of legal review, a formatting marathon, and a distribution headache. By the time it's published, someone has already flagged another policy that's out of date.

@@ -18,6 +18,7 @@ faqs:
     answer: "Pricing varies widely. Mid-market tools like Freshdesk start around $15 per agent per month with basic AI features. Enterprise platforms like Zendesk and ServiceNow charge $55-150+ per agent per month with advanced AI capabilities. The ROI math usually works in your favor: with the average support ticket costing $15.56 to resolve manually, even modest automation rates deliver significant savings."
   - question: "What is a good auto-resolution rate for AI help desk software?"
     answer: "A realistic starting target is 20-30% auto-resolution in the first month. After 2-3 months of optimization, well-configured platforms reach 40-50%. Freshworks reports that Freddy AI achieves up to 80% resolution rates for customers with strong knowledge base content. The key factor is the quality and coverage of your knowledge base — better content means higher resolution rates."
+imageHint: "support agent viewing AI-suggested solution while handling customer ticket"
 ---
 
 The global help desk automation market is projected to reach $8.14 billion in 2025, and for good reason. Every growing company hits the same support wall. You go from 50 tickets a day to 200. Then 500. Your team does not grow at the same rate. Response times stretch. Customer satisfaction drops. You hire more agents, but the math never quite works — ticket volume always outpaces headcount.

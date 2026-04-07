@@ -22,6 +22,7 @@ faqs:
   - question: "Is AI process mining only for large enterprises?"
     answer: "No. Tools like Microsoft Power Automate Process Mining and QPR ProcessAnalyzer offer entry-level pricing for mid-market companies. If you process more than 1,000 cases per month across any workflow, you likely have enough volume to benefit from process mining."
 heroImage: "/images/blog/ai-process-mining.webp"
+imageHint: "operations manager viewing process map with AI-identified bottleneck highlighted in red"
 ---
 
 Every company has processes that look clean on a whiteboard but run messily in practice. Orders that should take two days take five. Approvals that need one signature collect three. Support tickets that should resolve on first contact bounce between four teams.

@@ -14,6 +14,7 @@ faqs:
     answer: "No. AI handles the tedious maintenance work — scanning for inconsistencies, flagging drift, updating docs — so your team can focus on strategy, new patterns, and adoption. It is a force multiplier, not a replacement."
   - question: "What should I automate first in my design system?"
     answer: "Start with consistency checking. AI can scan your component library and flag color mismatches, spacing violations, and naming inconsistencies in minutes. This gives you the biggest return with the least setup."
+imageHint: "design team member browsing AI-organized component library with usage guidelines"
 ---
 
 Design systems are supposed to bring consistency. In practice, they start strong and slowly fall apart.

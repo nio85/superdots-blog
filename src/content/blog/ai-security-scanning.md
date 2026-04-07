@@ -7,6 +7,7 @@ department: 'engineering'
 useCase: 'automation'
 tags: ['ai-tools', 'ai-for-engineering']
 heroImage: "/images/blog/ai-security-scanning.webp"
+imageHint: "security engineer reviewing AI-prioritized vulnerability list with remediation steps"
 ---
 
 Your SAST scanner reports 347 findings. Your team triages them. Roughly 200 are false positives. Another 80 are low-severity style issues dressed up as security warnings. Maybe 30 are real problems. And the vulnerability that actually causes your next breach? It probably is not on the list at all.

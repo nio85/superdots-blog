@@ -22,6 +22,7 @@ faqs:
     answer: "No. Many AI risk management tools are designed for operations leaders, finance teams, and executives who manage risk as part of their broader role. The tools handle the data analysis and surface prioritized alerts — you provide the judgment and decision-making."
   - question: "What data do AI risk management tools need?"
     answer: "At minimum, they need access to your internal data relevant to the risk domain — supplier records, financial transactions, contracts, operational metrics. The best tools also ingest external data like news feeds, regulatory databases, market data, and weather forecasts to provide a complete risk picture."
+imageHint: "risk manager reviewing AI-generated risk matrix with probability and impact scores"
 ---
 
 A manufacturing VP gets a call on a Tuesday morning. A key supplier in Southeast Asia has gone silent. No shipments, no responses. She checks the news. Flooding has shut down the supplier's region for at least two weeks.

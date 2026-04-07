@@ -18,6 +18,7 @@ faqs:
     answer: "No. Small and mid-size companies often benefit most because they cannot afford annual consulting engagements or comprehensive survey subscriptions. AI tools offer continuous benchmarking at a fraction of the cost, helping smaller teams compete for talent with data-driven offers."
   - question: "What data do I need to get started?"
     answer: "At minimum: your current employee roster with job titles, levels, locations, base salary, and total compensation. Better results come from adding tenure, performance ratings, department, and reporting structure. Most AI tools can ingest a CSV export from your HRIS."
+imageHint: "HR manager comparing salary ranges across roles on compensation benchmark tool"
 ---
 
 Your head of engineering just got a competing offer. It's $30k above what you're paying her. You didn't see it coming — because the salary survey you bought last year pegged her role at $145k, and you're paying $148k. You thought you were ahead of the market.

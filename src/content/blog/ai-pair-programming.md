@@ -14,6 +14,7 @@ faqs:
     answer: "AI-generated code can contain security vulnerabilities — it learns from public code, including insecure patterns. Always review generated code for common issues: SQL injection, XSS, hardcoded credentials, and insecure dependencies. Use static analysis tools alongside AI assistants, and never trust AI-generated code in security-critical paths without expert review."
   - question: "Can AI pair programming work for non-mainstream languages?"
     answer: "AI pair programming works best for popular languages (Python, JavaScript, TypeScript, Go, Java, C#) because the models were trained on more examples. For less common languages (Elixir, Haskell, Kotlin, Rust), the quality of suggestions varies — often good for standard patterns but weaker for language-specific idioms. The gap is closing, but developers in niche ecosystems should expect more manual correction."
+imageHint: "two developers collaborating with AI pair programmer suggesting code refactoring"
 ---
 
 When developers hear "AI pair programming," most picture autocomplete on steroids — a tool that finishes your if-statement or writes a for-loop faster than you can type it. That is real, but it is the least interesting thing AI can do for developers.
