@@ -168,7 +168,7 @@ The AI customer service QA market has matured. Here are tools that teams are usi
 
 **Qualtrics XM.** Enterprise-grade experience management with AI-driven analytics. Best for large organizations that want to connect QA data with broader customer experience metrics.
 
-When evaluating tools, prioritize these capabilities: custom rubric support, integration with your existing helpdesk, real-time or near-real-time scoring, actionable coaching workflows, and compliance-specific features if you are in a regulated industry.
+When evaluating tools, prioritize these capabilities: custom rubric support, integration with your existing [AI help desk software](/blog/ai-help-desk-software/), real-time or near-real-time scoring, actionable coaching workflows, and compliance-specific features if you are in a regulated industry.
 
 ## Getting Started Without Boiling the Ocean
 

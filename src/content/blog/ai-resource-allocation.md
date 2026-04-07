@@ -153,7 +153,7 @@ Once your data is clean, start acting on the tool's suggestions. When it flags a
 
 Use the tool's historical data to inform future project planning. Before committing to a new project, run the capacity check. Before setting a deadline, confirm the team has the bandwidth.
 
-By this point, resource planning has shifted from a manual, gut-feel process to a data-driven one — and that change has a direct impact on project delivery rates, team utilization, and employee satisfaction. For a broader view of how AI is reshaping people and operations decisions across the business, the [AI for HR complete guide](/blog/ai-for-hr/) covers the full landscape from hiring through workforce planning.
+By this point, resource planning has shifted from a manual, gut-feel process to a data-driven one — and that change has a direct impact on project delivery rates, team utilization, and employee satisfaction. For a broader view of how AI is reshaping people and operations decisions across the business, the [AI for HR complete guide](/blog/ai-for-hr/) covers the full landscape from hiring through workforce planning. For a complete overview of the tools operations teams rely on — workflow automation, project management, supply chain, and more — see our guide to the [best AI tools for operations](/blog/best-ai-tools-for-operations/).
 
 ---
 

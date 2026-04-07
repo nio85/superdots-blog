@@ -160,4 +160,4 @@ The technology works. Companies implementing AI supply chain tools consistently 
 
 Start with demand forecasting. Get your data clean. Measure the improvement. Then expand from there.
 
-For more on using AI to improve operational workflows, explore our [AI automation guide](/blog/ai-automation-guide) and our comprehensive [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For more on using AI to improve operational workflows, explore our [AI automation guide](/blog/ai-automation-guide), our comprehensive [AI tools for business guide](/blog/ai-tools-for-business-guide), and our roundup of the [best AI tools for operations](/blog/best-ai-tools-for-operations/) — which covers workflow automation, project management, and procurement tools that work alongside supply chain platforms.
