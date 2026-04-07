@@ -4,3 +4,6 @@ https://www.superdots.sh/* https://superdots.sh/:splat 301
 # Favicon fallback for browsers that request .ico or .png
 /favicon.ico /favicon.svg 301
 /favicon.png /favicon.svg 301
+
+# SEO: consolidate trailing-slash split for indexed URLs (308→301)
+/blog/ai-compliance-tools /blog/ai-compliance-tools/ 301
