@@ -166,6 +166,8 @@ Theory is great. Here are three workflows you can set up today that will save yo
 4. Ask: "If I add [specific planned changes], how does that change the quarterly projection?"
 5. Use the adjusted forecast as your starting point for the quarterly planning conversation.
 
+For multi-variable scenarios — headcount changes, new contracts, pricing shifts — [AI financial modeling tools](/blog/ai-financial-modeling-tools) can run the projections that go beyond what a budget tracker supports.
+
 **Why this works:** Building a forecast from scratch is painful. Starting with an AI-generated projection based on real spending data is much easier. You are editing and refining instead of creating from nothing. And the AI catches trends you might miss — like a steadily increasing cloud bill that will blow the budget if left unchecked.
 
 ## Tool recommendations by team size
@@ -218,7 +220,7 @@ AI budget tools give you independence, but they do not replace your finance team
 - Your variance analysis reveals a systemic issue — like costs growing 30% year-over-year with no clear driver.
 - You are building a business case for new headcount or a large purchase. Finance can help you frame it in terms that get approved.
 - Anything involving revenue recognition, accruals, or accounting rules. AI tools do not understand GAAP, and you probably do not either. That is fine — it is your finance team's job.
-- Year-end close or audit preparation. These have specific requirements that need professional oversight.
+- Year-end close or audit preparation. These have specific requirements that need professional oversight. For preparation, [AI audit tools](/blog/ai-audit-preparation) can help organize documentation and flag compliance gaps before your finance team steps in.
 
 The goal is not to replace finance. It is to stop bothering them with questions you can answer yourself. Your finance partner would rather help you build a strategic business case than tell you how much is left in your travel budget. AI handles the latter so humans can focus on the former.
 

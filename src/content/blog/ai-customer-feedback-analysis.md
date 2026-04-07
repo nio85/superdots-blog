@@ -53,7 +53,7 @@ For larger volumes, set up integrations:
 - **Dedicated feedback platforms** like Thematic, Chattermill, or Zonka Feedback connect directly to your sources and aggregate automatically.
 - **Your CRM** may already have an integration path — check if your support tool and survey platform can push data into it.
 
-The goal is not a perfect system on day one. The goal is getting feedback flowing into one place so you can run analysis across all of it.
+The goal is not a perfect system on day one. The goal is getting feedback flowing into one place so you can run analysis across all of it. This centralized data also enriches [AI customer journey mapping](/blog/ai-customer-journey-mapping) efforts — feedback tells you what customers say, journey data shows where in their experience the problem occurred.
 
 ## Setting Up AI Sentiment Analysis and Theme Detection
 
@@ -127,7 +127,7 @@ For each top theme, document:
 Feedback analysis is not a support team project — it is a company-wide input. Route insights to the people who can act:
 
 - **Product team**: Feature requests, usability complaints, missing capabilities.
-- **Support team**: Common issues, documentation gaps, training needs.
+- **Support team**: Common issues, documentation gaps, training needs. Pair with [AI customer service QA](/blog/ai-customer-service-qa) — feedback identifies systemic issues, QA verifies how consistently they surface across interactions.
 - **Marketing team**: Messaging that resonates (or does not), competitive mentions. (Pair this with a structured [AI competitive analysis](/blog/ai-competitive-analysis) process.)
 - **Sales team**: Objections, feature comparisons, pricing feedback.
 

@@ -72,7 +72,7 @@ The quality of your AI journey map depends entirely on the completeness of your 
 Typical sources include:
 
 - **Website analytics** (Google Analytics, Mixpanel, Amplitude) — page visits, session data, click paths
-- **CRM** (Salesforce, HubSpot) — sales interactions, pipeline stages, deal notes
+- **[CRM tools](/blog/ai-crm-tools)** (Salesforce, HubSpot) — sales interactions, pipeline stages, deal notes
 - **Email platform** — opens, clicks, replies, unsubscribes
 - **Support desk** (Zendesk, Intercom) — tickets, chat transcripts, resolution times
 - **Ad platforms** — impressions, clicks, attributed conversions by channel and creative
@@ -127,7 +127,7 @@ Common interventions based on AI journey findings:
 - **Content insertion** — if customers who read a particular piece of content convert at higher rates, build paths to that content earlier in the journey
 - **Triggered outreach** — if customers who receive a personal email within 48 hours of a specific product action are more likely to convert, automate that outreach
 - **Friction removal** — if customers drop off at a specific step, redesign or eliminate it
-- **Channel reallocation** — if one acquisition channel consistently produces customers with shorter, higher-converting journeys, shift budget toward it
+- **Channel reallocation** — if one acquisition channel consistently produces customers with shorter, higher-converting journeys, shift budget toward it. For email specifically, [AI email marketing tools](/blog/ai-email-marketing) can automate the triggered sequences that move customers along the highest-converting paths
 
 The journey map is not the end product. It is the diagnostic tool that tells you where to intervene.
 
@@ -137,7 +137,7 @@ Traditional journey maps get updated annually, if ever. AI journey maps can upda
 
 Build a review cadence that matches your business rhythm:
 
-- **Monthly** — check for changes in path distribution and conversion rates at key touchpoints. Have any drop-off points worsened? Has a new high-converting path emerged?
+- **Monthly** — check for changes in path distribution and conversion rates at key touchpoints. Have any drop-off points worsened? Has a new high-converting path emerged? Cross-reference with your [AI customer retention](/blog/ai-customer-retention) data to confirm that journey improvements are translating into longer customer lifetimes.
 - **Quarterly** — do a deeper review of segment-level journeys. Have your highest-value customer segments changed their behavior? Do your interventions from last quarter show up in the data?
 - **After major changes** — whenever you launch a new channel, redesign a key page, or change your pricing, pull the journey map immediately. AI will tell you whether the change shifted behavior in the direction you intended.
 

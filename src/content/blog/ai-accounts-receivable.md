@@ -101,7 +101,7 @@ The failure mode in AR automation isn't the technology — it's the transition p
 
 ## Connecting AR to the Broader Finance Picture
 
-AI accounts receivable automation works best when it's connected to your broader financial intelligence stack. Cash flow projections improve significantly when your [AI financial forecasting](/blog/ai-financial-forecasting) tools have access to real-time AR aging data and payment prediction signals. Knowing that 85% of your current open AR is expected to collect on time changes how you model next quarter's cash position.
+AI accounts receivable automation works best when it's connected to your broader financial intelligence stack. Cash flow projections improve significantly when your [AI financial forecasting](/blog/ai-financial-forecasting) tools have access to real-time AR aging data and payment prediction signals. Knowing that 85% of your current open AR is expected to collect on time changes how you model next quarter's cash position. For teams building multi-scenario financial plans, [AI financial modeling tools](/blog/ai-financial-modeling-tools) can incorporate AR payment timing directly into quarterly projections.
 
 There's also a fraud angle worth noting: unusual payment patterns flagged by your AR system — sudden changes in payment method, requests to redirect payments to new accounts — are early signals for business email compromise (BEC) fraud. Connecting AR anomaly detection to your [AI fraud detection](/blog/ai-fraud-detection) workflow adds a layer of protection without additional tooling investment.
 
@@ -115,7 +115,7 @@ There's also a fraud angle worth noting: unusual payment patterns flagged by you
 
 **Pilot with one customer segment first.** Run automated collections cadences on your mid-tier accounts — not your top 10 customers, not your chronic problem accounts — for 60 days before rolling out broadly. This gives you real data on effectiveness without risking key relationships.
 
-**Integrate your AR data with cash flow forecasting.** The value of accurate AR prediction multiplies when it feeds into your broader financial planning. This is the connection most teams leave on the table.
+**Integrate your AR data with [AI cash flow forecasting](/blog/ai-cash-flow-forecasting).** The value of accurate AR prediction multiplies when it feeds into your broader financial planning. This is the connection most teams leave on the table.
 
 The goal isn't to automate everything. It's to stop spending human attention on work a system can handle better, so your AR team can focus on the judgment calls that actually require them.
 

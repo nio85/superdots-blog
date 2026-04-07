@@ -51,7 +51,7 @@ AI contract review (analyzing a single document for risks) is one piece. AI cont
 
 **Negotiation and redlines.** AI tracks changes across versions, highlights deviations from your standard terms, and flags clauses that differ from your approved language — a capability that pairs well with [AI contract clause extraction](/blog/ai-contract-clause-extraction/) for identifying specific terms at scale. Your legal team sees exactly what changed and what risk each change introduces.
 
-**Execution and storage.** Signed contracts are automatically stored, indexed, and made searchable. AI extracts key metadata — parties, dates, values, governing law — so you never have to manually tag a contract again.
+**Execution and storage.** Signed contracts are automatically stored, indexed, and made searchable. AI extracts key metadata — parties, dates, values, governing law — so you never have to manually tag a contract again. This works best when your contract repository connects to a broader [AI document management](/blog/ai-document-management) system, keeping contracts searchable alongside other business-critical files.
 
 **Obligation tracking.** AI reads your contracts and extracts commitments: delivery deadlines, SLA requirements, reporting obligations, payment schedules. Then it tracks them. When a vendor misses an SLA or a delivery date approaches, you know about it.
 
