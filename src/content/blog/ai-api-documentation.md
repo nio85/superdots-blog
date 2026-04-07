@@ -1,6 +1,6 @@
 ---
-title: "How to Generate API Documentation with AI"
-description: "API docs are always out of date. AI documentation tools generate, update, and maintain API references from your code — keeping docs in sync automatically."
+title: "AI API Documentation Tools: Auto-Sync Docs With Your Code"
+description: "Speakeasy, Mintlify, and ReadMe auto-generate API docs from your OpenAPI spec and update them on every deploy — no more stale reference pages."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "engineering"
