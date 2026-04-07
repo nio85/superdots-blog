@@ -150,7 +150,7 @@ Compensation decisions shouldn't rely on outdated survey data and gut feel. AI c
 
 More critically, these tools can flag pay equity issues before they become legal and cultural problems. By analyzing compensation across demographic groups, tenure bands, and performance levels, AI surfaces gaps that are invisible in aggregate data.
 
-**Go deeper:** [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) shows how to benchmark salaries, identify pay equity gaps, and make data-driven compensation decisions.
+**Go deeper:** [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) shows how to benchmark salaries, identify pay equity gaps, and make data-driven compensation decisions. For the operational side — running payroll, automating tax filings, and integrating with your HRIS — see our guide to [AI payroll software](/blog/ai-payroll-software/).
 
 ## Employee offboarding
 

@@ -102,7 +102,7 @@ The market has several strong options, each with a different emphasis. Here is a
 
 ## AI Sales Coaching vs. Traditional Sales Training
 
-Traditional sales training follows a familiar pattern: bring the team offsite (or onto a Zoom), deliver content for two days, run a few role-plays, send everyone back to their desks. Retention research is not kind to this model — studies consistently show that most training content is forgotten within a week if it is not reinforced on the job.
+Traditional sales training follows a familiar pattern: bring the team offsite (or onto a Zoom), deliver content for two days, run a few role-plays, send everyone back to their desks. Retention research is not kind to this model — studies consistently show that most training content is forgotten within a week if it is not reinforced on the job. (For the broader picture on AI-powered skill development across teams, see our guide to [AI employee training tools](/blog/ai-employee-training/) — many of the same principles apply across departments.)
 
 The structural problems with traditional training:
 
