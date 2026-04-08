@@ -70,6 +70,8 @@ Create a living change management knowledge base in Notion. The AI helps you gen
 
 The advantage of Notion over a Google Doc is that AI-assisted editing, search, and summarization are built in. When your change initiative spans 12 weeks and generates 40 documents, Notion AI finds what you need in seconds.
 
+For a broader look at AI-assisted employee communication — beyond change initiatives — see our guide to [AI internal communications tools](/blog/ai-internal-communications).
+
 ---
 
 ## Phase 2 — Desire: AI for Sentiment Analysis and Resistance Identification
@@ -171,6 +173,8 @@ Run monthly pulse surveys post-go-live. Track the trend. Leapsome's AI surfaces 
 If you're pulling usage data from your new software (HubSpot, Notion, whatever changed), paste it into Claude with the question: *"Here is weekly active user data for our HubSpot rollout for the past 8 weeks. Identify which teams show the strongest adoption trend and which are declining. Suggest 2–3 targeted interventions."*
 
 You don't need a BI tool. You need data and a prompt.
+
+For a comprehensive view of AI tools across the entire operations function — beyond change management — see our roundup of [best AI tools for operations](/blog/best-ai-tools-for-operations).
 
 ---
 
