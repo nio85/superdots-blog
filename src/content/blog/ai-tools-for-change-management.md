@@ -20,6 +20,7 @@ faqs:
     answer: "Yes. Claude.ai (free tier) and ChatGPT (free tier) handle impact assessment drafts, stakeholder FAQ generation, and communication templates at no cost. Loom has a free plan with AI summaries for async training videos. The main gaps in free tools are adoption analytics and structured comms platforms — those require paid tools once you're managing a change initiative across 20+ people."
   - question: "How does AI fit into the ADKAR change management model?"
     answer: "Each ADKAR phase has a natural AI use case: Awareness (AI drafts communications explaining the change), Desire (AI analyzes sentiment and identifies resistance patterns), Knowledge (AI generates training content and SOPs), Ability (digital adoption platforms with AI guides employees in-app), Reinforcement (AI-powered surveys and analytics track sustained adoption). AI doesn't replace the human change champion — it removes the administrative burden so they can focus on the work that actually requires human judgment."
+heroImage: "/images/blog/ai-tools-for-change-management.webp"
 ---
 
 Most operations managers run change initiatives with the wrong set of tools for each phase.
