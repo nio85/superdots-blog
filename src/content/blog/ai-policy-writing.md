@@ -69,7 +69,7 @@ Not every tool does all three. General-purpose AI (Claude, ChatGPT) handles draf
 
 Waybook combines policy creation with employee onboarding and training documentation. Its AI drafting assistant generates policies from prompts, and the platform handles distribution, acknowledgment tracking, and team access controls.
 
-**What works:** Clean interface, fast setup, and AI drafting that produces usable first drafts. The onboarding integration means new hires automatically receive relevant policies during their first week. Good Slack integration for policy updates.
+**What works:** Clean interface, fast setup, and AI drafting that produces usable first drafts. The onboarding integration means new hires automatically receive relevant policies through their [employee onboarding workflow](/blog/ai-employee-onboarding/) during their first week. Good Slack integration for policy updates.
 
 **Limitations:** Compliance checking is basic — it relies on templates rather than regulatory databases. Not built for heavily regulated industries where you need audit-grade version control.
 
@@ -83,7 +83,7 @@ DocTract is purpose-built for policy management in regulated environments, parti
 
 ### PandaDoc — Best for document-heavy teams
 
-PandaDoc started as a proposal and contract tool and has expanded to include policy management. Its AI assistant drafts policies, and the platform handles e-signatures, tracking, and analytics.
+PandaDoc started as a proposal and [contract management](/blog/ai-contract-management/) tool and has expanded to include policy management. Its AI assistant drafts policies, and the platform handles e-signatures, tracking, and analytics.
 
 **What works:** If you already use PandaDoc for contracts or proposals, adding policy management keeps everything in one platform. The e-signature integration makes employee acknowledgment seamless. Analytics show you who has and hasn't reviewed each policy.
 
@@ -172,7 +172,7 @@ The AI draft is a starting point, not a finished product. Review it for:
 
 ### Step 4: Route for legal review
 
-This step is non-negotiable. No matter how good the AI draft looks, a qualified legal professional must review any policy before it goes live. AI tools can reference regulations, but they cannot guarantee compliance with your specific legal obligations.
+This step is non-negotiable. No matter how good the AI draft looks, a qualified legal professional — one who may already use [AI legal research tools](/blog/ai-legal-research/) to work faster — must review any policy before it goes live. AI tools can reference regulations, but they cannot guarantee compliance with your specific legal obligations.
 
 Most organizations route policies through:
 

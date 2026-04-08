@@ -54,7 +54,7 @@ Instead of surveying employees about their "comfort with technology" (which tell
 - **Digital fluency indicators:** How do employees currently use existing tools? What is their technology adoption history?
 - **Workflow analysis:** Which teams have processes most suited to AI augmentation? Where will the impact be highest?
 - **Sentiment mapping:** What are employees saying about AI in internal channels, surveys, and feedback forms?
-- **Skills gap identification:** Where are the gaps between current capabilities and what AI-augmented work requires?
+- **[Skills gap identification](/blog/ai-skills-gap-analysis/):** Where are the gaps between current capabilities and what AI-augmented work requires?
 
 This gives you a real readiness map — not self-reported confidence scores, but observed behavior patterns that predict adoption success.
 
@@ -123,7 +123,7 @@ Viva Insights provides adoption analytics across Microsoft 365 tools, showing ho
 
 **Best for:** Enterprise workforce planning and skills-based change.
 
-Workday Illuminate uses AI to map skills across your organization, identify gaps created by AI adoption, and recommend learning paths. It connects change management to workforce planning — showing not just who needs training, but how roles should evolve.
+Workday Illuminate uses AI to map skills across your organization, identify gaps created by AI adoption, and recommend learning paths. It connects change management to [workforce planning](/blog/ai-workforce-planning/) — showing not just who needs training, but how roles should evolve.
 
 **Key capability:** AI-driven skills ontology that maps current workforce capabilities against future AI-augmented role requirements.
 
@@ -151,7 +151,7 @@ A framework gives your change initiative structure without making it rigid. Here
 
 **Run your readiness assessment.** Use AI tools to analyze current digital fluency, map workflows ripe for AI, and identify your early adopters, cautious middle, and active resistors.
 
-**Define success metrics upfront.** What does successful AI adoption look like for each team? Be specific. "Marketing uses AI for first-draft content creation, reducing time-to-publish by 30%" is useful. "Organization adopts AI" is not.
+**Define success metrics upfront.** What does successful AI adoption look like for each team? Be specific. "Marketing uses AI for first-draft content creation, reducing time-to-publish by 30%" is useful. "Organization adopts AI" is not. Teams already collecting [employee performance data with AI](/blog/ai-performance-reviews/) have a natural baseline to measure against.
 
 **Build your stakeholder map.** Identify who influences adoption in each department. These are not always the managers — they are the people others go to with questions. AI network analysis can identify these informal leaders.
 

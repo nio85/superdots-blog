@@ -128,6 +128,8 @@ Exceptions:
 
 ### Customer support: Escalation handling
 
+Teams using [AI ticket routing](/blog/ai-ticket-routing/) can automate the classification step in this SOP — the AI assigns tier and team automatically so agents start at step 3.
+
 ```
 Title: Support Ticket Escalation SOP
 Purpose: Route complex issues to the right team quickly
@@ -149,6 +151,8 @@ Purpose: Route complex issues to the right team quickly
 ```
 
 ### HR: Employee offboarding
+
+For teams that run this SOP repeatedly, [AI employee offboarding tools](/blog/ai-employee-offboarding/) automate the IT deactivation and document transfer steps end-to-end.
 
 ```
 Title: Employee Offboarding SOP
@@ -216,7 +220,7 @@ Day 6 (Finalize):
 
 **Trainual** — SOP creation with built-in training and testing. Employees can access, complete, and get tested on SOPs. Starting at $250/month.
 
-**Process Street** — Checklist-based SOP platform with conditional logic. Runs SOPs as interactive workflows, not static documents. Starting at $100/month.
+**Process Street** — Checklist-based SOP platform with conditional logic. Runs SOPs as interactive [workflow automation](/blog/ai-workflow-automation/) checklists, not static documents. Starting at $100/month.
 
 **Scribe** — Records your screen as you perform a process and automatically generates a step-by-step SOP with screenshots. Starting at $29/user/month.
 
