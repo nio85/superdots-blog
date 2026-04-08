@@ -177,7 +177,7 @@ For more on AI-powered email routing, see [automating email triage with AI](/blo
 
 **Time saved:** 10-15 hours per event
 
-For dedicated [event planning workflows](/blog/ai-event-planning-tools) with AI-powered venue sourcing and attendee management, specialized platforms like Cvent and Nowadays go further than general automation tools.
+For dedicated [AI event planning tools](/blog/ai-event-planning-tools) with AI-powered venue sourcing, attendee management, and event intelligence, specialized platforms like Cvent and Nowadays go further than general automation tools.
 
 ## Building your first AI workflow
 
