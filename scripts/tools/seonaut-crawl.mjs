@@ -63,9 +63,12 @@ async function run() {
   console.log(`SEOnaut crawl trigger — project ${PROJECT_ID}`);
 
   // Step 1: Sign in
+  // Note: do NOT use -X POST — curl infers POST from --data-urlencode automatically.
+  // Using -X POST with -L causes curl to keep POST on redirects (→ 405 on GET-only routes).
   const signInResult = curl(
-    `-X POST "${BASE_URL}/signin" ` +
+    `"${BASE_URL}/signin" ` +
     `-H "Content-Type: application/x-www-form-urlencoded" ` +
+    `-H "Origin: ${BASE_URL}" ` +
     `--data-urlencode "email=${EMAIL}" ` +
     `--data-urlencode "password=${PASSWORD}" ` +
     `-L -o /dev/null -w "%{http_code} %{url_effective}"`
@@ -78,42 +81,30 @@ async function run() {
     process.exit(1);
   }
 
-  if (statusCode !== '200' && statusCode !== '302') {
+  if (statusCode !== '200') {
     console.error(`Unexpected signin response: ${statusCode} ${finalUrl}`);
     process.exit(1);
   }
 
   console.log('✓ Authenticated');
 
-  // Step 2: Authenticate for the specific project
-  const authResult = curl(
-    `"${BASE_URL}/crawl/auth?id=${PROJECT_ID}" ` +
-    `-L -o /dev/null -w "%{http_code} %{url_effective}"`
-  ).trim();
-
-  console.log(`✓ Project auth: ${authResult}`);
-
-  // Step 3: Start crawl
+  // Step 2: Start crawl — do NOT follow redirect (-L omitted intentionally).
+  // Success = 303 (SEOnaut redirects regardless of destination after starting).
+  // The correct URL is /crawl/start?pid=<id>, not /crawl/start (no pid = auth error).
   const startResult = curl(
-    `"${BASE_URL}/crawl/start" ` +
-    `-L -o /dev/null -w "%{http_code} %{url_effective}"`
+    `"${BASE_URL}/crawl/start?pid=${PROJECT_ID}" ` +
+    `-o /dev/null -w "%{http_code} %{redirect_url}"`
   ).trim();
 
-  const [startStatus, startUrl] = startResult.split(' ');
+  const [startStatus, redirectTarget] = startResult.split(' ');
 
-  if (startUrl && startUrl.includes('/crawl/live')) {
-    console.log('✓ Crawl started — live at ' + startUrl);
+  if (startStatus === '303') {
+    console.log(`✓ Crawl started (→ ${redirectTarget || 'home'})`);
+    console.log(`Live view: ${BASE_URL}/crawl/live?pid=${PROJECT_ID}`);
     process.exit(0);
   }
 
-  if (startStatus === '200' || startStatus === '302') {
-    // Might still be starting — check if we landed on the live page
-    console.log(`Crawl trigger sent (${startStatus} → ${startUrl})`);
-    console.log('Verify at http://localhost:9000/crawl/live?pid=' + PROJECT_ID);
-    process.exit(0);
-  }
-
-  console.error(`Crawl start failed: ${startStatus} ${startUrl}`);
+  console.error(`Crawl start failed: HTTP ${startStatus} (expected 303)`);
   process.exit(1);
 }
 
