@@ -35,7 +35,7 @@ AI addresses some of these problems directly.
 
 **Reducing the "gut feel" in early screening.** Most bias in hiring happens in the first pass, when a recruiter makes a snap judgment about whether a candidate "looks right." AI screening defers that judgment until a human reviews a shortlist rather than a full pile. This is not a perfect solution, but it changes when and how bias enters the process.
 
-**Standardized interview evaluation.** AI tools can provide structured scoring rubrics for interviews, prompt interviewers to evaluate specific criteria, and flag when assessments diverge significantly between interviewers on the same candidate. This creates accountability that informal processes lack.
+**Standardized interview evaluation.** AI tools can provide structured scoring rubrics for interviews, prompt interviewers to evaluate specific criteria, and flag when assessments diverge significantly between interviewers on the same candidate. This creates accountability that informal processes lack — and pairing these rubrics with [AI interview scheduling](/blog/ai-interview-scheduling/) tools removes coordination friction that can disadvantage candidates without flexible schedules.
 
 If you are building out a broader recruiting process alongside diversity goals, the [AI for recruiting](/blog/ai-for-recruiting) guide covers how to layer these tools into a full workflow.
 
@@ -81,7 +81,7 @@ Not all AI hiring tools handle bias the same way. Here is a realistic breakdown.
 
 **SeekOut and Findem** use AI to search across professional networks beyond LinkedIn, which can surface candidates from underrepresented groups who are not actively job-seeking on traditional platforms. Diversity-specific filters let you focus sourcing on specific demographic targets where legally permissible.
 
-The sourcing stage is underrated in the AI diversity conversation. Bias in your pipeline is partly a bias in where you look. If your sourcing defaults to the same 20 universities and 30 companies, AI cannot fix a lack-of-diversity problem that starts with who you find. Expanding sourcing geographically and institutionally often delivers larger gains than optimizing screening of a narrow pool.
+The sourcing stage is underrated in the AI diversity conversation. Bias in your pipeline is partly a bias in where you look. If your sourcing defaults to the same 20 universities and 30 companies, AI cannot fix a lack-of-diversity problem that starts with who you find. Expanding sourcing geographically and institutionally often delivers larger gains than optimizing screening of a narrow pool. Once those hires are in, fair [compensation benchmarking](/blog/ai-compensation-benchmarking/) is the next place to audit for equity — pay gaps erode diversity gains faster than hiring pipelines can replace them.
 
 ## How to audit your AI hiring tools
 
@@ -117,7 +117,7 @@ Here is what a real implementation looks like, sequenced by impact and complexit
 
 **Start with job descriptions** (Week 1). Run every active job description through an AI bias analysis. This costs nothing if you use a general AI assistant, takes 10 minutes per post, and typically broadens your applicant pool within the first cycle. This is the lowest-risk, highest-visibility change you can make.
 
-**Implement structured screening criteria** (Week 2-3). Before using any AI screening tool, write explicit must-have and nice-to-have criteria for each role. The discipline of writing these down catches hidden assumptions ("we always look for candidates from top-10 schools") before the AI encodes them. If you already use AI for screening, audit your existing criteria against this checklist.
+**Implement structured screening criteria** (Week 2-3). Before using any AI screening tool, write explicit must-have and nice-to-have criteria for each role. The discipline of writing these down catches hidden assumptions ("we always look for candidates from top-10 schools") before the AI encodes them. A [skills gap analysis](/blog/ai-skills-gap-analysis/) helps ground these criteria in actual capability needs rather than credential proxies. If you already use AI for screening, audit your existing criteria against this checklist.
 
 **Set up blind review for initial screening** (Week 3-4). Most ATS platforms allow you to hide candidate names, addresses, and graduation years during the initial resume review. Combined with your structured criteria, this removes some of the most common demographic signals. This is a structural intervention that does not require trusting that your AI ignores them.
 
