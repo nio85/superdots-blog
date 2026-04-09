@@ -64,7 +64,7 @@ Raw salary data is only useful after adjustment. AI applies several dimensions s
 
 **Company size and stage.** Series A startups compete differently than public companies. Compensation structures differ — more equity, lower base. AI tools that understand this won't benchmark your startup against Google's cash compensation.
 
-**Level calibration.** Job titles are unreliable across companies. "Senior Engineer" at one company is "Staff Engineer" at another. AI tools increasingly use skills-based matching and scope-of-work analysis rather than title matching to find comparable roles.
+**Level calibration.** Job titles are unreliable across companies. "Senior Engineer" at one company is "Staff Engineer" at another. AI tools increasingly use skills-based matching and scope-of-work analysis rather than title matching to find comparable roles — the same capability that powers [AI skills gap analysis](/blog/ai-skills-gap-analysis), which maps your workforce's actual capabilities against what the market values.
 
 **Industry vertical.** A data scientist in pharma commands a different premium than a data scientist in retail. Industry context matters and AI accounts for it.
 
@@ -117,7 +117,7 @@ Not all gaps require immediate action. Prioritize using two factors: severity an
 
 An engineer at 78% of market median with two competing offers in their LinkedIn activity is a different situation than a finance analyst at 82% of market median who's been with the company seven years and has no obvious exit signals.
 
-AI tools increasingly integrate with external signals — LinkedIn activity, internal engagement surveys, performance trends — to help you prioritize. Use those signals. Acting on compensation without context wastes budget.
+AI tools increasingly integrate with external signals — LinkedIn activity, internal engagement surveys, performance trends — to help you prioritize. Use those signals. Acting on compensation without context wastes budget. Performance trends are especially revealing here: if an employee's [AI-assisted performance reviews](/blog/ai-performance-reviews) show consistently strong ratings but their comp sits below market, that is a retention risk the data is already telling you about.
 
 ### Step 5: Model Remediation Scenarios
 
@@ -193,7 +193,7 @@ HR leaders often face skepticism when proposing compensation analysis initiative
 
 **Turnover cost.** A single mid-level engineering departure costs 50-150% of annual salary in recruiting, onboarding, and productivity loss. If AI compensation benchmarking identifies and retains five at-risk employees per year, the ROI on even a $20,000 tool subscription is clear.
 
-**Hiring efficiency.** Offers that land are cheaper than offers that don't. If real-time benchmarks reduce offer decline rates by 20%, you're spending less time and recruiter capacity per hire.
+**Hiring efficiency.** Offers that land are cheaper than offers that don't. If real-time benchmarks reduce offer decline rates by 20%, you're spending less time and recruiter capacity per hire. This pairs directly with [AI for recruiting](/blog/ai-for-recruiting) — accurate comp data is only useful if your pipeline is generating qualified candidates worth making offers to.
 
 **Legal risk reduction.** The cost of a pay equity lawsuit — including legal fees, settlement, and reputational damage — dwarfs the cost of proactive analysis and remediation.
 

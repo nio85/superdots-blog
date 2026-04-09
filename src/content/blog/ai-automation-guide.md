@@ -92,7 +92,7 @@ Start with the task that matches all three of these criteria:
 
 Email triage almost always wins this test. Start there if you're unsure.
 
-If your automation involves spreadsheets — and most business processes do — our guide on [AI spreadsheet tools](/blog/ai-spreadsheet-tools) covers how to automate data entry, formulas, and reporting. And if scheduling is eating your team's time, see how an [AI scheduling assistant](/blog/ai-scheduling-assistant) can handle the coordination for you.
+If your automation involves spreadsheets — and most business processes do — our guide on [AI spreadsheet tools](/blog/ai-spreadsheet-tools) covers how to automate data entry, formulas, and reporting. And if scheduling is eating your team's time, see how an [AI scheduling assistant](/blog/ai-scheduling-assistant) can handle the coordination for you. For teams that want to go deeper — automating entire multi-step workflows rather than individual tasks — [AI workflow automation](/blog/ai-workflow-automation) covers how to chain triggers and actions across the tools your team already uses. And if you're not sure which processes are worth automating first, [AI process mining](/blog/ai-process-mining) analyzes your actual work patterns to surface the highest-ROI candidates.
 
 The tools are ready. The setup is simple. The only thing standing between you and fewer hours of busywork is picking one task and automating it this week.
 
