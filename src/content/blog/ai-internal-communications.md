@@ -1,5 +1,5 @@
 ---
-title: "AI Internal Communications: Send the Right Message to the Right Employee at the Right Time"
+title: 'AI for Internal Communications: Guide'
 description: "Learn how AI personalizes employee communications, segments audiences, automates updates, and measures engagement for more effective internal comms."
 pubDate: "2026-03-24"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI RFP Response Tools: Respond 10x Faster and Win More Deals"
+title: 'AI RFP Response Tools: Win More Bids'
 description: "How AI RFP response tools help sales teams draft proposals faster, maintain accuracy, and win more deals. Practical guide with tool reviews."
 pubDate: "2026-03-25"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI Event Management Software: Analytics & Pricing Compared"
+title: 'AI Event Management Software (2026)'
 description: "Compare 8 AI event management platforms on analytics, event intelligence, and real pricing. Bizzabo, Cvent, Whova, Hopin — which tool fits your events?"
 pubDate: "2026-03-25"
 author: "Superdots Team"

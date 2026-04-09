@@ -1,5 +1,5 @@
 ---
-title: 'AI Incident Management: Detect, Triage, and Resolve Issues Faster'
+title: 'AI Incident Management: Detect and Resolve'
 description: 'AI incident management accelerates detection, triage, and resolution — from anomaly detection to root cause analysis to automated runbooks for faster recovery.'
 pubDate: "2026-03-17T17:18:00Z"
 author: 'Superdots Team'

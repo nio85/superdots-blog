@@ -1,5 +1,5 @@
 ---
-title: 'AI Security Scanning: Find Vulnerabilities That Traditional Scanners Miss'
+title: 'AI Security Scanning: Find Vulnerabilities'
 description: 'AI security scanning tools find vulnerabilities that SAST and DAST miss by understanding code context, business logic flaws, and novel attack patterns.'
 pubDate: "2026-03-17T17:39:00Z"
 author: 'Superdots Team'

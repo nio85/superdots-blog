@@ -1,5 +1,5 @@
 ---
-title: 'Best AI Note-Taking Apps for Work: Capture Everything, Miss Nothing'
+title: 'Best AI Note-Taking Apps for Work (2026)'
 description: 'Compare the best AI note-taking apps for meetings, research, and brainstorming. Find tools that organize your notes automatically.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

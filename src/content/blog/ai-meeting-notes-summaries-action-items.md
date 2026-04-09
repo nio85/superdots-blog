@@ -1,5 +1,5 @@
 ---
-title: 'AI Meeting Notes: How to Get Summaries and Action Items Automatically'
+title: 'AI Meeting Notes: Summaries & Action Items'
 description: 'Stop scribbling during meetings. AI note-takers can record, transcribe, summarize, and extract action items from every call.'
 pubDate: '2026-03-13'
 author: 'Superdots Team'

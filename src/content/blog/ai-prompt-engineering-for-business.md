@@ -1,5 +1,5 @@
 ---
-title: 'AI Prompt Engineering for Business: Write Better Prompts, Get Better Results'
+title: 'AI Prompt Engineering for Business'
 description: 'Learn practical prompt frameworks for sales emails, reports, analysis, and support responses. No engineering background needed.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: 'AI Budgeting Tools: How Non-Finance Teams Can Track Spending'
+title: 'AI Budgeting Tools: Track Team Spending'
 description: 'AI budgeting tools let you ask plain-English questions about spending, spot overruns early, and build forecasts — no formulas or finance background needed.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'

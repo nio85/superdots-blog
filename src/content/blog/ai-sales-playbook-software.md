@@ -1,5 +1,5 @@
 ---
-title: "Build a Sales Playbook in 3 Hours With AI (No Software Needed)"
+title: 'Build a Sales Playbook in 3 Hours With AI'
 description: "Enterprise sales playbook tools cost $500/month. Here's how to build a better one in 3 hours using Notion AI, ChatGPT, and HubSpot Playbooks — free."
 pubDate: "2026-04-09"
 author: "Superdots Team"

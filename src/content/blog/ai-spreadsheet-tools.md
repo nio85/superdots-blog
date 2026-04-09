@@ -1,5 +1,5 @@
 ---
-title: "AI Spreadsheet Tools: Stop Writing Formulas and Start Asking Questions"
+title: 'AI Spreadsheet Tools: No Formula Writing'
 description: "AI spreadsheet tools let you analyze data, build reports, and clean up messy files by typing plain English instead of wrestling with formulas."
 pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"

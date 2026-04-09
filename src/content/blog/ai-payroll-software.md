@@ -1,5 +1,5 @@
 ---
-title: "AI Payroll Software: Automate Pay Runs, Tax Filing, and Compliance"
+title: 'AI Payroll Software: Automate Pay & Compliance'
 description: "How AI payroll software automates pay runs, tax calculations, and compliance. Compare the best tools for small and mid-size businesses."
 pubDate: "2026-03-25"
 author: "Superdots Team"

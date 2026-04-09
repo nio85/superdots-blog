@@ -1,5 +1,5 @@
 ---
-title: 'AI Customer Feedback Analysis: Turn Reviews and Surveys Into Action'
+title: 'AI Customer Feedback Analysis: Quick Wins'
 description: 'Learn how to use AI to analyze customer feedback across reviews, surveys, and support tickets — and turn scattered insights into clear priorities.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

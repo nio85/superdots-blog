@@ -1,5 +1,5 @@
 ---
-title: "Best AI Report Generator Tools: Create Business Reports in Minutes"
+title: 'Best AI Report Generator: Business Reports'
 description: "AI report generator tools turn raw data into polished business reports in minutes. Compare the best options for operations teams, analysts, and managers."
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"

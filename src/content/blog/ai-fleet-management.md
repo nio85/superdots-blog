@@ -1,5 +1,5 @@
 ---
-title: "AI Fleet Management: Optimize Routes, Maintenance, and Costs"
+title: 'AI Fleet Management: Optimize Routes and Costs'
 description: "AI fleet management optimizes routing, predicts maintenance needs, and cuts fuel costs. A practical guide for operations teams."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

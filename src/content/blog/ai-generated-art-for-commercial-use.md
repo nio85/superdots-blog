@@ -1,5 +1,5 @@
 ---
-title: "AI-Generated Art for Commercial Use: What You Need to Know"
+title: 'AI-Generated Art for Commercial Use'
 description: "Can you use AI-generated images for your business? Here's the practical guide to licensing, quality, and when AI art makes sense."
 pubDate: "2026-03-10"
 author: "Superdots Team"

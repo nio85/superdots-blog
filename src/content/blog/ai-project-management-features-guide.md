@@ -1,5 +1,5 @@
 ---
-title: 'AI in Project Management: Features That Actually Save Time'
+title: 'AI in Project Management: Features Guide'
 description: 'Your PM tool probably has AI features you are ignoring. Here is which ones are worth using and how to set them up.'
 pubDate: '2026-03-11'
 author: 'Superdots Team'

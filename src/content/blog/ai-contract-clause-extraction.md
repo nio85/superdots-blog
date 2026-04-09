@@ -1,5 +1,5 @@
 ---
-title: "How AI Extracts and Analyzes Contract Clauses Automatically"
+title: 'AI Contract Clause Extraction: How It Works'
 description: "Learn how AI identifies, extracts, and categorizes contract clauses like indemnity and termination — saving legal teams hours of manual review."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

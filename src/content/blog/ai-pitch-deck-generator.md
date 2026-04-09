@@ -1,5 +1,5 @@
 ---
-title: "AI Pitch Deck Generator: Build Investor-Ready Decks Without a Designer"
+title: 'AI Pitch Deck Generator: No Designer Needed'
 description: "AI pitch deck generators turn your business idea into investor-ready slides in minutes. Compare the 7 best tools and learn how to structure a winning deck."
 pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"

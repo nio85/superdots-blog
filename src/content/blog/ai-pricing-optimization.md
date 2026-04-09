@@ -1,5 +1,5 @@
 ---
-title: "AI Pricing Optimization: How Smart Teams Set Prices That Actually Maximize Revenue"
+title: 'AI Pricing Optimization: Maximize Revenue'
 description: "Stop guessing your prices. AI pricing tools analyze demand, competitors, and customer behavior to find the number that maximizes revenue."
 pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: 'AI Data Analysis for Non-Technical Teams: Ask Questions, Get Answers'
+title: 'AI Data Analysis for Non-Technical Teams'
 description: 'You do not need SQL or Python to analyze data anymore. Here is how non-technical employees can use AI to make sense of spreadsheets and reports.'
 pubDate: '2026-03-14'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "AI Employee Scheduling: How Smart Shift Planning Saves Hours Every Week"
+title: 'AI Employee Scheduling: Smarter Shift Planning'
 description: "A practical guide to AI employee scheduling software — how it works, which tools are best, and how to stop wasting hours on manual shift planning."
 pubDate: "2026-03-25"
 author: "Superdots Team"

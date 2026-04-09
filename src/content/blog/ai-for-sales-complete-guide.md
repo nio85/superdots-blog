@@ -1,5 +1,5 @@
 ---
-title: 'AI for Sales: The Complete Guide to AI-Powered Sales Tools'
+title: 'AI for Sales: Complete Guide (2026)'
 description: 'How sales teams use AI to automate prospecting, personalize outreach, forecast revenue, and close more deals — without turning your reps into button-pushers.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'

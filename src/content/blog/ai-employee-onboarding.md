@@ -1,5 +1,5 @@
 ---
-title: 'AI Employee Onboarding Automation: Get New Hires Productive in Half the Time'
+title: 'AI Employee Onboarding: Cut Ramp Time Fast'
 description: 'Automate employee onboarding with AI — document collection, personalized training paths, and new hire Q&A bots that cut ramp time by 50%. No enterprise HR software required.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'

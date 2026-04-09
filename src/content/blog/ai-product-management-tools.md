@@ -1,5 +1,5 @@
 ---
-title: "AI Tools for Product Managers: What Actually Works in 2026"
+title: 'AI Tools for Product Managers (2026)'
 description: "The best AI tools for product managers in 2026—what they actually do, where they save time, and how to avoid the common traps."
 pubDate: "2026-03-26"
 author: "Superdots Team"

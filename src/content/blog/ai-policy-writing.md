@@ -1,5 +1,5 @@
 ---
-title: 'AI Policy Writing: How to Draft Company Policies in Minutes, Not Weeks'
+title: 'AI Policy Writing: Draft Policies in Minutes'
 description: 'Use AI to write company policies faster. 7 tools compared for HR, legal, and compliance teams — plus a step-by-step guide to your first AI-assisted policy.'
 pubDate: '2026-03-25'
 author: 'Superdots Team'

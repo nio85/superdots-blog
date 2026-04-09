@@ -1,5 +1,5 @@
 ---
-title: 'AI for HR: The Complete Guide to AI-Powered People Operations'
+title: 'AI for HR: Complete Guide to People Ops'
 description: 'How HR teams use AI to automate recruiting, onboarding, performance reviews, and workforce planning — without losing the human touch that people operations demands.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'

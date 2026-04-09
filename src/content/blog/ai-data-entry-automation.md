@@ -1,5 +1,5 @@
 ---
-title: 'How to Automate Data Entry with AI (No Code Required)'
+title: 'How to Automate Data Entry with AI'
 description: 'Eliminate manual data entry with AI tools that require no coding. Step-by-step guide for non-technical teams to get started.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

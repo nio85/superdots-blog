@@ -1,5 +1,5 @@
 ---
-title: 'AI eDiscovery Tools: Cut Document Review Time by 60-80%'
+title: 'AI eDiscovery Tools: Cut Review Time 60-80%'
 description: 'AI eDiscovery tools transform document collection, review, and production — cutting costs and timelines while improving accuracy in litigation support.'
 pubDate: "2026-03-17T17:15:00Z"
 author: 'Superdots Team'

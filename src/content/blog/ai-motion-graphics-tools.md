@@ -1,5 +1,5 @@
 ---
-title: "Best AI Motion Graphics Tools in 2026 (No After Effects Needed)"
+title: 'Best AI Motion Graphics Tools (2026)'
 description: "Skip the After Effects learning curve. Compare the best AI motion graphics tools that let any designer create professional animations in minutes, not days."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

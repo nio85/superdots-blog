@@ -1,5 +1,5 @@
 ---
-title: 'AI Design Tools for Non-Designers: Create Pro Visuals Fast'
+title: 'AI Design Tools for Non-Designers'
 description: 'No design skills? No problem. Learn how to use AI design tools to create social graphics, presentations, and brand visuals that actually look professional.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "Best AI Financial Modeling Tools for Non-Technical Finance Teams (2026)"
+title: 'Best AI Financial Modeling Tools (2026)'
 description: "Compare the best AI financial modeling tools for scenario planning, forecasting, and board-ready outputs. Built for finance teams, not spreadsheet wizards."
 pubDate: "2026-03-27"
 author: "Superdots Team"

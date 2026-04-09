@@ -1,5 +1,5 @@
 ---
-title: 'AI for Recruiting: Cut Hiring Busywork Without Losing the Human Touch'
+title: 'AI for Recruiting: Less Busywork, Better Hires'
 description: 'Use AI to screen resumes, write better job descriptions, and automate scheduling — while keeping the human judgment that great hiring requires.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'

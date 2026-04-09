@@ -1,5 +1,5 @@
 ---
-title: "AI Expense Reports: Automate the Most Hated Task in Finance"
+title: 'AI Expense Reports: Automate the Hard Part'
 description: "How to use AI to automate expense reporting — from receipt scanning to approval routing — and save hours every month."
 pubDate: "2026-03-16T21:13:48Z"
 author: "Superdots Team"

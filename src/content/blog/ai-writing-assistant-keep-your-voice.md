@@ -1,5 +1,5 @@
 ---
-title: 'How to Use an AI Writing Assistant Without Losing Your Voice'
+title: 'AI Writing Assistant: Keep Your Voice'
 description: 'AI can help you write faster. But if every paragraph sounds like a chatbot wrote it, you have a problem. Here is how to use AI as a writing partner.'
 pubDate: '2026-03-12'
 author: 'Superdots Team'

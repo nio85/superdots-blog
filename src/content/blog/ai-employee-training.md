@@ -1,5 +1,5 @@
 ---
-title: "AI-Powered Employee Training Programs That Actually Work"
+title: 'AI Employee Training Programs That Work'
 description: "Most corporate training fails. Learn how AI creates personalized learning paths, adapts to skill levels, and measures real knowledge retention."
 pubDate: "2026-03-17T07:28:07Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI Procurement Tools: Smarter Sourcing and Vendor Management"
+title: 'AI Procurement Tools: Smarter Sourcing'
 description: "Stop comparing vendors in spreadsheets. Learn how AI procurement tools automate spend analysis, supplier evaluation, and RFP processes."
 pubDate: "2026-03-17T07:43:48Z"
 author: "Superdots Team"

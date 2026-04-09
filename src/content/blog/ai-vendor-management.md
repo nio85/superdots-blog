@@ -1,5 +1,5 @@
 ---
-title: "AI Vendor Management: Score, Track, and Negotiate Smarter"
+title: 'AI Vendor Management: Score and Negotiate'
 description: "Use AI to automate vendor scoring, monitor SLA compliance in real time, and find renegotiation opportunities. A practical guide for procurement teams."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

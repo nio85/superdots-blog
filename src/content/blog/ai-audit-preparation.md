@@ -1,5 +1,5 @@
 ---
-title: "How AI Automates Audit Preparation and Evidence Gathering"
+title: 'How AI Automates Audit Preparation'
 description: "Cut weeks off audit prep. AI auto-collects evidence, maps controls to requirements, and flags gaps before auditors arrive."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
