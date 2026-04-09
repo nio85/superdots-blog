@@ -154,7 +154,7 @@ A brand identity only works if it looks the same everywhere. Your website, Linke
 
 This is the hardest part. And it is where AI brand identity tools earn their keep.
 
-**[Canva](https://www.canva.com)** lets you create templates tied to your brand kit. Every new design starts with the right colors, fonts, and logo placement. **[Figma](https://www.figma.com)** (with its AI features) generates component libraries that developers and designers share. **Designify** and **Piktochart** auto-apply brand elements to social graphics, presentations, and reports.
+**Canva** lets you create templates tied to your brand kit. Every new design starts with the right colors, fonts, and logo placement. **[Figma](https://www.figma.com)** (with its AI features) generates component libraries that developers and designers share. **Designify** and **Piktochart** auto-apply brand elements to social graphics, presentations, and reports.
 
 The workflow looks like this:
 
@@ -183,7 +183,7 @@ You do not need ten tools. Here is a practical stack that covers everything:
 | Colors | Coolors + accessible contrast checker | Free |
 | Typography | Fontjoy + Google Fonts | Free |
 | Guidelines | Frontify or Canva Brand Kit | Free-$30/month |
-| Templates | [Canva](https://www.canva.com) or [Figma](https://www.figma.com) | Free-$15/month |
+| Templates | Canva or Figma | Free-$15/month |
 | Content consistency | Your AI writing tool + brand voice doc | Varies |
 
 Total cost: under $100 to get started, versus $5,000-$50,000 for an agency.

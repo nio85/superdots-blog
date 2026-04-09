@@ -109,7 +109,7 @@ Most companies have all of these problems, but knowing which one hurts most help
 You have three options:
 
 1. **Use AI features in your current tool.** Expensify, SAP Concur, [Brex](https://www.brex.com), and Ramp all have AI-powered features. If you are already on one of these platforms, turn on what you are not using before switching tools.
-2. **Add an AI layer on top.** Tools like [Coupa](https://www.coupa.com) or AppZen add AI-powered auditing and compliance to existing expense systems.
+2. **Add an AI layer on top.** Tools like Coupa or AppZen add AI-powered auditing and compliance to existing expense systems.
 3. **Switch to an AI-native platform.** If you are still on spreadsheets or a legacy system, modern platforms like Ramp, Brex, or Center are built with AI from the ground up.
 
 For most companies, option 1 is the right starting point. You already have the data and the workflows. Adding AI features is a configuration change, not a migration.

@@ -15,7 +15,7 @@ heroImage: "/images/blog/ai-productivity-guide.webp"
 imageHint: "knowledge worker reviewing personal AI productivity dashboard with time savings metrics"
 ---
 
-You don't need to overhaul your entire workflow to get more done. According to [McKinsey](https://www.mckinsey.com), AI-assisted workers can complete tasks up to 40% faster. The biggest productivity gains come from speeding up the tasks you already do every day — email, meetings, writing, project management, and presentations.
+You don't need to overhaul your entire workflow to get more done. According to McKinsey, AI-assisted workers can complete tasks up to 40% faster. The biggest productivity gains come from speeding up the tasks you already do every day — email, meetings, writing, project management, and presentations.
 
 This guide covers the AI productivity tools that actually save time, organized by the work tasks where they make the most difference.
 

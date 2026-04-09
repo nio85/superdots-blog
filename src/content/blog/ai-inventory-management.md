@@ -84,7 +84,7 @@ Here is the good news: you do not need perfect data. You need minimum viable dat
 
 ## How to evaluate AI inventory management tools
 
-Not all tools are built for the same user. Enterprise platforms like Blue Yonder, [NetSuite](https://www.netsuite.com), or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
+Not all tools are built for the same user. Enterprise platforms like Blue Yonder, NetSuite, or SAP IBP are powerful but assume you have a dedicated planning team. Here is what to look for if you are an SMB or mid-market ops team.
 
 **Must-haves:**
 

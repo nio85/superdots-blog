@@ -39,7 +39,7 @@ Most small marketing teams don't lack data. They drown in it.
 
 Google Analytics 4 alone tracks hundreds of dimensions and metrics. Add LinkedIn, Meta Ads, Mailchimp, Google Ads, and your [CRM](/blog/ai-crm-tools), and you're looking at thousands of data points across half a dozen platforms that don't talk to each other.
 
-The traditional solution — manual spreadsheet aggregation — works, but it's slow. A 2024 Gartner survey found that marketing analysts spend [roughly 44% of their time collecting and organizing data](https://www.gartner.com/en/marketing/research/marketing-data-analytics-survey) rather than analyzing it. For teams without a dedicated analyst, that number is probably higher, because the person pulling data is also the person writing campaigns.
+The traditional solution — manual spreadsheet aggregation — works, but it's slow. A 2024 Gartner survey found that marketing analysts spend roughly 44% of their time collecting and organizing data rather than analyzing it. For teams without a dedicated analyst, that number is probably higher, because the person pulling data is also the person writing campaigns.
 
 AI helps in three specific ways:
 
@@ -74,7 +74,7 @@ I tested this with a real GA4 export (3 months of traffic data, ~15,000 rows). C
 
 **But for weekly or monthly analysis on a budget of zero?** It's genuinely powerful. Most marketing managers I talk to have ChatGPT subscriptions already. They just haven't thought to use it this way.
 
-**Tools:** [ChatGPT Plus](https://openai.com/chatgpt) ($20/month), [Claude Pro](https://claude.ai) ($20/month). Both handle CSV uploads with data analysis capabilities.
+**Tools:** ChatGPT Plus ($20/month), Claude Pro ($20/month). Both handle CSV uploads with data analysis capabilities.
 
 ## Tier 2: $39-100/month — Dedicated AI analytics tools
 

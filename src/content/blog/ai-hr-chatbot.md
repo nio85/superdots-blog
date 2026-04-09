@@ -84,7 +84,7 @@ Several platforms are purpose-built for HR chatbot deployments:
 
 **Leena AI** specializes in HR service delivery and integrates natively with major HRIS platforms ([Workday](https://www.workday.com), SAP SuccessFactors, Oracle). Strong on workflow automation beyond just Q&A.
 
-**[ServiceNow](https://www.servicenow.com)** and **Moveworks** are enterprise-grade AI platforms with deep Slack and Teams integration. Moveworks handles cross-functional IT and HR queries and has strong natural language capabilities out of the box.
+**ServiceNow** and **Moveworks** are enterprise-grade AI platforms with deep Slack and Teams integration. Moveworks handles cross-functional IT and HR queries and has strong natural language capabilities out of the box.
 
 **Espressive Barista** is another enterprise option with a focus on HR and IT service delivery, with sophisticated policy-based answer configuration.
 

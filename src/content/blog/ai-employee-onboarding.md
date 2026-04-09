@@ -226,7 +226,7 @@ Not every team needs the same solution. Here is what works at different stages.
 
 | Tool | What it does | Cost |
 |------|-------------|------|
-| [BambooHR](https://www.bamboohr.com) | HRIS with onboarding workflows | Custom pricing |
+| BambooHR | HRIS with onboarding workflows | Custom pricing |
 | Trainual | Role-based training and SOPs | From $250/month |
 | Guru | AI-powered knowledge base | From $15/user/month |
 | [Sapling (now Kallidus)](https://www.kallidus.com) | People operations and onboarding automation | Custom pricing |

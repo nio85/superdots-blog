@@ -23,7 +23,7 @@ Container shortages, port backlogs, raw material spikes, factory shutdowns, ship
 
 That approach does not scale. When your supply chain spans multiple suppliers, warehouses, and shipping routes across time zones, manual planning cannot keep up with the speed and complexity of modern disruptions.
 
-As [McKinsey](https://www.mckinsey.com) has noted, AI-enabled supply chains can reduce forecasting errors by up to 50%. AI supply chain tools do not eliminate disruptions. Nothing does. But they compress the time between "something changed" and "here is what we should do about it." Demand forecasting becomes hours instead of weeks. Inventory decisions become data-driven instead of gut-driven. Supplier risks become visible before they become crises.
+As McKinsey has noted, AI-enabled supply chains can reduce forecasting errors by up to 50%. AI supply chain tools do not eliminate disruptions. Nothing does. But they compress the time between "something changed" and "here is what we should do about it." Demand forecasting becomes hours instead of weeks. Inventory decisions become data-driven instead of gut-driven. Supplier risks become visible before they become crises.
 
 Here is where AI fits in your supply chain, what it actually does well, and how to get started without a seven-figure budget.
 
@@ -154,7 +154,7 @@ The goal is a connected system where a demand signal change automatically adjust
 
 ## The Bottom Line
 
-AI supply chain management is no longer reserved for enterprises with dedicated data science teams. Enterprise platforms like [SAP](https://www.sap.com) and [Oracle](https://www.oracle.com) now offer AI-powered supply chain modules alongside their traditional ERP systems, while cloud-based tools have made demand forecasting, inventory optimization, and supplier risk monitoring accessible to mid-market operations teams. [Gartner](https://www.gartner.com) consistently ranks AI-driven supply chain planning among the top technology investments for operations leaders.
+AI supply chain management is no longer reserved for enterprises with dedicated data science teams. Enterprise platforms like SAP and Oracle now offer AI-powered supply chain modules alongside their traditional ERP systems, while cloud-based tools have made demand forecasting, inventory optimization, and supplier risk monitoring accessible to mid-market operations teams. Gartner consistently ranks AI-driven supply chain planning among the top technology investments for operations leaders.
 
 The technology works. Companies implementing AI supply chain tools consistently report better forecast accuracy, lower inventory costs, and earlier risk detection. But the results depend on data quality, realistic expectations, and a phased rollout that builds capability over time.
 

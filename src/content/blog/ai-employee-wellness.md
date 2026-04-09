@@ -39,7 +39,7 @@ The problems:
 
 **Too generic.** A meditation app subscription treats a new parent struggling with sleep the same as a manager drowning in back-to-back meetings. Different problems need different solutions.
 
-**Too passive.** Traditional programs wait for employees to self-identify and seek help. But [only 57% of employees](https://www.nami.org/research/publications-reports/survey-reports/the-2025-nami-workplace-mental-health-poll/) with mental health symptoms actually use available workplace resources. The ones who need help most are often the least likely to ask for it.
+**Too passive.** Traditional programs wait for employees to self-identify and seek help. But only 57% of employees (according to NAMI's 2025 Workplace Mental Health Poll) with mental health symptoms actually use available workplace resources. The ones who need help most are often the least likely to ask for it.
 
 **Too disconnected from work.** A free gym membership does not address the burnout caused by unrealistic deadlines, unclear priorities, or toxic team dynamics. Most wellness programs treat symptoms without touching root causes.
 

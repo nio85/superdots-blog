@@ -108,7 +108,7 @@ These are not theoretical exercises. McKinsey found that companies using scenari
 
 ## Managing Supply Chain Risks with AI
 
-Supply chain disruption is the risk that keeps operations leaders up at night. And for good reason. A 2025 survey by [Gartner](https://www.gartner.com) found that 73% of supply chain leaders experienced at least one significant disruption in the previous 12 months. The average cost per disruption was $184 million for large enterprises.
+Supply chain disruption is the risk that keeps operations leaders up at night. And for good reason. A 2025 survey by Gartner found that 73% of supply chain leaders experienced at least one significant disruption in the previous 12 months. The average cost per disruption was $184 million for large enterprises.
 
 AI changes the equation by providing visibility into risks that were previously invisible. If this applies to your team, our [AI Process Mining: Discover Bottlenecks and Optimization Opportunities Automatically](/blog/ai-process-mining/) guide covers the details.
 

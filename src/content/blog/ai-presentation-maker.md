@@ -51,7 +51,7 @@ Not every AI presentation maker does the same thing. Some generate full decks fr
 
 **Microsoft Copilot for PowerPoint** — Best if your company already uses Microsoft 365. It works inside PowerPoint, which means you keep your existing templates, brand fonts, and workflows. Content generation is decent. Design suggestions are conservative but on-brand. Requires a Copilot license.
 
-**[Canva](https://www.canva.com)** — Best for non-designers who need visual slides, and one of several [AI design tools for non-designers](/blog/ai-design-tools-non-designers) worth exploring. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
+**Canva** — Best for non-designers who need visual slides, and one of several [AI design tools for non-designers](/blog/ai-design-tools-non-designers) worth exploring. Magic Design generates presentations from prompts or documents. Huge template library. Export to PowerPoint works well. The AI content generation is basic, but the design tools are excellent. Free and paid tiers.
 
 **SlidesAI** — Best for [Google Slides](https://workspace.google.com/products/slides) users. It is a Google Workspace add-on that generates slides from text you provide. Good for converting documents or notes into presentations. Design options are more limited than Canva or Beautiful.ai.
 

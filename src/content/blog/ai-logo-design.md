@@ -126,7 +126,7 @@ Tools like [Coolors](https://coolors.co) and [Realtime Colors](https://realtimec
 
 Once you have your logo and colors, create templates for the content you post most. If you are running [social media content with AI](/blog/ai-social-media-content-calendar), having brand-consistent templates ready saves time on every post.
 
-Most AI logo tools (Looka especially) generate social media templates automatically. If yours does not, take your brand kit into [Canva](https://www.canva.com) or [Adobe Express](https://www.adobe.com/express) and build three to five templates:
+Most AI logo tools (Looka especially) generate social media templates automatically. If yours does not, take your brand kit into Canva or Adobe Express and build three to five templates:
 
 - LinkedIn post (1200×1200)
 - Instagram story (1080×1920)

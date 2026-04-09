@@ -93,7 +93,7 @@ Ask vendors about accuracy rates on documents similar to yours. A tool that is 9
 
 ### ERP integration
 
-The tool needs to connect to your accounting system — QuickBooks, NetSuite, [SAP](https://www.sap.com), Xero, whatever you use. Look for native integrations, not just CSV exports. The value of AI processing drops sharply if someone still has to manually import the results.
+The tool needs to connect to your accounting system — QuickBooks, NetSuite, SAP, Xero, whatever you use. Look for native integrations, not just CSV exports. The value of AI processing drops sharply if someone still has to manually import the results.
 
 ### Learning capability
 

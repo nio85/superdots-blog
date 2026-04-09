@@ -39,7 +39,7 @@ Most territory planning happens once a year, in a conference room, with a spread
 
 The process usually looks like this: someone pulls an account list, groups accounts by geography or industry, eyeballs rep capacity, and divides things up. It takes weeks. It satisfies no one. And within six months, the market has shifted enough that the plan is already out of date.
 
-The fundamental problem is complexity. As [Gartner](https://www.gartner.com) research confirms, territory planning is an optimization problem with dozens of interdependent variables:
+The fundamental problem is complexity. As Gartner research confirms, territory planning is an optimization problem with dozens of interdependent variables:
 
 - **Account potential** — not all accounts are equal. A 50-person company in fintech isn't the same as a 50-person company in retail.
 - **Rep capacity** — how many accounts can a rep meaningfully cover? What's their average deal cycle? Their close rate?

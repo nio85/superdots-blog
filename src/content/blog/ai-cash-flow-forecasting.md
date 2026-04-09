@@ -177,7 +177,7 @@ You do not need to implement a full treasury management system to benefit from A
 
 **Month 4+: Expand inputs and scenarios.** Once the baseline forecast is reliable, start adding CRM pipeline data, economic indicators, and scenario models. This is where the compound value kicks in — each additional data source improves the forecast's ability to anticipate rather than just project.
 
-The key mindset shift is this: AI cash flow forecasting is not a one-time project. It is an ongoing system that gets better as it ingests more data and as your team learns to use its outputs for decision-making. The companies that get the most value are the ones that treat the forecast as a daily operational tool, not a monthly report that sits in a folder. [McKinsey](https://www.mckinsey.com) research consistently shows that organizations with real-time cash visibility outperform peers on working capital efficiency.
+The key mindset shift is this: AI cash flow forecasting is not a one-time project. It is an ongoing system that gets better as it ingests more data and as your team learns to use its outputs for decision-making. The companies that get the most value are the ones that treat the forecast as a daily operational tool, not a monthly report that sits in a folder. McKinsey research consistently shows that organizations with real-time cash visibility outperform peers on working capital efficiency.
 
 Start with the timing problem — knowing when cash will actually arrive and leave — and build from there. That single improvement will change how your finance team plans, how your leadership makes investment decisions, and how confidently you navigate the periods when cash gets tight.
 
