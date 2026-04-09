@@ -1,36 +1,37 @@
 #!/usr/bin/env node
 /**
- * Postiz Public API v1 wrapper
+ * Postiz wrapper — delegates to the official `postiz` CLI (npm install -g postiz).
  *
- * Interacts with Postiz managed (app.postiz.com) for social media scheduling.
- * Auth: Authorization header with POSTIZ_API_KEY (no Bearer prefix).
+ * The CLI handles the managed API payload structure, auth, and versioning.
+ * This script normalises the interface for Paperclip agents and adds JSON output.
+ *
+ * Auth: POSTIZ_API_KEY env var (loaded from .env by config.mjs).
  *
  * Usage:
  *   node scripts/tools/postiz.mjs <command> [options]
  */
 
 import '../config.mjs';
+import { execSync } from 'child_process';
 
-const POSTIZ_URL = process.env.POSTIZ_URL || 'https://api.postiz.com';
 const POSTIZ_API_KEY = process.env.POSTIZ_API_KEY;
 
 const HELP = `Usage: node postiz.mjs <command> [options]
 
 Commands:
-  status                                          Check connection
-  integrations                                    List social integrations
-  posts [--start YYYY-MM-DD] [--end YYYY-MM-DD]  List posts (default: current month)
-  create-post <integrationId> <content> [--date ISO] [--draft]  Create/schedule a post
-  delete-post <id>                                Delete a post
-  analytics-post <postId>                         Analytics for a post
-  analytics <integration>                         Analytics for an integration
-  notifications                                   List notifications
-  find-slot <integrationId>                       Find next available slot
-  upload-url <url>                                Upload media from URL
+  status                                               Check connection
+  integrations                                         List social integrations
+  posts [--start YYYY-MM-DD] [--end YYYY-MM-DD]        List posts (current month)
+  create-post <integrationId> <content> --date ISO     Schedule a post
+  create-post <integrationId> <content> --draft        Save as draft
+  delete-post <id>                                     Delete a post
+  analytics-post <postId>                              Analytics for a post
+  analytics <integrationId>                            Analytics for an integration
+  notifications                                        List notifications
+  find-slot <integrationId>                            Find next available slot
 
 Options:
-  --json    Output as JSON
-  --draft   Save as draft instead of scheduling
+  --json    Output raw JSON
   --help    Show this help`;
 
 const args = process.argv.slice(2);
@@ -52,26 +53,42 @@ function getFlag(name) {
 
 if (!POSTIZ_API_KEY) err('Missing env var POSTIZ_API_KEY');
 
+// Run postiz CLI command, always request JSON output, return parsed result.
+// The CLI may prepend decorative text (e.g. "🔌 Connected Integrations:\n") before the JSON.
+function cli(cliArgs) {
+  try {
+    const raw = execSync(`postiz ${cliArgs} --json`, {
+      env: { ...process.env, POSTIZ_API_KEY },
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    // Extract the first JSON value (object or array) from the output
+    const match = raw.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
+    if (match) { try { return JSON.parse(match[1]); } catch {} }
+    return raw.trim();
+  } catch (e) {
+    const stderr = e.stderr?.trim() || '';
+    const stdout = e.stdout?.trim() || '';
+    const raw = stderr || stdout || e.message;
+    const match = raw.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
+    if (match) { try { throw new Error(match[1]); } catch {} }
+    throw new Error(raw);
+  }
+}
+
+// Fallback direct API calls for endpoints not covered by the CLI.
 async function api(method, path, body) {
-  const url = `${POSTIZ_URL}${path}`;
+  const url = `https://api.postiz.com${path}`;
   const opts = {
     method,
-    headers: {
-      'Authorization': POSTIZ_API_KEY,
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Authorization': POSTIZ_API_KEY, 'Content-Type': 'application/json' },
   };
   if (body) opts.body = JSON.stringify(body);
-
   const res = await fetch(url, opts);
   const text = await res.text();
   let data;
   try { data = JSON.parse(text); } catch { data = text; }
-
-  if (!res.ok) {
-    const detail = typeof data === 'object' ? JSON.stringify(data) : data;
-    throw new Error(`${method} ${path} → ${res.status}: ${detail}`);
-  }
+  if (!res.ok) throw new Error(`${method} ${path} → ${res.status}: ${JSON.stringify(data)}`);
   return data;
 }
 
@@ -80,25 +97,26 @@ async function main() {
     case 'status': {
       const data = await api('GET', '/public/v1/is-connected');
       if (jsonOutput) { out(data); break; }
-      log('Connected:', JSON.stringify(data));
+      log('Connected:', data.connected ? 'yes' : 'no');
       break;
     }
+
     case 'integrations': {
-      const data = await api('GET', '/public/v1/integrations');
+      const data = cli('integrations:list');
       if (jsonOutput) { out(data); break; }
-      const items = Array.isArray(data) ? data : data.integrations || [];
+      const items = Array.isArray(data) ? data : [];
       if (items.length === 0) { log('No integrations.'); break; }
-      for (const i of items) {
-        log(`  ${i.id}  ${i.name ?? i.provider ?? '?'}  (${i.type ?? i.providerName ?? '?'})`);
-      }
+      for (const i of items) log(`  ${i.id}  ${i.name}  (${i.identifier})`);
       break;
     }
+
     case 'posts': {
       const start = getFlag('--start');
       const end = getFlag('--end');
       const now = new Date();
       const startDate = start || `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-01`;
       const endDate = end || now.toISOString().slice(0, 10);
+      // CLI doesn't have a list command with date range — use REST directly
       const data = await api('GET', `/public/v1/posts?startDate=${startDate}&endDate=${endDate}`);
       if (jsonOutput) { out(data); break; }
       const posts = Array.isArray(data) ? data : data.posts || [];
@@ -111,59 +129,32 @@ async function main() {
       }
       break;
     }
+
     case 'create-post': {
       const integrationId = positional[1];
       const content = positional[2];
-      if (!integrationId || !content) err('Usage: postiz.mjs create-post <integrationId> <content> [--date ISO] [--draft]');
-
-      const date = getFlag('--date');
+      if (!integrationId || !content) err('Usage: postiz.mjs create-post <integrationId> <content> --date ISO [--draft]');
+      const date = getFlag('--date') || new Date(Date.now() + 3600000).toISOString();
       const isDraft = args.includes('--draft');
       const type = isDraft ? 'draft' : 'schedule';
-
-      // Look up integration identifier to determine platform settings
-      const integrations = await api('GET', '/public/v1/integrations');
-      const items = Array.isArray(integrations) ? integrations : integrations.integrations || [];
-      const integration = items.find(i => i.id === integrationId);
-      const identifier = integration?.identifier || '';
-
-      // Map integration identifier → settings __type
-      const settingsMap = {
-        'linkedin':      { __type: 'linkedin', post_as_images_carousel: false },
-        'linkedin-page': { __type: 'linkedin', post_as_images_carousel: false },
-        'facebook':      { __type: 'facebook' },
-        'instagram':     { __type: 'instagram', post_type: 'post', collaborators: [], is_trial_reel: false, graduation_strategy: 'MANUAL' },
-        'twitter':       { __type: 'x', who_can_reply_post: 'everyone', community: '', made_with_ai: false, paid_partnership: false },
-        'x':             { __type: 'x', who_can_reply_post: 'everyone', community: '', made_with_ai: false, paid_partnership: false },
-      };
-      const settings = settingsMap[identifier] || { __type: identifier };
-
-      const postObj = {
-        integration: { id: integrationId },
-        value: [{ content, image: [] }],
-      };
-      if (!isDraft) postObj.settings = settings;
-
-      const payload = {
-        type,
-        date: date || new Date(Date.now() + 3600000).toISOString(), // default: 1h from now
-        shortLink: false,
-        tags: [],
-        posts: [postObj],
-      };
-
-      const data = await api('POST', '/public/v1/posts', payload);
+      const safeContent = content.replace(/'/g, "'\\''");
+      const data = cli(`posts:create -c '${safeContent}' -i '${integrationId}' -s '${date}' -t ${type}`);
       if (jsonOutput) { out(data); break; }
-      log('Post created:', data.id || JSON.stringify(data));
+      const id = Array.isArray(data) ? data[0]?.postId : data?.postId || data?.id;
+      log('Post created:', id || JSON.stringify(data));
       break;
     }
+
     case 'delete-post': {
       const id = positional[1];
       if (!id) err('Usage: postiz.mjs delete-post <id>');
-      const data = await api('DELETE', `/public/v1/posts/${id}`);
+      // CLI has posts:delete command
+      const data = cli(`posts:delete '${id}'`);
       if (jsonOutput) { out(data); break; }
       log('Post deleted.');
       break;
     }
+
     case 'analytics-post': {
       const postId = positional[1];
       if (!postId) err('Usage: postiz.mjs analytics-post <postId>');
@@ -172,40 +163,34 @@ async function main() {
       log(JSON.stringify(data, null, 2));
       break;
     }
+
     case 'analytics': {
       const integration = positional[1];
-      if (!integration) err('Usage: postiz.mjs analytics <integration>');
-      const data = await api('GET', `/public/v1/analytics/${integration}`);
+      if (!integration) err('Usage: postiz.mjs analytics <integrationId>');
+      const data = cli(`analytics:platform '${integration}'`);
       if (jsonOutput) { out(data); break; }
       log(JSON.stringify(data, null, 2));
       break;
     }
+
     case 'notifications': {
       const data = await api('GET', '/public/v1/notifications');
       if (jsonOutput) { out(data); break; }
       const items = Array.isArray(data) ? data : data.notifications || [];
       if (items.length === 0) { log('No notifications.'); break; }
-      for (const n of items) {
-        log(`  ${n.id}  ${n.type ?? ''}  ${n.message ?? n.content ?? ''}`);
-      }
+      for (const n of items) log(`  ${n.id}  ${n.type ?? ''}  ${n.message ?? n.content ?? ''}`);
       break;
     }
+
     case 'find-slot': {
       const integrationId = positional[1];
       if (!integrationId) err('Usage: postiz.mjs find-slot <integrationId>');
       const data = await api('GET', `/public/v1/find-slot/${integrationId}`);
       if (jsonOutput) { out(data); break; }
-      log('Next slot:', JSON.stringify(data));
+      log('Next slot:', data.date || JSON.stringify(data));
       break;
     }
-    case 'upload-url': {
-      const url = positional[1];
-      if (!url) err('Usage: postiz.mjs upload-url <url>');
-      const data = await api('POST', '/public/v1/upload-from-url', { url });
-      if (jsonOutput) { out(data); break; }
-      log('Uploaded:', JSON.stringify(data));
-      break;
-    }
+
     default:
       err(`Unknown command: ${command}\nRun with --help for usage.`);
   }
