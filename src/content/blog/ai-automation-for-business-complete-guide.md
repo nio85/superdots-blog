@@ -154,7 +154,7 @@ AI is particularly powerful here because the problems are fundamentally about pa
 
 AI supply chain tools analyze historical data, market conditions, weather patterns, and supplier performance to predict disruptions before they happen. They optimize ordering schedules, identify alternative suppliers, and model scenarios so operations teams can make proactive decisions instead of reactive ones.
 
-**Go deeper:** [AI for Supply Chain Management: A Practical Guide](/blog/ai-supply-chain-management/) covers implementing AI across your supply chain — from demand forecasting through supplier risk management.
+**Go deeper:** [AI for Supply Chain Management: A Practical Guide](/blog/ai-supply-chain-management/) covers implementing AI across your supply chain — from demand forecasting through supplier risk management. For small businesses specifically, our [AI demand forecasting](/blog/ai-demand-forecasting-tools-small-business/) comparison walks through 7 tools with real SMB pricing.
 
 ### Inventory management
 
