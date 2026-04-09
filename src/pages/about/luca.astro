@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import { filterPublished } from '../../lib/posts';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
@@ -10,7 +11,7 @@ const page = await getEntry('pages', 'luca');
 const { Content } = await page.render();
 
 const authorData = authors["Luca Bartoccini"];
-const allPosts = await getCollection('blog');
+const allPosts = filterPublished(await getCollection('blog'));
 const lucaPosts = allPosts
 	.filter((p) => p.data.author === "Luca Bartoccini")
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())

@@ -1,0 +1,49 @@
+name: Scheduled Daily Deploy
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 05:00 UTC = 07:00 Europe/Rome
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'manual'
+
+# Never cancel a scheduled deploy mid-flight
+concurrency:
+  group: scheduled-deploy
+  cancel-in-progress: false
+
+jobs:
+  scheduled-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/ --project-name=superdots-blog
+
+      - name: Smoke test
+        run: |
+          sleep 15
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 SuperdotsCI/1.0" https://superdots.sh)
+          echo "Smoke test: HTTP $STATUS"
+          [ "$STATUS" = "200" ] && echo "✅ Site live" || (echo "❌ Site unreachable" && exit 1)

@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterPublished } from '../lib/posts';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import { DEPARTMENTS } from '../consts';
 
-const posts = (await getCollection('blog'))
+const posts = filterPublished(await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 4);
 ---

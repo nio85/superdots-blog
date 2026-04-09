@@ -24,6 +24,11 @@ for (const file of fs.readdirSync(blogDir)) {
 	const pub = fm.match(/pubDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
 	const date = updated?.[1] || pub?.[1];
 	const slug = file.replace(/\.(md|mdx)$/, '');
+	// Exclude future-dated articles from sitemap (scheduled publishing)
+	if (pub?.[1] && pub[1] > buildDate) {
+		noindexSlugs.add(`https://superdots.sh/blog/${slug}/`);
+		continue;
+	}
 	if (date) {
 		lastmodMap.set(`https://superdots.sh/blog/${slug}/`, date);
 	}

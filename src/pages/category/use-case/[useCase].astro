@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterPublished } from '../../../lib/posts';
 import Base from '../../../layouts/Base.astro';
 import PostCard from '../../../components/PostCard.astro';
 import NewsletterForm from '../../../components/NewsletterForm.astro';
@@ -15,7 +16,7 @@ export function getStaticPaths() {
 const { useCase } = Astro.params;
 const { label, description } = Astro.props;
 
-const allPosts = await getCollection('blog');
+const allPosts = filterPublished(await getCollection('blog'));
 const posts = allPosts
 	.filter(({ data }) => data.useCase === useCase)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
