@@ -1,5 +1,5 @@
 ---
-title: 'Best AI Brand Identity Tools in 2026 (No Agency Needed)'
+title: 'Best AI Brand Identity Tools in 2026'
 description: 'Looka, Brandmark, Khroma, and Frontify replace a $10K branding agency. Build your complete logo, color system, and brand guidelines in one afternoon.'
 pubDate: "2026-03-17T17:00:00Z"
 author: 'Superdots Team'

@@ -1,6 +1,6 @@
 ---
 title: "AI Tools for Change Management: What Actually Works for Operations Teams (2026)"
-description: "A phase-by-phase ADKAR guide to AI tools for change management. Real pricing, honest limits, and a 3-step workflow for ops managers without a dedicated change team."
+description: "A phase-by-phase ADKAR guide to AI tools for change management. Real pricing, honest limits, and a workflow for ops managers without a dedicated change team."
 pubDate: "2026-04-08"
 author: "Superdots Team"
 department: "operations"
