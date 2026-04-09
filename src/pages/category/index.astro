@@ -53,6 +53,9 @@ const TAGS_PER_PAGE = 12;
 					<a href={`/category/department/${d.slug}/`} class="cat-card cat-card--dept">
 						<span class="cat-card-count">{count}</span>
 						<span class="cat-card-label">{d.label}</span>
+						{'description' in d && d.description && (
+							<span class="cat-card-desc">{d.description}</span>
+						)}
 						<span class="cat-card-cta">
 							Browse <span aria-hidden="true">&rarr;</span>
 						</span>
@@ -74,6 +77,9 @@ const TAGS_PER_PAGE = 12;
 					<a href={`/category/use-case/${u.slug}/`} class="cat-card cat-card--uc">
 						<span class="cat-card-count">{count}</span>
 						<span class="cat-card-label">{u.label}</span>
+						{'description' in u && u.description && (
+							<span class="cat-card-desc">{u.description}</span>
+						)}
 						<span class="cat-card-cta">
 							Browse <span aria-hidden="true">&rarr;</span>
 						</span>
@@ -287,6 +293,18 @@ const TAGS_PER_PAGE = 12;
 	}
 	.cat-card--uc:hover .cat-card-label {
 		color: var(--color-secondary);
+	}
+
+	/* Card description */
+	.cat-card-desc {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+		margin-bottom: var(--space-2);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	/* Browse CTA */
