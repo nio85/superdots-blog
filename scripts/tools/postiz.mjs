@@ -20,7 +20,7 @@ Commands:
   status                                          Check connection
   integrations                                    List social integrations
   posts [--start YYYY-MM-DD] [--end YYYY-MM-DD]  List posts (default: current month)
-  create-post <integrationId> <content> [--date ISO]  Create a post
+  create-post <integrationId> <content> [--date ISO] [--draft]  Create/schedule a post
   delete-post <id>                                Delete a post
   analytics-post <postId>                         Analytics for a post
   analytics <integration>                         Analytics for an integration
@@ -30,6 +30,7 @@ Commands:
 
 Options:
   --json    Output as JSON
+  --draft   Save as draft instead of scheduling
   --help    Show this help`;
 
 const args = process.argv.slice(2);
@@ -113,11 +114,44 @@ async function main() {
     case 'create-post': {
       const integrationId = positional[1];
       const content = positional[2];
-      if (!integrationId || !content) err('Usage: postiz.mjs create-post <integrationId> <content> [--date ISO]');
+      if (!integrationId || !content) err('Usage: postiz.mjs create-post <integrationId> <content> [--date ISO] [--draft]');
+
       const date = getFlag('--date');
-      const post = { content, integration: integrationId };
-      if (date) post.date = date;
-      const data = await api('POST', '/public/v1/posts', { posts: [post] });
+      const isDraft = args.includes('--draft');
+      const type = isDraft ? 'draft' : 'schedule';
+
+      // Look up integration identifier to determine platform settings
+      const integrations = await api('GET', '/public/v1/integrations');
+      const items = Array.isArray(integrations) ? integrations : integrations.integrations || [];
+      const integration = items.find(i => i.id === integrationId);
+      const identifier = integration?.identifier || '';
+
+      // Map integration identifier → settings __type
+      const settingsMap = {
+        'linkedin':      { __type: 'linkedin', post_as_images_carousel: false },
+        'linkedin-page': { __type: 'linkedin', post_as_images_carousel: false },
+        'facebook':      { __type: 'facebook' },
+        'instagram':     { __type: 'instagram', post_type: 'post', collaborators: [], is_trial_reel: false, graduation_strategy: 'MANUAL' },
+        'twitter':       { __type: 'x', who_can_reply_post: 'everyone', community: '', made_with_ai: false, paid_partnership: false },
+        'x':             { __type: 'x', who_can_reply_post: 'everyone', community: '', made_with_ai: false, paid_partnership: false },
+      };
+      const settings = settingsMap[identifier] || { __type: identifier };
+
+      const postObj = {
+        integration: { id: integrationId },
+        value: [{ content, image: [] }],
+      };
+      if (!isDraft) postObj.settings = settings;
+
+      const payload = {
+        type,
+        date: date || new Date(Date.now() + 3600000).toISOString(), // default: 1h from now
+        shortLink: false,
+        tags: [],
+        posts: [postObj],
+      };
+
+      const data = await api('POST', '/public/v1/posts', payload);
       if (jsonOutput) { out(data); break; }
       log('Post created:', data.id || JSON.stringify(data));
       break;
