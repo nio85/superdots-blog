@@ -1,5 +1,5 @@
 ---
-title: 'AI for Employee Wellness: How Smart Companies Are Tackling Burnout Before It Starts'
+title: 'AI for Employee Wellness: Tackle Burnout'
 description: 'AI wellness tools detect burnout early, personalize mental health support, and deliver $5+ ROI per dollar spent. Here is what works, what does not.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'

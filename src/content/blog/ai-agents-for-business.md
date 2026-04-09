@@ -1,5 +1,5 @@
 ---
-title: 'AI Agents for Business: What They Are and How Teams Use Them in 2026'
+title: 'AI Agents for Business: How Teams Use Them'
 description: 'Demystify AI agents for business. Real examples per department, build vs buy decisions, and governance frameworks for enterprise teams.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "AI Resource Allocation: How to Assign the Right People to the Right Projects"
+title: 'AI Resource Allocation: Right People, Projects'
 description: "Learn how AI resource allocation tools predict availability, flag overallocation, and help operations teams assign the right people to the right projects."
 pubDate: "2026-03-30"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI Negotiation Tools: How to Prepare, Practice, and Win Better Deals (2026)"
+title: 'AI Negotiation Tools: Win Better Deals'
 description: "Discover the best AI negotiation tools for sales, procurement, and contracts. Step-by-step guide to using AI for deal preparation and closing."
 pubDate: "2026-03-27"
 author: "Superdots Team"

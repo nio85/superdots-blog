@@ -1,5 +1,5 @@
 ---
-title: "AI Tools for Data Entry: Stop Typing, Start Automating"
+title: 'AI Tools for Data Entry: Stop Typing'
 description: "AI data entry tools can extract, validate, and input data from documents, emails, and forms — cutting hours of manual work to minutes."
 pubDate: "2026-03-10"
 author: "Superdots Team"

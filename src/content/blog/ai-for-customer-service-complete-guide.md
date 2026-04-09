@@ -1,5 +1,5 @@
 ---
-title: 'AI for Customer Service: The Complete Guide to AI-Powered Support'
+title: 'AI for Customer Service: Complete Guide'
 description: 'How support teams use AI to automate ticket routing, deploy chatbots, analyze feedback, and reduce resolution times — without sacrificing the human touch customers expect.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'

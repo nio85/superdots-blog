@@ -1,5 +1,5 @@
 ---
-title: "How AI Can Reduce Bias in Hiring (And Where It Falls Short)"
+title: 'AI for Diversity Hiring: Reduce Bias'
 description: "AI promises fairer hiring, but the reality is nuanced. Learn which AI hiring tools actually reduce bias — and which ones amplify it."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"

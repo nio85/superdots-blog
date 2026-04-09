@@ -1,5 +1,5 @@
 ---
-title: 'AI Report Writing Tools: Generate Business Reports in Minutes'
+title: 'AI Report Writing: Generate Business Reports'
 description: 'Compare top AI report generators and learn the workflow from raw data to polished business reports. Save hours every reporting cycle.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

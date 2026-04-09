@@ -1,5 +1,5 @@
 ---
-title: "How AI Optimizes Sales Territory Planning and Assignment"
+title: 'How AI Optimizes Sales Territory Planning'
 description: "Stop leaving revenue on the table with manual territory planning. AI balances rep capacity, account potential, and coverage gaps."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

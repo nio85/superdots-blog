@@ -1,5 +1,5 @@
 ---
-title: "AI for Revenue Recognition: Automate ASC 606 Compliance"
+title: 'AI for Revenue Recognition: ASC 606 Guide'
 description: "Simplify ASC 606 compliance with AI that automates contract analysis, performance obligation identification, and revenue allocation."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: 'AI for Small Business: Affordable Tools That Actually Make a Difference'
+title: 'AI for Small Business: Tools That Work'
 description: 'Practical, budget-friendly AI tools for small businesses. No enterprise pricing, no data teams — just tools that save time and money.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

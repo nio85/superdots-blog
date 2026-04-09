@@ -1,5 +1,5 @@
 ---
-title: "How to Create Marketing Content with AI (Without Sounding Generic)"
+title: 'How to Create Marketing Content with AI'
 description: "AI content does not have to sound like AI. Learn the workflow for using AI as a content accelerator while keeping your marketing distinctive."
 pubDate: "2026-03-17T07:30:01Z"
 author: "Superdots Team"

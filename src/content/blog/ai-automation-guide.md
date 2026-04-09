@@ -1,5 +1,5 @@
 ---
-title: 'AI Automation for Non-Technical Teams: A No-Code Getting Started Guide'
+title: 'AI Automation Guide for Non-Technical Teams'
 description: 'Start automating repetitive work with AI — no coding required. Covers email, customer service, HR, legal, inventory, and project management.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

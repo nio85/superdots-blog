@@ -1,5 +1,5 @@
 ---
-title: "AI Tools for Database Management and Query Optimization"
+title: 'AI Database Management: Query Optimization'
 description: "Not a DBA? No problem. Learn how AI tools optimize queries, recommend indexes, and detect database performance issues before they hit production."
 pubDate: "2026-03-17T07:37:48Z"
 author: "Superdots Team"

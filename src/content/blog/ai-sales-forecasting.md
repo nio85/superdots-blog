@@ -1,5 +1,5 @@
 ---
-title: 'AI Sales Forecasting: Predict Revenue Without a Data Team'
+title: 'AI Sales Forecasting: Predict Revenue'
 description: 'How to use AI tools to forecast sales revenue accurately — no data science degree required.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

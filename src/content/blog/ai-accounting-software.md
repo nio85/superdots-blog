@@ -1,5 +1,5 @@
 ---
-title: "Best AI Accounting Software for Small and Mid-Size Teams"
+title: 'Best AI Accounting Software for Small Teams'
 description: "Compare the top AI accounting tools that automate bookkeeping, reconciliation, and financial reporting for growing businesses."
 pubDate: "2026-03-17T08:08:44Z"
 author: "Superdots Team"

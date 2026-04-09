@@ -1,5 +1,5 @@
 ---
-title: "AI Proposal Generators: Write Winning Proposals in Half the Time"
+title: 'AI Proposal Generators: Win More Deals Fast'
 description: "Draft sales proposals faster using AI that pulls from CRM data, past wins, and pricing templates. Close more deals with less busywork."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: 'AI Contract Review for Non-Lawyers: Cut Review Time by 70%'
+title: 'AI Contract Review for Non-Lawyers'
 description: 'Learn how non-lawyers can use AI contract review to flag risky clauses, cut review time by 50-70%, and stop waiting on legal for every NDA and vendor agreement.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: 'How to Create SOPs with AI: Templates and Tools for Every Department'
+title: 'AI SOP Generator: Create SOPs Automatically'
 description: 'Use AI to generate standard operating procedures fast. Templates and tools for operations, HR, support, and more — no process expertise required.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

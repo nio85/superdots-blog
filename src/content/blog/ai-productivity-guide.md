@@ -1,5 +1,5 @@
 ---
-title: 'AI Productivity Tools Guide: Save 5-10 Hours Every Week'
+title: 'AI Productivity Tools: Save 5-10 Hours/Week'
 description: 'The practical guide to AI tools for email, meetings, writing, and project management. Real workflows that save knowledge workers 5-10 hours per week.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

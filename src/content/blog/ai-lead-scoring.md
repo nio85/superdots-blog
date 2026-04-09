@@ -1,5 +1,5 @@
 ---
-title: "AI Lead Scoring in 2026: Best Tools + Implementation Guide"
+title: 'AI Lead Scoring in 2026: Tools & Guide'
 description: "Rank prospects by conversion probability automatically. Best tools in 2026 (MadKudu, 6sense, HubSpot), how it works, and a 5-step implementation plan."
 pubDate: "2026-03-17T07:41:49Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI for Customer Retention: Predict and Prevent Churn"
+title: 'AI for Customer Retention: Prevent Churn'
 description: "Go beyond churn prediction. Learn how AI helps identify at-risk customers early and automate personalized retention strategies."
 pubDate: "2026-03-17T07:22:35Z"
 author: "Superdots Team"

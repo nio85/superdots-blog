@@ -1,5 +1,5 @@
 ---
-title: "AI Customer Self-Service: Tools, Portal Setup & What Actually Works (2026)"
+title: 'AI Customer Self-Service: Tools & Setup'
 description: "AI customer self-service tools compared: chatbots, knowledge bases, and portals that reduce support tickets by 40-60%. Includes setup guide and tool picks."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"

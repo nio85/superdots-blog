@@ -1,5 +1,5 @@
 ---
-title: "7 AI Design Handoff Tools That End Dev Back-and-Forth (2026)"
+title: 'AI Design Handoff: End Dev Back-and-Forth'
 description: "Compare 7 AI tools that automate design-to-dev handoff — from spec generation to code export. Figma plugins, standalone platforms, and pricing compared."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

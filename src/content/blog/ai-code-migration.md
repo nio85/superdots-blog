@@ -1,5 +1,5 @@
 ---
-title: "AI Code Migration: Upgrade Legacy Codebases Without the Pain"
+title: 'AI Code Migration: Upgrade Legacy Codebases'
 description: "Use AI to translate code between languages, identify breaking changes, and generate migration tests. Legacy upgrades, simplified."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

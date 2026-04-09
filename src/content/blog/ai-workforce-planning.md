@@ -1,5 +1,5 @@
 ---
-title: "How to Use AI for Workforce Planning and Headcount Forecasting"
+title: 'How to Use AI for Workforce Planning'
 description: "Stop planning headcount in spreadsheets. Learn how AI forecasts hiring needs, identifies skills gaps, and models workforce scenarios."
 pubDate: "2026-03-17T07:26:22Z"
 author: "Superdots Team"

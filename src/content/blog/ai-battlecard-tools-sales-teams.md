@@ -1,5 +1,5 @@
 ---
-title: "The Best AI Battlecard Tools for Sales Teams in 2026 (Plus a Free Option That Actually Works)"
+title: 'Best AI Battlecard Tools for Sales Teams'
 description: "Honest comparison of Klue, Crayon, Kompyte, Battlecard.io, and Mindtickle — with real pricing, a free ChatGPT workflow, and a decision framework for when paid tools are overkill."
 pubDate: "2026-04-06"
 author: "Superdots Team"

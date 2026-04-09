@@ -1,5 +1,5 @@
 ---
-title: 'AI Sales Call Prep: Research Any Prospect in 5 Minutes'
+title: 'AI Sales Call Prep: Research Any Prospect'
 description: 'Stop winging sales calls. Use AI to research prospects, anticipate objections, and build call briefs in under 5 minutes. Free prompt template included.'
 pubDate: '2026-03-08'
 author: 'Superdots Team'

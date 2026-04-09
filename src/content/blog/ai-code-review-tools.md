@@ -1,5 +1,5 @@
 ---
-title: 'AI Code Review Tools: Catch Bugs Before Your Team Does'
+title: 'AI Code Review Tools: Catch Bugs Early'
 description: 'A practical guide to AI-powered code review tools — what they catch, how they fit your workflow, and which ones are worth using.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

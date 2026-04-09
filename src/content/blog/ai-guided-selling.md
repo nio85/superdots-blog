@@ -1,5 +1,5 @@
 ---
-title: "AI Guided Selling: How Smart Recommendations Close More Deals"
+title: 'AI Guided Selling: Close More Deals'
 description: "Learn how AI guided selling tools recommend the right products, actions, and pricing to sales reps in real-time — closing more deals with less guesswork."
 pubDate: "2026-03-30"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "I Dream of Running a Media Company with 9 AI Agents and a Smartphone"
+title: 'How We Run a Blog with 9 AI Agents'
 description: "One person, nine AI agents, 160+ articles. The honest story of building Superdots — the chaos, the plastic jewelry, and why AI needs a human head."
 pubDate: "2026-03-31"
 author: "Luca Bartoccini"

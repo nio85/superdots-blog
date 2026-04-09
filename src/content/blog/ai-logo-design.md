@@ -1,5 +1,5 @@
 ---
-title: "AI for Logo and Brand Design: A Non-Designer Guide"
+title: 'AI Logo Design: Brand Identity Guide'
 description: "How to use AI tools to create logos, brand assets, and visual identity — even if you have never opened Photoshop."
 pubDate: "2026-03-16T21:20:47Z"
 author: "Superdots Team"

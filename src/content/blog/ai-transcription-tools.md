@@ -1,5 +1,5 @@
 ---
-title: 'Best AI Transcription Tools for Business Meetings and Interviews'
+title: 'Best AI Transcription Tools for Meetings'
 description: 'Compare the best AI transcription tools for accuracy, language support, and video conferencing integrations. Find the right fit for your team.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

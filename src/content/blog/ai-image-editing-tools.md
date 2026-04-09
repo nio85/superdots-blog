@@ -1,5 +1,5 @@
 ---
-title: 'AI Image Editing Tools for Business: Professional Results Without Photoshop'
+title: 'AI Image Editing: Professional Results'
 description: 'AI image editing tools for background removal, product photos, headshots, and social graphics. No design skills required.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

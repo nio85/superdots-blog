@@ -1,5 +1,5 @@
 ---
-title: 'AI Facilities Management: The Practical Guide to Predictive Maintenance and Smarter Buildings'
+title: 'AI Facilities Management: Practical Guide'
 description: 'AI facilities management cuts energy waste, prevents equipment failures, and reduces maintenance costs. Here is a practical guide to getting started.'
 pubDate: '2026-03-25'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: 'AI Workflow Automation: Build Smart Workflows Without Writing Code'
+title: 'AI Workflow Automation: No Code Required'
 description: 'Compare Zapier AI, Make, and n8n for building automated workflows. Includes department-specific templates and step-by-step setup guides.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

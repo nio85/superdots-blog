@@ -1,5 +1,5 @@
 ---
-title: 'AI Competitive Analysis: How Sales Teams Prep Smarter, Faster'
+title: 'AI Competitive Analysis: Prep Smarter'
 description: 'Use AI for competitive analysis — automate competitor monitoring, build battlecards that stay current, and walk into sales calls with an edge.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'

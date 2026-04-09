@@ -1,5 +1,5 @@
 ---
-title: "10 Best AI Tools for Lawyers in 2026 (Tested & Rated)"
+title: '10 Best AI Tools for Lawyers (2026)'
 description: "10 AI legal tools rated for contract review, due diligence, eDiscovery, and billing. With security scores, pricing, and best-fit picks by firm size."
 pubDate: "2026-03-23"
 author: "Superdots Team"

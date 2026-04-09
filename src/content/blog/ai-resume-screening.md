@@ -1,5 +1,5 @@
 ---
-title: 'AI Resume Screening: How to Filter 500 Applicants Without Missing Great Candidates'
+title: 'AI Resume Screening: Filter Applicants'
 description: 'AI resume screening tools cut hiring time by 50% and save 10+ hours per role. Here is how they work, what they cost, and how to avoid bias traps.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'

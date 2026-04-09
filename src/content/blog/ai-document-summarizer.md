@@ -1,5 +1,5 @@
 ---
-title: "AI Document Summarizer Tools: Read Less, Know More at Work"
+title: 'AI Document Summarizer: Read Less, Know More'
 description: "Cut document review time by 80%. Learn how AI summarizers extract key insights from reports, contracts, and meeting notes in seconds."
 pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"

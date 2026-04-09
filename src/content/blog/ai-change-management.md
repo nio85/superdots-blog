@@ -1,5 +1,5 @@
 ---
-title: "AI Change Management: How to Lead AI Adoption Without the Chaos"
+title: 'AI Change Management: Lead AI Adoption Well'
 description: "Learn how AI tools help plan, communicate, and measure organizational change — especially when the change is AI adoption itself."
 pubDate: "2026-03-24"
 author: "Superdots Team"

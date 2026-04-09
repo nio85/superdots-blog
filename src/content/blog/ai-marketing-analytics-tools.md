@@ -1,5 +1,5 @@
 ---
-title: "AI Marketing Analytics: How to Track Campaign Performance Without a Data Team"
+title: 'AI Marketing Analytics: No Data Team Needed'
 description: "A practical guide to using AI for marketing analytics — from free ChatGPT workflows to dedicated tools — for teams without data analysts."
 pubDate: "2026-04-03"
 author: "Superdots Team"

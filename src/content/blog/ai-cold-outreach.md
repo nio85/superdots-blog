@@ -1,5 +1,5 @@
 ---
-title: "Best AI Cold Outreach Tools (2026): Clay, Apollo & More"
+title: 'Best AI Cold Outreach Tools (2026)'
 description: "Compare Clay, Apollo, Instantly, and Lemlist for AI-powered cold outreach. Which tool personalizes at scale without killing your deliverability?"
 pubDate: "2026-03-17T09:25:38Z"
 author: "Superdots Team"

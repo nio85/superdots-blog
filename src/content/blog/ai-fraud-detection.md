@@ -1,5 +1,5 @@
 ---
-title: "AI Fraud Detection for Finance Teams: A Practical Guide"
+title: 'AI Fraud Detection for Finance Teams'
 description: "Detect expense fraud, invoice manipulation, and suspicious transactions with AI. A practical guide for finance teams without dedicated fraud analysts."
 pubDate: "2026-03-17T07:39:45Z"
 author: "Superdots Team"

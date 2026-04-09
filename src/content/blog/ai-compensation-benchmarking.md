@@ -1,5 +1,5 @@
 ---
-title: "AI Compensation Benchmarking: Get Salary Data Right Without Consultants"
+title: 'AI Compensation Benchmarking: Salary Data'
 description: "Use AI to aggregate real-time salary data, adjust for location and role, and flag pay equity gaps — no expensive consultants needed."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"

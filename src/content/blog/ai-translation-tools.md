@@ -1,5 +1,5 @@
 ---
-title: "AI Translation Tools: How Teams Go Global Without a Localization Budget"
+title: 'AI Translation Tools: Go Global Affordably'
 description: "Skip the translator waitlist. AI translation tools help teams translate documents, emails, and presentations in minutes — not weeks."
 pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"

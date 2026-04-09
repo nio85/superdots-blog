@@ -1,5 +1,5 @@
 ---
-title: "AI Customer Onboarding: Reduce Time-to-Value and Cut Churn"
+title: 'AI Customer Onboarding: Reduce Time-to-Value'
 description: "Learn how AI personalizes onboarding journeys, automates welcome sequences, and detects at-risk accounts to cut time-to-value and reduce churn."
 pubDate: "2026-03-24"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "Best AI Customer Success Tools to Reduce Churn and Scale Retention (2026)"
+title: 'Best AI Customer Success Tools (2026)'
 description: "Compare the best AI customer success tools for health scoring, churn prediction, and automated playbooks. Practical guide for CS teams."
 pubDate: "2026-03-27"
 author: "Superdots Team"

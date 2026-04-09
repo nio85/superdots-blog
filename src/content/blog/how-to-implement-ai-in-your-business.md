@@ -1,5 +1,5 @@
 ---
-title: 'How to Implement AI in Your Business: A Step-by-Step Guide'
+title: 'How to Implement AI in Your Business'
 description: 'A practical implementation roadmap for AI in business. Assess readiness, pick use cases, run pilots, scale what works, and measure ROI.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'

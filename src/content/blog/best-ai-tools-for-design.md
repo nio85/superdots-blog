@@ -1,5 +1,5 @@
 ---
-title: "Best AI Tools for Design in 2026: 10 Tools for Graphics, UX & Branding"
+title: 'Best AI Design Tools: Graphics, UX & Branding'
 description: "10 AI design tools compared across graphic design, UX, branding, and motion graphics. Real output quality assessments, pricing, and best-for recommendations."
 pubDate: "2026-03-23"
 author: "Superdots Team"

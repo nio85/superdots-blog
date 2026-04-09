@@ -1,5 +1,5 @@
 ---
-title: 'Manage Your Email 2x Faster with AI: A Practical Guide'
+title: 'Manage Your Email 2x Faster with AI'
 description: 'Learn how to use AI to draft replies, summarize threads, and organize your inbox — without missing what matters.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "AI HR Chatbots: Automate Employee Questions Without Losing the Human Touch"
+title: 'AI HR Chatbots: Answer Employee Questions'
 description: "HR teams answer the same questions hundreds of times. AI chatbots handle policy lookups, benefits queries, and leave requests instantly — freeing HR for strategic work."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"

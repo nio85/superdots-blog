@@ -1,5 +1,5 @@
 ---
-title: "AI Image Generation for Marketing Teams: A Practical Guide"
+title: 'AI Image Generation for Marketing Teams'
 description: "Skip the stock photo search. Learn how marketing teams use AI image generation for social posts, ads, and blog visuals — with tips on brand consistency and legal risks."
 pubDate: "2026-03-17T08:28:13Z"
 author: "Superdots Team"

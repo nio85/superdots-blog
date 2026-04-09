@@ -1,5 +1,5 @@
 ---
-title: 'AI Tools for Business: A Department-by-Department Guide'
+title: 'AI Tools for Business: By Department'
 description: 'How every team — from HR to Finance to Sales — can use AI tools to cut busywork and focus on real work. Practical examples for each department.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "AI Tools for Account-Based Marketing: A $300/Month Stack That Actually Works"
+title: 'AI Tools for Account-Based Marketing'
 description: "Skip the enterprise ABM platforms. Small B2B teams can run effective account-based marketing with four affordable AI tools and a weekly sprint system."
 pubDate: "2026-04-09"
 author: "Superdots Team"

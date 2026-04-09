@@ -1,5 +1,5 @@
 ---
-title: "AI Voice Assistants for Customer Service: What Actually Works"
+title: 'AI Voice Assistants for Customer Service'
 description: "AI voice assistants have improved dramatically. Learn which customer service use cases they handle well, where they still frustrate callers."
 pubDate: "2026-03-17T08:35:50Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "Best AI Writing Tools in 2026: 10 Tools Tested for Business Writing"
+title: 'Best AI Writing Tools (2026): Business Use'
 description: "10 AI writing tools compared for business use — reports, emails, marketing copy, and documentation. Honest reviews with output quality scores and pricing."
 pubDate: "2026-03-23"
 author: "Superdots Team"

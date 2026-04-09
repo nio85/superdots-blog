@@ -1,5 +1,5 @@
 ---
-title: "7 Best AI Demand Forecasting Tools for Small Business (2026)"
+title: 'AI Demand Forecasting: Small Business Guide'
 description: "7 AI demand forecasting tools compared: Prediko ($49/mo), StockTrim ($39/mo), Inventory Planner & more. Real pricing for each — plus when to skip AI."
 pubDate: "2026-04-05"
 author: "Superdots Team"

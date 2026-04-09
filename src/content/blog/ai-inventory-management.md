@@ -1,5 +1,5 @@
 ---
-title: 'AI Inventory Management: A Practical Guide for Operations Teams'
+title: 'AI Inventory Management: Operations Guide'
 description: 'AI inventory management helps ops teams forecast demand, automate reordering, and cut carrying costs. Here is a practical guide to getting started.'
 pubDate: '2026-03-16'
 author: 'Superdots Team'
