@@ -51,7 +51,7 @@ Instead of sending a check-in email on day 7 regardless of what happened, AI mon
 
 ### From generic to personalized
 
-AI analyzes customer attributes — industry, company size, use case, technical sophistication — and tailors the onboarding path. A marketing team gets examples relevant to campaigns. A finance team sees reporting templates. This is not just swapping names in an email. It is adapting the entire journey.
+AI analyzes customer attributes — industry, company size, use case, technical sophistication — and tailors the onboarding path. A marketing team gets examples relevant to campaigns. A finance team sees reporting templates. This is not just swapping names in an email. It is adapting the entire journey. The same customer data that personalizes onboarding lives in your [AI CRM tools](/blog/ai-crm-tools) — connecting both systems means onboarding signals feed directly into ongoing account management.
 
 ### From reactive to predictive
 
@@ -91,7 +91,7 @@ This is where AI earns its keep. Instead of reviewing dashboards hoping to spot 
 - Setup completion rate and pace
 - Login frequency and session depth
 - Feature adoption (especially core features tied to the customer's use case)
-- Support ticket volume and sentiment
+- Support ticket volume and sentiment — the same signals that power an [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) loop
 - Stakeholder engagement (is only one person logging in, or is the team adopting?)
 
 When the risk score crosses a threshold, the system alerts your CS team with context: what changed, what the customer has and has not done, and a recommended intervention. Your team acts on specific intelligence, not gut feeling.
@@ -102,7 +102,7 @@ Customers do not want to schedule a call every time they hit a snag. AI-powered 
 
 In-app guidance tools like WalkMe and Chameleon use AI to detect when a customer is struggling with a specific feature and proactively offer a walkthrough. Knowledge base systems recommend articles based on the customer's current context. Chatbots handle common setup questions instantly.
 
-The goal is not to eliminate human support. It is to resolve the simple questions fast so your team handles the complex ones.
+The goal is not to eliminate human support. It is to resolve the simple questions fast so your team handles the complex ones. For teams managing a large customer portfolio, [AI customer success tools](/blog/ai-customer-success-tools) extend this further — tracking health scores and expansion signals well beyond the initial onboarding window.
 
 ### 5. Onboarding analytics and optimization
 

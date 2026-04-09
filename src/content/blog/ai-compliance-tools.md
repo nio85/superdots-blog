@@ -71,7 +71,7 @@ AI tools generate audit trails automatically by connecting to your existing syst
 
 Not all compliance risks are equal. A minor documentation gap in a low-risk area is different from a missing control in a system that processes customer financial data.
 
-AI tools assign risk scores based on the regulation's severity, the potential impact of non-compliance, and your current mitigation status. This helps teams with limited resources focus on what matters most instead of treating every finding with equal urgency.
+AI tools assign risk scores based on the regulation's severity, the potential impact of non-compliance, and your current mitigation status. This helps teams with limited resources focus on what matters most instead of treating every finding with equal urgency. For organizations that need a broader view of business risk beyond regulatory compliance, [AI risk management tools](/blog/ai-risk-management) extend this prioritization approach across operational, financial, and strategic risks.
 
 ## When you need an AI compliance tool (and when you don't)
 
@@ -145,7 +145,7 @@ Compliance tools cost money. Here is how to make the business case.
 
 ## Common implementation mistakes
 
-**Buying before mapping your obligations.** Know what you need to comply with before choosing a tool. A healthcare company with HIPAA obligations needs different capabilities than a SaaS company pursuing SOC 2.
+**Buying before mapping your obligations.** Know what you need to comply with before choosing a tool. A healthcare company with HIPAA obligations needs different capabilities than a SaaS company pursuing SOC 2. Before buying, use your existing policies as a starting inventory — if your internal policies are scattered or inconsistent, [AI policy writing tools](/blog/ai-policy-writing) can help standardize them so there is something structured for the compliance tool to work from.
 
 **Ignoring data quality.** AI compliance tools are only as good as the data they can access. If your systems are siloed and your policies live in scattered Word documents, start by organizing what you have. If you want to understand how AI handles messy data, [AI data analysis for non-technical teams](/blog/ai-data-analysis-for-non-technical-teams/) covers the fundamentals.
 
