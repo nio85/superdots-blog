@@ -121,7 +121,7 @@ Must: git pull first, commit as `hotfix: description (SUP-XXX)`, push, document 
 - Valid departments: engineering, marketing, sales, hr, finance, operations, legal, customer-support, design
 - Valid useCases: automation, analysis, writing, communication
 - Every article MUST have a FAQ section (4-5 questions)
-- pubDate must be the actual publication date, never future-dated
+- pubDate: publication date. May be future for scheduled articles (gap analysis pipeline). Articles with a future pubDate are merged immediately but excluded from the build — they go live automatically on the daily 07:00 Europe/Rome deploy after their date. The old rule "never future-dated" is superseded by this system.
 
 ## Editorial Principles (mandatory for ALL agents)
 

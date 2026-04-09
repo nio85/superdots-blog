@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterPublished } from '../lib/posts';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { SITE_DESCRIPTION, DEPARTMENTS } from '../consts';
 
-const allPosts = (await getCollection('blog'))
+const allPosts = filterPublished(await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const latestPosts = allPosts.slice(0, 6);

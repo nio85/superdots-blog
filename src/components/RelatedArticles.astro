@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterPublished } from '../lib/posts';
 import FormattedDate from './FormattedDate.astro';
 import { DEPARTMENTS } from '../consts';
 
@@ -13,7 +14,7 @@ interface Props {
 const { currentSlug, department, useCase, tags = [] } = Astro.props;
 const deptLabel = DEPARTMENTS.find((d) => d.slug === department)?.label ?? department;
 
-const allPosts = await getCollection('blog');
+const allPosts = filterPublished(await getCollection('blog'));
 const others = allPosts.filter((p) => p.slug !== currentSlug);
 
 // Score each post: same department = 2, same useCase = 2, shared tag = 1 each

@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterPublished } from '../../lib/posts';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { getReadingTime } from '../../utils/readingTime';
 
-const allPosts = await getCollection('blog');
+const allPosts = filterPublished(await getCollection('blog'));
 
 // Guide definitions
 const guideDefs = [

@@ -94,16 +94,32 @@ if (files.length === 0) {
 }
 
 let totalErrors = 0;
+let scheduledCount = 0;
+const today = new Date().toISOString().slice(0, 10);
+
 for (const file of files) {
   const errors = lintFile(file);
+  const short = file.replace(/.*src\/content\/blog\//, '');
   if (errors.length > 0) {
-    const short = file.replace(/.*src\/content\/blog\//, '');
     console.error(`\n  ${short}:`);
     for (const e of errors) {
       console.error(`    - ${e}`);
     }
     totalErrors += errors.length;
   }
+
+  // Informational: detect scheduled (future-dated) articles
+  const raw = readFileSync(file, 'utf-8');
+  const fm = raw.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] ?? '';
+  const pubMatch = fm.match(/pubDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/);
+  if (pubMatch && pubMatch[1] > today) {
+    console.log(`  ℹ️  Scheduled: "${short}" → pubDate ${pubMatch[1]} (future, will publish at next daily deploy after that date)`);
+    scheduledCount++;
+  }
+}
+
+if (scheduledCount > 0) {
+  console.log(`\n📅 ${scheduledCount} article(s) scheduled for future publication.\n`);
 }
 
 if (totalErrors > 0) {
