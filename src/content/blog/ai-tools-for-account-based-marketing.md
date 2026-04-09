@@ -40,13 +40,13 @@ For a broader view of how AI is reshaping B2B marketing, the [complete guide to 
 
 Before getting into how each tool works, here's what the full stack looks like:
 
-| Tool | Primary ABM Use | Free Tier? | Paid From |
-|---|---|---|---|
-| Clay | Account enrichment & list building | Yes (100 credits) | $149/mo |
-| LinkedIn Sales Navigator | Account intelligence + buying signals | No (30-day trial) | $79.99/mo |
-| HubSpot Starter | Email sequences + contact tracking | Yes (limited) | $20/mo |
-| ChatGPT Plus / Claude Pro | Research + personalized copy drafts | Yes (limited) | $20/mo |
-| Mutiny | Website personalization | No | ~$1,500/mo |
+| Tool | Primary ABM Use | Free Tier? | Paid From | Limitation |
+|---|---|---|---|---|
+| Clay | Account enrichment & list building | Yes (100 credits) | $149/mo | No native CRM sync on Starter plan |
+| LinkedIn Sales Navigator | Account intelligence + buying signals | No (30-day trial) | $79.99/mo | No free tier; AI features are shallow |
+| HubSpot Starter | Email sequences + contact tracking | Yes (limited) | $20/mo | No conditional sequence branching |
+| ChatGPT Plus / Claude Pro | Research + personalized copy drafts | Yes (limited) | $20/mo | No account memory across sessions |
+| Mutiny | Website personalization | No | ~$1,500/mo | Budget-prohibitive for most teams |
 
 Total for the core four: **$268.99/month.** Mutiny is included for context — it's the next tier when you're ready to personalize your website for specific visiting accounts. For most teams reading this, it's not in the budget yet, and that's fine.
 
