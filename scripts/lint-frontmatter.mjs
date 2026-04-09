@@ -89,7 +89,7 @@ function extractValue(line) {
 let files = process.argv.slice(2);
 if (files.length === 0) {
   files = readdirSync(BLOG_DIR)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') || f.endsWith('.mdx'))
     .map(f => join(BLOG_DIR, f));
 }
 

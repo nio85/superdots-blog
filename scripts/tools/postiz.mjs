@@ -2,7 +2,7 @@
 /**
  * Postiz Public API v1 wrapper
  *
- * Interacts with Postiz (localhost:4007) for social media scheduling.
+ * Interacts with Postiz managed (app.postiz.com) for social media scheduling.
  * Auth: Authorization header with POSTIZ_API_KEY (no Bearer prefix).
  *
  * Usage:
@@ -11,7 +11,7 @@
 
 import '../config.mjs';
 
-const POSTIZ_URL = process.env.POSTIZ_URL || 'http://localhost:4007';
+const POSTIZ_URL = process.env.POSTIZ_URL || 'https://api.postiz.com';
 const POSTIZ_API_KEY = process.env.POSTIZ_API_KEY;
 
 const HELP = `Usage: node postiz.mjs <command> [options]
@@ -77,13 +77,13 @@ async function api(method, path, body) {
 async function main() {
   switch (command) {
     case 'status': {
-      const data = await api('GET', '/api/public/v1/is-connected');
+      const data = await api('GET', '/public/v1/is-connected');
       if (jsonOutput) { out(data); break; }
       log('Connected:', JSON.stringify(data));
       break;
     }
     case 'integrations': {
-      const data = await api('GET', '/api/public/v1/integrations');
+      const data = await api('GET', '/public/v1/integrations');
       if (jsonOutput) { out(data); break; }
       const items = Array.isArray(data) ? data : data.integrations || [];
       if (items.length === 0) { log('No integrations.'); break; }
@@ -98,7 +98,7 @@ async function main() {
       const now = new Date();
       const startDate = start || `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-01`;
       const endDate = end || now.toISOString().slice(0, 10);
-      const data = await api('GET', `/api/public/v1/posts?startDate=${startDate}&endDate=${endDate}`);
+      const data = await api('GET', `/public/v1/posts?startDate=${startDate}&endDate=${endDate}`);
       if (jsonOutput) { out(data); break; }
       const posts = Array.isArray(data) ? data : data.posts || [];
       if (posts.length === 0) { log('No posts found.'); break; }
@@ -117,7 +117,7 @@ async function main() {
       const date = getFlag('--date');
       const post = { content, integration: integrationId };
       if (date) post.date = date;
-      const data = await api('POST', '/api/public/v1/posts', { posts: [post] });
+      const data = await api('POST', '/public/v1/posts', { posts: [post] });
       if (jsonOutput) { out(data); break; }
       log('Post created:', data.id || JSON.stringify(data));
       break;
@@ -125,7 +125,7 @@ async function main() {
     case 'delete-post': {
       const id = positional[1];
       if (!id) err('Usage: postiz.mjs delete-post <id>');
-      const data = await api('DELETE', `/api/public/v1/posts/${id}`);
+      const data = await api('DELETE', `/public/v1/posts/${id}`);
       if (jsonOutput) { out(data); break; }
       log('Post deleted.');
       break;
@@ -133,7 +133,7 @@ async function main() {
     case 'analytics-post': {
       const postId = positional[1];
       if (!postId) err('Usage: postiz.mjs analytics-post <postId>');
-      const data = await api('GET', `/api/public/v1/analytics/post/${postId}`);
+      const data = await api('GET', `/public/v1/analytics/post/${postId}`);
       if (jsonOutput) { out(data); break; }
       log(JSON.stringify(data, null, 2));
       break;
@@ -141,13 +141,13 @@ async function main() {
     case 'analytics': {
       const integration = positional[1];
       if (!integration) err('Usage: postiz.mjs analytics <integration>');
-      const data = await api('GET', `/api/public/v1/analytics/${integration}`);
+      const data = await api('GET', `/public/v1/analytics/${integration}`);
       if (jsonOutput) { out(data); break; }
       log(JSON.stringify(data, null, 2));
       break;
     }
     case 'notifications': {
-      const data = await api('GET', '/api/public/v1/notifications');
+      const data = await api('GET', '/public/v1/notifications');
       if (jsonOutput) { out(data); break; }
       const items = Array.isArray(data) ? data : data.notifications || [];
       if (items.length === 0) { log('No notifications.'); break; }
@@ -159,7 +159,7 @@ async function main() {
     case 'find-slot': {
       const integrationId = positional[1];
       if (!integrationId) err('Usage: postiz.mjs find-slot <integrationId>');
-      const data = await api('GET', `/api/public/v1/find-slot/${integrationId}`);
+      const data = await api('GET', `/public/v1/find-slot/${integrationId}`);
       if (jsonOutput) { out(data); break; }
       log('Next slot:', JSON.stringify(data));
       break;
@@ -167,7 +167,7 @@ async function main() {
     case 'upload-url': {
       const url = positional[1];
       if (!url) err('Usage: postiz.mjs upload-url <url>');
-      const data = await api('POST', '/api/public/v1/upload-from-url', { url });
+      const data = await api('POST', '/public/v1/upload-from-url', { url });
       if (jsonOutput) { out(data); break; }
       log('Uploaded:', JSON.stringify(data));
       break;
