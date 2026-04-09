@@ -18,6 +18,7 @@ faqs:
     answer: "Once a month is the minimum for fast-moving sales environments. Set a recurring calendar reminder for the first Monday of each month. The update should take 20–30 minutes: review the three most common objections from the previous month, update competitive positioning if anything changed, and check whether any pricing or product details are stale."
   - question: "What's the difference between a sales playbook and a sales script?"
     answer: "A script is word-for-word — it tells a rep exactly what to say. A playbook is strategic guidance — it covers the full sales process: personas, discovery questions, objection handling, competitive positioning, and deal stages. Scripts live inside playbooks. A playbook without scripts is incomplete; a script without a playbook has no context."
+heroImage: "/images/blog/ai-sales-playbook-software.webp"
 ---
 
 Most sales teams are solving the wrong problem when it comes to their playbook.
