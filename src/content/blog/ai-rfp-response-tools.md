@@ -97,7 +97,7 @@ For more on how AI assists with sales writing broadly, see our guide to [AI sale
 
 ### Arphie — Best for mid-market
 
-[Arphie](https://www.arphie.com/) targets mid-size sales teams that need AI RFP automation without enterprise complexity or pricing. Clean interface. Good AI answer matching. Built-in collaboration without the heavy workflow management of larger platforms.
+Arphie targets mid-size sales teams that need AI RFP automation without enterprise complexity or pricing. Clean interface. Good AI answer matching. Built-in collaboration without the heavy workflow management of larger platforms.
 
 **Best for:** Sales teams of 5-20 responding to 5-10 RFPs per month.
 **Pricing:** Starts at $10,000/year.
