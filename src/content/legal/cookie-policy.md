@@ -140,7 +140,7 @@ When you first visit the Site, a cookie banner lets you accept or refuse analyti
 
 You can also control cookies through your browser:
 
-- [Chrome](https://support.google.com/chrome/answer/95647)
+- [Chrome](https://support.google.com/chrome/answer/95647?hl=en)
 - [Firefox](https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer)
 - [Safari](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac)
 - [Edge](https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)

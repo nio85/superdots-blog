@@ -1,6 +1,6 @@
 ---
 title: "AI Demand Forecasting Tools for Small Business: 7 Platforms Compared (With Real Pricing)"
-description: "Honest comparison of 7 AI demand forecasting tools for small businesses. Real pricing, integration details, and a decision framework for when spreadsheets are still fine."
+description: "Honest comparison of 7 AI demand forecasting tools for small businesses. Real pricing, integration details, and when spreadsheets are still fine."
 pubDate: "2026-04-05"
 author: "Superdots Team"
 department: "operations"

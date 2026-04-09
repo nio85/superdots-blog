@@ -1,6 +1,6 @@
 ---
 title: 'How to Make AI Presentations That Don''t Look AI-Generated'
-description: 'AI presentation makers can build a slide deck in minutes. The problem is they all look the same. Here is how to use AI slides tools and actually get results worth presenting.'
+description: 'AI presentation makers can build a slide deck in minutes. The problem is they all look the same. Here is how to use AI slides tools.'
 pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'operations'

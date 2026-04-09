@@ -76,7 +76,7 @@ Predictive maintenance is the highest-ROI application of AI for most fleets. Her
 
 ### The data layer
 
-Modern telematics devices from providers like [Samsara](https://www.samsara.com) and [Geotab](https://www.geotab.com) read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time. If this applies to your team, our [AI Procurement Tools: Smarter Sourcing and Vendor Management](/blog/ai-procurement-tools/) guide covers the details.
+Modern telematics devices from providers like [Samsara](https://www.samsara.com) and Geotab read your vehicles continuously. Engine RPM, coolant temperature, oil pressure, battery voltage, brake pad wear sensors, tire pressure — all of it streams into the platform in real time. If this applies to your team, our [AI Procurement Tools: Smarter Sourcing and Vendor Management](/blog/ai-procurement-tools/) guide covers the details.
 
 Most fleet vehicles built after 2015 already have OBD-II ports that expose this data. Adding a telematics dongle costs $100-200 per vehicle. For older vehicles without built-in sensors, aftermarket kits handle tire pressure and basic engine diagnostics.
 

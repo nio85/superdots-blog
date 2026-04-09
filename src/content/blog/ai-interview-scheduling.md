@@ -1,6 +1,6 @@
 ---
 title: 'AI Interview Scheduling: Stop Wasting 10 Hours a Week on Calendar Tetris'
-description: 'AI interview scheduling tools eliminate the back-and-forth emails, coordinate panels automatically, and cut time-to-schedule by 80%. Here are the best tools and how to set them up.'
+description: 'AI interview scheduling tools eliminate the back-and-forth emails, coordinate panels automatically, and cut time-to-schedule by 80%.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'
 department: 'hr'

@@ -1,6 +1,6 @@
 ---
 title: "The Best AI Content Repurposing Tools for Marketing Teams (2026 Comparison)"
-description: "Honest comparison of 6 AI content repurposing tools by use case: audio to text, video to clips, long-form to social, and LinkedIn. Real pricing, real limitations."
+description: "Honest comparison of 6 AI content repurposing tools by use case: audio to text, video to clips, long-form to social, and LinkedIn. Real pricing."
 pubDate: "2026-04-07"
 author: "Superdots Team"
 department: "marketing"

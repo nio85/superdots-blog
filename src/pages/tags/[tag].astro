@@ -5,8 +5,6 @@ import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { TAGS } from '../../consts';
 
-const NOINDEX_THRESHOLD = 3;
-
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
@@ -44,8 +42,6 @@ const posts = allPosts
 	.filter(({ data }) => (data.tags ?? []).includes(tag!))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const isSparse = posts.length < NOINDEX_THRESHOLD;
-
 // Compute related tags: tags that co-occur on articles with this tag
 const coTagCounts = new Map<string, number>();
 for (const post of posts) {
@@ -72,10 +68,7 @@ const relatedTags = [...coTagCounts.entries()]
 ---
 
 <Base title={`${label} Articles | Superdots`} description={description}>
-	{isSparse && (
-		<meta slot="head" name="robots" content="noindex, follow" />
-	)}
-
+	<meta slot="head" name="robots" content="noindex, follow" />
 	<nav class="breadcrumb" aria-label="Breadcrumb">
 		<a href="/">Home</a>
 		<span aria-hidden="true">/</span>
