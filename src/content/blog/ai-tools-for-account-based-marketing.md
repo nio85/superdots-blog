@@ -18,6 +18,7 @@ faqs:
     answer: "Cold outreach targets a broad pool of leads who match a demographic profile, typically with lightly personalized messages at scale. ABM targets a defined list of specific companies researched in depth, with coordinated marketing and sales activity over weeks or months. ABM requires more research per contact but produces higher conversion rates on fewer, higher-value opportunities."
   - question: "How much does AI-powered ABM software cost?"
     answer: "Enterprise platforms like Demandbase and 6sense start at $2,000–$5,000/month. Mutiny (website personalization) costs around $1,500/month. A lean four-tool stack — Clay ($149/month), LinkedIn Sales Navigator ($79.99/month), HubSpot Starter ($20/month), and Claude Pro ($20/month) — delivers core ABM capabilities for $268.99/month total, making it accessible for small B2B teams."
+heroImage: "/images/blog/ai-tools-for-account-based-marketing.webp"
 ---
 
 I've been running a lean ABM experiment for eight weeks with a two-person marketing team. The combined tool spend: $269 per month. What surprised me wasn't the results — it was discovering how much of the enterprise ABM playbook you can replicate with general-purpose AI tools that were designed for entirely different jobs.
