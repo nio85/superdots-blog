@@ -6,22 +6,22 @@ export const UMAMI_WEBSITE_ID = 'ad359e34-1608-4bf6-9e4e-e8200ed04b86';
 export const UMAMI_URL = 'https://umami.bartoccini.cloud';
 
 export const DEPARTMENTS = [
-	{ slug: 'engineering', label: 'Engineering' },
-	{ slug: 'marketing', label: 'Marketing' },
-	{ slug: 'sales', label: 'Sales' },
-	{ slug: 'hr', label: 'HR' },
-	{ slug: 'finance', label: 'Finance' },
-	{ slug: 'operations', label: 'Operations' },
-	{ slug: 'legal', label: 'Legal' },
-	{ slug: 'customer-support', label: 'Customer Support' },
-	{ slug: 'design', label: 'Design' },
+	{ slug: 'engineering', label: 'Engineering', description: 'Guides that help engineering teams ship faster with AI — from smarter code reviews to automated documentation.' },
+	{ slug: 'marketing', label: 'Marketing', description: 'AI techniques for marketing teams: sharpen your copy, speed up competitive research, and turn customer feedback into action.' },
+	{ slug: 'sales', label: 'Sales', description: 'Practical AI guides that help sales teams prep better, follow up faster, and close more deals.' },
+	{ slug: 'hr', label: 'HR', description: 'AI tools that help HR teams hire faster, onboard smoother, and spend less time on admin.' },
+	{ slug: 'finance', label: 'Finance', description: 'AI guides for finance teams: tighten your forecasts, streamline budgeting, and catch what spreadsheets miss.' },
+	{ slug: 'operations', label: 'Operations', description: 'Guides that help ops teams cut busywork — automate email triage, streamline project tracking, and build better knowledge bases.' },
+	{ slug: 'legal', label: 'Legal', description: 'AI guides for legal teams: review contracts faster, stay on top of compliance, and reduce manual document work.' },
+	{ slug: 'customer-support', label: 'Customer Support', description: 'AI techniques that help support teams respond faster, resolve more tickets, and keep customers happy without burning out.' },
+	{ slug: 'design', label: 'Design', description: 'Practical AI guides for design teams — speed up mockups, explore more ideas, and handle production work without extra headcount.' },
 ] as const;
 
 export const USE_CASES = [
-	{ slug: 'automation', label: 'Automation' },
-	{ slug: 'analysis', label: 'Analysis' },
-	{ slug: 'writing', label: 'Writing' },
-	{ slug: 'communication', label: 'Communication' },
+	{ slug: 'automation', label: 'Automation', description: 'Guides for automating the repetitive stuff — email triage, data entry, routine approvals — so your team can focus on work that matters.' },
+	{ slug: 'analysis', label: 'Analysis', description: 'AI techniques for pulling insights from data, feedback, and research — without needing a data science degree.' },
+	{ slug: 'writing', label: 'Writing', description: 'Guides for writing faster and better with AI — emails, docs, reports, and customer-facing copy that still sounds like you.' },
+	{ slug: 'communication', label: 'Communication', description: 'AI guides for clearer, faster team communication — from meeting summaries to smarter async updates.' },
 ] as const;
 
 export const TAGS = [
