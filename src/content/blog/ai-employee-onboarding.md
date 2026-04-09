@@ -229,7 +229,7 @@ Not every team needs the same solution. Here is what works at different stages.
 | [BambooHR](https://www.bamboohr.com) | HRIS with onboarding workflows | Custom pricing |
 | Trainual | Role-based training and SOPs | From $250/month |
 | Guru | AI-powered knowledge base | From $15/user/month |
-| [Sapling](https://www.saplinghr.com) | People operations and onboarding automation | Custom pricing |
+| [Sapling (now Kallidus)](https://www.kallidus.com) | People operations and onboarding automation | Custom pricing |
 | Enboarder | Experience-driven onboarding workflows | Custom pricing |
 
 **Best approach:** Use your HRIS for compliance and paperwork automation. Add a knowledge management tool with AI search for self-service Q&A. Build department-specific training paths in a dedicated learning tool. This handles 20+ new hires per month without adding HR headcount.
