@@ -59,8 +59,28 @@ function cleanup() {
 process.on('exit', cleanup);
 process.on('SIGINT', () => { cleanup(); process.exit(1); });
 
+function isActiveCrawl() {
+  try {
+    const result = execSync(
+      `docker exec seonaut-db mysql -u seonaut -p'seo-naut-Jf3kL9vB' seonaut ` +
+      `-N -e "SELECT COUNT(*) FROM crawls WHERE project_id = ${PROJECT_ID} AND end IS NULL;"`,
+      { encoding: 'utf8', timeout: 10000 }
+    ).trim();
+    return parseInt(result, 10) > 0;
+  } catch {
+    console.warn('Warning: could not check for active crawls — proceeding anyway');
+    return false;
+  }
+}
+
 async function run() {
   console.log(`SEOnaut crawl trigger — project ${PROJECT_ID}`);
+
+  // Step 0: Guard against concurrent crawls
+  if (isActiveCrawl()) {
+    console.log('⏭ Active crawl already running — skipping to avoid stuck crawls.');
+    process.exit(0);
+  }
 
   // Step 1: Sign in
   // Note: do NOT use -X POST — curl infers POST from --data-urlencode automatically.
