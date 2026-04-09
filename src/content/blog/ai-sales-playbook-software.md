@@ -154,6 +154,7 @@ Answering these three questions and updating the relevant sections takes 20 minu
 | **Analytics** | Basic (HubSpot) | Detailed engagement tracking | Detailed engagement tracking |
 | **CRM integration** | Native (HubSpot) | API integration | API integration |
 | **Best for** | Teams under 20 reps | 50+ reps, dedicated enablement team | Enterprise, complex content libraries |
+| **Limitation** | No version control or rep-level tracking | High cost + long implementation; ROI unclear under 30 reps | Enterprise pricing, complex setup; overkill for SMBs |
 
 The DIY stack wins on speed, cost, and update frequency. Dedicated software wins on analytics and content library management at scale.
 
@@ -165,7 +166,7 @@ At that scale, a few things become genuinely hard without a dedicated platform:
 
 **Version control at scale.** When 35 reps are accessing the playbook simultaneously, Notion's version history becomes unwieldy. Highspot and Seismic have purpose-built version control that shows which version each rep is using.
 
-**Content usage analytics.** If you want to know which playbook sections reps actually open before calls (versus which ones they ignore), you need the tracking that dedicated platforms provide. This matters when you're trying to identify what's working and what needs to be updated.
+**Content usage analytics.** If you want to know which playbook sections reps actually open before calls (versus which ones they ignore), you need the tracking that dedicated platforms provide. This matters when you're trying to identify what's working and what needs to be updated. See our guide on [AI sales coaching tools](/blog/ai-sales-coaching) for how modern enablement platforms pair content analytics with coaching workflows.
 
 **Compliance requirements.** Regulated industries (financial services, healthcare, legal) sometimes need documented evidence that reps accessed and reviewed specific content before client interactions. That's a compliance audit trail that Notion doesn't provide.
 
@@ -175,6 +176,4 @@ If you don't have these problems, the software subscription is paying for featur
 
 The sales playbook problem is not a software problem. It's a discipline problem. No platform will solve stale content if nobody has time to update it. The DIY build works because it makes the update loop fast enough to actually run — 20 minutes, once a month, with a calendar reminder you can set in five minutes today.
 
----
-
-*Looking to go further with AI in your sales process? Read our guides on [AI sales coaching tools](/blog/ai-sales-coaching), [AI sales forecasting](/blog/ai-sales-forecasting), [AI prospecting tools](/blog/ai-sales-prospecting), [AI competitive intelligence](/blog/ai-competitive-intelligence-sales), and [AI battlecard tools](/blog/ai-battlecard-tools-sales-teams).*
+Once your playbook is solid, the next leverage point is the pipeline. Our guide on [AI sales prospecting tools](/blog/ai-sales-prospecting) covers how to use AI to fill the top of the funnel, while [AI sales forecasting](/blog/ai-sales-forecasting) shows how to make your pipeline projections more accurate. If competitive intelligence is a gap, [AI competitive intelligence for sales](/blog/ai-competitive-intelligence-sales) and [AI battlecard tools](/blog/ai-battlecard-tools-sales-teams) cover the workflow end to end.
