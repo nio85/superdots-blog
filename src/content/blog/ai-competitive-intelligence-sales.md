@@ -309,5 +309,6 @@ Building competitive intelligence is one piece of a broader AI-powered sales ope
 
 - [AI for Sales: The Complete Guide](/blog/ai-for-sales-complete-guide/) — our pillar guide covering every AI use case across the sales cycle
 - [AI Sales Prospecting: Finding the Right Leads](/blog/ai-sales-prospecting/) — filling the top of funnel before competitive dynamics kick in
+- [AI Lead Scoring](/blog/ai-lead-scoring/) — prioritizing which inbound leads get your competitive messaging before they ever reach a rep
 - [AI Deal Intelligence: Knowing Which Deals Will Close](/blog/ai-deal-intelligence/) — using AI to score and prioritize active deals
 - [AI Sales Coaching: Tools That Train Your Reps While They Sell](/blog/ai-sales-coaching/) — developing the skills that win competitive conversations
