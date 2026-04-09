@@ -153,7 +153,7 @@ This section matters more than any other. AI legal research tools are powerful, 
 
 AI language models can generate case citations that do not exist. The case name sounds real. The citation format is correct. The holding is plausible. But the case is fictional. This has already caused problems — lawyers have been sanctioned for citing AI-hallucinated cases in court filings.
 
-The risk is lower with purpose-built legal AI tools (Westlaw Edge, [LexisNexis](https://www.lexisnexis.com) Lexis+ AI, [Casetext](https://casetext.com) CoCounsel) than with general-purpose AI (ChatGPT, Claude), because legal tools are connected to verified case databases. But the risk is not zero.
+The risk is lower with purpose-built legal AI tools (Westlaw Edge, LexisNexis Lexis+ AI, Casetext CoCounsel) than with general-purpose AI (ChatGPT, Claude), because legal tools are connected to verified case databases. But the risk is not zero.
 
 ### Mitigation strategies
 

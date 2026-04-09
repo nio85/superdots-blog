@@ -75,7 +75,7 @@ Not all AI routing tools are equal. Here is what separates the good ones from th
 
 **Real-time reassignment.** Sometimes the AI gets it wrong, or the ticket evolves. The tool should make it easy to reassign mid-conversation and should learn from those corrections to improve future routing.
 
-**Integration with your helpdesk.** [Zendesk](https://www.zendesk.com), [Freshdesk](https://www.freshworks.com/freshdesk), Intercom, [ServiceNow](https://www.servicenow.com), Salesforce Service Cloud, HubSpot — whatever you use, the routing tool needs a native integration. API-only integrations work but add setup complexity and maintenance burden.
+**Integration with your helpdesk.** Zendesk, Freshdesk, Intercom, ServiceNow, Salesforce Service Cloud, HubSpot — whatever you use, the routing tool needs a native integration. API-only integrations work but add setup complexity and maintenance burden.
 
 ### Nice-to-haves
 

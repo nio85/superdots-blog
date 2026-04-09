@@ -10,7 +10,7 @@ heroImage: "/images/blog/ai-market-research.webp"
 imageHint: "strategist reviewing AI-compiled market size report with competitor landscape summary"
 ---
 
-Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a [Gartner](https://www.gartner.com) subscription, or a time machine.
+Your competitor just launched a new product. Your boss wants a competitive analysis by Friday. You do not have a research team, a Gartner subscription, or a time machine.
 
 This used to mean spending weeks on Google, cobbling together data from free reports on sites like [Statista](https://www.statista.com) and [Nielsen](https://www.nielsen.com), and hoping your conclusions were not already outdated by the time you presented them.
 

@@ -79,7 +79,7 @@ Look for tools that let you set confidence thresholds. Below a certain confidenc
 
 ### Integration with existing tools
 
-Your help desk does not exist in isolation. It connects to your CRM, your product, your billing system, and your internal communication tools. Platforms like [Zendesk](https://www.zendesk.com) and [ServiceNow](https://www.servicenow.com) offer deep integration ecosystems that connect to hundreds of business applications. AI features that cannot access these systems are limited to surface-level responses. The best platforms integrate deeply — pulling order data, account status, and subscription details directly so AI can resolve tickets that require real information, not just canned answers.
+Your help desk does not exist in isolation. It connects to your CRM, your product, your billing system, and your internal communication tools. Platforms like Zendesk and ServiceNow offer deep integration ecosystems that connect to hundreds of business applications. AI features that cannot access these systems are limited to surface-level responses. The best platforms integrate deeply — pulling order data, account status, and subscription details directly so AI can resolve tickets that require real information, not just canned answers.
 
 ### Agent experience
 

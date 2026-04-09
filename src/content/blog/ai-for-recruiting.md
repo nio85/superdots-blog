@@ -35,7 +35,7 @@ Not every part of recruiting benefits equally from AI. Some tasks are perfect fo
 
 These are the tasks where AI consistently delivers measurable results:
 
-**1. Resume screening and shortlisting.** A single job posting on [Indeed](https://www.indeed.com) or [LinkedIn](https://www.linkedin.com) can generate 250+ applications. A recruiter spends an average of 7 seconds per resume on an initial scan. AI can review all 250 in under a minute and produce a ranked shortlist based on criteria you define. This alone can save 10-15 hours per open role.
+**1. Resume screening and shortlisting.** A single job posting on Indeed or LinkedIn can generate 250+ applications. A recruiter spends an average of 7 seconds per resume on an initial scan. AI can review all 250 in under a minute and produce a ranked shortlist based on criteria you define. This alone can save 10-15 hours per open role.
 
 **2. Writing and optimizing job descriptions.** Most job descriptions are too long, full of jargon, or accidentally biased. AI can audit your language, suggest improvements, and generate first drafts that you refine. What used to take a day takes 20 minutes.
 

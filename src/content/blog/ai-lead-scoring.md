@@ -29,7 +29,7 @@ Your sales team has 500 leads in the pipeline. Your reps can work 50 of them thi
 
 Without a scoring system, reps choose based on gut feel, recency ("this one just came in"), or convenience ("I already know this company"). The result: they spend hours on leads that were never going to close and miss the ones that were ready to buy.
 
-The numbers are brutal. Bad leads waste 33% of a sales rep's working time — over 400 hours per year per rep ([PhantomBuster](https://phantombuster.com/blog/outbound-sales/sales-statistics/)). [Gartner](https://www.gartner.com) estimates that companies lose $12.9 million annually because of poor-quality leads. And 67% of lost sales result from improper lead qualification in the first place.
+The numbers are brutal. Bad leads waste 33% of a sales rep's working time — over 400 hours per year per rep ([PhantomBuster](https://phantombuster.com/blog/outbound-sales/sales-statistics/)). Gartner estimates that companies lose $12.9 million annually because of poor-quality leads. And 67% of lost sales result from improper lead qualification in the first place.
 
 That is not a prioritization problem — it is a prediction problem. And prediction is what AI does best. Companies using AI-powered lead scoring see conversion rate improvements of 25-30% on average, with some reporting first-year ROI of 300-400% ([Landbase](https://www.landbase.com/blog/lead-scoring-statistics)).
 

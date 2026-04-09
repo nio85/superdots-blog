@@ -19,7 +19,7 @@ AI image generators like Midjourney, DALL-E, and Stable Diffusion can produce pr
 The first thing everyone asks about AI-generated art: can I legally use it for my business? Here's the short answer by platform:
 
 - **[Midjourney](https://www.midjourney.com)**: Commercial use is allowed on all paid plans. Free tier images are not licensed for commercial use.
-- **[DALL-E](https://openai.com) (via ChatGPT Plus or API)**: OpenAI grants commercial usage rights to the user who created the image.
+- **DALL-E (via ChatGPT Plus or API)**: OpenAI grants commercial usage rights to the user who created the image.
 - **[Adobe Firefly](https://www.adobe.com/products/firefly.html)**: Commercially safe by design — Adobe trains only on licensed content and Adobe Stock, and provides IP indemnification for enterprise customers.
 - **Stable Diffusion**: The open-source model itself is permissive, but commercial use depends on the specific model version and your local laws.
 

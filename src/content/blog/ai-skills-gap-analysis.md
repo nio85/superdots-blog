@@ -129,7 +129,7 @@ Identifying gaps is the easy part. Closing them is where most organizations stal
 
 ### Prioritizing which gaps to close
 
-Not all skill gaps are equal. [Gartner](https://www.gartner.com) research emphasizes that prioritization is the most critical step in skills gap remediation. AI ranks them based on:
+Not all skill gaps are equal. Gartner research emphasizes that prioritization is the most critical step in skills gap remediation. AI ranks them based on:
 
 - **Business impact.** How much does this gap affect revenue, product delivery, or strategic goals?
 - **Urgency.** Is this needed now, in six months, or in two years?

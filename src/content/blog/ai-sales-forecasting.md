@@ -23,7 +23,7 @@ imageHint: "VP of Sales reviewing AI revenue forecast dashboard with pipeline co
 
 Siemens Digital Industries was missing quarterly forecasts by 15-20% — the usual mix of rep sandbagging, stale data, and gut-feel adjustments. After deploying AI-powered forecasting across their sales organization, they narrowed that gap to under 5%. Not because their reps got better at guessing, but because the AI stopped relying on guesses altogether.
 
-Your sales forecast is probably wrong too. If you are still building it in a spreadsheet — pulling numbers from reps, adjusting for gut feel, hoping the board does not notice the gap — you are not alone. [Gartner research](https://www.gartner.com) shows that fewer than 25% of sales organizations rate their forecasting as effective. Most teams miss by 20% or more.
+Your sales forecast is probably wrong too. If you are still building it in a spreadsheet — pulling numbers from reps, adjusting for gut feel, hoping the board does not notice the gap — you are not alone. Gartner research shows that fewer than 25% of sales organizations rate their forecasting as effective. Most teams miss by 20% or more.
 
 AI forecasting tools change the math. They analyze your actual pipeline data, spot patterns humans miss, and deliver predictions that are consistently more accurate. And you do not need a data scientist to set them up.
 
@@ -37,7 +37,7 @@ Traditional sales forecasting has three big problems:
 
 **No pattern recognition.** A human looking at a spreadsheet can't easily spot that deals involving a specific competitor close 40% less often, or that deals stalling at the proposal stage for more than 12 days almost never close. AI can.
 
-The result? According to [Gartner](https://www.gartner.com), traditional forecasting methods hit 60-75% accuracy at best. A [McKinsey study on sales automation](https://www.mckinsey.com) found that companies using AI-driven forecasting achieved 10-20% higher revenue attainment than those relying on manual methods — not because AI sells better, but because better predictions lead to better resource allocation. Clari, one of the leading AI forecasting platforms, reports that their customers average 95%+ forecast accuracy within two quarters of adoption.
+The result? According to Gartner, traditional forecasting methods hit 60-75% accuracy at best. A McKinsey study on sales automation found that companies using AI-driven forecasting achieved 10-20% higher revenue attainment than those relying on manual methods — not because AI sells better, but because better predictions lead to better resource allocation. Clari, one of the leading AI forecasting platforms, reports that their customers average 95%+ forecast accuracy within two quarters of adoption.
 
 ## How AI forecasting actually works
 

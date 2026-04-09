@@ -58,7 +58,7 @@ Most sales teams treat all leads roughly the same — or rely on basic rules (jo
 
 AI lead scoring analyzes behavioral and firmographic data — website visits, content downloads, email engagement, company growth signals, tech stack, and dozens of other factors — to predict which prospects are most likely to convert. Instead of reps guessing who to call first, they get a ranked list based on actual buying signals.
 
-The difference is measurable. McKinsey research shows companies using AI lead scoring typically see [15-20% improvement in lead-conversion rates](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/what-the-future-science-of-b2b-sales-growth-looks-like), with some implementations achieving even higher gains, plus a significant reduction in time wasted on unqualified prospects. But the key is integration — scoring only works when it's embedded in the workflow where reps make prioritization decisions, not buried in a dashboard they never check.
+The difference is measurable. McKinsey research shows companies using AI lead scoring typically see 15-20% improvement in lead-conversion rates, with some implementations achieving even higher gains, plus a significant reduction in time wasted on unqualified prospects. But the key is integration — scoring only works when it's embedded in the workflow where reps make prioritization decisions, not buried in a dashboard they never check.
 
 **Go deeper:** [AI Lead Scoring: Prioritize Your Best Prospects Automatically](/blog/ai-lead-scoring/) covers how AI scoring works, what data it needs, and how to get reps to actually trust the scores.
 
@@ -118,7 +118,7 @@ The best deal intelligence tools go beyond binary "at risk / on track" classific
 
 Spreadsheet-based forecasting is an exercise in aggregating opinions. Reps estimate their deals, managers adjust based on experience, and the VP adds a haircut based on historical accuracy. The result is a number everyone agrees is wrong — they just hope it's wrong in the right direction.
 
-AI sales forecasting replaces opinion-based estimates with data-driven predictions. By analyzing historical close rates, deal velocity, pipeline composition, seasonal patterns, and current deal signals, AI generates forecasts that are consistently more accurate than human judgment alone. McKinsey research on [AI-driven forecasting](https://www.mckinsey.com/capabilities/operations/our-insights/ai-driven-operations-forecasting-in-data-light-environments) shows error reductions of 20-50% across business applications, and early adopters in sales report similar gains in forecast reliability.
+AI sales forecasting replaces opinion-based estimates with data-driven predictions. By analyzing historical close rates, deal velocity, pipeline composition, seasonal patterns, and current deal signals, AI generates forecasts that are consistently more accurate than human judgment alone. McKinsey research on AI-driven forecasting shows error reductions of 20-50% across business applications, and early adopters in sales report similar gains in forecast reliability.
 
 The real value isn't just a better number — it's better decision-making. When you trust your forecast, you can commit resources, plan hiring, and make strategic bets with confidence. When your forecast is a guess, every downstream decision inherits that uncertainty.
 

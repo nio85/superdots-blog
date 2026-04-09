@@ -24,7 +24,7 @@ imageHint: "HR director reviewing AI-powered people analytics dashboard with wor
 
 HR teams are buried in admin. The average HR professional spends [73% of their time on administrative tasks](https://www.shrm.org) — screening resumes, answering the same policy questions, chasing down onboarding paperwork, and compiling performance data. That leaves barely a quarter of their week for the work that actually moves the needle: building culture, developing talent, and making strategic people decisions.
 
-AI changes that ratio. Not by replacing HR professionals, but by handling the repetitive volume so your team can focus on the work that requires human judgment. Companies using AI in HR report [40% faster hiring cycles](https://www.gartner.com), 50% reduction in onboarding time, and measurable improvements in employee retention.
+AI changes that ratio. Not by replacing HR professionals, but by handling the repetitive volume so your team can focus on the work that requires human judgment. Companies using AI in HR report 40% faster hiring cycles (according to Gartner), 50% reduction in onboarding time, and measurable improvements in employee retention.
 
 This guide covers every major HR function where AI delivers real results — from recruiting through offboarding — with practical implementation advice and links to detailed guides for each use case.
 

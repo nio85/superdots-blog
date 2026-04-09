@@ -63,7 +63,7 @@ Getting good results from AI image tools is a skill. Here is how to develop it.
 
 ### Use style references
 
-Most AI tools — including [Midjourney](https://www.midjourney.com) and [DALL-E by OpenAI](https://openai.com) — let you reference specific visual styles: "in the style of isometric illustration," "flat vector art," "watercolor texture," "minimal line drawing." Build a vocabulary of style terms that match your brand aesthetic and use them consistently.
+Most AI tools — including Midjourney and DALL-E by OpenAI — let you reference specific visual styles: "in the style of isometric illustration," "flat vector art," "watercolor texture," "minimal line drawing." Build a vocabulary of style terms that match your brand aesthetic and use them consistently.
 
 Some tools also support image references — upload an existing on-brand image and ask the AI to generate new images in a similar style. This is the fastest path to visual consistency.
 

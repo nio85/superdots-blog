@@ -216,7 +216,7 @@ Your goal: below 10% false positive rate within 3 months of implementation.
 **Choose a tool.** Options by complexity:
 - **Expense management with built-in AI** (Ramp, Brex, SAP Concur). If your primary concern is expense fraud, these platforms include fraud detection as a feature.
 - **AP automation with fraud detection** (Tipalti, Bill.com, AvidXchange). If invoice and payment fraud are the priority.
-- **Dedicated fraud detection** (Oversight, AppZen, MindBridge). For comprehensive fraud detection across all transaction types. Specialized vendors like [Featurespace](https://www.featurespace.com) and [NICE Actimize](https://www.niceactimize.com) serve organizations with higher transaction volumes and more complex risk profiles.
+- **Dedicated fraud detection** (Oversight, AppZen, MindBridge). For comprehensive fraud detection across all transaction types. Specialized vendors like Featurespace and NICE Actimize serve organizations with higher transaction volumes and more complex risk profiles.
 
 ### Month 2: Baseline and configuration
 

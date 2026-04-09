@@ -24,7 +24,7 @@ imageHint: "operations manager setting up automated workflow on laptop with proc
 
 The average knowledge worker spends [60% of their time on "work about work"](https://asana.com/resources/anatomy-of-work) — status updates, email management, data entry, searching for information, and other tasks that feel productive but don't actually move the business forward. That's 25 hours a week spent on busywork for every person on your team.
 
-AI automation changes the math. Companies implementing AI-powered automation report [40% reductions in labor costs](https://www.uipath.com/resources/automation-whitepapers/automation-trends-report) on repetitive tasks, with [88% of organizations now using AI in at least one business function](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai). Small businesses that adopt AI tools save [over 20 hours per month](https://colorwhistle.com/artificial-intelligence-statistics-for-small-business/) on average.
+AI automation changes the math. Companies implementing AI-powered automation report [40% reductions in labor costs](https://www.uipath.com/resources/automation-whitepapers/automation-trends-report) on repetitive tasks, with 88% of organizations now using AI in at least one business function (according to McKinsey research). Small businesses that adopt AI tools save [over 20 hours per month](https://colorwhistle.com/artificial-intelligence-statistics-for-small-business/) on average.
 
 This isn't about replacing people. It's about giving your team back the hours they lose to repetitive work — so they can spend that time on the judgment calls, creative thinking, and relationship building that actually grow the business.
 

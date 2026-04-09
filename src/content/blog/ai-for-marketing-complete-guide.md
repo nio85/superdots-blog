@@ -24,7 +24,7 @@ imageHint: "marketing team reviewing AI content calendar and campaign performanc
 
 Marketing teams are stretched thin. The average marketing team manages [8-12 channels simultaneously](https://www.hubspot.com/state-of-marketing) — blog, email, social, paid ads, SEO, video, landing pages, and more — while pressure to produce more content at higher quality keeps climbing. Most marketers spend over half their week on production tasks: writing first drafts, resizing images, scheduling posts, pulling analytics, and formatting emails.
 
-AI changes what's possible with a small team. Not by replacing marketers, but by compressing the time between idea and execution. Companies using AI in marketing report [60% faster content production](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-state-of-ai) and measurable improvements in personalization, campaign performance, and time-to-publish.
+AI changes what's possible with a small team. Not by replacing marketers, but by compressing the time between idea and execution. Companies using AI in marketing report 60% faster content production (according to McKinsey research) and measurable improvements in personalization, campaign performance, and time-to-publish.
 
 This guide covers every major marketing function where AI delivers real results — from content creation through analytics and brand monitoring — with practical implementation advice and links to detailed guides for each use case.
 

@@ -23,7 +23,7 @@ And every year, the answer comes from the same place: a spreadsheet. Someone pul
 
 It is wrong because traditional workforce planning is reactive. It looks backward, applies crude assumptions, and ignores the signals that actually predict what your workforce will need.
 
-AI workforce planning is different. As [McKinsey](https://www.mckinsey.com) research has shown, organizations that use data-driven workforce planning outperform peers on talent outcomes. It connects business data to people data and produces forecasts that update as conditions change. It does not eliminate the need for judgment — you still make the decisions — but it gives you something better than a spreadsheet to base those decisions on.
+AI workforce planning is different. As McKinsey research has shown, organizations that use data-driven workforce planning outperform peers on talent outcomes. It connects business data to people data and produces forecasts that update as conditions change. It does not eliminate the need for judgment — you still make the decisions — but it gives you something better than a spreadsheet to base those decisions on.
 
 ## Why Traditional Workforce Planning Fails
 

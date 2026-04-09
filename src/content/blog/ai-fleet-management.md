@@ -54,7 +54,7 @@ AI route optimization handles the constraints that static planning ignores:
 
 - **Time windows**: Customer A needs delivery between 10 AM and noon. Customer B cannot receive before 2 PM. The system builds routes that satisfy both without manual juggling.
 - **Vehicle capacity**: Load weight and volume constraints across multi-stop routes. The system knows which stops can be combined and which cannot.
-- **Driver hours**: [Federal hours-of-service regulations](https://www.fmcsa.dot.gov) are not optional. AI builds compliant schedules automatically, flagging routes that would put a driver over limit before they leave the yard.
+- **Driver hours**: Federal hours-of-service regulations (FMCSA) are not optional. AI builds compliant schedules automatically, flagging routes that would put a driver over limit before they leave the yard.
 - **Traffic and road conditions**: Real-time data feeds update routes as conditions change. A 20-minute traffic jam gets rerouted around before the driver hits it, not after.
 - **Customer priority tiers**: Some customers have SLA penalties for late delivery. Others are flexible. AI weights the route to protect the high-priority windows first.
 

@@ -251,7 +251,7 @@ Most teams see initial insights within one to two weeks. Connecting data sources
 
 ### What's the ROI of AI process mining?
 
-[Gartner](https://www.gartner.com) identifies process mining as a critical capability for operational excellence. Forrester found that organizations using process mining see an average 272% ROI over three years. The biggest gains come from eliminating rework (which accounts for 10-30% of process steps in most organizations) and automating manual handoffs between systems.
+Gartner identifies process mining as a critical capability for operational excellence. Forrester found that organizations using process mining see an average 272% ROI over three years. The biggest gains come from eliminating rework (which accounts for 10-30% of process steps in most organizations) and automating manual handoffs between systems.
 
 ### Can it work with legacy systems?
 

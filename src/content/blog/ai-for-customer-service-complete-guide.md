@@ -23,7 +23,7 @@ imageHint: "customer support team reviewing AI-assisted ticket queue with resolu
 
 Customer service teams are stretched thin. The average support agent handles [50+ tickets per day](https://www.zendesk.com/blog/customer-service-statistics/) while customer expectations keep climbing — 73% of consumers expect companies to understand their needs and expectations, and [90% rate an immediate response as important](https://blog.hubspot.com/service/customer-service-stats) when they have a question.
 
-AI changes what a small support team can handle. Not by replacing agents, but by automating the repetitive work that eats up most of their day. Companies using AI in customer service report [30-50% reduction in first-response times](https://www.mckinsey.com/capabilities/operations/our-insights/the-next-frontier-of-customer-engagement-ai-enabled-customer-service) and up to 40% decrease in ticket volume through self-service deflection.
+AI changes what a small support team can handle. Not by replacing agents, but by automating the repetitive work that eats up most of their day. Companies using AI in customer service report 30-50% reduction in first-response times (according to McKinsey research) and up to 40% decrease in ticket volume through self-service deflection.
 
 This guide covers every major customer service function where AI delivers real results — from frontline chatbots through quality assurance and retention — with practical implementation advice and links to detailed guides for each use case.
 
@@ -149,7 +149,7 @@ Acquiring a new customer costs [5-7x more than retaining an existing one](https:
 
 AI retention tools analyze behavioral patterns across your customer base to predict which accounts are at risk — declining usage, increasing support contacts, negative sentiment trends, dropped feature adoption. They flag at-risk customers before they churn, giving your team time to intervene with targeted outreach, proactive support, or retention offers.
 
-The shift from reactive to proactive is the key value. Instead of processing cancellations and running win-back campaigns, your team can address issues before they become cancellation reasons. Companies using AI for retention report [15-25% reduction in churn rates](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-customer-experience) and significantly higher customer lifetime value.
+The shift from reactive to proactive is the key value. Instead of processing cancellations and running win-back campaigns, your team can address issues before they become cancellation reasons. Companies using AI for retention report 15-25% reduction in churn rates (according to McKinsey research) and significantly higher customer lifetime value.
 
 **Go deeper:** [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/) covers building a retention system that identifies at-risk customers early and automates personalized intervention strategies.
 
