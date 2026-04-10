@@ -45,7 +45,7 @@ A useful sentiment dashboard starts with four core data sources. Each captures a
 
 Tickets are the highest-signal source you have. Customers who submit a ticket are already frustrated enough to take action. The language they use — the specific features they name, the urgency in their tone — tells you a lot.
 
-Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard — the same transcripts that power [AI customer service QA](/blog/ai-customer-service-qa/) are your richest sentiment signal. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
+Connect your helpdesk (Zendesk, Intercom, Freshdesk, Help Scout) to your dashboard — the same transcripts that power your [QA scoring tools](/blog/ai-customer-service-qa/) are your richest sentiment signal. You want ticket text, category tags, and resolution time. The AI analyzes sentiment at the ticket level and rolls it up into trends by product area, customer segment, and time period.
 
 ### App and Product Reviews
 
