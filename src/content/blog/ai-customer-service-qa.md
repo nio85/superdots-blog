@@ -167,14 +167,14 @@ Aggregate sentiment trends can predict churn before it shows up in your retentio
 
 The AI customer service QA market has matured. Here are the tools teams are using effectively, with honest notes on coverage and pricing.
 
-| Tool | Best For | Coverage | Pricing |
-|------|----------|----------|---------|
-| MaestroQA | Dedicated QA teams | Chat, email, voice | From ~$35/agent/mo |
-| Zendesk QA | Zendesk shops | Chat, email | Included or ~$25 add-on |
-| Observe.AI | High-volume call centers | Voice-first | Contact sales |
-| Scorebuddy | Complex rubrics | Omnichannel | From ~$40/agent/mo |
-| Assembled | WFM + QA combo | Chat, email | Contact sales |
-| Qualtrics XM | Enterprise | Omnichannel | Enterprise pricing |
+| Tool | Best For | Coverage | Pricing | Limitation |
+|------|----------|----------|---------|------------|
+| MaestroQA | Dedicated QA teams | Chat, email, voice | From ~$35/agent/mo | No WFM or scheduling features |
+| Zendesk QA | Zendesk shops | Chat, email | Included or ~$25 add-on | Zendesk-only |
+| Observe.AI | High-volume call centers | Voice-first | Contact sales | Voice-first, limited chat |
+| Scorebuddy | Complex rubrics | Omnichannel | From ~$40/agent/mo | Limited real-time coaching |
+| Assembled | WFM + QA combo | Chat, email | Contact sales | WFM-first, limited QA depth |
+| Qualtrics XM | Enterprise | Omnichannel | Enterprise pricing | Enterprise setup required |
 
 **[MaestroQA](https://www.maestroqa.com).** Purpose-built for support QA. Strong rubric customization, integrates with most helpdesks (Zendesk, Salesforce, Intercom, Freshdesk), and has solid coaching workflows. Good for teams that want a dedicated QA platform without locking into a broader suite. Pricing: from ~$35–50/agent/month based on documentation and user reviews; contact for enterprise.
 
