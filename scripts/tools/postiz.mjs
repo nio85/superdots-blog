@@ -71,8 +71,6 @@ function cli(cliArgs) {
     const stderr = e.stderr?.trim() || '';
     const stdout = e.stdout?.trim() || '';
     const raw = stderr || stdout || e.message;
-    const match = raw.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
-    if (match) { try { throw new Error(match[1]); } catch {} }
     throw new Error(raw);
   }
 }
