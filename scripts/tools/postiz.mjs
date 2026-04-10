@@ -28,6 +28,7 @@ Commands:
   analytics-post <postId>                              Analytics for a post
   analytics <integrationId>                            Analytics for an integration
   notifications                                        List notifications
+  upload-file <path>                                   Upload media, returns CDN URL
   find-slot <integrationId>                            Find next available slot
 
 Options:
@@ -179,6 +180,15 @@ async function main() {
       const items = Array.isArray(data) ? data : data.notifications || [];
       if (items.length === 0) { log('No notifications.'); break; }
       for (const n of items) log(`  ${n.id}  ${n.type ?? ''}  ${n.message ?? n.content ?? ''}`);
+      break;
+    }
+
+    case 'upload-file': {
+      const filePath = positional[1];
+      if (!filePath) err('Usage: postiz.mjs upload-file <path>');
+      const data = cli(`upload '${filePath}'`);
+      if (jsonOutput) { out(data); break; }
+      log('Uploaded:', data?.url || JSON.stringify(data));
       break;
     }
 
