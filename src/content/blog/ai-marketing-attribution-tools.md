@@ -18,6 +18,7 @@ faqs:
     answer: "Last-click attribution gives 100% of the conversion credit to the final touchpoint before purchase — usually branded search or a direct visit. Multi-touch attribution distributes credit across all the channels a customer encountered: a Facebook ad that introduced the brand, a blog post that educated them, an email that brought them back, and the final Google search that converted. Last-click systematically overvalues bottom-of-funnel channels and undervalues awareness channels, which causes most small businesses to cut spend that was actually working."
   - question: "Can AI attribution tools track Meta and Google ads accurately after iOS 14?"
     answer: "Partially. iOS 14+ privacy changes broke pixel-based tracking for Meta ads, causing significant underreporting — some brands see 30–50% of Meta conversions go unattributed in standard dashboards. AI attribution tools address this through probabilistic modeling and server-side tracking (bypassing the browser pixel). Tools like Triple Whale and Northbeam are specifically built for this post-iOS reality. They won't recover every lost conversion, but they'll give you a far more complete picture than Meta Ads Manager alone."
+heroImage: "/images/blog/ai-marketing-attribution-tools.webp"
 ---
 
 In the 1870s, John Wanamaker built one of the first modern department stores in Philadelphia. He became one of the most successful retailers of his era. He also became famous for a single observation that has haunted marketers ever since:
