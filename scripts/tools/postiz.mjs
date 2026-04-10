@@ -188,7 +188,7 @@ async function main() {
       if (!filePath) err('Usage: postiz.mjs upload-file <path>');
       const data = cli(`upload '${filePath}'`);
       if (jsonOutput) { out(data); break; }
-      log('Uploaded:', data?.url || JSON.stringify(data));
+      log('Uploaded:', data?.path || data?.url || JSON.stringify(data));
       break;
     }
 
