@@ -295,6 +295,10 @@ async function main() {
 
   const { dashboard, allIssues, agents } = data;
 
+  // Normalize cost fields — API mode doesn't return tokensByAgent or estimatedDayCostUsd
+  if (!dashboard.costs.tokensByAgent) dashboard.costs.tokensByAgent = [];
+  if (!dashboard.costs.estimatedDayCostUsd) dashboard.costs.estimatedDayCostUsd = '0.00';
+
   const inProgress = allIssues.filter(i => i.status === 'in_progress');
   const todo = allIssues.filter(i => i.status === 'todo');
   const blocked = allIssues.filter(i => i.status === 'blocked');
