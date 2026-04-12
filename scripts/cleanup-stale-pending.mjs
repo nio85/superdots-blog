@@ -66,20 +66,43 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
+const REQUEST_TIMEOUT_MS = 30_000; // 30s per request — prevents infinite hang if Mautic is unresponsive
+
 async function mauticApi(method, path, body) {
   const url = `${baseUrl}${path}`;
   const opts = { method, headers: buildHeaders() };
   if (body) opts.body = JSON.stringify(body);
 
-  const res = await fetch(url, opts);
-  const text = await res.text();
-  let data;
-  try { data = JSON.parse(text); } catch { data = text; }
+  const controller = new AbortController();
+  // Timer covers both the fetch() connection AND res.text() body read.
+  // Cleared and re-set after headers arrive so each phase gets the full timeout budget.
+  let timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
-  if (!res.ok) {
-    return { ok: false, status: res.status, data };
+  try {
+    const res = await fetch(url, { ...opts, signal: controller.signal });
+
+    // Headers received — reset timer to cover body read as well
+    clearTimeout(timer);
+    timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch { data = text; }
+
+    if (!res.ok) {
+      return { ok: false, status: res.status, data };
+    }
+    return { ok: true, status: res.status, data };
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      console.error(`Request timed out after ${REQUEST_TIMEOUT_MS / 1000}s: ${method} ${path}`);
+      return { ok: false, status: 0, data: 'timeout' };
+    }
+    console.error(`Request failed: ${method} ${path}`, err.message);
+    return { ok: false, status: 0, data: err.message };
+  } finally {
+    clearTimeout(timer);
   }
-  return { ok: true, status: res.status, data };
 }
 
 function cutoffDate() {
@@ -112,20 +135,24 @@ async function fetchStalePending() {
   const search = `consent_status:pending date_added:<${cutoff}`;
   const contacts = [];
   let start = 0;
+  let aborted = false;
 
   while (true) {
     const path = `/api/contacts?search=${encodeURIComponent(search)}&limit=${PAGE_LIMIT}&start=${start}&orderBy=date_added&orderByDir=asc`;
     const res = await mauticApi('GET', path);
 
     if (!res.ok) {
-      console.error(`Failed to fetch contacts (start=${start}):`, res.status, res.data);
-      process.exit(1);
+      const reason = res.status === 0 ? `Mautic unreachable (${res.data})` : `HTTP ${res.status}`;
+      console.error(`Failed to fetch contacts (start=${start}): ${reason}`);
+      aborted = true;
+      break;
     }
 
     if (typeof res.data !== 'object' || !res.data.contacts) {
       console.error('Unexpected API response (possible CF Access block). Check CF_ACCESS_CLIENT_ID/SECRET.');
       console.error('Response:', typeof res.data === 'string' ? res.data.substring(0, 200) : JSON.stringify(res.data).substring(0, 200));
-      process.exit(1);
+      aborted = true;
+      break;
     }
 
     const batch = res.data.contacts;
@@ -148,7 +175,7 @@ async function fetchStalePending() {
     await sleep(RATE_LIMIT_MS);
   }
 
-  return contacts;
+  return { contacts, aborted };
 }
 
 async function deleteContact(contactId) {
@@ -168,8 +195,12 @@ async function sendReport(report) {
     auth: { user: 'resend', pass: RESEND_SMTP_API_KEY },
   });
 
-  const statusEmoji = report.errors > 0 ? '⚠️' : (report.deleted > 0 ? '🧹' : '✅');
-  const subject = `${statusEmoji} GDPR Cleanup: ${report.deleted} deleted, ${report.staleFound} stale, ${report.totalContacts} total`;
+  const isPartialAbort = report.aborted && report.staleFound > 0;
+  const isFullAbort = report.aborted && report.staleFound === 0 && report.totalContacts === -1;
+  const statusEmoji = isFullAbort ? '🔴' : (isPartialAbort || report.errors > 0 ? '⚠️' : (report.deleted > 0 ? '🧹' : '✅'));
+  const abortedNote = isFullAbort ? ' [MAUTIC UNREACHABLE]' : isPartialAbort ? ' [PARTIAL — MAUTIC TIMEOUT]' : '';
+  const totalDisplay = report.totalContacts === -1 ? 'N/A' : report.totalContacts;
+  const subject = `${statusEmoji} GDPR Cleanup: ${report.deleted} deleted, ${report.staleFound} stale, ${totalDisplay} total${abortedNote}`;
 
   let html = `<h2>GDPR Stale Pending Contact Cleanup</h2>`;
   html += `<p><strong>Date:</strong> ${new Date().toISOString().split('T')[0]}</p>`;
@@ -237,8 +268,8 @@ async function main() {
   console.log(`Pending: ${pendingCount}`);
   console.log('');
 
-  const contacts = await fetchStalePending();
-  console.log(`Found ${contacts.length} stale pending contact(s)`);
+  const { contacts, aborted } = await fetchStalePending();
+  console.log(`Found ${contacts.length} stale pending contact(s)${aborted ? ' (fetch aborted — Mautic unreachable or timed out)' : ''}`);
 
   const report = {
     cutoff: cutoffDate(),
@@ -250,7 +281,14 @@ async function main() {
     errors: 0,
     deletedContacts: [],
     failedContacts: [],
+    aborted,
   };
+
+  if (aborted && contacts.length === 0) {
+    console.log('Aborting — Mautic unreachable. Sending error report.');
+    if (!DRY_RUN) await sendReport(report);
+    return;
+  }
 
   if (contacts.length === 0) {
     console.log('Nothing to clean up.');

@@ -31,10 +31,14 @@ const SMTP_USER = 'resend';
 const SMTP_PASS = process.env.RESEND_SMTP_API_KEY;
 const MAIL_FROM = process.env.MAIL_FROM || 'notifications@superdots.sh';
 const TO_EMAIL = process.env.TO_EMAIL || 'lucavittorio.bartoccini@gmail.com';
-const DB_URL = process.env.PAPERCLIP_DB_URL || 'postgresql://luca:a8gMWZJg9HVEFTutPDxuJ1iy225b1Wzd@localhost:5432/paperclip';
+const DB_URL = process.env.PAPERCLIP_DB_URL;
 
 if (!SMTP_PASS) {
   console.error('Missing RESEND_SMTP_API_KEY');
+  process.exit(1);
+}
+if (!DB_URL) {
+  console.error('Missing PAPERCLIP_DB_URL');
   process.exit(1);
 }
 
@@ -98,18 +102,28 @@ function fetchDataViaDb(companyId) {
   const blockedCount = allIssues.filter(i => i.status === 'blocked').length;
   const doneCount = allIssues.filter(i => i.status === 'done').length;
 
-  // Monthly spend
-  const spendRows = dbQuery(`
-    SELECT COALESCE(SUM(cost_cents), 0) FROM cost_events
-    WHERE company_id = '${companyId}'
-    AND occurred_at >= date_trunc('month', now())
+  // Token usage today per agent (subscription plan: cost_cents=0, use tokens for estimation)
+  const tokenRows = dbQuery(`
+    SELECT a.name, COALESCE(SUM(ce.input_tokens),0), COALESCE(SUM(ce.output_tokens),0)
+    FROM cost_events ce JOIN agents a ON a.id = ce.agent_id
+    WHERE ce.company_id = '${companyId}'
+      AND ce.occurred_at >= CURRENT_DATE
+    GROUP BY a.name ORDER BY SUM(ce.output_tokens) DESC
   `);
-  const monthSpendCents = parseInt(spendRows[0]?.[0] || '0', 10);
+  const tokensByAgent = tokenRows.map(r => ({
+    name: r[0],
+    inputK: Math.round(parseInt(r[1], 10) / 1000),
+    outputK: Math.round(parseInt(r[2], 10) / 1000),
+  }));
+  // Estimate cost at public Sonnet pricing ($3/$15 per MTok input/output)
+  const totalInputK = tokensByAgent.reduce((s, a) => s + a.inputK, 0);
+  const totalOutputK = tokensByAgent.reduce((s, a) => s + a.outputK, 0);
+  const estimatedDayCostUsd = ((totalInputK * 3 + totalOutputK * 15) / 1_000_000).toFixed(4);
 
   const dashboard = {
     tasks: { open, inProgress: inProg, blocked: blockedCount, done: doneCount },
     agents: { active, running },
-    costs: { monthSpendCents },
+    costs: { monthSpendCents: 0, tokensByAgent, estimatedDayCostUsd },
   };
 
   return { dashboard, allIssues, agents };
@@ -227,10 +241,48 @@ function debugReportText(reports) {
 
 // --- Main ---
 
+const MORNING_ROUTINE_ID = '761c331b-b5cf-4346-a1db-3799d14370a7';
+
+// Close any stale open issue from a previous crashed run of this routine.
+// Without this, the next run fails with "duplicate key value violates unique constraint
+// issues_open_routine_execution_uq" because Paperclip won't create a new routine issue
+// while the previous one is still open.
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function closeStaleRoutineIssue() {
+  try {
+    const rows = dbQuery(`
+      SELECT id, identifier FROM issues
+      WHERE origin_kind = 'routine_execution'
+        AND origin_id = '${MORNING_ROUTINE_ID}'
+        AND status IN ('backlog','todo','in_progress','in_review','blocked')
+        AND created_at < NOW() - INTERVAL '90 minutes'
+    `);
+    // Close ALL stale issues (not just the first) — multiple can accumulate from consecutive crashes
+    for (const stale of rows) {
+      const id = stale[0];
+      if (!UUID_RE.test(id)) {
+        console.warn(`Skipping stale issue with invalid UUID: ${id}`);
+        continue;
+      }
+      dbQuery(`UPDATE issues SET status='done', completed_at=NOW(), updated_at=NOW() WHERE id = '${id}'`);
+      console.log(`Stale issue closed (${stale[1]}) — marked done before new run`);
+    }
+  } catch (err) {
+    // Non-fatal: log and continue. If the DB query fails, let the run proceed normally.
+    console.warn('Pre-flight stale issue check failed (non-fatal):', err.message);
+  }
+}
+
 async function main() {
   const apiUrl = process.env.PAPERCLIP_API_URL;
   const apiKey = process.env.PAPERCLIP_API_KEY;
   const companyId = process.env.PAPERCLIP_COMPANY_ID;
+
+  // Pre-flight: close stale open issue from any previous crashed run (DB mode only)
+  if (!apiUrl || !apiKey) {
+    closeStaleRoutineIssue();
+  }
 
   let data;
   if (apiUrl && apiKey && companyId) {
@@ -258,13 +310,14 @@ async function main() {
   ];
 
   const label = timeLabel();
-  const spendEur = (dashboard.costs.monthSpendCents / 100).toFixed(2);
+  const { estimatedDayCostUsd, tokensByAgent } = dashboard.costs;
+  const totalOutputK = tokensByAgent.reduce((s, a) => s + a.outputK, 0);
 
   // Plain text fallback
   const fmtIssueTxt = (i) => `  - [${i.priority}] ${i.identifier} — ${i.title} (${agentName(agents, i.assigneeAgentId)})`;
   let text = `Superdots — Aggiornamento ${label} (${today})\n\n`;
   text += `Dashboard: ${dashboard.tasks.open} aperte, ${dashboard.tasks.inProgress} in corso, ${dashboard.tasks.blocked} bloccate, ${dashboard.tasks.done} completate\n`;
-  text += `Agenti: ${dashboard.agents.active} attivi (${dashboard.agents.running} running) | Spesa: EUR ${spendEur}\n\n`;
+  text += `Agenti: ${dashboard.agents.active} attivi (${dashboard.agents.running} running) | Token oggi: ${totalOutputK}k out (~$${estimatedDayCostUsd} stima)\n\n`;
   if (recentDone.length) { text += `COMPLETATI OGGI:\n${recentDone.map(fmtIssueTxt).join('\n')}\n\n`; }
   if (inProgress.length) { text += `IN LAVORAZIONE:\n${inProgress.map(fmtIssueTxt).join('\n')}\n\n`; }
   if (blocked.length) { text += `BLOCCATI:\n${blocked.map(fmtIssueTxt).join('\n')}\n\n`; }
@@ -306,7 +359,7 @@ async function main() {
   <tr><td style="padding:0 0 20px">
     <div style="background:#fff;border-radius:10px;padding:14px 18px;border:1px solid #e5e7eb;display:flex;justify-content:space-between;font-size:13px;color:#4b5563">
       <span><strong>${dashboard.agents.active}</strong> agenti attivi &middot; <strong>${dashboard.agents.running}</strong> in esecuzione</span>
-      <span style="float:right">Spesa mese: <strong>&euro;${spendEur}</strong></span>
+      <span style="float:right">Token oggi: <strong>${totalOutputK}k out</strong> &middot; ~$${estimatedDayCostUsd} <span style="font-size:11px;color:#9ca3af">(stima)</span></span>
     </div>
   </td></tr>
 
