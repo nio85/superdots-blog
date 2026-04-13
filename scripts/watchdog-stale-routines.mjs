@@ -39,19 +39,41 @@ function psqlExec(query) {
   }
 }
 
+/**
+ * Fetch the last heartbeat event for a linked execution issue, for debugging.
+ * Returns a string like "event_type @ timestamp: body_preview" or null.
+ */
+function resolveLastHeartbeatEvent(linkedIssueId) {
+  if (!linkedIssueId) return null;
+  const row = psql(
+    `SELECT hre.event_type, hre.created_at, LEFT(hre.body::text, 300) as body ` +
+    `FROM heartbeat_run_events hre ` +
+    `JOIN heartbeat_runs hr ON hr.id = hre.run_id ` +
+    `JOIN issues i ON i.execution_run_id = hr.id ` +
+    `WHERE i.id = '${linkedIssueId}' ` +
+    `ORDER BY hre.created_at DESC LIMIT 1`
+  );
+  if (!row || row === '|') return null;
+  const [eventType, createdAt, body] = row.split('|');
+  return `${eventType} @ ${createdAt}: ${body}`;
+}
+
 async function sendAlert(staleRuns) {
   if (!process.env.RESEND_SMTP_API_KEY) return;
   try {
     const nodemailer = await import('nodemailer');
     const transport = createSmtpTransport(nodemailer.default || nodemailer);
-    const lines = staleRuns.map(r =>
-      `- ${r.routineTitle} (run ${r.id.slice(0, 8)}): stuck since ${r.triggeredAt}, linked issue ${r.linkedIssueId?.slice(0, 8) || 'none'}`
-    ).join('\n');
+    const lines = staleRuns.map(r => {
+      const lastEvent = r.lastHeartbeatEvent
+        ? `\n    Last heartbeat event: ${r.lastHeartbeatEvent}`
+        : '';
+      return `- ${r.routineTitle} (run ${r.id.slice(0, 8)}): stuck since ${r.triggeredAt}, linked issue ${r.linkedIssueId?.slice(0, 8) || 'none'}${lastEvent}`;
+    }).join('\n');
     await transport.sendMail({
       from: MAIL_FROM,
       to: TO_EMAIL,
       subject: `⚠️ Watchdog: ${staleRuns.length} stale routine run(s) cleared`,
-      text: `The following routine_runs were stuck in 'issue_created' for >${STALE_MINUTES} minutes and have been marked as failed:\n\n${lines}\n\nThis typically means a heartbeat crashed mid-execution (e.g. API 500). The routine will re-trigger at its next cron schedule.`,
+      text: `The following routine_runs were stuck in 'issue_created' for >${STALE_MINUTES} minutes and have been marked as failed:\n\n${lines}\n\nRoot cause: agent completed work but did not mark the execution issue as done. The execution issue has been cancelled. The routine will re-trigger at its next cron schedule.`,
     });
     console.log('Alert email sent.');
   } catch (e) {
@@ -120,11 +142,26 @@ async function main() {
     const source = actualEndTime ? 'heartbeat events' : 'watchdog time (no heartbeat data found)';
     console.log(`    Crash time:  ${actualEndTime || 'unknown'} (from ${source})`);
 
+    // Fetch last heartbeat event for debugging context in the alert email
+    run.lastHeartbeatEvent = resolveLastHeartbeatEvent(run.linkedIssueId);
+    if (run.lastHeartbeatEvent) {
+      console.log(`    Last HB event: ${run.lastHeartbeatEvent.slice(0, 120)}`);
+    }
+
     if (!DRY_RUN) {
       psqlExec(`UPDATE routine_runs SET status = 'failed', failure_reason = 'Stale lock cleared by watchdog after ${STALE_MINUTES}min timeout', completed_at = ${completedAtExpr}, updated_at = NOW() WHERE id = '${run.id}'`);
       console.log(`    → Marked as failed (completed_at from ${source})`);
+
+      // Cancel the linked execution issue to avoid zombie open issues
+      if (run.linkedIssueId) {
+        psqlExec(`UPDATE issues SET status = 'cancelled', updated_at = NOW() WHERE id = '${run.linkedIssueId}' AND status NOT IN ('done', 'cancelled', 'blocked') AND origin_kind = 'routine_execution'`);
+        console.log(`    → Execution issue cancelled`);
+      }
     } else {
       console.log(`    → Would mark as failed (completed_at from ${source})`);
+      if (run.linkedIssueId) {
+        console.log(`    → Would cancel execution issue ${run.linkedIssueId.slice(0, 8)}`);
+      }
     }
     console.log();
   }
