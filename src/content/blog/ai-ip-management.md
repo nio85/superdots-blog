@@ -83,7 +83,7 @@ The payoff: fewer things that slip through, less time reviewing low-priority mat
 
 ### Social media and web monitoring
 
-Trademark protection extends beyond official registrations. Unauthorized use on social media, e-commerce platforms, and the web can dilute your brand and create consumer confusion. AI tools crawl these surfaces continuously and flag potential infringement: counterfeit product listings, unauthorized logo use, domain name squatting, social media impersonation.
+Trademark protection extends beyond official registrations. Unauthorized use on social media, e-commerce platforms, and the web can dilute your brand and create consumer confusion. AI tools crawl these surfaces continuously and flag potential infringement: counterfeit product listings, unauthorized logo use, domain name squatting, [social media impersonation](/blog/ai-brand-monitoring).
 
 **Corsearch**, **Red Points**, and **Trademarkvision** are active in this space. The workflow is automated detection, human review of flagged items, and enforcement action where warranted.
 
@@ -119,7 +119,7 @@ For broader legal workflow automation, see our guide on [AI contract management]
 
 ### Filing trend analysis
 
-When a competitor's patent filings accelerate in a technology area, that signals strategic intent — R&D investment, product roadmap, potential licensing position. AI tools track competitor filing activity and alert IP counsel to significant changes.
+When a competitor's patent filings accelerate in a technology area, that signals [strategic intent](/blog/ai-competitive-analysis) — R&D investment, product roadmap, potential licensing position. AI tools track competitor filing activity and alert IP counsel to significant changes.
 
 This intelligence is actionable. If a competitor is building a patent thicket around a technology you use, you have options: design around, file your own patents to establish prior art, negotiate a cross-license, or acquire blocking IP. You need to know about it early enough to exercise those options.
 
@@ -139,7 +139,7 @@ AI compresses the time required for IP work. It does not replace the judgment at
 
 **Legal opinions.** A freedom-to-operate opinion, patentability opinion, or infringement analysis is a legal document that an attorney signs and clients rely on. AI tools inform these opinions; they do not write them. The attorney's judgment about claim scope, prosecution history estoppel, and litigation risk cannot be automated.
 
-**Licensing and enforcement strategy.** Deciding whether to enforce a patent, on what terms to license, and how to sequence negotiations requires understanding the business relationship, competitive dynamics, and risk tolerance in ways that AI cannot evaluate.
+**Licensing and enforcement strategy.** Deciding whether to enforce a patent, on what terms to license, and how to [sequence negotiations](/blog/ai-negotiation-tools) requires understanding the business relationship, competitive dynamics, and risk tolerance in ways that AI cannot evaluate.
 
 **Novel and complex prior art questions.** AI works best on well-structured searches against large databases. For genuinely novel technologies without a clear prior art landscape, or for high-stakes searches where missed art carries serious consequences, human expert judgment remains primary.
 

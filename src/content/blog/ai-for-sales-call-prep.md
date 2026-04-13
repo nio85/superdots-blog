@@ -66,7 +66,7 @@ Most modern CRMs (Salesforce, HubSpot, Pipedrive) have AI integrations. Combine 
 3. Generates a one-page brief using your prompt template
 4. Attaches it to the call event in your calendar
 
-Some CRMs can do this natively. For others, you can connect an AI tool through Zapier or Make. The specific tool matters less than the automation — the brief should show up without you having to remember to create it.
+Some CRMs can do this natively. For others, you can connect an AI tool through [Zapier or Make](/blog/ai-workflow-automation). The specific tool matters less than the automation — the brief should show up without you having to remember to create it.
 
 ### Create a "call prep" template
 
@@ -77,7 +77,7 @@ Standardize what "prepared" looks like for your team. Every brief should cover: 
 - **Trigger events**: what changed that makes this a good time to talk (new funding, leadership change, expansion, competitor issues)
 - **Talk track**: which value propositions resonate with this profile. A CFO cares about ROI and risk. A VP of Engineering cares about implementation time and technical fit. Same product, different conversation.
 - **Objection handling**: likely pushback and your responses. If the AI knows your product and common objections, it can pre-generate responses tailored to this specific prospect.
-- **Competitive landscape**: who else they're likely evaluating, and where you win or lose against each
+- **Competitive landscape**: [who else they're likely evaluating, and where you win or lose](/blog/ai-battlecard-tools-sales-teams) against each
 
 ### Pre-call review: 2 minutes that matter
 
@@ -118,7 +118,7 @@ You don't need a specialized "sales AI" tool. Here's what works:
 
 - **ChatGPT or Claude** — Feed them your prompt template and prospect details. Best for ad hoc research when you don't have CRM automation set up.
 - **[Gong](https://www.gong.io) or Chorus** — If you're already recording calls, these tools can analyze past conversations with similar prospects and suggest talk tracks.
-- **[LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions)** — Combined with AI, it's powerful for prospect research and identifying trigger events. Pair it with [ZoomInfo](https://www.zoominfo.com) for contact enrichment.
+- **[LinkedIn Sales Navigator](https://business.linkedin.com/sales-solutions)** — Combined with AI, it's powerful for prospect research and identifying trigger events. Pair it with [ZoomInfo](https://www.zoominfo.com) for [contact enrichment](/blog/ai-sales-prospecting).
 - **Your CRM's built-in AI** — HubSpot's AI, Salesforce Einstein, and Pipedrive's AI features can all generate pre-call summaries from your existing data.
 
 The best tool is the one your team will actually use. A simple ChatGPT prompt used consistently beats an expensive platform that sits unused.

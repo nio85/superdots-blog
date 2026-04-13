@@ -49,7 +49,7 @@ Modern AI event tools work across three phases:
 
 **During the event.** Real-time attendee matching connects people with shared interests or complementary business goals. AI monitors session attendance and engagement levels, flagging sessions that are over or under capacity. For hybrid events, it balances in-person and virtual experiences so remote attendees are not just watching a livestream in a corner.
 
-**After the event.** Automated analytics compile attendee feedback, engagement scores, and ROI metrics without anyone manually exporting CSVs and building pivot tables. AI identifies which sessions drove the most engagement, which networking connections led to follow-up meetings, and where attendees dropped off.
+**After the event.** Automated analytics compile attendee [feedback](/blog/ai-customer-feedback-analysis), engagement scores, and ROI metrics without anyone manually exporting CSVs and building pivot tables. AI identifies which sessions drove the most engagement, which networking connections led to follow-up meetings, and where attendees dropped off.
 
 If you are already using AI for other operational processes, event planning tools plug into those same systems — syncing attendee data with your CRM, [automate event follow-up workflows](/blog/ai-workflow-automation), and updating project management boards automatically.
 
@@ -135,7 +135,7 @@ If your events are a meaningful business investment (not just a team lunch), eve
 
 The comparison table helps with features, but the real question is: what kind of events do you actually run? Here is the shortcut.
 
-**Company retreats and team offsites (20–200 people).** Nowadays is purpose-built for this. It handles the full logistics chain — venue, catering, transport, activities — as connected dependencies. If your team already manages offsite planning with spreadsheets and email chains, Nowadays replaces that entire workflow. For smaller internal events where you do not need attendee-facing features, Monday.com handles the project coordination side at a fraction of the cost.
+**Company retreats and team offsites (20–200 people).** Nowadays is purpose-built for this. It handles the full logistics chain — venue, catering, transport, activities — as connected dependencies. If your team already manages offsite planning with spreadsheets and email chains, Nowadays replaces that entire workflow. For smaller internal events where you do not need attendee-facing features, Monday.com handles the [project coordination](/blog/ai-project-management-features-guide) side at a fraction of the cost.
 
 **Recurring customer conferences (200–5,000 people).** Bizzabo if you need measurable ROI and CRM integration. Cvent if venue logistics and on-site operations are your biggest headache. The deciding factor: Bizzabo is stronger on the marketing and engagement data side, Cvent is stronger on the physical logistics and venue management side. Many large organizations use both — Cvent for venue and logistics, Bizzabo for attendee experience.
 
@@ -143,7 +143,7 @@ The comparison table helps with features, but the real question is: what kind of
 
 **Virtual-first events.** Hopin remains the strongest option for events that are primarily virtual or where the virtual experience needs to feel like more than a Zoom call. If you are also using an [AI scheduling assistant](/blog/ai-scheduling-assistant) for cross-timezone coordination, Hopin's calendar integration helps attendees across time zones find sessions that fit their schedule.
 
-**Brand and marketing events.** Splash, if visual presentation and lead generation are the priority. The branded event pages alone save hours of design work per event. If your marketing team already tracks [employee engagement](/blog/ai-employee-engagement) metrics, Splash's attendee engagement scoring uses a similar framework applied to event participants.
+**Brand and marketing events.** Splash, if visual presentation and [lead generation](/blog/ai-lead-scoring) are the priority. The branded event pages alone save hours of design work per event. If your marketing team already tracks [employee engagement](/blog/ai-employee-engagement) metrics, Splash's attendee engagement scoring uses a similar framework applied to event participants.
 
 **Membership organizations.** Glue Up is the only platform on this list that combines event management with membership CRM. If your events are part of a year-round engagement strategy — not one-off productions — Glue Up's continuous engagement tracking justifies the subscription cost.
 

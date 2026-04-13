@@ -51,7 +51,7 @@ Every sales organization faces the same math problem: more leads than capacity t
 
 - **Lost deals.** High-intent leads that got worked too late. By the time your rep reached out, the prospect had already chosen a competitor.
 - **Wasted rep time.** Hours spent nurturing leads that were never a fit. Every hour on a dead-end lead is an hour not spent on a potential deal.
-- **Longer sales cycles.** When reps work low-quality leads, average deal velocity drops because they are mixing real opportunities with time-wasters.
+- **Longer sales cycles.** When reps work low-quality leads, average [deal velocity](/blog/ai-sales-forecasting) drops because they are mixing real opportunities with time-wasters.
 - **Lower morale.** Reps who keep hitting dead ends get discouraged. Reps who consistently work good leads stay motivated.
 
 ## How AI Lead Scoring Works
@@ -124,9 +124,9 @@ With just these three, you can build a model that outperforms gut feel.
 
 ### Data that improves accuracy
 
-4. **Firmographic data.** Company size, industry, and technology stack. Available through enrichment tools like Clearbit, ZoomInfo, or Apollo.
+4. **Firmographic data.** Company size, industry, and technology stack. Available through enrichment tools like [Clearbit, ZoomInfo, or Apollo](/blog/ai-sales-prospecting).
 5. **Product usage data.** If you have a free trial or freemium product, usage patterns are the strongest conversion predictor.
-6. **Sales interaction data.** Call notes, meeting attendance, email reply rates.
+6. **Sales interaction data.** [Call notes](/blog/ai-conversation-intelligence), meeting attendance, email reply rates.
 7. **Marketing engagement.** Webinar attendance, ad clicks, social engagement.
 8. **Intent data.** Third-party signals showing what topics leads are researching. Available through Bombora, G2, TrustRadius. If this applies to your team, our [AI Cold Outreach: Personalize at Scale Without Being Spammy](/blog/ai-cold-outreach/) guide covers the details.
 

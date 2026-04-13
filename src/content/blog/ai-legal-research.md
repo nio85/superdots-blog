@@ -35,7 +35,7 @@ Experienced lawyers compensate by running multiple searches with different terms
 
 ### The relevance problem
 
-Keyword matching returns every case that contains your search terms. A search for "trade secret misappropriation" returns thousands of results. Many mention the concept without actually being about it. Some are tangentially related. A few are exactly what you need. Sorting signal from noise is where most research time goes.
+Keyword matching returns every case that contains your search terms. A search for "[trade secret misappropriation](/blog/ai-ip-management)" returns thousands of results. Many mention the concept without actually being about it. Some are tangentially related. A few are exactly what you need. Sorting signal from noise is where most research time goes.
 
 Boolean operators help (AND, OR, NOT, proximity searches), but they are blunt instruments. The researcher has to know the right combination of terms and operators to construct a useful query. It is a skill that takes years to develop, and even experts miss things.
 
@@ -133,11 +133,11 @@ AI can generate research memos from your queries. You ask a legal question, and 
 
 Regulatory research is even more tedious than case law research. Regulations change frequently, are spread across multiple agencies, and are written in language that requires careful interpretation.
 
-### Regulatory monitoring
+### [Regulatory monitoring](/blog/ai-regulatory-compliance-monitoring)
 
 AI tools can monitor regulatory agencies and alert you to changes relevant to your practice areas or your clients' industries. Instead of manually checking the Federal Register or state agency websites, you get notifications when something changes.
 
-### Compliance analysis
+### [Compliance analysis](/blog/ai-compliance-tools)
 
 Describe a business activity and the AI identifies applicable regulations across multiple agencies and jurisdictions. "What regulations apply to a fintech company offering lending products to consumers in California?" The tool returns relevant federal regulations (TILA, ECOA, FCRA), state regulations (CFL, CCPA), and agency guidance.
 

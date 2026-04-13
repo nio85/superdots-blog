@@ -58,7 +58,7 @@ The sweet spot: let the chatbot handle the repetitive 60% so your human team can
 
 Fin uses your existing Intercom help center articles to answer customer questions. It resolves issues, not just surfaces articles — it reads your docs, understands the question, and composes an accurate answer.
 
-**Strengths:** High resolution rate (up to 50% from day one). Learns from your existing content. Seamless handoff to human agents. Conversation intelligence and analytics. Per-resolution pricing means you pay for results.
+**Strengths:** High resolution rate (up to 50% from day one). Learns from your existing content. Seamless handoff to human agents. [Conversation intelligence](/blog/ai-conversation-intelligence) and analytics. Per-resolution pricing means you pay for results.
 
 **Limitations:** Works best within the Intercom ecosystem. Per-resolution pricing can add up at high volume. Requires good help center content to work well.
 
@@ -120,7 +120,7 @@ Freddy AI integrates across the Freshworks suite — Freshdesk, Freshsales, and 
 
 Your chatbot is only as good as the content it draws from. Before deployment:
 
-1. **Audit your help center articles.** Are the top 20 questions answered clearly? Update any outdated articles.
+1. **Audit your [help center articles](/blog/ai-knowledge-base-for-teams).** Are the top 20 questions answered clearly? Update any outdated articles.
 2. **Fill gaps.** Write articles for questions your team answers frequently but that aren't documented.
 3. **Use clear, direct language.** AI chatbots perform better with concise, well-structured articles.
 
@@ -144,7 +144,7 @@ For a deeper guide to AI-powered support chatbots, see [AI customer service chat
 
 The chatbot should feel like part of your support system, not a separate tool.
 
-**Ticket creation:** When the bot can't resolve an issue, it should create a ticket in your help desk with the full conversation, customer details, and issue classification. Pairing this with [AI ticket routing](/blog/ai-ticket-routing/) ensures the ticket reaches the right agent instantly.
+**Ticket creation:** When the bot can't resolve an issue, it should create a ticket in your [help desk](/blog/ai-help-desk-software) with the full conversation, customer details, and issue classification. Pairing this with [AI ticket routing](/blog/ai-ticket-routing/) ensures the ticket reaches the right agent instantly.
 
 **Agent assist:** The best platforms give your human agents AI-suggested responses. The agent reviews and sends — faster than typing from scratch.
 

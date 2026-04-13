@@ -57,7 +57,7 @@ Technical issues that follow a diagnostic pattern ("Is the red light on? Yes. Ha
 
 ### After-hours support
 
-Everything your team would have resolved during business hours anyway — now resolved at 2am, without making the customer wait. This alone can move your customer satisfaction scores meaningfully, because response time is one of the biggest satisfaction drivers.
+Everything your team would have resolved during business hours anyway — now resolved at 2am, without making the customer wait. This alone can move your [customer satisfaction scores](/blog/ai-customer-feedback-analysis) meaningfully, because response time is one of the biggest satisfaction drivers.
 
 ## Building Your AI Self-Service Stack
 
@@ -106,7 +106,7 @@ What this looks like in practice:
 - Customer reports a duplicate charge → AI checks the transaction data and initiates a refund if the criteria are met
 - Customer wants to update their shipping address → AI authenticates, makes the change, confirms
 
-This requires API integrations between your customer-facing AI layer and your billing system, CRM, order management, and product database. Most enterprise support platforms (Zendesk, Salesforce Service Cloud, Intercom) have native integration frameworks. For custom setups, Zapier or Make can bridge simpler workflows.
+This requires API integrations between your customer-facing AI layer and your billing system, [CRM](/blog/ai-crm-tools), order management, and product database. Most enterprise support platforms (Zendesk, Salesforce Service Cloud, Intercom) have native integration frameworks. For custom setups, Zapier or Make can bridge [simpler workflows](/blog/ai-workflow-automation).
 
 The more actions AI can complete — not just describe — the higher your true resolution rate.
 

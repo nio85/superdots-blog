@@ -21,7 +21,7 @@ faqs:
   - question: "When should a small business switch from spreadsheets to AI forecasting?"
     answer: "Consider switching when you manage 500+ SKUs, spend more than a day per week maintaining forecast spreadsheets, sell across multiple channels where data lives in separate systems, or when stockouts and overstock are regularly costing you more than a tool subscription. If you have fewer than 100 SKUs, predictable demand, and sell through one channel, a well-maintained spreadsheet is probably still your best option."
   - question: "What's the difference between demand planning and demand forecasting?"
-    answer: "Demand forecasting predicts future customer demand using historical data and algorithms. Demand planning is broader — it takes that forecast and turns it into actionable decisions: how much to order, when to order it, where to allocate inventory, and how to coordinate with suppliers. Most tools in this article do both to varying degrees, but some (like Netstock and Flowlity) lean more heavily into the planning side with supplier collaboration and inventory optimization features."
+    answer: "Demand forecasting predicts future customer demand using historical data and algorithms. Demand planning is broader — it takes that forecast and turns it into actionable decisions: how much to order, when to order it, where to allocate inventory, and how to [coordinate with suppliers](/blog/ai-procurement-tools). Most tools in this article do both to varying degrees, but some (like Netstock and Flowlity) lean more heavily into the planning side with supplier collaboration and inventory optimization features."
 heroImage: "/images/blog/ai-demand-forecasting-tools-small-business.webp"
 ---
 
@@ -41,7 +41,7 @@ The honest answer: it depends. And most articles about AI demand forecasting won
 
 Before comparing tools, let's start with the question nobody selling forecasting software wants you to ask: **is your spreadsheet actually the problem?**
 
-A well-maintained Excel model with FORECAST or TREND functions handles straightforward demand patterns surprisingly well. If your business has stable demand, a manageable number of SKUs, and sells through one or two channels, you may not need anything more sophisticated.
+A well-maintained [Excel model](/blog/ai-spreadsheet-tools/) with FORECAST or TREND functions handles straightforward demand patterns surprisingly well. If your business has stable demand, a manageable number of SKUs, and sells through one or two channels, you may not need anything more sophisticated.
 
 **Signs your spreadsheet has hit its limits:**
 
@@ -68,7 +68,7 @@ Strip away the marketing language and here's what these tools do: they ingest yo
 According to MarketsandMarkets (2025), ML-based forecasting reduces errors by 20-50% compared to traditional methods. That's a real improvement, but it comes with caveats:
 
 - **The improvement depends on data volume.** With 6 months of sales data and 50 SKUs, the ML model doesn't have much more to work with than your spreadsheet does.
-- **Garbage in, garbage out still applies.** If your historical data has gaps, miscategorized products, or uncaptured promotions, the AI will learn your mistakes.
+- **Garbage in, garbage out still applies.** If your [historical data has gaps](/blog/ai-data-cleaning-tools), miscategorized products, or uncaptured promotions, the AI will learn your mistakes.
 - **The first forecast is usually the worst.** These tools improve over time as they accumulate more data. Expect 2-3 months before they consistently outperform what you were doing manually.
 
 Gartner predicts that by 2028, 50% of organizations will use AI to replace bottom-up forecasting. But that's organizations broadly — not necessarily small businesses. The cost-benefit math is different when you're a 40-person company versus a 4,000-person one.

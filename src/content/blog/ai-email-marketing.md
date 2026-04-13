@@ -49,7 +49,7 @@ AI changes this completely:
 
 1. **Generate 15-20 variations** from a single brief. Give the AI your email topic, audience, and tone, and it produces options ranging from curiosity-driven ("The email metric you are probably ignoring") to direct ("3 ways to cut your email bounce rate this week").
 2. **Score each option** using predictive models trained on millions of email campaigns. Tools like Phrasee and Jasper can estimate open rate probability before you send a single email.
-3. **A/B test the top contenders** by sending them to small segments of your list first, then rolling out the winner to everyone else.
+3. **[A/B test the top contenders](/blog/ai-marketing-analytics-tools)** by sending them to small segments of your list first, then rolling out the winner to everyone else.
 
 One test is not enough. Do this for every campaign. Over time, you build a dataset of what works for *your* audience — not what some blog post says works in general.
 
@@ -61,7 +61,7 @@ Here is the workflow that works:
 
 - What is the offer? (30% off all plans, ends Friday)
 - Who is the audience? (Existing customers who have not upgraded)
-- What is the one action you want them to take? (Click through to the upgrade page)
+- What is the one action you want them to take? (Click through to the [upgrade page](/blog/ai-landing-page-builder))
 - What tone? (Casual, slightly urgent, not salesy)
 
 **Step 2: Generate multiple drafts.** Ask for three versions — one short, one medium, one story-driven. This gives you raw material to work with, not a final product.
@@ -83,7 +83,7 @@ Basic personalization ("Hi Sarah") stopped impressing people a decade ago. AI-po
 - **Content blocks that swap**: The same email can show different product recommendations, testimonials, or CTAs based on what the subscriber has engaged with before.
 - **Dynamic send frequency**: AI learns that some subscribers prefer weekly emails while others engage more with biweekly sends — and adjusts automatically.
 
-This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like Klaviyo, HubSpot, and Braze have built-in AI that handles this without requiring you to set up complex rules.
+This is where AI email marketing gets genuinely powerful. Instead of segmenting your list into three or four buckets, you can effectively create a unique experience for each subscriber. Platforms like [Klaviyo, HubSpot, and Braze](/blog/ai-marketing-automation-small-business) have built-in AI that handles this without requiring you to set up complex rules.
 
 ### Send-time optimization
 
