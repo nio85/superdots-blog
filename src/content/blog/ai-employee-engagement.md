@@ -43,7 +43,7 @@ This is where AI adds the most value over traditional surveys. Manually reading 
 
 AI models analyze engagement scores, survey trends, behavioral signals, and historical patterns to flag employees and teams at elevated risk of voluntary departure. The models typically identify flight risk 60-90 days before resignation, giving managers time to intervene.
 
-Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction. Many of these same burnout indicators are also tracked by [AI employee wellness](/blog/ai-employee-wellness/) platforms, which monitor stress and fatigue signals as a complement to engagement measurement.
+Signals include declining survey participation, drops in engagement scores, reduced collaboration activity, and patterns that match historical attrition data. No single signal is definitive — it is the combination that creates a meaningful prediction. Many of these same burnout indicators are also tracked by [AI employee wellness](/blog/ai-employee-wellness/) platforms, which monitor stress and fatigue signals as a complement to engagement measurement. These attrition risk signals feed directly into [AI workforce planning and headcount modeling](/blog/ai-workforce-planning/) — accurate departure predictions are what make headcount forecasts reliable.
 
 ### Manager effectiveness scoring
 

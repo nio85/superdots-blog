@@ -88,7 +88,7 @@ AI maps each employee's skill profile against their role requirements and flags 
 
 Individual gaps matter, but team-level gaps matter more. AI aggregates individual profiles to show team-wide capabilities. You might discover that your engineering team has strong frontend skills but weak DevOps knowledge. Or that your marketing team has plenty of content creators but nobody who understands marketing analytics.
 
-This team view connects directly to [AI workforce planning](/blog/ai-workforce-planning). When you can see team-level skill distributions, you make better hiring and reorganization decisions. Do you need to hire a DevOps engineer, or can you upskill two backend developers? AI helps you model both scenarios.
+This team view connects directly to [AI workforce planning and headcount modeling](/blog/ai-workforce-planning/). When you can see team-level skill distributions, you make better hiring and reorganization decisions. Do you need to hire a DevOps engineer, or can you upskill two backend developers? AI headcount modeling helps you project the cost and timeline of both scenarios.
 
 ### Organization-level gaps
 
@@ -208,7 +208,7 @@ AI skills gap analysis sounds complex, but the entry point is simpler than most 
 1. **Define your strategic skill priorities.** Pick 50 to 100 skills that directly connect to where your business is heading in the next 12 to 24 months. Do not try to map everything at once.
 2. **Audit what you already have.** Before buying new platforms, consolidate existing data — HRIS records, learning platform histories, recent [performance reviews](/blog/ai-performance-reviews/), and project assignments. Even [AI data analysis tools](/blog/ai-data-analysis-for-non-technical-teams) applied to spreadsheets reveal more than most annual surveys.
 3. **Identify your three most critical gaps.** Not your full gap inventory — just the three shortages with the highest business impact right now. Start there. Build momentum before scaling.
-4. **Decide: build, buy, or contract.** For each critical gap, model the cost and timeline of upskilling existing employees versus hiring. [AI-powered employee training platforms](/blog/ai-employee-training) can compress upskilling timelines significantly. [AI workforce planning](/blog/ai-workforce-planning) tools help you model hiring scenarios with the same rigor.
+4. **Decide: build, buy, or contract.** For each critical gap, model the cost and timeline of upskilling existing employees versus hiring. [AI-powered employee training platforms](/blog/ai-employee-training) can compress upskilling timelines significantly. [AI headcount modeling tools](/blog/ai-workforce-planning/) let you project hiring cost and timeline scenarios with the same rigor — including confidence ranges and ROI estimates.
 5. **Set a review cadence.** Block a quarterly review before you start. Skills analysis only delivers value if someone is accountable for acting on what it surfaces.
 
 The organizations winning the skills race are not the ones with the most sophisticated AI tools. They are the ones that started earlier, iterated faster, and treated workforce readiness as a strategic priority — not an HR checkbox. The $5.5 trillion global cost of skills shortages is real, but it is not evenly distributed. Companies that move now will be competing against companies that are still running annual spreadsheet exercises in 2027.

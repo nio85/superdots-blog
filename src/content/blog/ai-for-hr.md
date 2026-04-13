@@ -40,7 +40,7 @@ AI in HR isn't one tool. It's a category of capabilities that map to specific pa
 
 **Performance management:** Review drafts, continuous feedback analysis, goal tracking, and calibration support.
 
-**Workforce planning:** Headcount forecasting, skills gap identification, succession planning, and compensation benchmarking.
+**Workforce planning:** [AI headcount modeling and workforce planning](/blog/ai-workforce-planning/), skills gap identification, succession planning, and compensation benchmarking.
 
 **Offboarding:** Access revocation checklists, exit interview analysis, and knowledge transfer workflows.
 
@@ -142,7 +142,7 @@ AI workforce planning tools ingest data from your HRIS, financial systems, proje
 
 The output is a living plan that updates as conditions change, rather than a static spreadsheet that's outdated the week after you build it.
 
-**Go deeper:** [How to Use AI for Workforce Planning and Headcount Forecasting](/blog/ai-workforce-planning/) covers demand forecasting, scenario modeling, and connecting workforce plans to business strategy.
+**Go deeper:** [AI Workforce Planning and Headcount Modeling](/blog/ai-workforce-planning/) covers demand forecasting, headcount modeling with confidence ranges, scenario analysis, and cost/ROI.
 
 ## Compensation and pay equity
 
