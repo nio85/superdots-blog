@@ -1,6 +1,6 @@
 ---
 title: 'AI Workforce Planning and Headcount Modeling: A Practical Guide'
-description: "Learn how AI workforce planning automates headcount modeling, predicts attrition by team, and lets HR model cost scenarios for multiple futures — not just one budget number."
+description: "Compare Visier, Workday Adaptive, and Mosaic for HR teams. AI automates headcount modeling, predicts attrition, and models multiple hiring scenarios — with real pricing data."
 pubDate: "2026-03-17T07:26:22Z"
 author: "Superdots Team"
 department: "hr"
