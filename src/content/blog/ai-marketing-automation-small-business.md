@@ -18,6 +18,7 @@ faqs:
     answer: "Tasks that can be fully automated include: email sequences triggered by behavior (downloads, purchases, form fills), social post scheduling, contact list segmentation by tag or purchase history, weekly performance reporting, lead routing to CRM, and re-engagement campaigns for inactive subscribers. Strategy, creative direction, and audience-specific messaging still require human judgment."
   - question: "What is the difference between AI marketing tools and marketing automation?"
     answer: "Marketing automation handles the workflow logic: when X happens, send Y email, add tag Z, notify sales. AI marketing tools add intelligence on top: generating email copy, predicting the best send time, scoring lead quality, or personalizing content at scale. Most modern platforms now combine both — ActiveCampaign's predictive sending and Klaviyo's CLV predictions are examples of AI layered onto automation infrastructure."
+heroImage: "/images/blog/ai-marketing-automation-small-business.webp"
 ---
 
 The sequence was running. The social posts were going out on schedule. The weekly report built itself. It felt like a small business marketing operation that had finally figured something out.
