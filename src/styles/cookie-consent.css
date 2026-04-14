@@ -460,42 +460,65 @@
    ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   #cc-main .cm {
-    width: 100%;
+    width: calc(100% - 1.5rem);
     max-width: 100%;
-    margin: 0;
+    margin: 0 0.75rem;
     border-radius: 20px 20px 0 0;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    /* reset middle positioning */
     top: auto;
     transform: none;
   }
 
   #cc-main .cm::before {
-    border-radius: 0; /* parent clips it */
+    border-radius: 0;
   }
 
   #cc-main .cm__texts {
     padding-top: 1.25rem;
   }
 
-  #cc-main .cm__btns {
-    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 0.375rem;
+  #cc-main .cm__desc,
+  #cc-main .cm__title {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
-  /* Compact button sizing on mobile so all 3 fit in one row */
+  #cc-main .cm__btns {
+    padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem;
+  }
+
+  #cc-main .cm__btn-group {
+    display: contents !important;
+  }
+
   #cc-main .cm__btn {
     flex: 1 1 0;
     min-width: 0;
-    min-height: 44px;
-    padding: 0.625rem 0.5rem;
+    min-height: 40px;
+    padding: 0.5rem 0.375rem;
     font-size: 0.8125rem;
     white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #cc-main .cm__btn + .cm__btn {
+    margin-top: 0 !important;
+  }
+
+  #cc-main .cm__footer {
+    padding: 0.5rem 0 0.625rem;
+  }
+
+  #cc-main .cm__links {
+    padding: 0 1.25rem;
   }
 }
 
