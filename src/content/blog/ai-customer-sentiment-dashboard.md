@@ -1,6 +1,6 @@
 ---
-title: "Build a Real-Time AI Customer Sentiment Dashboard"
-description: "Aggregate tickets, reviews, and social mentions into one AI dashboard that surfaces sentiment trends and alerts your team instantly."
+title: "Best AI Customer Sentiment Tools (2026): Dashboard & Alerts"
+description: "AI tools that aggregate tickets, reviews, and social mentions into a real-time sentiment dashboard. Trend detection, churn signals, and instant alerts."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "customer-support"
