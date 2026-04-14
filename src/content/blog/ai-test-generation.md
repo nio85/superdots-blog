@@ -140,7 +140,7 @@ After using AI test generation on several projects, here is an honest comparison
 | **Domain-specific cases** | Weak — misses business logic edge cases | Strong — reflects real-world usage |
 | **Readability** | Decent but sometimes verbose | Varies by developer |
 
-The sweet spot is using both. AI generates the baseline coverage (happy path, edge cases, error handling). You add the tests that require understanding of your business domain and system behavior.
+The sweet spot is using both. AI generates the baseline coverage (happy path, edge cases, error handling). You add the tests that require understanding of your business domain and system behavior. This is the same collaborative philosophy behind effective [AI pair programming](/blog/ai-pair-programming/) — humans and AI each doing what they do best.
 
 This approach consistently produces better coverage in less time than either method alone. For teams looking to automate more of their development workflow, our [AI automation guide](/blog/ai-automation-guide/) covers the broader landscape.
 

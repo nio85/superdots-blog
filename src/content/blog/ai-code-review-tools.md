@@ -79,7 +79,7 @@ The lowest-risk starting point: let the AI generate PR summaries and description
 
 ### Run AI reviews alongside human reviews
 
-Don't replace your review process. Add AI as a first pass. The AI catches style issues, obvious bugs, and security concerns. Your human reviewers focus on logic, architecture, and whether the approach is right.
+Don't replace your review process. Add AI as a first pass. The AI catches style issues, obvious bugs, and security concerns. Your human reviewers focus on logic, architecture, and whether the approach is right. This fits naturally into a broader [AI pair programming](/blog/ai-pair-programming/) workflow where different AI tools handle different stages of the development lifecycle.
 
 A good workflow looks like this:
 
