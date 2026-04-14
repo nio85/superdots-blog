@@ -117,49 +117,49 @@ CookieConsent.run({
     translations: {
       en: {
         consentModal: {
-          title: 'We value your privacy',
+          title: 'A word on cookies.',
           description:
-            'We use analytics cookies (Google Analytics, Microsoft Clarity) to understand how you use our site and improve our content. No personal data is sold or shared. <a href="/cookie-policy/">Learn more</a>',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          showPreferencesBtn: 'Manage preferences',
+            'We use Google Analytics and Microsoft Clarity to see which articles actually get read. No personal data is sold, shared, or creepy. <a href="/cookie-policy/">The full story →</a>',
+          acceptAllBtn: 'Allow all',
+          acceptNecessaryBtn: 'Only essential',
+          showPreferencesBtn: 'Choose',
           footer:
-            '<a href="/privacy/">Privacy Policy</a> · <a href="/cookie-policy/">Cookie Policy</a>',
+            '<a href="/privacy/">Privacy</a> · <a href="/cookie-policy/">Cookie policy</a>',
         },
         preferencesModal: {
-          title: 'Cookie preferences',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          savePreferencesBtn: 'Save preferences',
+          title: 'Your call.',
+          acceptAllBtn: 'Allow all',
+          acceptNecessaryBtn: 'Only essential',
+          savePreferencesBtn: 'Save choices',
           closeIconLabel: 'Close',
           sections: [
             {
-              title: 'Your privacy, your choice',
+              title: 'Three categories. No dark patterns.',
               description:
-                'Choose which cookies you allow. Your preferences are saved for 6 months. Necessary cookies cannot be disabled — they keep the site working.',
+                'Toggle what you want. We remember your choice for 6 months. Essential cookies stay on — without them the site breaks.',
             },
             {
-              title: 'Strictly necessary',
+              title: 'Essential',
               description:
-                'These cookies are essential for the site to function. They include your theme preference and this consent cookie.',
+                'Theme preference and this very consent record. Nothing else.',
               linkedCategory: 'necessary',
             },
             {
               title: 'Analytics',
               description:
-                'Analytics cookies help us understand how visitors interact with our site. We use Google Analytics (GA4) and Microsoft Clarity for anonymous usage statistics and heatmaps.',
+                'Google Analytics (GA4) and Microsoft Clarity. Aggregate reading patterns and heatmaps — no names, no emails, no selling.',
               linkedCategory: 'analytics',
             },
             {
               title: 'Marketing',
               description:
-                'Marketing cookies may be used in the future for personalized content and ads. None are currently active.',
+                'Reserved for the future. Nothing active today.',
               linkedCategory: 'marketing',
             },
             {
-              title: 'More information',
+              title: 'Questions?',
               description:
-                'For questions about our cookie policy, please visit our <a href="/cookie-policy/">cookie policy page</a>.',
+                'The whole policy is <a href="/cookie-policy/">right here</a>. Written in plain English, no legalese.',
             },
           ],
         },

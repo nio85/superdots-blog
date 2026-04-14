@@ -586,3 +586,311 @@
     transform: none !important;
   }
 }
+
+/* ============================================================
+   v8 — Editorial direction (overrides pill/card defaults above)
+   ============================================================
+   Design intent: treat the consent card like a Superdots article
+   blockquote — thin red rule on the left, monospace eyebrow, sharp
+   navy primary, text-link secondaries. Less "compliance widget",
+   more "one-paragraph editor's note".
+   ============================================================ */
+
+/* Turn the top gradient bar into a vertical ruler on the left edge. */
+#cc-main .cm {
+  border-radius: 8px !important;
+  overflow: visible;
+  position: relative;
+}
+#cc-main .cm::before {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: auto;
+  width: 4px;
+  background: #E8363B;
+}
+
+/* Monospace eyebrow above the title — editorial "department" label. */
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.55em;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  position: relative;
+}
+#cc-main .cm__title::before,
+#cc-main .pm__title::before {
+  content: 'Cookies · Your call';
+  display: block;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E8363B;
+  margin-bottom: 0.625rem;
+  opacity: 0.9;
+}
+#cc-main .pm__title::before {
+  content: 'Preferences · Cookies';
+}
+
+/* Desc copy — slightly larger, less uniform justify feel. */
+#cc-main .cm__desc {
+  font-size: 0.9375em;
+  line-height: 1.72;
+}
+#cc-main .cm__desc a,
+#cc-main .pm__section-desc a {
+  color: #E8363B;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 54, 59, 0.35);
+  padding-bottom: 1px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+#cc-main .cm__desc a:hover,
+#cc-main .pm__section-desc a:hover {
+  border-bottom-color: #E8363B;
+}
+
+/* Primary button — solid navy block, sharp corners. */
+#cc-main .cm__btn--primary,
+#cc-main .pm__btn--primary {
+  background: #0B1222 !important;
+  color: #ffffff !important;
+  border-color: #0B1222 !important;
+  border-radius: 6px !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+#cc-main .cm__btn--primary:hover,
+#cc-main .pm__btn--primary:hover {
+  background: #E8363B !important;
+  border-color: #E8363B !important;
+  box-shadow: 0 4px 18px rgba(232, 54, 59, 0.32) !important;
+  transform: translateY(-1px);
+}
+[data-theme="dark"] #cc-main .cm__btn--primary,
+[data-theme="dark"] #cc-main .pm__btn--primary {
+  background: #F1F5F9 !important;
+  color: #0B1222 !important;
+  border-color: #F1F5F9 !important;
+}
+[data-theme="dark"] #cc-main .cm__btn--primary:hover,
+[data-theme="dark"] #cc-main .pm__btn--primary:hover {
+  background: #E8363B !important;
+  color: #ffffff !important;
+  border-color: #E8363B !important;
+}
+
+/* Secondary buttons — text-link ghost, no border, no fill. */
+#cc-main .cm__btn--secondary,
+#cc-main .pm__btn--secondary {
+  background: transparent !important;
+  border: none !important;
+  color: #0B1222 !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(11, 18, 34, 0.35);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  padding: 0.75rem 0.5rem !important;
+  min-height: 44px;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  flex: 0 1 auto !important;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+#cc-main .cm__btn--secondary:hover,
+#cc-main .pm__btn--secondary:hover {
+  color: #E8363B !important;
+  text-decoration-color: #E8363B;
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+[data-theme="dark"] #cc-main .cm__btn--secondary,
+[data-theme="dark"] #cc-main .pm__btn--secondary {
+  color: #E2E8F0 !important;
+  text-decoration-color: rgba(226, 232, 240, 0.35);
+}
+[data-theme="dark"] #cc-main .cm__btn--secondary:hover,
+[data-theme="dark"] #cc-main .pm__btn--secondary:hover {
+  color: #F87171 !important;
+  text-decoration-color: #F87171;
+}
+
+/* Button row — primary right-anchored, secondaries flow left. */
+#cc-main .cm__btns {
+  flex-direction: row-reverse !important;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  align-items: center;
+  padding: 0.75rem 1.5rem 1.5rem;
+}
+#cc-main .cm__btn--primary {
+  flex: 0 0 auto !important;
+  min-height: 46px;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Footer links — monospace, caps, small. */
+#cc-main .cm__footer {
+  background: transparent !important;
+  border-top: 1px solid #E2E8F0 !important;
+  padding: 0.875rem 1.5rem !important;
+}
+[data-theme="dark"] #cc-main .cm__footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+#cc-main .cm__links,
+#cc-main .cm__link-group {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#cc-main .cm__footer a {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748B;
+  border: none !important;
+}
+#cc-main .cm__footer a:hover {
+  color: #E8363B !important;
+}
+
+/* Preferences modal — same editorial palette, hairline rhythm. */
+#cc-main .pm {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+#cc-main .pm__header {
+  border-bottom: 1px solid #E2E8F0 !important;
+  position: relative;
+}
+[data-theme="dark"] #cc-main .pm__header {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* First section = the intro paragraph; keep it readable. */
+#cc-main .pm__section:first-child .pm__section-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.05em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+/* Category rows — flat, no card background, hairline above. */
+#cc-main .pm__section--toggle {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid #E2E8F0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+[data-theme="dark"] #cc-main .pm__section--toggle {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+#cc-main .pm__section--toggle .pm__section-title {
+  background: transparent !important;
+  border: none !important;
+  padding: 1.1em 5.5em 1.1em 0 !important;
+  min-height: 62px;
+  border-radius: 0 !important;
+}
+#cc-main .pm__section--toggle .pm__section-title:hover {
+  background: transparent !important;
+}
+#cc-main .pm__section--toggle.is-expanded .pm__section-title {
+  background: transparent !important;
+}
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 0 1.25em !important;
+}
+
+/* "Always active" badge — stronger, uppercase, tracked. */
+#cc-main .pm__badge {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.625rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase;
+  background: transparent !important;
+  color: #E8363B !important;
+  border: 1px solid rgba(232, 54, 59, 0.35) !important;
+  border-radius: 4px !important;
+  padding: 0 0.55em 1px !important;
+  height: 22px !important;
+}
+
+/* PM footer — same row-reverse rhythm as consent modal. */
+#cc-main .pm__footer {
+  border-top: 1px solid #E2E8F0 !important;
+  background: transparent !important;
+  flex-direction: row-reverse !important;
+  flex-wrap: wrap !important;
+  gap: 0.25rem 1rem !important;
+  align-items: center;
+}
+[data-theme="dark"] #cc-main .pm__footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+#cc-main .pm__btn--primary {
+  flex: 0 0 auto !important;
+  min-height: 46px !important;
+  border-radius: 6px !important;
+  padding: 0.75rem 1.5rem !important;
+}
+#cc-main .pm__btn--secondary {
+  min-height: 44px !important;
+  padding: 0.75rem 0.5rem !important;
+}
+
+/* Mobile tuning for editorial layout. */
+@media (max-width: 640px) {
+  #cc-main .cm {
+    border-radius: 14px 14px 0 0 !important;
+  }
+  #cc-main .cm::before {
+    border-radius: 0;
+    width: 3px;
+  }
+  #cc-main .cm__title,
+  #cc-main .pm__title {
+    font-size: 1.35em;
+  }
+  #cc-main .cm__btns {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  #cc-main .cm__btn--primary {
+    width: 100%;
+    min-height: 48px;
+  }
+  #cc-main .cm__btn--secondary {
+    width: 100%;
+    text-align: center;
+    min-height: 42px;
+  }
+  #cc-main .pm__footer {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  #cc-main .pm__btn--primary {
+    width: 100%;
+  }
+  #cc-main .pm__btn--secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
