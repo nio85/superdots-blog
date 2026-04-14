@@ -89,7 +89,7 @@ AI guided selling tools provide pricing guardrails: "deals in this segment close
 
 ### 5. Content finally gets used
 
-Most companies have a library of battle cards, case studies, and competitor comparisons that reps never look at — not because the content isn't useful, but because reps can't find the right thing at the right time.
+Most companies have a library of battle cards, case studies, and competitor comparisons that reps never look at — not because the content isn't useful, but because reps can't find the right thing at the right time. If you're building out that competitive content library, dedicated [battlecard software](/blog/ai-battlecard-tools-sales-teams/) can automate both the creation and maintenance side of the problem.
 
 Guided selling tools solve this by surfacing the specific content that's relevant to the current deal: "this prospect came from a Salesforce environment — here's the migration guide they typically need to see before they commit."
 

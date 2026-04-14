@@ -132,7 +132,7 @@ AI competitive analysis tools monitor competitor activity continuously — websi
 
 For reps, this means walking into competitive deals with current information instead of six-month-old talking points. For product marketing, it means spotting competitive shifts early enough to respond strategically.
 
-**Go deeper:** [AI Competitive Analysis: How Sales Teams Prep Smarter, Faster](/blog/ai-competitive-analysis/) shows how to set up automated competitor monitoring and build battlecards that stay current.
+**Go deeper:** [AI Competitive Analysis: How Sales Teams Prep Smarter, Faster](/blog/ai-competitive-analysis/) shows how to set up automated competitor monitoring and build battlecards that stay current. For a platform-by-platform comparison of dedicated [competitive battlecard tools](/blog/ai-battlecard-tools-sales-teams/) — including free options, enterprise platforms, and a team-size decision guide — see our battlecard software guide.
 
 ## Proposal generation
 
