@@ -214,7 +214,7 @@
   }
 }
 
-/* ── Brand accent bar — red→teal gradient at modal top */
+/* ── Brand accent bar — red→dark-navy gradient at modal top */
 #cc-main .cm::before {
   content: '';
   display: block;
@@ -223,7 +223,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #E8363B 0%, #CC2D32 55%, #14B8A6 100%);
+  background: linear-gradient(90deg, #E8363B 0%, #CC2D32 55%, #0B1222 100%);
   z-index: 10;
   pointer-events: none;
   border-radius: 0; /* let overflow:hidden on .cm handle corners */
@@ -361,11 +361,11 @@
   line-height: 1.65;
 }
 
-/* ── "Always active" badge — teal pill, intentional */
+/* ── "Always active" badge — red-tinted pill */
 #cc-main .pm__badge {
-  background: rgba(20, 184, 166, 0.1) !important;
-  color: #0D9488 !important;
-  border: 1px solid rgba(20, 184, 166, 0.28) !important;
+  background: rgba(232, 54, 59, 0.08) !important;
+  color: #CC2D32 !important;
+  border: 1px solid rgba(232, 54, 59, 0.22) !important;
   font-weight: 600;
   font-size: 0.75rem;
   letter-spacing: 0.01em;
@@ -375,16 +375,16 @@
 }
 
 [data-theme="dark"] #cc-main .pm__badge {
-  background: rgba(20, 184, 166, 0.14) !important;
-  color: #2DD4BF !important;
-  border-color: rgba(20, 184, 166, 0.22) !important;
+  background: rgba(232, 54, 59, 0.12) !important;
+  color: #F87171 !important;
+  border-color: rgba(232, 54, 59, 0.28) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   [data-theme="auto"] #cc-main .pm__badge {
-    background: rgba(20, 184, 166, 0.14) !important;
-    color: #2DD4BF !important;
-    border-color: rgba(20, 184, 166, 0.22) !important;
+    background: rgba(232, 54, 59, 0.12) !important;
+    color: #F87171 !important;
+    border-color: rgba(232, 54, 59, 0.28) !important;
   }
 }
 
@@ -483,6 +483,19 @@
 
   #cc-main .cm__btns {
     padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0.375rem;
+  }
+
+  /* Compact button sizing on mobile so all 3 fit in one row */
+  #cc-main .cm__btn {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.625rem 0.5rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
   }
 }
 
