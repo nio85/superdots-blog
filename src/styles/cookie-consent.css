@@ -596,11 +596,12 @@
    more "one-paragraph editor's note".
    ============================================================ */
 
-/* Turn the top gradient bar into a vertical ruler on the left edge. */
+/* Turn the top gradient bar into a vertical ruler on the left edge.
+   NOTE: we don't touch `position` here — the mobile block already pins
+   the card to the bottom with position:fixed, and overriding that
+   without a media guard hides the banner on phones. */
 #cc-main .cm {
   border-radius: 8px !important;
-  overflow: visible;
-  position: relative;
 }
 #cc-main .cm::before {
   top: 0;
@@ -610,6 +611,20 @@
   height: auto;
   width: 4px;
   background: #E8363B;
+}
+
+/* Lock the page underneath whenever a cookie modal is open.
+   vanilla-cookieconsent v3 adds these classes on <html> while visible;
+   disablePageInteraction blocks clicks but not iOS touch-scroll. */
+html.show--consent,
+html.show--preferences {
+  overflow: hidden !important;
+  touch-action: none;
+}
+html.show--consent body,
+html.show--preferences body {
+  overflow: hidden !important;
+  overscroll-behavior: contain;
 }
 
 /* Monospace eyebrow above the title — editorial "department" label. */
