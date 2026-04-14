@@ -20,6 +20,7 @@ faqs:
     answer: "For teams under 5 reps, AI roleplay tools are almost certainly worth it — even Hyperbound's entry-level pricing is cheaper than one lost deal per month from a rep who freezes on a pricing objection. Real-time in-call tools like Gong are harder to justify at that scale because the platform fee ($5,000+ minimum) spreads poorly across a tiny team. Start with a practice tool, get reps competent, then evaluate real-time tooling as you grow."
   - question: "How long does it take to see results from AI objection handling training?"
     answer: "Based on documentation and user reviews, teams using AI roleplay tools typically report rep confidence improvements within 2–4 weeks of consistent use (3–5 practice sessions per week). Measurable call outcomes — like objection-to-next-step conversion rates — typically take 6–8 weeks to show statistical patterns. The variable is practice volume: reps who treat it as an optional activity see slower gains than those with structured weekly practice requirements built into their sales process."
+heroImage: "/images/blog/ai-sales-objection-handling-tools.webp"
 ---
 
 There are two completely different types of AI tools for sales objection handling, and most sales teams are using the wrong one for their actual problem.
