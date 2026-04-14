@@ -108,7 +108,7 @@ The data layer is where conversation intelligence gets really powerful. Across t
 
 Forecast accuracy in most sales organizations is dismal. Reps are optimistic by nature. Managers don't have time to deep-dive every deal. The result: surprises at quarter end when "committed" deals slip or disappear.
 
-AI deal intelligence tools analyze the signals that predict deal outcomes — email sentiment, meeting frequency, stakeholder engagement, timeline changes, competitive mentions, and dozens of other factors — to flag at-risk deals before they stall. Instead of waiting for a rep to admit a deal is in trouble, managers see early warning signals and can intervene while there's still time to save it.
+AI deal intelligence tools analyze the signals that predict deal outcomes — email sentiment, meeting frequency, stakeholder engagement, timeline changes, competitive mentions, and dozens of other factors — to flag at-risk deals before they stall. Instead of waiting for a rep to admit a deal is in trouble, managers see early warning signals and can intervene while there's still time to save it. Those risk signals can then feed into [AI guided selling](/blog/ai-guided-selling/) systems that surface specific next-best-action recommendations to help reps get the deal back on track.
 
 The best deal intelligence tools go beyond binary "at risk / on track" classifications. They surface the specific factors driving risk — missing stakeholders, declining engagement, stalled procurement — so managers know exactly what needs to happen to get a deal back on track.
 

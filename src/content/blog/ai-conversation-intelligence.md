@@ -73,7 +73,7 @@ The pattern holds across deal stages:
 
 AI conversation intelligence calculates this automatically for every call. A manager can pull up a dashboard and instantly see which reps are over-talking and which are letting prospects drive the conversation. No guesswork. No sampling.
 
-The coaching conversation becomes simple: "You averaged 71% talk time across your discovery calls last week. That is well above the team benchmark. Let us pick two calls and look at where you could have asked a question instead of explaining."
+The coaching conversation becomes simple: "You averaged 71% talk time across your discovery calls last week. That is well above the team benchmark. Let us pick two calls and look at where you could have asked a question instead of explaining." For reps who understand the pattern but need in-the-moment help, [AI guided selling](/blog/ai-guided-selling/) tools can surface real-time prompts during live calls.
 
 ## Objection Tracking: Know What Your Market Is Pushing Back On
 
