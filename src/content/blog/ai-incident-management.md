@@ -1,6 +1,6 @@
 ---
-title: 'AI Incident Management: Detect and Resolve'
-description: 'AI incident management accelerates detection, triage, and resolution — from anomaly detection to root cause analysis to automated runbooks for faster recovery.'
+title: 'AI Incident Management Tools (2026): Triage Faster With AI'
+description: 'How PagerDuty, Datadog, Moogsoft & BigPanda use AI for incident detection, alert correlation, root cause analysis, and automated runbooks to cut MTTR.'
 pubDate: "2026-03-17T17:18:00Z"
 author: 'Superdots Team'
 department: 'engineering'
