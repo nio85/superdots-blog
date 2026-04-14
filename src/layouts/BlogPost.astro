@@ -9,6 +9,7 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import TableOfContents from '../components/TableOfContents.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 import { authors } from '../data/authors';
@@ -187,6 +188,7 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
 		<Footer />
+		<CookieConsent />
 		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
 		<template id="midpost-cta-template">
 			<aside class="newsletter newsletter--midpost" data-source="article-inline" aria-label="Newsletter signup">
