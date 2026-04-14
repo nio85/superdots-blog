@@ -547,6 +547,31 @@
   #cc-main .cm__links {
     padding: 0 1.25rem;
   }
+
+  /* ── Preferences modal — compact 3-button row on mobile ── */
+  #cc-main .pm {
+    width: calc(100% - 1.5rem);
+    max-width: 100%;
+    margin: 0 0.75rem;
+  }
+
+  #cc-main .pm__header,
+  #cc-main .pm__body {
+    padding: 1.25rem 1.25rem;
+  }
+
+  #cc-main .pm__footer {
+    padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
+    gap: 0.5rem;
+  }
+
+  #cc-main .pm__btn {
+    min-height: 42px;
+    padding: 0.5rem 0.375rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    letter-spacing: 0;
+  }
 }
 
 /* ─────────────────────────────────────────────
