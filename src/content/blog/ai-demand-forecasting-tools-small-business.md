@@ -167,15 +167,15 @@ The company raised $3.7M in seed funding (2021) and is still in growth mode. Pub
 
 The three variables that matter most when comparing demand forecasting software pricing: what you pay to get started, whether there's a real free trial (not just a demo call), and how costs scale as your business grows.
 
-| Tool | Starting Price | Free Tier | Best For |
-|---|---|---|---|
-| **StockTrim** | $39/month (Shopify, 500 SKUs) | 14-day free trial | Budget-conscious SMBs needing multi-platform flexibility |
-| **Prediko** | $49/month (GMV-based, Shopify only) | 14-day free trial | Shopify-only D2C brands under $1M GMV |
-| **Inventory Planner** | ~$120–250/month (revenue-based) | 14-day free trial | Multi-channel merchants doing $1M+ in revenue |
-| **Netstock** | ~$900/month | No — demo only | SMBs with existing ERP (NetSuite, Sage, SAP B1) |
-| **Flowlity** | Contact (enterprise range) | No — demo only | Mid-market/enterprise supply chain teams |
-| **Datup.ai** | Contact (~$2,000+/month) | No — demo only | LATAM-focused supply chain operations |
-| **Singuli** | Contact | No — demo only | Multi-location retailers with complex local patterns |
+| Tool | Starting Price | Free Tier | Best For | Limitation |
+|---|---|---|---|---|
+| **StockTrim** | $39/month (Shopify, 500 SKUs) | 14-day free trial | Budget-conscious SMBs needing multi-platform flexibility | Limited analytics depth vs. mid-market tools |
+| **Prediko** | $49/month (GMV-based, Shopify only) | 14-day free trial | Shopify-only D2C brands under $1M GMV | Shopify-only; no multi-platform support |
+| **Inventory Planner** | ~$120–250/month (revenue-based) | 14-day free trial | Multi-channel merchants doing $1M+ in revenue | Quote-based pricing — hard to compare without a sales call |
+| **Netstock** | ~$900/month | No — demo only | SMBs with existing ERP (NetSuite, Sage, SAP B1) | Requires ERP; steep onboarding curve |
+| **Flowlity** | Contact (enterprise range) | No — demo only | Mid-market/enterprise supply chain teams | No self-serve trial; enterprise sales process required |
+| **Datup.ai** | Contact (~$2,000+/month) | No — demo only | LATAM-focused supply chain operations | No self-serve trial; enterprise sales process required |
+| **Singuli** | Contact | No — demo only | Multi-location retailers with complex local patterns | No self-serve trial; enterprise sales process required |
 
 *Prices as of April 2026. StockTrim's non-Shopify plans start at ~$199/month. Prediko's fee scales with Shopify GMV — the $49 entry tier applies to early-stage brands. Inventory Planner pricing is quote-based; the $120–250 range reflects typical small business tiers per Capterra (2026). Always confirm current pricing with each vendor before purchasing.*
 
