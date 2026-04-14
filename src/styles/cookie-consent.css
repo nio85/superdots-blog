@@ -1,175 +1,153 @@
 /* ============================================================
-   CookieConsent v3 — Superdots Brand Overrides
+   CookieConsent v3 — Superdots Premium Brand Design
    Library: vanilla-cookieconsent by orestbida
    https://cookieconsent.orestbida.com/
+
+   Design system: src/styles/global.css
    ============================================================ */
 
 /* ─────────────────────────────────────────────
-   Light Mode (default)
+   Core CSS Custom Properties — Light Mode
    ───────────────────────────────────────────── */
 #cc-main {
   /* Typography */
   --cc-font-family: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Shape */
-  --cc-modal-border-radius: 12px;
-  --cc-btn-border-radius: 8px;
-  --cc-cookie-category-block-border-radius: 8px;
+  --cc-modal-border-radius: 16px;
+  --cc-btn-border-radius: 50px; /* pill */
+  --cc-modal-margin: 1.25rem;
 
-  /* Background */
+  /* ── Base text color (used as #cc-main { color: var(...) }) */
+  /* IMPORTANT: This is the primary text color, NOT an accent.
+     Links/accents are handled via --cc-link-color and button vars. */
+  --cc-primary-color: #0B1222;    /* sd-navy — modal title & base text */
+  --cc-secondary-color: #475569;  /* sd-gray-600 — desc & body text */
+  --cc-link-color: #E8363B;       /* sd-red — links */
+
+  /* ── Background */
   --cc-bg: #ffffff;
 
-  /* Primary accent (links, focus rings) */
-  --cc-primary-color: #E8363B;
-
   /* ── Primary button: Accept all */
-  --cc-btn-primary-bg:              #E8363B;
-  --cc-btn-primary-color:           #ffffff;
-  --cc-btn-primary-border-color:    #E8363B;
-  --cc-btn-primary-hover-bg:        #CC2D32;
-  --cc-btn-primary-hover-color:     #ffffff;
+  --cc-btn-primary-bg:               #E8363B;
+  --cc-btn-primary-color:            #ffffff;
+  --cc-btn-primary-border-color:     #E8363B;
+  --cc-btn-primary-hover-bg:         #CC2D32;
+  --cc-btn-primary-hover-color:      #ffffff;
   --cc-btn-primary-hover-border-color: #CC2D32;
 
   /* ── Secondary button: Reject all / Save preferences */
-  --cc-btn-secondary-bg:              transparent;
-  --cc-btn-secondary-color:           #1E293B;
-  --cc-btn-secondary-border-color:    #CBD5E1;
-  --cc-btn-secondary-hover-bg:        #F1F5F9;
-  --cc-btn-secondary-hover-color:     #0B1222;
-  --cc-btn-secondary-hover-border-color: #0B1222;
-
-  /* ── Flat/text button: Customize */
-  --cc-btn-flat-bg:             transparent;
-  --cc-btn-flat-color:          #475569;
-  --cc-btn-flat-hover-bg:       #F1F5F9;
-  --cc-btn-flat-hover-color:    #0B1222;
+  --cc-btn-secondary-bg:               #ffffff;
+  --cc-btn-secondary-color:            #0B1222;
+  --cc-btn-secondary-border-color:     #CBD5E1;
+  --cc-btn-secondary-hover-bg:         #F1F5F9;
+  --cc-btn-secondary-hover-color:      #0B1222;
+  --cc-btn-secondary-hover-border-color: #94A3B8;
 
   /* ── Separators */
   --cc-separator-border-color: #E2E8F0;
 
-  /* ── Text */
-  --cc-title-color: #0B1222;
-  --cc-body-color:  #475569;
-
   /* ── Backdrop */
-  --cc-overlay-bg: rgba(11, 18, 34, 0.55);
+  --cc-overlay-bg: rgba(11, 18, 34, 0.72);
 
   /* ── Cookie category blocks */
-  --cc-cookie-category-block-bg:       #F8FAFC;
-  --cc-cookie-category-block-bg-hover: #F1F5F9;
-  --cc-cookie-category-block-border:   #E2E8F0;
-  --cc-section-category-border:        #E2E8F0;
+  --cc-cookie-category-block-bg:               #F8FAFC;
+  --cc-cookie-category-block-border:           #E2E8F0;
+  --cc-cookie-category-block-hover-bg:         #F1F5F9;
+  --cc-cookie-category-block-hover-border:     #CBD5E1;
+  --cc-cookie-category-expanded-block-bg:      #F1F5F9;
+  --cc-cookie-category-expanded-block-hover-bg: #E2E8F0;
+  --cc-section-category-border: #E2E8F0;
 
-  /* ── Toggle switches */
-  --cc-toggle-bg-off:         #CBD5E1;
-  --cc-toggle-bg-on:          #E8363B;
-  --cc-toggle-bg-readonly:    #E2E8F0;
-  --cc-toggle-knob-bg:        #ffffff;
-  --cc-toggle-knob-icon-color: #94A3B8;
-
-  /* ── "Always active" badge */
-  --cc-badge-bg:            #CCFBF1;
-  --cc-badge-color:         #0D9488;
-  --cc-badge-border-color:  transparent;
-  --cc-badge-border-radius: 9999px;
-
-  /* ── Cookie details table */
-  --cc-cookie-table-border: #E2E8F0;
-
-  /* ── Preferences modal scrollbar */
-  --cc-pm-scrollbar-track-bg:       #F1F5F9;
-  --cc-pm-scrollbar-thumb-bg:       #CBD5E1;
-  --cc-pm-scrollbar-thumb-hover-bg: #94A3B8;
+  /* ── Toggle switches (correct library variable names) */
+  --cc-toggle-off-bg:            #CBD5E1;
+  --cc-toggle-on-bg:             #E8363B;
+  --cc-toggle-off-knob-bg:       #ffffff;
+  --cc-toggle-on-knob-bg:        #ffffff;
+  --cc-toggle-readonly-bg:       #E2E8F0;
+  --cc-toggle-readonly-knob-bg:  #ffffff;
+  --cc-toggle-readonly-knob-icon-color: #94A3B8;
 
   /* ── Consent modal footer */
-  --cc-footer-bg:         #F8FAFC;
-  --cc-footer-color:      #64748B;
-  --cc-footer-link-color: #E8363B;
+  --cc-footer-bg:           #F8FAFC;
+  --cc-footer-color:        #64748B;
+  --cc-footer-border-color: #E2E8F0;
 }
 
 /* ─────────────────────────────────────────────
-   Dark Mode
-   Triggered by [data-theme="dark"] on <html>
+   Dark Mode — true deep navy
    ───────────────────────────────────────────── */
 [data-theme="dark"] #cc-main {
-  --cc-bg: #1E293B;
+  --cc-primary-color:   #F1F5F9;   /* light text */
+  --cc-secondary-color: #94A3B8;   /* muted text */
+  --cc-link-color:      #F87171;   /* lighter red for dark bg */
 
-  --cc-btn-secondary-bg:                 transparent;
-  --cc-btn-secondary-color:              #CBD5E1;
-  --cc-btn-secondary-border-color:       #475569;
-  --cc-btn-secondary-hover-bg:           #334155;
-  --cc-btn-secondary-hover-color:        #F1F5F9;
-  --cc-btn-secondary-hover-border-color: #94A3B8;
+  --cc-bg: #0B1222;                /* sd-navy — full brand immersion */
 
-  --cc-btn-flat-bg:           transparent;
-  --cc-btn-flat-color:        #94A3B8;
-  --cc-btn-flat-hover-bg:     #334155;
-  --cc-btn-flat-hover-color:  #F1F5F9;
+  --cc-btn-secondary-bg:               rgba(255, 255, 255, 0.06);
+  --cc-btn-secondary-color:            #E2E8F0;
+  --cc-btn-secondary-border-color:     rgba(255, 255, 255, 0.12);
+  --cc-btn-secondary-hover-bg:         rgba(255, 255, 255, 0.1);
+  --cc-btn-secondary-hover-color:      #F8FAFC;
+  --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.22);
 
-  --cc-separator-border-color: #334155;
+  --cc-separator-border-color: rgba(255, 255, 255, 0.08);
 
-  --cc-title-color: #F1F5F9;
-  --cc-body-color:  #94A3B8;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.82);
 
-  --cc-overlay-bg: rgba(0, 0, 0, 0.65);
+  --cc-cookie-category-block-bg:               rgba(255, 255, 255, 0.04);
+  --cc-cookie-category-block-border:           rgba(255, 255, 255, 0.08);
+  --cc-cookie-category-block-hover-bg:         rgba(255, 255, 255, 0.07);
+  --cc-cookie-category-block-hover-border:     rgba(255, 255, 255, 0.13);
+  --cc-cookie-category-expanded-block-bg:      rgba(255, 255, 255, 0.06);
+  --cc-cookie-category-expanded-block-hover-bg: rgba(255, 255, 255, 0.09);
+  --cc-section-category-border: rgba(255, 255, 255, 0.08);
 
-  --cc-cookie-category-block-bg:       #0F172A;
-  --cc-cookie-category-block-bg-hover: #1E293B;
-  --cc-cookie-category-block-border:   #334155;
-  --cc-section-category-border:        #334155;
+  --cc-toggle-off-bg:           rgba(255, 255, 255, 0.2);
+  --cc-toggle-readonly-bg:      rgba(255, 255, 255, 0.1);
+  --cc-toggle-readonly-knob-bg: rgba(255, 255, 255, 0.55);
+  --cc-toggle-readonly-knob-icon-color: rgba(255, 255, 255, 0.35);
 
-  --cc-toggle-bg-off:         #475569;
-  --cc-toggle-bg-readonly:    #334155;
-  --cc-toggle-knob-icon-color: #64748B;
-
-  --cc-badge-bg:    rgba(20, 184, 166, 0.15);
-  --cc-badge-color: #2DD4BF;
-
-  --cc-cookie-table-border: #334155;
-
-  --cc-pm-scrollbar-track-bg:       #0F172A;
-  --cc-pm-scrollbar-thumb-bg:       #334155;
-  --cc-pm-scrollbar-thumb-hover-bg: #475569;
-
-  --cc-footer-bg:         #0F172A;
-  --cc-footer-color:      #64748B;
-  --cc-footer-link-color: #F87171;
+  --cc-footer-bg:           rgba(255, 255, 255, 0.03);
+  --cc-footer-color:        #64748B;
+  --cc-footer-border-color: rgba(255, 255, 255, 0.07);
 }
 
 /* System dark preference with auto theme */
 @media (prefers-color-scheme: dark) {
   [data-theme="auto"] #cc-main {
-    --cc-bg: #1E293B;
-    --cc-btn-secondary-bg:                 transparent;
-    --cc-btn-secondary-color:              #CBD5E1;
-    --cc-btn-secondary-border-color:       #475569;
-    --cc-btn-secondary-hover-bg:           #334155;
-    --cc-btn-secondary-hover-color:        #F1F5F9;
-    --cc-btn-secondary-hover-border-color: #94A3B8;
-    --cc-btn-flat-bg:           transparent;
-    --cc-btn-flat-color:        #94A3B8;
-    --cc-btn-flat-hover-bg:     #334155;
-    --cc-btn-flat-hover-color:  #F1F5F9;
-    --cc-separator-border-color: #334155;
-    --cc-title-color: #F1F5F9;
-    --cc-body-color:  #94A3B8;
-    --cc-overlay-bg: rgba(0, 0, 0, 0.65);
-    --cc-cookie-category-block-bg:       #0F172A;
-    --cc-cookie-category-block-bg-hover: #1E293B;
-    --cc-cookie-category-block-border:   #334155;
-    --cc-section-category-border:        #334155;
-    --cc-toggle-bg-off:          #475569;
-    --cc-toggle-bg-readonly:     #334155;
-    --cc-toggle-knob-icon-color: #64748B;
-    --cc-badge-bg:    rgba(20, 184, 166, 0.15);
-    --cc-badge-color: #2DD4BF;
-    --cc-cookie-table-border: #334155;
-    --cc-pm-scrollbar-track-bg:       #0F172A;
-    --cc-pm-scrollbar-thumb-bg:       #334155;
-    --cc-pm-scrollbar-thumb-hover-bg: #475569;
-    --cc-footer-bg:         #0F172A;
-    --cc-footer-color:      #64748B;
-    --cc-footer-link-color: #F87171;
+    --cc-primary-color:   #F1F5F9;
+    --cc-secondary-color: #94A3B8;
+    --cc-link-color:      #F87171;
+
+    --cc-bg: #0B1222;
+
+    --cc-btn-secondary-bg:               rgba(255, 255, 255, 0.06);
+    --cc-btn-secondary-color:            #E2E8F0;
+    --cc-btn-secondary-border-color:     rgba(255, 255, 255, 0.12);
+    --cc-btn-secondary-hover-bg:         rgba(255, 255, 255, 0.1);
+    --cc-btn-secondary-hover-color:      #F8FAFC;
+    --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.22);
+
+    --cc-separator-border-color: rgba(255, 255, 255, 0.08);
+    --cc-overlay-bg: rgba(0, 0, 0, 0.82);
+
+    --cc-cookie-category-block-bg:               rgba(255, 255, 255, 0.04);
+    --cc-cookie-category-block-border:           rgba(255, 255, 255, 0.08);
+    --cc-cookie-category-block-hover-bg:         rgba(255, 255, 255, 0.07);
+    --cc-cookie-category-block-hover-border:     rgba(255, 255, 255, 0.13);
+    --cc-cookie-category-expanded-block-bg:      rgba(255, 255, 255, 0.06);
+    --cc-cookie-category-expanded-block-hover-bg: rgba(255, 255, 255, 0.09);
+    --cc-section-category-border: rgba(255, 255, 255, 0.08);
+
+    --cc-toggle-off-bg:           rgba(255, 255, 255, 0.2);
+    --cc-toggle-readonly-bg:      rgba(255, 255, 255, 0.1);
+    --cc-toggle-readonly-knob-bg: rgba(255, 255, 255, 0.55);
+    --cc-toggle-readonly-knob-icon-color: rgba(255, 255, 255, 0.35);
+
+    --cc-footer-bg:           rgba(255, 255, 255, 0.03);
+    --cc-footer-color:        #64748B;
+    --cc-footer-border-color: rgba(255, 255, 255, 0.07);
   }
 }
 
@@ -177,56 +155,295 @@
    Typography — Space Grotesk headings & buttons
    ───────────────────────────────────────────── */
 #cc-main .cm__title,
-#cc-main .pm__title,
+#cc-main .pm__title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.15em;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
 #cc-main .pm__section-title {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 600;
+  font-size: 0.95em;
   letter-spacing: -0.01em;
+}
+
+#cc-main .pm__section:first-child .pm__section-title {
+  font-size: 1em;
+  font-weight: 700;
 }
 
 #cc-main .cm__btn,
 #cc-main .pm__btn {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 600;
+  font-size: 0.875rem;
   letter-spacing: 0.01em;
 }
 
 /* ─────────────────────────────────────────────
-   Consent modal — centered, elevated
+   Consent Modal — elevated premium card
    ───────────────────────────────────────────── */
 #cc-main .cm {
+  max-width: 28rem;          /* wider than default 24rem */
   box-shadow:
-    0 24px 64px rgba(11, 18, 34, 0.18),
-    0 8px 24px rgba(11, 18, 34, 0.10);
+    0 0 0 1px rgba(11, 18, 34, 0.05),
+    0 4px 16px rgba(11, 18, 34, 0.1),
+    0 20px 56px rgba(11, 18, 34, 0.18),
+    0 40px 80px rgba(11, 18, 34, 0.1);
+  /* overflow: hidden already set by library */
+}
+
+[data-theme="dark"] #cc-main .cm {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.35),
+    0 20px 56px rgba(0, 0, 0, 0.5),
+    0 40px 80px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] #cc-main .cm {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.35),
+      0 20px 56px rgba(0, 0, 0, 0.5),
+      0 40px 80px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ── Brand accent bar — red→teal gradient at modal top */
+#cc-main .cm::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #E8363B 0%, #CC2D32 55%, #14B8A6 100%);
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 0; /* let overflow:hidden on .cm handle corners */
+}
+
+/* ── Content padding */
+#cc-main .cm__desc,
+#cc-main .cm__title {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#cc-main .cm__texts {
+  padding-top: 1.5rem;
+}
+
+#cc-main .cm__title + .cm__desc {
+  margin-top: 0.875rem;
+}
+
+#cc-main .cm__desc {
+  font-size: 0.9em;
+  line-height: 1.65;
+  padding-bottom: 0.25rem;
+}
+
+/* ── Button area */
+#cc-main .cm__btns {
+  padding: 1.125rem 1.5rem 1.5rem;
+  gap: 0.375rem;
+}
+
+/* ── Buttons — pill shape, generous sizing */
+#cc-main .cm__btn {
+  min-height: 48px;
+  padding: 0.75rem 1.75rem;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Accept all — primary CTA with glow */
+#cc-main .cm__btn--primary:hover {
+  box-shadow: 0 6px 24px rgba(232, 54, 59, 0.4);
+  transform: translateY(-2px);
+}
+
+#cc-main .cm__btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
+}
+
+/* ── Footer — links */
+#cc-main .cm__footer {
+  padding: 0.625rem 0 0.75rem;
+}
+
+#cc-main .cm__links {
+  padding: 0 1.5rem;
+}
+
+#cc-main .cm__link-group {
+  font-size: 0.8125rem;
+}
+
+#cc-main .cm__link-group > * + * {
+  margin-left: 1.25rem;
 }
 
 /* ─────────────────────────────────────────────
-   Button polish — transitions & hover lift
+   Preferences Modal — polished enterprise layout
    ───────────────────────────────────────────── */
-#cc-main .cm__btn,
+#cc-main .pm {
+  box-shadow:
+    0 0 0 1px rgba(11, 18, 34, 0.06),
+    0 8px 32px rgba(11, 18, 34, 0.16),
+    0 24px 64px rgba(11, 18, 34, 0.12);
+  overflow: hidden;
+}
+
+[data-theme="dark"] #cc-main .pm {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 24px 64px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] #cc-main .pm {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 24px 64px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* PM header — more breathing room */
+#cc-main .pm__header {
+  padding: 1.5rem 1.75rem;
+}
+
+/* PM body — more padding */
+#cc-main .pm__body,
+#cc-main .pm__footer {
+  padding: 1.25rem 1.75rem;
+}
+
+/* Intro section — more visual separation */
+#cc-main .pm__section:first-child {
+  padding: 0 0 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Category block sections — card feel */
+#cc-main .pm__section--toggle .pm__section-title {
+  padding: 1em 5.5em 1em 1.25em;
+  min-height: 62px;
+  border-radius: var(--cc-modal-border-radius) !important;
+}
+
+#cc-main .pm__section--toggle.is-expanded .pm__section-title {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+  border-radius: 0 0 12px 12px !important;
+}
+
+#cc-main .pm__section-desc {
+  font-size: 0.875em;
+  line-height: 1.65;
+}
+
+/* ── "Always active" badge — teal pill, intentional */
+#cc-main .pm__badge {
+  background: rgba(20, 184, 166, 0.1) !important;
+  color: #0D9488 !important;
+  border: 1px solid rgba(20, 184, 166, 0.28) !important;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  height: 24px;
+  padding: 0 0.7em 1px;
+  border-radius: 9999px !important;
+}
+
+[data-theme="dark"] #cc-main .pm__badge {
+  background: rgba(20, 184, 166, 0.14) !important;
+  color: #2DD4BF !important;
+  border-color: rgba(20, 184, 166, 0.22) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] #cc-main .pm__badge {
+    background: rgba(20, 184, 166, 0.14) !important;
+    color: #2DD4BF !important;
+    border-color: rgba(20, 184, 166, 0.22) !important;
+  }
+}
+
+/* Close button — circle shape */
+#cc-main .pm__close-btn {
+  border-radius: 50% !important;
+  width: 36px;
+  height: 36px;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+/* ── Preferences modal buttons */
 #cc-main .pm__btn {
-  padding: 0.625rem 1.25rem;
-  font-size: 0.875rem;
+  min-height: 44px;
+  padding: 0.625rem 1.5rem;
   transition:
     background-color 150ms ease,
     border-color 150ms ease,
+    color 150ms ease,
     box-shadow 150ms ease,
     transform 150ms ease;
 }
 
-#cc-main .cm__btn--primary:hover,
 #cc-main .pm__btn--primary:hover {
-  box-shadow: 0 4px 12px rgba(232, 54, 59, 0.35);
+  box-shadow: 0 4px 16px rgba(232, 54, 59, 0.38);
   transform: translateY(-1px);
 }
 
+#cc-main .pm__btn--primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── PM footer spacing */
+#cc-main .pm__btn + .pm__btn,
+#cc-main .pm__btn-group + .pm__btn-group {
+  margin-left: 0.5rem;
+}
+
 /* ─────────────────────────────────────────────
-   Footer links in consent modal
+   Links — ensure red color in footer
    ───────────────────────────────────────────── */
-#cc-main .cm__footer a,
-#cc-main .pm__footer a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+#cc-main .cm__footer a:hover,
+#cc-main .pm__footer a:hover {
+  color: #E8363B;
+}
+
+[data-theme="dark"] #cc-main .cm__footer a:hover,
+[data-theme="dark"] #cc-main .pm__footer a:hover {
+  color: #F87171;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] #cc-main .cm__footer a:hover,
+  [data-theme="auto"] #cc-main .pm__footer a:hover {
+    color: #F87171;
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -234,23 +451,38 @@
    ───────────────────────────────────────────── */
 #cc-main :focus-visible {
   outline: 2px solid #E8363B;
-  outline-offset: 2px;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ─────────────────────────────────────────────
    Mobile — full-width bottom sheet
    ───────────────────────────────────────────── */
-@media (max-width: 600px) {
-  #cc-main .cm[data-position*="middle"],
-  #cc-main .cm[data-position*="bottom"] {
+@media (max-width: 640px) {
+  #cc-main .cm {
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    border-radius: 16px 16px 0 0;
+    border-radius: 20px 20px 0 0;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    max-width: 100%;
+    /* reset middle positioning */
+    top: auto;
+    transform: none;
+  }
+
+  #cc-main .cm::before {
+    border-radius: 0; /* parent clips it */
+  }
+
+  #cc-main .cm__texts {
+    padding-top: 1.25rem;
+  }
+
+  #cc-main .cm__btns {
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
   }
 }
 
