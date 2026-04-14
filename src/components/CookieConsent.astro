@@ -1,0 +1,179 @@
+---
+/**
+ * CookieConsent v3 integration — replaces the old CookieBanner.astro.
+ * Uses vanilla-cookieconsent by orestbida.
+ *
+ * Categories:
+ *   - necessary (read-only): sd-theme, cc_cookie, __cf_bm
+ *   - analytics (opt-in):    GA4, Clarity
+ *   - marketing (opt-in):    empty for now, future-proofing
+ *
+ * Design overrides: src/styles/cookie-consent.css
+ */
+---
+
+<script>
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import '../styles/cookie-consent.css';
+import * as CookieConsent from 'vanilla-cookieconsent';
+
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    SD_startClarity: () => void;
+    SD_clarityLoaded: boolean;
+    __sdMigrateAnalytics?: boolean;
+  }
+}
+
+// --- Migration from old sd-cookie-consent localStorage format ---
+function checkOldConsent(): boolean {
+  const oldConsent = localStorage.getItem('sd-cookie-consent');
+  if (!oldConsent) return false;
+
+  const shouldGrantAnalytics = oldConsent === 'accepted';
+
+  // Clean up old keys regardless
+  localStorage.removeItem('sd-cookie-consent');
+  localStorage.removeItem('sd-cookie-consent-date');
+
+  return shouldGrantAnalytics;
+}
+
+const migrateAnalytics = checkOldConsent();
+
+// --- GA4 Consent helpers ---
+function updateGtagConsent(analyticsAccepted: boolean, marketingAccepted: boolean) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('consent', 'update', {
+    analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+    ad_storage: marketingAccepted ? 'granted' : 'denied',
+    ad_user_data: marketingAccepted ? 'granted' : 'denied',
+    ad_personalization: marketingAccepted ? 'granted' : 'denied',
+  });
+}
+
+// --- Clarity helper ---
+function handleClarity(accepted: boolean) {
+  if (accepted && typeof window.SD_startClarity === 'function') {
+    window.SD_startClarity();
+  }
+}
+
+// --- Sync consent state to GA4 + Clarity ---
+function syncConsentState() {
+  const analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+  const marketingAccepted = CookieConsent.acceptedCategory('marketing');
+  updateGtagConsent(analyticsAccepted, marketingAccepted);
+  handleClarity(analyticsAccepted);
+}
+
+// --- Initialize CookieConsent ---
+CookieConsent.run({
+  // Block page interaction until user makes a choice
+  disablePageInteraction: true,
+
+  guiOptions: {
+    consentModal: {
+      layout: 'box',
+      position: 'middle center',
+      equalWeightButtons: false,
+      flipButtons: false,
+    },
+    preferencesModal: {
+      layout: 'box',
+      equalWeightButtons: true,
+      flipButtons: false,
+    },
+  },
+
+  categories: {
+    necessary: {
+      enabled: true,
+      readOnly: true,
+    },
+    analytics: {
+      enabled: migrateAnalytics,
+    },
+    marketing: {
+      enabled: false,
+    },
+  },
+
+  onFirstConsent: () => {
+    syncConsentState();
+  },
+
+  onConsent: () => {
+    syncConsentState();
+  },
+
+  onChange: () => {
+    syncConsentState();
+  },
+
+  language: {
+    default: 'en',
+    translations: {
+      en: {
+        consentModal: {
+          title: 'We value your privacy',
+          description:
+            'We use analytics cookies (Google Analytics and Microsoft Clarity) to understand how you use our site and improve our content. No personal data is collected. <a href="/cookie-policy/">Learn more</a>',
+          acceptAllBtn: 'Accept all',
+          acceptNecessaryBtn: 'Reject all',
+          showPreferencesBtn: 'Customize',
+          footer:
+            '<a href="/privacy/">Privacy Policy</a> · <a href="/cookie-policy/">Cookie Policy</a>',
+        },
+        preferencesModal: {
+          title: 'Cookie preferences',
+          acceptAllBtn: 'Accept all',
+          acceptNecessaryBtn: 'Reject all',
+          savePreferencesBtn: 'Save preferences',
+          closeIconLabel: 'Close',
+          sections: [
+            {
+              title: 'Your privacy, your choice',
+              description:
+                'Choose which cookies you allow. Your preferences are saved for 6 months. Necessary cookies cannot be disabled — they keep the site working.',
+            },
+            {
+              title: 'Strictly necessary',
+              description:
+                'These cookies are essential for the site to function. They include your theme preference and this consent cookie.',
+              linkedCategory: 'necessary',
+            },
+            {
+              title: 'Analytics',
+              description:
+                'Analytics cookies help us understand how visitors interact with our site. We use Google Analytics (GA4) and Microsoft Clarity for anonymous usage statistics and heatmaps.',
+              linkedCategory: 'analytics',
+            },
+            {
+              title: 'Marketing',
+              description:
+                'Marketing cookies may be used in the future for personalized content and ads. None are currently active.',
+              linkedCategory: 'marketing',
+            },
+            {
+              title: 'More information',
+              description:
+                'For questions about our cookie policy, please visit our <a href="/cookie-policy/">cookie policy page</a>.',
+            },
+          ],
+        },
+      },
+    },
+  },
+});
+
+// --- Wire footer "Cookie Settings" button ---
+const settingsBtn = document.getElementById('cookie-settings-link');
+if (settingsBtn) {
+  settingsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    CookieConsent.showPreferences();
+  });
+}
+</script>

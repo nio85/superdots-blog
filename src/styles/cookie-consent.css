@@ -1,0 +1,268 @@
+/* ============================================================
+   CookieConsent v3 — Superdots Brand Overrides
+   Library: vanilla-cookieconsent by orestbida
+   https://cookieconsent.orestbida.com/
+   ============================================================ */
+
+/* ─────────────────────────────────────────────
+   Light Mode (default)
+   ───────────────────────────────────────────── */
+#cc-main {
+  /* Typography */
+  --cc-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Shape */
+  --cc-modal-border-radius: 12px;
+  --cc-btn-border-radius: 8px;
+  --cc-cookie-category-block-border-radius: 8px;
+
+  /* Background */
+  --cc-bg: #ffffff;
+
+  /* Primary accent (links, focus rings) */
+  --cc-primary-color: #E8363B;
+
+  /* ── Primary button: Accept all */
+  --cc-btn-primary-bg:              #E8363B;
+  --cc-btn-primary-color:           #ffffff;
+  --cc-btn-primary-border-color:    #E8363B;
+  --cc-btn-primary-hover-bg:        #CC2D32;
+  --cc-btn-primary-hover-color:     #ffffff;
+  --cc-btn-primary-hover-border-color: #CC2D32;
+
+  /* ── Secondary button: Reject all / Save preferences */
+  --cc-btn-secondary-bg:              transparent;
+  --cc-btn-secondary-color:           #1E293B;
+  --cc-btn-secondary-border-color:    #CBD5E1;
+  --cc-btn-secondary-hover-bg:        #F1F5F9;
+  --cc-btn-secondary-hover-color:     #0B1222;
+  --cc-btn-secondary-hover-border-color: #0B1222;
+
+  /* ── Flat/text button: Customize */
+  --cc-btn-flat-bg:             transparent;
+  --cc-btn-flat-color:          #475569;
+  --cc-btn-flat-hover-bg:       #F1F5F9;
+  --cc-btn-flat-hover-color:    #0B1222;
+
+  /* ── Separators */
+  --cc-separator-border-color: #E2E8F0;
+
+  /* ── Text */
+  --cc-title-color: #0B1222;
+  --cc-body-color:  #475569;
+
+  /* ── Backdrop */
+  --cc-overlay-bg: rgba(11, 18, 34, 0.55);
+
+  /* ── Cookie category blocks */
+  --cc-cookie-category-block-bg:       #F8FAFC;
+  --cc-cookie-category-block-bg-hover: #F1F5F9;
+  --cc-cookie-category-block-border:   #E2E8F0;
+  --cc-section-category-border:        #E2E8F0;
+
+  /* ── Toggle switches */
+  --cc-toggle-bg-off:         #CBD5E1;
+  --cc-toggle-bg-on:          #E8363B;
+  --cc-toggle-bg-readonly:    #E2E8F0;
+  --cc-toggle-knob-bg:        #ffffff;
+  --cc-toggle-knob-icon-color: #94A3B8;
+
+  /* ── "Always active" badge */
+  --cc-badge-bg:            #CCFBF1;
+  --cc-badge-color:         #0D9488;
+  --cc-badge-border-color:  transparent;
+  --cc-badge-border-radius: 9999px;
+
+  /* ── Cookie details table */
+  --cc-cookie-table-border: #E2E8F0;
+
+  /* ── Preferences modal scrollbar */
+  --cc-pm-scrollbar-track-bg:       #F1F5F9;
+  --cc-pm-scrollbar-thumb-bg:       #CBD5E1;
+  --cc-pm-scrollbar-thumb-hover-bg: #94A3B8;
+
+  /* ── Consent modal footer */
+  --cc-footer-bg:         #F8FAFC;
+  --cc-footer-color:      #64748B;
+  --cc-footer-link-color: #E8363B;
+}
+
+/* ─────────────────────────────────────────────
+   Dark Mode
+   Triggered by [data-theme="dark"] on <html>
+   ───────────────────────────────────────────── */
+[data-theme="dark"] #cc-main {
+  --cc-bg: #1E293B;
+
+  --cc-btn-secondary-bg:                 transparent;
+  --cc-btn-secondary-color:              #CBD5E1;
+  --cc-btn-secondary-border-color:       #475569;
+  --cc-btn-secondary-hover-bg:           #334155;
+  --cc-btn-secondary-hover-color:        #F1F5F9;
+  --cc-btn-secondary-hover-border-color: #94A3B8;
+
+  --cc-btn-flat-bg:           transparent;
+  --cc-btn-flat-color:        #94A3B8;
+  --cc-btn-flat-hover-bg:     #334155;
+  --cc-btn-flat-hover-color:  #F1F5F9;
+
+  --cc-separator-border-color: #334155;
+
+  --cc-title-color: #F1F5F9;
+  --cc-body-color:  #94A3B8;
+
+  --cc-overlay-bg: rgba(0, 0, 0, 0.65);
+
+  --cc-cookie-category-block-bg:       #0F172A;
+  --cc-cookie-category-block-bg-hover: #1E293B;
+  --cc-cookie-category-block-border:   #334155;
+  --cc-section-category-border:        #334155;
+
+  --cc-toggle-bg-off:         #475569;
+  --cc-toggle-bg-readonly:    #334155;
+  --cc-toggle-knob-icon-color: #64748B;
+
+  --cc-badge-bg:    rgba(20, 184, 166, 0.15);
+  --cc-badge-color: #2DD4BF;
+
+  --cc-cookie-table-border: #334155;
+
+  --cc-pm-scrollbar-track-bg:       #0F172A;
+  --cc-pm-scrollbar-thumb-bg:       #334155;
+  --cc-pm-scrollbar-thumb-hover-bg: #475569;
+
+  --cc-footer-bg:         #0F172A;
+  --cc-footer-color:      #64748B;
+  --cc-footer-link-color: #F87171;
+}
+
+/* System dark preference with auto theme */
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] #cc-main {
+    --cc-bg: #1E293B;
+    --cc-btn-secondary-bg:                 transparent;
+    --cc-btn-secondary-color:              #CBD5E1;
+    --cc-btn-secondary-border-color:       #475569;
+    --cc-btn-secondary-hover-bg:           #334155;
+    --cc-btn-secondary-hover-color:        #F1F5F9;
+    --cc-btn-secondary-hover-border-color: #94A3B8;
+    --cc-btn-flat-bg:           transparent;
+    --cc-btn-flat-color:        #94A3B8;
+    --cc-btn-flat-hover-bg:     #334155;
+    --cc-btn-flat-hover-color:  #F1F5F9;
+    --cc-separator-border-color: #334155;
+    --cc-title-color: #F1F5F9;
+    --cc-body-color:  #94A3B8;
+    --cc-overlay-bg: rgba(0, 0, 0, 0.65);
+    --cc-cookie-category-block-bg:       #0F172A;
+    --cc-cookie-category-block-bg-hover: #1E293B;
+    --cc-cookie-category-block-border:   #334155;
+    --cc-section-category-border:        #334155;
+    --cc-toggle-bg-off:          #475569;
+    --cc-toggle-bg-readonly:     #334155;
+    --cc-toggle-knob-icon-color: #64748B;
+    --cc-badge-bg:    rgba(20, 184, 166, 0.15);
+    --cc-badge-color: #2DD4BF;
+    --cc-cookie-table-border: #334155;
+    --cc-pm-scrollbar-track-bg:       #0F172A;
+    --cc-pm-scrollbar-thumb-bg:       #334155;
+    --cc-pm-scrollbar-thumb-hover-bg: #475569;
+    --cc-footer-bg:         #0F172A;
+    --cc-footer-color:      #64748B;
+    --cc-footer-link-color: #F87171;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Typography — Space Grotesk headings & buttons
+   ───────────────────────────────────────────── */
+#cc-main .cm__title,
+#cc-main .pm__title,
+#cc-main .pm__section-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+#cc-main .cm__btn,
+#cc-main .pm__btn {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ─────────────────────────────────────────────
+   Consent modal — centered, elevated
+   ───────────────────────────────────────────── */
+#cc-main .cm {
+  box-shadow:
+    0 24px 64px rgba(11, 18, 34, 0.18),
+    0 8px 24px rgba(11, 18, 34, 0.10);
+}
+
+/* ─────────────────────────────────────────────
+   Button polish — transitions & hover lift
+   ───────────────────────────────────────────── */
+#cc-main .cm__btn,
+#cc-main .pm__btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+#cc-main .cm__btn--primary:hover,
+#cc-main .pm__btn--primary:hover {
+  box-shadow: 0 4px 12px rgba(232, 54, 59, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────────
+   Footer links in consent modal
+   ───────────────────────────────────────────── */
+#cc-main .cm__footer a,
+#cc-main .pm__footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — focus ring
+   ───────────────────────────────────────────── */
+#cc-main :focus-visible {
+  outline: 2px solid #E8363B;
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   Mobile — full-width bottom sheet
+   ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #cc-main .cm[data-position*="middle"],
+  #cc-main .cm[data-position*="bottom"] {
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Reduced motion
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  #cc-main .cm,
+  #cc-main .pm,
+  #cc-main .cm__btn,
+  #cc-main .pm__btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}
