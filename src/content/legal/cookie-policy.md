@@ -2,18 +2,30 @@
 title: "Cookie Policy | Superdots"
 description: "Cookie policy for superdots.sh — what cookies we use and why."
 pageTitle: "Cookie Policy"
-lastUpdated: "27 March 2026"
+lastUpdated: "14 April 2026"
 ---
 
 ## What are cookies?
 
 Cookies are small text files stored on your device by your browser. We also use localStorage, a similar browser storage mechanism. This policy covers both.
 
+## Consent categories
+
+We divide cookies into three categories. When you visit the Site, a banner lets you choose which categories to allow:
+
+| Category | Consent required | What it controls |
+|---|---|---|
+| **Necessary** | No — always active | Core site functionality (theme, consent record, bot protection) |
+| **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity |
+| **Marketing** | Yes — opt-in | Reserved for future use (none currently active) |
+
+Your choices are stored in your browser's localStorage and respected on every visit. You can change them at any time via the "Cookie settings" link in the footer.
+
 ## Cookies we use
 
-### Strictly necessary (no consent required)
+### Necessary (always active — no consent required)
 
-These are essential for the Site to function. Under Art. 5(3) of the ePrivacy Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento n. 229/2021), strictly necessary cookies do not require consent.
+These are essential for the Site to function correctly. Under Art. 5(3) of the ePrivacy Directive (2002/58/EC) and the Garante's cookie guidelines (Provvedimento n. 229/2021), strictly necessary cookies do not require consent.
 
 <table>
 	<thead>
@@ -36,21 +48,28 @@ These are essential for the Site to function. Under Art. 5(3) of the ePrivacy Di
 		<tr>
 			<td><code>sd-cookie-consent</code></td>
 			<td>superdots.sh</td>
-			<td>Records your cookie consent choice (accepted or rejected)</td>
+			<td>Records your overall consent choice (accepted all / rejected all / customized). Updated whenever you change your preferences.</td>
 			<td>localStorage</td>
 			<td>Until cleared</td>
 		</tr>
 		<tr>
 			<td><code>sd-cookie-consent-date</code></td>
 			<td>superdots.sh</td>
-			<td>Timestamp of when you gave or refused cookie consent</td>
+			<td>Timestamp of when you last gave or refused cookie consent</td>
+			<td>localStorage</td>
+			<td>Until cleared</td>
+		</tr>
+		<tr>
+			<td><code>sd-cookie-consent-categories</code></td>
+			<td>superdots.sh</td>
+			<td>Stores your per-category consent choices as a JSON object (e.g. analytics: true/false, marketing: true/false). Enables granular category-level opt-in/out.</td>
 			<td>localStorage</td>
 			<td>Until cleared</td>
 		</tr>
 		<tr>
 			<td><code>__cf_bm</code></td>
 			<td>Cloudflare</td>
-			<td>Bot management — distinguishes humans from automated traffic</td>
+			<td>Bot management — distinguishes humans from automated traffic. Set by Cloudflare as part of the content delivery network that powers this site.</td>
 			<td>HTTP cookie</td>
 			<td>30 minutes</td>
 		</tr>
@@ -63,9 +82,9 @@ These are essential for the Site to function. Under Art. 5(3) of the ePrivacy Di
 
 Umami collects only aggregated, anonymous metrics: page URL, referrer, browser type, operating system, device type, and country (derived from IP at request time, IP not stored). It is hosted on Superdots infrastructure in the EU — no data is sent to third parties.
 
-### Analytics (consent required)
+### Analytics (consent required — opt-in)
 
-These cookies are set by Google Analytics 4 and Microsoft Clarity to help us understand how visitors use the Site. They are only activated **after you give consent** via the cookie banner, as required by Art. 5(3) ePrivacy Directive and Art. 6(1)(a) GDPR.
+These cookies are set by Google Analytics 4 and Microsoft Clarity to help us understand how visitors use the Site. They are only activated **after you give explicit consent** via the cookie banner, as required by Art. 5(3) ePrivacy Directive and Art. 6(1)(a) GDPR. If you decline or do not choose, these cookies are never set.
 
 <table>
 	<thead>
@@ -116,6 +135,10 @@ These cookies are set by Google Analytics 4 and Microsoft Clarity to help us und
 	</tbody>
 </table>
 
+### Marketing (consent required — not yet in use)
+
+This category is reserved for future marketing and advertising cookies (e.g. retargeting pixels, social media cookies). **No marketing cookies are currently set on this Site.** This section will be updated when they are introduced, and you will be asked for fresh consent before they are activated.
+
 ## Email tracking (newsletter subscribers only)
 
 If you subscribe to our newsletter, our marketing automation system (Mautic, self-hosted in the EU) uses a **tracking pixel** (a tiny invisible image) to detect email opens, and **link rewriting** to measure which links you click. This is not a cookie — it operates within the email itself, not on the Site. Mautic associates this data with your email address to help us understand which content resonates.
@@ -127,14 +150,22 @@ This tracking is covered by the consent you give when subscribing to the newslet
 In addition to cookies, the Site makes requests to third-party servers that may process your IP address:
 
 - **Umami Analytics** (`umami.bartoccini.cloud`) — loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
-- **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google.
+- **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google (servers in the US; EU–US Data Privacy Framework adequacy decision and Standard Contractual Clauses apply).
 - **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
 
 ## How to manage cookies
 
-### Cookie banner
+### Cookie consent modal
 
-When you first visit the Site, a cookie banner lets you accept or refuse analytics cookies. You can change your choice at any time by clicking the "Cookie settings" link in the site footer.
+When you first visit the Site, a modal requires you to actively choose your cookie preferences before continuing. You have three options:
+
+- **Accept All** — enables Necessary and Analytics cookies.
+- **Reject All** — enables Necessary cookies only. Analytics (GA4, Clarity) are not loaded.
+- **Customize** — opens a preferences panel where you can enable or disable each category individually.
+
+You can change your choice at any time by clicking the **"Cookie settings"** link in the site footer.
+
+**Why a non-dismissible modal?** Under Art. 5(3) of the ePrivacy Directive and the Garante's 2021 cookie guidelines (Provvedimento n. 229/2021), continued browsing cannot be treated as consent. The modal requires an affirmative act (clicking a button) before any optional cookies are placed — this is the legally required mechanism.
 
 ### Browser settings
 
@@ -145,8 +176,8 @@ You can also control cookies through your browser:
 - [Safari](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac)
 - [Edge](https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09)
 
-To clear localStorage (used for theme preference), use your browser's developer tools or "Clear site data" option.
+To clear localStorage (used for theme preference and consent choices), use your browser's developer tools or "Clear site data" option. Clearing localStorage will reset your consent preferences and you will be shown the consent modal again on your next visit.
 
 ## Changes to this policy
 
-We may update this policy when we add or remove cookies. The "Last updated" date at the top reflects the most recent revision.
+We may update this policy when we add or remove cookies. The "Last updated" date at the top reflects the most recent revision. If we introduce new cookies that require consent, we will display the consent modal again so you can make a fresh choice.
