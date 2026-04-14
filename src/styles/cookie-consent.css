@@ -428,15 +428,29 @@
   box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
 }
 
-/* ── PM footer — generous spacing, single-row buttons */
+/* ── PM footer — single-row buttons with equal spacing */
 #cc-main .pm__footer {
   padding: 1.25rem 1.75rem;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   gap: 0.5rem;
+}
+
+#cc-main .pm__btn-group {
+  display: contents !important;
+}
+
+#cc-main .pm__btn {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  justify-content: center;
 }
 
 #cc-main .pm__btn + .pm__btn,
 #cc-main .pm__btn-group + .pm__btn-group {
-  margin-left: 0.5rem;
+  margin-left: 0;
 }
 
 /* ─────────────────────────────────────────────
