@@ -1,529 +1,109 @@
 /* ============================================================
-   CookieConsent v3 — Superdots Premium Brand Design
+   CookieConsent v3 — Superdots editorial design (rewrite)
    Library: vanilla-cookieconsent by orestbida
-   https://cookieconsent.orestbida.com/
-
    Design system: src/styles/global.css
+
+   Structure
+     1. Design tokens (library CSS vars → Superdots tokens)
+     2. Layout reset (scroll lock, overlay, z-index)
+     3. Card shell (shared shape, border, shadow, top rule)
+     4. Typography (eyebrow, title, desc, links)
+     5. Button system (primary navy, secondary text-link)
+     6. Consent modal layout (.cm__btns responsive)
+     7. Preferences modal (sections, toggles, footer)
+     8. Responsive breakpoints
+     9. Dark mode
+    10. Reduced motion
+
+   Library DOM note
+     vanilla-cookieconsent v3 does NOT add a .cm__btn--primary class.
+     Only .cm__btn--secondary exists. The "Allow all" button is targeted
+     via :not(.cm__btn--secondary):not(.cm__btn--close).
+     Button-group layout: "Allow all" + "Only essential" share the same
+     .cm__btn-group; "Choose" is alone in a second .cm__btn-group.
    ============================================================ */
 
-/* ─────────────────────────────────────────────
-   Core CSS Custom Properties — Light Mode
-   ───────────────────────────────────────────── */
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
 #cc-main {
-  /* Typography */
   --cc-font-family: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Shape */
-  --cc-modal-border-radius: 16px;
-  --cc-btn-border-radius: 50px; /* pill */
-  --cc-modal-margin: 1.25rem;
+  /* Base text */
+  --cc-primary-color: #0B1222;
+  --cc-secondary-color: #475569;
+  --cc-link-color: #E8363B;
 
-  /* ── Base text color (used as #cc-main { color: var(...) }) */
-  /* IMPORTANT: This is the primary text color, NOT an accent.
-     Links/accents are handled via --cc-link-color and button vars. */
-  --cc-primary-color: #0B1222;    /* sd-navy — modal title & base text */
-  --cc-secondary-color: #475569;  /* sd-gray-600 — desc & body text */
-  --cc-link-color: #E8363B;       /* sd-red — links */
-
-  /* ── Background */
+  /* Background */
   --cc-bg: #ffffff;
 
-  /* ── Primary button: Accept all */
-  --cc-btn-primary-bg:               #E8363B;
-  --cc-btn-primary-color:            #ffffff;
-  --cc-btn-primary-border-color:     #E8363B;
-  --cc-btn-primary-hover-bg:         #CC2D32;
-  --cc-btn-primary-hover-color:      #ffffff;
-  --cc-btn-primary-hover-border-color: #CC2D32;
-
-  /* ── Secondary button: Reject all / Save preferences */
-  --cc-btn-secondary-bg:               #ffffff;
-  --cc-btn-secondary-color:            #0B1222;
-  --cc-btn-secondary-border-color:     #CBD5E1;
-  --cc-btn-secondary-hover-bg:         #F1F5F9;
-  --cc-btn-secondary-hover-color:      #0B1222;
-  --cc-btn-secondary-hover-border-color: #94A3B8;
-
-  /* ── Separators */
+  /* Separators */
   --cc-separator-border-color: #E2E8F0;
 
-  /* ── Backdrop */
-  --cc-overlay-bg: rgba(11, 18, 34, 0.72);
+  /* Library button vars (we override selectors anyway, but set these
+     so the library internals don't render red boxes before our CSS loads) */
+  --cc-btn-primary-bg: #0B1222;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-primary-border-color: #0B1222;
+  --cc-btn-primary-hover-bg: #E8363B;
+  --cc-btn-primary-hover-color: #ffffff;
+  --cc-btn-primary-hover-border-color: #E8363B;
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: #0B1222;
+  --cc-btn-secondary-border-color: transparent;
+  --cc-btn-secondary-hover-bg: transparent;
+  --cc-btn-secondary-hover-color: #E8363B;
+  --cc-btn-secondary-hover-border-color: transparent;
 
-  /* ── Cookie category blocks */
-  --cc-cookie-category-block-bg:               #F8FAFC;
-  --cc-cookie-category-block-border:           #E2E8F0;
-  --cc-cookie-category-block-hover-bg:         #F1F5F9;
-  --cc-cookie-category-block-hover-border:     #CBD5E1;
-  --cc-cookie-category-expanded-block-bg:      #F1F5F9;
-  --cc-cookie-category-expanded-block-hover-bg: #E2E8F0;
-  --cc-section-category-border: #E2E8F0;
+  /* Shape */
+  --cc-modal-border-radius: 12px;
+  --cc-btn-border-radius: 8px;
+  --cc-modal-margin: 1rem;
 
-  /* ── Toggle switches (correct library variable names) */
-  --cc-toggle-off-bg:            #CBD5E1;
-  --cc-toggle-on-bg:             #E8363B;
-  --cc-toggle-off-knob-bg:       #ffffff;
-  --cc-toggle-on-knob-bg:        #ffffff;
-  --cc-toggle-readonly-bg:       #E2E8F0;
-  --cc-toggle-readonly-knob-bg:  #ffffff;
+  /* Backdrop */
+  --cc-overlay-bg: rgba(11, 18, 34, 0.55);
+  --cc-overlay-opacity: 1;
+
+  /* Toggle */
+  --cc-toggle-on-bg: #E8363B;
+  --cc-toggle-off-bg: #CBD5E1;
+  --cc-toggle-on-knob-bg: #ffffff;
+  --cc-toggle-off-knob-bg: #ffffff;
+  --cc-toggle-readonly-bg: #94A3B8;
+  --cc-toggle-readonly-knob-bg: #E2E8F0;
   --cc-toggle-readonly-knob-icon-color: #94A3B8;
 
-  /* ── Consent modal footer */
-  --cc-footer-bg:           #F8FAFC;
-  --cc-footer-color:        #64748B;
-  --cc-footer-border-color: #E2E8F0;
+  /* Section */
+  --cc-section-category-bg: #F8FAFC;
+
+  font-family: var(--cc-font-family);
 }
 
-/* ─────────────────────────────────────────────
-   Dark Mode — true deep navy
-   ───────────────────────────────────────────── */
 [data-theme="dark"] #cc-main {
-  --cc-primary-color:   #F1F5F9;   /* light text */
-  --cc-secondary-color: #94A3B8;   /* muted text */
-  --cc-link-color:      #F87171;   /* lighter red for dark bg */
-
-  --cc-bg: #0B1222;                /* sd-navy — full brand immersion */
-
-  --cc-btn-secondary-bg:               rgba(255, 255, 255, 0.06);
-  --cc-btn-secondary-color:            #E2E8F0;
-  --cc-btn-secondary-border-color:     rgba(255, 255, 255, 0.12);
-  --cc-btn-secondary-hover-bg:         rgba(255, 255, 255, 0.1);
-  --cc-btn-secondary-hover-color:      #F8FAFC;
-  --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.22);
-
+  --cc-primary-color: #F1F5F9;
+  --cc-secondary-color: #94A3B8;
+  --cc-link-color: #F87171;
+  --cc-bg: #0F172A;
   --cc-separator-border-color: rgba(255, 255, 255, 0.08);
-
-  --cc-overlay-bg: rgba(0, 0, 0, 0.82);
-
-  --cc-cookie-category-block-bg:               rgba(255, 255, 255, 0.04);
-  --cc-cookie-category-block-border:           rgba(255, 255, 255, 0.08);
-  --cc-cookie-category-block-hover-bg:         rgba(255, 255, 255, 0.07);
-  --cc-cookie-category-block-hover-border:     rgba(255, 255, 255, 0.13);
-  --cc-cookie-category-expanded-block-bg:      rgba(255, 255, 255, 0.06);
-  --cc-cookie-category-expanded-block-hover-bg: rgba(255, 255, 255, 0.09);
-  --cc-section-category-border: rgba(255, 255, 255, 0.08);
-
-  --cc-toggle-off-bg:           rgba(255, 255, 255, 0.2);
-  --cc-toggle-readonly-bg:      rgba(255, 255, 255, 0.1);
-  --cc-toggle-readonly-knob-bg: rgba(255, 255, 255, 0.55);
-  --cc-toggle-readonly-knob-icon-color: rgba(255, 255, 255, 0.35);
-
-  --cc-footer-bg:           rgba(255, 255, 255, 0.03);
-  --cc-footer-color:        #64748B;
-  --cc-footer-border-color: rgba(255, 255, 255, 0.07);
-}
-
-/* System dark preference with auto theme */
-@media (prefers-color-scheme: dark) {
-  [data-theme="auto"] #cc-main {
-    --cc-primary-color:   #F1F5F9;
-    --cc-secondary-color: #94A3B8;
-    --cc-link-color:      #F87171;
-
-    --cc-bg: #0B1222;
-
-    --cc-btn-secondary-bg:               rgba(255, 255, 255, 0.06);
-    --cc-btn-secondary-color:            #E2E8F0;
-    --cc-btn-secondary-border-color:     rgba(255, 255, 255, 0.12);
-    --cc-btn-secondary-hover-bg:         rgba(255, 255, 255, 0.1);
-    --cc-btn-secondary-hover-color:      #F8FAFC;
-    --cc-btn-secondary-hover-border-color: rgba(255, 255, 255, 0.22);
-
-    --cc-separator-border-color: rgba(255, 255, 255, 0.08);
-    --cc-overlay-bg: rgba(0, 0, 0, 0.82);
-
-    --cc-cookie-category-block-bg:               rgba(255, 255, 255, 0.04);
-    --cc-cookie-category-block-border:           rgba(255, 255, 255, 0.08);
-    --cc-cookie-category-block-hover-bg:         rgba(255, 255, 255, 0.07);
-    --cc-cookie-category-block-hover-border:     rgba(255, 255, 255, 0.13);
-    --cc-cookie-category-expanded-block-bg:      rgba(255, 255, 255, 0.06);
-    --cc-cookie-category-expanded-block-hover-bg: rgba(255, 255, 255, 0.09);
-    --cc-section-category-border: rgba(255, 255, 255, 0.08);
-
-    --cc-toggle-off-bg:           rgba(255, 255, 255, 0.2);
-    --cc-toggle-readonly-bg:      rgba(255, 255, 255, 0.1);
-    --cc-toggle-readonly-knob-bg: rgba(255, 255, 255, 0.55);
-    --cc-toggle-readonly-knob-icon-color: rgba(255, 255, 255, 0.35);
-
-    --cc-footer-bg:           rgba(255, 255, 255, 0.03);
-    --cc-footer-color:        #64748B;
-    --cc-footer-border-color: rgba(255, 255, 255, 0.07);
-  }
-}
-
-/* ─────────────────────────────────────────────
-   Typography — Space Grotesk headings & buttons
-   ───────────────────────────────────────────── */
-#cc-main .cm__title,
-#cc-main .pm__title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 1.15em;
-  letter-spacing: -0.025em;
-  line-height: 1.3;
-}
-
-#cc-main .pm__section-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 0.95em;
-  letter-spacing: -0.01em;
-}
-
-#cc-main .pm__section:first-child .pm__section-title {
-  font-size: 1em;
-  font-weight: 700;
-}
-
-#cc-main .cm__btn,
-#cc-main .pm__btn {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 0.01em;
-}
-
-/* ─────────────────────────────────────────────
-   Consent Modal — elevated premium card
-   ───────────────────────────────────────────── */
-#cc-main .cm {
-  max-width: 28rem;
-  border-radius: 16px !important;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(11, 18, 34, 0.05),
-    0 4px 16px rgba(11, 18, 34, 0.1),
-    0 20px 56px rgba(11, 18, 34, 0.18),
-    0 40px 80px rgba(11, 18, 34, 0.1);
-}
-
-[data-theme="dark"] #cc-main .cm {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 4px 16px rgba(0, 0, 0, 0.35),
-    0 20px 56px rgba(0, 0, 0, 0.5),
-    0 40px 80px rgba(0, 0, 0, 0.35);
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme="auto"] #cc-main .cm {
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.08),
-      0 4px 16px rgba(0, 0, 0, 0.35),
-      0 20px 56px rgba(0, 0, 0, 0.5),
-      0 40px 80px rgba(0, 0, 0, 0.35);
-  }
-}
-
-/* ── Brand accent bar — red→dark-navy gradient at modal top */
-#cc-main .cm::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #E8363B 0%, #CC2D32 55%, #0B1222 100%);
-  z-index: 10;
-  pointer-events: none;
-  border-radius: 0; /* let overflow:hidden on .cm handle corners */
-}
-
-/* ── Content padding */
-#cc-main .cm__desc,
-#cc-main .cm__title {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-#cc-main .cm__texts {
-  padding-top: 1.5rem;
-}
-
-#cc-main .cm__title + .cm__desc {
-  margin-top: 0.875rem;
-}
-
-#cc-main .cm__desc {
-  font-size: 0.9em;
-  line-height: 1.65;
-  padding-bottom: 0.25rem;
-}
-
-/* ── Button area */
-#cc-main .cm__btns {
-  padding: 1.125rem 1.5rem 1.5rem;
-  gap: 0.375rem;
-}
-
-/* ── Buttons — pill shape, generous sizing */
-#cc-main .cm__btn {
-  min-height: 48px;
-  padding: 0.75rem 1.75rem;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease,
-    transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Accept all — primary CTA with glow */
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover {
-  box-shadow: 0 6px 24px rgba(232, 54, 59, 0.4);
-  transform: translateY(-2px);
-}
-
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
-}
-
-/* ── Footer — links */
-#cc-main .cm__footer {
-  padding: 0.625rem 0 0.75rem;
-}
-
-#cc-main .cm__links {
-  padding: 0 1.5rem;
-}
-
-#cc-main .cm__link-group {
-  font-size: 0.8125rem;
-}
-
-#cc-main .cm__link-group > * + * {
-  margin-left: 1.25rem;
-}
-
-/* ─────────────────────────────────────────────
-   Preferences Modal — polished enterprise layout
-   ───────────────────────────────────────────── */
-#cc-main .pm {
-  border-radius: 16px !important;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(11, 18, 34, 0.06),
-    0 8px 32px rgba(11, 18, 34, 0.16),
-    0 24px 64px rgba(11, 18, 34, 0.12);
-}
-
-[data-theme="dark"] #cc-main .pm {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 24px 64px rgba(0, 0, 0, 0.3);
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme="auto"] #cc-main .pm {
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.08),
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 24px 64px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* PM header — more breathing room */
-#cc-main .pm__header {
-  padding: 1.5rem 1.75rem;
-}
-
-/* PM body — more padding */
-#cc-main .pm__body,
-#cc-main .pm__footer {
-  padding: 1.25rem 1.75rem;
-}
-
-/* Intro section — more visual separation */
-#cc-main .pm__section:first-child {
-  padding: 0 0 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-/* Category block sections — card feel with design-system radius */
-#cc-main .pm__section--toggle .pm__section-title {
-  padding: 1em 5.5em 1em 1.25em;
-  min-height: 62px;
-  border-radius: 12px !important;
-}
-
-#cc-main .pm__section--toggle.is-expanded .pm__section-title {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
-
-#cc-main .pm__section--toggle .pm__section-desc-wrapper {
-  border-radius: 0 0 12px 12px !important;
-}
-
-#cc-main .pm__section,
-#cc-main .pm__section--toggle {
-  border-radius: 12px !important;
-}
-
-#cc-main .pm__section-desc {
-  font-size: 0.875em;
-  line-height: 1.65;
-}
-
-/* ── "Always active" badge — red-tinted pill */
-#cc-main .pm__badge {
-  background: rgba(232, 54, 59, 0.08) !important;
-  color: #CC2D32 !important;
-  border: 1px solid rgba(232, 54, 59, 0.22) !important;
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.01em;
-  height: 24px;
-  padding: 0 0.7em 1px;
-  border-radius: 9999px !important;
-}
-
-[data-theme="dark"] #cc-main .pm__badge {
-  background: rgba(232, 54, 59, 0.12) !important;
-  color: #F87171 !important;
-  border-color: rgba(232, 54, 59, 0.28) !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme="auto"] #cc-main .pm__badge {
-    background: rgba(232, 54, 59, 0.12) !important;
-    color: #F87171 !important;
-    border-color: rgba(232, 54, 59, 0.28) !important;
-  }
-}
-
-/* Close button — circle shape */
-#cc-main .pm__close-btn {
-  border-radius: 50% !important;
-  width: 36px;
-  height: 36px;
-  transition:
-    background 150ms ease,
-    border-color 150ms ease;
-}
-
-/* ── Preferences modal buttons — match consent modal styling */
-#cc-main .pm__btn {
-  min-height: 48px;
-  padding: 0.75rem 1.75rem;
-  border-radius: 50px !important;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease,
-    transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-#cc-main .pm__btn:not(.pm__btn--secondary):hover {
-  box-shadow: 0 6px 24px rgba(232, 54, 59, 0.4);
-  transform: translateY(-2px);
-}
-
-#cc-main .pm__btn:not(.pm__btn--secondary):active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
-}
-
-/* ── PM footer — single-row buttons with equal spacing */
-#cc-main .pm__footer {
-  padding: 1.25rem 1.75rem;
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 0.5rem;
-}
-
-#cc-main .pm__btn-group {
-  display: contents !important;
-}
-
-#cc-main .pm__btn {
-  flex: 1 1 0;
-  min-width: 0;
-  text-align: center;
-  justify-content: center;
-}
-
-#cc-main .pm__btn + .pm__btn,
-#cc-main .pm__btn-group + .pm__btn-group {
-  margin-left: 0;
-}
-
-/* ─────────────────────────────────────────────
-   Links — ensure red color in footer
-   ───────────────────────────────────────────── */
-#cc-main .cm__footer a:hover,
-#cc-main .pm__footer a:hover {
-  color: #E8363B;
-}
-
-[data-theme="dark"] #cc-main .cm__footer a:hover,
-[data-theme="dark"] #cc-main .pm__footer a:hover {
-  color: #F87171;
-}
-
-@media (prefers-color-scheme: dark) {
-  [data-theme="auto"] #cc-main .cm__footer a:hover,
-  [data-theme="auto"] #cc-main .pm__footer a:hover {
-    color: #F87171;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   Accessibility — focus ring
-   ───────────────────────────────────────────── */
-#cc-main :focus-visible {
-  outline: 2px solid #E8363B;
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* ─────────────────────────────────────────────
-   Reduced motion
-   ───────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  #cc-main .cm,
-  #cc-main .pm,
-  #cc-main .cm__btn,
-  #cc-main .pm__btn {
-    transition: none !important;
-    transform: none !important;
-  }
+  --cc-btn-primary-bg: #F1F5F9;
+  --cc-btn-primary-color: #0B1222;
+  --cc-btn-primary-border-color: #F1F5F9;
+  --cc-btn-primary-hover-bg: #E8363B;
+  --cc-btn-primary-hover-color: #ffffff;
+  --cc-btn-primary-hover-border-color: #E8363B;
+  --cc-btn-secondary-color: #F1F5F9;
+  --cc-btn-secondary-hover-color: #F87171;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.7);
+  --cc-section-category-bg: rgba(255, 255, 255, 0.03);
 }
 
 /* ============================================================
-   v8 — Editorial direction (overrides pill/card defaults above)
-   ============================================================
-   Design intent: treat the consent card like a Superdots article
-   blockquote — thin red rule on the left, monospace eyebrow, sharp
-   navy primary, text-link secondaries. Less "compliance widget",
-   more "one-paragraph editor's note".
+   2. LAYOUT RESET
    ============================================================ */
 
-/* Turn the top gradient bar into a vertical ruler on the left edge.
-   NOTE: we don't touch `position` here — the mobile block already pins
-   the card to the bottom with position:fixed, and overriding that
-   without a media guard hides the banner on phones. */
-#cc-main .cm {
-  border-radius: 8px !important;
-}
-#cc-main .cm::before {
-  top: 0;
-  left: 0;
-  right: auto;
-  bottom: 0;
-  height: auto;
-  width: 4px;
-  background: #E8363B;
-}
-
-/* Lock the page underneath whenever a cookie modal is open.
-   vanilla-cookieconsent v3 adds these classes on <html> while visible;
-   disablePageInteraction blocks clicks but not iOS touch-scroll. */
+/* Lock the page under any open modal. vanilla-cookieconsent v3 adds
+   these classes on <html> while a modal is visible; disablePageInteraction
+   blocks clicks but not iOS touch-scroll. */
 html.show--consent,
 html.show--preferences {
   overflow: hidden !important;
@@ -535,14 +115,64 @@ html.show--preferences body {
   overscroll-behavior: contain;
 }
 
-/* Monospace eyebrow above the title — editorial "department" label. */
+/* ============================================================
+   3. CARD SHELL
+   ============================================================ */
+#cc-main .cm,
+#cc-main .pm {
+  position: relative;
+  background: var(--cc-bg);
+  color: var(--cc-primary-color);
+  border: 1px solid var(--cc-separator-border-color);
+  border-radius: 12px;
+  box-shadow:
+    0 12px 48px rgba(11, 18, 34, 0.14),
+    0 2px 8px rgba(11, 18, 34, 0.06);
+  overflow: hidden;
+}
+
+[data-theme="dark"] #cc-main .cm,
+[data-theme="dark"] #cc-main .pm {
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Red top rule — the single editorial accent */
+#cc-main .cm::before,
+#cc-main .pm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #E8363B;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ============================================================
+   4. TYPOGRAPHY
+   ============================================================ */
+
+#cc-main .cm__body,
+#cc-main .pm__body,
+#cc-main .cm__texts,
+#cc-main .pm__header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+/* Title — Space Grotesk bold with monospace eyebrow */
 #cc-main .cm__title,
 #cc-main .pm__title {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700;
-  font-size: 1.55em;
+  font-size: 1.5rem;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.2;
+  color: var(--cc-primary-color);
+  margin: 0;
   position: relative;
 }
 #cc-main .cm__title::before,
@@ -551,8 +181,8 @@ html.show--preferences body {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-weight: 500;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #E8363B;
   margin-bottom: 0.625rem;
@@ -562,43 +192,89 @@ html.show--preferences body {
   content: 'Preferences · Cookies';
 }
 
-/* Desc copy — slightly larger, less uniform justify feel. */
-#cc-main .cm__desc {
-  font-size: 0.9375em;
-  line-height: 1.72;
+/* Desc */
+#cc-main .cm__desc,
+#cc-main .pm__section-desc {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--cc-secondary-color);
+  margin: 0.75rem 0 0;
 }
+
+/* Links inside desc — red underline */
 #cc-main .cm__desc a,
-#cc-main .pm__section-desc a {
+#cc-main .pm__section-desc a,
+#cc-main .cm__footer a {
   color: #E8363B;
   text-decoration: none;
-  border-bottom: 1px solid rgba(232, 54, 59, 0.35);
+  border-bottom: 1px solid rgba(232, 54, 59, 0.3);
   padding-bottom: 1px;
-  transition: border-color 160ms ease, color 160ms ease;
+  transition: border-color 160ms ease;
 }
 #cc-main .cm__desc a:hover,
-#cc-main .pm__section-desc a:hover {
+#cc-main .pm__section-desc a:hover,
+#cc-main .cm__footer a:hover {
   border-bottom-color: #E8363B;
 }
 
-/* Primary button — solid navy block, sharp corners.
-   Library uses --secondary class, NOT --primary, so we target
-   non-secondary buttons explicitly. */
+/* Footer links (Privacy · Cookie policy) */
+#cc-main .cm__footer {
+  padding: 0.875rem 1.5rem 1rem;
+  border-top: 1px solid var(--cc-separator-border-color);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc-secondary-color);
+}
+#cc-main .cm__footer a {
+  color: var(--cc-secondary-color);
+  border-bottom: none;
+  padding: 0;
+}
+#cc-main .cm__footer a:hover {
+  color: #E8363B;
+}
+#cc-main .cm__link-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   5. BUTTON SYSTEM
+   ============================================================ */
+
+/* Primary — navy block, red on hover (editorial hierarchy) */
 #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
 #cc-main .pm__btn:not(.pm__btn--secondary) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #0B1222 !important;
   color: #ffffff !important;
-  border-color: #0B1222 !important;
-  border-radius: 6px !important;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  border: 1px solid #0B1222 !important;
+  border-radius: 8px !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.9375rem !important;
+  letter-spacing: 0.01em !important;
+  min-height: 44px !important;
+  padding: 0.625rem 1.5rem !important;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease,
+              transform 180ms ease, box-shadow 180ms ease !important;
 }
 #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover,
 #cc-main .pm__btn:not(.pm__btn--secondary):hover {
   background: #E8363B !important;
   border-color: #E8363B !important;
-  box-shadow: 0 4px 18px rgba(232, 54, 59, 0.32) !important;
+  color: #ffffff !important;
   transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(232, 54, 59, 0.3);
 }
 [data-theme="dark"] #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
 [data-theme="dark"] #cc-main .pm__btn:not(.pm__btn--secondary) {
@@ -613,36 +289,36 @@ html.show--preferences body {
   border-color: #E8363B !important;
 }
 
-/* Secondary buttons — text-link ghost, no border, no fill. */
+/* Secondary — text-link with thin underline */
 #cc-main .cm__btn--secondary,
 #cc-main .pm__btn--secondary {
   background: transparent !important;
   border: none !important;
-  color: #0B1222 !important;
+  color: var(--cc-primary-color) !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 0.375rem !important;
+  min-height: 36px !important;
   text-decoration: underline;
-  text-decoration-color: rgba(11, 18, 34, 0.35);
+  text-decoration-color: rgba(71, 85, 105, 0.35);
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
-  padding: 0.75rem 0.5rem !important;
-  min-height: 44px;
   border-radius: 0 !important;
   box-shadow: none !important;
-  flex: 0 1 auto !important;
-  font-weight: 500;
-  letter-spacing: 0;
+  transition: color 160ms ease, text-decoration-color 160ms ease !important;
 }
 #cc-main .cm__btn--secondary:hover,
 #cc-main .pm__btn--secondary:hover {
   color: #E8363B !important;
   text-decoration-color: #E8363B;
-  background: transparent !important;
   transform: none !important;
-  box-shadow: none !important;
+  background: transparent !important;
 }
 [data-theme="dark"] #cc-main .cm__btn--secondary,
 [data-theme="dark"] #cc-main .pm__btn--secondary {
-  color: #E2E8F0 !important;
-  text-decoration-color: rgba(226, 232, 240, 0.35);
+  color: #F1F5F9 !important;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
 }
 [data-theme="dark"] #cc-main .cm__btn--secondary:hover,
 [data-theme="dark"] #cc-main .pm__btn--secondary:hover {
@@ -650,272 +326,236 @@ html.show--preferences body {
   text-decoration-color: #F87171;
 }
 
-/* Button row — primary right-anchored, secondaries flow left. */
-#cc-main .cm__btns {
-  flex-direction: row-reverse !important;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
-  align-items: center;
-  padding: 0.75rem 1.5rem 1.5rem;
-}
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
-  flex: 0 0 auto !important;
-  min-height: 46px;
-  padding: 0.75rem 1.5rem;
-}
-
-/* Footer links — monospace, caps, small. */
-#cc-main .cm__footer {
-  background: transparent !important;
-  border-top: 1px solid #E2E8F0 !important;
-  padding: 0.875rem 1.5rem !important;
-}
-[data-theme="dark"] #cc-main .cm__footer {
-  border-top-color: rgba(255, 255, 255, 0.08) !important;
-}
-#cc-main .cm__links,
-#cc-main .cm__link-group {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-#cc-main .cm__footer a {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #64748B;
-  border: none !important;
-}
-#cc-main .cm__footer a:hover {
-  color: #E8363B !important;
-}
-
-/* Preferences modal — same editorial palette, hairline rhythm. */
-#cc-main .pm {
+/* Close button (preferences X) */
+#cc-main .pm__close-btn {
+  color: var(--cc-secondary-color) !important;
+  border: 1px solid var(--cc-separator-border-color) !important;
   border-radius: 8px !important;
-  overflow: hidden;
-}
-#cc-main .pm__header {
-  border-bottom: 1px solid #E2E8F0 !important;
-  position: relative;
-}
-[data-theme="dark"] #cc-main .pm__header {
-  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* First section = the intro paragraph; keep it readable. */
-#cc-main .pm__section:first-child .pm__section-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-size: 1.05em;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-}
-
-/* Category rows — flat, no card background, hairline above. */
-#cc-main .pm__section--toggle {
   background: transparent !important;
-  border: none !important;
-  border-top: 1px solid #E2E8F0 !important;
-  border-radius: 0 !important;
-  margin: 0 !important;
+  transition: color 160ms ease, border-color 160ms ease !important;
 }
-[data-theme="dark"] #cc-main .pm__section--toggle {
-  border-top-color: rgba(255, 255, 255, 0.08) !important;
-}
-#cc-main .pm__section--toggle .pm__section-title {
-  background: transparent !important;
-  border: none !important;
-  padding: 1.1em 5.5em 1.1em 0 !important;
-  min-height: 62px;
-  border-radius: 0 !important;
-}
-#cc-main .pm__section--toggle .pm__section-title:hover {
-  background: transparent !important;
-}
-#cc-main .pm__section--toggle.is-expanded .pm__section-title {
-  background: transparent !important;
-}
-#cc-main .pm__section--toggle .pm__section-desc-wrapper {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 0 1.25em !important;
-}
-
-/* "Always active" badge — stronger, uppercase, tracked. */
-#cc-main .pm__badge {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.625rem !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase;
-  background: transparent !important;
+#cc-main .pm__close-btn:hover {
   color: #E8363B !important;
-  border: 1px solid rgba(232, 54, 59, 0.35) !important;
-  border-radius: 4px !important;
-  padding: 0 0.55em 1px !important;
-  height: 22px !important;
+  border-color: #E8363B !important;
 }
 
-/* PM footer — same row-reverse rhythm as consent modal. */
-#cc-main .pm__footer {
-  border-top: 1px solid #E2E8F0 !important;
-  background: transparent !important;
-  flex-direction: row-reverse !important;
-  flex-wrap: wrap !important;
-  gap: 0.25rem 1rem !important;
-  align-items: center;
-}
-[data-theme="dark"] #cc-main .pm__footer {
-  border-top-color: rgba(255, 255, 255, 0.08) !important;
-}
-#cc-main .pm__btn:not(.pm__btn--secondary) {
-  flex: 0 0 auto !important;
-  min-height: 46px !important;
-  border-radius: 6px !important;
-  padding: 0.75rem 1.5rem !important;
-}
-#cc-main .pm__btn--secondary {
-  min-height: 44px !important;
-  padding: 0.75rem 0.5rem !important;
+/* Focus ring */
+#cc-main .cm__btn:focus-visible,
+#cc-main .pm__btn:focus-visible,
+#cc-main .pm__close-btn:focus-visible {
+  outline: 2px solid #E8363B;
+  outline-offset: 3px;
 }
 
 /* ============================================================
-   Mobile — consolidated single source of truth
+   6. CONSENT MODAL LAYOUT
    ============================================================
-   One block governs all mobile layout. Uses :nth-child() rather
-   than :has() for robust specificity against the library default,
-   and inset-based positioning (left/right/bottom, no width) so
-   the library's `width: auto !important` cooperates instead of
-   fighting us.
-     - Bottom sheet for the consent modal, full-screen for the
-       preference center.
-     - Primary CTA: full-width navy block.
-     - Secondaries: inline text-links with middle-dot separator.
-     - max-height + internal scroll for short viewports.
-     - Safe-area-inset-bottom honoured for iPhone home indicator.
+   Two button-groups emitted by the library:
+     - Group 1: "Allow all" + "Only essential"
+     - Group 2: "Choose"
+   We flatten via display:contents so we can layout the three
+   buttons as siblings.
    ============================================================ */
-@media (max-width: 640px) {
-  /* Consent modal — bottom sheet via inset, no explicit width */
+
+/* Mobile-first: stack primary full-width, secondaries inline below */
+#cc-main .cm__btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
+}
+
+#cc-main .cm__btn-group {
+  display: contents;
+}
+
+/* Primary: force to first row and stretch full-width */
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
+  order: -1;
+  flex: 0 0 100%;
+  margin-bottom: 0.625rem;
+}
+
+/* Secondaries: inline on second row, centered */
+#cc-main .cm__btn--secondary {
+  order: 1;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+/* Middle-dot separator between secondaries (across or within groups) */
+#cc-main .cm__btn--secondary + .cm__btn--secondary::before,
+#cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
+  content: '·';
+  display: inline-block;
+  margin: 0 0.5rem 0 -0.25rem;
+  color: #94A3B8;
+  font-size: 1.25em;
+  line-height: 1;
+  opacity: 0.7;
+  pointer-events: none;
+}
+[data-theme="dark"]
+#cc-main .cm__btn--secondary + .cm__btn--secondary::before,
+[data-theme="dark"]
+#cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   7. PREFERENCES MODAL
+   ============================================================ */
+
+/* Header */
+#cc-main .pm__header {
+  padding: 1.5rem 1.5rem 0;
+  position: relative;
+}
+#cc-main .pm__close-btn-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Body */
+#cc-main .pm__body {
+  padding: 1.25rem 1.5rem;
+}
+
+/* Section (each category) */
+#cc-main .pm__section {
+  border: 1px solid var(--cc-separator-border-color);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: var(--cc-bg);
+  transition: border-color 180ms ease;
+}
+#cc-main .pm__section:hover {
+  border-color: #94A3B8;
+}
+#cc-main .pm__section--expandable .pm__section-title {
+  cursor: pointer;
+}
+
+/* Section title + toggle row */
+#cc-main .pm__section-title-wrapper {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#cc-main .pm__section-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cc-primary-color);
+  margin: 0;
+  flex: 1;
+}
+#cc-main .pm__section-desc {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.875rem;
+  margin-top: 0;
+}
+
+/* Toggle switch */
+#cc-main .pm__section-toggle,
+#cc-main .section__toggle,
+#cc-main .toggle__icon {
+  flex-shrink: 0;
+}
+
+/* Footer — horizontal on desktop, column on mobile */
+#cc-main .pm__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--cc-separator-border-color);
+}
+#cc-main .pm__btn-group {
+  display: contents;
+}
+#cc-main .pm__btn:not(.pm__btn--secondary) {
+  order: -1;
+  flex: 0 0 100%;
+  margin-bottom: 0.625rem;
+}
+#cc-main .pm__btn--secondary {
+  order: 1;
+  flex: 0 0 auto;
+  margin: 0;
+}
+#cc-main .pm__btn--secondary + .pm__btn--secondary::before,
+#cc-main .pm__btn-group + .pm__btn-group .pm__btn--secondary::before {
+  content: '·';
+  display: inline-block;
+  margin: 0 0.5rem 0 -0.25rem;
+  color: #94A3B8;
+  font-size: 1.25em;
+  line-height: 1;
+  opacity: 0.7;
+  pointer-events: none;
+}
+[data-theme="dark"]
+#cc-main .pm__btn--secondary + .pm__btn--secondary::before,
+[data-theme="dark"]
+#cc-main .pm__btn-group + .pm__btn-group .pm__btn--secondary::before {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   8. RESPONSIVE
+   ============================================================ */
+
+/* Mobile (<640px): consent modal as floating card at the bottom */
+@media (max-width: 639.98px) {
   #cc-main .cm {
     position: fixed !important;
     left: 0.75rem !important;
     right: 0.75rem !important;
-    bottom: 0 !important;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom)) !important;
     top: auto !important;
     transform: none !important;
     margin: 0 !important;
     max-width: none !important;
     width: auto !important;
-    border-radius: 16px 16px 0 0 !important;
-    max-height: 88dvh;
+    border-radius: 12px !important;
+    max-height: calc(100dvh - 1.5rem - env(safe-area-inset-bottom));
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
-  #cc-main .cm::before {
-    border-radius: 0;
-    width: 3px;
+  #cc-main .cm__texts,
+  #cc-main .cm__body {
+    padding: 1.25rem 1.25rem 0 !important;
   }
-
-  /* Title + eyebrow rhythm */
   #cc-main .cm__title {
-    font-size: 1.25em;
-    line-height: 1.2;
+    font-size: 1.25rem;
   }
   #cc-main .cm__title::before {
-    font-size: 0.58rem;
+    font-size: 0.5625rem;
     letter-spacing: 0.18em;
     margin-bottom: 0.4rem;
   }
-  #cc-main .cm__texts {
-    padding-top: 1.125rem;
-  }
   #cc-main .cm__desc {
-    font-size: 0.875em;
-    line-height: 1.6;
-    padding-bottom: 0.5rem;
-  }
-  #cc-main .cm__desc,
-  #cc-main .cm__title {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
+    font-size: 0.875rem;
   }
 
-  /* Action zone — flatten btn-groups, stack primary on top, secondaries inline below.
-     The library puts Accept+Reject in one btn-group and Choose in another,
-     so we dissolve the groups and target buttons by class instead. */
-  #cc-main .cm__btns {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0 !important;
-    padding: 1rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)) !important;
-  }
-  #cc-main .cm__btn-group {
-    display: contents !important;
-  }
-
-  /* Primary CTA — full-width block, always first via order */
-  #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
-    order: -1 !important;
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    min-height: 48px !important;
-    padding: 0.75rem 1rem !important;
-    margin-bottom: 0.5rem !important;
-    white-space: nowrap;
-  }
-
-  /* Secondaries — text-links in a row with middle-dot separator */
-  #cc-main .cm__btn--secondary {
-    order: 1 !important;
-    width: auto !important;
-    flex: 0 0 auto !important;
-    min-height: 36px !important;
-    padding: 0.375rem 0.25rem !important;
-    font-size: 0.8125rem !important;
-    text-align: center;
-    white-space: nowrap;
-    margin: 0 !important;
-  }
-  /* Middle-dot between secondary text-links. Buttons live in separate
-     btn-group DOM parents even with display:contents, so we target
-     the secondary in any group that follows another group. */
-  #cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
-    content: '\00b7';
-    display: inline-block;
-    margin: 0 0.75rem;
-    color: #94A3B8;
-    font-size: 1.25em;
-    line-height: 1;
-    opacity: 0.7;
-  }
-  [data-theme="dark"] #cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  /* Footer */
-  #cc-main .cm__footer {
-    padding: 0.625rem 1.25rem calc(0.5rem + env(safe-area-inset-bottom)) !important;
-  }
-  #cc-main .cm__link-group {
-    font-size: 0.625rem;
-    gap: 0.75rem;
-    justify-content: center;
-  }
-  #cc-main .cm__link-group > * + * {
-    margin-left: 0.75rem;
-  }
-
-  /* ── Preferences modal — full-screen on mobile ── */
+  /* Preferences goes full-screen on mobile */
   #cc-main .pm {
     position: fixed !important;
     inset: 0 !important;
     margin: 0 !important;
-    max-width: none !important;
     width: auto !important;
+    max-width: none !important;
     border-radius: 0 !important;
     max-height: 100dvh;
     overflow-y: auto;
@@ -923,66 +563,111 @@ html.show--preferences body {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
+  #cc-main .pm::before {
+    border-radius: 0;
+  }
   #cc-main .pm__title {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
   #cc-main .pm__title::before {
-    font-size: 0.58rem;
+    font-size: 0.5625rem;
     letter-spacing: 0.18em;
-  }
-  #cc-main .pm__header {
-    padding: 1.25rem 1.25rem !important;
-  }
-  #cc-main .pm__body {
-    padding: 0.5rem 1.25rem !important;
-  }
-  #cc-main .pm__section--toggle .pm__section-title {
-    padding: 0.875em 5em 0.875em 0 !important;
-    min-height: 56px !important;
-  }
-
-  /* Preference footer — flatten btn-groups, same pattern as consent modal */
-  #cc-main .pm__footer {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0 !important;
-    padding: 1rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)) !important;
-  }
-  #cc-main .pm__btn-group {
-    display: contents !important;
-  }
-  #cc-main .pm__btn:not(.pm__btn--secondary) {
-    order: -1 !important;
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    min-height: 48px !important;
-    padding: 0.75rem 1rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  #cc-main .pm__btn--secondary {
-    order: 1 !important;
-    width: auto !important;
-    flex: 0 0 auto !important;
-    min-height: 36px !important;
-    padding: 0.375rem 0.25rem !important;
-    font-size: 0.8125rem !important;
-    white-space: nowrap;
-    margin: 0 !important;
   }
 }
 
-/* Short-screen tier — iPhone SE and landscape */
-@media (max-width: 640px) and (max-height: 640px) {
+/* Short-screen tier — iPhone SE and landscape phones */
+@media (max-width: 639.98px) and (max-height: 700px) {
   #cc-main .cm__title {
-    font-size: 1.1em;
+    font-size: 1.125rem;
   }
   #cc-main .cm__desc {
-    font-size: 0.8125em;
-    line-height: 1.5;
+    font-size: 0.8125rem;
+    line-height: 1.55;
   }
   #cc-main .cm__texts {
-    padding-top: 0.875rem;
+    padding-top: 1rem !important;
+  }
+  #cc-main .cm__btns {
+    padding-top: 0.75rem;
+  }
+}
+
+/* Tablet / desktop (≥640px): centered card, horizontal button layout */
+@media (min-width: 640px) {
+  #cc-main .cm {
+    max-width: 480px;
+  }
+  #cc-main .pm {
+    max-width: 600px;
+  }
+
+  /* Consent modal: primary right, secondaries left */
+  #cc-main .cm__btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    padding: 1rem 1.5rem 1.25rem;
+  }
+  #cc-main .cm__btn-group {
+    display: contents;
+  }
+  #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
+    order: 2;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+  #cc-main .cm__btn--secondary {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  /* Preferences footer: same distribution */
+  #cc-main .pm__footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    padding: 1rem 1.5rem 1.25rem;
+  }
+  #cc-main .pm__btn:not(.pm__btn--secondary) {
+    order: 2;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+  #cc-main .pm__btn--secondary {
+    order: 1;
+    flex: 0 0 auto;
+  }
+}
+
+/* ============================================================
+   9. DARK MODE POLISH
+   ============================================================ */
+[data-theme="dark"] #cc-main .cm,
+[data-theme="dark"] #cc-main .pm {
+  background: #0F172A;
+}
+[data-theme="dark"] #cc-main .pm__section {
+  background: rgba(255, 255, 255, 0.02);
+}
+[data-theme="dark"] #cc-main .pm__section:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+   10. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  #cc-main .cm,
+  #cc-main .pm,
+  #cc-main .cm__btn,
+  #cc-main .pm__btn,
+  #cc-main .pm__close-btn,
+  #cc-main .pm__section {
+    transition: none !important;
+    transform: none !important;
   }
 }
