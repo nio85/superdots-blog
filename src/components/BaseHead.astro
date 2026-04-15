@@ -35,13 +35,25 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <script is:inline>
 (function() {
 	if (localStorage.getItem('sd-analytics-optout') === 'true') return;
-	// Check CookieConsent v3 cookie for analytics category
-	var pcMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
 	var hasAnalyticsConsent = false;
-	if (pcMatch) {
-		try { hasAnalyticsConsent = (JSON.parse(decodeURIComponent(pcMatch[1])).categories || []).indexOf('analytics') !== -1; } catch(e) {}
-	} else {
-		hasAnalyticsConsent = localStorage.getItem('sd-cookie-consent') === 'accepted';
+	// Primary: sd-consent-v2 (custom implementation)
+	try {
+		var raw = localStorage.getItem('sd-consent-v2');
+		if (raw) {
+			var p = JSON.parse(raw);
+			if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
+				hasAnalyticsConsent = !!(p.categories && p.categories.analytics);
+			}
+		}
+	} catch(e) {}
+	// Legacy fallbacks
+	if (!hasAnalyticsConsent) {
+		var pcMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
+		if (pcMatch) {
+			try { hasAnalyticsConsent = (JSON.parse(decodeURIComponent(pcMatch[1])).categories || []).indexOf('analytics') !== -1; } catch(e) {}
+		} else {
+			hasAnalyticsConsent = localStorage.getItem('sd-cookie-consent') === 'accepted';
+		}
 	}
 	if (!hasAnalyticsConsent) return;
 	var pc = document.createElement('link');
@@ -142,27 +154,50 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 		gtag('js', new Date());
 		gtag('config', gaId);
 
-		// If user already consented via CookieConsent v3, grant analytics immediately
-		var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-		if (ccMatch) {
-			try {
-				var ccData = JSON.parse(decodeURIComponent(ccMatch[1]));
-				var cats = ccData.categories || [];
-				if (cats.indexOf('analytics') !== -1) {
-					gtag('consent', 'update', { analytics_storage: 'granted' });
+		// Primary: sd-consent-v2 (custom implementation)
+		var storedCats = null;
+		try {
+			var raw = localStorage.getItem('sd-consent-v2');
+			if (raw) {
+				var p = JSON.parse(raw);
+				if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
+					storedCats = p.categories || null;
 				}
-				if (cats.indexOf('marketing') !== -1) {
-					gtag('consent', 'update', {
-						ad_storage: 'granted',
-						ad_user_data: 'granted',
-						ad_personalization: 'granted'
-					});
-				}
-			} catch(e) {}
-		}
-		// Fallback: old localStorage for users mid-migration
-		else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
-			gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
+		} catch(e) {}
+		if (storedCats) {
+			if (storedCats.analytics) {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
+			if (storedCats.marketing) {
+				gtag('consent', 'update', {
+					ad_storage: 'granted',
+					ad_user_data: 'granted',
+					ad_personalization: 'granted'
+				});
+			}
+		} else {
+			// Legacy fallbacks (v3 cookie, v1 localStorage)
+			var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
+			if (ccMatch) {
+				try {
+					var ccData = JSON.parse(decodeURIComponent(ccMatch[1]));
+					var cats = ccData.categories || [];
+					if (cats.indexOf('analytics') !== -1) {
+						gtag('consent', 'update', { analytics_storage: 'granted' });
+					}
+					if (cats.indexOf('marketing') !== -1) {
+						gtag('consent', 'update', {
+							ad_storage: 'granted',
+							ad_user_data: 'granted',
+							ad_personalization: 'granted'
+						});
+					}
+				} catch(e) {}
+			}
+			else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
 		}
 	})();
 }
@@ -182,16 +217,31 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 		})(window, document, "clarity", "script", clarityId);
 	};
-	// Start immediately if user already consented via CookieConsent v3
-	var ccClarityMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-	if (ccClarityMatch) {
-		try {
-			if ((JSON.parse(decodeURIComponent(ccClarityMatch[1])).categories || []).indexOf('analytics') !== -1) {
-				window.SD_startClarity();
+	// Primary: sd-consent-v2 (custom implementation)
+	var shouldStart = false;
+	try {
+		var raw = localStorage.getItem('sd-consent-v2');
+		if (raw) {
+			var p = JSON.parse(raw);
+			if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
+				shouldStart = !!(p.categories && p.categories.analytics);
 			}
-		} catch(e) {}
-	} else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
+		}
+	} catch(e) {}
+	if (shouldStart) {
 		window.SD_startClarity();
+	} else {
+		// Legacy fallbacks
+		var ccClarityMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
+		if (ccClarityMatch) {
+			try {
+				if ((JSON.parse(decodeURIComponent(ccClarityMatch[1])).categories || []).indexOf('analytics') !== -1) {
+					window.SD_startClarity();
+				}
+			} catch(e) {}
+		} else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
+			window.SD_startClarity();
+		}
 	}
 }
 </script>
