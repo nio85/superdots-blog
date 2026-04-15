@@ -18,6 +18,7 @@ faqs:
     answer: "Start with Microsoft Clarity (free) for behavior analysis, then add Hotjar's Growth plan ($49/month) when you need AI-powered insight summaries. If you're running landing pages specifically, Unbounce's Build plan (from $99/month) includes Smart Traffic, which automatically routes visitors to the best-performing variant — the closest thing to genuine AI optimization available at a non-enterprise price point."
   - question: "Can I use ChatGPT or Claude for conversion rate optimization?"
     answer: "Yes — but not in the way most people assume. Claude and ChatGPT can't read your analytics or watch session recordings directly. What they can do is help you interpret data you paste in, generate test hypotheses, write variant copy, and structure an A/B test plan. The workflow: export your funnel drop-off data from Clarity or Hotjar, paste the summary into Claude, and ask it to identify friction points and draft variant copy for each. This takes 15 minutes and costs nothing extra."
+heroImage: "/images/blog/ai-conversion-rate-optimization-tools.webp"
 ---
 
 Most AI CRO tools aren't using AI in any meaningful sense. They've added a chatbot icon to a traditional A/B testing dashboard and called it AI.
