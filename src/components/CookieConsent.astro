@@ -1,22 +1,25 @@
 ---
 /**
- * Custom GDPR-compliant cookie consent — zero dependencies.
+ * Cookie consent — editorial design with inline policy accordions.
+ *
+ * Custom GDPR-compliant. Zero dependencies.
  *
  * Storage: localStorage['sd-consent-v2']
  *   { version, timestamp, expires, categories: { necessary, analytics, marketing } }
  *
- * State machine via html[data-consent-state]: idle | banner | preferences
+ * UI state via html[data-consent-state]: idle | banner | preferences
  *
- * Categories:
- *   - necessary (read-only): sd-theme, sd-consent-v2
- *   - analytics (opt-in):    GA4, Clarity
- *   - marketing (opt-in):    reserved
+ * Accordion policies expand inline (no tab switching) so the user can read
+ * the full policy without losing the banner context. Content mirrors
+ * src/content/legal/{privacy,cookie-policy}.md but condensed to the
+ * GDPR-essential points. Links to the full pages still exist as fallback.
  */
 ---
 
 <div id="sd-cc-root" aria-hidden="true">
   <div id="sd-cc-backdrop" aria-hidden="true"></div>
 
+  <!-- BANNER -->
   <div
     id="sd-cc-banner"
     role="alertdialog"
@@ -26,24 +29,107 @@
     tabindex="-1"
   >
     <div class="sd-cc-rule" aria-hidden="true"></div>
-    <h2 id="sd-cc-banner-title">A word on cookies.</h2>
-    <p id="sd-cc-banner-desc">
-      We use Google Analytics and Microsoft Clarity to see which articles actually get read.
+
+    <p class="sd-cc-eyebrow">
+      <span class="sd-cc-dot" aria-hidden="true"></span>
+      Cookies
+    </p>
+
+    <h2 id="sd-cc-banner-title" class="sd-cc-title">
+      A word on cookies<span class="sd-cc-period">.</span>
+    </h2>
+
+    <p id="sd-cc-banner-desc" class="sd-cc-lede">
+      We use <strong>Google Analytics</strong> and <strong>Microsoft Clarity</strong> to see which articles actually get read.
       No personal data is sold, shared, or creepy.
-      <a href="/cookie-policy/" target="_blank" rel="noopener">The full story &rarr;</a>
     </p>
-    <div class="sd-cc-actions">
-      <button type="button" class="sd-cc-btn sd-cc-btn-primary" data-action="accept-all">Allow all</button>
-      <button type="button" class="sd-cc-btn sd-cc-btn-secondary" data-action="reject-all">Only essential</button>
-      <button type="button" class="sd-cc-btn sd-cc-btn-link" data-action="open-preferences">Choose</button>
+
+    <div class="sd-cc-policy-row">
+      <button type="button" class="sd-cc-policy-link" data-action="toggle-policy" data-target="privacy" aria-expanded="false" aria-controls="sd-cc-policy-privacy">
+        <span class="sd-cc-policy-chevron" aria-hidden="true">▸</span>
+        Privacy
+      </button>
+      <span class="sd-cc-policy-sep" aria-hidden="true">·</span>
+      <button type="button" class="sd-cc-policy-link" data-action="toggle-policy" data-target="cookie" aria-expanded="false" aria-controls="sd-cc-policy-cookie">
+        <span class="sd-cc-policy-chevron" aria-hidden="true">▸</span>
+        Cookie policy
+      </button>
     </div>
-    <p class="sd-cc-footer-links">
-      <a href="/privacy/" target="_blank" rel="noopener">Privacy</a>
-      <span aria-hidden="true">·</span>
-      <a href="/cookie-policy/" target="_blank" rel="noopener">Cookie policy</a>
-    </p>
+
+    <!-- Inline policy accordions (shared between banner + preferences) -->
+    <div id="sd-cc-policy-privacy" class="sd-cc-policy-panel" hidden>
+      <div class="sd-cc-policy-inner">
+        <h3>Privacy — the short version</h3>
+        <p><strong>Controller:</strong> Superdots S.r.l., Via Ferrini 11, Paderno Dugnano (MI), Italy. P.IVA 09171640965. Questions: <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.</p>
+
+        <h4>What we collect</h4>
+        <ul>
+          <li><strong>Umami</strong> (self-hosted, cookie-free): aggregated page URL, referrer, browser, OS, device, country. No cookies, no PII. <em>Legitimate interest.</em></li>
+          <li><strong>Google Analytics 4:</strong> pseudonymised usage data. <em>Consent.</em></li>
+          <li><strong>Microsoft Clarity:</strong> heatmaps &amp; session recordings. <em>Consent.</em></li>
+          <li><strong>Theme</strong> (<code>sd-theme</code> in localStorage): remember light/dark. <em>Legitimate interest.</em></li>
+          <li><strong>Cloudflare:</strong> IP &amp; server logs for delivery and abuse protection. <em>Legitimate interest.</em></li>
+          <li><strong>Email</strong> (if you subscribe): newsletter only. <em>Consent.</em></li>
+        </ul>
+        <p>No names. No payments. No accounts required.</p>
+
+        <h4>Data transfers</h4>
+        <p>Umami &amp; Mautic live on our EU servers. Google, Microsoft, Cloudflare, Resend process in the US — all DPF-certified with SCCs.</p>
+
+        <h4>Retention</h4>
+        <p>GA4 data: 14 months. Clarity: 30 days. Cloudflare edge logs: 72h. Newsletter email: until you unsubscribe — then deleted immediately. Unconfirmed signups: 30 days.</p>
+
+        <h4>Your rights (GDPR)</h4>
+        <p>Access, rectification, erasure, restriction, portability, objection, consent withdrawal. Email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>. We reply within 30 days. Complaints: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+
+        <p class="sd-cc-policy-footer">
+          <a href="/privacy/" class="sd-cc-policy-full" target="_blank" rel="noopener">Read the full policy ↗</a>
+          <span class="sd-cc-policy-meta">Last updated 27 March 2026</span>
+        </p>
+      </div>
+    </div>
+
+    <div id="sd-cc-policy-cookie" class="sd-cc-policy-panel" hidden>
+      <div class="sd-cc-policy-inner">
+        <h3>Cookies — the short version</h3>
+        <p>Three categories. You choose. We remember for 6 months.</p>
+
+        <h4>Necessary <span class="sd-cc-badge sd-cc-badge-always">Always on</span></h4>
+        <ul class="sd-cc-cookie-list">
+          <li><code>sd-theme</code> — light/dark preference (localStorage)</li>
+          <li><code>sd-consent-v2</code> — this consent record (localStorage)</li>
+          <li><code>__cf_bm</code> — Cloudflare bot management (30 min)</li>
+        </ul>
+        <p><em>Exempt from consent under Art. 5(3) ePrivacy Directive.</em></p>
+
+        <h4>Analytics <span class="sd-cc-badge sd-cc-badge-optin">Opt-in</span></h4>
+        <ul class="sd-cc-cookie-list">
+          <li><code>_ga</code>, <code>_ga_DC2BTH9VKX</code> — Google Analytics 4 (2 years)</li>
+          <li><code>_clck</code>, <code>_clsk</code>, <code>CLID</code> — Microsoft Clarity (up to 1 year)</li>
+        </ul>
+        <p><em>Never set unless you say yes. You can withdraw any time via Cookie settings in the footer.</em></p>
+
+        <h4>Marketing <span class="sd-cc-badge sd-cc-badge-optin">Opt-in</span></h4>
+        <p>Reserved for future retargeting pixels. Nothing active today. We'll ask again when we add any.</p>
+
+        <h4>Cookie-free analytics</h4>
+        <p>Umami runs without cookies or PII — exempt from consent under Art. 5(3) ePrivacy.</p>
+
+        <p class="sd-cc-policy-footer">
+          <a href="/cookie-policy/" class="sd-cc-policy-full" target="_blank" rel="noopener">Read the full policy ↗</a>
+          <span class="sd-cc-policy-meta">Last updated 14 April 2026</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="sd-cc-actions">
+      <button type="button" class="btn btn-primary sd-cc-btn" data-action="accept-all">Allow all</button>
+      <button type="button" class="btn btn-ghost sd-cc-btn" data-action="reject-all">Only essential</button>
+      <button type="button" class="sd-cc-btn-text" data-action="open-preferences">Choose what</button>
+    </div>
   </div>
 
+  <!-- PREFERENCES -->
   <div
     id="sd-cc-preferences"
     role="dialog"
@@ -51,22 +137,28 @@
     aria-labelledby="sd-cc-prefs-title"
     tabindex="-1"
   >
-    <header class="sd-cc-prefs-header">
-      <h2 id="sd-cc-prefs-title">Your call.</h2>
+    <div class="sd-cc-rule" aria-hidden="true"></div>
+    <div class="sd-cc-prefs-header">
+      <div>
+        <p class="sd-cc-eyebrow">
+          <span class="sd-cc-dot" aria-hidden="true"></span>
+          Preferences
+        </p>
+        <h2 id="sd-cc-prefs-title" class="sd-cc-title">Your call<span class="sd-cc-period">.</span></h2>
+      </div>
       <button type="button" class="sd-cc-close" data-action="close-preferences" aria-label="Close preferences">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
-    </header>
+    </div>
 
     <p class="sd-cc-intro">
-      Three categories. No dark patterns. Toggle what you want. We remember your choice for 6 months.
-      Essential cookies stay on — without them the site breaks.
+      Three categories. No dark patterns. Toggle what you want — we remember your choice for 6 months.
     </p>
 
     <div class="sd-cc-categories">
-      <fieldset class="sd-cc-cat">
+      <fieldset class="sd-cc-cat sd-cc-cat-locked">
         <div class="sd-cc-cat-head">
           <legend>Essential</legend>
           <label class="sd-cc-switch sd-cc-switch-locked">
@@ -87,7 +179,7 @@
             <span class="sd-cc-sr">Toggle analytics</span>
           </label>
         </div>
-        <p>Google Analytics (GA4) and Microsoft Clarity. Aggregate reading patterns and heatmaps — no names, no emails, no selling.</p>
+        <p>Google Analytics and Microsoft Clarity. Aggregate reading patterns and heatmaps — no names, no emails, no selling.</p>
       </fieldset>
 
       <fieldset class="sd-cc-cat">
@@ -103,14 +195,67 @@
       </fieldset>
     </div>
 
-    <p class="sd-cc-policy-link">
-      The whole policy is <a href="/cookie-policy/" target="_blank" rel="noopener">right here</a>. Plain English, no legalese.
-    </p>
+    <div class="sd-cc-policy-row sd-cc-policy-row-prefs">
+      <button type="button" class="sd-cc-policy-link" data-action="toggle-policy" data-target="privacy-prefs" aria-expanded="false" aria-controls="sd-cc-policy-privacy-prefs">
+        <span class="sd-cc-policy-chevron" aria-hidden="true">▸</span>
+        Privacy
+      </button>
+      <span class="sd-cc-policy-sep" aria-hidden="true">·</span>
+      <button type="button" class="sd-cc-policy-link" data-action="toggle-policy" data-target="cookie-prefs" aria-expanded="false" aria-controls="sd-cc-policy-cookie-prefs">
+        <span class="sd-cc-policy-chevron" aria-hidden="true">▸</span>
+        Cookie policy
+      </button>
+    </div>
+
+    <div id="sd-cc-policy-privacy-prefs" class="sd-cc-policy-panel" hidden>
+      <div class="sd-cc-policy-inner">
+        <h3>Privacy — the short version</h3>
+        <p><strong>Controller:</strong> Superdots S.r.l., Via Ferrini 11, Paderno Dugnano (MI), Italy. Questions: <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.</p>
+        <h4>What we collect</h4>
+        <ul>
+          <li><strong>Umami</strong> (self-hosted, cookie-free): aggregated metrics, no PII. <em>Legitimate interest.</em></li>
+          <li><strong>Google Analytics 4</strong> &amp; <strong>Microsoft Clarity:</strong> pseudonymised analytics. <em>Consent.</em></li>
+          <li><strong>Theme</strong> &amp; <strong>Cloudflare</strong> logs. <em>Legitimate interest.</em></li>
+          <li><strong>Email</strong> (newsletter only). <em>Consent.</em></li>
+        </ul>
+        <p>Retention: GA4 14 months, Clarity 30 days, Cloudflare 72h, newsletter until unsubscribe.</p>
+        <h4>Your rights</h4>
+        <p>Access, rectification, erasure, restriction, portability, objection, consent withdrawal. Email <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>.</p>
+        <p class="sd-cc-policy-footer">
+          <a href="/privacy/" class="sd-cc-policy-full" target="_blank" rel="noopener">Read the full policy ↗</a>
+          <span class="sd-cc-policy-meta">Last updated 27 March 2026</span>
+        </p>
+      </div>
+    </div>
+
+    <div id="sd-cc-policy-cookie-prefs" class="sd-cc-policy-panel" hidden>
+      <div class="sd-cc-policy-inner">
+        <h3>Cookies — the short version</h3>
+        <p>Three categories. You choose. We remember for 6 months.</p>
+        <h4>Necessary <span class="sd-cc-badge sd-cc-badge-always">Always on</span></h4>
+        <ul class="sd-cc-cookie-list">
+          <li><code>sd-theme</code> — light/dark preference</li>
+          <li><code>sd-consent-v2</code> — this consent record</li>
+          <li><code>__cf_bm</code> — Cloudflare bot management (30 min)</li>
+        </ul>
+        <h4>Analytics <span class="sd-cc-badge sd-cc-badge-optin">Opt-in</span></h4>
+        <ul class="sd-cc-cookie-list">
+          <li><code>_ga</code>, <code>_ga_DC2BTH9VKX</code> — GA4</li>
+          <li><code>_clck</code>, <code>_clsk</code>, <code>CLID</code> — Clarity</li>
+        </ul>
+        <h4>Marketing <span class="sd-cc-badge sd-cc-badge-optin">Opt-in</span></h4>
+        <p>Reserved for future retargeting pixels. Nothing active today.</p>
+        <p class="sd-cc-policy-footer">
+          <a href="/cookie-policy/" class="sd-cc-policy-full" target="_blank" rel="noopener">Read the full policy ↗</a>
+          <span class="sd-cc-policy-meta">Last updated 14 April 2026</span>
+        </p>
+      </div>
+    </div>
 
     <footer class="sd-cc-prefs-footer">
-      <button type="button" class="sd-cc-btn sd-cc-btn-primary" data-action="save-preferences">Save choices</button>
-      <button type="button" class="sd-cc-btn sd-cc-btn-secondary" data-action="reject-all">Only essential</button>
-      <button type="button" class="sd-cc-btn sd-cc-btn-secondary" data-action="accept-all">Allow all</button>
+      <button type="button" class="btn btn-primary sd-cc-btn" data-action="save-preferences">Save choices</button>
+      <button type="button" class="btn btn-ghost sd-cc-btn" data-action="reject-all">Only essential</button>
+      <button type="button" class="btn btn-ghost sd-cc-btn" data-action="accept-all">Allow all</button>
     </footer>
   </div>
 </div>
@@ -170,7 +315,6 @@ function writeConsent(cats: Partial<Categories>): ConsentRecord {
 }
 
 function migrateLegacy(): ConsentRecord | null {
-  // vanilla-cookieconsent v3 HTTP cookie
   const ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
   if (ccMatch) {
     try {
@@ -180,12 +324,10 @@ function migrateLegacy(): ConsentRecord | null {
         analytics: cats.includes('analytics'),
         marketing: cats.includes('marketing'),
       });
-      // Expire the legacy cookie
       document.cookie = 'cc_cookie=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
       return rec;
     } catch {}
   }
-  // v1 localStorage
   const v1 = localStorage.getItem('sd-cookie-consent');
   if (v1) {
     const rec = writeConsent({ analytics: v1 === 'accepted', marketing: false });
@@ -226,7 +368,7 @@ function getFocusable(el: HTMLElement): HTMLElement[] {
     el.querySelectorAll<HTMLElement>(
       'a[href], button:not([disabled]), input:not([disabled]):not([type=hidden]), [tabindex]:not([tabindex="-1"])'
     )
-  ).filter((n) => !n.hasAttribute('aria-hidden'));
+  ).filter((n) => !n.hasAttribute('aria-hidden') && n.offsetParent !== null || n.getClientRects().length > 0);
 }
 
 function setState(state: 'idle' | 'banner' | 'preferences') {
@@ -234,6 +376,7 @@ function setState(state: 'idle' | 'banner' | 'preferences') {
   if (root) root.setAttribute('aria-hidden', state === 'idle' ? 'true' : 'false');
   if (state === 'idle') {
     document.body.style.overflow = '';
+    closeAllPolicyPanels();
     if (lastFocus && typeof lastFocus.focus === 'function') {
       try { lastFocus.focus(); } catch {}
     }
@@ -244,9 +387,10 @@ function setState(state: 'idle' | 'banner' | 'preferences') {
   const active = state === 'banner' ? banner : prefs;
   if (!active) return;
   if (!lastFocus) lastFocus = document.activeElement as HTMLElement;
-  const focusables = getFocusable(active);
-  const primary = active.querySelector<HTMLElement>('[data-action="accept-all"]') || focusables[0];
-  setTimeout(() => primary?.focus(), 20);
+  const primary =
+    active.querySelector<HTMLElement>('[data-action="accept-all"]') ||
+    active.querySelector<HTMLElement>('[data-action="save-preferences"]');
+  setTimeout(() => primary?.focus(), 30);
 }
 
 function loadCurrentIntoToggles() {
@@ -269,6 +413,45 @@ function readTogglesAsCategories(): Partial<Categories> {
   return out;
 }
 
+// --- Policy accordions ---
+function closeAllPolicyPanels() {
+  document.querySelectorAll<HTMLElement>('.sd-cc-policy-panel').forEach((panel) => {
+    panel.hidden = true;
+  });
+  document.querySelectorAll<HTMLElement>('[data-action="toggle-policy"]').forEach((btn) => {
+    btn.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function togglePolicy(target: string) {
+  const triggerBtn = document.querySelector<HTMLElement>(`[data-action="toggle-policy"][data-target="${target}"]`);
+  if (!triggerBtn) return;
+  const controls = triggerBtn.getAttribute('aria-controls');
+  if (!controls) return;
+  const panel = document.getElementById(controls);
+  if (!panel) return;
+  const willOpen = panel.hidden;
+  // Close siblings in the same policy row
+  const row = triggerBtn.parentElement;
+  row?.querySelectorAll<HTMLElement>('[data-action="toggle-policy"]').forEach((btn) => {
+    if (btn === triggerBtn) return;
+    btn.setAttribute('aria-expanded', 'false');
+    const otherControls = btn.getAttribute('aria-controls');
+    if (otherControls) {
+      const otherPanel = document.getElementById(otherControls);
+      if (otherPanel) otherPanel.hidden = true;
+    }
+  });
+  panel.hidden = !willOpen;
+  triggerBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  if (willOpen) {
+    // Smooth scroll the panel into view within the dialog
+    setTimeout(() => {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 50);
+  }
+}
+
 // --- Event delegation ---
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement | null;
@@ -289,10 +472,13 @@ document.addEventListener('click', (e) => {
   } else if (action === 'save-preferences') {
     writeConsent(readTogglesAsCategories());
     setState('idle');
+  } else if (action === 'toggle-policy') {
+    const t = btn.dataset.target;
+    if (t) togglePolicy(t);
   }
 });
 
-// Keyboard: ESC closes preferences (not banner — non-dismissible) + Tab focus trap
+// Keyboard: ESC closes preferences (not banner) + Tab focus trap
 document.addEventListener('keydown', (e) => {
   const state = document.documentElement.getAttribute('data-consent-state');
   if (state !== 'banner' && state !== 'preferences') return;

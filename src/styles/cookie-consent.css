@@ -1,8 +1,12 @@
 /* ============================================================
-   COOKIE CONSENT — custom implementation (GDPR-compliant)
+   COOKIE CONSENT — editorial design, GDPR-compliant
+   Dual-font (Space Grotesk display + Inter body), solid red CTA,
+   inline policy accordions, magazine-card composition.
    ============================================================ */
 
-/* 1. STATE GATE — hide everything by default */
+/* ============================================================
+   1. STATE GATE
+   ============================================================ */
 #sd-cc-root,
 #sd-cc-backdrop,
 #sd-cc-banner,
@@ -25,15 +29,21 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   display: flex;
 }
 
-/* 2. BACKDROP */
+/* ============================================================
+   2. BACKDROP
+   ============================================================ */
 #sd-cc-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(11, 18, 34, 0.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(11, 18, 34, 0.62);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
   z-index: 9998;
-  animation: sd-cc-fade 220ms ease forwards;
+  animation: sd-cc-fade 260ms ease forwards;
+}
+
+html[data-theme="dark"] #sd-cc-backdrop {
+  background: rgba(0, 0, 0, 0.72);
 }
 
 @keyframes sd-cc-fade {
@@ -42,11 +52,13 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
 }
 
 @keyframes sd-cc-rise {
-  from { opacity: 0; transform: translate(-50%, calc(-50% + 12px)); }
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 14px)); }
   to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* 3. BANNER + PREFERENCES — shared shell */
+/* ============================================================
+   3. CARD SHELL — shared between banner + preferences
+   ============================================================ */
 #sd-cc-banner,
 #sd-cc-preferences {
   position: fixed;
@@ -54,181 +66,431 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  width: min(92vw, 480px);
-  max-height: 92vh;
+  width: min(92vw, 520px);
+  max-height: min(86vh, 760px);
   overflow-y: auto;
-  background: var(--color-bg, #fff);
-  color: var(--color-text, #1E293B);
-  border-radius: var(--radius-lg, 12px);
-  box-shadow: 0 20px 60px rgba(11, 18, 34, 0.35), 0 4px 12px rgba(11, 18, 34, 0.12);
+  overflow-x: hidden;
+  background: var(--color-bg, #FFFFFF);
+  color: var(--color-text, #334155);
+  border-radius: var(--radius-xl, 16px);
+  box-shadow:
+    0 24px 72px rgba(11, 18, 34, 0.32),
+    0 6px 16px rgba(11, 18, 34, 0.12),
+    0 0 0 1px rgba(11, 18, 34, 0.06);
   flex-direction: column;
-  padding: 1.5rem 1.5rem 1.25rem;
+  padding: 2rem 1.75rem 1.5rem;
   font-family: var(--font-body, 'Inter', sans-serif);
-  animation: sd-cc-rise 260ms cubic-bezier(.2,.8,.2,1) forwards;
+  animation: sd-cc-rise 300ms cubic-bezier(.16,.84,.22,1) forwards;
   outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sd-gray-300, #CBD5E1) transparent;
 }
 
 #sd-cc-preferences {
   width: min(92vw, 560px);
-  padding: 1.25rem 1.5rem 1.5rem;
 }
 
-/* Top red rule (banner only) */
-#sd-cc-banner .sd-cc-rule {
+#sd-cc-banner::-webkit-scrollbar,
+#sd-cc-preferences::-webkit-scrollbar {
+  width: 8px;
+}
+#sd-cc-banner::-webkit-scrollbar-thumb,
+#sd-cc-preferences::-webkit-scrollbar-thumb {
+  background: var(--sd-gray-300, #CBD5E1);
+  border-radius: 4px;
+}
+
+/* Top red rule — editorial signature */
+.sd-cc-rule {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 5px;
   background: var(--sd-red, #E8363B);
-  border-top-left-radius: var(--radius-lg, 12px);
-  border-top-right-radius: var(--radius-lg, 12px);
+  border-top-left-radius: var(--radius-xl, 16px);
+  border-top-right-radius: var(--radius-xl, 16px);
 }
 
-/* 4. TYPOGRAPHY */
-#sd-cc-banner h2,
-#sd-cc-preferences h2 {
+/* ============================================================
+   4. TYPOGRAPHY — dual font treatment
+   ============================================================ */
+.sd-cc-eyebrow {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted, #64748B);
+  margin: 0 0 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+.sd-cc-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sd-red, #E8363B);
+  box-shadow: 0 0 0 3px rgba(232, 54, 59, 0.18);
+}
+
+.sd-cc-title {
   font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1.875rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   color: var(--color-text-strong, #0B1222);
-  margin: 0.25rem 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
 
-#sd-cc-banner p,
-#sd-cc-preferences p {
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  margin: 0 0 1rem;
-  color: var(--color-text, #334155);
-}
-
-#sd-cc-banner a,
-#sd-cc-preferences a {
+.sd-cc-period {
   color: var(--sd-red, #E8363B);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
 }
 
-#sd-cc-banner a:hover,
-#sd-cc-preferences a:hover {
-  color: var(--sd-red-dark, #CC2D32);
-}
-
-.sd-cc-footer-links {
-  font-size: 0.8125rem !important;
-  color: var(--color-text-muted, #64748B) !important;
-  margin: 0.75rem 0 0 !important;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.sd-cc-footer-links a {
-  color: var(--color-text-muted, #64748B) !important;
-}
-
-/* 5. BUTTONS */
-.sd-cc-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-.sd-cc-btn {
+.sd-cc-lede {
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-weight: 600;
   font-size: 0.9375rem;
-  line-height: 1;
-  border: 1px solid transparent;
-  border-radius: var(--radius-md, 8px);
-  padding: 0.75rem 1rem;
-  min-height: 44px;
-  cursor: pointer;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease, transform 100ms ease;
-  text-align: center;
+  line-height: 1.6;
+  color: var(--color-text, #334155);
+  margin: 0 0 1.25rem;
 }
 
-.sd-cc-btn:focus-visible {
+.sd-cc-lede strong {
+  color: var(--color-text-strong, #0B1222);
+  font-weight: 600;
+}
+
+.sd-cc-intro {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #64748B);
+  margin: 0 0 1.25rem;
+}
+
+/* ============================================================
+   5. POLICY LINK ROW — centered between lede and CTAs
+   ============================================================ */
+.sd-cc-policy-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 auto 1.25rem;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.sd-cc-policy-row-prefs {
+  margin: 1rem auto 1rem;
+}
+
+.sd-cc-policy-link {
+  background: transparent;
+  border: none;
+  padding: 0.375rem 0.625rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted, #64748B);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  letter-spacing: 0.01em;
+  transition: color 160ms ease;
+  border-radius: 4px;
+}
+
+.sd-cc-policy-link:hover {
+  color: var(--sd-red, #E8363B);
+}
+
+.sd-cc-policy-link:focus-visible {
   outline: 2px solid var(--sd-red, #E8363B);
   outline-offset: 2px;
 }
 
-.sd-cc-btn:active {
-  transform: translateY(1px);
+.sd-cc-policy-chevron {
+  display: inline-block;
+  font-size: 0.625rem;
+  color: var(--sd-red, #E8363B);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+  transform-origin: center;
+  line-height: 1;
 }
 
-.sd-cc-btn-primary {
-  background: var(--sd-navy, #0B1222);
-  color: #fff;
-  border-color: var(--sd-navy, #0B1222);
-}
-.sd-cc-btn-primary:hover {
-  background: var(--sd-red, #E8363B);
-  border-color: var(--sd-red, #E8363B);
+.sd-cc-policy-link[aria-expanded="true"] .sd-cc-policy-chevron {
+  transform: rotate(90deg);
 }
 
-.sd-cc-btn-secondary {
-  background: transparent;
+.sd-cc-policy-link[aria-expanded="true"] {
   color: var(--color-text-strong, #0B1222);
-  border-color: var(--color-border-strong, #CBD5E1);
+  font-weight: 600;
 }
-.sd-cc-btn-secondary:hover {
+
+.sd-cc-policy-sep {
+  color: var(--sd-gray-300, #CBD5E1);
+  font-weight: 400;
+  user-select: none;
+}
+
+/* ============================================================
+   6. POLICY ACCORDION PANEL
+   ============================================================ */
+.sd-cc-policy-panel {
+  margin: 0 0 1.25rem;
+  animation: sd-cc-expand 320ms cubic-bezier(.2,.8,.2,1);
+}
+
+.sd-cc-policy-panel[hidden] {
+  display: none;
+}
+
+@keyframes sd-cc-expand {
+  from { opacity: 0; transform: translateY(-6px); max-height: 0; }
+  to   { opacity: 1; transform: translateY(0); max-height: 2000px; }
+}
+
+.sd-cc-policy-inner {
   background: var(--color-bg-dim, #F8FAFC);
-  border-color: var(--sd-navy, #0B1222);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-left: 3px solid var(--sd-red, #E8363B);
+  border-radius: var(--radius-md, 8px);
+  padding: 1rem 1.125rem;
 }
 
-.sd-cc-btn-link {
-  background: transparent;
+.sd-cc-policy-inner h3 {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
   color: var(--color-text-strong, #0B1222);
-  border-color: transparent;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.sd-cc-policy-inner h4 {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-strong, #0B1222);
+  margin: 1rem 0 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sd-cc-policy-inner h4:first-of-type {
+  margin-top: 0.875rem;
+}
+
+.sd-cc-policy-inner p,
+.sd-cc-policy-inner ul,
+.sd-cc-policy-inner li {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-text, #334155);
+  margin: 0 0 0.625rem;
+}
+
+.sd-cc-policy-inner ul {
+  padding-left: 1.125rem;
+  list-style: none;
+}
+
+.sd-cc-policy-inner ul li {
+  position: relative;
+  margin-bottom: 0.375rem;
+  padding-left: 0.5rem;
+}
+
+.sd-cc-policy-inner ul li::before {
+  content: "";
+  position: absolute;
+  left: -0.625rem;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  background: var(--sd-red, #E8363B);
+  border-radius: 50%;
+}
+
+.sd-cc-policy-inner strong {
+  color: var(--color-text-strong, #0B1222);
+  font-weight: 600;
+}
+
+.sd-cc-policy-inner em {
+  font-style: italic;
+  color: var(--color-text-muted, #64748B);
+  font-size: 0.75rem;
+}
+
+.sd-cc-policy-inner code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  background: var(--sd-gray-100, #F1F5F9);
+  border: 1px solid var(--color-border, #E2E8F0);
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+  color: var(--sd-red-dark, #CC2D32);
+  white-space: nowrap;
+}
+
+.sd-cc-policy-inner a {
+  color: var(--sd-red, #E8363B);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
+  font-weight: 500;
 }
-.sd-cc-btn-link:hover {
-  color: var(--sd-red, #E8363B);
+.sd-cc-policy-inner a:hover {
+  color: var(--sd-red-dark, #CC2D32);
 }
 
-/* 6. PREFERENCES INTERNALS */
-.sd-cc-prefs-header {
+.sd-cc-cookie-list {
+  padding-left: 1.125rem !important;
+}
+
+.sd-cc-badge {
+  display: inline-block;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+.sd-cc-badge-always {
+  background: var(--sd-teal-light, #CCFBF1);
+  color: var(--sd-teal-dark, #0D9488);
+}
+
+.sd-cc-badge-optin {
+  background: rgba(232, 54, 59, 0.12);
+  color: var(--sd-red-dark, #CC2D32);
+}
+
+.sd-cc-policy-footer {
+  margin-top: 0.875rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-border, #E2E8F0);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sd-cc-policy-full {
+  font-weight: 600 !important;
+  font-size: 0.8125rem !important;
+}
+
+.sd-cc-policy-meta {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted, #64748B);
+  font-style: italic;
+}
+
+/* ============================================================
+   7. ACTION BUTTONS
+   ============================================================ */
+.sd-cc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+}
+
+/* Override .btn defaults to fit the card scale */
+.sd-cc-btn.sd-cc-btn,
+.sd-cc-btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9375rem;
+  min-height: 46px;
+  border-radius: var(--radius-md, 8px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sd-cc-btn-text {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #64748B);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--sd-gray-300, #CBD5E1);
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.sd-cc-btn-text:hover {
+  color: var(--sd-red, #E8363B);
+  text-decoration-color: var(--sd-red, #E8363B);
+}
+
+.sd-cc-btn-text:focus-visible {
+  outline: 2px solid var(--sd-red, #E8363B);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   8. PREFERENCES INTERNALS
+   ============================================================ */
+.sd-cc-prefs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.sd-cc-prefs-header .sd-cc-title {
+  margin-bottom: 0;
 }
 
 .sd-cc-close {
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   color: var(--color-text-muted, #64748B);
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-md, 8px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 150ms ease, color 150ms ease;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
   flex-shrink: 0;
+  margin-top: 4px;
 }
 .sd-cc-close:hover {
-  background: var(--color-bg-dim, #F8FAFC);
-  color: var(--color-text-strong, #0B1222);
+  background: rgba(232, 54, 59, 0.1);
+  color: var(--sd-red, #E8363B);
+  border-color: rgba(232, 54, 59, 0.25);
 }
 .sd-cc-close:focus-visible {
   outline: 2px solid var(--sd-red, #E8363B);
   outline-offset: 2px;
-}
-
-.sd-cc-intro {
-  font-size: 0.875rem !important;
-  color: var(--color-text-muted, #64748B) !important;
-  margin-bottom: 1.25rem !important;
 }
 
 .sd-cc-categories {
@@ -244,6 +506,17 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   padding: 0.875rem 1rem;
   margin: 0;
   background: var(--color-bg-dim, #F8FAFC);
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.sd-cc-cat:has(input[data-cat]:checked:not([disabled])) {
+  border-color: rgba(232, 54, 59, 0.45);
+  background: rgba(232, 54, 59, 0.04);
+}
+
+.sd-cc-cat-locked {
+  background: var(--sd-gray-100, #F1F5F9);
+  opacity: 0.92;
 }
 
 .sd-cc-cat-head {
@@ -251,7 +524,7 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.375rem;
 }
 
 .sd-cc-cat legend {
@@ -271,19 +544,16 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   line-height: 1.5 !important;
 }
 
-.sd-cc-policy-link {
-  font-size: 0.8125rem !important;
-  color: var(--color-text-muted, #64748B) !important;
-  margin: 0 0 1.25rem !important;
-}
-
 .sd-cc-prefs-footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-/* 7. TOGGLE SWITCH (from checkbox) */
+/* ============================================================
+   9. TOGGLE SWITCH
+   ============================================================ */
 .sd-cc-switch {
   position: relative;
   display: inline-flex;
@@ -299,16 +569,17 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   height: 100%;
   cursor: pointer;
   margin: 0;
+  z-index: 2;
 }
 
 .sd-cc-track {
   display: inline-block;
-  width: 40px;
+  width: 42px;
   height: 24px;
   background: var(--sd-gray-300, #CBD5E1);
   border-radius: 999px;
   position: relative;
-  transition: background 180ms ease;
+  transition: background 200ms cubic-bezier(.4,0,.2,1);
 }
 
 .sd-cc-thumb {
@@ -319,20 +590,20 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   height: 20px;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  transition: transform 180ms ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.04);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
 }
 
 .sd-cc-switch input:checked + .sd-cc-track {
   background: var(--sd-red, #E8363B);
 }
 .sd-cc-switch input:checked + .sd-cc-track .sd-cc-thumb {
-  transform: translateX(16px);
+  transform: translateX(18px);
 }
 
 .sd-cc-switch input:focus-visible + .sd-cc-track {
   outline: 2px solid var(--sd-red, #E8363B);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .sd-cc-switch-locked .sd-cc-track {
@@ -355,92 +626,191 @@ html[data-consent-state="preferences"] #sd-cc-preferences {
   border: 0;
 }
 
-/* 8. RESPONSIVE */
-@media (min-width: 640px) {
+/* ============================================================
+   10. RESPONSIVE
+   ============================================================ */
+@media (min-width: 560px) {
   .sd-cc-prefs-footer {
     flex-direction: row;
     justify-content: flex-end;
   }
   .sd-cc-prefs-footer .sd-cc-btn {
+    width: auto;
     flex: 0 0 auto;
   }
-  .sd-cc-prefs-footer .sd-cc-btn-primary {
+  .sd-cc-prefs-footer .btn-primary {
     order: 3;
   }
 }
 
-/* 9. DARK MODE */
+@media (max-width: 420px) {
+  #sd-cc-banner,
+  #sd-cc-preferences {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .sd-cc-title {
+    font-size: 1.625rem;
+  }
+}
+
+/* ============================================================
+   11. DARK MODE — surface lift, proper contrast
+   ============================================================ */
 html[data-theme="dark"] #sd-cc-banner,
 html[data-theme="dark"] #sd-cc-preferences {
-  background: var(--sd-gray-900, #0F172A);
+  /* --sd-navy is the page bg; use --sd-navy-light for contrast */
+  background: var(--sd-navy-light, #1E293B);
+  color: var(--sd-gray-200, #E2E8F0);
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.55),
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(232, 54, 59, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme="dark"] .sd-cc-title {
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .sd-cc-lede {
   color: var(--sd-gray-200, #E2E8F0);
 }
 
-html[data-theme="dark"] #sd-cc-banner h2,
-html[data-theme="dark"] #sd-cc-preferences h2 {
-  color: #fff;
+html[data-theme="dark"] .sd-cc-lede strong {
+  color: #FFFFFF;
 }
 
-html[data-theme="dark"] #sd-cc-banner p,
-html[data-theme="dark"] #sd-cc-preferences p {
+html[data-theme="dark"] .sd-cc-intro {
+  color: var(--sd-gray-400, #94A3B8);
+}
+
+html[data-theme="dark"] .sd-cc-eyebrow {
+  color: var(--sd-gray-400, #94A3B8);
+}
+
+html[data-theme="dark"] .sd-cc-policy-link {
+  color: var(--sd-gray-400, #94A3B8);
+}
+
+html[data-theme="dark"] .sd-cc-policy-link:hover,
+html[data-theme="dark"] .sd-cc-policy-link[aria-expanded="true"] {
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .sd-cc-policy-sep {
+  color: var(--sd-gray-700, #334155);
+}
+
+html[data-theme="dark"] .sd-cc-policy-inner {
+  background: rgba(11, 18, 34, 0.6);
+  border-color: var(--sd-gray-700, #334155);
+  border-left-color: var(--sd-red, #E8363B);
+}
+
+html[data-theme="dark"] .sd-cc-policy-inner h3,
+html[data-theme="dark"] .sd-cc-policy-inner h4,
+html[data-theme="dark"] .sd-cc-policy-inner strong {
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .sd-cc-policy-inner p,
+html[data-theme="dark"] .sd-cc-policy-inner li {
   color: var(--sd-gray-300, #CBD5E1);
 }
 
-html[data-theme="dark"] .sd-cc-btn-primary {
-  background: var(--sd-red, #E8363B);
-  border-color: var(--sd-red, #E8363B);
-  color: #fff;
-}
-html[data-theme="dark"] .sd-cc-btn-primary:hover {
-  background: var(--sd-red-dark, #CC2D32);
-  border-color: var(--sd-red-dark, #CC2D32);
+html[data-theme="dark"] .sd-cc-policy-inner em {
+  color: var(--sd-gray-400, #94A3B8);
 }
 
-html[data-theme="dark"] .sd-cc-btn-secondary {
-  color: var(--sd-gray-100, #F1F5F9);
+html[data-theme="dark"] .sd-cc-policy-inner code {
+  background: rgba(11, 18, 34, 0.8);
   border-color: var(--sd-gray-700, #334155);
-}
-html[data-theme="dark"] .sd-cc-btn-secondary:hover {
-  background: var(--sd-gray-800, #1E293B);
-  border-color: var(--sd-gray-500, #64748B);
+  color: #F87171;
 }
 
-html[data-theme="dark"] .sd-cc-btn-link {
-  color: var(--sd-gray-100, #F1F5F9);
+html[data-theme="dark"] .sd-cc-policy-inner a {
+  color: #F87171;
 }
-html[data-theme="dark"] .sd-cc-btn-link:hover {
-  color: var(--sd-red, #E8363B);
+
+html[data-theme="dark"] .sd-cc-policy-footer {
+  border-top-color: var(--sd-gray-700, #334155);
+}
+
+html[data-theme="dark"] .sd-cc-badge-always {
+  background: rgba(20, 184, 166, 0.18);
+  color: #5EEAD4;
+}
+
+html[data-theme="dark"] .sd-cc-badge-optin {
+  background: rgba(232, 54, 59, 0.2);
+  color: #F87171;
 }
 
 html[data-theme="dark"] .sd-cc-cat {
-  background: var(--sd-gray-800, #1E293B);
+  background: rgba(11, 18, 34, 0.55);
   border-color: var(--sd-gray-700, #334155);
 }
-html[data-theme="dark"] .sd-cc-cat legend {
-  color: #fff;
+
+html[data-theme="dark"] .sd-cc-cat-locked {
+  background: rgba(11, 18, 34, 0.4);
 }
+
+html[data-theme="dark"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) {
+  border-color: rgba(232, 54, 59, 0.5);
+  background: rgba(232, 54, 59, 0.08);
+}
+
+html[data-theme="dark"] .sd-cc-cat legend {
+  color: #FFFFFF;
+}
+
 html[data-theme="dark"] .sd-cc-close {
   color: var(--sd-gray-300, #CBD5E1);
 }
 html[data-theme="dark"] .sd-cc-close:hover {
-  background: var(--sd-gray-800, #1E293B);
-  color: #fff;
+  background: rgba(232, 54, 59, 0.18);
+  color: #F87171;
+  border-color: rgba(232, 54, 59, 0.4);
 }
 
 html[data-theme="dark"] .sd-cc-track {
   background: var(--sd-gray-700, #334155);
 }
 
-/* 10. REDUCED MOTION */
+html[data-theme="dark"] .sd-cc-btn-text {
+  color: var(--sd-gray-400, #94A3B8);
+  text-decoration-color: var(--sd-gray-700, #334155);
+}
+html[data-theme="dark"] .sd-cc-btn-text:hover {
+  color: #F87171;
+  text-decoration-color: #F87171;
+}
+
+/* .btn-ghost is styled by global.css — override for dark mode dialog surface */
+html[data-theme="dark"] #sd-cc-banner .btn-ghost,
+html[data-theme="dark"] #sd-cc-preferences .btn-ghost {
+  color: var(--sd-gray-100, #F1F5F9);
+  border-color: var(--sd-gray-700, #334155);
+}
+html[data-theme="dark"] #sd-cc-banner .btn-ghost:hover,
+html[data-theme="dark"] #sd-cc-preferences .btn-ghost:hover {
+  color: #FFFFFF;
+  border-color: var(--sd-gray-500, #64748B);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================================
+   12. REDUCED MOTION
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   #sd-cc-backdrop,
   #sd-cc-banner,
-  #sd-cc-preferences {
-    animation: none !important;
-  }
+  #sd-cc-preferences,
+  .sd-cc-policy-panel,
+  .sd-cc-policy-chevron,
   .sd-cc-track,
-  .sd-cc-thumb,
-  .sd-cc-btn {
+  .sd-cc-thumb {
+    animation: none !important;
     transition: none !important;
   }
 }
