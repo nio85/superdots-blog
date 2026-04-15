@@ -45,7 +45,7 @@ The AI translates your question into the right operations and returns an answer 
 
 ### Generate charts and summaries
 
-AI can automatically create visualizations from your data:
+AI can automatically create visualizations from your data: For more on this topic, check out [Best AI Accounting Software for Small Teams](/blog/ai-accounting-software/).
 
 - Bar charts comparing categories
 - Trend lines showing growth over time
@@ -55,7 +55,7 @@ Ask: "Create a chart showing monthly revenue by product line for the last 12 mon
 
 ### Spot patterns you would miss
 
-AI can surface insights that are hard to find manually:
+AI can surface insights that are hard to find manually: For more on this topic, check out [AI Accounts Receivable: Get Paid Faster](/blog/ai-accounts-receivable/).
 
 - "Are there any seasonal patterns in our support ticket volume?"
 - "Which combinations of features correlate with higher [customer retention](/blog/ai-customer-feedback-analysis/)?"

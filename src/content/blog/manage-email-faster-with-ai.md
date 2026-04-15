@@ -61,7 +61,7 @@ Long email chains are where hours disappear. Instead of scrolling through 47 rep
 - **[Superhuman](https://superhuman.com)**: Auto Summarize generates summaries for every conversation so you can scan your inbox like a news feed. One executive who spent 3-4 hours daily on email [reported cutting that time in half](https://blog.superhuman.com/the-best-ai-email-management-tool/) using this feature alone.
 - **[Shortwave](https://www.shortwave.com)**: Thread summaries with sentiment and urgency detection, plus AI search across your entire email history.
 
-This alone can save 30 minutes a day if you deal with cross-functional threads. For meetings that generate long email follow-ups, [AI note-takers](/blog/ai-meeting-notes-summaries-action-items/) can capture the discussion in real time so you don't reconstruct it from email later.
+This alone can save 30 minutes a day if you deal with cross-functional threads. For meetings that generate long email follow-ups, [AI note-takers](/blog/ai-meeting-notes-summaries-action-items/) can capture the discussion in real time so you don't reconstruct it from email later. For more on this topic, check out [AI Tools for Data Entry: Stop Typing](/blog/ai-tools-for-data-entry/).
 
 ### 3. Smart sorting and prioritization
 

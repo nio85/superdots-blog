@@ -76,7 +76,7 @@ Rev combines AI transcription with optional human review. When you need near-per
 
 ### Microsoft Teams built-in transcription
 
-If your company runs on Microsoft 365, Teams transcription is already available — no extra tool needed. It transcribes meetings in real time, identifies speakers, and saves transcripts to the meeting chat.
+If your company runs on Microsoft 365, Teams transcription is already available — no extra tool needed. It transcribes meetings in real time, identifies speakers, and saves transcripts to the meeting chat. Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
 
 **Strengths:** No additional software, no bot joining meetings, integrated with the Microsoft ecosystem, supports 30+ languages.
 
@@ -96,7 +96,7 @@ Sonix supports 40+ languages with automated translation between them. Upload aud
 
 ## How to choose the right tool
 
-Match your primary use case:
+Match your primary use case: If this applies to your team, our [AI Process Mining: Find Bottlenecks Fast](/blog/ai-process-mining/) guide covers the details.
 
 | Use case | Best fit |
 |---|---|

@@ -94,7 +94,7 @@ Best for data-heavy teams that need both exploration and reporting. Tableau's As
 
 ### Polymer
 
-Best for turning spreadsheets into interactive reports instantly. Polymer takes a Google Sheet or CSV and creates a full interactive dashboard with AI-generated insights. No setup, no configuration — upload and go.
+Best for turning spreadsheets into interactive reports instantly. Polymer takes a Google Sheet or CSV and creates a full interactive dashboard with AI-generated insights. No setup, no configuration — upload and go. For more on this topic, check out [AI Tools for Data Entry: Stop Typing](/blog/ai-tools-for-data-entry/).
 
 **Best for:** Small teams and individual contributors who need to turn spreadsheet data into shareable reports quickly.
 
@@ -104,7 +104,7 @@ Best for turning spreadsheets into interactive reports instantly. Polymer takes 
 
 ### Jasper AI
 
-Best for narrative-heavy reports. Jasper focuses on the written portion of reports — executive summaries, analysis commentary, recommendations. It does not build charts, but it writes the text that surrounds them better than any other tool.
+Best for narrative-heavy reports. Jasper focuses on the written portion of reports — executive summaries, analysis commentary, recommendations. It does not build charts, but it writes the text that surrounds them better than any other tool. For related guidance, see our guide on [AI Document Management: Find Files Faster](/blog/ai-document-management/).
 
 **Best for:** Consultants, analysts, and anyone who writes reports where the narrative matters as much as the numbers.
 

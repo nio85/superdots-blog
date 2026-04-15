@@ -128,7 +128,7 @@ This process takes about 30 minutes per competitor the first time. Updating it t
 
 ## When to Upgrade to Paid Tools
 
-The free workflow breaks down in specific situations. If you're evaluating [AI tools for sales teams](/blog/ai-for-sales-complete-guide/) more broadly, battlecard software is typically one of the later pieces of the stack to invest in — build the process habit first, then buy the tool. Here's the honest framework:
+The free workflow breaks down in specific situations. If you're evaluating [AI tools for sales teams](/blog/ai-for-sales-complete-guide/) more broadly, battlecard software is typically one of the later pieces of the stack to invest in — build the process habit first, then buy the tool. Here's the honest framework: Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
 
 **Consider paid battlecard software if you have:**
 - **More than 10 active sales reps** — at this volume, battlecard maintenance becomes a full-time distraction from selling, and consistency across the team requires a centralized system

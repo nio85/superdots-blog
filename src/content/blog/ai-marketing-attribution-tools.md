@@ -71,7 +71,7 @@ Go to **Admin → Events**, identify your key conversion actions (purchase, lead
 
 **Step 3: Enable Google Signals**
 
-Go to **Admin → Data collection → Google Signals data collection** and activate it. This enables cross-device reporting, connecting sessions from the same Google account user across mobile and desktop.
+Go to **Admin → Data collection → Google Signals data collection** and activate it. This enables cross-device reporting, connecting sessions from the same Google account user across mobile and desktop. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
 
 **Step 4: Read the Attribution reports**
 

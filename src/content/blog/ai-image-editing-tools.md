@@ -85,7 +85,7 @@ PhotoRoom turns amateur product photos into e-commerce-ready images. It removes 
 
 ### Adobe Firefly / Adobe Express — best for existing Adobe users
 
-Adobe Firefly brings AI generation and editing into the Adobe ecosystem. Generative Fill adds or replaces elements in photos. Text Effects creates styled typography. And it integrates directly with Photoshop and Illustrator for professional workflows.
+Adobe Firefly brings AI generation and editing into the Adobe ecosystem. Generative Fill adds or replaces elements in photos. Text Effects creates styled typography. And it integrates directly with Photoshop and Illustrator for professional workflows. For related guidance, see our guide on [AI Wireframing Tools: Text to Prototype](/blog/ai-wireframing-tools/).
 
 **Strengths:** Professional-grade AI editing. Generative Fill is class-leading for adding or replacing elements. Commercial-safe — trained on Adobe Stock and licensed content. Integrates with the full Creative Cloud suite.
 
@@ -109,7 +109,7 @@ Pixelcut combines background removal, image upscaling, and AI-powered editing in
 
 ### Clipdrop — best for advanced AI editing
 
-Clipdrop (by Stability AI) offers a suite of AI tools: background removal, image upscaling, relighting, object removal, and text-to-image generation. It's more advanced than basic tools but easier than Photoshop.
+Clipdrop (by Stability AI) offers a suite of AI tools: background removal, image upscaling, relighting, object removal, and text-to-image generation. It's more advanced than basic tools but easier than Photoshop. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
 
 **Strengths:** Multiple advanced AI tools in one platform. Relighting feature is unique — change the lighting of any photo. Strong upscaling for low-resolution images. API available for integration.
 
