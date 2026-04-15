@@ -1,7 +1,8 @@
 /* ============================================================
    COOKIE CONSENT — editorial design, GDPR-compliant
    Dual-font (Space Grotesk display + Inter body), solid red CTA,
-   inline policy accordions, magazine-card composition.
+   direct policy links at the bottom of the card.
+   Compact: fits iPhone 17 (844pt) without scroll.
    ============================================================ */
 
 /* ============================================================
@@ -66,8 +67,8 @@ html[data-theme="dark"] #sd-cc-backdrop {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  width: min(92vw, 520px);
-  max-height: min(86vh, 760px);
+  width: min(92vw, 500px);
+  max-height: min(90vh, 760px);
   overflow-y: auto;
   overflow-x: hidden;
   background: var(--color-bg, #FFFFFF);
@@ -78,7 +79,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
     0 6px 16px rgba(11, 18, 34, 0.12),
     0 0 0 1px rgba(11, 18, 34, 0.06);
   flex-direction: column;
-  padding: 2rem 1.75rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   font-family: var(--font-body, 'Inter', sans-serif);
   animation: sd-cc-rise 300ms cubic-bezier(.16,.84,.22,1) forwards;
   outline: none;
@@ -87,7 +88,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
 }
 
 #sd-cc-preferences {
-  width: min(92vw, 560px);
+  width: min(92vw, 520px);
 }
 
 #sd-cc-banner::-webkit-scrollbar,
@@ -122,7 +123,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--color-text-muted, #64748B);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -141,11 +142,11 @@ html[data-theme="dark"] #sd-cc-backdrop {
 .sd-cc-title {
   font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: 1.625rem;
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--color-text-strong, #0B1222);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.625rem;
 }
 
 .sd-cc-period {
@@ -155,9 +156,9 @@ html[data-theme="dark"] #sd-cc-backdrop {
 .sd-cc-lede {
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--color-text, #334155);
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
 }
 
 .sd-cc-lede strong {
@@ -168,259 +169,26 @@ html[data-theme="dark"] #sd-cc-backdrop {
 .sd-cc-intro {
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-text-muted, #64748B);
-  margin: 0 0 1.25rem;
-}
-
-/* ============================================================
-   5. POLICY LINK ROW — centered between lede and CTAs
-   ============================================================ */
-.sd-cc-policy-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  margin: 0 auto 1.25rem;
-  padding: 0.5rem 0;
-  flex-wrap: wrap;
-}
-
-.sd-cc-policy-row-prefs {
-  margin: 1rem auto 1rem;
-}
-
-.sd-cc-policy-link {
-  background: transparent;
-  border: none;
-  padding: 0.375rem 0.625rem;
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-muted, #64748B);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3125rem;
-  letter-spacing: 0.01em;
-  transition: color 160ms ease;
-  border-radius: 4px;
-}
-
-.sd-cc-policy-link:hover {
-  color: var(--sd-red, #E8363B);
-}
-
-.sd-cc-policy-link:focus-visible {
-  outline: 2px solid var(--sd-red, #E8363B);
-  outline-offset: 2px;
-}
-
-.sd-cc-policy-chevron {
-  display: inline-block;
-  font-size: 0.625rem;
-  color: var(--sd-red, #E8363B);
-  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
-  transform-origin: center;
-  line-height: 1;
-}
-
-.sd-cc-policy-link[aria-expanded="true"] .sd-cc-policy-chevron {
-  transform: rotate(90deg);
-}
-
-.sd-cc-policy-link[aria-expanded="true"] {
-  color: var(--color-text-strong, #0B1222);
-  font-weight: 600;
-}
-
-.sd-cc-policy-sep {
-  color: var(--sd-gray-300, #CBD5E1);
-  font-weight: 400;
-  user-select: none;
-}
-
-/* ============================================================
-   6. POLICY ACCORDION PANEL
-   ============================================================ */
-.sd-cc-policy-panel {
-  margin: 0 0 1.25rem;
-  animation: sd-cc-expand 320ms cubic-bezier(.2,.8,.2,1);
-}
-
-.sd-cc-policy-panel[hidden] {
-  display: none;
-}
-
-@keyframes sd-cc-expand {
-  from { opacity: 0; transform: translateY(-6px); max-height: 0; }
-  to   { opacity: 1; transform: translateY(0); max-height: 2000px; }
-}
-
-.sd-cc-policy-inner {
-  background: var(--color-bg-dim, #F8FAFC);
-  border: 1px solid var(--color-border, #E2E8F0);
-  border-left: 3px solid var(--sd-red, #E8363B);
-  border-radius: var(--radius-md, 8px);
-  padding: 1rem 1.125rem;
-}
-
-.sd-cc-policy-inner h3 {
-  font-family: var(--font-display, 'Space Grotesk', sans-serif);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  color: var(--color-text-strong, #0B1222);
-  margin: 0 0 0.5rem;
-  line-height: 1.3;
-}
-
-.sd-cc-policy-inner h4 {
-  font-family: var(--font-display, 'Space Grotesk', sans-serif);
-  font-weight: 600;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-strong, #0B1222);
-  margin: 1rem 0 0.375rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sd-cc-policy-inner h4:first-of-type {
-  margin-top: 0.875rem;
-}
-
-.sd-cc-policy-inner p,
-.sd-cc-policy-inner ul,
-.sd-cc-policy-inner li {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.8125rem;
   line-height: 1.55;
-  color: var(--color-text, #334155);
-  margin: 0 0 0.625rem;
-}
-
-.sd-cc-policy-inner ul {
-  padding-left: 1.125rem;
-  list-style: none;
-}
-
-.sd-cc-policy-inner ul li {
-  position: relative;
-  margin-bottom: 0.375rem;
-  padding-left: 0.5rem;
-}
-
-.sd-cc-policy-inner ul li::before {
-  content: "";
-  position: absolute;
-  left: -0.625rem;
-  top: 0.55em;
-  width: 4px;
-  height: 4px;
-  background: var(--sd-red, #E8363B);
-  border-radius: 50%;
-}
-
-.sd-cc-policy-inner strong {
-  color: var(--color-text-strong, #0B1222);
-  font-weight: 600;
-}
-
-.sd-cc-policy-inner em {
-  font-style: italic;
   color: var(--color-text-muted, #64748B);
-  font-size: 0.75rem;
-}
-
-.sd-cc-policy-inner code {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.75rem;
-  background: var(--sd-gray-100, #F1F5F9);
-  border: 1px solid var(--color-border, #E2E8F0);
-  padding: 0.08rem 0.35rem;
-  border-radius: 3px;
-  color: var(--sd-red-dark, #CC2D32);
-  white-space: nowrap;
-}
-
-.sd-cc-policy-inner a {
-  color: var(--sd-red, #E8363B);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  font-weight: 500;
-}
-.sd-cc-policy-inner a:hover {
-  color: var(--sd-red-dark, #CC2D32);
-}
-
-.sd-cc-cookie-list {
-  padding-left: 1.125rem !important;
-}
-
-.sd-cc-badge {
-  display: inline-block;
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.625rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.125rem 0.5rem;
-  border-radius: 999px;
-  line-height: 1.4;
-}
-
-.sd-cc-badge-always {
-  background: var(--sd-teal-light, #CCFBF1);
-  color: var(--sd-teal-dark, #0D9488);
-}
-
-.sd-cc-badge-optin {
-  background: rgba(232, 54, 59, 0.12);
-  color: var(--sd-red-dark, #CC2D32);
-}
-
-.sd-cc-policy-footer {
-  margin-top: 0.875rem !important;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--color-border, #E2E8F0);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.sd-cc-policy-full {
-  font-weight: 600 !important;
-  font-size: 0.8125rem !important;
-}
-
-.sd-cc-policy-meta {
-  font-size: 0.6875rem;
-  color: var(--color-text-muted, #64748B);
-  font-style: italic;
+  margin: 0 0 0.875rem;
 }
 
 /* ============================================================
-   7. ACTION BUTTONS
+   5. ACTION BUTTONS
    ============================================================ */
 .sd-cc-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  margin-top: 0.5rem;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
 }
 
-/* Override .btn defaults to fit the card scale */
 .sd-cc-btn.sd-cc-btn,
 .sd-cc-btn {
-  padding: 0.75rem 1.25rem;
+  padding: 0.6875rem 1.25rem;
   font-size: 0.9375rem;
-  min-height: 46px;
+  min-height: 44px;
   border-radius: var(--radius-md, 8px);
   width: 100%;
   box-sizing: border-box;
@@ -429,7 +197,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
 .sd-cc-btn-text {
   background: transparent;
   border: none;
-  padding: 0.75rem 0.5rem;
+  padding: 0.625rem 0.5rem;
   font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-size: 0.875rem;
   font-weight: 600;
@@ -454,7 +222,59 @@ html[data-theme="dark"] #sd-cc-backdrop {
 }
 
 /* ============================================================
-   8. PREFERENCES INTERNALS
+   6. POLICY LINK ROW — at the bottom of the card
+   ============================================================ */
+.sd-cc-policy-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 1rem auto 0;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--color-border, #E2E8F0);
+  flex-wrap: wrap;
+}
+
+.sd-cc-policy-row-prefs {
+  margin-top: 0.875rem;
+}
+
+.sd-cc-policy-link {
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.375rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted, #64748B);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: color 160ms ease;
+  border-radius: 4px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--sd-gray-300, #CBD5E1);
+}
+
+.sd-cc-policy-link:hover {
+  color: var(--sd-red, #E8363B);
+  text-decoration-color: var(--sd-red, #E8363B);
+}
+
+.sd-cc-policy-link:focus-visible {
+  outline: 2px solid var(--sd-red, #E8363B);
+  outline-offset: 2px;
+}
+
+.sd-cc-policy-sep {
+  color: var(--sd-gray-300, #CBD5E1);
+  font-weight: 400;
+  user-select: none;
+}
+
+/* ============================================================
+   7. PREFERENCES INTERNALS
    ============================================================ */
 .sd-cc-prefs-header {
   display: flex;
@@ -481,7 +301,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
   cursor: pointer;
   transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
   flex-shrink: 0;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .sd-cc-close:hover {
   background: rgba(232, 54, 59, 0.1);
@@ -496,14 +316,14 @@ html[data-theme="dark"] #sd-cc-backdrop {
 .sd-cc-categories {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
 }
 
 .sd-cc-cat {
   border: 1px solid var(--color-border, #E2E8F0);
   border-radius: var(--radius-md, 8px);
-  padding: 0.875rem 1rem;
+  padding: 0.625rem 0.875rem;
   margin: 0;
   background: var(--color-bg-dim, #F8FAFC);
   transition: border-color 180ms ease, background 180ms ease;
@@ -516,7 +336,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
 
 .sd-cc-cat-locked {
   background: var(--sd-gray-100, #F1F5F9);
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .sd-cc-cat-head {
@@ -524,13 +344,13 @@ html[data-theme="dark"] #sd-cc-backdrop {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.25rem;
 }
 
 .sd-cc-cat legend {
   font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: var(--color-text-strong, #0B1222);
   padding: 0;
   margin: 0;
@@ -541,18 +361,18 @@ html[data-theme="dark"] #sd-cc-backdrop {
   font-size: 0.8125rem !important;
   color: var(--color-text-muted, #64748B) !important;
   margin: 0 !important;
-  line-height: 1.5 !important;
+  line-height: 1.45 !important;
 }
 
 .sd-cc-prefs-footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 /* ============================================================
-   9. TOGGLE SWITCH
+   8. TOGGLE SWITCH
    ============================================================ */
 .sd-cc-switch {
   position: relative;
@@ -627,7 +447,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
 }
 
 /* ============================================================
-   10. RESPONSIVE
+   9. RESPONSIVE
    ============================================================ */
 @media (min-width: 560px) {
   .sd-cc-prefs-footer {
@@ -646,19 +466,47 @@ html[data-theme="dark"] #sd-cc-backdrop {
 @media (max-width: 420px) {
   #sd-cc-banner,
   #sd-cc-preferences {
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 1.25rem 1.125rem 1rem;
   }
   .sd-cc-title {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
+  }
+  .sd-cc-lede {
+    font-size: 0.9375rem;
+    margin-bottom: 0.875rem;
+  }
+  .sd-cc-intro {
+    margin-bottom: 0.75rem;
+  }
+  .sd-cc-cat {
+    padding: 0.5625rem 0.75rem;
+  }
+  .sd-cc-categories {
+    gap: 0.35rem;
+    margin-bottom: 0.625rem;
   }
 }
 
+/* Very short viewports — trim further to avoid scroll */
+@media (max-height: 780px) {
+  #sd-cc-banner,
+  #sd-cc-preferences {
+    padding: 1.125rem 1.125rem 0.875rem;
+  }
+  .sd-cc-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .sd-cc-lede { margin-bottom: 0.75rem; }
+  .sd-cc-intro { margin-bottom: 0.625rem; }
+  .sd-cc-categories { gap: 0.325rem; margin-bottom: 0.5rem; }
+  .sd-cc-cat { padding: 0.5rem 0.75rem; }
+  .sd-cc-cat p { font-size: 0.75rem !important; line-height: 1.4 !important; }
+  .sd-cc-policy-row { margin-top: 0.625rem; padding-top: 0.625rem; }
+}
+
 /* ============================================================
-   11. DARK MODE — surface lift, proper contrast
+   10. DARK MODE — surface lift, proper contrast
    ============================================================ */
 html[data-theme="dark"] #sd-cc-banner,
 html[data-theme="dark"] #sd-cc-preferences {
-  /* --sd-navy is the page bg; use --sd-navy-light for contrast */
   background: var(--sd-navy-light, #1E293B);
   color: var(--sd-gray-200, #E2E8F0);
   box-shadow:
@@ -668,91 +516,40 @@ html[data-theme="dark"] #sd-cc-preferences {
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-html[data-theme="dark"] .sd-cc-title {
-  color: #FFFFFF;
-}
-
-html[data-theme="dark"] .sd-cc-lede {
-  color: var(--sd-gray-200, #E2E8F0);
-}
-
-html[data-theme="dark"] .sd-cc-lede strong {
-  color: #FFFFFF;
-}
-
-html[data-theme="dark"] .sd-cc-intro {
-  color: var(--sd-gray-400, #94A3B8);
-}
-
-html[data-theme="dark"] .sd-cc-eyebrow {
-  color: var(--sd-gray-400, #94A3B8);
-}
+html[data-theme="dark"] .sd-cc-title { color: #FFFFFF; }
+html[data-theme="dark"] .sd-cc-lede { color: var(--sd-gray-200, #E2E8F0); }
+html[data-theme="dark"] .sd-cc-lede strong { color: #FFFFFF; }
+html[data-theme="dark"] .sd-cc-intro { color: var(--sd-gray-400, #94A3B8); }
+html[data-theme="dark"] .sd-cc-eyebrow { color: var(--sd-gray-400, #94A3B8); }
 
 html[data-theme="dark"] .sd-cc-policy-link {
-  color: var(--sd-gray-400, #94A3B8);
+  color: var(--sd-gray-300, #CBD5E1);
+  text-decoration-color: var(--sd-gray-700, #334155);
 }
-
-html[data-theme="dark"] .sd-cc-policy-link:hover,
-html[data-theme="dark"] .sd-cc-policy-link[aria-expanded="true"] {
-  color: #FFFFFF;
+html[data-theme="dark"] .sd-cc-policy-link:hover {
+  color: #F87171;
+  text-decoration-color: #F87171;
 }
-
 html[data-theme="dark"] .sd-cc-policy-sep {
   color: var(--sd-gray-700, #334155);
 }
-
-html[data-theme="dark"] .sd-cc-policy-inner {
-  background: rgba(11, 18, 34, 0.6);
-  border-color: var(--sd-gray-700, #334155);
-  border-left-color: var(--sd-red, #E8363B);
-}
-
-html[data-theme="dark"] .sd-cc-policy-inner h3,
-html[data-theme="dark"] .sd-cc-policy-inner h4,
-html[data-theme="dark"] .sd-cc-policy-inner strong {
-  color: #FFFFFF;
-}
-
-html[data-theme="dark"] .sd-cc-policy-inner p,
-html[data-theme="dark"] .sd-cc-policy-inner li {
-  color: var(--sd-gray-300, #CBD5E1);
-}
-
-html[data-theme="dark"] .sd-cc-policy-inner em {
-  color: var(--sd-gray-400, #94A3B8);
-}
-
-html[data-theme="dark"] .sd-cc-policy-inner code {
-  background: rgba(11, 18, 34, 0.8);
-  border-color: var(--sd-gray-700, #334155);
-  color: #F87171;
-}
-
-html[data-theme="dark"] .sd-cc-policy-inner a {
-  color: #F87171;
-}
-
-html[data-theme="dark"] .sd-cc-policy-footer {
+html[data-theme="dark"] .sd-cc-policy-row {
   border-top-color: var(--sd-gray-700, #334155);
 }
 
-html[data-theme="dark"] .sd-cc-badge-always {
-  background: rgba(20, 184, 166, 0.18);
-  color: #5EEAD4;
-}
-
-html[data-theme="dark"] .sd-cc-badge-optin {
-  background: rgba(232, 54, 59, 0.2);
-  color: #F87171;
-}
-
+/* Category cards — explicit dark surface, fixes white-box bug on the
+   locked "Essential" fieldset. Browsers apply UA styles to <fieldset>
+   that can render white in some engines; we set everything explicitly. */
 html[data-theme="dark"] .sd-cc-cat {
   background: rgba(11, 18, 34, 0.55);
   border-color: var(--sd-gray-700, #334155);
+  color: var(--sd-gray-200, #E2E8F0);
 }
 
 html[data-theme="dark"] .sd-cc-cat-locked {
-  background: rgba(11, 18, 34, 0.4);
+  background: rgba(11, 18, 34, 0.65);
+  border-color: var(--sd-gray-700, #334155);
+  opacity: 1;
 }
 
 html[data-theme="dark"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) {
@@ -760,13 +557,12 @@ html[data-theme="dark"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) 
   background: rgba(232, 54, 59, 0.08);
 }
 
-html[data-theme="dark"] .sd-cc-cat legend {
-  color: #FFFFFF;
+html[data-theme="dark"] .sd-cc-cat legend { color: #FFFFFF; }
+html[data-theme="dark"] .sd-cc-cat p {
+  color: var(--sd-gray-300, #CBD5E1) !important;
 }
 
-html[data-theme="dark"] .sd-cc-close {
-  color: var(--sd-gray-300, #CBD5E1);
-}
+html[data-theme="dark"] .sd-cc-close { color: var(--sd-gray-300, #CBD5E1); }
 html[data-theme="dark"] .sd-cc-close:hover {
   background: rgba(232, 54, 59, 0.18);
   color: #F87171;
@@ -775,6 +571,9 @@ html[data-theme="dark"] .sd-cc-close:hover {
 
 html[data-theme="dark"] .sd-cc-track {
   background: var(--sd-gray-700, #334155);
+}
+html[data-theme="dark"] .sd-cc-switch-locked .sd-cc-track {
+  background: var(--sd-gray-600, #475569);
 }
 
 html[data-theme="dark"] .sd-cc-btn-text {
@@ -786,7 +585,7 @@ html[data-theme="dark"] .sd-cc-btn-text:hover {
   text-decoration-color: #F87171;
 }
 
-/* .btn-ghost is styled by global.css — override for dark mode dialog surface */
+/* .btn-ghost override for dark dialog surface */
 html[data-theme="dark"] #sd-cc-banner .btn-ghost,
 html[data-theme="dark"] #sd-cc-preferences .btn-ghost {
   color: var(--sd-gray-100, #F1F5F9);
@@ -800,14 +599,12 @@ html[data-theme="dark"] #sd-cc-preferences .btn-ghost:hover {
 }
 
 /* ============================================================
-   12. REDUCED MOTION
+   11. REDUCED MOTION
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   #sd-cc-backdrop,
   #sd-cc-banner,
   #sd-cc-preferences,
-  .sd-cc-policy-panel,
-  .sd-cc-policy-chevron,
   .sd-cc-track,
   .sd-cc-thumb {
     animation: none !important;
