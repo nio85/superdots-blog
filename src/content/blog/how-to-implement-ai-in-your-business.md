@@ -82,11 +82,11 @@ Score each potential use case on two dimensions:
 
 ### High-impact, low-effort use cases (start here)
 
-1. **AI writing for emails and content** — every team writes. An AI writing tool saves hours immediately with zero integration work. Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
+1. **AI writing for emails and content** — every team writes. An AI writing tool saves hours immediately with zero integration work.
 
 2. **Customer support chatbot** — if you have a knowledge base, a chatbot can resolve common questions from day one.
 
-3. **Meeting transcription and summaries** — plug into your existing Zoom/Teams/Meet calls. No workflow changes needed. If this applies to your team, our [AI Process Mining: Find Bottlenecks Fast](/blog/ai-process-mining/) guide covers the details.
+3. **Meeting transcription and summaries** — plug into your existing Zoom/Teams/Meet calls. No workflow changes needed.
 
 4. **Data entry automation** — connect your email to your CRM or spreadsheet. No manual copying.
 

@@ -65,7 +65,7 @@ Release notes are important and chronically underprioritized because they are bo
 
 ## Best AI Tools for Product Managers by Use Case
 
-Here are the tools worth knowing about in 2026, organized by where they fit. For related guidance, see our guide on [AI Document Management: Find Files Faster](/blog/ai-document-management/).
+Here are the tools worth knowing about in 2026, organized by where they fit.
 
 ### For Writing and Documentation
 

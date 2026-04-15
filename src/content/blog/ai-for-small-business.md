@@ -35,7 +35,7 @@ Here's what actually works for small businesses.
 
 ## The small business AI stack
 
-You don't need a dozen tools. You need three to five that solve real problems. Here's the stack that covers the most ground for the least money: Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
+You don't need a dozen tools. You need three to five that solve real problems. Here's the stack that covers the most ground for the least money:
 
 ### 1. AI writing assistant — $0-20/month
 

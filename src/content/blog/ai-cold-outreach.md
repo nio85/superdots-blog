@@ -81,7 +81,7 @@ The output is a short brief — five to seven bullet points — that gives AI en
 
 ### Step 3: Generate drafts with tight constraints
 
-The most common mistake teams make with AI-generated outreach is using the output with minimal editing. AI defaults to enthusiastic, slightly formal, and longer than it needs to be — exactly the qualities that get cold emails deleted. Our guide on [AI-Powered CRM Features You Should Actually Use](/blog/ai-crm-tools/) explores this further.
+The most common mistake teams make with AI-generated outreach is using the output with minimal editing. AI defaults to enthusiastic, slightly formal, and longer than it needs to be — exactly the qualities that get cold emails deleted.
 
 Constrain the output from the start. A prompt that works:
 

@@ -129,12 +129,12 @@ Smartling is an enterprise translation management platform that combines AI tran
 
 ### For internal communications
 
-The simplest workflow: use DeepL Pro for all internal documents. Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
+The simplest workflow: use DeepL Pro for all internal documents.
 
 1. Install the DeepL browser extension and desktop app
 2. Set up a custom glossary with your company's terminology
 3. Translate emails, docs, and messages directly in your workflow
-4. No review needed for internal content — DeepL quality is sufficient If this applies to your team, our [AI Process Mining: Find Bottlenecks Fast](/blog/ai-process-mining/) guide covers the details.
+4. No review needed for internal content — DeepL quality is sufficient
 
 ### For customer-facing content
 

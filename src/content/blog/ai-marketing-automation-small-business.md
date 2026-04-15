@@ -108,7 +108,7 @@ What's realistic:
 
 Brevo's free plan is genuinely generous: unlimited contacts, 300 emails/day, and multi-step automation workflows with no credit card required. The Business plan ($25/month) unlocks unlimited sends and adds a landing page builder and advanced segmentation.
 
-AI features include subject line generation and send time optimization based on subscriber engagement history. Deliverability is consistently solid — Brevo operates its own mail servers rather than relying on third-party infrastructure, which matters more than most tools admit. For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
+AI features include subject line generation and send time optimization based on subscriber engagement history. Deliverability is consistently solid — Brevo operates its own mail servers rather than relying on third-party infrastructure, which matters more than most tools admit.
 
 **The honest limitation:** The email design interface feels dated compared to Mailchimp or ActiveCampaign. If visual email design matters to your brand, the builder will frustrate you. For automation logic and deliverability-first teams, it punches above its price.
 

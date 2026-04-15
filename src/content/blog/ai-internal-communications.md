@@ -78,7 +78,7 @@ This data turns internal comms from an art into a science. You know what works, 
 
 AI-powered feedback tools make two-way communication practical at scale. Chatbots answer employee questions about announcements instantly. Sentiment analysis on feedback channels identifies emerging concerns. Automated follow-up shows employees that their input led to visible changes.
 
-The result is a communications loop, not a communications pipeline. If this applies to your team, our [AI Compensation Benchmarking: Salary Data](/blog/ai-compensation-benchmarking/) guide covers the details.
+The result is a communications loop, not a communications pipeline.
 
 ## 5 Use Cases for AI in Internal Comms
 

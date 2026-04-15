@@ -84,14 +84,14 @@ Length: [target word count]
 
 ### Stage 4: Review and polish
 
-The AI draft needs human judgment: Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
+The AI draft needs human judgment:
 
 - Verify all numbers against source data
 - Check that insights are accurate and not misleading
 - Add context the AI doesn't have (internal politics, historical decisions, upcoming changes)
 - Adjust tone for your specific audience
 
-This four-stage workflow produces reports that are both data-accurate and well-written. If this applies to your team, our [AI Process Mining: Find Bottlenecks Fast](/blog/ai-process-mining/) guide covers the details.
+This four-stage workflow produces reports that are both data-accurate and well-written.
 
 ## Best tools for AI report writing
 

@@ -49,13 +49,13 @@ The core workflow is simple:
 
 1. **Calendar scanning.** The tool connects to interviewers' calendars (Google, Outlook, etc.) and reads real-time availability. No "send me your available times" emails.
 
-2. **Slot generation.** AI identifies optimal windows considering timezone differences, meeting buffers, lunch blocks, and interviewer preferences. For panels, it cross-references all calendars simultaneously. For related guidance, see our guide on [AI for Diversity Hiring: Reduce Bias](/blog/ai-diversity-hiring/).
+2. **Slot generation.** AI identifies optimal windows considering timezone differences, meeting buffers, lunch blocks, and interviewer preferences. For panels, it cross-references all calendars simultaneously.
 
-3. **Candidate self-scheduling.** The candidate receives a link with available time slots and picks what works. No back-and-forth. Our guide on [AI Performance Reviews: Better Feedback Fast](/blog/ai-performance-reviews/) explores this further.
+3. **Candidate self-scheduling.** The candidate receives a link with available time slots and picks what works. No back-and-forth.
 
 4. **Confirmation and calendar updates.** Everyone gets calendar invites, video links, prep materials, and reminders automatically.
 
-5. **Rescheduling.** If someone cancels, the tool finds a new slot (or a replacement panelist) and handles the communication. Our guide on [AI Skills Gap Analysis: Fix Workforce Gaps](/blog/ai-skills-gap-analysis/) explores this further.
+5. **Rescheduling.** If someone cancels, the tool finds a new slot (or a replacement panelist) and handles the communication.
 
 The advanced tools add interviewer load balancing — making sure the same person is not doing five interviews a day while their colleague does zero — and bias-reducing rotation, so the same interviewer panel does not evaluate every candidate.
 

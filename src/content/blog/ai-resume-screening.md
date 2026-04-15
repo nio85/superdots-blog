@@ -51,11 +51,11 @@ Machine learning models weight multiple signals — skills match, experience rel
 
 ### Step 4: Human review
 
-This is not optional. AI creates the shortlist. Humans make the decisions. Every implementation that skips this step eventually regrets it. For related guidance, see our guide on [AI for Diversity Hiring: Reduce Bias](/blog/ai-diversity-hiring/).
+This is not optional. AI creates the shortlist. Humans make the decisions. Every implementation that skips this step eventually regrets it.
 
 ## What AI resume screening saves you
 
-The numbers are consistent across studies: Our guide on [AI Performance Reviews: Better Feedback Fast](/blog/ai-performance-reviews/) explores this further.
+The numbers are consistent across studies:
 
 - **Time-to-shortlist drops from 7-10 days to 1-2 days.** AI reviews applications as they arrive instead of batching them for weekly review.
 - **9-10 hours saved per 100 resumes.** For a role pulling 300 applications, that is 27-30 hours back.
@@ -66,7 +66,7 @@ Companies processing 500+ applications per month report saving [$2,300-3,000/mon
 
 ## Best AI resume screening tools in 2026
 
-Not all tools are equal. Here is what works at different scales. Our guide on [AI Skills Gap Analysis: Fix Workforce Gaps](/blog/ai-skills-gap-analysis/) explores this further.
+Not all tools are equal. Here is what works at different scales.
 
 ### For small teams (under 50 hires/year)
 

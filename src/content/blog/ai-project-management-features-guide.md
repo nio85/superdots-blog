@@ -76,7 +76,7 @@ When you have 50 tasks and limited team capacity, deciding what to work on first
 
 ### 4. Risk and blocker detection
 
-This is AI as an early warning system. Instead of discovering problems in Friday's status meeting, AI flags them as they develop. For more on this topic, check out [AI Tools for Data Entry: Stop Typing](/blog/ai-tools-for-data-entry/).
+This is AI as an early warning system. Instead of discovering problems in Friday's status meeting, AI flags them as they develop.
 
 **What it does**: Monitors task progress, identifies tasks that are stalling, flags dependencies at risk, and predicts potential delays before they cascade.
 
@@ -101,7 +101,7 @@ Instead of building complex filters and custom reports, ask your PM tool questio
 
 ## Features that aren't worth the hype (yet)
 
-Not everything with an "AI" label is useful. Be skeptical of: For more on this topic, check out [AI Document Summarizer: Read Less, Know More](/blog/ai-document-summarizer/).
+Not everything with an "AI" label is useful. Be skeptical of:
 
 - **AI-generated project plans**: Sounds great in demos. In practice, every project is different enough that AI-generated plans need so much editing you might as well start from scratch. Useful as a rough starting framework, but don't expect a plan you can execute without major revision.
 - **Autonomous task agents**: ClickUp and others offer AI agents that claim to handle multi-step workflows automatically. These are impressive in controlled demos but still too unreliable for critical paths. Use them for low-stakes automation only — not for anything where a wrong step means missed deadlines.

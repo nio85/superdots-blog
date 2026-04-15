@@ -67,13 +67,13 @@ This is especially valuable during due diligence. When a company is being acquir
 
 Termination provisions determine how a contract ends — and under what circumstances you can exit without liability. They vary in ways that matter enormously.
 
-Some contracts allow termination for convenience with 30 days notice. Others require 90 days and impose fees if you exit early. Some allow termination for cause only — meaning you can only exit if the other party materially breaches. Some auto-renew with a narrow termination window you will miss if you are not watching. For more on this topic, check out [AI for Intellectual Property Management](/blog/ai-ip-management/).
+Some contracts allow termination for convenience with 30 days notice. Others require 90 days and impose fees if you exit early. Some allow termination for cause only — meaning you can only exit if the other party materially breaches. Some auto-renew with a narrow termination window you will miss if you are not watching.
 
 AI extraction maps all of this across your portfolio. You can filter to see every contract that auto-renews, every contract with a termination fee, every contract where you lack termination for convenience rights. That view helps you prioritize renegotiation and manage renewal risk.
 
 ### Non-compete and non-solicitation clauses
 
-Employment agreements, partnership agreements, and acquisition documents often include restrictions on competitive activity. The scope varies — geography, duration, industry, and whether it covers employees, customers, or both. For more on this topic, check out [How AI Automates Legal Billing and Time Tracking](/blog/ai-legal-billing/).
+Employment agreements, partnership agreements, and acquisition documents often include restrictions on competitive activity. The scope varies — geography, duration, industry, and whether it covers employees, customers, or both.
 
 AI extracts the key parameters: the duration of the restriction, the geographic scope, and what activities are restricted. For a company managing hundreds of employment agreements, this creates an auditable record of who is bound by what restrictions — important for workforce planning and defensible in enforcement situations.
 

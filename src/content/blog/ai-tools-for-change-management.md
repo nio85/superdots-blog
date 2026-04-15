@@ -106,7 +106,7 @@ This costs $0 in additional tooling if you're already using these tools for Phas
 
 **The job**: Ensure people know exactly what they need to do differently after the change.
 
-This is where most ops managers invest the most effort — and where the most time gets wasted creating content that could be AI-assisted. For related guidance, see our guide on [AI Document Management: Find Files Faster](/blog/ai-document-management/).
+This is where most ops managers invest the most effort — and where the most time gets wasted creating content that could be AI-assisted.
 
 ### Tools for this phase
 
@@ -118,7 +118,7 @@ Loom lets you record async screen-capture training videos. The AI features do th
 - Produces a searchable transcript
 - Generates follow-up tasks from the video content
 
-For a CRM migration, instead of scheduling 8 live training sessions, you record once. The AI-generated summary and chapters mean employees can watch only the sections relevant to their role. If this applies to your team, our [AI Fleet Management: Optimize Routes and Costs](/blog/ai-fleet-management/) guide covers the details.
+For a CRM migration, instead of scheduling 8 live training sessions, you record once. The AI-generated summary and chapters mean employees can watch only the sections relevant to their role.
 
 The free plan limits video length to 5 minutes (sufficient for most how-to clips). The Business plan removes length limits and adds advanced AI features.
 

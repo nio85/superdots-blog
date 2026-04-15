@@ -83,7 +83,7 @@ Obsidian stores notes as local Markdown files and uses a graph view to visualize
 
 ### Microsoft OneNote with Copilot — best for Microsoft teams
 
-OneNote with Copilot brings AI note-taking into the Microsoft 365 ecosystem. Summarize meeting notes, generate action items from handwritten notes, and search across all your notebooks with natural language. Our guide on [AI Inventory Management: Operations Guide](/blog/ai-inventory-management/) explores this further.
+OneNote with Copilot brings AI note-taking into the Microsoft 365 ecosystem. Summarize meeting notes, generate action items from handwritten notes, and search across all your notebooks with natural language.
 
 **Strengths:** Native Microsoft 365 integration. Works with Teams meeting transcripts. Supports handwriting and drawing. Free with any Microsoft 365 subscription (Copilot requires additional license).
 
@@ -113,7 +113,7 @@ Reflect combines note-taking with networked thought. It uses AI to link notes, s
 | Microsoft 365 integration | OneNote + Copilot |
 | Clean thinking + daily capture | Reflect |
 
-Ask yourself three questions: If this applies to your team, our [AI Process Mining: Find Bottlenecks Fast](/blog/ai-process-mining/) guide covers the details.
+Ask yourself three questions:
 
 1. **Solo or team?** Notion and OneNote are strongest for teams. Mem, Obsidian, and Reflect are stronger for individual use.
 2. **Simple or powerful?** Mem is the simplest. Obsidian is the most powerful. Everything else falls in between.

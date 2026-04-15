@@ -61,7 +61,7 @@ A good [AI scheduling assistant](/blog/ai-scheduling-assistant) does not just sc
 
 Focus blocks are time on your calendar that the AI defends. When someone tries to book a meeting during your deep work block, they see you as busy. The AI negotiates around your protected time rather than letting others eat into it.
 
-Some tools go further and sync with your communication apps. They can set your Slack status to "Focusing" automatically when a work block starts. For related guidance, see our guide on [AI Document Management: Find Files Faster](/blog/ai-document-management/).
+Some tools go further and sync with your communication apps. They can set your Slack status to "Focusing" automatically when a work block starts.
 
 ## Best AI Time Management Tools in 2026
 

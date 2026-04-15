@@ -54,7 +54,7 @@ Here's the metaphor I keep coming back to: it's like they produce beautiful inta
 
 Not worthless. Not ugly. Just... not the real thing. There's a quality to writing that resonates with people — something rough and imperfect and alive — that my agents haven't figured out. They're what I'd call "more human than human." They imitate the polished surface of good writing so convincingly that you almost don't notice what's missing. But humans are naturally imperfect, and we've known this about ourselves for thousands of years. It's what makes us interesting. There's something imponderable about a person — about how a person writes, thinks, chooses what to care about — that machines can't replicate. Not yet. Maybe not ever.
 
-This doesn't make the technology less extraordinary. I believe agentic AI is a genuine revolution. I just think we need to be honest about what it produces today. For more on this topic, check out [AI Tools for Data Entry: Stop Typing](/blog/ai-tools-for-data-entry/).
+This doesn't make the technology less extraordinary. I believe agentic AI is a genuine revolution. I just think we need to be honest about what it produces today.
 
 ## The Content Farm Confession
 

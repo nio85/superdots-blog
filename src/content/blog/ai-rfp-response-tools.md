@@ -47,13 +47,13 @@ The core of every AI RFP tool is the content library. Think of it as your organi
 
 When you first set up an AI RFP tool, you import your existing content: past proposals, security questionnaire responses, product documentation, sales collateral, and any other source material. The AI analyzes this content, identifies distinct question-answer pairs, categorizes them by topic, and creates a searchable knowledge base.
 
-This initial setup is the biggest investment. Plan for 2-4 weeks of content import, deduplication, and SME review to ensure your library starts with accurate, current information. For more on this topic, check out [6 Best AI Conversation Intelligence Tools (2026)](/blog/ai-conversation-intelligence/).
+This initial setup is the biggest investment. Plan for 2-4 weeks of content import, deduplication, and SME review to ensure your library starts with accurate, current information.
 
 ### Matching and generation
 
 When a new RFP arrives, the AI reads each question, searches the content library for the most relevant past answers, and generates a draft response. This is not simple keyword matching. Modern AI RFP tools use semantic search — they understand what the question is asking, not just which words it contains.
 
-A question phrased as "Describe your approach to data encryption at rest and in transit" matches answers about AES-256 encryption, TLS 1.3, and key management — even if none of those exact terms appear in the question. If this applies to your team, our [AI Sales Forecasting: Predict Revenue](/blog/ai-sales-forecasting/) guide covers the details.
+A question phrased as "Describe your approach to data encryption at rest and in transit" matches answers about AES-256 encryption, TLS 1.3, and key management — even if none of those exact terms appear in the question.
 
 ### Confidence scoring
 
