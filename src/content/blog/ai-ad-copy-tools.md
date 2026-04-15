@@ -167,7 +167,7 @@ The iteration loop is where AI ad copy gets powerful. If you generate once and n
 
 ### Mistake 6: Forgetting the landing page
 
-Great ad copy that sends people to a generic landing page wastes the click. Make sure the landing page delivers on the ad's specific promise. If the ad says "see how we cut reporting time by 80%," the landing page should show exactly that.
+Great ad copy that sends people to a generic [landing page](/blog/ai-landing-page-builder/) wastes the click. Make sure the landing page delivers on the ad's specific promise. If the ad says "see how we cut reporting time by 80%," the landing page should show exactly that.
 
 ## Measuring AI Ad Copy Performance
 

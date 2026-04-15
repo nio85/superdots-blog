@@ -29,7 +29,7 @@ There are two completely different types of AI tools for sales objection handlin
 
 **Real-time tools** help reps during live calls — a listening layer that detects when a prospect raises a concern and surfaces a suggested response on the rep's screen.
 
-These solve fundamentally different problems. A rep who freezes on "we're happy with our current vendor" during a live call has a different problem than a rep who doesn't know your battlecard responses exist. One needs practice reps. The other needs real-time cues. Using the wrong tool doesn't fix the gap — it adds a line item to your tech stack without moving the number.
+These solve fundamentally different problems. A rep who freezes on "we're happy with our current vendor" during a live call has a different problem than a rep who doesn't know your battlecard responses exist. One needs practice reps. The other needs [real-time cues](/blog/ai-conversation-intelligence/). Using the wrong tool doesn't fix the gap — it adds a line item to your tech stack without moving the number.
 
 **AI sales objection handling tools** are software that help sales reps prepare for, or respond to, buyer pushback during the sales process — either through pre-call practice simulations or real-time in-call response prompts.
 
@@ -102,7 +102,7 @@ The core value: eliminating the blank screen moment. A rep who knows the right r
 **Pricing:** ~$1,600/user/year in licensing fees, plus a platform fee of $5,000+ (minimum). A 10-person team pays an effective $200/user/month all-in — verified across multiple third-party pricing analyses as of Q1 2026. 3-seat minimum. Annual contracts only.  
 **Best for:** AE teams in complex B2B sales; organizations that need call analytics AND real-time coaching in one platform
 
-Gong is the market leader in conversation intelligence, and its real-time assist layer is its most underused feature. During a live call, Gong can surface battlecard content — competitor comparisons, pricing responses, reference customers — automatically when it detects the rep is on a specific topic.
+Gong is the market leader in conversation intelligence, and its real-time assist layer is its most underused feature. During a live call, Gong can surface [battlecard](/blog/ai-battlecard-tools-sales-teams/) content — competitor comparisons, pricing responses, reference customers — automatically when it detects the rep is on a specific topic.
 
 The pricing is the primary barrier. For a team of 5, the platform fee alone represents $1,000/user/year before you touch per-user licensing. Gong makes financial sense at 10+ seats where the platform fee distributes across more users.
 

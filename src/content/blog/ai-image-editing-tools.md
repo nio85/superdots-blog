@@ -161,7 +161,7 @@ For teams who need design help beyond images, see [AI design tools for non-desig
 
 The biggest risk with distributed image creation isn't quality — it's inconsistency. When anyone can create visuals, your brand can look different in every department.
 
-**Set up a brand kit.** Canva, Adobe Express, and PhotoRoom all support brand kits. Upload your:
+**Set up a brand kit.** Canva, Adobe Express, and PhotoRoom all support [brand kits](/blog/ai-brand-identity-tools/). Upload your:
 - Logo files (primary, secondary, icon)
 - Brand colors (hex codes)
 - Fonts (primary and secondary)

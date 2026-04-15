@@ -114,7 +114,7 @@ For Shopify and DTC brands where most conversions happen online and Meta ads are
 
 ## B2B and Lead Gen Attribution Tools: Comparison Table
 
-For businesses where sales cycles are long, offline touchpoints matter, and CRM data is essential:
+For businesses where sales cycles are long, offline touchpoints matter, and [CRM data is essential](/blog/ai-crm-tools/):
 
 | Tool | Starting Price | Best For | Key Limitation |
 |------|---------------|----------|----------------|
@@ -164,7 +164,7 @@ Wanamaker didn't know which half of his advertising was wasted because no one co
 
 ## The Attribution Metric That Actually Predicts Growth
 
-One pattern worth noting: businesses that get serious about attribution tend to discover the same thing. Their best-performing channel at the bottom of the funnel (usually branded search or email) is powered by work they did at the top of the funnel months earlier. The awareness campaign they nearly cancelled. The SEO content they invested in without seeing immediate returns. The podcast ad that "never converted."
+One pattern worth noting: businesses that get serious about attribution tend to discover the same thing. Their best-performing channel at the bottom of the funnel (usually branded search or email) is powered by work they did at the top of the funnel months earlier. The awareness campaign they nearly cancelled. The [SEO content](/blog/ai-seo-tools/) they invested in without seeing immediate returns. The podcast ad that "never converted."
 
 Last-click attribution told them those investments weren't working. Multi-touch attribution shows they were the engine.
 

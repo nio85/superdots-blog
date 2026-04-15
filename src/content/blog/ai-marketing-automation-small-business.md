@@ -148,7 +148,7 @@ For [AI email marketing](/blog/ai-email-marketing/) specifically, ActiveCampaign
 ### 4. HubSpot Marketing Hub Starter
 **Best for: teams that want CRM and marketing in one place**
 
-HubSpot Starter ($15/month for Marketing Hub) gives you email marketing, simple automation, ad tracking, and a built-in CRM. The real value is cohesion: contacts, deals, email history, and ad attribution live in one system. For teams currently juggling three or four tools that don't talk to each other, this integration alone is worth the switch cost.
+HubSpot Starter ($15/month for Marketing Hub) gives you [email marketing](/blog/ai-email-marketing/), simple automation, ad tracking, and a built-in [CRM](/blog/ai-crm-tools/). The real value is cohesion: contacts, deals, email history, and ad attribution live in one system. For teams currently juggling three or four tools that don't talk to each other, this integration alone is worth the switch cost.
 
 **The honest limitation:** HubSpot's AI features at Starter tier are limited. Predictive lead scoring, conversation intelligence, and the AI content assistant are locked behind Professional ($800/month). If you're choosing HubSpot, buy it for CRM integration and operational clarity — not the AI. The AI is elsewhere on this list.
 
