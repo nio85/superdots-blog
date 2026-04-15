@@ -163,7 +163,7 @@ Each department has different needs. Don't force the same tool on everyone:
 | Operations | Workflow automation (Zapier/Make) |
 | Finance | AI bookkeeping and reporting |
 | HR | AI for recruiting and onboarding docs |
-| Engineering | AI code review and documentation |
+| Engineering | [AI code review](/blog/ai-code-review-tools/) and documentation |
 
 ### Build internal expertise
 

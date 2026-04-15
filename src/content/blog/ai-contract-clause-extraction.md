@@ -105,7 +105,7 @@ The practical output of clause extraction is a structured data layer on top of y
 
 **A risk heat map.** Some tools score contracts on risk dimensions — liability exposure, termination flexibility, indemnification breadth — and produce a visual view of your highest-risk agreements. This helps prioritize review and renegotiation.
 
-**A searchable repository.** Every extracted clause is indexed and searchable. "Show me all contracts where the governing law is New York and the limitation of liability cap is less than $500,000" returns results in seconds rather than requiring a manual read-through.
+**A [searchable repository](/blog/ai-contract-management/).** Every extracted clause is indexed and searchable. "Show me all contracts where the governing law is New York and the limitation of liability cap is less than $500,000" returns results in seconds rather than requiring a manual read-through.
 
 ## Running Clause Extraction on a Contract Portfolio
 

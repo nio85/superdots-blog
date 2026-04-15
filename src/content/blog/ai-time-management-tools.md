@@ -39,7 +39,7 @@ That is the problem AI attacks directly. It does not just make you slightly fast
 
 There is also the focus problem. The average worker checks their phone or switches apps every 6 minutes. Every interruption costs 23 minutes of deep focus recovery. AI tools that enforce calendar blocking do not just schedule your time — they protect it.
 
-Compare this to other AI use cases. AI writing tools help you draft faster. [AI workflow automation](/blog/ai-workflow-automation) eliminates repetitive tasks. But time management is the foundation. If your calendar is chaos, no other AI tool saves you much.
+Compare this to other AI use cases. AI writing tools help you draft faster. [AI workflow automation](/blog/ai-workflow-automation) eliminates repetitive tasks. But time management is the foundation. If your [calendar is chaos](/blog/ai-scheduling-assistant/), no other AI tool saves you much.
 
 ## How AI Time Management Tools Work
 

@@ -67,7 +67,7 @@ You don't need a dozen tools. You need three to five that solve real problems. H
 
 ### 3. AI accounting/bookkeeping — $15-30/month
 
-**The problem:** Bookkeeping is tedious but essential. Categorizing expenses, reconciling accounts, and preparing for tax time eat up evenings and weekends.
+**The problem:** Bookkeeping is tedious but essential. [Categorizing expenses](/blog/ai-accounting-software/), reconciling accounts, and preparing for tax time eat up evenings and weekends.
 
 **The solution:** QuickBooks with AI features ($15-30/month) or FreshBooks with smart categorization. For the simplest needs, AI-powered tools like Bench or Pilot handle bookkeeping for you.
 
