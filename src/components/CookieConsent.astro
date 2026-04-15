@@ -1,146 +1,179 @@
 ---
 /**
- * Cookie consent — Silktide Consent Manager (vendored).
- * Replaces vanilla-cookieconsent v3 (migrated 2026-04-15).
+ * CookieConsent v3 integration — replaces the old CookieBanner.astro.
+ * Uses vanilla-cookieconsent by orestbida.
  *
  * Categories:
- *   - necessary  (required): sd-theme, stcm.*, __cf_bm
- *   - analytics  (opt-in):   GA4 + Microsoft Clarity
- *   - marketing  (opt-in):   reserved
+ *   - necessary (read-only): sd-theme, cc_cookie, __cf_bm
+ *   - analytics (opt-in):    GA4, Clarity
+ *   - marketing (opt-in):    empty for now, future-proofing
  *
- * Design overrides: src/styles/silktide-consent.css
+ * Design overrides: src/styles/cookie-consent.css
  */
 ---
 
-<link rel="stylesheet" href="/vendor/silktide/silktide-consent-manager.css" />
-<script is:inline src="/vendor/silktide/silktide-consent-manager.js"></script>
-
 <script>
-import '../styles/silktide-consent.css';
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+import '../styles/cookie-consent.css';
+import * as CookieConsent from 'vanilla-cookieconsent';
 
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
     SD_startClarity: () => void;
     SD_clarityLoaded: boolean;
-    silktideConsentManager: {
-      init: (config: any) => void;
-      update: (config: any) => void;
-      getInstance: () => any;
-      resetConsent: () => void;
-    };
+    __sdMigrateAnalytics?: boolean;
   }
 }
 
-// --- Migrate legacy localStorage (sd-cookie-consent v1 AND cc_cookie v3) ---
-function migrateLegacyConsent(): { analytics: boolean; marketing: boolean } | null {
-  const v1 = localStorage.getItem('sd-cookie-consent');
-  if (v1) {
-    const analytics = v1 === 'accepted';
-    localStorage.removeItem('sd-cookie-consent');
-    localStorage.removeItem('sd-cookie-consent-date');
-    return { analytics, marketing: false };
-  }
-  const v3 = localStorage.getItem('cc_cookie');
-  if (v3) {
-    try {
-      const parsed = JSON.parse(v3);
-      const cats: string[] = parsed.categories ?? [];
-      localStorage.removeItem('cc_cookie');
-      return { analytics: cats.includes('analytics'), marketing: cats.includes('marketing') };
-    } catch {
-      /* ignore */
-    }
-  }
-  return null;
+// --- Migration from old sd-cookie-consent localStorage format ---
+function checkOldConsent(): boolean {
+  const oldConsent = localStorage.getItem('sd-cookie-consent');
+  if (!oldConsent) return false;
+
+  const shouldGrantAnalytics = oldConsent === 'accepted';
+
+  // Clean up old keys regardless
+  localStorage.removeItem('sd-cookie-consent');
+  localStorage.removeItem('sd-cookie-consent-date');
+
+  return shouldGrantAnalytics;
 }
 
-// Pre-seed Silktide storage from legacy keys so the banner doesn't reappear.
-function seedSilktideFromLegacy(legacy: { analytics: boolean; marketing: boolean }) {
-  const ns = 'superdots.';
-  localStorage.setItem(`stcm.${ns}consent.necessary`, 'true');
-  localStorage.setItem(`stcm.${ns}consent.analytics`, String(legacy.analytics));
-  localStorage.setItem(`stcm.${ns}consent.marketing`, String(legacy.marketing));
-  localStorage.setItem(`stcm.${ns}hasConsented`, 'true');
-}
+const migrateAnalytics = checkOldConsent();
 
-const legacy = migrateLegacyConsent();
-if (legacy) seedSilktideFromLegacy(legacy);
-
-function initSilktide() {
-  if (!window.silktideConsentManager) return;
-
-  window.silktideConsentManager.init({
-    namespace: 'superdots',
-    icon: { position: 'bottomLeft' },
-    backdrop: { show: true },
-    prompt: { position: 'center' },
-    consentTypes: [
-      {
-        id: 'necessary',
-        label: 'Essential',
-        description: 'Theme preference and this very consent record. Nothing else.',
-        required: true,
-        defaultValue: true,
-      },
-      {
-        id: 'analytics',
-        label: 'Analytics',
-        description:
-          'Google Analytics (GA4) and Microsoft Clarity. Aggregate reading patterns and heatmaps — no names, no emails, no selling.',
-        defaultValue: false,
-        gtag: 'analytics_storage',
-        onAccept: () => {
-          window.SD_startClarity?.();
-        },
-      },
-      {
-        id: 'marketing',
-        label: 'Marketing',
-        description: 'Reserved for the future. Nothing active today.',
-        defaultValue: false,
-        gtag: ['ad_storage', 'ad_user_data', 'ad_personalization'],
-      },
-    ],
-    text: {
-      prompt: {
-        title: 'A word on cookies.',
-        description:
-          'We use Google Analytics and Microsoft Clarity to see which articles actually get read. No personal data is sold, shared, or creepy. Read the <a href="/cookie-policy/" target="_blank" rel="noopener">cookie policy</a> or <a href="/privacy/" target="_blank" rel="noopener">privacy policy</a> — they open in a new tab so you don\'t lose this prompt.',
-        acceptAllButtonText: 'Allow all',
-        rejectNonEssentialButtonText: 'Only essential',
-        preferencesButtonText: 'Choose',
-      },
-      preferences: {
-        title: 'Your call.',
-        description:
-          'Three categories. No dark patterns. Toggle what you want — we remember for 6 months. Essentials stay on (without them the site breaks). Full details in the <a href="/cookie-policy/" target="_blank" rel="noopener">cookie policy</a>.',
-        saveButtonText: 'Save choices',
-        creditLinkText: '',
-      },
-    },
+// --- GA4 Consent helpers ---
+function updateGtagConsent(analyticsAccepted: boolean, marketingAccepted: boolean) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('consent', 'update', {
+    analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+    ad_storage: marketingAccepted ? 'granted' : 'denied',
+    ad_user_data: marketingAccepted ? 'granted' : 'denied',
+    ad_personalization: marketingAccepted ? 'granted' : 'denied',
   });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSilktide, { once: true });
-} else {
-  initSilktide();
+// --- Clarity helper ---
+function handleClarity(accepted: boolean) {
+  if (accepted && typeof window.SD_startClarity === 'function') {
+    window.SD_startClarity();
+  }
 }
 
-// --- Footer "Cookie Settings" reopener ---
-document.getElementById('cookie-settings-link')?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const icon = document.getElementById('stcm-icon') as HTMLElement | null;
-  if (icon) {
-    icon.click();
-    return;
-  }
-  // Fallback: create+toggle via instance if icon isn't mounted yet
-  const inst = window.silktideConsentManager?.getInstance?.();
-  if (inst?.toggleModal) {
-    inst.showBackdrop?.();
-    inst.toggleModal(true);
-  }
+// --- Sync consent state to GA4 + Clarity ---
+function syncConsentState() {
+  const analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+  const marketingAccepted = CookieConsent.acceptedCategory('marketing');
+  updateGtagConsent(analyticsAccepted, marketingAccepted);
+  handleClarity(analyticsAccepted);
+}
+
+// --- Initialize CookieConsent ---
+CookieConsent.run({
+  // Block page interaction until user makes a choice
+  disablePageInteraction: true,
+
+  guiOptions: {
+    consentModal: {
+      layout: 'box',
+      position: 'middle center',
+      equalWeightButtons: false,
+      flipButtons: false,
+    },
+    preferencesModal: {
+      layout: 'box',
+      equalWeightButtons: true,
+      flipButtons: false,
+    },
+  },
+
+  categories: {
+    necessary: {
+      enabled: true,
+      readOnly: true,
+    },
+    analytics: {
+      enabled: migrateAnalytics,
+    },
+    marketing: {
+      enabled: false,
+    },
+  },
+
+  onFirstConsent: () => {
+    syncConsentState();
+  },
+
+  onConsent: () => {
+    syncConsentState();
+  },
+
+  onChange: () => {
+    syncConsentState();
+  },
+
+  language: {
+    default: 'en',
+    translations: {
+      en: {
+        consentModal: {
+          title: 'A word on cookies.',
+          description:
+            'We use Google Analytics and Microsoft Clarity to see which articles actually get read. No personal data is sold, shared, or creepy. <a href="/cookie-policy/">The full story →</a>',
+          acceptAllBtn: 'Allow all',
+          acceptNecessaryBtn: 'Only essential',
+          showPreferencesBtn: 'Choose',
+          footer:
+            '<a href="/privacy/">Privacy</a> · <a href="/cookie-policy/">Cookie policy</a>',
+        },
+        preferencesModal: {
+          title: 'Your call.',
+          acceptAllBtn: 'Allow all',
+          acceptNecessaryBtn: 'Only essential',
+          savePreferencesBtn: 'Save choices',
+          closeIconLabel: 'Close',
+          sections: [
+            {
+              title: 'Three categories. No dark patterns.',
+              description:
+                'Toggle what you want. We remember your choice for 6 months. Essential cookies stay on — without them the site breaks.',
+            },
+            {
+              title: 'Essential',
+              description:
+                'Theme preference and this very consent record. Nothing else.',
+              linkedCategory: 'necessary',
+            },
+            {
+              title: 'Analytics',
+              description:
+                'Google Analytics (GA4) and Microsoft Clarity. Aggregate reading patterns and heatmaps — no names, no emails, no selling.',
+              linkedCategory: 'analytics',
+            },
+            {
+              title: 'Marketing',
+              description:
+                'Reserved for the future. Nothing active today.',
+              linkedCategory: 'marketing',
+            },
+            {
+              title: 'Questions?',
+              description:
+                'The whole policy is <a href="/cookie-policy/">right here</a>. Written in plain English, no legalese.',
+            },
+          ],
+        },
+      },
+    },
+  },
 });
+
+// --- Wire footer "Cookie Settings" button ---
+const settingsBtn = document.getElementById('cookie-settings-link');
+if (settingsBtn) {
+  settingsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    CookieConsent.showPreferences();
+  });
+}
 </script>
