@@ -1,9 +1,6 @@
 ---
 title: 'AI Competitive Intelligence for Sales Teams (2026)'
-description: >-
-  A practical guide to AI-powered competitive intelligence tools for sales teams
-  — with real pricing, a DIY battlecard workflow, and honest takes on what
-  works.
+description: 'AI competitive intelligence tools for sales teams — real pricing, a DIY battlecard workflow, and honest takes on what works.'
 pubDate: '2026-04-01T00:00:00.000Z'
 updatedDate: '2026-04-03'
 author: Superdots Team
