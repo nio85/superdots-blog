@@ -1,673 +1,446 @@
 /* ============================================================
-   CookieConsent v3 — Superdots editorial design (rewrite)
-   Library: vanilla-cookieconsent by orestbida
-   Design system: src/styles/global.css
-
-   Structure
-     1. Design tokens (library CSS vars → Superdots tokens)
-     2. Layout reset (scroll lock, overlay, z-index)
-     3. Card shell (shared shape, border, shadow, top rule)
-     4. Typography (eyebrow, title, desc, links)
-     5. Button system (primary navy, secondary text-link)
-     6. Consent modal layout (.cm__btns responsive)
-     7. Preferences modal (sections, toggles, footer)
-     8. Responsive breakpoints
-     9. Dark mode
-    10. Reduced motion
-
-   Library DOM note
-     vanilla-cookieconsent v3 does NOT add a .cm__btn--primary class.
-     Only .cm__btn--secondary exists. The "Allow all" button is targeted
-     via :not(.cm__btn--secondary):not(.cm__btn--close).
-     Button-group layout: "Allow all" + "Only essential" share the same
-     .cm__btn-group; "Choose" is alone in a second .cm__btn-group.
+   COOKIE CONSENT — custom implementation (GDPR-compliant)
    ============================================================ */
 
-/* ============================================================
-   1. DESIGN TOKENS
-   ============================================================ */
-#cc-main {
-  --cc-font-family: 'Inter', system-ui, -apple-system, sans-serif;
-
-  /* Base text */
-  --cc-primary-color: #0B1222;
-  --cc-secondary-color: #475569;
-  --cc-link-color: #E8363B;
-
-  /* Background */
-  --cc-bg: #ffffff;
-
-  /* Separators */
-  --cc-separator-border-color: #E2E8F0;
-
-  /* Library button vars (we override selectors anyway, but set these
-     so the library internals don't render red boxes before our CSS loads) */
-  --cc-btn-primary-bg: #0B1222;
-  --cc-btn-primary-color: #ffffff;
-  --cc-btn-primary-border-color: #0B1222;
-  --cc-btn-primary-hover-bg: #E8363B;
-  --cc-btn-primary-hover-color: #ffffff;
-  --cc-btn-primary-hover-border-color: #E8363B;
-  --cc-btn-secondary-bg: transparent;
-  --cc-btn-secondary-color: #0B1222;
-  --cc-btn-secondary-border-color: transparent;
-  --cc-btn-secondary-hover-bg: transparent;
-  --cc-btn-secondary-hover-color: #E8363B;
-  --cc-btn-secondary-hover-border-color: transparent;
-
-  /* Shape */
-  --cc-modal-border-radius: 12px;
-  --cc-btn-border-radius: 8px;
-  --cc-modal-margin: 1rem;
-
-  /* Backdrop */
-  --cc-overlay-bg: rgba(11, 18, 34, 0.55);
-  --cc-overlay-opacity: 1;
-
-  /* Toggle */
-  --cc-toggle-on-bg: #E8363B;
-  --cc-toggle-off-bg: #CBD5E1;
-  --cc-toggle-on-knob-bg: #ffffff;
-  --cc-toggle-off-knob-bg: #ffffff;
-  --cc-toggle-readonly-bg: #94A3B8;
-  --cc-toggle-readonly-knob-bg: #E2E8F0;
-  --cc-toggle-readonly-knob-icon-color: #94A3B8;
-
-  /* Section */
-  --cc-section-category-bg: #F8FAFC;
-
-  font-family: var(--cc-font-family);
+/* 1. STATE GATE — hide everything by default */
+#sd-cc-root,
+#sd-cc-backdrop,
+#sd-cc-banner,
+#sd-cc-preferences {
+  display: none;
 }
 
-[data-theme="dark"] #cc-main {
-  --cc-primary-color: #F1F5F9;
-  --cc-secondary-color: #94A3B8;
-  --cc-link-color: #F87171;
-  --cc-bg: #0F172A;
-  --cc-separator-border-color: rgba(255, 255, 255, 0.08);
-  --cc-btn-primary-bg: #F1F5F9;
-  --cc-btn-primary-color: #0B1222;
-  --cc-btn-primary-border-color: #F1F5F9;
-  --cc-btn-primary-hover-bg: #E8363B;
-  --cc-btn-primary-hover-color: #ffffff;
-  --cc-btn-primary-hover-border-color: #E8363B;
-  --cc-btn-secondary-color: #F1F5F9;
-  --cc-btn-secondary-hover-color: #F87171;
-  --cc-overlay-bg: rgba(0, 0, 0, 0.7);
-  --cc-section-category-bg: rgba(255, 255, 255, 0.03);
+html[data-consent-state="banner"] #sd-cc-root,
+html[data-consent-state="preferences"] #sd-cc-root {
+  display: block;
+}
+html[data-consent-state="banner"] #sd-cc-backdrop,
+html[data-consent-state="preferences"] #sd-cc-backdrop {
+  display: block;
+}
+html[data-consent-state="banner"] #sd-cc-banner {
+  display: flex;
+}
+html[data-consent-state="preferences"] #sd-cc-preferences {
+  display: flex;
 }
 
-/* ============================================================
-   2. LAYOUT RESET
-   ============================================================ */
-
-/* Lock the page under any open modal. vanilla-cookieconsent v3 adds
-   these classes on <html> while a modal is visible; disablePageInteraction
-   blocks clicks but not iOS touch-scroll. */
-html.show--consent,
-html.show--preferences {
-  overflow: hidden !important;
-  touch-action: none;
-}
-html.show--consent body,
-html.show--preferences body {
-  overflow: hidden !important;
-  overscroll-behavior: contain;
+/* 2. BACKDROP */
+#sd-cc-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 18, 34, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  animation: sd-cc-fade 220ms ease forwards;
 }
 
-/* ============================================================
-   3. CARD SHELL
-   ============================================================ */
-#cc-main .cm,
-#cc-main .pm {
-  position: relative;
-  background: var(--cc-bg);
-  color: var(--cc-primary-color);
-  border: 1px solid var(--cc-separator-border-color);
-  border-radius: 12px;
-  box-shadow:
-    0 12px 48px rgba(11, 18, 34, 0.14),
-    0 2px 8px rgba(11, 18, 34, 0.06);
-  overflow: hidden;
+@keyframes sd-cc-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-[data-theme="dark"] #cc-main .cm,
-[data-theme="dark"] #cc-main .pm {
-  box-shadow:
-    0 12px 48px rgba(0, 0, 0, 0.45),
-    0 2px 8px rgba(0, 0, 0, 0.25);
+@keyframes sd-cc-rise {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 12px)); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* Red top rule — the single editorial accent */
-#cc-main .cm::before,
-#cc-main .pm::before {
-  content: '';
+/* 3. BANNER + PREFERENCES — shared shell */
+#sd-cc-banner,
+#sd-cc-preferences {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: min(92vw, 480px);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #1E293B);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 20px 60px rgba(11, 18, 34, 0.35), 0 4px 12px rgba(11, 18, 34, 0.12);
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.25rem;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  animation: sd-cc-rise 260ms cubic-bezier(.2,.8,.2,1) forwards;
+  outline: none;
+}
+
+#sd-cc-preferences {
+  width: min(92vw, 560px);
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+/* Top red rule (banner only) */
+#sd-cc-banner .sd-cc-rule {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: #E8363B;
-  pointer-events: none;
-  z-index: 2;
+  background: var(--sd-red, #E8363B);
+  border-top-left-radius: var(--radius-lg, 12px);
+  border-top-right-radius: var(--radius-lg, 12px);
 }
 
-/* ============================================================
-   4. TYPOGRAPHY
-   ============================================================ */
-
-#cc-main .cm__body,
-#cc-main .pm__body,
-#cc-main .cm__texts,
-#cc-main .pm__header {
-  padding: 1.5rem 1.5rem 0;
-}
-
-/* Title — Space Grotesk bold with monospace eyebrow */
-#cc-main .cm__title,
-#cc-main .pm__title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+/* 4. TYPOGRAPHY */
+#sd-cc-banner h2,
+#sd-cc-preferences h2 {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 700;
   font-size: 1.5rem;
-  letter-spacing: -0.03em;
   line-height: 1.2;
-  color: var(--cc-primary-color);
-  margin: 0;
-  position: relative;
-}
-#cc-main .cm__title::before,
-#cc-main .pm__title::before {
-  content: 'Cookies · Your call';
-  display: block;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-weight: 500;
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #E8363B;
-  margin-bottom: 0.625rem;
-  opacity: 0.9;
-}
-#cc-main .pm__title::before {
-  content: 'Preferences · Cookies';
+  color: var(--color-text-strong, #0B1222);
+  margin: 0.25rem 0 0.5rem;
 }
 
-/* Desc */
-#cc-main .cm__desc,
-#cc-main .pm__section-desc {
-  font-family: 'Inter', system-ui, sans-serif;
+#sd-cc-banner p,
+#sd-cc-preferences p {
   font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--cc-secondary-color);
-  margin: 0.75rem 0 0;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  color: var(--color-text, #334155);
 }
 
-/* Links inside desc — red underline */
-#cc-main .cm__desc a,
-#cc-main .pm__section-desc a,
-#cc-main .cm__footer a {
-  color: #E8363B;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(232, 54, 59, 0.3);
-  padding-bottom: 1px;
-  transition: border-color 160ms ease;
-}
-#cc-main .cm__desc a:hover,
-#cc-main .pm__section-desc a:hover,
-#cc-main .cm__footer a:hover {
-  border-bottom-color: #E8363B;
+#sd-cc-banner a,
+#sd-cc-preferences a {
+  color: var(--sd-red, #E8363B);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
-/* Footer links (Privacy · Cookie policy) */
-#cc-main .cm__footer {
-  padding: 0.875rem 1.5rem 1rem;
-  border-top: 1px solid var(--cc-separator-border-color);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--cc-secondary-color);
+#sd-cc-banner a:hover,
+#sd-cc-preferences a:hover {
+  color: var(--sd-red-dark, #CC2D32);
 }
-#cc-main .cm__footer a {
-  color: var(--cc-secondary-color);
-  border-bottom: none;
-  padding: 0;
-}
-#cc-main .cm__footer a:hover {
-  color: #E8363B;
-}
-#cc-main .cm__link-group {
+
+.sd-cc-footer-links {
+  font-size: 0.8125rem !important;
+  color: var(--color-text-muted, #64748B) !important;
+  margin: 0.75rem 0 0 !important;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: center;
 }
 
-/* ============================================================
-   5. BUTTON SYSTEM
-   ============================================================ */
+.sd-cc-footer-links a {
+  color: var(--color-text-muted, #64748B) !important;
+}
 
-/* Primary — navy block, red on hover (editorial hierarchy) */
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
-#cc-main .pm__btn:not(.pm__btn--secondary) {
+/* 5. BUTTONS */
+.sd-cc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.sd-cc-btn {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 8px);
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease, transform 100ms ease;
+  text-align: center;
+}
+
+.sd-cc-btn:focus-visible {
+  outline: 2px solid var(--sd-red, #E8363B);
+  outline-offset: 2px;
+}
+
+.sd-cc-btn:active {
+  transform: translateY(1px);
+}
+
+.sd-cc-btn-primary {
+  background: var(--sd-navy, #0B1222);
+  color: #fff;
+  border-color: var(--sd-navy, #0B1222);
+}
+.sd-cc-btn-primary:hover {
+  background: var(--sd-red, #E8363B);
+  border-color: var(--sd-red, #E8363B);
+}
+
+.sd-cc-btn-secondary {
+  background: transparent;
+  color: var(--color-text-strong, #0B1222);
+  border-color: var(--color-border-strong, #CBD5E1);
+}
+.sd-cc-btn-secondary:hover {
+  background: var(--color-bg-dim, #F8FAFC);
+  border-color: var(--sd-navy, #0B1222);
+}
+
+.sd-cc-btn-link {
+  background: transparent;
+  color: var(--color-text-strong, #0B1222);
+  border-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.sd-cc-btn-link:hover {
+  color: var(--sd-red, #E8363B);
+}
+
+/* 6. PREFERENCES INTERNALS */
+.sd-cc-prefs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.sd-cc-close {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted, #64748B);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md, 8px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #0B1222 !important;
-  color: #ffffff !important;
-  border: 1px solid #0B1222 !important;
-  border-radius: 8px !important;
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 0.9375rem !important;
-  letter-spacing: 0.01em !important;
-  min-height: 44px !important;
-  padding: 0.625rem 1.5rem !important;
-  white-space: nowrap;
-  text-decoration: none;
-  transition: background-color 180ms ease, border-color 180ms ease,
-              transform 180ms ease, box-shadow 180ms ease !important;
-}
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover,
-#cc-main .pm__btn:not(.pm__btn--secondary):hover {
-  background: #E8363B !important;
-  border-color: #E8363B !important;
-  color: #ffffff !important;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(232, 54, 59, 0.3);
-}
-[data-theme="dark"] #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
-[data-theme="dark"] #cc-main .pm__btn:not(.pm__btn--secondary) {
-  background: #F1F5F9 !important;
-  color: #0B1222 !important;
-  border-color: #F1F5F9 !important;
-}
-[data-theme="dark"] #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover,
-[data-theme="dark"] #cc-main .pm__btn:not(.pm__btn--secondary):hover {
-  background: #E8363B !important;
-  color: #ffffff !important;
-  border-color: #E8363B !important;
-}
-
-/* Secondary — text-link with thin underline */
-#cc-main .cm__btn--secondary,
-#cc-main .pm__btn--secondary {
-  background: transparent !important;
-  border: none !important;
-  color: var(--cc-primary-color) !important;
-  font-family: 'Space Grotesk', system-ui, sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 0.875rem !important;
-  padding: 0.5rem 0.375rem !important;
-  min-height: 36px !important;
-  text-decoration: underline;
-  text-decoration-color: rgba(71, 85, 105, 0.35);
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  transition: color 160ms ease, text-decoration-color 160ms ease !important;
-}
-#cc-main .cm__btn--secondary:hover,
-#cc-main .pm__btn--secondary:hover {
-  color: #E8363B !important;
-  text-decoration-color: #E8363B;
-  transform: none !important;
-  background: transparent !important;
-}
-[data-theme="dark"] #cc-main .cm__btn--secondary,
-[data-theme="dark"] #cc-main .pm__btn--secondary {
-  color: #F1F5F9 !important;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
-}
-[data-theme="dark"] #cc-main .cm__btn--secondary:hover,
-[data-theme="dark"] #cc-main .pm__btn--secondary:hover {
-  color: #F87171 !important;
-  text-decoration-color: #F87171;
-}
-
-/* Close button (preferences X) */
-#cc-main .pm__close-btn {
-  color: var(--cc-secondary-color) !important;
-  border: 1px solid var(--cc-separator-border-color) !important;
-  border-radius: 8px !important;
-  background: transparent !important;
-  transition: color 160ms ease, border-color 160ms ease !important;
-}
-#cc-main .pm__close-btn:hover {
-  color: #E8363B !important;
-  border-color: #E8363B !important;
-}
-
-/* Focus ring */
-#cc-main .cm__btn:focus-visible,
-#cc-main .pm__btn:focus-visible,
-#cc-main .pm__close-btn:focus-visible {
-  outline: 2px solid #E8363B;
-  outline-offset: 3px;
-}
-
-/* ============================================================
-   6. CONSENT MODAL LAYOUT
-   ============================================================
-   Two button-groups emitted by the library:
-     - Group 1: "Allow all" + "Only essential"
-     - Group 2: "Choose"
-   We flatten via display:contents so we can layout the three
-   buttons as siblings.
-   ============================================================ */
-
-/* Mobile-first: stack primary full-width, secondaries inline below */
-#cc-main .cm__btns {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
-}
-
-#cc-main .cm__btn-group {
-  display: contents;
-}
-
-/* Primary: force to first row and stretch full-width */
-#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
-  order: -1;
-  flex: 0 0 100%;
-  margin-bottom: 0.625rem;
-}
-
-/* Secondaries: inline on second row, centered */
-#cc-main .cm__btn--secondary {
-  order: 1;
-  flex: 0 0 auto;
-  margin: 0;
-}
-
-/* Middle-dot separator between secondaries (across or within groups) */
-#cc-main .cm__btn--secondary + .cm__btn--secondary::before,
-#cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
-  content: '·';
-  display: inline-block;
-  margin: 0 0.5rem 0 -0.25rem;
-  color: #94A3B8;
-  font-size: 1.25em;
-  line-height: 1;
-  opacity: 0.7;
-  pointer-events: none;
-}
-[data-theme="dark"]
-#cc-main .cm__btn--secondary + .cm__btn--secondary::before,
-[data-theme="dark"]
-#cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-/* ============================================================
-   7. PREFERENCES MODAL
-   ============================================================ */
-
-/* Header */
-#cc-main .pm__header {
-  padding: 1.5rem 1.5rem 0;
-  position: relative;
-}
-#cc-main .pm__close-btn-container {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-/* Body */
-#cc-main .pm__body {
-  padding: 1.25rem 1.5rem;
-}
-
-/* Section (each category) */
-#cc-main .pm__section {
-  border: 1px solid var(--cc-separator-border-color);
-  border-radius: 8px;
-  margin-bottom: 0.75rem;
-  overflow: hidden;
-  background: var(--cc-bg);
-  transition: border-color 180ms ease;
-}
-#cc-main .pm__section:hover {
-  border-color: #94A3B8;
-}
-#cc-main .pm__section--expandable .pm__section-title {
   cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+  flex-shrink: 0;
+}
+.sd-cc-close:hover {
+  background: var(--color-bg-dim, #F8FAFC);
+  color: var(--color-text-strong, #0B1222);
+}
+.sd-cc-close:focus-visible {
+  outline: 2px solid var(--sd-red, #E8363B);
+  outline-offset: 2px;
 }
 
-/* Section title + toggle row */
-#cc-main .pm__section-title-wrapper {
-  padding: 1rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.sd-cc-intro {
+  font-size: 0.875rem !important;
+  color: var(--color-text-muted, #64748B) !important;
+  margin-bottom: 1.25rem !important;
 }
-#cc-main .pm__section-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+
+.sd-cc-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sd-cc-cat {
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: var(--radius-md, 8px);
+  padding: 0.875rem 1rem;
+  margin: 0;
+  background: var(--color-bg-dim, #F8FAFC);
+}
+
+.sd-cc-cat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.sd-cc-cat legend {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 600;
   font-size: 1rem;
-  color: var(--cc-primary-color);
+  color: var(--color-text-strong, #0B1222);
+  padding: 0;
   margin: 0;
-  flex: 1;
-}
-#cc-main .pm__section-desc {
-  padding: 0 1.25rem 1rem;
-  font-size: 0.875rem;
-  margin-top: 0;
+  float: none;
 }
 
-/* Toggle switch */
-#cc-main .pm__section-toggle,
-#cc-main .section__toggle,
-#cc-main .toggle__icon {
+.sd-cc-cat p {
+  font-size: 0.8125rem !important;
+  color: var(--color-text-muted, #64748B) !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.sd-cc-policy-link {
+  font-size: 0.8125rem !important;
+  color: var(--color-text-muted, #64748B) !important;
+  margin: 0 0 1.25rem !important;
+}
+
+.sd-cc-prefs-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 7. TOGGLE SWITCH (from checkbox) */
+.sd-cc-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
-/* Footer — horizontal on desktop, column on mobile */
-#cc-main .pm__footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
-  border-top: 1px solid var(--cc-separator-border-color);
-}
-#cc-main .pm__btn-group {
-  display: contents;
-}
-#cc-main .pm__btn:not(.pm__btn--secondary) {
-  order: -1;
-  flex: 0 0 100%;
-  margin-bottom: 0.625rem;
-}
-#cc-main .pm__btn--secondary {
-  order: 1;
-  flex: 0 0 auto;
+.sd-cc-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
   margin: 0;
 }
-#cc-main .pm__btn--secondary + .pm__btn--secondary::before,
-#cc-main .pm__btn-group + .pm__btn-group .pm__btn--secondary::before {
-  content: '·';
+
+.sd-cc-track {
   display: inline-block;
-  margin: 0 0.5rem 0 -0.25rem;
-  color: #94A3B8;
-  font-size: 1.25em;
-  line-height: 1;
-  opacity: 0.7;
-  pointer-events: none;
-}
-[data-theme="dark"]
-#cc-main .pm__btn--secondary + .pm__btn--secondary::before,
-[data-theme="dark"]
-#cc-main .pm__btn-group + .pm__btn-group .pm__btn--secondary::before {
-  color: rgba(255, 255, 255, 0.35);
+  width: 40px;
+  height: 24px;
+  background: var(--sd-gray-300, #CBD5E1);
+  border-radius: 999px;
+  position: relative;
+  transition: background 180ms ease;
 }
 
-/* ============================================================
-   8. RESPONSIVE
-   ============================================================ */
-
-/* Mobile (<640px): consent modal as floating card at the bottom */
-@media (max-width: 639.98px) {
-  #cc-main .cm {
-    position: fixed !important;
-    left: 0.75rem !important;
-    right: 0.75rem !important;
-    bottom: calc(0.75rem + env(safe-area-inset-bottom)) !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    max-width: none !important;
-    width: auto !important;
-    border-radius: 12px !important;
-    max-height: calc(100dvh - 1.5rem - env(safe-area-inset-bottom));
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-  }
-  #cc-main .cm__texts,
-  #cc-main .cm__body {
-    padding: 1.25rem 1.25rem 0 !important;
-  }
-  #cc-main .cm__title {
-    font-size: 1.25rem;
-  }
-  #cc-main .cm__title::before {
-    font-size: 0.5625rem;
-    letter-spacing: 0.18em;
-    margin-bottom: 0.4rem;
-  }
-  #cc-main .cm__desc {
-    font-size: 0.875rem;
-  }
-
-  /* Preferences goes full-screen on mobile */
-  #cc-main .pm {
-    position: fixed !important;
-    inset: 0 !important;
-    margin: 0 !important;
-    width: auto !important;
-    max-width: none !important;
-    border-radius: 0 !important;
-    max-height: 100dvh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-  }
-  #cc-main .pm::before {
-    border-radius: 0;
-  }
-  #cc-main .pm__title {
-    font-size: 1.25rem;
-  }
-  #cc-main .pm__title::before {
-    font-size: 0.5625rem;
-    letter-spacing: 0.18em;
-  }
+.sd-cc-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 180ms ease;
 }
 
-/* Short-screen tier — iPhone SE and landscape phones */
-@media (max-width: 639.98px) and (max-height: 700px) {
-  #cc-main .cm__title {
-    font-size: 1.125rem;
-  }
-  #cc-main .cm__desc {
-    font-size: 0.8125rem;
-    line-height: 1.55;
-  }
-  #cc-main .cm__texts {
-    padding-top: 1rem !important;
-  }
-  #cc-main .cm__btns {
-    padding-top: 0.75rem;
-  }
+.sd-cc-switch input:checked + .sd-cc-track {
+  background: var(--sd-red, #E8363B);
+}
+.sd-cc-switch input:checked + .sd-cc-track .sd-cc-thumb {
+  transform: translateX(16px);
 }
 
-/* Tablet / desktop (≥640px): centered card, horizontal button layout */
+.sd-cc-switch input:focus-visible + .sd-cc-track {
+  outline: 2px solid var(--sd-red, #E8363B);
+  outline-offset: 2px;
+}
+
+.sd-cc-switch-locked .sd-cc-track {
+  background: var(--sd-gray-400, #94A3B8);
+  cursor: not-allowed;
+}
+.sd-cc-switch-locked input {
+  cursor: not-allowed;
+}
+
+.sd-cc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 8. RESPONSIVE */
 @media (min-width: 640px) {
-  #cc-main .cm {
-    max-width: 480px;
-  }
-  #cc-main .pm {
-    max-width: 600px;
-  }
-
-  /* Consent modal: primary right, secondaries left */
-  #cc-main .cm__btns {
-    display: flex;
+  .sd-cc-prefs-footer {
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-    padding: 1rem 1.5rem 1.25rem;
+    justify-content: flex-end;
   }
-  #cc-main .cm__btn-group {
-    display: contents;
-  }
-  #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
-    order: 2;
-    flex: 0 0 auto;
-    margin: 0;
-  }
-  #cc-main .cm__btn--secondary {
-    order: 1;
+  .sd-cc-prefs-footer .sd-cc-btn {
     flex: 0 0 auto;
   }
-
-  /* Preferences footer: same distribution */
-  #cc-main .pm__footer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-    padding: 1rem 1.5rem 1.25rem;
-  }
-  #cc-main .pm__btn:not(.pm__btn--secondary) {
-    order: 2;
-    flex: 0 0 auto;
-    margin: 0;
-  }
-  #cc-main .pm__btn--secondary {
-    order: 1;
-    flex: 0 0 auto;
+  .sd-cc-prefs-footer .sd-cc-btn-primary {
+    order: 3;
   }
 }
 
-/* ============================================================
-   9. DARK MODE POLISH
-   ============================================================ */
-[data-theme="dark"] #cc-main .cm,
-[data-theme="dark"] #cc-main .pm {
-  background: #0F172A;
-}
-[data-theme="dark"] #cc-main .pm__section {
-  background: rgba(255, 255, 255, 0.02);
-}
-[data-theme="dark"] #cc-main .pm__section:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+/* 9. DARK MODE */
+html[data-theme="dark"] #sd-cc-banner,
+html[data-theme="dark"] #sd-cc-preferences {
+  background: var(--sd-gray-900, #0F172A);
+  color: var(--sd-gray-200, #E2E8F0);
 }
 
-/* ============================================================
-   10. REDUCED MOTION
-   ============================================================ */
+html[data-theme="dark"] #sd-cc-banner h2,
+html[data-theme="dark"] #sd-cc-preferences h2 {
+  color: #fff;
+}
+
+html[data-theme="dark"] #sd-cc-banner p,
+html[data-theme="dark"] #sd-cc-preferences p {
+  color: var(--sd-gray-300, #CBD5E1);
+}
+
+html[data-theme="dark"] .sd-cc-btn-primary {
+  background: var(--sd-red, #E8363B);
+  border-color: var(--sd-red, #E8363B);
+  color: #fff;
+}
+html[data-theme="dark"] .sd-cc-btn-primary:hover {
+  background: var(--sd-red-dark, #CC2D32);
+  border-color: var(--sd-red-dark, #CC2D32);
+}
+
+html[data-theme="dark"] .sd-cc-btn-secondary {
+  color: var(--sd-gray-100, #F1F5F9);
+  border-color: var(--sd-gray-700, #334155);
+}
+html[data-theme="dark"] .sd-cc-btn-secondary:hover {
+  background: var(--sd-gray-800, #1E293B);
+  border-color: var(--sd-gray-500, #64748B);
+}
+
+html[data-theme="dark"] .sd-cc-btn-link {
+  color: var(--sd-gray-100, #F1F5F9);
+}
+html[data-theme="dark"] .sd-cc-btn-link:hover {
+  color: var(--sd-red, #E8363B);
+}
+
+html[data-theme="dark"] .sd-cc-cat {
+  background: var(--sd-gray-800, #1E293B);
+  border-color: var(--sd-gray-700, #334155);
+}
+html[data-theme="dark"] .sd-cc-cat legend {
+  color: #fff;
+}
+html[data-theme="dark"] .sd-cc-close {
+  color: var(--sd-gray-300, #CBD5E1);
+}
+html[data-theme="dark"] .sd-cc-close:hover {
+  background: var(--sd-gray-800, #1E293B);
+  color: #fff;
+}
+
+html[data-theme="dark"] .sd-cc-track {
+  background: var(--sd-gray-700, #334155);
+}
+
+/* 10. REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
-  #cc-main .cm,
-  #cc-main .pm,
-  #cc-main .cm__btn,
-  #cc-main .pm__btn,
-  #cc-main .pm__close-btn,
-  #cc-main .pm__section {
+  #sd-cc-backdrop,
+  #sd-cc-banner,
+  #sd-cc-preferences {
+    animation: none !important;
+  }
+  .sd-cc-track,
+  .sd-cc-thumb,
+  .sd-cc-btn {
     transition: none !important;
-    transform: none !important;
   }
 }
