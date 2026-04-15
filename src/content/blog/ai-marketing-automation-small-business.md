@@ -230,7 +230,7 @@ For teams exploring [AI-assisted social media workflows](/blog/ai-social-media-c
 
 *Want to keep up with which AI marketing tools are actually worth using? We cover new tools and honest assessments in our newsletter — no sponsored content, no affiliate rankings.*
 
-[Subscribe to the Superdots newsletter →](/newsletter)
+[Subscribe to the Superdots newsletter →](/#newsletter)
 
 ---
 
