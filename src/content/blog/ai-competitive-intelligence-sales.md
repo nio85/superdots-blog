@@ -1,11 +1,6 @@
 ---
-title: >-
-  AI Competitive Intelligence for Sales: How to Know What Your Rivals Are Doing
-  Before Your Reps Walk Into the Room
-description: >-
-  A practical guide to AI-powered competitive intelligence tools for sales teams
-  — with real pricing, a DIY battlecard workflow, and honest takes on what
-  works.
+title: 'AI Competitive Intelligence for Sales Teams (2026)'
+description: 'AI competitive intelligence tools for sales teams — real pricing, a DIY battlecard workflow, and honest takes on what works.'
 pubDate: '2026-04-01T00:00:00.000Z'
 updatedDate: '2026-04-03'
 author: Superdots Team
@@ -92,6 +87,8 @@ faqs:
       team's existing channels (Slack, Notion, shared drives). CRM integration
       matters most when you have 15+ reps — below that, a pinned Slack channel
       or shared doc often works just as well.
+  - question: "How do I automatically capture competitive intelligence from sales calls?"
+    answer: "Gong flags competitor mentions in call transcripts and, when connected to Klue or Crayon, pushes the relevant battlecard section to the rep automatically. Chorus (by ZoomInfo) supports keyword alerts that trigger notifications when specific competitor names appear in a recorded call. For teams without Gong or Chorus, the free workaround: Otter.ai transcribes calls for free (up to 300 minutes/month), then paste the transcript into Claude with the prompt 'identify every competitor mention and summarize what the prospect said about them.' Takes 3 minutes after each call."
 imageHint: "sales team reviewing competitor intel dashboard with win/loss analysis"
 ---
 
@@ -302,6 +299,18 @@ Forget feature comparison matrices for a moment. The right competitive intellige
 **What's your deal size?** At $10,000 ACVs, a $30,000/year CI platform needs to influence a lot of deals to pay for itself. At $100,000+ ACVs, one saved deal per quarter pays for the tool several times over. Be honest about the math.
 
 For most teams reading this, the honest recommendation is to start with the DIY workflow above, run it for 90 days, and only upgrade to a platform when you can articulate exactly what the platform would do that you can't do manually. That specificity — "I need automated monitoring because I missed three competitor moves last quarter" — is what turns a $30,000 expense into a $30,000 investment.
+
+## How to Automatically Capture Competitive Intel from Sales Calls
+
+The most underused source of competitive intelligence isn't a monitoring platform — it's your own recorded sales calls. Every time a prospect names a competitor, objects to your pricing, or mentions a feature they saw elsewhere, they're handing you live market research. Most teams let it evaporate.
+
+**With Gong and Klue (or Crayon):** Gong transcribes and analyzes call recordings, flagging every competitor mention automatically. When Gong is connected to Klue or Crayon via native integration, those mentions feed into your competitive intelligence database — the platform logs which competitor came up, on which deal, and what was said. Over time, patterns emerge: "Competitor X gets mentioned on 40% of deals in the healthcare segment, usually around pricing."
+
+**With Chorus (by ZoomInfo):** Chorus supports keyword alerts — when specific competitor names appear in a transcribed call, the system notifies the rep's manager or the competitive intelligence owner. You can configure alerts for competitor names, product terms, or pricing keywords. The CI owner receives a digest of relevant call clips each week without having to listen to hours of recordings.
+
+**Free workaround with Otter.ai and Claude:** If you don't have Gong or Chorus, Otter.ai transcribes calls for free (up to 300 minutes per month on the free plan). After each call, paste the transcript into Claude with this prompt: *"Identify every mention of a competitor or competing product in this transcript. For each mention, summarize what the prospect said and what it reveals about their perception of that competitor."* This takes about 3 minutes per call and produces structured competitive notes you can add to the relevant battlecard.
+
+The discipline of capturing call-based intel is what separates a [sales battlecard software](/blog/ai-battlecard-tools-sales-teams/) program that improves over time from one that stagnates. The cards get better when real conversations inform them — not just when website monitoring tools flag a pricing page change.
 
 ## Related reading
 
