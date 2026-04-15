@@ -270,12 +270,12 @@
 }
 
 /* Accept all — primary CTA with glow */
-#cc-main .cm__btn--primary:hover {
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover {
   box-shadow: 0 6px 24px rgba(232, 54, 59, 0.4);
   transform: translateY(-2px);
 }
 
-#cc-main .cm__btn--primary:active {
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
 }
@@ -418,12 +418,12 @@
     transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-#cc-main .pm__btn--primary:hover {
+#cc-main .pm__btn:not(.pm__btn--secondary):hover {
   box-shadow: 0 6px 24px rgba(232, 54, 59, 0.4);
   transform: translateY(-2px);
 }
 
-#cc-main .pm__btn--primary:active {
+#cc-main .pm__btn:not(.pm__btn--secondary):active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(232, 54, 59, 0.3);
 }
@@ -580,9 +580,11 @@ html.show--preferences body {
   border-bottom-color: #E8363B;
 }
 
-/* Primary button — solid navy block, sharp corners. */
-#cc-main .cm__btn--primary,
-#cc-main .pm__btn--primary {
+/* Primary button — solid navy block, sharp corners.
+   Library uses --secondary class, NOT --primary, so we target
+   non-secondary buttons explicitly. */
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
+#cc-main .pm__btn:not(.pm__btn--secondary) {
   background: #0B1222 !important;
   color: #ffffff !important;
   border-color: #0B1222 !important;
@@ -591,21 +593,21 @@ html.show--preferences body {
   letter-spacing: 0.02em;
   text-transform: none;
 }
-#cc-main .cm__btn--primary:hover,
-#cc-main .pm__btn--primary:hover {
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover,
+#cc-main .pm__btn:not(.pm__btn--secondary):hover {
   background: #E8363B !important;
   border-color: #E8363B !important;
   box-shadow: 0 4px 18px rgba(232, 54, 59, 0.32) !important;
   transform: translateY(-1px);
 }
-[data-theme="dark"] #cc-main .cm__btn--primary,
-[data-theme="dark"] #cc-main .pm__btn--primary {
+[data-theme="dark"] #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close),
+[data-theme="dark"] #cc-main .pm__btn:not(.pm__btn--secondary) {
   background: #F1F5F9 !important;
   color: #0B1222 !important;
   border-color: #F1F5F9 !important;
 }
-[data-theme="dark"] #cc-main .cm__btn--primary:hover,
-[data-theme="dark"] #cc-main .pm__btn--primary:hover {
+[data-theme="dark"] #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close):hover,
+[data-theme="dark"] #cc-main .pm__btn:not(.pm__btn--secondary):hover {
   background: #E8363B !important;
   color: #ffffff !important;
   border-color: #E8363B !important;
@@ -656,7 +658,7 @@ html.show--preferences body {
   align-items: center;
   padding: 0.75rem 1.5rem 1.5rem;
 }
-#cc-main .cm__btn--primary {
+#cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
   flex: 0 0 auto !important;
   min-height: 46px;
   padding: 0.75rem 1.5rem;
@@ -766,7 +768,7 @@ html.show--preferences body {
 [data-theme="dark"] #cc-main .pm__footer {
   border-top-color: rgba(255, 255, 255, 0.08) !important;
 }
-#cc-main .pm__btn--primary {
+#cc-main .pm__btn:not(.pm__btn--secondary) {
   flex: 0 0 auto !important;
   min-height: 46px !important;
   border-radius: 6px !important;
@@ -840,58 +842,35 @@ html.show--preferences body {
     padding-right: 1.25rem !important;
   }
 
-  /* Action zone — column stack: primary full-width, secondaries inline */
+  /* Action zone — flatten btn-groups, stack primary on top, secondaries inline below.
+     The library puts Accept+Reject in one btn-group and Choose in another,
+     so we dissolve the groups and target buttons by class instead. */
   #cc-main .cm__btns {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;
-    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
     padding: 1rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)) !important;
   }
-
-  /* Primary group = first child → stretch block */
-  #cc-main .cm__btns > .cm__btn-group:first-child {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
+  #cc-main .cm__btn-group {
+    display: contents !important;
   }
 
-  /* Secondary group = second child → inline row with middle-dot */
-  #cc-main .cm__btns > .cm__btn-group:nth-child(2) {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0 !important;
-    margin: 0.25rem 0 0 !important;
+  /* Primary CTA — full-width block, always first via order */
+  #cc-main .cm__btn:not(.cm__btn--secondary):not(.cm__btn--close) {
+    order: -1 !important;
     width: 100% !important;
-  }
-  #cc-main .cm__btns > .cm__btn-group:nth-child(2) .cm__btn + .cm__btn::before {
-    content: '·';
-    display: inline-block;
-    margin: 0 0.75rem;
-    color: #94A3B8;
-    font-size: 1.25em;
-    line-height: 1;
-    opacity: 0.7;
-  }
-  [data-theme="dark"] #cc-main .cm__btns > .cm__btn-group:nth-child(2) .cm__btn + .cm__btn::before {
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  /* Primary CTA — full-width navy block */
-  #cc-main .cm__btn--primary {
-    width: 100% !important;
+    flex: 0 0 100% !important;
     min-height: 48px !important;
     padding: 0.75rem 1rem !important;
-    flex: 0 0 auto !important;
+    margin-bottom: 0.5rem !important;
     white-space: nowrap;
   }
 
-  /* Secondaries — text-links, auto-width, inline */
+  /* Secondaries — text-links in a row with middle-dot separator */
   #cc-main .cm__btn--secondary {
+    order: 1 !important;
     width: auto !important;
     flex: 0 0 auto !important;
     min-height: 36px !important;
@@ -901,8 +880,20 @@ html.show--preferences body {
     white-space: nowrap;
     margin: 0 !important;
   }
-  #cc-main .cm__btn + .cm__btn {
-    margin-top: 0 !important;
+  /* Middle-dot between secondary text-links. Buttons live in separate
+     btn-group DOM parents even with display:contents, so we target
+     the secondary in any group that follows another group. */
+  #cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
+    content: '\00b7';
+    display: inline-block;
+    margin: 0 0.75rem;
+    color: #94A3B8;
+    font-size: 1.25em;
+    line-height: 1;
+    opacity: 0.7;
+  }
+  [data-theme="dark"] #cc-main .cm__btn-group + .cm__btn-group .cm__btn--secondary::before {
+    color: rgba(255, 255, 255, 0.35);
   }
 
   /* Footer */
@@ -950,49 +941,28 @@ html.show--preferences body {
     min-height: 56px !important;
   }
 
-  /* Preference footer — same primary-full + secondaries-inline pattern */
+  /* Preference footer — flatten btn-groups, same pattern as consent modal */
   #cc-main .pm__footer {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;
-    gap: 0.5rem !important;
-    padding: 1rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)) !important;
-  }
-  #cc-main .pm__footer > .pm__btn-group:first-child {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  #cc-main .pm__footer > .pm__btn-group:nth-child(2) {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 0 !important;
-    margin: 0.25rem 0 0 !important;
+    padding: 1rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom)) !important;
+  }
+  #cc-main .pm__btn-group {
+    display: contents !important;
+  }
+  #cc-main .pm__btn:not(.pm__btn--secondary) {
+    order: -1 !important;
     width: 100% !important;
-  }
-  #cc-main .pm__footer > .pm__btn-group:nth-child(2) .pm__btn + .pm__btn::before {
-    content: '·';
-    display: inline-block;
-    margin: 0 0.75rem;
-    color: #94A3B8;
-    font-size: 1.25em;
-    line-height: 1;
-    opacity: 0.7;
-  }
-  [data-theme="dark"] #cc-main .pm__footer > .pm__btn-group:nth-child(2) .pm__btn + .pm__btn::before {
-    color: rgba(255, 255, 255, 0.35);
-  }
-  #cc-main .pm__btn--primary {
-    width: 100% !important;
+    flex: 0 0 100% !important;
     min-height: 48px !important;
     padding: 0.75rem 1rem !important;
-    flex: 0 0 auto !important;
+    margin-bottom: 0.5rem !important;
   }
   #cc-main .pm__btn--secondary {
+    order: 1 !important;
     width: auto !important;
     flex: 0 0 auto !important;
     min-height: 36px !important;
@@ -1000,9 +970,6 @@ html.show--preferences body {
     font-size: 0.8125rem !important;
     white-space: nowrap;
     margin: 0 !important;
-  }
-  #cc-main .pm__btn + .pm__btn {
-    margin-top: 0 !important;
   }
 }
 
