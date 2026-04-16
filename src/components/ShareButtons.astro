@@ -50,6 +50,22 @@ const twitterHref = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${e
 			});
 		});
 	});
+
+	// Umami event: track share click by platform
+	document.querySelectorAll('.share-btn').forEach(function(btn) {
+		btn.addEventListener('click', function() {
+			var platform = btn.classList.contains('share-btn-linkedin') ? 'linkedin'
+				: btn.classList.contains('share-btn-twitter') ? 'twitter'
+				: btn.classList.contains('share-btn-copy') ? 'copy'
+				: 'unknown';
+			if (typeof window.umami !== 'undefined') {
+				window.umami.track('article_share', {
+					platform: platform,
+					path: location.pathname,
+				});
+			}
+		});
+	});
 </script>
 
 <style>

@@ -248,11 +248,18 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 )}
 
 <!-- Umami Analytics (privacy-friendly, cookie-free — no consent gate needed) -->
+<!-- Runtime hostname check: loads only on superdots.sh, not on .pages.dev previews or localhost -->
 {UMAMI_WEBSITE_ID && (
-<script defer src={`${UMAMI_URL}/script.js`}
-  data-website-id={UMAMI_WEBSITE_ID}
-  data-domains="superdots.sh"
-></script>
+<script is:inline define:vars={{ UMAMI_URL, UMAMI_WEBSITE_ID }}>
+  if (location.hostname === 'superdots.sh') {
+    var s = document.createElement('script');
+    s.src = UMAMI_URL + '/script.js';
+    s.defer = true;
+    s.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+    s.setAttribute('data-domains', 'superdots.sh');
+    document.head.appendChild(s);
+  }
+</script>
 )}
 
 <!-- Organization schema (all pages) -->

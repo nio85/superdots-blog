@@ -105,7 +105,7 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 			})} />
 		)}
 	</head>
-	<body>
+	<body data-article-slug={slug} data-article-department={department || ''} data-article-use-case={useCase || ''}>
 		<Header />
 		<main class="article-main">
 			<article>
@@ -276,6 +276,10 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 					});
 				}
 			})();
+		</script>
+
+		<script>
+			import '../scripts/article-engagement.ts';
 		</script>
 	</body>
 </html>
