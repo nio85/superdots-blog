@@ -128,15 +128,19 @@ export async function onRequestGet(context) {
 					'Authorization': 'Bearer ' + env.REDDIT_CONVERSION_TOKEN,
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({
-					test_mode: false,
-					events: [{
-						event_at: new Date().toISOString(),
-						event_type: { tracking_type: 'Lead' },
-						user: { email },
-						event_metadata: { currency: 'EUR', value_decimal: 0 },
-					}],
-				}),
+				body: await (async () => {
+					const hashBuf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.toLowerCase().trim()));
+					const emailHash = [...new Uint8Array(hashBuf)].map(b => b.toString(16).padStart(2, '0')).join('');
+					return JSON.stringify({
+						test_mode: false,
+						events: [{
+							event_at: new Date().toISOString(),
+							event_type: { tracking_type: 'Lead' },
+							user: { email: emailHash },
+							event_metadata: { currency: 'EUR', value_decimal: 0 },
+						}],
+					});
+				})(),
 			});
 		} catch (e) {
 			console.error('Reddit CAPI error:', e);

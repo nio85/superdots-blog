@@ -160,15 +160,26 @@ async function sendWebPush(newEntry) {
   });
 
   let sent = 0;
+  const live = [];
   for (const sub of subs) {
     try {
       await webpush.sendNotification(sub.subscription || sub, payload);
       sent++;
+      live.push(sub);
     } catch (e) {
       if (e.statusCode === 410 || e.statusCode === 404) {
         log(`  Removing stale subscription: ${e.statusCode}`);
+      } else {
+        live.push(sub);
       }
     }
+  }
+  if (live.length < subs.length) {
+    try {
+      const tmp = SUBS_FILE + '.tmp';
+      await writeFile(tmp, JSON.stringify(live, null, 2));
+      await rename(tmp, SUBS_FILE);
+    } catch {}
   }
   return sent;
 }

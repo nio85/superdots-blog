@@ -77,7 +77,7 @@ async function refreshAccessToken() {
       'Content-Type': 'application/x-www-form-urlencoded',
       'User-Agent': 'superdots-ads/1.0',
     },
-    body: `grant_type=refresh_token&refresh_token=${REFRESH_TOKEN}`,
+    body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: REFRESH_TOKEN }).toString(),
   });
   if (!res.ok) {
     const text = await res.text();
