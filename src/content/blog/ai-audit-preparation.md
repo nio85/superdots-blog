@@ -80,7 +80,7 @@ This changes the nature of audit prep from gap discovery to gap remediation. You
 
 Most organizations have audit-relevant documentation scattered across Confluence, SharePoint, Google Drive, email threads, and system exports. Finding everything is half the battle.
 
-AI tools crawl your document repositories and classify content by relevance, control area, and framework requirement. A policy document sitting in a folder nobody has touched in two years gets surfaced automatically if it is relevant to the audit. Meeting minutes that document a board-level risk decision get tagged as evidence for governance controls.
+AI tools crawl your [document repositories](/blog/ai-document-management/) and classify content by relevance, control area, and framework requirement. A policy document sitting in a folder nobody has touched in two years gets surfaced automatically if it is relevant to the audit. Meeting minutes that document a board-level risk decision get tagged as evidence for governance controls.
 
 This is particularly valuable for organizations with messy documentation. If your starting point is a shared drive with inconsistent naming conventions and outdated versions, AI can make sense of it faster than a human reviewer.
 
@@ -106,7 +106,7 @@ For frameworks that require ongoing monitoring — SOC 2, ISO 27001, SOX — con
 
 AI handles volume well. It does not handle judgment.
 
-When a control is partially compliant — it covers the spirit of a requirement but not the letter — a human needs to evaluate whether the gap is material and how to address it. AI can flag the ambiguity, but it cannot decide whether your compensating control is adequate in the context of your specific risk environment.
+When a control is partially compliant — it covers the spirit of a requirement but not the letter — a human needs to evaluate whether the gap is material and how to address it. AI can flag the ambiguity, but it cannot decide whether your compensating control is adequate in the context of your specific [risk environment](/blog/ai-risk-management/).
 
 Similarly, AI evidence collection depends on integrations. If your systems do not have APIs, or if critical documentation exists only in physical files, AI collection cannot reach it. You will still have manual collection work for anything outside the tool's connectors.
 

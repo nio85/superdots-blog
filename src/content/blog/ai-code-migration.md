@@ -23,7 +23,7 @@ imageHint: "engineer reviewing legacy code alongside AI-refactored version in sp
 
 You inherited a 200,000-line Python 2.7 codebase. The company runs on it. It hasn't been touched in four years. And someone just told you that the server it runs on hits end-of-life in six months.
 
-This is the migration nightmare every engineering team dreads: a deadline, a tangled codebase, and no documentation. The old approach was to lock a senior engineer in a room for months and hope for the best. The new approach uses AI to do the mechanical work — and it changes the calculus entirely.
+This is the migration nightmare every engineering team dreads: a deadline, a tangled codebase, and no [documentation](/blog/writing-better-docs-with-ai/). The old approach was to lock a senior engineer in a room for months and hope for the best. The new approach uses AI to do the mechanical work — and it changes the calculus entirely.
 
 ## Why Migrations Are So Painful
 
@@ -134,7 +134,7 @@ For a Python 2→3 migration, AI will flag things like:
 - `int / int` now returns a float in Python 3 (silent logic bugs)
 - `str` is now always unicode — byte handling changes
 - `dict` ordering is now guaranteed — code that relied on undefined ordering may behave differently
-- `input()` now behaves like Python 2's `raw_input()` — security implications
+- `input()` now behaves like Python 2's `raw_input()` — [security implications](/blog/ai-security-scanning/)
 
 These are the changes that bite you in production three months after migration. AI surfaces them upfront.
 

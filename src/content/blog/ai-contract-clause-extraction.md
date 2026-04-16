@@ -75,7 +75,7 @@ AI extraction maps all of this across your portfolio. You can filter to see ever
 
 Employment agreements, partnership agreements, and acquisition documents often include restrictions on competitive activity. The scope varies — geography, duration, industry, and whether it covers employees, customers, or both.
 
-AI extracts the key parameters: the duration of the restriction, the geographic scope, and what activities are restricted. For a company managing hundreds of employment agreements, this creates an auditable record of who is bound by what restrictions — important for workforce planning and defensible in enforcement situations.
+AI extracts the key parameters: the duration of the restriction, the geographic scope, and what activities are restricted. For a company managing hundreds of employment agreements, this creates an auditable record of who is bound by what restrictions — important for [workforce planning](/blog/ai-workforce-planning/) and defensible in enforcement situations.
 
 ### Confidentiality clauses
 
@@ -119,7 +119,7 @@ Be specific about what you want extracted from each clause type. "Termination" i
 
 ### Step 2: Upload your contract portfolio
 
-Upload contracts in batch — PDF, Word, or both. Most enterprise tools handle mixed formats. If your contracts live in a document management system, many tools integrate directly and can pull contracts automatically.
+Upload contracts in batch — PDF, Word, or both. Most enterprise tools handle mixed formats. If your contracts live in a [document management system](/blog/ai-document-management/), many tools integrate directly and can pull contracts automatically.
 
 For scanned legacy contracts, expect the OCR step to take longer and produce lower-confidence extractions. Prioritize clean digital documents first.
 

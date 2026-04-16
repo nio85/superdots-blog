@@ -57,7 +57,7 @@ The core workflow is simple:
 
 5. **Rescheduling.** If someone cancels, the tool finds a new slot (or a replacement panelist) and handles the communication.
 
-The advanced tools add interviewer load balancing — making sure the same person is not doing five interviews a day while their colleague does zero — and bias-reducing rotation, so the same interviewer panel does not evaluate every candidate.
+The advanced tools add interviewer load balancing — making sure the same person is not doing five interviews a day while their colleague does zero — and [bias-reducing](/blog/ai-diversity-hiring/) rotation, so the same interviewer panel does not evaluate every candidate.
 
 ## Best AI interview scheduling tools in 2026
 
@@ -94,7 +94,7 @@ GoodTime is built for the panel scheduling nightmare. Its AI scans all interview
 
 **Price:** Custom enterprise pricing
 
-Paradox's AI assistant Olivia handles scheduling via conversational text and chat — candidates schedule interviews by texting back and forth with a chatbot, not by navigating a portal. Available 24/7 in 30+ languages.
+Paradox's AI assistant Olivia handles scheduling via conversational text and chat — candidates schedule interviews by texting back and forth with a [chatbot](/blog/ai-chatbot-builder/), not by navigating a portal. Available 24/7 in 30+ languages.
 
 **Case studies:**
 - [General Motors](https://www.paradox.ai/clients-stories) auto-scheduled 55,000+ interviews with zero recruiter intervention. Time-to-schedule dropped from 5-7 days to 29 minutes.
@@ -112,7 +112,7 @@ Paradox's AI assistant Olivia handles scheduling via conversational text and cha
 
 **Price:** $6,000-20,000/year (SMB); $20,000-100,000+ (enterprise)
 
-ModernLoop's standout feature is Zero-Click Scheduling — the system automatically selects the best interviewer combination and time slot based on constraints, without requiring any manual input. It also tracks interviewer training certifications to ensure only qualified interviewers are assigned.
+ModernLoop's standout feature is Zero-Click Scheduling — the system automatically selects the best interviewer combination and time slot based on constraints, without requiring any manual input. It also tracks interviewer [training](/blog/ai-employee-training/) certifications to ensure only qualified interviewers are assigned.
 
 **Strengths:** Deep Greenhouse integration. Candidate portal for self-scheduling. Interviewer training tracking. Scheduling analytics and metrics.
 

@@ -130,7 +130,7 @@ Check the team analytics monthly. Look for:
 
 **Customer-facing email.** Every email your team sends represents your brand. A shared writing tool ensures the support team, sales team, and leadership all communicate with consistent quality and tone.
 
-**Marketing content.** Blog posts, social media, ads, and landing pages need consistent voice. For more on AI-powered content production, see [AI content creation](/blog/ai-content-creation/).
+**Marketing content.** Blog posts, [social media](/blog/ai-social-media-content-calendar/), ads, and [landing pages](/blog/ai-landing-page-builder/) need consistent voice. For more on AI-powered content production, see [AI content creation](/blog/ai-content-creation/).
 
 **Sales proposals.** Proposals are high-stakes documents. AI writing tools catch unclear value propositions, passive language, and inconsistencies that lose deals.
 
