@@ -38,13 +38,22 @@ export const BRAND = {
 
 const C = BRAND.color;
 
-// Three ascending red dots — signature mark rendered via CSS (no image).
-export const signatureDots = `
-  <span style="display:inline-block;vertical-align:middle;line-height:0;white-space:nowrap">
-    <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${C.accent};margin-right:4px;vertical-align:middle"></span>
-    <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${C.accent};margin-right:4px;vertical-align:middle"></span>
-    <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${C.accent};vertical-align:middle"></span>
-  </span>`;
+// Three ascending red dots arranged diagonally bottom-left → top-right,
+// matching public/brand/superdots-icon.svg (coords 14,50 r6 → 32,32 r8 → 50,14 r10).
+// Rendered via a 3×3 table (position:absolute is unreliable in email clients).
+export const signatureDots = (() => {
+  const empty = '<td style="width:14px;height:14px;line-height:0;font-size:0">&nbsp;</td>';
+  const dotCell = (size) =>
+    `<td style="width:14px;height:14px;line-height:0;font-size:0;vertical-align:middle;text-align:center">` +
+    `<span style="display:inline-block;width:${size}px;height:${size}px;border-radius:50%;background:${C.accent};line-height:0;font-size:0">&nbsp;</span>` +
+    `</td>`;
+  return `
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;line-height:0;font-size:0;display:inline-table;vertical-align:middle">
+    <tr>${empty}${empty}${dotCell(12)}</tr>
+    <tr>${empty}${dotCell(10)}${empty}</tr>
+    <tr>${dotCell(8)}${empty}${empty}</tr>
+  </table>`;
+})();
 
 /**
  * Numeric stat tile.
