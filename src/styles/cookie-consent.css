@@ -503,6 +503,14 @@ html[data-theme="dark"] #sd-cc-backdrop {
 
 /* ============================================================
    10. DARK MODE — surface lift, proper contrast
+
+   Applied in two scenarios:
+   - data-theme="dark"  (user explicitly picked dark)
+   - data-theme="auto" + OS @media prefers-color-scheme: dark
+     (matches the pattern used in global.css)
+
+   Rules are duplicated because CSS can't conditionally gate a single
+   selector with a media query. Keep the two blocks in sync.
    ============================================================ */
 html[data-theme="dark"] #sd-cc-banner,
 html[data-theme="dark"] #sd-cc-preferences {
@@ -536,9 +544,6 @@ html[data-theme="dark"] .sd-cc-policy-row {
   border-top-color: var(--sd-gray-700, #334155);
 }
 
-/* Category cards — explicit dark surface, fixes white-box bug on the
-   locked "Essential" fieldset. Browsers apply UA styles to <fieldset>
-   that can render white in some engines; we set everything explicitly. */
 html[data-theme="dark"] .sd-cc-cat {
   background: rgba(11, 18, 34, 0.55);
   border-color: var(--sd-gray-700, #334155);
@@ -548,7 +553,6 @@ html[data-theme="dark"] .sd-cc-cat {
 html[data-theme="dark"] .sd-cc-cat-locked {
   background: rgba(11, 18, 34, 0.65);
   border-color: var(--sd-gray-700, #334155);
-  opacity: 1;
 }
 
 html[data-theme="dark"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) {
@@ -584,7 +588,6 @@ html[data-theme="dark"] .sd-cc-btn-text:hover {
   text-decoration-color: #F87171;
 }
 
-/* .btn-ghost override for dark dialog surface */
 html[data-theme="dark"] #sd-cc-banner .btn-ghost,
 html[data-theme="dark"] #sd-cc-preferences .btn-ghost {
   color: var(--sd-gray-100, #F1F5F9);
@@ -595,6 +598,97 @@ html[data-theme="dark"] #sd-cc-preferences .btn-ghost:hover {
   color: #FFFFFF;
   border-color: var(--sd-gray-500, #64748B);
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* Same rules for data-theme="auto" when the OS prefers dark */
+@media (prefers-color-scheme: dark) {
+  html[data-theme="auto"] #sd-cc-banner,
+  html[data-theme="auto"] #sd-cc-preferences {
+    background: var(--sd-navy-light, #1E293B);
+    color: var(--sd-gray-200, #E2E8F0);
+    box-shadow:
+      0 32px 80px rgba(0, 0, 0, 0.55),
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(232, 54, 59, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  html[data-theme="auto"] .sd-cc-title { color: #FFFFFF; }
+  html[data-theme="auto"] .sd-cc-lede { color: var(--sd-gray-200, #E2E8F0); }
+  html[data-theme="auto"] .sd-cc-lede strong { color: #FFFFFF; }
+  html[data-theme="auto"] .sd-cc-intro { color: var(--sd-gray-400, #94A3B8); }
+  html[data-theme="auto"] .sd-cc-eyebrow { color: var(--sd-gray-400, #94A3B8); }
+
+  html[data-theme="auto"] .sd-cc-policy-link {
+    color: var(--sd-gray-300, #CBD5E1);
+    text-decoration-color: var(--sd-gray-700, #334155);
+  }
+  html[data-theme="auto"] .sd-cc-policy-link:hover {
+    color: #F87171;
+    text-decoration-color: #F87171;
+  }
+  html[data-theme="auto"] .sd-cc-policy-sep {
+    color: var(--sd-gray-700, #334155);
+  }
+  html[data-theme="auto"] .sd-cc-policy-row {
+    border-top-color: var(--sd-gray-700, #334155);
+  }
+
+  html[data-theme="auto"] .sd-cc-cat {
+    background: rgba(11, 18, 34, 0.55);
+    border-color: var(--sd-gray-700, #334155);
+    color: var(--sd-gray-200, #E2E8F0);
+  }
+
+  html[data-theme="auto"] .sd-cc-cat-locked {
+    background: rgba(11, 18, 34, 0.65);
+    border-color: var(--sd-gray-700, #334155);
+  }
+
+  html[data-theme="auto"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) {
+    border-color: rgba(232, 54, 59, 0.5);
+    background: rgba(232, 54, 59, 0.08);
+  }
+
+  html[data-theme="auto"] .sd-cc-cat-label { color: #FFFFFF; }
+  html[data-theme="auto"] .sd-cc-cat-desc {
+    color: var(--sd-gray-300, #CBD5E1);
+  }
+
+  html[data-theme="auto"] .sd-cc-close { color: var(--sd-gray-300, #CBD5E1); }
+  html[data-theme="auto"] .sd-cc-close:hover {
+    background: rgba(232, 54, 59, 0.18);
+    color: #F87171;
+    border-color: rgba(232, 54, 59, 0.4);
+  }
+
+  html[data-theme="auto"] .sd-cc-track {
+    background: var(--sd-gray-700, #334155);
+  }
+  html[data-theme="auto"] .sd-cc-switch-locked .sd-cc-track {
+    background: var(--sd-gray-600, #475569);
+  }
+
+  html[data-theme="auto"] .sd-cc-btn-text {
+    color: var(--sd-gray-400, #94A3B8);
+    text-decoration-color: var(--sd-gray-700, #334155);
+  }
+  html[data-theme="auto"] .sd-cc-btn-text:hover {
+    color: #F87171;
+    text-decoration-color: #F87171;
+  }
+
+  html[data-theme="auto"] #sd-cc-banner .btn-ghost,
+  html[data-theme="auto"] #sd-cc-preferences .btn-ghost {
+    color: var(--sd-gray-100, #F1F5F9);
+    border-color: var(--sd-gray-700, #334155);
+  }
+  html[data-theme="auto"] #sd-cc-banner .btn-ghost:hover,
+  html[data-theme="auto"] #sd-cc-preferences .btn-ghost:hover {
+    color: #FFFFFF;
+    border-color: var(--sd-gray-500, #64748B);
+    background: rgba(255, 255, 255, 0.04);
+  }
 }
 
 /* ============================================================
