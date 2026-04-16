@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/mdx": "^3.1.0",
     "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "~3.2.1",
     "@marp-team/marp-cli": "^4.3.1",
     "astro": "^4.16.0",
     "docx": "^9.6.1",
