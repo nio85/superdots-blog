@@ -117,6 +117,8 @@ Deal intelligence does not operate in isolation. It sits at the center of a stac
 
 **Call prep.** Before any high-stakes meeting with a deal that has warning signals, [AI for sales call prep](/blog/ai-for-sales-call-prep/) helps reps research what to address and how to re-engage a deal that has gone quiet. Deal intelligence identifies the problem; call prep helps fix it.
 
+**Competitive battlecards.** When deal intelligence flags a competitor mentioned in a deal, reps need ready access to objection-handling content. [Competitive battlecards](/blog/ai-battlecard-tools-sales-teams/) complete the picture — pairing deal risk signals with the right counter-positioning content at the exact moment it's needed.
+
 **Forecasting.** Deal intelligence data rolls up into [AI sales forecasting](/blog/ai-sales-forecasting/). Instead of your forecast relying on rep-reported probabilities, it can incorporate objective deal health signals — making the forecast materially more accurate.
 
 ## What Deal Intelligence Cannot Do
