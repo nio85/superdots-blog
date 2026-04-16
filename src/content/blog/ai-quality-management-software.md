@@ -143,7 +143,7 @@ Track these instead:
 
 These metrics are trackable with a spreadsheet and a weekly 15-minute review. No software required until you're managing more than you can hold in a shared doc.
 
-## Internal Link Opportunities
+## Related Tools for Operations Teams
 
 Building a quality management system connects naturally to [AI tools for operations](/blog/best-ai-tools-for-operations), which covers the broader operational stack for service businesses.
 
