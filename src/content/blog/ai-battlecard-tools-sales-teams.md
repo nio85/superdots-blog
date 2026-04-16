@@ -1,7 +1,7 @@
 ---
 title: 'AI Battlecard Tools for Sales Teams: Klue, Crayon & Free'
 description: "Compare Klue, Crayon & 4 more AI battlecard tools — real 2026 pricing, free ChatGPT workflow, team-size decision matrix. Updated April 2026."
-pubDate: "2026-04-16"
+pubDate: "2026-04-06"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
