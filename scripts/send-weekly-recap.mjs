@@ -13,6 +13,7 @@ import nodemailer from 'nodemailer';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
+import matter from 'gray-matter';
 import {
   BLOG_ROOT, SITE_URL,
   MAIL_FROM, TO_EMAIL,
@@ -20,6 +21,7 @@ import {
   createSmtpTransport, getPaperclipApiKey,
 } from './config.mjs';
 import { renderEmail, statCard, section, issueRow, rowTable, emptyState, BRAND } from './lib/email-shell.mjs';
+import { sendBrandedMail } from './lib/email-safety.mjs';
 
 const CONTENT_DIR = join(BLOG_ROOT, 'src', 'content', 'blog');
 const DB_URL = process.env.PAPERCLIP_DB_URL;
@@ -28,36 +30,25 @@ if (!DB_URL) {
   process.exit(1);
 }
 
-function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-  const fm = {};
-  for (const line of match[1].split('\n')) {
-    const m = line.match(/^(\w+):\s*"?([^"]*)"?$/);
-    if (m) fm[m[1]] = m[2];
-  }
-  return fm;
-}
-
 function getArticlesPublishedInRange(startDate, endDate) {
   const files = readdirSync(CONTENT_DIR).filter(f => f.endsWith('.md'));
   const articles = [];
 
   for (const file of files) {
-    const content = readFileSync(join(CONTENT_DIR, file), 'utf-8');
-    const fm = parseFrontmatter(content);
-    if (fm.pubDate) {
-      const pubDay = fm.pubDate.slice(0, 10);
-      if (pubDay >= startDate && pubDay <= endDate) {
-        const slug = file.replace(/\.md$/, '');
-        articles.push({
-          title: fm.title || slug,
-          slug,
-          url: `${SITE_URL}/blog/${slug}/`,
-          pubDate: pubDay,
-          department: fm.department || '',
-        });
-      }
+    const raw = readFileSync(join(CONTENT_DIR, file), 'utf-8');
+    const { data: fm } = matter(raw);
+    if (!fm.pubDate) continue;
+    // fm.pubDate may be a Date (gray-matter parses YAML dates) or a string.
+    const pubDay = (fm.pubDate instanceof Date ? fm.pubDate.toISOString() : String(fm.pubDate)).slice(0, 10);
+    if (pubDay >= startDate && pubDay <= endDate) {
+      const slug = file.replace(/\.md$/, '');
+      articles.push({
+        title: fm.title || slug,
+        slug,
+        url: `${SITE_URL}/blog/${slug}/`,
+        pubDate: pubDay,
+        department: fm.department || '',
+      });
     }
   }
 
@@ -261,12 +252,16 @@ async function main() {
 
   const subject = `Superdots Recap — ${articles.length} articoli, ${taskStats.completedCount} task completati (${weekStart} → ${weekEnd})`;
 
-  const info = await transporter.sendMail({
-    from: `"Superdots" <${MAIL_FROM}>`,
-    to: TO_EMAIL,
-    subject,
-    text,
-    html,
+  const info = await sendBrandedMail({
+    transporter,
+    script: 'send-weekly-recap',
+    message: {
+      from: `"Superdots" <${MAIL_FROM}>`,
+      to: TO_EMAIL,
+      subject,
+      text,
+      html,
+    },
   });
 
   console.log(`Email sent: ${info.messageId}`);

@@ -11,27 +11,15 @@
 
 import nodemailer from 'nodemailer';
 import { readFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import {
+  MAIL_FROM, TO_EMAIL, SMTP_PASS,
+  PAPERCLIP_COMPANY_ID,
+  createSmtpTransport,
+} from './config.mjs';
 import { renderEmail, statCard, section, issueRow, rowTable, emptyState, BRAND } from './lib/email-shell.mjs';
+import { sendBrandedMail } from './lib/email-safety.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// Load .env from blog root
-try {
-  const envFile = readFileSync(join(__dirname, '..', '.env'), 'utf-8');
-  for (const line of envFile.split('\n')) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-} catch {}
-
-const SMTP_HOST = 'smtp.resend.com';
-const SMTP_USER = 'resend';
-const SMTP_PASS = process.env.RESEND_SMTP_API_KEY;
-const MAIL_FROM = process.env.MAIL_FROM || 'notifications@superdots.sh';
-const TO_EMAIL = process.env.TO_EMAIL || 'lucavittorio.bartoccini@gmail.com';
 const DB_URL = process.env.PAPERCLIP_DB_URL;
 
 if (!SMTP_PASS) {
@@ -76,18 +64,31 @@ function fetchDataViaDb(companyId) {
     companyId = rows[0]?.[0];
   }
 
-  // Issues
-  const issueRows = dbQuery(`
+  // Two-query approach: a LIMIT on ORDER BY created_at would miss open issues
+  // once `done` volume grows past the limit (currently 1000+ done).
+  //
+  // Query 1: all open work (no limit — typically <50 rows).
+  // Query 2: items completed today for the "completed today" section.
+  const mapRow = (r) => ({
+    id: r[0], identifier: r[1], title: r[2], status: r[3],
+    priority: r[4], assigneeAgentId: r[5] || null, completedAt: r[6] || null,
+  });
+
+  const openRows = dbQuery(`
     SELECT id, identifier, title, status, priority, assignee_agent_id, completed_at
     FROM issues
     WHERE company_id = '${companyId}' AND hidden_at IS NULL
-    ORDER BY created_at DESC
-    LIMIT 200
+      AND status IN ('backlog','todo','in_progress','in_review','blocked')
+    ORDER BY priority DESC, created_at DESC
   `);
-  const allIssues = issueRows.map(r => ({
-    id: r[0], identifier: r[1], title: r[2], status: r[3],
-    priority: r[4], assigneeAgentId: r[5] || null, completedAt: r[6] || null,
-  }));
+  const doneTodayRows = dbQuery(`
+    SELECT id, identifier, title, status, priority, assignee_agent_id, completed_at
+    FROM issues
+    WHERE company_id = '${companyId}' AND hidden_at IS NULL
+      AND status = 'done' AND completed_at >= CURRENT_DATE
+    ORDER BY completed_at DESC
+  `);
+  const allIssues = [...openRows.map(mapRow), ...doneTodayRows.map(mapRow)];
 
   // Agents
   const agentRows = dbQuery(`
@@ -251,7 +252,7 @@ function closeStaleRoutineIssue() {
 async function main() {
   const apiUrl = process.env.PAPERCLIP_API_URL;
   const apiKey = process.env.PAPERCLIP_API_KEY;
-  const companyId = process.env.PAPERCLIP_COMPANY_ID;
+  const companyId = PAPERCLIP_COMPANY_ID;
 
   // Pre-flight: close stale open issue from any previous crashed run (DB mode only)
   if (!apiUrl || !apiKey) {
@@ -358,21 +359,19 @@ async function main() {
     footerNote: 'Generato automaticamente dal CEO Agent',
   });
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: 587,
-    secure: false,
-    auth: { user: SMTP_USER, pass: SMTP_PASS },
-  });
-
+  const transporter = createSmtpTransport(nodemailer);
   const subject = `Superdots ${label} — ${inProgress.length} in corso, ${recentDone.length} completati, ${blocked.length} bloccati`;
 
-  const info = await transporter.sendMail({
-    from: `"Superdots" <${MAIL_FROM}>`,
-    to: TO_EMAIL,
-    subject,
-    text,
-    html,
+  const info = await sendBrandedMail({
+    transporter,
+    script: 'send-daily-summary',
+    message: {
+      from: `"Superdots" <${MAIL_FROM}>`,
+      to: TO_EMAIL,
+      subject,
+      text,
+      html,
+    },
   });
 
   console.log(`Email sent: ${info.messageId}`);
