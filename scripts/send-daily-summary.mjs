@@ -115,15 +115,10 @@ function fetchDataViaDb(companyId) {
     inputK: Math.round(parseInt(r[1], 10) / 1000),
     outputK: Math.round(parseInt(r[2], 10) / 1000),
   }));
-  // Estimate cost at public Sonnet pricing ($3/$15 per MTok input/output)
-  const totalInputK = tokensByAgent.reduce((s, a) => s + a.inputK, 0);
-  const totalOutputK = tokensByAgent.reduce((s, a) => s + a.outputK, 0);
-  const estimatedDayCostUsd = ((totalInputK * 3 + totalOutputK * 15) / 1_000_000).toFixed(4);
-
   const dashboard = {
     tasks: { open, inProgress: inProg, blocked: blockedCount, done: doneCount },
     agents: { active, running },
-    costs: { monthSpendCents: 0, tokensByAgent, estimatedDayCostUsd },
+    costs: { monthSpendCents: 0, tokensByAgent },
   };
 
   return { dashboard, allIssues, agents };
@@ -295,9 +290,8 @@ async function main() {
 
   const { dashboard, allIssues, agents } = data;
 
-  // Normalize cost fields — API mode doesn't return tokensByAgent or estimatedDayCostUsd
+  // Normalize cost fields — API mode doesn't return tokensByAgent
   if (!dashboard.costs.tokensByAgent) dashboard.costs.tokensByAgent = [];
-  if (!dashboard.costs.estimatedDayCostUsd) dashboard.costs.estimatedDayCostUsd = '0.00';
 
   const inProgress = allIssues.filter(i => i.status === 'in_progress');
   const todo = allIssues.filter(i => i.status === 'todo');
@@ -314,14 +308,15 @@ async function main() {
   ];
 
   const label = timeLabel();
-  const { estimatedDayCostUsd, tokensByAgent } = dashboard.costs;
+  const { tokensByAgent } = dashboard.costs;
+  const totalInputK = tokensByAgent.reduce((s, a) => s + a.inputK, 0);
   const totalOutputK = tokensByAgent.reduce((s, a) => s + a.outputK, 0);
 
   // Plain text fallback
   const fmtIssueTxt = (i) => `  - [${i.priority}] ${i.identifier} — ${i.title} (${agentName(agents, i.assigneeAgentId)})`;
   let text = `Superdots — Aggiornamento ${label} (${today})\n\n`;
   text += `Dashboard: ${dashboard.tasks.open} aperte, ${dashboard.tasks.inProgress} in corso, ${dashboard.tasks.blocked} bloccate, ${dashboard.tasks.done} completate\n`;
-  text += `Agenti: ${dashboard.agents.active} attivi (${dashboard.agents.running} running) | Token oggi: ${totalOutputK}k out (~$${estimatedDayCostUsd} stima)\n\n`;
+  text += `Agenti: ${dashboard.agents.active} attivi (${dashboard.agents.running} running) | Token oggi: ${totalInputK}k in / ${totalOutputK}k out\n\n`;
   if (recentDone.length) { text += `COMPLETATI OGGI:\n${recentDone.map(fmtIssueTxt).join('\n')}\n\n`; }
   if (inProgress.length) { text += `IN LAVORAZIONE:\n${inProgress.map(fmtIssueTxt).join('\n')}\n\n`; }
   if (blocked.length) { text += `BLOCCATI:\n${blocked.map(fmtIssueTxt).join('\n')}\n\n`; }
@@ -363,7 +358,7 @@ async function main() {
   <tr><td style="padding:0 0 20px">
     <div style="background:#fff;border-radius:10px;padding:14px 18px;border:1px solid #e5e7eb;display:flex;justify-content:space-between;font-size:13px;color:#4b5563">
       <span><strong>${dashboard.agents.active}</strong> agenti attivi &middot; <strong>${dashboard.agents.running}</strong> in esecuzione</span>
-      <span style="float:right">Token oggi: <strong>${totalOutputK}k out</strong> &middot; ~$${estimatedDayCostUsd} <span style="font-size:11px;color:#9ca3af">(stima)</span></span>
+      <span style="float:right">Token oggi: <strong>${totalInputK}k in &middot; ${totalOutputK}k out</strong></span>
     </div>
   </td></tr>
 

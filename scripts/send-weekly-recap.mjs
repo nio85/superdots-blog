@@ -21,7 +21,11 @@ import {
 } from './config.mjs';
 
 const CONTENT_DIR = join(BLOG_ROOT, 'src', 'content', 'blog');
-const DB_URL = process.env.PAPERCLIP_DB_URL || 'postgresql://luca:a8gMWZJg9HVEFTutPDxuJ1iy225b1Wzd@localhost:5432/paperclip';
+const DB_URL = process.env.PAPERCLIP_DB_URL;
+if (!DB_URL) {
+  console.error('Missing PAPERCLIP_DB_URL (set in .env)');
+  process.exit(1);
+}
 
 function parseFrontmatter(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---/);
