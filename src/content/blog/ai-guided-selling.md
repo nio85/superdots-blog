@@ -1,7 +1,7 @@
 ---
 title: 'AI Guided Selling Tools (2026): Gong, Highspot & Clari'
 description: "Gong, Highspot, Zoho Zia & Salesforce Einstein compared — 2026 pricing, team-size guide, and a 5-step implementation checklist."
-pubDate: "2026-04-16"
+pubDate: "2026-03-30"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
