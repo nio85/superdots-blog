@@ -113,6 +113,18 @@ const btnText: Record<string, string> = {
 							value: 1,
 						});
 					}
+
+					// Umami custom event (parallel to GA4) — tracks signup by CTA source/variant
+					const container = el.closest('.newsletter') as HTMLElement | null;
+					const variantClass = container ? Array.from(container.classList).find((c) => c.startsWith('newsletter--')) : null;
+					const variant = variantClass ? variantClass.replace('newsletter--', '') : 'unknown';
+					if (typeof window.umami !== 'undefined') {
+						window.umami.track('newsletter_signup', {
+							source,
+							variant,
+							path: location.pathname,
+						});
+					}
 				} else {
 					status.textContent = data.error || 'Something went wrong. Please try again.';
 					status.classList.add('newsletter-status--error');
