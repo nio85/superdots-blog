@@ -136,7 +136,7 @@ At $12,000 ACV, that's $12,000 in additional monthly revenue for $50-100/month i
 
 The caution: the improvement only materializes if you actually change something based on what you learn. Analysis without action is just overhead.
 
-## Internal Link Opportunities
+## How Win/Loss Connects to Your Sales Tech Stack
 
 If your team is already thinking about the competitive landscape, win/loss analysis pairs directly with [competitive intelligence for sales](/blog/ai-competitive-intelligence-sales). The two practices inform each other — win/loss tells you which competitors are winning deals; CI tells you why they're positioned that way.
 
