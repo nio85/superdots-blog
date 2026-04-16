@@ -1,6 +1,6 @@
 ---
-title: 'Best AI Content Repurposing Tools (2026)'
-description: "Honest comparison of 6 AI content repurposing tools by use case: audio to text, video to clips, long-form to social, and LinkedIn. Real pricing."
+title: '6 Best AI Content Repurposing Tools in 2026 (With Pricing)'
+description: "Castmagic, OpusClip, Repurpose.io, Taplio, Copy.ai, and Lately — compared by use case with real 2026 pricing. Which one actually fits your workflow?"
 pubDate: "2026-04-07"
 author: "Superdots Team"
 department: "marketing"
