@@ -336,7 +336,6 @@ html[data-theme="dark"] #sd-cc-backdrop {
 
 .sd-cc-cat-locked {
   background: var(--sd-gray-100, #F1F5F9);
-  opacity: 0.95;
 }
 
 .sd-cc-cat-head {
@@ -347,21 +346,21 @@ html[data-theme="dark"] #sd-cc-backdrop {
   margin-bottom: 0.25rem;
 }
 
-.sd-cc-cat legend {
+.sd-cc-cat-label {
   font-family: var(--font-display, 'Space Grotesk', sans-serif);
   font-weight: 600;
   font-size: 0.9375rem;
   color: var(--color-text-strong, #0B1222);
   padding: 0;
   margin: 0;
-  float: none;
+  line-height: 1.2;
 }
 
-.sd-cc-cat p {
-  font-size: 0.8125rem !important;
-  color: var(--color-text-muted, #64748B) !important;
-  margin: 0 !important;
-  line-height: 1.45 !important;
+.sd-cc-cat-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #64748B);
+  margin: 0;
+  line-height: 1.45;
 }
 
 .sd-cc-prefs-footer {
@@ -498,7 +497,7 @@ html[data-theme="dark"] #sd-cc-backdrop {
   .sd-cc-intro { margin-bottom: 0.625rem; }
   .sd-cc-categories { gap: 0.325rem; margin-bottom: 0.5rem; }
   .sd-cc-cat { padding: 0.5rem 0.75rem; }
-  .sd-cc-cat p { font-size: 0.75rem !important; line-height: 1.4 !important; }
+  .sd-cc-cat-desc { font-size: 0.75rem; line-height: 1.4; }
   .sd-cc-policy-row { margin-top: 0.625rem; padding-top: 0.625rem; }
 }
 
@@ -557,9 +556,9 @@ html[data-theme="dark"] .sd-cc-cat:has(input[data-cat]:checked:not([disabled])) 
   background: rgba(232, 54, 59, 0.08);
 }
 
-html[data-theme="dark"] .sd-cc-cat legend { color: #FFFFFF; }
-html[data-theme="dark"] .sd-cc-cat p {
-  color: var(--sd-gray-300, #CBD5E1) !important;
+html[data-theme="dark"] .sd-cc-cat-label { color: #FFFFFF; }
+html[data-theme="dark"] .sd-cc-cat-desc {
+  color: var(--sd-gray-300, #CBD5E1);
 }
 
 html[data-theme="dark"] .sd-cc-close { color: var(--sd-gray-300, #CBD5E1); }
@@ -606,7 +605,11 @@ html[data-theme="dark"] #sd-cc-preferences .btn-ghost:hover {
   #sd-cc-banner,
   #sd-cc-preferences,
   .sd-cc-track,
-  .sd-cc-thumb {
+  .sd-cc-thumb,
+  .sd-cc-cat,
+  .sd-cc-policy-link,
+  .sd-cc-close,
+  .sd-cc-btn-text {
     animation: none !important;
     transition: none !important;
   }
