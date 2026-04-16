@@ -27,16 +27,19 @@ const HELP = `Usage: node reddit-ads.mjs <command> [options]
 Commands:
   auth                                   Refresh OAuth2 token, print expiry
   list-campaigns                         List all campaigns with status
-  create-campaign <json>                 Create campaign (JSON: {name, daily_budget_micro, start_time, end_time})
+  create-campaign <json>                 Create campaign (JSON: {name, objective, configured_status})
   get-campaign <id>                      Campaign details
   update-campaign <id> <json>            Update campaign fields
   pause-campaign <id>                    Pause a campaign
   resume-campaign <id>                   Resume a campaign
-  list-ad-groups <campaignId>            List ad groups in campaign
-  create-ad-group <campaignId> <json>    Create ad group with targeting
-  list-ads <adGroupId>                   List ads in ad group
-  create-ad <adGroupId> <json>           Create ad (JSON: {name, headline, url, thumbnail_url})
+  list-ad-groups [campaignId]            List ad groups (optionally filter by campaign)
+  create-ad-group <json>                 Create ad group (JSON: {name, campaign_id, bid_type, bid_strategy, ...})
+  list-ads [adGroupId]                   List ads (optionally filter by ad group)
+  create-ad <json>                       Create ad (JSON: {name, ad_group_id, post_id, configured_status})
   pause-ad <adId>                        Pause an ad
+  list-posts                             List posts for the ad profile
+  create-post <json>                     Create post (JSON: {type, headline, content: [{destination_url, call_to_action, media_url}]})
+  get-profiles                           List ad profiles for the account
   report <campaignId> [--days N]         Campaign performance report
   account-report [--days N]              Account-level spend summary
 
@@ -161,16 +164,17 @@ async function main() {
       const campaigns = data.data || data || [];
       log(`Campaigns (${Array.isArray(campaigns) ? campaigns.length : '?'}):`);
       for (const c of (Array.isArray(campaigns) ? campaigns : [])) {
-        log(`  [${c.status || c.effective_status}] ${c.name} (id: ${c.id}) budget: ${(c.daily_budget_micro || 0) / 1000000}`);
+        log(`  [${c.configured_status || c.effective_status}] ${c.name} (id: ${c.id})`);
       }
       break;
     }
 
     case 'create-campaign': {
       const body = parseJsonArg(1);
+      body.configured_status = body.configured_status || body.status || 'PAUSED';
+      delete body.status;
       body.objective = body.objective || 'TRAFFIC';
-      body.type = body.type || 'MAX';
-      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/campaigns`, body);
+      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/campaigns`, { data: body });
       if (jsonOutput) { out(data); break; }
       log(`Campaign created: ${data.data?.id || data.id || JSON.stringify(data)}`);
       break;
@@ -193,7 +197,7 @@ async function main() {
       const id = positional[1];
       if (!id) err('Missing campaign ID');
       const body = parseJsonArg(2);
-      const data = await api('PATCH', `/campaigns/${id}`, body);
+      const data = await api('PATCH', `/campaigns/${id}`, { data: body });
       if (jsonOutput) { out(data); break; }
       log(`Campaign ${id} updated.`);
       break;
@@ -202,7 +206,7 @@ async function main() {
     case 'pause-campaign': {
       const id = positional[1];
       if (!id) err('Missing campaign ID');
-      const data = await api('PATCH', `/campaigns/${id}`, { status: 'PAUSED' });
+      const data = await api('PATCH', `/campaigns/${id}`, { data: { configured_status: 'PAUSED' } });
       if (jsonOutput) { out(data); break; }
       log(`Campaign ${id} paused.`);
       break;
@@ -211,7 +215,7 @@ async function main() {
     case 'resume-campaign': {
       const id = positional[1];
       if (!id) err('Missing campaign ID');
-      const data = await api('PATCH', `/campaigns/${id}`, { status: 'ACTIVE' });
+      const data = await api('PATCH', `/campaigns/${id}`, { data: { configured_status: 'ACTIVE' } });
       if (jsonOutput) { out(data); break; }
       log(`Campaign ${id} resumed.`);
       break;
@@ -219,22 +223,22 @@ async function main() {
 
     case 'list-ad-groups': {
       const campaignId = positional[1];
-      if (!campaignId) err('Missing campaign ID');
-      const data = await api('GET', `/campaigns/${campaignId}/ad_groups`);
+      const data = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/ad_groups`);
       if (jsonOutput) { out(data); break; }
-      const groups = data.data || data || [];
+      let groups = data.data || data || [];
+      if (campaignId && Array.isArray(groups)) groups = groups.filter(g => g.campaign_id === campaignId);
       log(`Ad groups (${Array.isArray(groups) ? groups.length : '?'}):`);
       for (const g of (Array.isArray(groups) ? groups : [])) {
-        log(`  [${g.status}] ${g.name} (id: ${g.id})`);
+        log(`  [${g.configured_status}] ${g.name} (id: ${g.id}) campaign: ${g.campaign_id}`);
       }
       break;
     }
 
     case 'create-ad-group': {
-      const campaignId = positional[1];
-      if (!campaignId) err('Missing campaign ID');
-      const body = parseJsonArg(2);
-      const data = await api('POST', `/campaigns/${campaignId}/ad_groups`, body);
+      const body = parseJsonArg(1);
+      body.configured_status = body.configured_status || body.status || 'PAUSED';
+      delete body.status;
+      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/ad_groups`, { data: body });
       if (jsonOutput) { out(data); break; }
       log(`Ad group created: ${data.data?.id || data.id || JSON.stringify(data)}`);
       break;
@@ -242,22 +246,22 @@ async function main() {
 
     case 'list-ads': {
       const adGroupId = positional[1];
-      if (!adGroupId) err('Missing ad group ID');
-      const data = await api('GET', `/ad_groups/${adGroupId}/ads`);
+      const data = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/ads`);
       if (jsonOutput) { out(data); break; }
-      const ads = data.data || data || [];
+      let ads = data.data || data || [];
+      if (adGroupId && Array.isArray(ads)) ads = ads.filter(a => a.ad_group_id === adGroupId);
       log(`Ads (${Array.isArray(ads) ? ads.length : '?'}):`);
       for (const a of (Array.isArray(ads) ? ads : [])) {
-        log(`  [${a.status}] ${a.name || a.headline} (id: ${a.id}) CTR: ${a.ctr || '-'}`);
+        log(`  [${a.configured_status}] ${a.name || a.headline} (id: ${a.id}) ad_group: ${a.ad_group_id}`);
       }
       break;
     }
 
     case 'create-ad': {
-      const adGroupId = positional[1];
-      if (!adGroupId) err('Missing ad group ID');
-      const body = parseJsonArg(2);
-      const data = await api('POST', `/ad_groups/${adGroupId}/ads`, body);
+      const body = parseJsonArg(1);
+      body.configured_status = body.configured_status || body.status || 'PAUSED';
+      delete body.status;
+      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/ads`, { data: body });
       if (jsonOutput) { out(data); break; }
       log(`Ad created: ${data.data?.id || data.id || JSON.stringify(data)}`);
       break;
@@ -266,28 +270,85 @@ async function main() {
     case 'pause-ad': {
       const adId = positional[1];
       if (!adId) err('Missing ad ID');
-      const data = await api('PATCH', `/ads/${adId}`, { status: 'PAUSED' });
+      const data = await api('PATCH', `/ads/${adId}`, { data: { configured_status: 'PAUSED' } });
       if (jsonOutput) { out(data); break; }
       log(`Ad ${adId} paused.`);
+      break;
+    }
+
+    case 'get-profiles': {
+      const data = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/profiles`);
+      if (jsonOutput) { out(data); break; }
+      const profiles = data.data || [];
+      log(`Profiles (${Array.isArray(profiles) ? profiles.length : '?'}):`);
+      for (const p of (Array.isArray(profiles) ? profiles : [])) {
+        log(`  ${p.name || p.username} (id: ${p.id})`);
+      }
+      break;
+    }
+
+    case 'list-posts': {
+      const profileId = positional[1] || getOpt('profile');
+      if (!profileId) {
+        const profiles = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/profiles`);
+        const pList = profiles.data || [];
+        if (!Array.isArray(pList) || pList.length === 0) err('No profiles found');
+        const data = await api('GET', `/profiles/${pList[0].id}/posts`);
+        if (jsonOutput) { out(data); break; }
+        const posts = data.data || [];
+        log(`Posts (${Array.isArray(posts) ? posts.length : '?'}):`);
+        for (const p of (Array.isArray(posts) ? posts : [])) {
+          log(`  [${p.type}] ${p.headline} (id: ${p.id})`);
+        }
+      } else {
+        const data = await api('GET', `/profiles/${profileId}/posts`);
+        if (jsonOutput) { out(data); break; }
+        const posts = data.data || [];
+        log(`Posts (${Array.isArray(posts) ? posts.length : '?'}):`);
+        for (const p of (Array.isArray(posts) ? posts : [])) {
+          log(`  [${p.type}] ${p.headline} (id: ${p.id})`);
+        }
+      }
+      break;
+    }
+
+    case 'create-post': {
+      const profileId = positional[1] && !positional[1].startsWith('{') ? positional[1] : null;
+      const bodyIdx = profileId ? 2 : 1;
+      const body = parseJsonArg(bodyIdx);
+      let pid = profileId;
+      if (!pid) {
+        const profiles = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/profiles`);
+        const pList = profiles.data || [];
+        if (!Array.isArray(pList) || pList.length === 0) err('No profiles found');
+        pid = pList[0].id;
+      }
+      const data = await api('POST', `/profiles/${pid}/posts`, { data: body });
+      if (jsonOutput) { out(data); break; }
+      log(`Post created: ${data.data?.id || data.id || JSON.stringify(data)}`);
       break;
     }
 
     case 'report': {
       const campaignId = positional[1];
       if (!campaignId) err('Missing campaign ID');
-      const startDate = isoDate(days);
-      const endDate = isoDate(0);
-      const data = await api('GET', `/campaigns/${campaignId}/reports?start_date=${startDate}&end_date=${endDate}&group_by=date`);
+      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/reports`, { data: {
+        starts_at: `${isoDate(days)}T00:00:00Z`,
+        ends_at: `${isoDate(0)}T00:00:00Z`,
+        breakdowns: ['CAMPAIGN_ID', 'DATE'],
+        fields: ['IMPRESSIONS', 'CLICKS', 'CPC', 'CTR', 'SPEND', 'ECPM'],
+        filter: `campaign:id==${campaignId}`,
+      }});
       if (jsonOutput) { out(data); break; }
-      const rows = data.data || data || [];
+      const rows = data.data?.metrics || data.data || [];
       log(`Campaign ${campaignId} report (${days}d):`);
       let totalSpend = 0, totalClicks = 0, totalImpr = 0;
       for (const r of (Array.isArray(rows) ? rows : [])) {
-        const spend = (r.spend_micro || 0) / 1000000;
+        const spend = parseFloat(r.SPEND || r.spend || 0);
         totalSpend += spend;
-        totalClicks += r.clicks || 0;
-        totalImpr += r.impressions || 0;
-        log(`  ${r.date}: ${r.impressions || 0} impr, ${r.clicks || 0} clicks, €${spend.toFixed(2)} spend`);
+        totalClicks += parseInt(r.CLICKS || r.clicks || 0, 10);
+        totalImpr += parseInt(r.IMPRESSIONS || r.impressions || 0, 10);
+        log(`  ${r.DATE || r.date}: ${r.IMPRESSIONS || 0} impr, ${r.CLICKS || 0} clicks, €${spend.toFixed(2)} spend`);
       }
       const avgCpc = totalClicks > 0 ? totalSpend / totalClicks : 0;
       const ctr = totalImpr > 0 ? (totalClicks / totalImpr * 100) : 0;
@@ -297,17 +358,20 @@ async function main() {
     }
 
     case 'account-report': {
-      const startDate = isoDate(days);
-      const endDate = isoDate(0);
-      const data = await api('GET', `/ad_accounts/${AD_ACCOUNT_ID}/reports?start_date=${startDate}&end_date=${endDate}&group_by=date`);
+      const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/reports`, { data: {
+        starts_at: `${isoDate(days)}T00:00:00Z`,
+        ends_at: `${isoDate(0)}T00:00:00Z`,
+        breakdowns: ['DATE'],
+        fields: ['IMPRESSIONS', 'CLICKS', 'CPC', 'CTR', 'SPEND', 'ECPM'],
+      }});
       if (jsonOutput) { out(data); break; }
-      const rows = data.data || data || [];
+      const rows = data.data?.metrics || data.data || [];
       log(`Account report (${days}d):`);
       let totalSpend = 0;
       for (const r of (Array.isArray(rows) ? rows : [])) {
-        const spend = (r.spend_micro || 0) / 1000000;
+        const spend = parseFloat(r.SPEND || r.spend || 0);
         totalSpend += spend;
-        log(`  ${r.date}: ${r.impressions || 0} impr, ${r.clicks || 0} clicks, €${spend.toFixed(2)}`);
+        log(`  ${r.DATE || r.date}: ${r.IMPRESSIONS || 0} impr, ${r.CLICKS || 0} clicks, €${spend.toFixed(2)}`);
       }
       log(`  Total spend: €${totalSpend.toFixed(2)}`);
       break;
