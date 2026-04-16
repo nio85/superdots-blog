@@ -18,6 +18,7 @@ faqs:
     answer: "The honest answer: almost nothing if you build it from existing tools. A Claude Pro subscription ($20/month) plus Notion ($10/user/month) gives a 10-person agency a functional AI-assisted quality management system. Dedicated tools like Workfront or monday.com at their quality management tier start at $1,000-2,000/month — typically priced for teams 4-5x that size."
   - question: "How do professional services firms use AI for quality control?"
     answer: "Consulting firms use AI primarily for document and deliverable review: checking reports against client briefs, ensuring methodology consistency across engagements, and flagging where outputs deviate from firm standards. Law firms use AI for contract review and clause verification. Accounting firms use it for reconciliation checks and compliance flag detection. The pattern is the same: AI as a second set of eyes before work goes to the client."
+heroImage: "/images/blog/ai-quality-management-software.webp"
 ---
 
 Search for "quality management software" and you'll get 40 results. All of them show screenshots of production floors, ISO compliance dashboards, and defect rate charts.
