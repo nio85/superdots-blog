@@ -71,9 +71,9 @@ const isPolicyPage = pathname === '/privacy/' || pathname === '/privacy'
       <div>
         <p class="sd-cc-eyebrow">
           <span class="sd-cc-dot" aria-hidden="true"></span>
-          Preferences
+          Cookies
         </p>
-        <h2 id="sd-cc-prefs-title" class="sd-cc-title">Your call<span class="sd-cc-period">.</span></h2>
+        <h2 id="sd-cc-prefs-title" class="sd-cc-title">Your cookies, your call<span class="sd-cc-period">.</span></h2>
       </div>
       <button type="button" class="sd-cc-close" data-action="close-preferences" aria-label="Close preferences">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -87,41 +87,41 @@ const isPolicyPage = pathname === '/privacy/' || pathname === '/privacy'
     </p>
 
     <div class="sd-cc-categories">
-      <fieldset class="sd-cc-cat sd-cc-cat-locked">
+      <div class="sd-cc-cat sd-cc-cat-locked" role="group" aria-labelledby="sd-cc-label-essential">
         <div class="sd-cc-cat-head">
-          <legend>Essential</legend>
+          <span id="sd-cc-label-essential" class="sd-cc-cat-label">Essential</span>
           <label class="sd-cc-switch sd-cc-switch-locked">
             <input type="checkbox" checked disabled data-cat="necessary" />
             <span class="sd-cc-track" aria-hidden="true"><span class="sd-cc-thumb"></span></span>
             <span class="sd-cc-sr">Always on</span>
           </label>
         </div>
-        <p>Theme preference and this very consent record. Nothing else.</p>
-      </fieldset>
+        <p class="sd-cc-cat-desc">Theme preference and this very consent record. Nothing else.</p>
+      </div>
 
-      <fieldset class="sd-cc-cat">
+      <div class="sd-cc-cat" role="group" aria-labelledby="sd-cc-label-analytics">
         <div class="sd-cc-cat-head">
-          <legend>Analytics</legend>
+          <span id="sd-cc-label-analytics" class="sd-cc-cat-label">Analytics</span>
           <label class="sd-cc-switch">
-            <input type="checkbox" data-cat="analytics" />
+            <input type="checkbox" data-cat="analytics" aria-labelledby="sd-cc-label-analytics" />
             <span class="sd-cc-track" aria-hidden="true"><span class="sd-cc-thumb"></span></span>
             <span class="sd-cc-sr">Toggle analytics</span>
           </label>
         </div>
-        <p>Google Analytics and Microsoft Clarity. Aggregate reading patterns — no names, no selling.</p>
-      </fieldset>
+        <p class="sd-cc-cat-desc">Google Analytics and Microsoft Clarity. Aggregate reading patterns — no names, no selling.</p>
+      </div>
 
-      <fieldset class="sd-cc-cat">
+      <div class="sd-cc-cat" role="group" aria-labelledby="sd-cc-label-marketing">
         <div class="sd-cc-cat-head">
-          <legend>Marketing</legend>
+          <span id="sd-cc-label-marketing" class="sd-cc-cat-label">Marketing</span>
           <label class="sd-cc-switch">
-            <input type="checkbox" data-cat="marketing" />
+            <input type="checkbox" data-cat="marketing" aria-labelledby="sd-cc-label-marketing" />
             <span class="sd-cc-track" aria-hidden="true"><span class="sd-cc-thumb"></span></span>
             <span class="sd-cc-sr">Toggle marketing</span>
           </label>
         </div>
-        <p>Reserved for the future. Nothing active today.</p>
-      </fieldset>
+        <p class="sd-cc-cat-desc">Reserved for the future. Nothing active today.</p>
+      </div>
     </div>
 
     <footer class="sd-cc-prefs-footer">
@@ -241,6 +241,8 @@ const banner = document.getElementById('sd-cc-banner');
 const prefs = document.getElementById('sd-cc-preferences');
 const isPolicyPage = root?.dataset.policyPage === 'true';
 let lastFocus: HTMLElement | null = null;
+let savedScrollY = 0;
+let scrollLocked = false;
 
 function getFocusable(el: HTMLElement): HTMLElement[] {
   return Array.from(
@@ -250,21 +252,54 @@ function getFocusable(el: HTMLElement): HTMLElement[] {
   ).filter((n) => n.offsetParent !== null || n.getClientRects().length > 0);
 }
 
+// iOS Safari/Chrome don't reliably lock scroll with overflow:hidden.
+// position:fixed + negative top preserves scroll position and blocks the
+// background page on every engine.
+function lockScroll() {
+  if (scrollLocked) return;
+  savedScrollY = window.scrollY || window.pageYOffset || 0;
+  const b = document.body;
+  b.style.position = 'fixed';
+  b.style.top = `-${savedScrollY}px`;
+  b.style.left = '0';
+  b.style.right = '0';
+  b.style.width = '100%';
+  b.style.overflow = 'hidden';
+  scrollLocked = true;
+}
+
+function unlockScroll() {
+  if (!scrollLocked) return;
+  const b = document.body;
+  b.style.position = '';
+  b.style.top = '';
+  b.style.left = '';
+  b.style.right = '';
+  b.style.width = '';
+  b.style.overflow = '';
+  window.scrollTo(0, savedScrollY);
+  scrollLocked = false;
+}
+
 function setState(state: 'idle' | 'banner' | 'preferences') {
   document.documentElement.setAttribute('data-consent-state', state);
   if (root) root.setAttribute('aria-hidden', state === 'idle' ? 'true' : 'false');
   if (state === 'idle') {
-    document.body.style.overflow = '';
-    if (lastFocus && typeof lastFocus.focus === 'function') {
-      try { lastFocus.focus(); } catch {}
-    }
+    unlockScroll();
+    const prev = lastFocus;
     lastFocus = null;
+    if (prev && prev !== document.body && typeof prev.focus === 'function') {
+      try { prev.focus(); } catch {}
+    }
     return;
   }
-  document.body.style.overflow = 'hidden';
+  lockScroll();
   const active = state === 'banner' ? banner : prefs;
   if (!active) return;
-  if (!lastFocus) lastFocus = document.activeElement as HTMLElement;
+  if (!lastFocus) {
+    const candidate = document.activeElement as HTMLElement | null;
+    lastFocus = candidate && candidate !== document.body ? candidate : null;
+  }
   const primary =
     active.querySelector<HTMLElement>('[data-action="accept-all"]') ||
     active.querySelector<HTMLElement>('[data-action="save-preferences"]');
