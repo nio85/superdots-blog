@@ -25,7 +25,7 @@ heroImage: "/images/blog/ai-image-editing-tools.webp"
 imageHint: "marketer using AI background removal and image enhancement tools on product photo"
 ---
 
-Your team needs images constantly. Product photos for the website. Headshots for the team page. Social media graphics. Presentation visuals. Banners for email campaigns.
+Your team needs images constantly. Product photos for the website. Headshots for the team page. Social media graphics. Presentation visuals. Banners for [email campaigns](/blog/ai-email-marketing/).
 
 Previously, this meant either hiring a designer, learning Photoshop, or settling for amateur results. AI image editing tools change the math. Now anyone on your team can produce professional-quality images in minutes.
 
@@ -69,7 +69,7 @@ Canva is the go-to design tool for non-designers, and its AI features make it ev
 
 **Pricing:** Free tier with limited features. Pro at $13/month. Teams at $10/user/month (minimum 3 users).
 
-**Best for:** Teams that need a single tool for all their visual content creation.
+**Best for:** Teams that need a single tool for all their [visual content creation](/blog/ai-content-creation/).
 
 ### PhotoRoom — best for product photography
 

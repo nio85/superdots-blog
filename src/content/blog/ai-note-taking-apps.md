@@ -37,7 +37,7 @@ Traditional note apps are storage. AI note apps are thinking partners. The diffe
 
 - **Auto-organization** — notes get tagged, categorized, and linked to related notes automatically
 - **Smart search** — find notes by concept, not just keywords. Search "budget discussion" and find the notes even if you never used the word "budget"
-- **Meeting capture** — real-time transcription with automatic summaries and action items
+- **Meeting capture** — real-time [transcription](/blog/ai-transcription-tools/) with automatic summaries and action items
 - **Knowledge connections** — the AI spots relationships between notes you didn't see
 - **Quick summaries** — get the key points from a week of notes in 30 seconds
 
@@ -49,7 +49,7 @@ This matters because the value of notes isn't in taking them. It's in finding an
 
 Notion was already a powerful workspace. With AI, it becomes a self-organizing knowledge base. Ask questions about your notes, generate summaries across multiple pages, and auto-fill databases from meeting notes.
 
-**Strengths:** Combines notes, docs, databases, and project management in one workspace. AI works across all your Notion content. Strong collaboration features for teams. Hundreds of integrations.
+**Strengths:** Combines notes, docs, databases, and [project management](/blog/ai-project-management-features-guide/) in one workspace. AI works across all your Notion content. Strong collaboration features for teams. Hundreds of integrations.
 
 **Limitations:** Can feel overwhelming for simple note-taking. AI add-on costs extra ($10/member/month). Performance slows with very large workspaces.
 

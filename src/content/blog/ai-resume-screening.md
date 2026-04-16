@@ -84,9 +84,9 @@ Not all tools are equal. Here is what works at different scales.
 
 ### For enterprise (500+ hires/year)
 
-**[HireVue](https://www.hirevue.com)** — $50,000+/year. Video assessments plus AI screening. Unilever used HireVue to [cut hiring time by 75% while increasing diversity](https://www.hirevue.com/case-studies).
+**[HireVue](https://www.hirevue.com)** — $50,000+/year. Video assessments plus AI screening. Unilever used HireVue to [cut hiring time by 75% while increasing diversity](https://www.hirevue.com/case-studies) — a useful benchmark if [diversity hiring](/blog/ai-diversity-hiring/) is a priority.
 
-**[Eightfold AI](https://eightfold.ai)** — $7-10/employee/month. Deep-learning talent platform that predicts candidate success based on career trajectories. Best for companies that also want internal mobility and workforce planning.
+**[Eightfold AI](https://eightfold.ai)** — $7-10/employee/month. Deep-learning talent platform that predicts candidate success based on career trajectories. Best for companies that also want internal mobility and [workforce planning](/blog/ai-workforce-planning/).
 
 **[Paradox (Olivia)](https://www.paradox.ai)** — $20,000-100,000+/year. Conversational AI that handles screening, scheduling, and candidate engagement via text. Built for high-volume hiring.
 
@@ -118,7 +118,7 @@ The regulatory landscape for AI hiring tools is changing fast.
 
 **New York City (Local Law 144):** Annual independent bias audits required for any automated employment decision tool. Must test for disparate impact across race and gender. Must notify candidates and publish audit results. [Enforcement has been weak](https://www.osc.ny.gov/state-agencies/audits/2025/12/02/enforcement-local-law-144-automated-employment-decision-tools) — a December 2025 audit found 75% of complaint calls were misrouted — but the law is on the books and liability is real.
 
-**EU AI Act:** AI hiring tools classified as high-risk. Core requirements — human oversight, transparency, documentation, risk management — enforceable August 2, 2026. Applies to US employers if AI outputs are used on EU candidates. Penalties up to 35 million EUR or 7% of global turnover. Emotion recognition in interviews is already prohibited as of February 2025.
+**EU AI Act:** AI hiring tools classified as high-risk. Core requirements — human oversight, transparency, documentation, [risk management](/blog/ai-risk-management/) — enforceable August 2, 2026. Applies to US employers if AI outputs are used on EU candidates. Penalties up to 35 million EUR or 7% of global turnover. Emotion recognition in interviews is already prohibited as of February 2025.
 
 **US federal:** No specific AI hiring law yet, but EEOC guidance makes clear that Title VII and anti-discrimination law apply to AI-assisted decisions. Employers are liable for discriminatory outcomes even when using third-party tools.
 

@@ -101,7 +101,7 @@ Claude excels at analyzing large datasets and generating nuanced, well-structure
 
 **Strengths:** Handles complex data, generates detailed analysis, strong at maintaining consistency across long documents, excellent at following specific formatting instructions.
 
-**Best for:** Quarterly reviews, financial reports, competitive analysis — anything that requires deep analysis of extensive data.
+**Best for:** Quarterly reviews, financial reports, [competitive analysis](/blog/ai-competitive-analysis/) — anything that requires deep analysis of extensive data.
 
 ### ChatGPT with Code Interpreter — best for data visualization
 
@@ -129,7 +129,7 @@ Notion AI generates reports from data in your Notion databases. For teams that t
 
 ### Julius — best for data-heavy reports
 
-Julius is purpose-built for data analysis and report generation. Upload datasets, and it produces analysis, visualizations, and written insights with minimal prompting.
+Julius is purpose-built for [data analysis](/blog/ai-data-analysis-for-non-technical-teams/) and report generation. Upload datasets, and it produces analysis, visualizations, and written insights with minimal prompting.
 
 **Strengths:** Purpose-built for data analysis, generates publication-ready charts, handles large datasets, supports multiple data file formats.
 
