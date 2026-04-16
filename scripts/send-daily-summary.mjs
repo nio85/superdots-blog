@@ -14,6 +14,7 @@ import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { renderEmail, statCard, section, issueRow, rowTable, emptyState, BRAND } from './lib/email-shell.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -148,78 +149,56 @@ function agentName(agents, id) {
   return a ? a.name : 'Non assegnato';
 }
 
+const PRIORITY_COLOR = {
+  critical: BRAND.color.accent,
+  high:     '#F97316',
+  medium:   '#FACC15',
+  low:      '#64748B',
+};
+
 function priorityDot(p) {
-  const colors = { critical: '#ef4444', high: '#f97316', medium: '#eab308', low: '#94a3b8' };
-  return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${colors[p] || '#94a3b8'};margin-right:6px;vertical-align:middle"></span>`;
+  const c = PRIORITY_COLOR[p] || PRIORITY_COLOR.low;
+  return `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${c};margin-right:8px;vertical-align:middle"></span>`;
 }
 
-function statCard(value, label, color) {
-  return `<td style="padding:0 6px">
-    <div style="background:#fff;border-radius:10px;padding:16px 12px;text-align:center;border:1px solid #e5e7eb;min-width:80px">
-      <div style="font-size:28px;font-weight:700;color:${color};line-height:1">${value}</div>
-      <div style="font-size:11px;color:#6b7280;margin-top:4px;text-transform:uppercase;letter-spacing:0.5px">${label}</div>
-    </div>
-  </td>`;
-}
-
-function issueRow(issue, agents) {
+function issueToRow(issue, agents) {
   const agent = agentName(agents, issue.assigneeAgentId);
-  return `<tr>
-    <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;vertical-align:top">
-      ${priorityDot(issue.priority)}
-      <span style="font-weight:600;color:#374151;font-size:13px">${issue.identifier}</span>
-    </td>
-    <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;color:#1f2937;font-size:13px">${issue.title}</td>
-    <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;color:#6b7280;font-size:12px;white-space:nowrap">${agent}</td>
-  </tr>`;
+  const main = `${priorityDot(issue.priority)}<span style="font-family:${BRAND.font.body};font-size:13px;color:${BRAND.color.muted};font-weight:600;margin-right:8px">${issue.identifier}</span><span style="color:${BRAND.color.text}">${issue.title}</span>`;
+  return issueRow({ main, right: agent });
 }
 
-function sectionBlock(title, icon, color, issues, agents) {
+function issueSection(title, issues, agents, accent) {
   if (!issues.length) return '';
-  return `
-    <div style="margin-bottom:24px">
-      <div style="display:flex;align-items:center;margin-bottom:10px">
-        <span style="font-size:16px;margin-right:6px">${icon}</span>
-        <span style="font-size:15px;font-weight:700;color:${color}">${title}</span>
-        <span style="background:${color}15;color:${color};font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;margin-left:8px">${issues.length}</span>
-      </div>
-      <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
-        ${issues.map(i => issueRow(i, agents)).join('')}
-      </table>
-    </div>`;
+  const rows = issues.map(i => issueToRow(i, agents)).join('');
+  return section({ title, count: issues.length, body: rowTable(rows), accent });
 }
 
-function debugReportSection(reports) {
+function debugSection(reports) {
   if (!reports.length) return '';
-
-  const rows = [];
+  const STATUS = {
+    pass: { color: BRAND.color.success, label: 'OK' },
+    skip: { color: BRAND.color.muted,   label: 'SKIP' },
+    fail: { color: BRAND.color.accent,  label: 'FAIL' },
+  };
+  const rowsHtml = [];
   for (const { label, report } of reports) {
     if (!report) {
-      rows.push(`<tr><td colspan="3" style="padding:8px 12px;border-bottom:1px solid #f3f4f6;color:#9ca3af;font-size:13px">${label}: report non disponibile</td></tr>`);
+      rowsHtml.push(issueRow({ main: `<span style="color:${BRAND.color.muted}">${label}: report non disponibile</span>` }));
       continue;
     }
     const age = report.timestamp ? new Date(report.timestamp).toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }) : '?';
     for (const check of report.checks) {
-      const color = check.status === 'pass' ? '#22c55e' : check.status === 'skip' ? '#94a3b8' : '#ef4444';
-      const badge = `<span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:${color}15;color:${color}">${check.status.toUpperCase()}</span>`;
-      const detail = check.status === 'fail' ? `<div style="color:#6b7280;font-size:11px;margin-top:2px">${check.detail}</div>` : '';
-      rows.push(`<tr>
-        <td style="padding:6px 12px;border-bottom:1px solid #f3f4f6;vertical-align:top">${badge}</td>
-        <td style="padding:6px 12px;border-bottom:1px solid #f3f4f6;font-size:13px;color:#374151">${check.name}${detail}</td>
-        <td style="padding:6px 12px;border-bottom:1px solid #f3f4f6;font-size:11px;color:#9ca3af;white-space:nowrap">${label} ${age}</td>
-      </tr>`);
+      const s = STATUS[check.status] || STATUS.skip;
+      const badge = `<span style="display:inline-block;padding:2px 9px;border-radius:10px;font-family:${BRAND.font.body};font-size:10px;font-weight:700;letter-spacing:0.5px;background:${s.color}22;color:${s.color};margin-right:10px">${s.label}</span>`;
+      const subline = check.status === 'fail' ? check.detail : '';
+      rowsHtml.push(issueRow({
+        main: `${badge}<span style="color:${BRAND.color.text}">${check.name}</span>`,
+        right: `${label} ${age}`,
+        subline,
+      }));
     }
   }
-
-  return `
-    <div style="margin-bottom:24px">
-      <div style="display:flex;align-items:center;margin-bottom:10px">
-        <span style="font-size:15px;font-weight:700;color:#1e293b">Salute del Sistema</span>
-      </div>
-      <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
-        ${rows.join('')}
-      </table>
-    </div>`;
+  return section({ title: 'Salute del Sistema', body: rowTable(rowsHtml.join('')), accent: BRAND.color.info });
 }
 
 function debugReportText(reports) {
@@ -323,66 +302,61 @@ async function main() {
   if (todo.length) { text += `IN CODA:\n${todo.map(fmtIssueTxt).join('\n')}\n\n`; }
   text += debugReportText(debugReports) + '\n\n';
 
-  // HTML email
-  const html = `<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-<table role="presentation" width="100%" style="background:#f8fafc;padding:24px 0">
-<tr><td align="center">
-<table role="presentation" width="600" style="max-width:600px;width:100%">
-
-  <!-- Header -->
-  <tr><td style="padding:0 0 20px">
-    <table role="presentation" width="100%" style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);border-radius:14px;overflow:hidden">
-      <tr><td style="padding:28px 24px">
-        <div style="font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">Superdots</div>
-        <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:2px">Aggiornamento ${label}</div>
-        <div style="font-size:13px;color:#94a3b8">${today}</div>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- Stats -->
-  <tr><td style="padding:0 0 20px">
-    <table role="presentation" width="100%" style="border-collapse:separate;border-spacing:6px 0">
+  // HTML email (branded shell)
+  const C = BRAND.color;
+  const metaBar = `
+  <tr><td style="padding:0 0 22px">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.surface};border:1px solid ${C.border};border-radius:12px">
       <tr>
-        ${statCard(dashboard.tasks.inProgress, 'In corso', '#3b82f6')}
-        ${statCard(blocked.length, 'Bloccate', '#ef4444')}
-        ${statCard(recentDone.length, 'Fatte oggi', '#22c55e')}
-        ${statCard(dashboard.tasks.open, 'Aperte', '#8b5cf6')}
+        <td style="padding:14px 18px;font-family:${BRAND.font.body};font-size:13px;color:${C.muted}">
+          <strong style="color:${C.text}">${dashboard.agents.active}</strong> agenti attivi
+          <span style="color:${C.border};margin:0 8px">&middot;</span>
+          <strong style="color:${C.text}">${dashboard.agents.running}</strong> in esecuzione
+        </td>
+        <td style="padding:14px 18px;font-family:${BRAND.font.body};font-size:13px;color:${C.muted};text-align:right">
+          Token oggi: <strong style="color:${C.text}">${totalInputK}k in</strong>
+          <span style="color:${C.border};margin:0 6px">&middot;</span>
+          <strong style="color:${C.text}">${totalOutputK}k out</strong>
+        </td>
       </tr>
     </table>
-  </td></tr>
+  </td></tr>`;
 
-  <!-- Agent & spend bar -->
-  <tr><td style="padding:0 0 20px">
-    <div style="background:#fff;border-radius:10px;padding:14px 18px;border:1px solid #e5e7eb;display:flex;justify-content:space-between;font-size:13px;color:#4b5563">
-      <span><strong>${dashboard.agents.active}</strong> agenti attivi &middot; <strong>${dashboard.agents.running}</strong> in esecuzione</span>
-      <span style="float:right">Token oggi: <strong>${totalInputK}k in &middot; ${totalOutputK}k out</strong></span>
-    </div>
-  </td></tr>
+  const statsBlock = `
+  <tr><td style="padding:0 0 22px">
+    <table role="presentation" width="100%" class="sd-stats" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:8px 0">
+      <tr>
+        ${statCard({ value: dashboard.tasks.inProgress, label: 'In corso',    color: C.info })}
+        ${statCard({ value: blocked.length,              label: 'Bloccate',    color: C.accent })}
+        ${statCard({ value: recentDone.length,           label: 'Fatte oggi',  color: C.success })}
+        ${statCard({ value: dashboard.tasks.open,        label: 'Aperte',      color: C.text })}
+      </tr>
+    </table>
+  </td></tr>`;
 
-  <!-- Issue sections -->
-  <tr><td>
-    ${sectionBlock('In lavorazione', '🔵', '#3b82f6', inProgress, agents)}
-    ${sectionBlock('Bloccati', '🔴', '#ef4444', blocked, agents)}
-    ${sectionBlock('Completati oggi', '✅', '#22c55e', recentDone, agents)}
-    ${sectionBlock('In coda', '🟣', '#8b5cf6', todo, agents)}
-    ${(!inProgress.length && !blocked.length && !recentDone.length && !todo.length) ? '<div style="text-align:center;padding:32px;color:#9ca3af;font-size:14px">Nessuna attivit&agrave; aperta al momento.</div>' : ''}
-    ${debugReportSection(debugReports)}
-  </td></tr>
+  const empty = (!inProgress.length && !blocked.length && !recentDone.length && !todo.length)
+    ? `<tr><td style="padding:0 0 22px"><div style="background:${C.surface};border:1px solid ${C.border};border-radius:12px;padding:28px;text-align:center;font-family:${BRAND.font.body};font-size:14px;color:${C.muted}">Nessuna attivit&agrave; aperta al momento.</div></td></tr>`
+    : '';
 
-  <!-- Footer -->
-  <tr><td style="padding:24px 0 0">
-    <div style="text-align:center;font-size:11px;color:#9ca3af;padding-top:16px;border-top:1px solid #e5e7eb">
-      Superdots Daily &middot; Generato automaticamente dal CEO Agent
-    </div>
-  </td></tr>
+  const content = [
+    statsBlock,
+    metaBar,
+    issueSection('In lavorazione',   inProgress,  agents, C.info),
+    issueSection('Bloccati',         blocked,     agents, C.accent),
+    issueSection('Completati oggi',  recentDone,  agents, C.success),
+    issueSection('In coda',          todo,        agents, C.muted),
+    empty,
+    debugSection(debugReports),
+  ].filter(Boolean).join('\n');
 
-</table>
-</td></tr>
-</table>
-</body></html>`;
+  const html = renderEmail({
+    preheader: `${dashboard.tasks.inProgress} in corso · ${recentDone.length} fatte oggi · ${blocked.length} bloccati`,
+    eyebrow: `Daily · ${label}`,
+    title: `Aggiornamento ${label}`,
+    subtitle: today,
+    content,
+    footerNote: 'Generato automaticamente dal CEO Agent',
+  });
 
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
