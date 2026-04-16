@@ -15,6 +15,7 @@ import {
   MAIL_FROM, TO_EMAIL,
   createSmtpTransport,
 } from './config.mjs';
+import { renderEmail, section, issueRow, rowTable, BRAND } from './lib/email-shell.mjs';
 
 const CONTENT_DIR = join(BLOG_ROOT, 'src', 'content', 'blog');
 
@@ -71,62 +72,40 @@ async function main() {
     if (a.department) text += `  Dipartimento: ${a.department}\n`;
   }
 
-  // HTML
-  const articleRows = articles.map(a => `
-    <tr>
-      <td style="padding:12px 16px;border-bottom:1px solid #f3f4f6">
-        <a href="${a.url}" style="font-size:14px;font-weight:600;color:#1e293b;text-decoration:none">${a.title}</a>
-        ${a.department ? `<div style="font-size:12px;color:#6b7280;margin-top:2px">${a.department}${a.useCase ? ' · ' + a.useCase : ''}</div>` : ''}
-      </td>
-      <td style="padding:12px 16px;border-bottom:1px solid #f3f4f6;text-align:right;white-space:nowrap">
-        <a href="${a.url}" style="font-size:12px;color:#3b82f6;text-decoration:none">Leggi &rarr;</a>
-      </td>
-    </tr>`).join('');
+  // HTML (branded shell)
+  const C = BRAND.color;
+  const pluralSuffix = articles.length === 1 ? 'o' : 'i';
 
-  const html = `<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif">
-<table role="presentation" width="100%" style="background:#f8fafc;padding:24px 0">
-<tr><td align="center">
-<table role="presentation" width="600" style="max-width:600px;width:100%">
-
-  <!-- Header -->
-  <tr><td style="padding:0 0 20px">
-    <table role="presentation" width="100%" style="background:linear-gradient(135deg,#1e293b 0%,#334155 100%);border-radius:14px;overflow:hidden">
-      <tr><td style="padding:28px 24px">
-        <div style="font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">Superdots</div>
-        <div style="font-size:22px;font-weight:700;color:#fff;margin-bottom:2px">Articoli Pubblicati Oggi</div>
-        <div style="font-size:13px;color:#94a3b8">${today}</div>
-      </td></tr>
-    </table>
-  </td></tr>
-
-  <!-- Count badge -->
-  <tr><td style="padding:0 0 20px">
-    <div style="background:#fff;border-radius:10px;padding:14px 18px;border:1px solid #e5e7eb;text-align:center">
-      <span style="font-size:28px;font-weight:700;color:#22c55e">${articles.length}</span>
-      <span style="font-size:14px;color:#6b7280;margin-left:8px">articol${articles.length === 1 ? 'o' : 'i'} pubblicat${articles.length === 1 ? 'o' : 'i'}</span>
+  const countCard = `
+  <tr><td style="padding:0 0 22px">
+    <div style="background:${C.surface};border:1px solid ${C.border};border-radius:12px;padding:20px 18px;text-align:center">
+      <span style="font-family:${BRAND.font.display};font-size:36px;font-weight:700;color:${C.accent};line-height:1">${articles.length}</span>
+      <span style="font-family:${BRAND.font.body};font-size:14px;color:${C.muted};margin-left:10px">articol${pluralSuffix} pubblicat${pluralSuffix} oggi</span>
     </div>
-  </td></tr>
+  </td></tr>`;
 
-  <!-- Articles table -->
-  <tr><td style="padding:0 0 20px">
-    <table role="presentation" width="100%" style="border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb">
-      ${articleRows}
-    </table>
-  </td></tr>
+  const articleRowsHtml = articles.map(a => issueRow({
+    main: `<a href="${a.url}" style="color:${C.text};text-decoration:none;font-weight:600">${a.title}</a>`,
+    subline: a.department ? `${a.department}${a.useCase ? ' · ' + a.useCase : ''}` : '',
+    right: `<a href="${a.url}" style="color:${C.accent};text-decoration:none;font-weight:600">Leggi &rarr;</a>`,
+  })).join('');
 
-  <!-- Footer -->
-  <tr><td style="padding:24px 0 0">
-    <div style="text-align:center;font-size:11px;color:#9ca3af;padding-top:16px;border-top:1px solid #e5e7eb">
-      Superdots Published Articles &middot; Generato automaticamente
-    </div>
-  </td></tr>
+  const articlesSection = section({
+    title: 'Articoli',
+    count: articles.length,
+    body: rowTable(articleRowsHtml),
+  });
 
-</table>
-</td></tr>
-</table>
-</body></html>`;
+  const content = [countCard, articlesSection].join('\n');
+
+  const html = renderEmail({
+    preheader: `${articles.length} articol${pluralSuffix} pubblicat${pluralSuffix} oggi su superdots.sh`,
+    eyebrow: 'Published Articles',
+    title: 'Articoli Pubblicati Oggi',
+    subtitle: today,
+    content,
+    footerNote: 'Digest giornaliero della publicazione',
+  });
 
   const transporter = createSmtpTransport(nodemailer);
 
