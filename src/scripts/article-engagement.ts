@@ -191,9 +191,21 @@ function initOutboundClicks(meta: ArticleMeta) {
 	);
 }
 
+function initRedditLanding(meta: ArticleMeta) {
+	const params = new URLSearchParams(window.location.search);
+	if (params.get('utm_source') !== 'reddit') return;
+	track('reddit_landing', {
+		campaign: params.get('utm_campaign') || '',
+		content: params.get('utm_content') || '',
+		medium: params.get('utm_medium') || '',
+		...meta,
+	});
+}
+
 function init() {
 	const meta = getArticleMeta();
 	if (!meta) return;
+	initRedditLanding(meta);
 	initScrollMilestones(meta);
 	initDwellTime(meta);
 	initInternalLinkClicks(meta);
