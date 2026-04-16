@@ -18,6 +18,7 @@ faqs:
     answer: "A business continuity plan covers how your entire organization keeps operating during any disruption — staff communications, customer notifications, supply chain alternatives. A disaster recovery plan (DRP) is a subset focused specifically on restoring IT systems and data after a technical failure. BCP is broader; DRP goes deeper on the technology side. Start with a BCP — it forces you to identify which systems matter before you plan how to recover them."
   - question: "Do small businesses need a business continuity plan?"
     answer: "If any of these apply, yes: you have contracts with enterprise clients (many now require vendor BCPs during procurement), you are pursuing SOC 2 or ISO 27001 certification, your business has a single critical point of failure, or you carry business interruption insurance. For everyone else: the AI-assisted process now takes a day instead of a week, and one prevented crisis pays for that time many times over."
+heroImage: "/images/blog/ai-business-continuity-plan.webp"
 ---
 
 Most small businesses don't have a business continuity plan. Not for lack of risk — for lack of a realistic process to create one.
