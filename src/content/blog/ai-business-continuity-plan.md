@@ -23,7 +23,7 @@ heroImage: "/images/blog/ai-business-continuity-plan.webp"
 
 Most small businesses don't have a business continuity plan. Not for lack of risk — for lack of a realistic process to create one.
 
-The standard BCP guide assumes you have a dedicated risk team, a compliance consultant, and two weeks to populate a 40-page Word template. That's not realistic for the operations manager at a 30-person company who also handles vendor contracts, office logistics, and whatever caught fire this week.
+The standard BCP guide assumes you have a dedicated risk team, a compliance consultant, and two weeks to populate a 40-page Word template. That's not realistic for the operations manager at a 30-person company who also handles [vendor contracts](/blog/ai-vendor-management/), office logistics, and whatever caught fire this week.
 
 AI changes that. Here's how to write a complete, five-section BCP in three to four hours using Claude or ChatGPT — with exact prompts for each section.
 
@@ -84,7 +84,7 @@ Paste this prompt, replacing the bracketed sections with your company's specific
 
 **What good output looks like:** specific, plausible threats — not "hackers might attack." The highest-scoring threats become the focus of Section 3.
 
-**What you must add manually:** your actual cyber insurance coverage, your building's redundancy (backup generator, secondary ISP), and any industry-specific regulatory risks the AI may not know about.
+**What you must add manually:** your actual cyber insurance coverage, your building's redundancy (backup generator, secondary ISP), and any industry-specific [regulatory risks](/blog/ai-compliance-tools/) the AI may not know about.
 
 ---
 
