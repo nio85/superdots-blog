@@ -10,25 +10,16 @@
 import nodemailer from 'nodemailer';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
+import matter from 'gray-matter';
 import {
   BLOG_ROOT, SITE_URL,
   MAIL_FROM, TO_EMAIL,
   createSmtpTransport,
 } from './config.mjs';
 import { renderEmail, section, issueRow, rowTable, BRAND } from './lib/email-shell.mjs';
+import { sendBrandedMail } from './lib/email-safety.mjs';
 
 const CONTENT_DIR = join(BLOG_ROOT, 'src', 'content', 'blog');
-
-function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-  const fm = {};
-  for (const line of match[1].split('\n')) {
-    const m = line.match(/^(\w+):\s*"?([^"]*)"?$/);
-    if (m) fm[m[1]] = m[2];
-  }
-  return fm;
-}
 
 function getArticlesPublishedToday() {
   const today = new Date().toISOString().slice(0, 10);
@@ -36,18 +27,19 @@ function getArticlesPublishedToday() {
   const articles = [];
 
   for (const file of files) {
-    const content = readFileSync(join(CONTENT_DIR, file), 'utf-8');
-    const fm = parseFrontmatter(content);
-    if (fm.pubDate && fm.pubDate.slice(0, 10) === today) {
-      const slug = file.replace(/\.md$/, '');
-      articles.push({
-        title: fm.title || slug,
-        slug,
-        url: `${SITE_URL}/blog/${slug}/`,
-        department: fm.department || '',
-        useCase: fm.useCase || '',
-      });
-    }
+    const raw = readFileSync(join(CONTENT_DIR, file), 'utf-8');
+    const { data: fm } = matter(raw);
+    if (!fm.pubDate) continue;
+    const pubDay = (fm.pubDate instanceof Date ? fm.pubDate.toISOString() : String(fm.pubDate)).slice(0, 10);
+    if (pubDay !== today) continue;
+    const slug = file.replace(/\.md$/, '');
+    articles.push({
+      title: fm.title || slug,
+      slug,
+      url: `${SITE_URL}/blog/${slug}/`,
+      department: fm.department || '',
+      useCase: fm.useCase || '',
+    });
   }
 
   return articles.sort((a, b) => a.title.localeCompare(b.title));
@@ -111,12 +103,16 @@ async function main() {
 
   const subject = `Superdots — ${articles.length} articol${articles.length === 1 ? 'o' : 'i'} pubblicat${articles.length === 1 ? 'o' : 'i'} oggi (${today})`;
 
-  const info = await transporter.sendMail({
-    from: `"Superdots" <${MAIL_FROM}>`,
-    to: TO_EMAIL,
-    subject,
-    text,
-    html,
+  const info = await sendBrandedMail({
+    transporter,
+    script: 'send-published-articles',
+    message: {
+      from: `"Superdots" <${MAIL_FROM}>`,
+      to: TO_EMAIL,
+      subject,
+      text,
+      html,
+    },
   });
 
   console.log(`Email sent: ${info.messageId}`);

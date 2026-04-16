@@ -13,3 +13,4 @@ syndication-tracker.json
 
 # Backups
 resend-audience-backup-*.json
+logs/
