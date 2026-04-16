@@ -21,11 +21,11 @@ faqs:
 heroImage: "/images/blog/ai-win-loss-analysis-tools.webp"
 ---
 
-Here's a number worth sitting with: enterprise sales teams using structured win/loss analysis improve their win rates by 15-25% within two quarters. The tools that deliver those results — Klue, Crayon, Chorus — start at $15,000/year and assume you have a full-time competitive intelligence person, a call recording stack, and a six-figure CRM contract.
+Most small sales teams skip win/loss analysis because they assume it requires Gong. It doesn't.
 
-Most small sales teams look at that price tag and decide win/loss analysis isn't for them.
+Gong, Klue, Chorus — they start at $15,000/year and assume you have a full-time competitive intelligence person, a call recording stack, and a six-figure CRM contract. That's why small teams look at the category and write it off.
 
-That's the wrong conclusion. The insight is valuable at any scale. The delivery mechanism just needs to be different.
+That's the wrong call. The insight is valuable at any scale. The delivery mechanism just needs to match your size.
 
 A 5-person sales team in 2026 can run meaningful win/loss analysis for under $100/month — or free, if they're already on HubSpot. This guide covers the tools that actually make sense for small teams, what they cost, and how to run your first analysis in an afternoon.
 
