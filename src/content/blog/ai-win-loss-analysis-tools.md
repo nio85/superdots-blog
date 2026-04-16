@@ -18,6 +18,7 @@ faqs:
     answer: "You need: closed-lost reason (even a basic dropdown in your CRM), deal size, competitor named in the deal, sales cycle length, and the rep who worked it. With just these 5 fields and 20+ closed deals, you can run meaningful analysis using Claude or a spreadsheet-based template without any dedicated software."
   - question: "Is win/loss analysis worth it for a 5-person sales team?"
     answer: "Yes, if you're losing more than 40% of deals. For a 5-rep team closing 8-12 deals per month, even a 10% improvement in win rate adds meaningful revenue. The ROI threshold is lower than most think: at $15,000 ACV, converting one additional deal per month justifies $150/month in analysis tooling."
+heroImage: "/images/blog/ai-win-loss-analysis-tools.webp"
 ---
 
 Here's a number worth sitting with: enterprise sales teams using structured win/loss analysis improve their win rates by 15-25% within two quarters. The tools that deliver those results — Klue, Crayon, Chorus — start at $15,000/year and assume you have a full-time competitive intelligence person, a call recording stack, and a six-figure CRM contract.
