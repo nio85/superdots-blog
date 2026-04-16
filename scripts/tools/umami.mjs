@@ -35,10 +35,13 @@ Commands:
   countries [--days N]       Country breakdown
   devices [--days N]         Device breakdown
   active                     Currently active visitors
+  utm-stats --source <x>    Sessions/pageviews filtered by utm_source
+  funnel --source <x>       Composite quality report for a traffic source
 
 Options:
   --json         Output as JSON
   --days <n>     Lookback period in days (default 7)
+  --source <x>   UTM source to filter (e.g. reddit, google)
   --site <id>    Website UUID (default from UMAMI_WEBSITE_ID env)
   --help         Show this help`;
 
@@ -177,6 +180,73 @@ async function main() {
       const data = await api(`/api/websites/${siteId}/active`);
       if (jsonOutput) { out(data); break; }
       log(`Active visitors: ${data[0]?.x ?? data?.x ?? JSON.stringify(data)}`);
+      break;
+    }
+    case 'utm-stats': {
+      const source = getOpt('source');
+      if (!source) err('Missing --source. Example: --source reddit');
+      const queries = await api(`/api/websites/${siteId}/metrics?startAt=${startAt}&endAt=${endAt}&type=query`);
+      const filtered = (queries || []).filter(q => {
+        const p = new URLSearchParams(q.x);
+        return p.get('utm_source') === source || p.get('ref') === source;
+      });
+      const totalSessions = filtered.reduce((sum, q) => sum + (q.y || 0), 0);
+      const result = { source, days, sessions: totalSessions, queries: filtered.slice(0, 50) };
+      if (jsonOutput) { out(result); break; }
+      log(`UTM stats for source="${source}" (last ${days} days):`);
+      log(`  Sessions: ${totalSessions}`);
+      for (const q of filtered.slice(0, 20)) {
+        log(`  ${String(q.y).padStart(5)}  ${q.x}`);
+      }
+      break;
+    }
+    case 'funnel': {
+      const source = getOpt('source');
+      if (!source) err('Missing --source. Example: --source reddit');
+      const [pageMetrics, eventData, statsData] = await Promise.all([
+        api(`/api/websites/${siteId}/metrics?startAt=${startAt}&endAt=${endAt}&type=query`),
+        api(`/api/websites/${siteId}/metrics?startAt=${startAt}&endAt=${endAt}&type=event`),
+        api(`/api/websites/${siteId}/stats?startAt=${startAt}&endAt=${endAt}`),
+      ]);
+      const utmSessions = (pageMetrics || [])
+        .filter(q => {
+          const p = new URLSearchParams(q.x);
+          return p.get('utm_source') === source;
+        })
+        .reduce((sum, q) => sum + (q.y || 0), 0);
+      const events = {};
+      for (const ev of (eventData || [])) {
+        events[ev.x] = (events[ev.x] || 0) + (ev.y || 0);
+      }
+      const totalPageviews = statsData?.pageviews?.value || 1;
+      const scrollEvents = events['reading_progress'] || 0;
+      const newsletterSignups = events['newsletter_signup'] || 0;
+      const redditLandings = events['reddit_landing'] || 0;
+      const read75Estimate = Math.round(scrollEvents * 0.25);
+      const scroll75Rate = utmSessions > 0 ? Math.min(1, read75Estimate / utmSessions) : 0;
+      const signupRate = utmSessions > 0 ? newsletterSignups / utmSessions : 0;
+      const qualityScore = utmSessions > 0
+        ? Math.round((scroll75Rate * 0.5 + signupRate * 0.3 + Math.min(1, utmSessions / totalPageviews) * 0.2) * 100) / 100
+        : 0;
+      const result = {
+        source, days,
+        sessions: utmSessions,
+        reddit_landings: redditLandings,
+        total_site_pageviews: totalPageviews,
+        scroll_events: scrollEvents,
+        read_75_estimate: read75Estimate,
+        scroll_75_rate: Math.round(scroll75Rate * 100) / 100,
+        newsletter_signups: newsletterSignups,
+        signup_rate: Math.round(signupRate * 10000) / 100,
+        quality_score: qualityScore,
+      };
+      if (jsonOutput) { out(result); break; }
+      log(`Funnel report for source="${source}" (last ${days} days):`);
+      log(`  Sessions from ${source}: ${utmSessions}`);
+      log(`  Reddit landings: ${redditLandings}`);
+      log(`  Scroll 75%+ rate: ${Math.round(scroll75Rate * 100)}%`);
+      log(`  Newsletter signups: ${newsletterSignups} (${result.signup_rate}%)`);
+      log(`  Quality score: ${qualityScore}`);
       break;
     }
     default:

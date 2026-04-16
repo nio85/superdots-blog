@@ -62,6 +62,7 @@ export const AGENTS = {
   LEGAL_EXPERT: '3e55560f-f486-45d3-8a52-7a31036003d7',
   GROWTH_ANALYST: '18fb8cff-39cc-429a-bbfc-5005e064d536',
   PROGRAM_MANAGER: '3d6e6cdc-863c-4fec-a676-9b06dd3b3e89',
+  PAID_ADS_OPERATOR: '19b24c1f-efa3-456e-b5be-7cd4d6b776a1',
 };
 
 // --- SMTP (Resend) ---

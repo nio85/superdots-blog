@@ -119,6 +119,30 @@ export async function onRequestGet(context) {
 		}
 	}
 
+	// Reddit Conversions API: report newsletter confirmation as Lead event
+	if (env.REDDIT_PIXEL_ID && env.REDDIT_CONVERSION_TOKEN) {
+		try {
+			await fetch('https://ads-api.reddit.com/api/v2/conversions/events/' + env.REDDIT_PIXEL_ID, {
+				method: 'POST',
+				headers: {
+					'Authorization': 'Bearer ' + env.REDDIT_CONVERSION_TOKEN,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					test_mode: false,
+					events: [{
+						event_at: new Date().toISOString(),
+						event_type: { tracking_type: 'Lead' },
+						user: { email },
+						event_metadata: { currency: 'EUR', value_decimal: 0 },
+					}],
+				}),
+			});
+		} catch (e) {
+			console.error('Reddit CAPI error:', e);
+		}
+	}
+
 	return successPage();
 }
 
