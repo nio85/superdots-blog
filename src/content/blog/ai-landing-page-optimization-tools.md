@@ -18,6 +18,7 @@ faqs:
     answer: "Yes. VWO, Convert.com, and most dedicated A/B testing platforms work by injecting a JavaScript snippet into any existing page — Webflow, WordPress, HubSpot, or a custom build. They don't require you to migrate into their ecosystem. Mutiny works the same way: one script tag on your existing page, connected to firmographic data sources."
   - question: "How long does it take to see results from AI landing page optimization?"
     answer: "Expect 2–4 weeks minimum to reach statistical significance on a typical paid campaign page with 1,000–2,000 visitors per month. AI tools like Unbounce Smart Traffic accelerate this by routing traffic to the better variant earlier, but they still need volume. Heatmap data from Clarity or Hotjar is available within days and often points to the right hypothesis before you run a single test."
+heroImage: "/images/blog/ai-landing-page-optimization-tools.webp"
 ---
 
 Most paid campaigns fail at the wrong layer.
