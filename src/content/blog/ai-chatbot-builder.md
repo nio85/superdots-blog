@@ -104,7 +104,7 @@ Tidio combines live chat, AI chatbot, and email marketing in one platform. It's 
 
 ### Freshdesk Freddy AI — best for Freshworks users
 
-Freddy AI integrates across the Freshworks suite — Freshdesk, Freshsales, and Freshservice. It handles ticket routing, suggested responses, and customer-facing chatbot interactions.
+Freddy AI integrates across the Freshworks suite — Freshdesk, Freshsales, and Freshservice. It handles ticket routing, suggested responses, and customer-facing chatbot interactions. For teams that want AI guidance on the outbound side of Freshsales (deal recommendations, next-best-action prompts), that's a different category: [AI guided selling platforms](/blog/ai-guided-selling/) rather than chatbot builders.
 
 **Strengths:** Native integration with Freshworks products. Both agent-assist and customer-facing AI. Good value compared to Zendesk for smaller teams.
 
