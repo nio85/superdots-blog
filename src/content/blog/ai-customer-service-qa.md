@@ -131,7 +131,7 @@ With AI scoring every interaction, you see the trend line. You coached Agent A o
 
 ## Compliance Monitoring at Scale
 
-For teams in regulated industries, AI customer service QA is not a nice-to-have. It is a risk management tool.
+For teams in regulated industries, AI customer service QA is not a nice-to-have. It is a [risk management](/blog/ai-risk-management/) tool.
 
 ### What AI compliance monitoring catches
 
@@ -157,11 +157,11 @@ When AI customer service QA scores drop for a specific product or topic, it ofte
 
 ### Staffing and scheduling patterns
 
-QA scores often correlate with staffing levels. Scores drop during understaffed shifts. Scores drop when agents handle more than a certain number of interactions per hour. AI QA data gives you the evidence to justify staffing changes.
+QA scores often correlate with staffing levels. Scores drop during understaffed shifts. Scores drop when agents handle more than a certain number of interactions per hour. AI QA data gives you the evidence to justify [staffing and scheduling changes](/blog/ai-employee-scheduling/).
 
 ### Training program effectiveness
 
-Roll out a new training module and watch the scores. Did empathy scores improve across the team? Did compliance accuracy increase? AI QA gives you a before-and-after measurement that training teams rarely had access to.
+Roll out a new [employee training module](/blog/ai-employee-training/) and watch the scores. Did empathy scores improve across the team? Did compliance accuracy increase? AI QA gives you a before-and-after measurement that training teams rarely had access to.
 
 ### Customer experience signals
 

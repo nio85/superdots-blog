@@ -178,7 +178,7 @@ The full prompt template is in the [Free Option First](#the-free-option-first-bu
 
 Klue is the market leader in competitive intelligence and the first tool on most enterprise shortlists. Its AI "Compete Agent" monitors competitor websites, reviews, job postings, and press releases, surfaces changes, and drafts battlecard updates automatically. The "Ask Klue" feature lets reps query competitive intelligence in plain language — "What do customers say about [competitor's] pricing?" — and get an AI-synthesized answer.
 
-The real differentiator isn't the battlecards — it's the win-loss integration. Klue connects competitive signals to deal outcomes, so product marketing can see whether "lost to Highspot" correlates with a specific objection and update the battlecard accordingly. It integrates with Gong and Chorus to capture competitor mentions from recorded sales calls.
+The real differentiator isn't the battlecards — it's the [win-loss analysis](/blog/ai-win-loss-analysis-tools/) integration. Klue connects competitive signals to deal outcomes, so product marketing can see whether "lost to Highspot" correlates with a specific objection and update the battlecard accordingly. It integrates with [conversation intelligence tools](/blog/ai-conversation-intelligence/) like Gong and Chorus to capture competitor mentions from recorded sales calls.
 
 With 428+ G2 reviews at 4.8/5, Klue has the highest review volume and rating in the category.
 
@@ -259,7 +259,7 @@ Writing a great battlecard is half the job. The other half is making sure reps c
 
 **Slack integration (the default that works):** Both Klue and Crayon push battlecard updates to a designated Slack channel and can surface the right card when a competitor is mentioned in a conversation. For free workflows, a pinned message in your `#sales-team` channel with battlecard links is the lowest-friction option. Reps don't need to search — they open the channel and the links are there.
 
-**Salesforce embedding:** Klue, Crayon, and Kompyte all embed battlecards inside Salesforce deal records. When a rep opens an opportunity and sees a competitor listed, the relevant battlecard section appears in the sidebar. This is the highest-value integration for active deals — the right intel surfaces at the exact moment it's needed.
+**Salesforce embedding:** Klue, Crayon, and Kompyte all embed battlecards inside Salesforce deal records. When a rep opens an opportunity and sees a competitor listed, the relevant battlecard section appears in the [CRM](/blog/ai-crm-tools/) sidebar. This is the highest-value integration for active deals — the right intel surfaces at the exact moment it's needed.
 
 **Notion or Google Drive for free workflows:** If you're using the ChatGPT/Claude approach, a single Notion page titled "Competitive Battlecards" with one section per competitor works well. Paste the link in your team's Slack bio or pin it in the sales channel. The key is one canonical location that everyone knows — multiple versions in multiple drives guarantee someone uses the wrong one.
 

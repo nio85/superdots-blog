@@ -58,7 +58,7 @@ Greptile indexes your entire codebase and builds a code graph, so its reviews ha
 
 ### Qodo (formerly CodiumAI)
 
-Qodo focuses on connecting reviews to intent. It integrates with Jira and Azure DevOps to validate that code changes actually match the ticket requirements. It also runs automated workflows — scope validation, missing test detection, risk scoring — before a human ever looks at the PR.
+Qodo focuses on connecting reviews to intent. It integrates with [project management tools](/blog/ai-project-management-features-guide/) like Jira and Azure DevOps to validate that code changes actually match the ticket requirements. It also runs automated workflows — scope validation, missing test detection, risk scoring — before a human ever looks at the PR.
 
 **Best for:** Teams that want reviews tied to project management and requirements validation.
 
@@ -104,7 +104,7 @@ Spend the first two weeks actively dismissing bad suggestions. The tools improve
 After a month, look at:
 
 - **Time to first review.** Did it decrease?
-- **Production bugs.** Are fewer issues making it past review?
+- **Production [bugs](/blog/ai-debugging-guide/).** Are fewer issues making it past review?
 - **Review throughput.** Are more PRs being merged per week?
 - **Developer satisfaction.** Do reviewers feel like the tool is helping or creating busywork?
 
@@ -116,7 +116,7 @@ Be honest with your team about the limits:
 
 **Business logic validation.** The AI doesn't know that orders over $10,000 need a different approval workflow. It reviews code, not requirements (though tools like Qodo are starting to bridge this gap).
 
-**Team context.** "We tried this approach last quarter and it caused three incidents" — that knowledge lives in people's heads, not in the code.
+**Team context.** "We tried this approach last quarter and it caused three [production incidents](/blog/ai-incident-management/)" — that knowledge lives in people's heads, not in the code.
 
 **Mentorship.** Code review is how junior developers learn. AI suggestions are helpful, but they don't replace the conversation where a senior developer explains *why* a different approach is better.
 

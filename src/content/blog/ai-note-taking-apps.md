@@ -47,7 +47,7 @@ This matters because the value of notes isn't in taking them. It's in finding an
 
 ### Notion AI — best for team knowledge management
 
-Notion was already a powerful workspace. With AI, it becomes a self-organizing knowledge base. Ask questions about your notes, generate summaries across multiple pages, and auto-fill databases from meeting notes.
+Notion was already a powerful workspace. With AI, it becomes a self-organizing [knowledge base](/blog/ai-knowledge-base-for-teams/). Ask questions about your notes, generate summaries across multiple pages, and auto-fill databases from meeting notes.
 
 **Strengths:** Combines notes, docs, databases, and [project management](/blog/ai-project-management-features-guide/) in one workspace. AI works across all your Notion content. Strong collaboration features for teams. Hundreds of integrations.
 
@@ -134,7 +134,7 @@ For more on meeting-specific workflows, see [AI meeting notes, summaries, and ac
 
 1. Set up a quick-capture workflow (browser extension, mobile app, keyboard shortcut)
 2. Use AI tagging to automatically categorize notes by topic
-3. Enable linked notes/backlinks to build a knowledge graph over time
+3. Enable linked notes/backlinks to build a [knowledge graph](/blog/ai-knowledge-base-generator/) over time
 4. Schedule weekly AI summaries of new notes to spot patterns
 
 ### For daily work
@@ -154,7 +154,7 @@ Taking notes is the easy part. The hard part is making them work for you later.
 
 **Review weekly.** Set aside 15 minutes each week to review AI-generated summaries of your notes. You'll spot patterns, follow up on forgotten ideas, and clear out noise.
 
-**Connect notes to action.** Link notes to tasks in your project management tool. A note about a customer complaint should connect to the support ticket. A meeting note should connect to the action items in your task list.
+**Connect notes to action.** Link notes to tasks in your project management tool. A note about a customer complaint should connect to the [support ticket](/blog/ai-ticket-routing/). A meeting note should connect to the action items in your task list.
 
 For more on building productive AI-powered workflows, see our [AI productivity guide](/blog/ai-productivity-guide/).
 

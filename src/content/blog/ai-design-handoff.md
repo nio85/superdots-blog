@@ -93,7 +93,7 @@ The tools worth knowing here include Locofy, Builder.io's AI, Anima, and GitHub 
 
 v0 deserves a separate mention because it flips the handoff model. Instead of translating a finished Figma design into code, v0 generates UI components from text prompts or screenshot imports. Describe what you want — "a pricing card with three tiers, toggle for monthly/annual, highlighted popular plan" — and v0 produces a working React component with Tailwind CSS.
 
-For design handoff specifically, v0 works best in two scenarios. First, early prototyping: a designer shares a rough mockup, a developer feeds it to v0, and gets a functional starting point in seconds instead of hours. Second, component exploration: when the design is not finalized, v0 lets developers generate multiple variations quickly and discuss concrete code with designers rather than abstract concepts.
+For design handoff specifically, v0 works best in two scenarios. First, early prototyping: a designer shares a [wireframe or rough mockup](/blog/ai-wireframing-tools/), a developer feeds it to v0, and gets a functional starting point in seconds instead of hours. Second, component exploration: when the design is not finalized, v0 lets developers generate multiple variations quickly and discuss concrete code with designers rather than abstract concepts.
 
 The limitation is fidelity. v0 will not reproduce a complex, polished Figma design pixel-for-pixel the way Locofy or Anima will. It trades precision for speed. Teams that need exact design reproduction should use traditional handoff tools. Teams that value rapid iteration and are comfortable with "close enough, then refine" will find v0 surprisingly useful in the handoff workflow.
 
@@ -125,7 +125,7 @@ There is no single platform that handles all four jobs well. Most teams combine 
 
 **For spec generation and basic code output:** Figma's Dev Mode with AI features enabled is the most accessible starting point. If your team already lives in Figma, the barrier to entry is low. The code output quality is moderate — good for structure, not always clean in practice.
 
-**For serious code generation:** Locofy and Anima are built specifically for design-to-code. They produce framework-aware output and support more configuration. Worth it if you are building a new product or component library from scratch. (See our full breakdown of [AI design tools](/blog/best-ai-tools-for-design) for more options.)
+**For serious [code generation](/blog/ai-code-generation-tools/):** Locofy and Anima are built specifically for design-to-code. They produce framework-aware output and support more configuration. Worth it if you are building a new product or component library from scratch. (See our full breakdown of [AI design tools](/blog/best-ai-tools-for-design) for more options.)
 
 **For token management:** Supernova and Token Studio handle the extraction and sync workflow. Supernova in particular has strong CI/CD integration — tokens update in your codebase automatically when the Figma variables change.
 
@@ -145,7 +145,7 @@ The annotation work does not disappear entirely. Complex interactions, motion sp
 
 The biggest shift is receiving useful artifacts rather than just screenshots.
 
-Instead of opening a Figma file and manually inspecting values, developers receive a spec and a code file. Their job becomes reviewing, adjusting, and integrating — not transcribing. Senior developers often find this awkward at first because they are used to full ownership of the implementation from scratch. The adjustment is learning to trust AI-generated code as a solid draft rather than a liability.
+Instead of opening a Figma file and manually inspecting values, developers receive a spec and a code file. Their job becomes reviewing, adjusting, and integrating — not transcribing. Senior developers often find this awkward at first because they are used to full ownership of the implementation from scratch. The adjustment is learning to trust AI-generated code as a solid draft — a shift familiar to teams already using [AI pair programming](/blog/ai-pair-programming/) tools.
 
 The visual regression step also changes review culture. Pixel accuracy becomes enforceable rather than aspirational. Deviations from design get surfaced automatically, which means fewer late-stage design reviews catching implementation errors.
 

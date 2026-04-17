@@ -113,7 +113,7 @@ The AI features handle variance analysis and alert you when actuals diverge from
 
 Drivetrain focuses on connecting financial and operational data into a single planning model. Its AI capabilities include automated consolidation across business units, scenario planning, and natural language report generation.
 
-Where it stands out is in revenue modeling — connecting pipeline data from your CRM to your financial model so that revenue projections update automatically as deals move. This is particularly useful for companies where finance and sales need to stay aligned on forecast assumptions.
+Where it stands out is in revenue modeling — connecting [CRM pipeline data](/blog/ai-crm-tools/) to your financial model so that [revenue projections](/blog/ai-sales-forecasting/) update automatically as deals move. This is particularly useful for companies where finance and sales need to stay aligned on forecast assumptions.
 
 **Pricing:** Enterprise pricing. Expect $1,500–$3,000+/month for most teams.
 

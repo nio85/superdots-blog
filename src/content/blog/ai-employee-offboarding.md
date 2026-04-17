@@ -39,11 +39,11 @@ Offboarding suffers from a structural problem: it is reactive, not planned. Onbo
 
 The consequences are predictable.
 
-**Security gaps are the most dangerous.** IBM's Cost of a Data Breach report consistently shows that compromised credentials are among the top attack vectors. Former employees with lingering access are a live threat — not because they are necessarily malicious, but because those accounts are orphaned. No one is monitoring them. No one will notice unusual activity until it is too late.
+**Security gaps are the most dangerous.** IBM's Cost of a Data Breach report consistently shows that compromised credentials are among the top attack vectors. Former employees with lingering access are a live [security vulnerability](/blog/ai-security-scanning/) — not because they are necessarily malicious, but because those accounts are orphaned. No one is monitoring them. No one will notice unusual activity until it is too late.
 
 **Knowledge walks out the door.** Every employee carries institutional knowledge that was never written down. The client who only responds to one specific contact. The workaround for a legacy system nobody else understands. The unwritten rule about how finance approves exceptions. When someone leaves without structured knowledge transfer, that context disappears. The team spends months rediscovering what they already knew.
 
-**Compliance exposure accumulates quietly.** In regulated industries — finance, healthcare, legal — access controls are not optional. Audit trails matter. An employee with continued access after termination is a compliance finding waiting to happen. The fine comes later; the exposure exists the moment offboarding is incomplete.
+**Compliance exposure accumulates quietly.** In regulated industries — finance, healthcare, legal — access controls are not optional. Audit trails matter. An employee with continued access after termination is a [compliance](/blog/ai-compliance-tools/) finding waiting to happen. The fine comes later; the exposure exists the moment offboarding is incomplete.
 
 **Equipment and licenses bleed money.** A forgotten software seat costs $50 a month. Multiply that by turnover at scale. Equipment that was not returned costs replacement value. These are recoverable costs that simply go unrecovered because nobody tracked them.
 
@@ -152,7 +152,7 @@ Reducing security exposure and compliance risk is the obvious value driver. But 
 
 **HR time savings.** A manual offboarding takes 4-6 hours of HR staff time when accounting for coordination, follow-up, and documentation. AI-automated offboarding reduces that to under an hour for standard departures. At any reasonable volume of turnover, the time savings compound quickly.
 
-**License and equipment recovery.** Organizations that track this consistently find 5-15% of their SaaS spend is tied to accounts that should have been deprovisioned. Tighten offboarding and that number drops close to zero.
+**License and equipment recovery.** Organizations that track this consistently find 5-15% of their [SaaS vendor spend](/blog/ai-vendor-management/) is tied to accounts that should have been deprovisioned. Tighten offboarding and that number drops close to zero.
 
 **Faster backfill and team recovery.** When institutional knowledge is captured and structured, the team recovers faster. The new hire or internal transfer filling the role starts with documentation, not a blank slate. Time-to-productivity shortens meaningfully — and your [recruiting pipeline](/blog/ai-for-recruiting) moves faster when the role is well-documented for the job description.
 
