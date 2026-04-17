@@ -139,7 +139,7 @@ When application changes alter database workload patterns — new queries appear
 
 "New query detected after deployment v2.45.0: `SELECT * FROM user_sessions WHERE ... `. Running 500 times/minute with 200ms average execution time. No index exists for the filter condition. Estimated impact: 12% increase in database CPU utilization."
 
-Catching this on deployment day is the difference between a proactive fix and a Friday night incident.
+Catching this on deployment day is the difference between a proactive fix and a Friday night [production incident](/blog/ai-incident-management/).
 
 ## AI for Natural Language to SQL
 
@@ -163,7 +163,7 @@ The AI:
 
 **Customer support** who needs to look up account details. "Show me all orders for customer X in the last 30 days."
 
-**Executives** who want real-time answers instead of scheduled reports. "What is our current monthly recurring revenue by plan tier?"
+**Executives** who want real-time [business intelligence](/blog/ai-business-intelligence-tools/) answers instead of scheduled reports. "What is our current monthly recurring revenue by plan tier?"
 
 ### Accuracy and safety considerations
 
@@ -188,7 +188,7 @@ AI can analyze a proposed migration and predict its impact:
 
 ### Cross-database compatibility
 
-Migrating between database systems (PostgreSQL to MySQL, SQL Server to PostgreSQL) is notoriously painful. AI tools can:
+Migrating between database systems (PostgreSQL to MySQL, SQL Server to PostgreSQL) shares many challenges with [application code migrations](/blog/ai-code-migration/) — both involve translating syntax and handling incompatible features. AI tools can:
 
 - Analyze your schema and flag incompatible features
 - Suggest equivalent alternatives for features that do not translate directly

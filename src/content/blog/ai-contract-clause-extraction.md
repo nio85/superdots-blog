@@ -61,7 +61,7 @@ Indemnification language is among the highest-stakes content in any commercial c
 
 AI extraction surfaces these differences instantly. Instead of reading each indemnification clause from scratch, your lawyer reviews a table showing who indemnifies whom, for what categories of loss, with what exclusions, and subject to what caps. The variations jump out immediately.
 
-This is especially valuable during due diligence. When a company is being acquired, its indemnification posture across hundreds of customer and vendor contracts affects deal risk directly.
+This is especially valuable during due diligence. When a company is being acquired, its indemnification posture across hundreds of customer and vendor contracts affects deal risk directly — making systematic [risk management](/blog/ai-risk-management/) essential.
 
 ### Termination clauses
 
@@ -91,7 +91,7 @@ AI extraction makes these comparisons easy. You get a clear view of your liabili
 
 ### Force majeure clauses
 
-Force majeure provisions got serious attention after 2020. The question is what events trigger the clause, and whether supply chain disruptions, regulatory changes, or government-mandated shutdowns qualify.
+Force majeure provisions got serious attention after 2020. The question is what events trigger the clause, and whether supply chain disruptions, [regulatory changes](/blog/ai-regulatory-compliance-monitoring/), or government-mandated shutdowns qualify.
 
 AI identifies whether a force majeure clause exists, extracts the triggering events, and flags contracts where the clause is absent or unusually narrow. For supply-dependent businesses, knowing which vendor contracts have enforceable force majeure provisions is material risk information.
 
@@ -139,7 +139,7 @@ The extraction is not the end — it is the beginning of better decision-making.
 
 - Prioritize contracts for renegotiation based on unfavorable terms
 - Track renewal dates and termination windows proactively
-- Respond to due diligence questions in hours instead of days
+- Respond to [legal research](/blog/ai-legal-research/) and due diligence questions in hours instead of days
 - Audit compliance with company-wide contractual obligations
 - Identify where you carry more liability exposure than you realized
 

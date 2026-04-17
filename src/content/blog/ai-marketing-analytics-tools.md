@@ -167,9 +167,9 @@ Forget vanity metrics. Here are the numbers that matter — and why AI is better
 
 **4. Email revenue per send.** Not open rates. Not click rates. Revenue per [email sent](/blog/ai-email-marketing), by segment. This is the metric that tells you whether your email program is actually making money or just generating activity.
 
-**5. Content-to-conversion path.** Which blog posts, landing pages, or resources appear in the journey of customers who actually buy? AI can trace these multi-touch paths across sessions in ways that basic analytics misses.
+**5. Content-to-conversion path.** Which blog posts, [landing pages](/blog/ai-landing-page-builder/), or resources appear in the journey of customers who actually buy? AI can trace these multi-touch paths across sessions in ways that basic analytics misses.
 
-**6. Anomaly detection — what changed this week.** A 10% drop in conversion rate that goes unnoticed for three weeks costs far more than the $40/month tool that would have flagged it on day one.
+**6. Anomaly detection — what changed this week.** A 10% drop in [conversion rate](/blog/ai-conversion-rate-optimization-tools/) that goes unnoticed for three weeks costs far more than the $40/month tool that would have flagged it on day one.
 
 **7. Channel saturation.** At some point, doubling your Google Ads budget stops doubling your results. AI pattern detection helps identify diminishing returns before you've burned through budget to discover them manually.
 
@@ -211,7 +211,7 @@ Honesty check. AI analytics tools have real limitations:
 
 **They don't replace strategic thinking.** AI can tell you that your LinkedIn CPA is $45 and your Google Ads CPA is $28. It can't tell you that your ideal customers live on LinkedIn and that the cheaper Google clicks are mostly tire-kickers who never convert to revenue. That judgment requires understanding your business.
 
-**Attribution remains imperfect.** Every analytics tool — AI-powered or not — struggles with attribution in a world of privacy changes, cookie restrictions, and cross-device behavior. AI makes attribution better, not perfect. Treat all attribution data as directional, not absolute.
+**Attribution remains imperfect.** Every analytics tool — AI-powered or not — struggles with attribution in a world of privacy changes, cookie restrictions, and cross-device behavior. AI [marketing attribution tools](/blog/ai-marketing-attribution-tools/) make attribution better, not perfect. Treat all attribution data as directional, not absolute.
 
 The right way to think about AI marketing analytics: it handles the data collection and pattern detection that used to require a full-time analyst. The strategic interpretation still needs a human who understands the business. For Jen's three-person team in Austin, that's the real win — not replacing the marketing brain, but freeing it from the spreadsheet.
 
