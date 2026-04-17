@@ -34,6 +34,9 @@ Commands:
   resume-campaign <id>                   Resume a campaign
   list-ad-groups [campaignId]            List ad groups (optionally filter by campaign)
   create-ad-group <json>                 Create ad group (JSON: {name, campaign_id, bid_type, bid_strategy, ...})
+  update-ad-group <id> <json>            Update ad group fields
+  pause-ad-group <id>                    Pause an ad group
+  resume-ad-group <id>                   Resume an ad group
   list-ads [adGroupId]                   List ads (optionally filter by ad group)
   create-ad <json>                       Create ad (JSON: {name, ad_group_id, post_id, configured_status})
   pause-ad <adId>                        Pause an ad
@@ -374,6 +377,34 @@ async function main() {
         log(`  ${r.DATE || r.date}: ${r.IMPRESSIONS || 0} impr, ${r.CLICKS || 0} clicks, €${spend.toFixed(2)}`);
       }
       log(`  Total spend: €${totalSpend.toFixed(2)}`);
+      break;
+    }
+
+    case 'update-ad-group': {
+      const id = positional[1];
+      if (!id) err('Missing ad group ID');
+      const body = parseJsonArg(2);
+      const data = await api('PATCH', `/ad_groups/${id}`, { data: body });
+      if (jsonOutput) { out(data); break; }
+      log(`Ad group ${id} updated.`);
+      break;
+    }
+
+    case 'pause-ad-group': {
+      const id = positional[1];
+      if (!id) err('Missing ad group ID');
+      const data = await api('PATCH', `/ad_groups/${id}`, { data: { configured_status: 'PAUSED' } });
+      if (jsonOutput) { out(data); break; }
+      log(`Ad group ${id} paused.`);
+      break;
+    }
+
+    case 'resume-ad-group': {
+      const id = positional[1];
+      if (!id) err('Missing ad group ID');
+      const data = await api('PATCH', `/ad_groups/${id}`, { data: { configured_status: 'ACTIVE' } });
+      if (jsonOutput) { out(data); break; }
+      log(`Ad group ${id} resumed.`);
       break;
     }
 

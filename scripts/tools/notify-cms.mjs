@@ -14,7 +14,7 @@
  *   --title      Notification title
  *   --body       Short preview text (≤120 chars, shown in list view)
  *   --detail     Full markdown text (shown in detail view). Use @file to read from file.
- *   --agent      Agent name (e.g. "Paid Ads Operator")
+ *   --agent      Agent name (e.g. "Reddit Ads Specialist")
  *   --url        Deep link URL (default: "/routines")
  *   --metadata   JSON metadata object
  *   --no-push    Skip Web Push, only write to history file
@@ -48,7 +48,7 @@ Options:
   --title <text>    Title (required)
   --body <text>     Short preview ≤120 chars (required)
   --detail <text>   Full markdown for detail view. Use @<filepath> to read from file.
-  --agent <name>    Agent name (default: "Paid Ads Operator")
+  --agent <name>    Agent name (default: "Reddit Ads Specialist")
   --url <path>      Deep link (default: "/routines")
   --metadata <json> JSON metadata object
   --no-push         Only write to history, skip Web Push
@@ -74,7 +74,7 @@ const type = getOpt('type');
 const title = getOpt('title');
 const body = getOpt('body');
 let detail = getOpt('detail');
-const agentName = getOpt('agent') || 'Paid Ads Operator';
+const agentName = getOpt('agent') || 'Reddit Ads Specialist';
 const url = getOpt('url') || '/routines';
 const metadataRaw = getOpt('metadata');
 
