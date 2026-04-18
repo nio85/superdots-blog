@@ -128,7 +128,7 @@ Not all AI RFP tools are equal. Here is what separates the good from the great.
 
 **Collaboration features.** RFP response is a team sport. Look for real-time co-editing, SME assignment (route specific questions to the right expert), review workflows, and comment threads. The tool should reduce email, not create more of it.
 
-**CRM integration.** The tool should connect to your CRM (Salesforce, HubSpot) so you can track which RFPs are in progress, link responses to opportunities, and measure win rates by response quality.
+**CRM integration.** The tool should connect to your [CRM](/blog/ai-crm-tools/) (Salesforce, HubSpot) so you can track which RFPs are in progress, link responses to opportunities, and measure win rates by response quality.
 
 **Compliance and version control.** When regulations change or products update, you need to find and update every affected answer in your library. Good tools make this easy with bulk update features and expiration alerts on time-sensitive content.
 
@@ -136,7 +136,7 @@ Not all AI RFP tools are equal. Here is what separates the good from the great.
 
 **Start with your content library.** Before you worry about AI features, collect your best material. Pull together your last 20-30 RFP responses, security questionnaires, product documentation, and sales collateral. Deduplicate, update outdated answers, and organize by topic.
 
-**Assign content owners.** Every major content category (security, compliance, product, legal, pricing) needs an owner responsible for keeping answers accurate and current. Without owners, the library decays within months.
+**Assign content owners.** Every major content category (security, compliance, product, [legal](/blog/ai-contract-management/), pricing) needs an owner responsible for keeping answers accurate and current. Without owners, the library decays within months.
 
 **Run your first RFP through both processes.** For your first AI-assisted RFP, also complete it the traditional way. Compare the two. You will see where the AI saves time and where it needs better content to draw from.
 

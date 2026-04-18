@@ -76,7 +76,7 @@ This data turns internal comms from an art into a science. You know what works, 
 
 ### From one-way to conversational
 
-AI-powered feedback tools make two-way communication practical at scale. Chatbots answer employee questions about announcements instantly. Sentiment analysis on feedback channels identifies emerging concerns. Automated follow-up shows employees that their input led to visible changes.
+AI-powered feedback tools make two-way communication practical at scale. [HR chatbots](/blog/ai-hr-chatbot/) answer employee questions about announcements instantly. Sentiment analysis on feedback channels identifies emerging concerns. Automated follow-up shows employees that their input led to visible changes.
 
 The result is a communications loop, not a communications pipeline.
 
@@ -133,7 +133,7 @@ The comms team gets a real-time dashboard showing sentiment by department, locat
 
 For global organizations, language is a fundamental barrier to effective internal comms.
 
-**How it works:** AI translation tools produce communications in employees' preferred languages while maintaining tone, context, and cultural nuance. This goes beyond Google Translate-level accuracy — modern AI handles idioms, cultural references, and professional register.
+**How it works:** [AI translation tools](/blog/ai-translation-tools-business/) produce communications in employees' preferred languages while maintaining tone, context, and cultural nuance. This goes beyond Google Translate-level accuracy — modern AI handles idioms, cultural references, and professional register.
 
 **Example:** A global company with employees in 12 countries publishes a quarterly strategy update. Instead of having one English version that non-native speakers struggle with (or skip entirely), AI produces localized versions in each relevant language. Not just translated — adapted. The examples reference local context. The metrics highlighted are relevant to each region.
 

@@ -31,7 +31,7 @@ Here's what actually works — and what to skip.
 
 ### 1. Automated status updates and reports
 
-This is the highest-value AI feature in any PM tool. Status reporting is the task everyone hates and no one does well — and it's the one where AI has a clear, immediate ROI.
+This is the highest-value AI feature in any PM tool. [Status reporting](/blog/ai-report-generator/) is the task everyone hates and no one does well — and it's the one where AI has a clear, immediate ROI.
 
 **What it does**: AI scans task updates, comments, completion rates, and blockers across your project. It generates a weekly status summary — what got done, what's behind schedule, what needs attention — in natural language.
 
@@ -55,7 +55,7 @@ Instead of manually creating tasks after a meeting, AI can extract action items 
 **How to use it**:
 
 - **ClickUp**: Paste text, select "Create tasks with AI." It identifies action items, suggests assignees based on context, and sets deadlines.
-- **[Notion](https://notion.so)**: AI can convert any block of text into a structured project with tasks and subtasks. Especially useful for teams that use Notion for both documentation and project tracking.
+- **[Notion](https://notion.so)**: AI can convert any block of text into a structured project with tasks and subtasks. Especially useful for teams that use Notion for both [documentation](/blog/ai-document-management/) and project tracking.
 - **[Linear](https://linear.app)**: Type a natural language description and AI creates the issue with labels, priority, and project assignment. [Jira](https://www.atlassian.com/software/jira) also offers AI-powered issue creation with smart field recommendations.
 
 **Pro tip**: Combine this with an [AI meeting note-taker](/blog/ai-meeting-notes-summaries-action-items/). The note-taker extracts action items from the conversation, and your PM tool turns them into tasks. Zero manual work between meeting and task board.
