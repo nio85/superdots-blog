@@ -17,7 +17,8 @@ faqs:
   - question: "Is Databox good for operations teams?"
     answer: "Databox is well-suited to operations teams that use Shopify, QuickBooks, HubSpot, or Google Analytics as primary data sources, since its 100+ native integrations cover these tools. Its pre-built KPI templates are a genuine time-saver. The limitation is formula-based custom KPIs — teams with complex custom metrics (like weighted OTIF across multiple warehouses) will find Klipfolio or Tableau more flexible."
   - question: "What is OTIF and how do I track it with AI?"
-    answer: "OTIF stands for On-Time In-Full — the percentage of orders delivered on time and complete, with no missing items. It is the single most watched KPI in distribution and fulfillment. Industry standard is 95%+ for B2B and 98%+ for retail. To track it with AI, connect your order management system to a dashboard tool like Databox or Looker Studio, set an alert threshold (e.g. below 93%), and let the system flag drops automatically rather than reviewing raw data manually."
+    answer: "OTIF stands for On-Time In-Full — the percentage of orders delivered on time and complete, with no missing items. It is the single most watched KPI in distribution and fulfillment. Most B2B distribution teams target 95%+ and retail fulfillment teams 98%+, though thresholds vary by sector and contract. To track it with AI, connect your order management system to a dashboard tool like Databox or Looker Studio, set an alert threshold (e.g. below 93%), and let the system flag drops automatically rather than reviewing raw data manually."
+heroImage: "/images/blog/ai-kpi-dashboard-software.webp"
 ---
 
 Marco runs logistics for a mid-size furniture manufacturer in Brescia. Every Monday morning he opens three spreadsheets: one Google Sheet shared with the warehouse, one exported from the ERP, one he built himself two years ago and no longer fully trusts. By 9am he still doesn't know if Friday's shipment hit its SLA.
@@ -52,7 +53,7 @@ These aren't the only metrics that matter. But they're the five that most operat
 
 ### 1. OTIF — On-Time In-Full
 
-The percentage of orders delivered on time and complete. Industry standard: **95%+ for B2B distribution**, **98%+ for retail fulfillment**.
+The percentage of orders delivered on time and complete. Most B2B distribution teams target **95%+**; retail fulfillment teams typically aim for **98%+** (benchmarks widely cited by APICS and supply chain consultancies, though thresholds vary by sector and contract terms).
 
 OTIF is the KPI where AI alerting earns its keep fastest. A drop from 96% to 92% over four days might not be visible until the weekly review — by which point a client has already noticed. An AI dashboard flags the drop on day two.
 
@@ -62,11 +63,11 @@ Units processed per hour or per shift. The baseline varies by industry, but what
 
 ### 3. Defect rate
 
-The percentage of units failing quality checks. Benchmark: **below 2% for most manufacturing and assembly operations**, below 0.5% for food and pharma. Defect rate is one KPI where AI pattern recognition adds genuine value — correlating defect spikes with shift changes, machine cycles, or supplier batches is something humans find tedious and machines handle well.
+The percentage of units failing quality checks. A commonly used target is **below 2% for general manufacturing and assembly**, with stricter thresholds in food and pharma (often 0.5% or lower under ISO 22000 and FDA frameworks). Your own historical baseline is the most relevant benchmark once you have 3+ months of data. Defect rate is one KPI where AI pattern recognition adds genuine value — correlating defect spikes with shift changes, machine cycles, or supplier batches is something humans find tedious and machines handle well.
 
 ### 4. Inventory turnover
 
-How many times your inventory cycles in a year. Target range: **8–12x per year for product-based businesses**. Below 6x usually means overstock or slow-moving SKUs. Above 15x may signal stockout risk. AI dashboards can trigger restocking alerts before you hit zero — and if you're building demand signals into that calculation, [AI demand forecasting tools](/blog/ai-demand-forecasting-tools-small-business) can feed directly into this metric.
+How many times your inventory cycles in a year. A commonly cited target range is **8–12x per year** for product-based businesses (per supply chain analyst benchmarks from firms like Gartner and IBISWorld, though the right number varies by industry and margin profile). Below 6x usually signals overstock or slow-moving SKUs. Above 15x may signal stockout risk. AI dashboards can trigger restocking alerts before you hit zero — and if you're building demand signals into that calculation, [AI demand forecasting tools](/blog/ai-demand-forecasting-tools-small-business) can feed directly into this metric.
 
 ### 5. Fulfillment SLA compliance
 
