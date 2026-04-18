@@ -47,7 +47,7 @@ The harder tests — pricing structure, product positioning, the core value prop
 
 So companies optimize button colors on a page with a broken value proposition. They run a hundred tests and move the needle three percent.
 
-Ronny Kohavi, who led large-scale experimentation at both Amazon and Microsoft, estimated in documented research that only about one-third of A/B tests at Amazon showed positive results. The real value of experimentation culture isn't getting each test right. It's running enough tests, fast enough, that the one-third that work compound into a meaningful advantage.
+Ronny Kohavi, who led large-scale experimentation at both Amazon and Microsoft, estimated in *Trustworthy Online Controlled Experiments* (Cambridge University Press, 2020) that only about one-third of A/B tests at Amazon showed positive results. The real value of experimentation culture isn't getting each test right. It's running enough tests, fast enough, that the one-third that work compound into a meaningful advantage.
 
 The human behavior A/B testing reveals isn't a story about data. It's a story about what humans choose to measure when measurement is optional. We measure what's easy. We avoid what's uncomfortable. We call it optimization.
 
