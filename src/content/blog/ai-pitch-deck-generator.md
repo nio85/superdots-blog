@@ -51,7 +51,7 @@ Not every AI tool that makes slides is good at pitch decks. Here is what separat
 
 **Narrative flow guidance.** The best tools ask about your business before generating slides. They want to know your problem, solution, market, and traction — then they structure the deck around your answers. Tools that just take a topic and generate slides will miss the story.
 
-**Financial slide support.** Pitch decks need revenue projections, unit economics, and funding allocation charts. A good tool helps you format these clearly, even if you provide the numbers yourself.
+**Financial slide support.** Pitch decks need [revenue projections](/blog/ai-financial-forecasting/), unit economics, and funding allocation charts. A good tool helps you format these clearly, even if you provide the numbers yourself.
 
 **Export options.** PDF for email, PowerPoint for editing, and web links for sharing. Investors have preferences — some want a PDF attachment, others want a link they can click through at their own pace.
 
@@ -149,7 +149,7 @@ AI gives you the slides. You need to know what goes on them. Here is the 10-12 s
 
 **Slide 7 — Product.** Screenshots, a demo GIF, or a product walkthrough. Investors want to see what you have built. If your product is live, show it. If it is in development, show the prototype.
 
-**Slide 8 — Competition.** A competitive landscape chart (not a feature matrix that conveniently puts you in the top-right corner of everything). Be honest about competitors and clear about your differentiation.
+**Slide 8 — Competition.** A [competitive landscape](/blog/ai-battlecard-tools-sales-teams/) chart (not a feature matrix that conveniently puts you in the top-right corner of everything). Be honest about competitors and clear about your differentiation.
 
 **Slide 9 — Team.** Photos, names, titles, and one line about why each person is the right person for this role. Relevant experience matters more than pedigree.
 

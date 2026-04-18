@@ -134,7 +134,7 @@ At even the conservative end, that's 15 hours per week — almost two full workd
 
 - **Proposals:** Create a master proposal template with AI. Customize it per client in 10 minutes instead of writing from scratch.
 - **Follow-ups:** AI drafts follow-up emails after meetings and calls. You review and send.
-- **Lead research:** Before a sales call, ask AI to summarize the company's recent news, challenges, and opportunities.
+- **Lead research:** Before a [sales call](/blog/ai-for-sales-call-prep/), ask AI to summarize the company's recent news, challenges, and opportunities.
 
 ### Operations
 

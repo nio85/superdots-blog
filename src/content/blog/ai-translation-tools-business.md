@@ -119,7 +119,7 @@ Smartling is an enterprise translation management platform that combines AI tran
 |---|---|
 | Everyday business documents | DeepL Pro |
 | Email and quick translations | DeepL or Google Translate |
-| Marketing content localization | Claude or ChatGPT |
+| [Marketing content](/blog/ai-content-repurposing-tools/) localization | Claude or ChatGPT |
 | Multilingual meetings | Microsoft Translator |
 | Website/product localization | Smartling |
 | Many languages including rare ones | Google Cloud Translation |
@@ -156,7 +156,7 @@ Legal translation requires precision:
 3. **Cross-check:** Compare the translation against the source for completeness
 4. **Sign-off:** Legal team approves before use
 
-Never rely on AI alone for contracts, regulatory filings, or legal correspondence.
+Never rely on AI alone for [contracts](/blog/ai-contract-review-non-lawyers/), regulatory filings, or legal correspondence.
 
 ## Custom glossaries: the key to consistent translation
 
@@ -181,7 +181,7 @@ DeepL Pro, Google Cloud Translation, and Smartling all support custom glossaries
 
 **Not testing with native speakers.** AI translation is good, but not perfect. Before publishing customer-facing content in a new language, have a native speaker review it. Even a 15-minute review catches embarrassing errors.
 
-**Translating everything.** Not all content needs translation. Prioritize customer-facing content, sales materials, and support documentation. Internal emails and meeting notes can stay in the original language if the team understands it.
+**Translating everything.** Not all content needs translation. Prioritize customer-facing content, sales materials, and [support documentation](/blog/ai-help-desk-software/). Internal emails and meeting notes can stay in the original language if the team understands it.
 
 **Ignoring right-to-left languages.** Arabic, Hebrew, and other RTL languages need layout adjustments, not just translation. Plan for this in your website and document templates.
 

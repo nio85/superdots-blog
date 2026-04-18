@@ -86,7 +86,7 @@ If your company runs on Microsoft 365, Teams transcription is already available 
 
 ### Sonix — best for multilingual teams
 
-Sonix supports 40+ languages with automated translation between them. Upload audio or video in one language, get transcripts and translations in another.
+Sonix supports 40+ languages with [automated translation](/blog/ai-translation-tools-business/) between them. Upload audio or video in one language, get transcripts and translations in another.
 
 **Strengths:** 40+ language support, automated translation, batch processing for large volumes, strong API for custom integrations.
 
@@ -118,7 +118,7 @@ Most tools follow the same setup pattern:
 
 1. **Create an account** and connect your calendar (Google Calendar or Outlook).
 2. **Set auto-join rules.** Decide which meetings the tool should automatically join — all meetings, only meetings you organize, or meetings with specific keywords.
-3. **Configure integrations.** Connect Slack for automatic transcript sharing, your CRM for sales call logging, or your project management tool for action item syncing.
+3. **Configure integrations.** Connect Slack for automatic transcript sharing, your CRM for sales call logging, or your [project management tool](/blog/ai-project-management-features-guide/) for action item syncing.
 4. **Add custom vocabulary.** Input your company name, product names, and industry terms so the AI gets them right from the start.
 5. **Run a test meeting.** Do a 10-minute test call to verify audio quality, speaker identification, and summary generation before rolling out to the team.
 

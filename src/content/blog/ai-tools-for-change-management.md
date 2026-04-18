@@ -25,7 +25,7 @@ heroImage: "/images/blog/ai-tools-for-change-management.webp"
 
 Most operations managers run change initiatives with the wrong set of tools for each phase.
 
-They use the same general project management software to plan a CRM rollout as they do to track office supply orders. They write stakeholder emails manually while the same AI that drafts their meeting summaries sits idle. They declare the change "done" when the software goes live, then wonder why three months later half the team is still using the old process.
+They use the same general [project management software](/blog/ai-project-management-features-guide/) to plan a CRM rollout as they do to track office supply orders. They write stakeholder emails manually while the same AI that drafts their meeting summaries sits idle. They declare the change "done" when the software goes live, then wonder why three months later half the team is still using the old process.
 
 The problem isn't a lack of technology. It's a lack of clarity about which AI tool does what job at which point in the change process.
 
@@ -118,7 +118,7 @@ Loom lets you record async screen-capture training videos. The AI features do th
 - Produces a searchable transcript
 - Generates follow-up tasks from the video content
 
-For a CRM migration, instead of scheduling 8 live training sessions, you record once. The AI-generated summary and chapters mean employees can watch only the sections relevant to their role.
+For a CRM migration, instead of scheduling 8 live [training sessions](/blog/ai-employee-training/), you record once. The AI-generated summary and chapters mean employees can watch only the sections relevant to their role.
 
 The free plan limits video length to 5 minutes (sufficient for most how-to clips). The Business plan removes length limits and adds advanced AI features.
 

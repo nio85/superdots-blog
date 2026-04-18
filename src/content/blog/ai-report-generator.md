@@ -48,7 +48,7 @@ The average knowledge worker spends 2.5 hours per day on reporting and documenta
 
 Not every tool calling itself an "AI report generator" does the same thing. Some generate text summaries. Some build visual dashboards. Some do both. Here is what actually matters:
 
-**Data source connections.** The tool needs to pull from where your data lives — Google Sheets, Excel, SQL databases, CRMs, marketing platforms. If you have to export a CSV and upload it manually every time, you are not saving much effort.
+**Data source connections.** The tool needs to pull from where your data lives — Google Sheets, Excel, SQL databases, [CRMs](/blog/ai-crm-tools/), marketing platforms. If you have to export a CSV and upload it manually every time, you are not saving much effort.
 
 **Natural language input.** You should be able to describe what you want in plain English: "Show me revenue by region for Q1 with a comparison to Q4." If the tool requires you to configure a dashboard from scratch, it is a BI tool, not an AI report generator.
 
@@ -152,7 +152,7 @@ Which report takes the most time to build? Which one do you dread every week or 
 
 - Weekly status reports
 - Monthly close summaries
-- Pipeline reviews
+- [Pipeline reviews](/blog/ai-sales-forecasting/)
 - Board decks
 - Client performance reports
 

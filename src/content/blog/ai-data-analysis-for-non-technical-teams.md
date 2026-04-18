@@ -82,7 +82,7 @@ These questions would require statistical analysis to answer manually. AI handle
 
 ## A practical example
 
-Say you are in HR and you have an employee satisfaction survey with 500 responses. Here is what AI analysis looks like:
+Say you are in [HR](/blog/ai-for-hr/) and you have an employee satisfaction survey with 500 responses. Here is what AI analysis looks like:
 
 **Step 1**: Upload the data to your tool of choice (or open it in Excel/Sheets).
 
@@ -107,7 +107,7 @@ Total time: 20 minutes instead of a full afternoon.
 
 ## Who benefits most
 
-If your job involves reporting, budgets, surveys, or any kind of recurring analysis, AI data tools will save you significant time every week. You do not need to become a data scientist. You just need to know what questions to ask.
+If your job involves [reporting](/blog/ai-report-generator/), budgets, surveys, or any kind of recurring analysis, AI data tools will save you significant time every week. You do not need to become a data scientist. You just need to know what questions to ask.
 
 Start with your most tedious recurring report. Let AI handle the first draft. Refine from there.
 
