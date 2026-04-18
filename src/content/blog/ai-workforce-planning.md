@@ -1,6 +1,6 @@
 ---
-title: 'AI Workforce Planning and Headcount Modeling: A Practical Guide'
-description: "Compare Visier, Workday Adaptive, and Mosaic for HR teams. AI automates headcount modeling, predicts attrition, and models multiple hiring scenarios — with real pricing data."
+title: 'AI Workforce Planning Tools (2026): Visier, Workday & Mosaic Compared'
+description: "Visier, Workday Adaptive, and Mosaic reviewed with real pricing. Compare headcount modeling and attrition forecasting for HR teams — practical guide."
 pubDate: "2026-03-17T07:26:22Z"
 author: "Superdots Team"
 department: "hr"
