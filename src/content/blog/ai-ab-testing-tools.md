@@ -18,6 +18,7 @@ faqs:
     answer: "Optimizely is better for engineering-led teams that need server-side experimentation, feature flags, and CI/CD integration. VWO is better for marketing teams running visual A/B tests on landing pages without developer involvement. For most marketing teams under 500,000 monthly visitors, VWO's free or $199/month plan delivers more practical value than Optimizely's equivalent tier. If experimentation is owned by product/engineering rather than marketing, Optimizely's architecture fits better."
   - question: "What is multi-armed bandit testing?"
     answer: "Multi-armed bandit testing is a statistical method that simultaneously tests multiple variants and automatically shifts more traffic toward the better-performing option as data accumulates — rather than waiting until the full test period ends to pick a winner. The name comes from the slot machine analogy: given several machines with unknown payout rates, the algorithm learns which to pull more often without committing entirely to any one choice. This reduces revenue lost during a test compared to traditional A/B testing, at the cost of statistical purity and clean significance calculations."
+heroImage: "/images/blog/ai-ab-testing-tools.webp"
 ---
 
 In 1998, a software engineer at Amazon named Greg Linden had an idea.
