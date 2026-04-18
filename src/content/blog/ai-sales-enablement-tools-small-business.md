@@ -18,6 +18,7 @@ faqs:
     answer: "A CRM stores deal and contact data and manages pipeline stages. A sales enablement platform manages the content, training, and messaging reps use during the sales process — playbooks, battlecards, email templates, call recordings. Most teams under 10 reps don't need a separate enablement platform; a CRM with built-in sequences handles most use cases at a fraction of the cost."
   - question: "Can I use ChatGPT or Claude as a free sales enablement tool?"
     answer: "Yes. Claude or ChatGPT can generate cold email sequences, objection responses, discovery question scripts, and custom battlecards from your product documentation in under 30 minutes. Pair either with a $8/month Notion AI subscription for a persistent playbook system. Combined cost: under $30/month. This covers most enablement needs for teams under 5 reps."
+heroImage: "/images/blog/ai-sales-enablement-tools-small-business.webp"
 ---
 
 Most small sales teams are paying for sales enablement software they don't need.
