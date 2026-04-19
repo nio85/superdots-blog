@@ -189,18 +189,18 @@ function confirmationEmailHtml(confirmUrl) {
   <tr><td style="background-color:#0B1222;padding:20px 24px;border-radius:12px 12px 0 0;">
     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr><td style="vertical-align:middle;">
-      <img src="https://superdots.sh/brand/superdots-logo-300x300-dark.png" width="24" height="24" alt="" style="display:inline-block;vertical-align:middle;border:0;">
+      <img src="https://superdots.sh/brand/superdots-logo-300x300-dark.png" width="36" height="36" alt="" style="display:inline-block;vertical-align:middle;border:0;">
       <span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:700;color:#FFFFFF;vertical-align:middle;margin-left:8px;letter-spacing:-0.01em;">superdots</span>
     </td></tr>
     </table>
   </td></tr>
 
   <!-- Body -->
-  <tr><td style="background-color:#FFFFFF;padding:40px 40px 32px;">
-    <h1 style="margin:0 0 12px;font-family:'Space Grotesk',Arial,sans-serif;font-size:26px;font-weight:700;color:#0B1222;letter-spacing:-0.02em;line-height:1.2;">
+  <tr><td style="background-color:#0F172A;padding:40px 40px 32px;">
+    <h1 style="margin:0 0 12px;font-family:'Space Grotesk',Arial,sans-serif;font-size:26px;font-weight:700;color:#F1F5F9;letter-spacing:-0.02em;line-height:1.2;">
       Confirm your subscription<span style="color:#E8363B;">.</span>
     </h1>
-    <p style="margin:0 0 28px;font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.6;color:#475569;">
+    <p style="margin:0 0 28px;font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.6;color:#94A3B8;">
       You signed up for the Superdots newsletter — practical AI for every team. One click to confirm:
     </p>
     <table cellpadding="0" cellspacing="0" role="presentation">
@@ -210,7 +210,7 @@ function confirmationEmailHtml(confirmUrl) {
       </a>
     </td></tr>
     </table>
-    <p style="margin:28px 0 0;font-family:'Inter',Arial,sans-serif;font-size:14px;line-height:1.5;color:#94A3B8;">
+    <p style="margin:28px 0 0;font-family:'Inter',Arial,sans-serif;font-size:14px;line-height:1.5;color:#475569;">
       If you didn't sign up, you can safely ignore this email. You won't receive anything else.
     </p>
   </td></tr>
