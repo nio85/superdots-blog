@@ -167,33 +167,62 @@ function bufferToHex(buffer) {
 
 function confirmationEmailHtml(confirmUrl) {
 	return `<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f8f9fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f8f9fa;padding:40px 20px;">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    #outlook a { padding:0; }
+    body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+    table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
+    img { border:0;height:auto;line-height:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#080E1A;">
+<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#080E1A;padding:32px 16px;">
 <tr><td align="center">
-<table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;">
-<tr><td style="padding:40px 40px 32px;">
-  <div style="display:inline-block;width:10px;height:10px;background:#E8363B;border-radius:50%;margin-bottom:16px;"></div>
-  <h1 style="margin:0 0 8px;font-size:24px;font-weight:700;color:#0B1222;letter-spacing:-0.02em;">
-    Confirm your subscription<span style="color:#E8363B">.</span>
-  </h1>
-  <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4b5563;">
-    You signed up for the Superdots newsletter. Click the button below to confirm:
-  </p>
-  <a href="${confirmUrl}" style="display:inline-block;background:#E8363B;color:#ffffff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;">
-    Confirm subscription
-  </a>
-  <p style="margin:24px 0 0;font-size:14px;line-height:1.5;color:#9ca3af;">
-    If you didn't sign up, you can safely ignore this email.
-  </p>
-</td></tr>
-<tr><td style="padding:24px 40px;border-top:1px solid #e5e7eb;">
-  <p style="margin:0;font-size:13px;color:#9ca3af;">
-    Superdots &mdash; Practical AI for every team.<br>
-    <a href="https://superdots.sh" style="color:#9ca3af;">superdots.sh</a>
-  </p>
-</td></tr>
+<table width="600" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px;width:100%;">
+
+  <!-- Header -->
+  <tr><td style="background-color:#0B1222;padding:20px 24px;border-radius:12px 12px 0 0;">
+    <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr><td style="vertical-align:middle;">
+      <img src="https://superdots.sh/brand/superdots-logo-300x300-dark.png" width="24" height="24" alt="" style="display:inline-block;vertical-align:middle;border:0;">
+      <span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:700;color:#FFFFFF;vertical-align:middle;margin-left:8px;letter-spacing:-0.01em;">superdots</span>
+    </td></tr>
+    </table>
+  </td></tr>
+
+  <!-- Body -->
+  <tr><td style="background-color:#FFFFFF;padding:40px 40px 32px;">
+    <h1 style="margin:0 0 12px;font-family:'Space Grotesk',Arial,sans-serif;font-size:26px;font-weight:700;color:#0B1222;letter-spacing:-0.02em;line-height:1.2;">
+      Confirm your subscription<span style="color:#E8363B;">.</span>
+    </h1>
+    <p style="margin:0 0 28px;font-family:'Inter',Arial,sans-serif;font-size:16px;line-height:1.6;color:#475569;">
+      You signed up for the Superdots newsletter — practical AI for every team. One click to confirm:
+    </p>
+    <table cellpadding="0" cellspacing="0" role="presentation">
+    <tr><td style="border-radius:8px;background-color:#E8363B;">
+      <a href="${confirmUrl}" style="display:inline-block;background:#E8363B;color:#ffffff;font-family:'Space Grotesk',Arial,sans-serif;font-size:16px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;">
+        Confirm subscription
+      </a>
+    </td></tr>
+    </table>
+    <p style="margin:28px 0 0;font-family:'Inter',Arial,sans-serif;font-size:14px;line-height:1.5;color:#94A3B8;">
+      If you didn't sign up, you can safely ignore this email. You won't receive anything else.
+    </p>
+  </td></tr>
+
+  <!-- Footer -->
+  <tr><td style="background-color:#0F172A;padding:24px 40px;border-radius:0 0 12px 12px;">
+    <p style="margin:0;font-family:'Inter',Arial,sans-serif;font-size:13px;line-height:1.6;color:#64748B;text-align:center;">
+      <strong style="color:#94A3B8;">Superdots</strong> &mdash; Practical AI for every team.<br>
+      <a href="https://superdots.sh" style="color:#64748B;">superdots.sh</a>
+    </p>
+  </td></tr>
+
 </table>
 </td></tr>
 </table>
