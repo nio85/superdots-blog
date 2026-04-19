@@ -57,8 +57,10 @@ const desc      = getFlag('--description') ?? '';
 const provider  = getFlag('--provider') ??
   (process.env.IDEOGRAM_API_KEY ? 'ideogram' : 'flux');
 
+const styleOverride = getFlag('--style');
+
 if (!platform || !slug || !title) {
-  console.error('Usage: generate-social-image.mjs --platform linkedin|facebook --slug <slug> --department <dept> --title "<title>" [--description "<desc>"] [--provider flux|ideogram] [--dry-run]');
+  console.error('Usage: generate-social-image.mjs --platform linkedin|facebook --slug <slug> --department <dept> --title "<title>" [--description "<desc>"] [--provider flux|ideogram] [--style <style-name>] [--dry-run]');
   process.exit(1);
 }
 
@@ -86,30 +88,80 @@ const PLATFORM_CONFIG = {
 
 const pc = PLATFORM_CONFIG[platform];
 
+// ── Style rotation ───────────────────────────────────────────────────────────
+
+function selectStyle() {
+  const styles = styleConfig.socialStyles;
+  if (!styles) return null;
+
+  // If explicitly requested, use that style
+  if (styleOverride) {
+    if (styles[styleOverride]) return { name: styleOverride, ...styles[styleOverride] };
+    console.error(`Warning: unknown style "${styleOverride}", auto-selecting.`);
+  }
+
+  // Auto-select: read recent drafts and avoid last 3 styles used
+  const recentStyles = [];
+  try {
+    const draftsRaw = readFileSync('/home/luca/superdots-cms/data/social-drafts.json', 'utf-8');
+    const drafts = JSON.parse(draftsRaw)
+      .filter(d => d.imageStyle && d.status !== 'failed')
+      .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+      .slice(0, 5);
+    for (const d of drafts) recentStyles.push(d.imageStyle);
+  } catch {}
+
+  const recentSet = new Set(recentStyles.slice(0, 3));
+  const candidates = Object.entries(styles)
+    .filter(([k]) => !k.startsWith('_'))
+    .filter(([name]) => !recentSet.has(name));
+
+  // If all styles were recently used, allow all
+  const pool = candidates.length > 0 ? candidates : Object.entries(styles).filter(([k]) => !k.startsWith('_'));
+
+  // Weighted random selection
+  const totalWeight = pool.reduce((s, [, cfg]) => s + (cfg.weight || 0.25), 0);
+  let r = Math.random() * totalWeight;
+  for (const [name, cfg] of pool) {
+    r -= cfg.weight || 0.25;
+    if (r <= 0) return { name, ...cfg };
+  }
+  return { name: pool[0][0], ...pool[0][1] };
+}
+
 // ── Prompt building ───────────────────────────────────────────────────────────
+
+let selectedStyleName = null;
 
 function buildSocialPrompt() {
   const deptCfg = styleConfig.departments[dept] || styleConfig.departments.marketing;
   const accent = deptCfg.accent;
 
-  // Social prompt is intentionally different from blog hero:
-  // - Bold, high-contrast, single dominant element
-  // - "Stop the scroll" energy, not atmospheric decoration
-  // - Red or teal as DOMINANT color, not just accent
-  const parts = [
-    'Bold graphic composition for social media feed.',
-    'Single dominant visual element, ultra high contrast.',
-    `Deep navy background (#0B1222).`,
-    pc.layoutHint,
-    `Dominant brand color: ${accent}. Use it as the PRIMARY color, not just an accent.`,
-    `Topic: ${title}.`,
-    desc ? `Context: ${desc.slice(0, 100)}.` : '',
-    `Visual style hint: ${deptCfg.promptHint}`,
-    'Stop-the-scroll energy. Bold, not atmospheric. Modern brand design aesthetic.',
-    'No text, no words, no letters, no logos, no watermarks.',
-    'Abstract but BOLD — confident shapes, strong composition, not vague or decorative.',
-  ];
+  // Select a visual style (rotates to avoid repetition)
+  const style = selectStyle();
+  selectedStyleName = style?.name || 'bold-geometric';
 
+  const parts = [];
+
+  if (style?.promptOverride) {
+    // Use style-specific opening instead of generic
+    parts.push(style.promptOverride);
+  } else {
+    parts.push('Bold graphic composition for social media feed.');
+    parts.push('Single dominant visual element, ultra high contrast.');
+    parts.push('Deep navy background (#0B1222) with subtle dot-grid texture overlay.');
+    parts.push('Warm radial red glow from bottom-left edge.');
+  }
+
+  parts.push(pc.layoutHint);
+  parts.push(`Dominant brand color: ${accent}. Use it as the PRIMARY color, not just an accent.`);
+  parts.push(`Topic: ${title}.`);
+  if (desc) parts.push(`Context: ${desc.slice(0, 100)}.`);
+  parts.push(`Visual style hint: ${deptCfg.promptHint}`);
+  parts.push('No text, no words, no letters, no logos, no watermarks.');
+  parts.push('Abstract but BOLD — confident shapes, strong composition, not vague or decorative.');
+
+  console.error(`[STYLE] Selected: ${selectedStyleName}`);
   return parts.filter(Boolean).join(' ');
 }
 
@@ -255,10 +307,12 @@ async function main() {
   }
 
   console.error(`CDN URL: ${cdnUrl}`);
-  console.error('\nDone. Pass this URL to social-draft.mjs --image-url');
+  console.error(`Style: ${selectedStyleName}`);
+  console.error('\nDone. Pass this URL to social-draft.mjs --image-url and --image-style');
 
-  // Print URL to stdout (agents capture this)
+  // Print URL and style to stdout (agents capture this)
   console.log(cdnUrl);
+  console.log(`style:${selectedStyleName}`);
 }
 
 main().catch(err => {

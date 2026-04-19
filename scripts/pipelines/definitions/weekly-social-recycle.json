@@ -1,0 +1,156 @@
+{
+  "pipeline": {
+    "name": "weekly-social-recycle",
+    "description": "Track 2 — Weekly evergreen article recycling for social media. Selects high-traffic articles not yet posted, creates social copy and images, schedules via hub.",
+
+    "vars": {
+      "date": "{{TODAY}}"
+    },
+
+    "idempotency": {
+      "query": "[{{date}}] Weekly social recycle",
+      "matchField": "title"
+    },
+
+    "parent": {
+      "title": "[{{date}}] Weekly social recycle",
+      "assignee": "GROWTH_ANALYST",
+      "priority": "medium",
+      "description": [
+        "## Weekly Social Recycle Pipeline",
+        "",
+        "Select 2-3 evergreen articles for social media recycling.",
+        "Use analytics data to choose the best-performing formats and time slots.",
+        "",
+        "Pipeline: Growth Analyst → Copywriter → Frontend Designer → Content Manager"
+      ]
+    },
+
+    "tasks": [
+      {
+        "id": "recycle_select",
+        "title": "[{{date}}] Social recycle — select articles",
+        "assignee": "GROWTH_ANALYST",
+        "status": "todo",
+        "priority": "medium",
+        "description": [
+          "## Select 2-3 evergreen articles for social recycling",
+          "",
+          "### Step 1 — Dedup",
+          "Check local drafts (`node social-draft.mjs list --json`) and Postiz posts to build the already-posted set.",
+          "Exclude articles published within the last 14 days.",
+          "",
+          "### Step 2 — Analytics",
+          "Run `node social-draft.mjs performance-report --json` to identify the best-performing format.",
+          "",
+          "### Step 3 — Selection",
+          "Use SerpBear/Umami to find top-traffic articles NOT in the already-posted set.",
+          "Select 2-3 candidates from ops/sales/marketing departments.",
+          "Prefer articles matching the best-performing format from Step 2.",
+          "",
+          "### Step 4 — Format diversity",
+          "At least 1 of 2-3 selected articles should use a non-image post format (carousel, link-only, or document).",
+          "Check `performance-report --json` postFormatPerformance to avoid over-indexing on one format.",
+          "Use the format selection matrix from AGENTS.md to match article content to optimal format.",
+          "",
+          "### Output",
+          "Comment on this task with the selected articles:",
+          "- Slug, title, department",
+          "- Recommended format (insight-stat / how-to / contrarian)",
+          "- Post format (image / carousel / link-only / document / text-only)",
+          "- Carousel template if applicable (key-takeaways / stat-highlight / step-by-step)",
+          "- Hook suggestion (most surprising stat or contrarian take)",
+          "- Suggested slots from `node social-draft.mjs suggest-slot --platform linkedin --json`"
+        ]
+      },
+      {
+        "id": "recycle_copy",
+        "title": "[{{date}}] Social recycle — write copy",
+        "assignee": "COPYWRITER",
+        "status": "blocked",
+        "priority": "medium",
+        "blockedBy": "recycle_select",
+        "description": [
+          "## Write social copy for recycled articles",
+          "",
+          "Blocked on [{{recycle_select.identifier}}] — wait for article selection.",
+          "",
+          "For each selected article:",
+          "1. Read the full article at `src/content/blog/<slug>.md`",
+          "2. Check the **post format** recommended in the selection task",
+          "3. Write LinkedIn copy — adjust length per format (see AGENTS.md format table)",
+          "4. Write Facebook copy — adjust length per format",
+          "5. If post format is `carousel` or `document`: also provide slide content JSON (see AGENTS.md)",
+          "6. If post format is `text-only`: write longer-form text (1200-1800 chars LinkedIn)",
+          "7. If post format is `link-only`: write shorter caption (400-600 chars LinkedIn)",
+          "8. Use the recommended format and hook suggestion from the selection task",
+          "",
+          "Post copy (and slide JSON if applicable) in a comment, then reassign to Frontend Designer."
+        ]
+      },
+      {
+        "id": "recycle_images",
+        "title": "[{{date}}] Social recycle — generate images",
+        "assignee": "FRONTEND_DESIGNER",
+        "status": "blocked",
+        "priority": "medium",
+        "blockedBy": "recycle_copy",
+        "description": [
+          "## Generate assets for recycled articles",
+          "",
+          "Blocked on [{{recycle_copy.identifier}}] — wait for copy.",
+          "",
+          "Check the **post format** from the selection task. Then for each article:",
+          "",
+          "### If post format = `image` (default)",
+          "1. Generate LinkedIn image (1200x630) and Facebook image (1080x1080)",
+          "2. Report CDN URLs and style names",
+          "",
+          "### If post format = `carousel`",
+          "1. Use `generate-social-carousel.mjs` with slide JSON from Copywriter",
+          "2. Report comma-separated CDN URLs for Content Manager to use as `--media-urls`",
+          "",
+          "### If post format = `document`",
+          "1. Use `generate-social-document.mjs` with slide JSON from Copywriter",
+          "2. Report PDF CDN URL for Content Manager to use as `--document-url`",
+          "",
+          "### If post format = `video`",
+          "1. Use `generate-social-video.mjs` with article title and department",
+          "2. Report video CDN URL for Content Manager to use as `--media-urls`",
+          "",
+          "### If post format = `link-only` or `text-only`",
+          "No assets needed. Comment 'No media generation needed' and reassign to Content Manager.",
+          "",
+          "Post asset URLs in a comment, then reassign to Content Manager."
+        ]
+      },
+      {
+        "id": "recycle_schedule",
+        "title": "[{{date}}] Social recycle — create drafts",
+        "assignee": "CONTENT_MANAGER",
+        "status": "blocked",
+        "priority": "medium",
+        "blockedBy": "recycle_images",
+        "description": [
+          "## Create social drafts in the hub",
+          "",
+          "Blocked on [{{recycle_images.identifier}}] — wait for assets.",
+          "",
+          "For each article, use the **post format** from the selection task:",
+          "1. Run `node social-draft.mjs suggest-slot --platform <platform> --json` for optimal time",
+          "2. Create drafts with format-specific flags (see AGENTS.md for full flag reference):",
+          "   - `image`: `--post-format image --image-url <url>`",
+          "   - `carousel`: `--post-format carousel --media-urls <url1>,<url2>,...`",
+          "   - `link-only`: `--post-format link-only --article-url https://superdots.sh/blog/<slug>`",
+          "   - `document`: `--post-format document --document-url <url>`",
+          "   - `video`: `--post-format video --media-urls <url>`",
+          "   - `text-only`: `--post-format text-only` (no media flags)",
+          "3. Include all metadata flags (--recommended-format, --hook-suggestion, --image-style, --issue-id)",
+          "4. Include `--issue-id` pointing to this parent pipeline task [{{_parent.identifier}}]",
+          "",
+          "Close this task with: 'Drafts created. Luca: approve at cms.superdots.sh/social.'"
+        ]
+      }
+    ]
+  }
+}
