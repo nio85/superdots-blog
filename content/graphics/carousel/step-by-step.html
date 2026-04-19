@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080,height=1080">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sd-red:       #E8363B;
+    --sd-teal:      #14B8A6;
+    --sd-amber:     #F59E0B;
+    --sd-navy:      #0B1222;
+    --sd-navy-mid:  #111827;
+    --sd-navy-light:#1E293B;
+    --sd-gray-400:  #94A3B8;
+    --sd-white:     #FFFFFF;
+    --accent:       var(--sd-red);
+  }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--sd-navy);
+    color: var(--sd-white);
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 80px;
+    position: relative;
+    background: var(--sd-navy);
+  }
+
+  /* ─── BRAND BACKGROUND EFFECTS ─── */
+
+  /* Dot grid pattern — echoes the Superdot brand mark (site signature) */
+  .slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.08) 1.5px, transparent 1.5px);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow elements — warm radial light (same as site PageHeader) */
+  .slide-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .slide-glow--primary {
+    bottom: -20%;
+    left: -10%;
+    background: radial-gradient(ellipse, rgba(232,54,59,0.12) 0%, transparent 70%);
+  }
+  .slide-glow--secondary {
+    top: -15%;
+    right: -10%;
+    background: radial-gradient(ellipse, rgba(232,54,59,0.06) 0%, transparent 70%);
+  }
+
+  /* Top accent line — gradient bar */
+  .slide-accent-line {
+    position: absolute;
+    top: 0; left: 80px; right: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    z-index: 1;
+  }
+
+  /* Content z-index above effects */
+  .slide > *:not(.slide-glow):not(.slide-accent-line) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── THREE-DOT BRAND MARK ─── */
+  .brand-dots {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-right: 10px;
+  }
+  .brand-dots span {
+    display: block;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .brand-dots span:nth-child(1) { width: 6px; height: 6px; }
+  .brand-dots span:nth-child(2) { width: 8px; height: 8px; }
+  .brand-dots span:nth-child(3) { width: 10px; height: 10px; }
+
+  /* ─── HOOK SLIDE ─── */
+  .hook-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .hook-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .hook-title {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+  }
+
+  .hook-title em { font-style: normal; color: var(--accent); }
+
+  /* ─── STEP SLIDE ─── */
+  .step-number-bg {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 200px;
+    color: var(--accent);
+    opacity: 0.08;
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    line-height: 1;
+    z-index: 1;
+  }
+
+  .step-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .step-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .step-title {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+  }
+
+  .step-detail {
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--sd-gray-400);
+    max-width: 760px;
+  }
+
+  /* ─── CTA SLIDE ─── */
+  .cta-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .cta-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-url {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--sd-white);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── COMMON ─── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .wordmark {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+  }
+  .wordmark span { color: var(--accent); }
+
+  .dept-badge {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--sd-gray-400);
+  }
+
+  .slide-counter {
+    font-size: 13px;
+    color: var(--sd-gray-400);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-url {
+    font-size: 16px;
+    color: var(--sd-gray-400);
+  }
+  .footer-url strong { color: var(--sd-white); font-weight: 500; }
+
+  .swipe-hint {
+    font-size: 16px;
+    color: var(--sd-gray-400);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .swipe-hint .arrow {
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--sd-gray-400);
+    position: relative;
+  }
+
+  .swipe-hint .arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid var(--sd-gray-400);
+    border-right: 2px solid var(--sd-gray-400);
+    transform: rotate(45deg);
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .dots span {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+  .dots span:last-child { opacity: 1; }
+</style>
+</head>
+<body style="--accent: {{accentColor}};">
+
+  <!-- SLIDE: hook -->
+  <div class="slide" data-slide="hook">
+    <div class="slide-glow slide-glow--primary"></div>
+    <div class="slide-glow slide-glow--secondary"></div>
+    <div class="slide-accent-line"></div>
+    <div class="header">
+      <div class="wordmark-group">
+        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <div class="wordmark">superdots<span>.</span></div>
+      </div>
+      <div class="dept-badge">{{department}}</div>
+    </div>
+    <div class="hook-body">
+      <div class="hook-label">Step-by-Step Guide</div>
+      <h1 class="hook-title">{{hookTitle}}</h1>
+    </div>
+    <div class="footer-bar">
+      <div class="swipe-hint">Follow the steps <span class="arrow"></span></div>
+      <div class="slide-counter">1 / {{totalSlides}}</div>
+    </div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- SLIDE: step (repeat per step) -->
+  <div class="slide" data-slide="step" style="display:none;">
+    <div class="slide-glow slide-glow--primary"></div>
+    <div class="slide-accent-line"></div>
+    <div class="step-number-bg">{{stepNumber}}</div>
+    <div class="header">
+      <div class="wordmark-group">
+        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <div class="wordmark">superdots<span>.</span></div>
+      </div>
+      <div class="dept-badge">{{department}}</div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Step {{stepNumber}}</div>
+      <div class="step-title">{{stepTitle}}</div>
+      <p class="step-detail">{{stepDetail}}</p>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-url"><strong>superdots.sh</strong>/blog/{{slug}}</div>
+      <div class="slide-counter">{{slideNumber}} / {{totalSlides}}</div>
+    </div>
+  </div>
+
+  <!-- SLIDE: cta -->
+  <div class="slide" data-slide="cta" style="display:none;">
+    <div class="slide-glow slide-glow--primary"></div>
+    <div class="slide-glow slide-glow--secondary"></div>
+    <div class="slide-accent-line"></div>
+    <div class="header">
+      <div class="wordmark-group">
+        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <div class="wordmark">superdots<span>.</span></div>
+      </div>
+    </div>
+    <div class="cta-body">
+      <div class="cta-heading">Get the complete guide</div>
+      <div class="cta-url">superdots.sh/blog/{{slug}}</div>
+      <div class="cta-button">Follow the Full Guide</div>
+    </div>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+
+</body>
+</html>

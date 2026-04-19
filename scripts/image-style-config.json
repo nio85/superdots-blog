@@ -37,7 +37,7 @@
   },
 
   "brandStyle": {
-    "basePrompt": "Warm, modern abstract illustration. Bold geometric shapes with layered depth. Deep navy background (#0B1222). Subtle warm lighting. No text, no words, no letters, no logos. Human and approachable, not cold or clinical. Flat design with overlapping planes creating depth. Generous negative space. Centered composition with clear focal point.",
+    "basePrompt": "Warm, modern abstract illustration. Bold geometric shapes with layered depth. Deep navy background (#0B1222). Subtle dot-grid texture overlay across the composition. Warm radial glow from bottom-left edge — soft red (#E8363B at 12% opacity). Flat design with overlapping planes creating depth. Generous negative space. Centered composition with clear focal point. No text, no words, no letters, no logos. Human and approachable, not cold or clinical.",
     "negativeElements": "text, words, letters, logos, watermarks, signatures, photorealistic faces, stock photo style, clip art, cartoonish, busy, cluttered, low quality, robots, android, sci-fi, matrix, neon, cold blue, corporate sterile, circuit board cliché"
   },
 
@@ -155,5 +155,25 @@
       "No clear focal point — the eye wanders with nothing to anchor on",
       "Robots, faces, or recognizable real-world objects that break the abstract style"
     ]
+  },
+
+  "socialStyles": {
+    "_description": "Style variants for social images. The generate-social-image.mjs script rotates through these to avoid visual monotony. Agents can override with --style <name>.",
+    "bold-geometric": {
+      "promptOverride": "Ultra-bold single geometric shape, massive scale, fills 60% of frame. Deep navy background (#0B1222) with subtle dot-grid texture overlay. Soft warm red radial glow from bottom-left corner. One dominant brand color used as primary, not accent. Sharp edges, confident composition. Three small ascending dots near one corner as a subtle brand signature. Graphic design poster energy.",
+      "weight": 0.35
+    },
+    "data-visual": {
+      "promptOverride": "Abstract data visualization: flowing chart lines, minimal bar shapes, insight-moment composition. Warm amber (#F59E0B) and red (#E8363B) accents on deep navy (#0B1222). Subtle dot-grid texture in the background. Soft warm glow emanating from data focal points. Clean, analytical aesthetic with warm undertones. Think dashboard art, not cold corporate charts.",
+      "weight": 0.25
+    },
+    "scene-vignette": {
+      "promptOverride": "Dramatic silhouette vignette: single figure or object in stark contrast against deep navy (#0B1222). Dot-grid pattern faintly visible in the darker areas. Cinematic lighting with warm red radial glow (#E8363B) from bottom edge, deep shadows, warm accent backlight. Minimal, atmospheric, editorial photography feel rendered as abstract art.",
+      "weight": 0.2
+    },
+    "textured-minimal": {
+      "promptOverride": "Minimal composition with rich texture: prominent dot-grid pattern echoing the Superdot brand mark, subtle noise, single floating geometric element. Warm red radial glow from bottom-left edge. Brand red (#E8363B) as sole accent on deep navy (#0B1222). Maximum negative space. Refined and confident.",
+      "weight": 0.2
+    }
   }
 }
