@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools Cheatsheet — Superdots</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --red:       #E8363B;
+    --teal:      #14B8A6;
+    --amber:     #F59E0B;
+    --navy:      #0B1222;
+    --navy-mid:  #1E293B;
+    --navy-card: #162033;
+    --gray-400:  #94A3B8;
+    --gray-600:  #475569;
+    --white:     #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    width: 297mm;
+  }
+
+  /* ─── PAGE ─── */
+  .page {
+    width: 297mm;
+    min-height: 210mm;
+    padding: 14mm 16mm;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ─── BACKGROUND DECORATION ─── */
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    opacity: 0.04;
+    background: var(--accent-color, var(--teal));
+  }
+  .page::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    opacity: 0.04;
+    background: var(--accent-color, var(--red));
+  }
+
+  /* ─── COVER PAGE ─── */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 210mm;
+    padding: 20mm 20mm;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(20,184,166,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(232,54,59,0.07) 0%, transparent 60%),
+      var(--navy);
+  }
+
+  .cover-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .cover-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cover-dots span {
+    display: block;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .cover-dots span:nth-child(1) { width: 8px; height: 8px; opacity: 0.5; }
+  .cover-dots span:nth-child(2) { width: 8px; height: 8px; opacity: 0.75; }
+  .cover-dots span:nth-child(3) { width: 8px; height: 8px; }
+
+  .cover-wordmark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .cover-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 8px;
+    max-width: 600px;
+  }
+
+  .cover-title .accent {
+    color: var(--red);
+  }
+
+  .cover-subtitle {
+    font-size: 18px;
+    color: var(--gray-400);
+    line-height: 1.5;
+    max-width: 480px;
+    margin-bottom: 44px;
+  }
+
+  .cover-departments {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .cover-dept-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid;
+  }
+  .cover-dept-badge.marketing {
+    color: var(--teal);
+    border-color: rgba(20,184,166,0.3);
+    background: rgba(20,184,166,0.06);
+  }
+  .cover-dept-badge.sales {
+    color: var(--amber);
+    border-color: rgba(245,158,11,0.3);
+    background: rgba(245,158,11,0.06);
+  }
+  .cover-dept-badge.ops {
+    color: var(--red);
+    border-color: rgba(232,54,59,0.3);
+    background: rgba(232,54,59,0.06);
+  }
+
+  .cover-footer {
+    font-size: 12px;
+    color: var(--gray-600);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 16px;
+    width: 100%;
+    max-width: 520px;
+    margin-top: auto;
+  }
+
+  .cover-stat-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .cover-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cover-stat-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .cover-stat-label {
+    font-size: 11px;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  /* ─── DEPT PAGE ─── */
+  .dept-page { background: var(--navy); }
+
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .dept-label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .dept-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .dept-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dept-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .page-meta {
+    text-align: right;
+    font-size: 11px;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+  .page-meta strong {
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  /* ─── TABLE ─── */
+  .tools-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-bottom: 10px;
+  }
+
+  .tools-table thead th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    padding: 0 12px 8px;
+    text-align: left;
+  }
+  .tools-table thead th:first-child { padding-left: 14px; }
+
+  .tools-table tbody tr {
+    background: var(--navy-card);
+    border-radius: 8px;
+  }
+
+  .tools-table tbody td {
+    padding: 11px 12px;
+    vertical-align: top;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .tools-table tbody td:first-child {
+    border-radius: 8px 0 0 8px;
+    padding-left: 14px;
+  }
+  .tools-table tbody td:last-child {
+    border-radius: 0 8px 8px 0;
+    padding-right: 14px;
+  }
+
+  /* col widths */
+  .col-tool   { width: 16%; }
+  .col-what   { width: 28%; }
+  .col-win    { width: 32%; }
+  .col-price  { width: 12%; }
+  .col-start  { width: 12%; }
+
+  .tool-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .tool-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    color: var(--gray-400);
+  }
+
+  .what-text {
+    color: var(--gray-400);
+    font-size: 12px;
+  }
+
+  .win-text {
+    color: var(--white);
+    font-size: 12px;
+  }
+  .win-text strong {
+    color: inherit;
+  }
+
+  .price-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .price-sub {
+    font-size: 10px;
+    color: var(--gray-600);
+  }
+
+  .start-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 10.5px;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .start-badge.easy {
+    background: rgba(20,184,166,0.12);
+    color: var(--teal);
+  }
+  .start-badge.medium {
+    background: rgba(245,158,11,0.12);
+    color: var(--amber);
+  }
+
+  /* ─── INSIGHT BOX ─── */
+  .insight-box {
+    background: var(--navy-card);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 8px;
+    border-left: 3px solid;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .insight-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .insight-text {
+    font-size: 11.5px;
+    color: var(--gray-400);
+    line-height: 1.5;
+  }
+  .insight-text strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ─── PAGE FOOTER ─── */
+  .page-footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 16mm; right: 16mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 9.5px;
+    color: var(--gray-600);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 8px;
+  }
+  .page-footer .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--gray-400);
+    font-size: 10px;
+  }
+  .footer-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  /* highlight for row accent */
+  .tr-highlight td { background: rgba(255,255,255,0.025); }
+
+  @media print {
+    body { width: 297mm; }
+    .page { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER PAGE ═══ -->
+<div class="page cover">
+  <div class="cover-brand">
+    <div class="cover-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="cover-wordmark">Superdots</div>
+  </div>
+
+  <div class="cover-eyebrow">Free Resource · 2026 Edition</div>
+
+  <h1 class="cover-title">
+    The AI Tools<br>
+    Cheatsheet<span class="accent">.</span>
+  </h1>
+
+  <p class="cover-subtitle">
+    The best AI tools for Marketing, Sales, and Operations — with use cases, real prices, and one quick win to get started today.
+  </p>
+
+  <div class="cover-departments">
+    <div class="cover-dept-badge marketing">
+      <span>●</span> Marketing
+    </div>
+    <div class="cover-dept-badge sales">
+      <span>●</span> Sales
+    </div>
+    <div class="cover-dept-badge ops">
+      <span>●</span> Operations
+    </div>
+  </div>
+
+  <div class="cover-stat-row">
+    <div class="cover-stat">
+      <span class="cover-stat-number">15</span>
+      <span class="cover-stat-label">Tools covered</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-number">3</span>
+      <span class="cover-stat-label">Departments</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-number">5 min</span>
+      <span class="cover-stat-label">To first result</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    superdots.sh · Practical AI for people who actually work
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 1: MARKETING ═══ -->
+<div class="page dept-page" style="--accent-color: var(--teal);">
+
+  <div class="page-header">
+    <div class="dept-label">
+      <span class="dept-eyebrow">Department</span>
+      <div class="dept-title">
+        <span class="dept-dot" style="background:var(--teal);"></span>
+        Marketing
+      </div>
+    </div>
+    <div class="page-meta">
+      <strong>Focus areas</strong><br>
+      Content · Campaigns · Analytics
+    </div>
+  </div>
+
+  <table class="tools-table">
+    <thead>
+      <tr>
+        <th class="col-tool">Tool</th>
+        <th class="col-what">What it does</th>
+        <th class="col-win">Quick win</th>
+        <th class="col-price">Price</th>
+        <th class="col-start">To start</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Claude</div>
+          <span class="tool-tag">Writing</span>
+        </td>
+        <td class="what-text">Long-form content, email sequences, and strategy documents with strong reasoning and minimal hallucination.</td>
+        <td class="win-text">Paste your best-performing blog post. Ask: "Write 5 LinkedIn posts from this. Match the tone exactly." Schedule all 5.</td>
+        <td>
+          <div class="price-main">$20/mo</div>
+          <div class="price-sub">Free tier available</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">HubSpot AI</div>
+          <span class="tool-tag">Campaigns</span>
+        </td>
+        <td class="what-text">AI-assisted email subject lines, A/B testing suggestions, and campaign performance predictions inside HubSpot.</td>
+        <td class="win-text">Turn on AI subject line suggestions on your next campaign. The feature generates 5 variants and predicts open rates.</td>
+        <td>
+          <div class="price-main">Included</div>
+          <div class="price-sub">Starter+ plans</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Jasper</div>
+          <span class="tool-tag">Scale</span>
+        </td>
+        <td class="what-text">Content scaling platform. Feed brand voice and one-pagers; it outputs on-brand blog drafts, ads, and landing copy.</td>
+        <td class="win-text">Upload your brand tone guide. Generate 10 LinkedIn ad variants for your next campaign in under 20 minutes.</td>
+        <td>
+          <div class="price-main">$49/mo</div>
+          <div class="price-sub">Per seat</div>
+        </td>
+        <td><span class="start-badge medium">● Medium</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">Canva AI</div>
+          <span class="tool-tag">Design</span>
+        </td>
+        <td class="what-text">Magic Design turns a text brief into a polished visual in seconds. Magic Write rewrites any element on the canvas.</td>
+        <td class="win-text">Select any existing Canva post. Click "Magic Switch" → choose a different format (story → carousel). Done in 10 seconds.</td>
+        <td>
+          <div class="price-main">$16/mo</div>
+          <div class="price-sub">Pro plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Perplexity</div>
+          <span class="tool-tag">Research</span>
+        </td>
+        <td class="what-text">AI search with cited sources. Ideal for competitive research, trend briefings, and pre-campaign market analysis.</td>
+        <td class="win-text">Ask "What are competitors saying about [topic] in Q1 2026?" and get a cited briefing in 30 seconds, not 30 minutes.</td>
+        <td>
+          <div class="price-main">$20/mo</div>
+          <div class="price-sub">Free tier available</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box" style="border-color: var(--teal);">
+    <span class="insight-icon">💡</span>
+    <span class="insight-text"><strong>Superdots take:</strong> Most marketing teams already pay for HubSpot and Canva. Turn on the AI features you're already paying for before buying new tools. 80% of teams haven't done this.</span>
+  </div>
+
+  <div class="page-footer">
+    <div class="brand-mark"><span class="footer-dot"></span> superdots.sh</div>
+    <span>Marketing · Page 1 of 3</span>
+    <span>Free to share with your team</span>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 2: SALES ═══ -->
+<div class="page dept-page" style="--accent-color: var(--amber);">
+
+  <div class="page-header">
+    <div class="dept-label">
+      <span class="dept-eyebrow">Department</span>
+      <div class="dept-title">
+        <span class="dept-dot" style="background:var(--amber);"></span>
+        Sales
+      </div>
+    </div>
+    <div class="page-meta">
+      <strong>Focus areas</strong><br>
+      Prospecting · Outreach · Call Intelligence
+    </div>
+  </div>
+
+  <table class="tools-table">
+    <thead>
+      <tr>
+        <th class="col-tool">Tool</th>
+        <th class="col-what">What it does</th>
+        <th class="col-win">Quick win</th>
+        <th class="col-price">Price</th>
+        <th class="col-start">To start</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Gong</div>
+          <span class="tool-tag">Call Intel</span>
+        </td>
+        <td class="what-text">Records and transcribes sales calls. AI surfaces winning patterns, objection trends, and deal risk signals automatically.</td>
+        <td class="win-text">After every call, open Gong's "Key Moments" tab. It highlights the 3–5 moments that most predicted deal outcomes. Review before your next follow-up.</td>
+        <td>
+          <div class="price-main">~$1,600/yr</div>
+          <div class="price-sub">Per user</div>
+        </td>
+        <td><span class="start-badge medium">● Medium</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">Apollo.io</div>
+          <span class="tool-tag">Prospecting</span>
+        </td>
+        <td class="what-text">B2B database with 275M+ contacts. AI scores leads, identifies lookalikes, and writes personalised outreach in bulk.</td>
+        <td class="win-text">Build a saved search with your ICP filters. Apollo's AI will add new matches automatically. Set an alert to review 10 new leads/week.</td>
+        <td>
+          <div class="price-main">$49/mo</div>
+          <div class="price-sub">Basic plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Lavender</div>
+          <span class="tool-tag">Email</span>
+        </td>
+        <td class="what-text">Real-time AI coach that scores cold emails and suggests improvements as you type. Integrates with Gmail and Outlook.</td>
+        <td class="win-text">Install the Chrome extension. Write your next prospecting email. Lavender gives a score and one specific fix. Aim for 90+.</td>
+        <td>
+          <div class="price-main">$29/mo</div>
+          <div class="price-sub">Individual plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">Clay</div>
+          <span class="tool-tag">Enrichment</span>
+        </td>
+        <td class="what-text">Pulls data from 50+ sources (LinkedIn, Clearbit, News) and uses AI to write personalised outreach lines at scale.</td>
+        <td class="win-text">Upload a list of 50 target accounts. Use Clay's "AI message" column to write a personalised opening line per row. Takes 5 minutes.</td>
+        <td>
+          <div class="price-main">$149/mo</div>
+          <div class="price-sub">Starter plan</div>
+        </td>
+        <td><span class="start-badge medium">● Medium</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">ChatGPT</div>
+          <span class="tool-tag">Proposals</span>
+        </td>
+        <td class="what-text">Fast proposal drafts, objection responses, and discovery question prep. Best when given specific context about the deal.</td>
+        <td class="win-text">Before every discovery call: paste the prospect's LinkedIn bio and recent company news. Ask "What 5 discovery questions should I ask?" Takes 60 seconds.</td>
+        <td>
+          <div class="price-main">$20/mo</div>
+          <div class="price-sub">Plus plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box" style="border-color: var(--amber);">
+    <span class="insight-icon">💡</span>
+    <span class="insight-text"><strong>Superdots take:</strong> Lavender ($29/mo) consistently improves reply rates by 15–30% based on user reports. It's the lowest-effort, highest-impact tool on this list for individual reps.</span>
+  </div>
+
+  <div class="page-footer">
+    <div class="brand-mark"><span class="footer-dot"></span> superdots.sh</div>
+    <span>Sales · Page 2 of 3</span>
+    <span>Free to share with your team</span>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 3: OPERATIONS ═══ -->
+<div class="page dept-page" style="--accent-color: var(--red);">
+
+  <div class="page-header">
+    <div class="dept-label">
+      <span class="dept-eyebrow">Department</span>
+      <div class="dept-title">
+        <span class="dept-dot" style="background:var(--red);"></span>
+        Operations
+      </div>
+    </div>
+    <div class="page-meta">
+      <strong>Focus areas</strong><br>
+      Automation · Documentation · Meetings
+    </div>
+  </div>
+
+  <table class="tools-table">
+    <thead>
+      <tr>
+        <th class="col-tool">Tool</th>
+        <th class="col-what">What it does</th>
+        <th class="col-win">Quick win</th>
+        <th class="col-price">Price</th>
+        <th class="col-start">To start</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Make</div>
+          <span class="tool-tag">Automation</span>
+        </td>
+        <td class="what-text">Visual no-code automation platform. Connects 1,500+ apps. More powerful than Zapier for complex multi-step flows.</td>
+        <td class="win-text">Automate your most-repeated manual task. Example: "When a form is submitted → create Notion row → send Slack alert." Takes 20 minutes to set up.</td>
+        <td>
+          <div class="price-main">$9/mo</div>
+          <div class="price-sub">Core plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">Notion AI</div>
+          <span class="tool-tag">Docs</span>
+        </td>
+        <td class="what-text">AI writing and summarization built into Notion. Turns rough notes into SOPs, meeting summaries, and project briefs.</td>
+        <td class="win-text">After your next team meeting, paste the raw notes into Notion. Type "/AI summarise" — get a structured summary with action items in 10 seconds.</td>
+        <td>
+          <div class="price-main">$10/mo</div>
+          <div class="price-sub">Add-on per member</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Fireflies.ai</div>
+          <span class="tool-tag">Meetings</span>
+        </td>
+        <td class="what-text">AI notetaker for Zoom/Teams/Meet. Records, transcribes, and generates action items with assignees and deadlines.</td>
+        <td class="win-text">Invite bot@fireflies.ai to your next recurring team meeting. You'll get a timestamped transcript and action items in your inbox within 5 minutes of ending the call.</td>
+        <td>
+          <div class="price-main">$18/mo</div>
+          <div class="price-sub">Pro plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr class="tr-highlight">
+        <td>
+          <div class="tool-name">Claude</div>
+          <span class="tool-tag">SOPs</span>
+        </td>
+        <td class="what-text">Turns messy process notes, Slack threads, or verbal descriptions into structured, reviewable SOPs in minutes.</td>
+        <td class="win-text">Describe a process you run manually ("Every Friday I…"). Ask Claude to write an SOP with numbered steps, inputs, outputs, and edge cases. Takes 5 minutes.</td>
+        <td>
+          <div class="price-main">$20/mo</div>
+          <div class="price-sub">Free tier available</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Loom AI</div>
+          <span class="tool-tag">Comms</span>
+        </td>
+        <td class="what-text">Screen recorder that auto-generates titles, summaries, and action items from your video. Cuts async back-and-forth.</td>
+        <td class="win-text">Next time you'd write a 5-paragraph Slack message explaining something complex — record a 90-second Loom instead. The AI summary gives them the TL;DR upfront.</td>
+        <td>
+          <div class="price-main">$15/mo</div>
+          <div class="price-sub">Business plan</div>
+        </td>
+        <td><span class="start-badge easy">● Easy</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box" style="border-color: var(--red);">
+    <span class="insight-icon">💡</span>
+    <span class="insight-text"><strong>Superdots take:</strong> Fireflies + Make together automate 80% of post-meeting admin. Fireflies creates the action items; Make routes them to your project management tool. Under $30/mo combined.</span>
+  </div>
+
+  <div class="page-footer">
+    <div class="brand-mark"><span class="footer-dot"></span> superdots.sh</div>
+    <span>Operations · Page 3 of 3</span>
+    <span>Free to share with your team</span>
+  </div>
+</div>
+
+</body>
+</html>
