@@ -1,7 +1,7 @@
 /**
  * GET /api/confirm?email=...&ts=...&token=...
  * Verifies the HMAC token and confirms the subscriber in Mautic (single source of truth).
- * Env vars: NEWSLETTER_SECRET,
+ * Env vars: NEWSLETTER_SECRET, RESEND_API_KEY,
  *           MAUTIC_API_URL, MAUTIC_USERNAME, MAUTIC_PASSWORD,
  *           CF_ACCESS_CLIENT_ID, CF_ACCESS_CLIENT_SECRET (optional, for CF Access)
  */
@@ -119,6 +119,30 @@ export async function onRequestGet(context) {
 		}
 	}
 
+	// Send welcome email with lead magnet download link
+	if (env.RESEND_API_KEY) {
+		try {
+			const welcomeRes = await fetch('https://api.resend.com/emails', {
+				method: 'POST',
+				headers: {
+					'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					from: 'Superdots <newsletter@superdots.sh>',
+					to: [email],
+					subject: 'Welcome to Superdots — here\'s your AI Tools Cheatsheet',
+					html: welcomeEmailHtml(),
+				}),
+			});
+			if (!welcomeRes.ok) {
+				console.error('Welcome email error:', await welcomeRes.text());
+			}
+		} catch (welcomeErr) {
+			console.error('Welcome email failed:', welcomeErr);
+		}
+	}
+
 	// Reddit Conversions API: report newsletter confirmation as Lead event
 	if (env.REDDIT_PIXEL_ID && env.REDDIT_CONVERSION_TOKEN) {
 		try {
@@ -151,6 +175,30 @@ export async function onRequestGet(context) {
 }
 
 // --- Helpers ---
+
+function welcomeEmailHtml() {
+	return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f8f9fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+<div style="max-width:560px;margin:0 auto;padding:40px 20px;">
+<div style="background:#fff;border-radius:12px;padding:40px 32px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+<div style="width:10px;height:10px;background:#E8363B;border-radius:50%;margin-bottom:20px;"></div>
+<h1 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#0B1222;letter-spacing:-0.02em;">Welcome to Superdots.</h1>
+<p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#4b5563;">You're confirmed. Every Tuesday, you'll get one practical AI workflow — specific tools, step-by-step setup, honest tradeoffs.</p>
+<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:24px;margin-bottom:24px;">
+<p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;">Your free download</p>
+<p style="margin:0 0 16px;font-size:16px;font-weight:600;color:#0B1222;">The AI Tools Evaluation Checklist</p>
+<a href="https://superdots.sh/downloads/ai-tools-cheatsheet.pdf" style="display:inline-block;background:#0B1222;color:#fff;font-size:15px;font-weight:600;padding:12px 24px;border-radius:8px;text-decoration:none;">Download PDF</a>
+</div>
+<p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#4b5563;">While you wait for Tuesday, browse our latest guides:</p>
+<a href="https://superdots.sh/blog/" style="display:inline-block;color:#E8363B;font-size:15px;font-weight:600;text-decoration:none;">Browse articles →</a>
+</div>
+<p style="margin:24px 0 0;font-size:12px;color:#9ca3af;text-align:center;">You signed up at superdots.sh. <a href="https://superdots.sh/privacy#newsletter" style="color:#9ca3af;">Privacy</a>.</p>
+</div>
+</body>
+</html>`;
+}
 
 async function createToken(email, timestamp, action, secret) {
 	const encoder = new TextEncoder();
@@ -201,7 +249,7 @@ function successPage() {
 	return page(
 		'Subscription Confirmed',
 		'You\'re in!',
-		'Your subscription is confirmed. You\'ll receive our weekly digest with the best AI-at-work articles.',
+		'Your subscription is confirmed. Check your inbox for a welcome email with your free AI Tools Cheatsheet.',
 		true
 	);
 }
