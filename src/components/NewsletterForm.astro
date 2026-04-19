@@ -8,22 +8,22 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 
 const headingText: Record<string, string> = {
 	banner: 'One AI workflow, every Tuesday',
-	inline: 'Get AI tips that actually help at work',
-	hero: 'Weekly insights from an AI-powered editorial team',
-	midpost: 'Want more like this?',
+	inline: 'Get the next workflow in your inbox',
+	hero: 'One practical AI workflow per week. Free.',
+	midpost: 'More like this, every Tuesday.',
 };
 const descText: Record<string, string> = {
 	banner: 'Step-by-step guides for Sales, Marketing, and Operations — specific tools, real configurations, and honest tradeoffs. One focused issue per week.',
-	inline: 'One email per week. Practical guides, no fluff.',
+	inline: 'Every Tuesday: one hands-on guide for Sales, Marketing, or Operations — specific tools, step-by-step setup, honest tradeoffs.',
 	hero: '',
-	midpost: 'Every Tuesday: one practical AI workflow for Sales, Marketing, or Operations. Specific tools, step-by-step setups.',
+	midpost: 'One practical AI workflow for Sales, Marketing, or Operations — specific tools, step-by-step setup, honest tradeoffs. Free.',
 };
 const btnText: Record<string, string> = {
 	banner: 'Subscribe',
-	inline: 'Subscribe',
-	compact: 'Join',
-	hero: 'Get the newsletter',
-	midpost: 'Count me in',
+	inline: 'Send it to me',
+	compact: 'Subscribe free',
+	hero: 'Join free',
+	midpost: 'Send me the workflow',
 };
 ---
 
@@ -45,7 +45,7 @@ const btnText: Record<string, string> = {
 			<p class="newsletter-hero-label">{headingText.hero}<span class="dot-accent">.</span></p>
 		)}
 		{variant === 'compact' && (
-			<p class="newsletter-compact-label">Get the newsletter<span class="dot-accent">.</span></p>
+			<p class="newsletter-compact-label">One AI workflow, every Tuesday<span class="dot-accent">.</span></p>
 		)}
 		<form class="newsletter-form" aria-label="Newsletter signup">
 			<div class="newsletter-field">
@@ -137,8 +137,17 @@ const btnText: Record<string, string> = {
 				status.classList.add('newsletter-status--error');
 			} finally {
 				btn.disabled = false;
-				const isCompact = el.closest('.newsletter')?.classList.contains('newsletter--compact');
-				btn.textContent = isCompact ? 'Join' : 'Subscribe';
+				const resetContainer = el.closest('.newsletter') as HTMLElement | null;
+				const resetVariantCls = resetContainer ? Array.from(resetContainer.classList).find((c) => c.startsWith('newsletter--')) : null;
+				const resetVariant = resetVariantCls ? resetVariantCls.replace('newsletter--', '') : 'banner';
+				const resetLabels: Record<string, string> = {
+					banner: 'Subscribe',
+					inline: 'Send it to me',
+					compact: 'Subscribe free',
+					hero: 'Join free',
+					midpost: 'Send me the workflow',
+				};
+				btn.textContent = resetLabels[resetVariant] || 'Subscribe';
 			}
 		});
 	});
