@@ -26,9 +26,10 @@ const SOCIAL_SIZES = {
 };
 
 const PAGE_SIZES = {
-  a4:     { width: '210mm', height: '297mm' },
-  a5:     { width: '148mm', height: '210mm' },
-  letter: { width: '8.5in', height: '11in' },
+  a4:            { width: '210mm', height: '297mm' },
+  'a4-landscape': { width: '297mm', height: '210mm' },
+  a5:            { width: '148mm', height: '210mm' },
+  letter:        { width: '8.5in', height: '11in' },
 };
 
 const HELP = `Usage: node graphics.mjs <command> [options]
