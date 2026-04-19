@@ -210,7 +210,7 @@ function confirmationEmailHtml(confirmUrl) {
       </a>
     </td></tr>
     </table>
-    <p style="margin:28px 0 0;font-family:'Inter',Arial,sans-serif;font-size:14px;line-height:1.5;color:#475569;">
+    <p style="margin:28px 0 0;font-family:'Inter',Arial,sans-serif;font-size:14px;line-height:1.5;color:#64748B;">
       If you didn't sign up, you can safely ignore this email. You won't receive anything else.
     </p>
   </td></tr>
