@@ -219,6 +219,7 @@ async function cmdUpdate() {
   if (getFlag('--content')) patch.content = getFlag('--content');
   if (getFlag('--scheduled-at')) patch.scheduledAt = new Date(getFlag('--scheduled-at')).toISOString();
   if (getFlag('--image-url')) patch.imageUrl = getFlag('--image-url');
+  if (getFlag('--post-format')) patch.postFormat = getFlag('--post-format');
   if (getFlag('--media-urls')) patch.mediaUrls = getFlag('--media-urls').split(',').map(u => u.trim()).filter(Boolean);
   if (getFlag('--document-url')) patch.documentUrl = getFlag('--document-url');
   if (getFlag('--article-url')) patch.articleUrl = getFlag('--article-url');
@@ -624,6 +625,15 @@ Commands:
   suggest-slot       Find next available posting slot --platform linkedin|facebook
   best-times         Analyze best posting times from analytics [--platform <p>]
   performance-report Social performance by format, style, timing [--platform <p>]
+
+Create flags:
+  --slug, --platform, --content, --scheduled-at, --created-by  (required)
+  --image-url <url>           Single image URL (for image format)
+  --post-format <format>      image|carousel|link-only|document|video|text-only (default: image)
+  --media-urls <url1>,<url2>  Comma-separated URLs (carousel: 2-10 slides, video: 1 URL)
+  --document-url <url>        PDF URL (for document format)
+  --article-url <url>         Blog URL (for link-only format)
+  --department, --recommended-format, --hook-suggestion, --issue-id
 
 Options:
   --json   Output raw JSON
