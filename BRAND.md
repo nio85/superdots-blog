@@ -219,6 +219,94 @@ Dark mode is supported via `prefers-color-scheme: dark` and automatically swaps 
 
 ---
 
+### Email Design Rules
+
+Email clients (Gmail, Outlook, Apple Mail) strip or ignore many CSS features. Follow these rules for all email templates.
+
+#### Logo in Email
+- **Use the inline SVG logo** from `content/email-templates/newsletter-base.mjml` (lines 46-48). It renders the three ascending dots at 24x24px with MSO Unicode fallback. Copy this block — do not reinvent it.
+- **Never use**: external SVG files (Gmail blocks them), PNG with alpha transparency (renders as white square on dark backgrounds in Gmail iOS/Android).
+- **If PNG is required** (e.g., for a non-MJML template): composite the logo onto `#0B1222` background first, eliminating transparency. Use `scripts/tools/graphics.mjs` to flatten.
+- **Logo sizing**: 24px inline with wordmark for headers, 20px for footers. Do not exceed 40px.
+
+#### Email Colors
+Same dark palette as web:
+
+| Element | Color |
+|---------|-------|
+| Body background | `#080E1A` |
+| Section background | `#0B1222` |
+| Card background | `#111827` |
+| Primary text | `#E2E8F0` |
+| Secondary text | `#94A3B8` |
+| Default text | `#CBD5E1` |
+| CTA button background | `#E8363B` |
+| CTA button text | `#FFFFFF` |
+| Links | `#E8363B`, no underline (add underline on hover) |
+
+No gradients in CTA buttons — Outlook ignores them.
+
+#### Email Typography
+- Headings: Space Grotesk via Google Fonts (`mj-font` import). Fallback: `Arial, Helvetica, sans-serif`.
+- Body: Inter via Google Fonts. Same fallback.
+- Outlook ignores web font imports and always uses fallback. Design must look acceptable in Arial.
+
+#### Template Reuse Rule (Mandatory)
+Before creating any new email, check existing templates:
+```bash
+node scripts/tools/email-templates.mjs list
+```
+
+| Template | Purpose | When to use |
+|----------|---------|-------------|
+| `newsletter-base.mjml` | Weekly newsletter (1 featured + 3 secondary articles) | All regular newsletters |
+| `welcome.mjml` | New subscriber welcome email | Onboarding sequences |
+
+If the new email fits an existing template's structure, **fork and customize it**. Create from scratch only when the layout is fundamentally different.
+
+---
+
+### PDF Design Rules
+
+#### Orientation
+| Content type | Orientation | Page size flag |
+|---|---|---|
+| Tables with 4+ columns | **Landscape** | `--page-size a4-landscape` |
+| Cheatsheets, comparison grids | **Landscape** | `--page-size a4-landscape` |
+| Single-column text, guides | Portrait | `--page-size a4` |
+
+**Rule of thumb**: if the content's natural width exceeds ~700px, use landscape. Portrait A4 has ~595px of printable width — wide tables will be compressed and unreadable.
+
+#### PDF Rendering
+```bash
+node scripts/tools/graphics.mjs pdf <html-file> --page-size a4-landscape
+```
+
+- **Typography**: Space Grotesk (headings) + Inter (body), same as web. Minimum 14px body text for print readability.
+- **Colors**: Dark theme (navy background) by default for brand consistency. Use light theme (white background, navy text) only if the PDF will be printed on paper.
+- **Fonts**: Embed via Google Fonts CSS import in the HTML template.
+
+---
+
+### Template & Deliverable Registry
+
+Before creating any visual deliverable (email, PDF, social graphic, slide deck), always check existing templates first.
+
+| Directory | Contains | List command |
+|-----------|----------|--------------|
+| `content/email-templates/` | MJML email templates | `node scripts/tools/email-templates.mjs list` |
+| `content/graphics/` | HTML templates for PDF/PNG rendering | `ls content/graphics/` |
+| `content/slides/` | Marp slide decks | `ls content/slides/` |
+
+**Mandatory workflow:**
+1. Run the list command for the relevant directory
+2. Read the closest existing template
+3. If the new deliverable fits an existing template's structure, fork it
+4. Only create from scratch when no template is structurally similar
+5. Name new templates descriptively (e.g., `single-cta-announcement.mjml`, not `email2.mjml`)
+
+---
+
 ### Tone of Voice in Design
 
 | Do                                          | Don't                                      |

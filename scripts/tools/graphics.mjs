@@ -45,7 +45,7 @@ Options:
   --height <px>        Height in pixels (default: 630)
   --format png|pdf     Output format for render (default: png)
   --platform <name>    Social platform: linkedin, twitter, x, instagram, facebook, og
-  --page-size <size>   PDF page size: a4, a5, letter (default: a4)
+  --page-size <size>   PDF page size: a4, a4-landscape, a5, letter (default: a4)
   --json               Output metadata as JSON
   --help               Show this help`;
 
@@ -149,7 +149,7 @@ async function cmdSocial() {
 
 async function cmdPdf() {
   const file = positional[1];
-  if (!file) err('Usage: graphics.mjs pdf <html-file> [--page-size a4|a5|letter] [--output path]');
+  if (!file) err('Usage: graphics.mjs pdf <html-file> [--page-size a4|a4-landscape|a5|letter] [--output path]');
   const input = resolveInput(file);
   const pageSize = getArg('--page-size', 'a4');
   if (!PAGE_SIZES[pageSize]) err(`Unknown page size: ${pageSize}. Valid: ${Object.keys(PAGE_SIZES).join(', ')}`);
