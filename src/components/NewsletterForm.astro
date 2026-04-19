@@ -36,6 +36,9 @@ const btnText: Record<string, string> = {
 				<span class="superdot"></span>
 				<h3 class="newsletter-heading">{headingText[variant] || headingText.banner}<span class="dot-accent">.</span></h3>
 				{descText[variant] && <p class="newsletter-desc">{descText[variant]}</p>}
+				{variant === 'banner' && (
+					<p class="newsletter-social-proof">Published every week since January&nbsp;2026.</p>
+				)}
 			</div>
 		)}
 		{variant === 'hero' && (
@@ -214,6 +217,26 @@ const btnText: Record<string, string> = {
 		text-transform: uppercase;
 		font-weight: var(--weight-medium);
 		opacity: 0.7;
+	}
+	.newsletter-social-proof {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: var(--space-3) 0 0;
+		opacity: 0.75;
+		letter-spacing: 0.01em;
+	}
+	.newsletter-social-proof::before {
+		content: '';
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		background: var(--color-primary);
+		border-radius: 50%;
+		opacity: 0.7;
+		flex-shrink: 0;
 	}
 	.newsletter--banner .newsletter-field {
 		justify-content: center;
