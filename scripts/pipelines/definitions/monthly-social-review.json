@@ -1,0 +1,88 @@
+{
+  "pipeline": {
+    "name": "monthly-social-review",
+    "description": "Monthly social media performance deep-dive with strategic recommendations",
+
+    "vars": {
+      "date": "{{TODAY}}"
+    },
+
+    "idempotency": {
+      "query": "[{{date}}] Monthly social review",
+      "matchField": "title"
+    },
+
+    "parent": {
+      "title": "[{{date}}] Monthly social review",
+      "assignee": "GROWTH_ANALYST",
+      "priority": "medium",
+      "description": [
+        "## Monthly Social Performance Review — {{date}}",
+        "",
+        "Comprehensive analysis of social media performance with strategic recommendations."
+      ]
+    },
+
+    "tasks": [
+      {
+        "id": "monthly_analysis",
+        "title": "[{{date}}] Monthly social performance analysis",
+        "assignee": "GROWTH_ANALYST",
+        "status": "todo",
+        "priority": "medium",
+        "description": [
+          "## Monthly social deep-dive",
+          "",
+          "### Step 1 — Collect data",
+          "```bash",
+          "cd /home/luca/superdots-blog",
+          "node scripts/tools/social-draft.mjs performance-report --json",
+          "node scripts/tools/postiz.mjs analytics cmns03m1p00a9oe0yzm2kh5wp --json  # LinkedIn",
+          "node scripts/tools/postiz.mjs analytics cmns0c0bh00bzn70yamri4j59 --json  # Facebook",
+          "node scripts/tools/social-draft.mjs best-times --json",
+          "```",
+          "",
+          "### Step 2 — Read current strategy and past insights",
+          "```bash",
+          "node scripts/tools/social-strategy.mjs read",
+          "```",
+          "Also read your `memory/project_social_strategy.md` and `memory/project_social_experiments.md` for historical context.",
+          "",
+          "### Step 3 — Analysis dimensions",
+          "1. **Volume**: total posts published, by platform, by format",
+          "2. **Engagement**: avg impressions, reactions, clicks per post (trend vs previous month)",
+          "3. **Format performance**: rank all 6 post formats by engagement score",
+          "4. **Content format**: rank insight-stat vs how-to vs contrarian",
+          "5. **Department performance**: which departments perform best on social",
+          "6. **Timing analysis**: best hours/days from actual data vs current schedule",
+          "7. **Quality scores**: average quality score of drafts created",
+          "8. **Experiment results**: any active A/B test outcomes",
+          "",
+          "### Step 4 — Strategic recommendations",
+          "Post a comment with:",
+          "- Top 3 insights from this month's data",
+          "- Recommended cadence adjustments (add/remove posting days?)",
+          "- Recommended format mix changes for next month",
+          "- Experiment proposals for next month (with hypothesis and success criteria)",
+          "- Any articles that should be re-promoted based on seasonal relevance",
+          "",
+          "### Step 5 — Persist insights",
+          "Save key findings to strategy file:",
+          "```bash",
+          "node scripts/tools/social-strategy.mjs add-insight \"<key finding>\"",
+          "```",
+          "",
+          "Update your long-term memory files:",
+          "- `memory/project_social_strategy.md` — current strategic direction, what formats work, cadence adjustments",
+          "- `memory/project_social_experiments.md` — completed and planned A/B tests with results",
+          "",
+          "These memories persist across heartbeats and inform all future social decisions.",
+          "",
+          "### When done",
+          "1. Set this task to `done`",
+          "2. @mention **@CEO** with the monthly report summary"
+        ]
+      }
+    ]
+  }
+}

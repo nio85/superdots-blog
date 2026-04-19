@@ -49,6 +49,7 @@ export const SITE_HOST = 'superdots.sh';
 export const PAPERCLIP_API_URL = process.env.PAPERCLIP_API_URL || 'http://localhost:3100';
 export const PAPERCLIP_COMPANY_ID = process.env.PAPERCLIP_COMPANY_ID || 'cdb3c45d-c7df-4ea0-b495-26426a1e9df4';
 export const PAPERCLIP_PROJECT_ID = 'd4fe361f-bdeb-4f81-9238-2d6795a54dbc';
+export const PAPERCLIP_SOCIAL_PROJECT_ID = '5b13eee8-fa32-4798-96b5-260c62d2804d';
 
 // --- Agent IDs ---
 
