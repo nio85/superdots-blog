@@ -1,0 +1,156 @@
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to Superdots</mj-title>
+    <mj-preview>You're in. Here's what to expect.</mj-preview>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <mj-font name="Space Grotesk" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="'Inter', Arial, Helvetica, sans-serif" />
+      <mj-text font-size="16px" line-height="1.6" color="#CBD5E1" />
+      <mj-section padding="0" />
+      <mj-body background-color="#080E1A" />
+    </mj-attributes>
+    <mj-style>
+      a { color: #E8363B; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .cta-link a { color: #FFFFFF !important; text-decoration: none !important; }
+      .footer-link a { color: #94A3B8 !important; font-size: 13px; }
+      .dept-tag a { color: #94A3B8 !important; text-decoration: none; font-size: 13px; font-weight: 500; }
+      .dept-tag a:hover { color: #E8363B !important; }
+    </mj-style>
+    <!--[if mso]>
+    <style type="text/css">
+      td { background-color: #0B1222 !important; }
+    </style>
+    <![endif]-->
+  </mj-head>
+
+  <mj-body background-color="#080E1A" width="620px">
+
+    <!-- Header: logo + brand name -->
+    <mj-section background-color="#0B1222" padding="20px 24px">
+      <mj-column vertical-align="middle">
+        <mj-text align="left" color="#FFFFFF" font-size="22px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" padding="0">
+          <!--[if mso]><span style="color:#E8363B; font-size:10px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><span style="color:#E8363B; font-size:18px;">&#9679;</span><![endif]-->
+          <!--[if !mso]><!--><svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg><!--<![endif]-->
+          <span style="margin-left: 8px; vertical-align: middle;">superdots</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Accent gradient line -->
+    <mj-section padding="0" background-color="#0B1222">
+      <mj-column>
+        <mj-text padding="0"><div style="height:3px; background: linear-gradient(90deg, #E8363B 0%, #8B1A1D 100%);"></div></mj-text>
+      </mj-column>
+    </mj-section>
+    <!--[if mso]>
+    <table role="presentation" width="100%" style="background-color:#E8363B;"><tr><td style="height:3px; font-size:0; line-height:0;">&nbsp;</td></tr></table>
+    <![endif]-->
+
+    <!-- Welcome message -->
+    <mj-section background-color="#0B1222" padding="40px 24px 12px">
+      <mj-column>
+        <mj-text font-size="28px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" color="#FFFFFF" line-height="1.25" padding="0 0 16px">
+          You're in<span style="color:#E8363B;">.</span>
+        </mj-text>
+        <mj-text font-size="17px" line-height="1.7" color="#E2E8F0" padding="0 0 12px">
+          Hi {contactfield=firstname|default:'there'},
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="0 0 12px">
+          Welcome to Superdots — practical, no-fluff content about AI and work. Every week we cover one real use case per department, with specific tools, real steps, and honest takes on where AI helps and where it doesn't.
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="0">
+          No hype. No "AI will change everything." Just what works, what doesn't, and how to use it today.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- What to expect card -->
+    <mj-section background-color="#0B1222" padding="24px 16px 8px">
+      <mj-column background-color="#111827" border-radius="12px" padding="28px 24px">
+        <mj-text font-size="13px" font-weight="600" color="#E8363B" letter-spacing="1px" text-transform="uppercase" padding="0 0 16px">
+          What you'll get
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#CBD5E1" padding="0 0 10px">
+          <span style="color:#E8363B; font-weight:600;">Weekly newsletter</span> — one featured article plus 3 shorter reads, delivered every Tuesday.
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#CBD5E1" padding="0 0 10px">
+          <span style="color:#E8363B; font-weight:600;">Department-specific guides</span> — sales, marketing, HR, finance, operations, legal, engineering, design, and customer support.
+        </mj-text>
+        <mj-text font-size="16px" line-height="1.7" color="#CBD5E1" padding="0">
+          <span style="color:#E8363B; font-weight:600;">Honest reviews</span> — tool names, pricing, step counts. If something is mediocre, we say so.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- CTA: browse articles -->
+    <mj-section background-color="#0B1222" padding="24px 16px 8px">
+      <mj-column background-color="#0F172A" border-radius="8px" border-left="4px solid #E8363B" padding="24px 24px">
+        <mj-text font-size="17px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" color="#FFFFFF" line-height="1.4" padding="0 0 12px">
+          Start exploring
+        </mj-text>
+        <mj-text font-size="15px" color="#94A3B8" line-height="1.6" padding="0 0 20px">
+          Browse all articles at superdots.sh — filter by department to find what's most useful for your role.
+        </mj-text>
+        <mj-button background-color="#E8363B" color="#FFFFFF" font-size="15px" font-weight="600" font-family="'Space Grotesk', Arial, sans-serif" border-radius="6px" inner-padding="12px 28px" href="https://superdots.sh/blog/" css-class="cta-link" padding="0" align="left">
+          Browse articles
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Department browse links -->
+    <mj-section background-color="#0B1222" padding="32px 24px 8px">
+      <mj-column>
+        <mj-text font-size="13px" font-weight="600" color="#475569" letter-spacing="1.5px" text-transform="uppercase" padding="0 0 16px">
+          <span style="color:#E8363B;">&#9472;&#9472;</span>&nbsp;&nbsp;Browse by department
+        </mj-text>
+        <mj-text font-size="14px" line-height="2" color="#94A3B8" padding="0" css-class="dept-tag">
+          <a href="https://superdots.sh/category/sales/">Sales</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/marketing/">Marketing</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/hr/">HR</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/finance/">Finance</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/operations/">Operations</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/legal/">Legal</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/engineering/">Engineering</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/design/">Design</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://superdots.sh/category/customer-support/">Customer Support</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Spacer -->
+    <mj-section background-color="#0B1222" padding="24px 0">
+      <mj-column>
+        <mj-text font-size="1px" padding="0" color="#0B1222">&nbsp;</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Accent gradient line: dark red→red -->
+    <mj-section padding="0" background-color="#0B1222">
+      <mj-column>
+        <mj-text padding="0"><div style="height:2px; background: linear-gradient(90deg, #8B1A1D 0%, #E8363B 100%);"></div></mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#0B1222" padding="32px 24px 12px">
+      <mj-column>
+        <mj-text align="center" padding="0 0 4px">
+          <!--[if mso]><span style="color:#E8363B; font-size:8px;">&#9679;</span><span style="color:#E8363B; font-size:11px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><![endif]-->
+          <!--[if !mso]><!--><svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg><!--<![endif]-->
+        </mj-text>
+        <mj-text align="center" color="#E2E8F0" font-size="15px" font-family="'Space Grotesk', Arial, sans-serif" font-weight="500" padding="12px 0 4px">
+          Practical AI for every department<span style="color:#E8363B;">.</span>
+        </mj-text>
+        <mj-text align="center" color="#475569" font-size="13px" padding="4px 0 0">
+          <a href="https://superdots.sh" style="color:#475569; text-decoration:none;">superdots.sh</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#0B1222" padding="12px 24px 32px">
+      <mj-column>
+        <mj-text align="center" font-size="12px" color="#334155" padding="0 0 16px">
+          You're receiving this because you subscribed at superdots.sh
+        </mj-text>
+        <mj-text align="center" padding="0" css-class="footer-link">
+          {unsubscribe_text}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
