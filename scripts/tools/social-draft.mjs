@@ -179,14 +179,17 @@ async function cmdCreate() {
   // Auto-compute quality score
   draft.qualityScore = computeQualityScore(draft);
 
-  await withLockedDrafts((drafts) => {
+  const dupResult = await withLockedDrafts((drafts) => {
     // Dedup guard inside lock — reject if a non-failed draft already exists for slug+platform
     const existing = drafts.find(d => d.slug === slug && d.platform === platform && d.status !== 'failed');
     if (existing && !args.includes('--force')) {
-      err(`Duplicate blocked: draft "${existing.id}" already exists for ${slug}/${platform} (status: ${existing.status}). Use --force to override.`);
+      return { result: { duplicate: true, existing }, newDrafts: null };
     }
-    return { result: draft, newDrafts: [...drafts, draft] };
+    return { result: { duplicate: false }, newDrafts: [...drafts, draft] };
   });
+  if (dupResult.duplicate) {
+    err(`Duplicate blocked: draft "${dupResult.existing.id}" already exists for ${slug}/${platform} (status: ${dupResult.existing.status}). Use --force to override.`);
+  }
 
   if (jsonOutput) { out(draft); } else {
     log(`Draft created: ${draft.id} (quality: ${draft.qualityScore}/100)`);
@@ -373,19 +376,28 @@ async function cmdSuggestSlot() {
   const cadence = DEFAULT_CADENCE[platform];
   const now = new Date();
   const candidates = [];
+  const preferredHour = bestHours ? bestHours[0].hour : cadence.hours[0];
+
+  // Compute Rome's UTC offset dynamically (handles CET/CEST transitions correctly)
+  const fmt = new Intl.DateTimeFormat('en-US', { timeZone: ROME_TZ, timeZoneName: 'shortOffset' });
+  const tzPart = fmt.formatToParts(now).find(p => p.type === 'timeZoneName');
+  const offsetMatch = tzPart?.value?.match(/GMT([+-]\d+)/);
+  const romeOffsetHours = offsetMatch ? Number(offsetMatch[1]) : 1;
+
+  // Iterate over the next 30 Rome-local dates
+  const todayRome = now.toLocaleDateString('en-CA', { timeZone: ROME_TZ }); // YYYY-MM-DD
   for (let d = 0; d < 30; d++) {
-    const date = new Date(now);
-    date.setDate(date.getDate() + d);
-    const dayOfWeek = date.getDay();
-    if (!cadence.days.includes(dayOfWeek)) continue;
+    // Build Rome-local date for preferredHour, then convert to UTC
+    const romeDate = new Date(todayRome + 'T12:00:00Z'); // noon placeholder
+    romeDate.setUTCDate(romeDate.getUTCDate() + d);
+    // Check day-of-week in Rome time
+    const romeDayStr = romeDate.toLocaleDateString('en-US', { timeZone: ROME_TZ, weekday: 'long' });
+    const romeDow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].indexOf(romeDayStr);
+    if (!cadence.days.includes(romeDow)) continue;
 
-    const preferredHour = bestHours ? bestHours[0].hour : cadence.hours[0];
-    const rome = new Date(date.toLocaleString('en-US', { timeZone: ROME_TZ }));
-    rome.setHours(preferredHour, 0, 0, 0);
-
-    // Convert back to UTC ISO
-    const utcDate = new Date(date);
-    utcDate.setHours(preferredHour - (rome.getTimezoneOffset() === -120 ? 2 : 1), 0, 0, 0); // CEST/CET offset
+    // Convert Rome preferredHour → UTC
+    const utcDate = new Date(romeDate);
+    utcDate.setUTCHours(preferredHour - romeOffsetHours, 0, 0, 0);
     const iso = utcDate.toISOString();
 
     // Skip if in the past
@@ -394,7 +406,8 @@ async function cmdSuggestSlot() {
     // Check conflicts with taken slots (same date)
     const dateStr = iso.slice(0, 10);
     const conflict = takenSlots.some(s => s.slice(0, 10) === dateStr);
-    candidates.push({ date: iso, romeTime: `${rome.toLocaleDateString('en-GB', { weekday: 'short' })} ${preferredHour}:00`, conflict });
+    const dayLabel = utcDate.toLocaleDateString('en-GB', { weekday: 'short', timeZone: ROME_TZ });
+    candidates.push({ date: iso, romeTime: `${dayLabel} ${preferredHour}:00`, conflict });
   }
 
   const nextFree = candidates.find(c => !c.conflict);
