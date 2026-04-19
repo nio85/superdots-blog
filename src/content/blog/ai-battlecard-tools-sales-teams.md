@@ -1,6 +1,6 @@
 ---
-title: '6 Best AI Battlecard Tools for Sales Teams (2026)'
-description: "Klue, Crayon, Kompyte, Mindtickle & Battlecard.io ranked by team size — 2026 pricing and a free ChatGPT battlecard template for small teams."
+title: 'Best AI Sales Battlecard Software (2026): Free Workflow + 5 Paid Tools Ranked by Team Size'
+description: "Honest comparison of Klue, Crayon, Kompyte & Battlecard.io — ranked by team size with 2026 pricing. Free ChatGPT workflow for teams under 10 reps. No vendor spin."
 pubDate: "2026-04-17"
 author: "Superdots Team"
 department: "sales"
@@ -54,6 +54,11 @@ This is the real battlecard problem. Not that companies don't have them. It's th
 AI changes this — but not in the same way for every team. If you have fewer than 10 reps, you probably don't need a $16,000-per-year platform. If you have a 200-seat enterprise sales org, you might. The answer depends more on your situation than on any feature comparison.
 
 This guide covers both paths: the free workflow that works today, and the paid tools that make sense when volume justifies the cost.
+
+**Quick answer by team size:**
+- Under 10 reps → Free Claude or ChatGPT workflow (30 min setup, no cost)
+- 10–50 reps → Battlecard.io or Kompyte (~$55/user/month)
+- 50+ reps with a PMM → Klue or Crayon (~$16,000/year)
 
 ## Quick Comparison: Sales Battlecard Software at a Glance
 
