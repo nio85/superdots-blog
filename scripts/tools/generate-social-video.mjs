@@ -6,7 +6,7 @@
  * Ensures brand consistency by starting from a Superdots-branded static image.
  *
  * Uses Replicate API (same auth as Flux image generation).
- * Default model: kling-video/v1.6-standard (image-to-video).
+ * Default model: kwaivgi/kling-v1-6-standard (image-to-video). Fallback: minimax/video-01.
  *
  * Usage:
  *   node scripts/tools/generate-social-video.mjs \
@@ -165,18 +165,25 @@ async function main() {
         const controller2 = new AbortController();
         const timeoutId2 = setTimeout(() => controller2.abort(), VIDEO_TIMEOUT_MS);
 
-        const output = await replicate.run('stability-ai/stable-video-diffusion', {
+        // Fallback: minimax/video-01 (image-to-video, actively maintained on Replicate)
+        const output = await replicate.run('minimax/video-01', {
           input: {
-            input_image: imageUrl,
-            motion_bucket_id: motion === 'ambient' ? 80 : 127,
-            fps: 24,
-            num_frames: duration * 24,
+            prompt,
+            first_frame_image: imageUrl,
           },
           signal: controller2.signal,
         });
         clearTimeout(timeoutId2);
 
-        videoUrl = typeof output === 'string' ? output : String(output);
+        if (typeof output === 'string' && output.startsWith('http')) {
+          videoUrl = output;
+        } else if (output && typeof output.url === 'function') {
+          videoUrl = output.url();
+        } else if (Array.isArray(output) && output[0]) {
+          videoUrl = typeof output[0] === 'string' ? output[0] : output[0].url?.() || String(output[0]);
+        } else {
+          videoUrl = String(output);
+        }
       } catch (e2) {
         console.error(`[ERROR] All video models failed: ${e2.message}`);
         process.exit(1);

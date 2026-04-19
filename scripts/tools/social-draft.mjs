@@ -78,8 +78,18 @@ async function releaseLock() {
 async function readDrafts() {
   try {
     const raw = await readFile(DRAFTS_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch {
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data)) {
+      console.error(`[WARN] social-drafts.json is not an array — treating as empty`);
+      return [];
+    }
+    return data;
+  } catch (e) {
+    if (e.code === 'ENOENT') return []; // file doesn't exist yet — OK
+    // File exists but is corrupt — don't silently return [] (next write would destroy data)
+    console.error(`[ERROR] social-drafts.json is corrupt: ${e.message}`);
+    // Back up the corrupt file so we don't lose whatever data is there
+    try { await rename(DRAFTS_FILE, DRAFTS_FILE + '.corrupt.' + Date.now()); } catch {}
     return [];
   }
 }
