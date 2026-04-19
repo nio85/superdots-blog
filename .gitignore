@@ -8,6 +8,10 @@ dist/
 syndication-output-*.md
 syndication-tracker.json
 
+# Paperclip runtime (injected skills + agent context)
+skills/
+.agents/
+
 # Secrets
 .secrets/
 

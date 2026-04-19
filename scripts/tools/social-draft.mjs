@@ -78,8 +78,18 @@ async function releaseLock() {
 async function readDrafts() {
   try {
     const raw = await readFile(DRAFTS_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch {
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data)) {
+      console.error(`[WARN] social-drafts.json is not an array — treating as empty`);
+      return [];
+    }
+    return data;
+  } catch (e) {
+    if (e.code === 'ENOENT') return []; // file doesn't exist yet — OK
+    // File exists but is corrupt — don't silently return [] (next write would destroy data)
+    console.error(`[ERROR] social-drafts.json is corrupt: ${e.message}`);
+    // Back up the corrupt file so we don't lose whatever data is there
+    try { await rename(DRAFTS_FILE, DRAFTS_FILE + '.corrupt.' + Date.now()); } catch {}
     return [];
   }
 }
@@ -179,14 +189,17 @@ async function cmdCreate() {
   // Auto-compute quality score
   draft.qualityScore = computeQualityScore(draft);
 
-  await withLockedDrafts((drafts) => {
+  const dupResult = await withLockedDrafts((drafts) => {
     // Dedup guard inside lock — reject if a non-failed draft already exists for slug+platform
     const existing = drafts.find(d => d.slug === slug && d.platform === platform && d.status !== 'failed');
     if (existing && !args.includes('--force')) {
-      err(`Duplicate blocked: draft "${existing.id}" already exists for ${slug}/${platform} (status: ${existing.status}). Use --force to override.`);
+      return { result: { duplicate: true, existing }, newDrafts: null };
     }
-    return { result: draft, newDrafts: [...drafts, draft] };
+    return { result: { duplicate: false }, newDrafts: [...drafts, draft] };
   });
+  if (dupResult.duplicate) {
+    err(`Duplicate blocked: draft "${dupResult.existing.id}" already exists for ${slug}/${platform} (status: ${dupResult.existing.status}). Use --force to override.`);
+  }
 
   if (jsonOutput) { out(draft); } else {
     log(`Draft created: ${draft.id} (quality: ${draft.qualityScore}/100)`);
@@ -219,18 +232,24 @@ async function cmdUpdate() {
   if (getFlag('--content')) patch.content = getFlag('--content');
   if (getFlag('--scheduled-at')) patch.scheduledAt = new Date(getFlag('--scheduled-at')).toISOString();
   if (getFlag('--image-url')) patch.imageUrl = getFlag('--image-url');
-  if (getFlag('--post-format')) patch.postFormat = getFlag('--post-format');
+  if (getFlag('--post-format')) {
+    const VALID_FORMATS = ['image', 'carousel', 'link-only', 'document', 'video', 'text-only'];
+    const pf = getFlag('--post-format');
+    if (!VALID_FORMATS.includes(pf)) err(`Invalid --post-format: ${pf}. Valid: ${VALID_FORMATS.join(', ')}`);
+    patch.postFormat = pf;
+  }
   if (getFlag('--media-urls')) patch.mediaUrls = getFlag('--media-urls').split(',').map(u => u.trim()).filter(Boolean);
   if (getFlag('--document-url')) patch.documentUrl = getFlag('--document-url');
   if (getFlag('--article-url')) patch.articleUrl = getFlag('--article-url');
 
   const result = await withLockedDrafts((drafts) => {
     const idx = drafts.findIndex((d) => d.id === id);
-    if (idx === -1) err(`Draft not found: ${id}`);
+    if (idx === -1) return { result: null, newDrafts: null };
     drafts[idx] = { ...drafts[idx], ...patch };
     drafts[idx].qualityScore = computeQualityScore(drafts[idx]);
     return { result: drafts[idx], newDrafts: drafts };
   });
+  if (!result) err(`Draft not found: ${id}`);
 
   if (jsonOutput) { out(result); } else { log(`Draft updated: ${id} (quality: ${result.qualityScore}/100)`); }
 }
@@ -239,11 +258,12 @@ async function cmdDelete() {
   const id = args.find((a) => !a.startsWith('--') && a !== 'delete');
   if (!id) err('Usage: social-draft.mjs delete <id>');
 
-  await withLockedDrafts((drafts) => {
+  const found = await withLockedDrafts((drafts) => {
     const filtered = drafts.filter((d) => d.id !== id);
-    if (filtered.length === drafts.length) err(`Draft not found: ${id}`);
-    return { result: null, newDrafts: filtered };
+    if (filtered.length === drafts.length) return { result: false, newDrafts: null };
+    return { result: true, newDrafts: filtered };
   });
+  if (!found) err(`Draft not found: ${id}`);
 
   if (jsonOutput) { out({ ok: true }); } else { log(`Draft deleted: ${id}`); }
 }
@@ -373,19 +393,28 @@ async function cmdSuggestSlot() {
   const cadence = DEFAULT_CADENCE[platform];
   const now = new Date();
   const candidates = [];
+  const preferredHour = bestHours ? bestHours[0].hour : cadence.hours[0];
+
+  // Compute Rome's UTC offset dynamically (handles CET/CEST transitions correctly)
+  const fmt = new Intl.DateTimeFormat('en-US', { timeZone: ROME_TZ, timeZoneName: 'shortOffset' });
+  const tzPart = fmt.formatToParts(now).find(p => p.type === 'timeZoneName');
+  const offsetMatch = tzPart?.value?.match(/GMT([+-]\d+)/);
+  const romeOffsetHours = offsetMatch ? Number(offsetMatch[1]) : 1;
+
+  // Iterate over the next 30 Rome-local dates
+  const todayRome = now.toLocaleDateString('en-CA', { timeZone: ROME_TZ }); // YYYY-MM-DD
   for (let d = 0; d < 30; d++) {
-    const date = new Date(now);
-    date.setDate(date.getDate() + d);
-    const dayOfWeek = date.getDay();
-    if (!cadence.days.includes(dayOfWeek)) continue;
+    // Build Rome-local date for preferredHour, then convert to UTC
+    const romeDate = new Date(todayRome + 'T12:00:00Z'); // noon placeholder
+    romeDate.setUTCDate(romeDate.getUTCDate() + d);
+    // Check day-of-week in Rome time
+    const romeDayStr = romeDate.toLocaleDateString('en-US', { timeZone: ROME_TZ, weekday: 'long' });
+    const romeDow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].indexOf(romeDayStr);
+    if (!cadence.days.includes(romeDow)) continue;
 
-    const preferredHour = bestHours ? bestHours[0].hour : cadence.hours[0];
-    const rome = new Date(date.toLocaleString('en-US', { timeZone: ROME_TZ }));
-    rome.setHours(preferredHour, 0, 0, 0);
-
-    // Convert back to UTC ISO
-    const utcDate = new Date(date);
-    utcDate.setHours(preferredHour - (rome.getTimezoneOffset() === -120 ? 2 : 1), 0, 0, 0); // CEST/CET offset
+    // Convert Rome preferredHour → UTC
+    const utcDate = new Date(romeDate);
+    utcDate.setUTCHours(preferredHour - romeOffsetHours, 0, 0, 0);
     const iso = utcDate.toISOString();
 
     // Skip if in the past
@@ -394,7 +423,8 @@ async function cmdSuggestSlot() {
     // Check conflicts with taken slots (same date)
     const dateStr = iso.slice(0, 10);
     const conflict = takenSlots.some(s => s.slice(0, 10) === dateStr);
-    candidates.push({ date: iso, romeTime: `${rome.toLocaleDateString('en-GB', { weekday: 'short' })} ${preferredHour}:00`, conflict });
+    const dayLabel = utcDate.toLocaleDateString('en-GB', { weekday: 'short', timeZone: ROME_TZ });
+    candidates.push({ date: iso, romeTime: `${dayLabel} ${preferredHour}:00`, conflict });
   }
 
   const nextFree = candidates.find(c => !c.conflict);
