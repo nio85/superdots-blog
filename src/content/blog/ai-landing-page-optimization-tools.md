@@ -5,7 +5,7 @@ pubDate: "2026-04-19"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
-tags: ["landing pages", "conversion rate optimization", "A/B testing", "paid advertising", "marketing"]
+tags: ["landing pages", "conversion rate optimization", "ab-testing", "paid advertising", "marketing"]
 imageHint: "split-screen showing two landing page variants side by side with A/B test metrics dashboard and conversion rate graphs visible"
 faqs:
   - question: "What is the difference between AI landing page builders and AI landing page optimization tools?"
