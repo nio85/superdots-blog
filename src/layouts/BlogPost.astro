@@ -190,15 +190,15 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 		<Footer />
 		<CookieConsent />
 		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
-		<template id="midpost-cta-template">
+		<template id="midpost-cta-template" data-department={department}>
 			<aside class="newsletter newsletter--midpost" data-source="article-inline" aria-label="Newsletter signup">
 				<div class="newsletter-dots" aria-hidden="true"></div>
 				<div class="newsletter-glow" aria-hidden="true"></div>
 				<div class="newsletter-inner">
 					<div class="newsletter-text">
 						<span class="superdot"></span>
-						<h3 class="newsletter-heading">Enjoying this? Get one like it every week<span class="dot-accent">.</span></h3>
-						<p class="newsletter-desc">Practical AI guides for your team — delivered every Tuesday.</p>
+						<h3 class="newsletter-heading"></h3>
+						<p class="newsletter-desc"></p>
 					</div>
 					<form class="newsletter-form" aria-label="Newsletter signup">
 						<div class="newsletter-field">
@@ -222,6 +222,20 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 				const children = Array.from(prose.children);
 				if (children.length < 6) return; // Skip short articles
 
+				const dept = tpl.dataset.department || '';
+				const deptCopy: Record<string, { heading: string; desc: string }> = {
+					sales: { heading: 'AI workflows for sales teams, every Tuesday', desc: 'Prospecting, objection handling, pipeline automation — one hands-on guide per week.' },
+					marketing: { heading: 'AI workflows for marketing teams, every Tuesday', desc: 'Content, campaigns, analytics — one hands-on guide per week.' },
+					hr: { heading: 'AI workflows for HR teams, every Tuesday', desc: 'Recruiting, onboarding, people ops — one hands-on guide per week.' },
+					finance: { heading: 'AI workflows for finance teams, every Tuesday', desc: 'Forecasting, reporting, compliance — one hands-on guide per week.' },
+					operations: { heading: 'AI workflows for ops teams, every Tuesday', desc: 'Process automation, supply chain, resource planning — one hands-on guide per week.' },
+					legal: { heading: 'AI workflows for legal teams, every Tuesday', desc: 'Contract review, research, compliance — one hands-on guide per week.' },
+					engineering: { heading: 'AI workflows for engineering teams, every Tuesday', desc: 'Code review, debugging, infrastructure — one hands-on guide per week.' },
+					design: { heading: 'AI workflows for design teams, every Tuesday', desc: 'Prototyping, asset generation, user research — one hands-on guide per week.' },
+					'customer-support': { heading: 'AI workflows for support teams, every Tuesday', desc: 'Ticket triage, knowledge base, response drafting — one hands-on guide per week.' },
+				};
+				const copy = deptCopy[dept] || { heading: 'Enjoying this? Get one like it every week', desc: 'Practical AI guides for your team — delivered every Tuesday.' };
+
 				const targetIndex = Math.floor(children.length * 0.4);
 				// Find nearest heading break for clean placement
 				let insertIndex = targetIndex;
@@ -233,7 +247,11 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 					}
 				}
 
-				const cta = tpl.content.cloneNode(true);
+				const cta = tpl.content.cloneNode(true) as DocumentFragment;
+				const heading = cta.querySelector('.newsletter-heading');
+				const desc = cta.querySelector('.newsletter-desc');
+				if (heading) { heading.innerHTML = copy.heading + '<span class="dot-accent">.</span>'; }
+				if (desc) { desc.textContent = copy.desc; }
 				children[insertIndex].before(cta);
 
 				// Bind form submit for the injected CTA
