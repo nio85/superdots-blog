@@ -8,15 +8,15 @@ const { variant = 'banner', source = 'unknown' } = Astro.props;
 
 const headingText: Record<string, string> = {
 	banner: 'One AI workflow, every Tuesday',
-	inline: 'Get the next workflow in your inbox',
-	hero: 'One practical AI workflow per week. Free.',
-	midpost: 'More like this, every Tuesday.',
+	inline: 'One workflow, every Tuesday.',
+	hero: 'One workflow per week. Free.',
+	midpost: 'One more, every Tuesday.',
 };
 const descText: Record<string, string> = {
 	banner: 'Step-by-step guides for Sales, Marketing, and Operations — specific tools, real configurations, and honest tradeoffs. One focused issue per week.',
-	inline: 'Every Tuesday: one hands-on guide for Sales, Marketing, or Operations — specific tools, step-by-step setup, honest tradeoffs.',
+	inline: 'Sales, Marketing, or Operations — specific tools, real steps, honest takes.',
 	hero: '',
-	midpost: 'One practical AI workflow for Sales, Marketing, or Operations — specific tools, step-by-step setup, honest tradeoffs. Free.',
+	midpost: 'Sales, Marketing, or Operations — specific tools, real steps, honest takes.',
 };
 const btnText: Record<string, string> = {
 	banner: 'Subscribe',
@@ -45,7 +45,7 @@ const btnText: Record<string, string> = {
 			<p class="newsletter-hero-label">{headingText.hero}<span class="dot-accent">.</span></p>
 		)}
 		{variant === 'compact' && (
-			<p class="newsletter-compact-label">One AI workflow, every Tuesday<span class="dot-accent">.</span></p>
+			<p class="newsletter-compact-label">One workflow, every Tuesday<span class="dot-accent">.</span></p>
 		)}
 		<form class="newsletter-form" aria-label="Newsletter signup">
 			<div class="newsletter-field">
@@ -222,8 +222,6 @@ const btnText: Record<string, string> = {
 	}
 	.newsletter--banner .newsletter-desc {
 		font-size: var(--text-sm);
-		letter-spacing: 0.02em;
-		text-transform: uppercase;
 		font-weight: var(--weight-medium);
 		opacity: 0.7;
 	}
@@ -318,8 +316,6 @@ const btnText: Record<string, string> = {
 		font-weight: var(--weight-semibold);
 		color: var(--color-text-muted);
 		margin: 0 0 var(--space-4);
-		letter-spacing: 0.02em;
-		text-transform: uppercase;
 		text-align: center;
 	}
 	.newsletter-hero-label .dot-accent {
@@ -396,8 +392,6 @@ const btnText: Record<string, string> = {
 	}
 	.newsletter--midpost .newsletter-desc {
 		font-size: var(--text-sm);
-		letter-spacing: 0.02em;
-		text-transform: uppercase;
 		font-weight: var(--weight-medium);
 		opacity: 0.7;
 	}
