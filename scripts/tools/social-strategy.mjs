@@ -20,11 +20,24 @@
  *   node social-strategy.mjs reset-week                        # Reset calendar for new week (weekly plan does this)
  */
 
-import { readFileSync, writeFileSync, renameSync } from 'node:fs';
-import { join } from 'node:path';
+import { readFileSync, writeFileSync, renameSync, openSync, closeSync, unlinkSync, mkdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 
 const STRATEGY_FILE = '/home/luca/superdots-cms/data/social-strategy.json';
 const TMP_FILE = STRATEGY_FILE + '.tmp';
+const LOCK_FILE = STRATEGY_FILE + '.lock';
+
+// Map full day names to 3-letter abbreviations and vice versa
+const DAY_MAP = {
+  sunday: 'Sun', monday: 'Mon', tuesday: 'Tue', wednesday: 'Wed',
+  thursday: 'Thu', friday: 'Fri', saturday: 'Sat',
+  sun: 'Sun', mon: 'Mon', tue: 'Tue', wed: 'Wed',
+  thu: 'Thu', fri: 'Fri', sat: 'Sat',
+};
+
+function normalizeDay(input) {
+  return DAY_MAP[input.toLowerCase()] || input;
+}
 
 function readStrategy() {
   try {
@@ -42,11 +55,34 @@ function readStrategy() {
   }
 }
 
+function acquireLock() {
+  mkdirSync(dirname(LOCK_FILE), { recursive: true });
+  for (let i = 0; i < 30; i++) {
+    try {
+      const fd = openSync(LOCK_FILE, 'wx');
+      closeSync(fd);
+      return;
+    } catch {
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 100);
+    }
+  }
+  throw new Error('Could not acquire lock after 3s — another process may be writing');
+}
+
+function releaseLock() {
+  try { unlinkSync(LOCK_FILE); } catch {}
+}
+
 function writeStrategy(data, updatedBy) {
-  data.updatedAt = new Date().toISOString();
-  data.updatedBy = updatedBy;
-  writeFileSync(TMP_FILE, JSON.stringify(data, null, 2) + '\n', 'utf-8');
-  renameSync(TMP_FILE, STRATEGY_FILE);
+  acquireLock();
+  try {
+    data.updatedAt = new Date().toISOString();
+    data.updatedBy = updatedBy;
+    writeFileSync(TMP_FILE, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+    renameSync(TMP_FILE, STRATEGY_FILE);
+  } finally {
+    releaseLock();
+  }
 }
 
 function getFlag(name) {
@@ -115,14 +151,28 @@ switch (command) {
     }
 
     const strategy = readStrategy();
+    const normDay = normalizeDay(day);
+
+    // If no calendar exists yet (first run before weekly plan), create a default calendar
+    if (!strategy.contentCalendar || strategy.contentCalendar.length === 0) {
+      console.error('[STRATEGY] No calendar exists yet — creating default slots.');
+      strategy.contentCalendar = [
+        { day: 'Mon', platform: 'linkedin', slot: '09:00', slug: null, postFormat: null, status: 'open' },
+        { day: 'Tue', platform: 'facebook', slot: '12:00', slug: null, postFormat: null, status: 'open' },
+        { day: 'Wed', platform: 'linkedin', slot: '09:00', slug: null, postFormat: null, status: 'open' },
+        { day: 'Thu', platform: 'facebook', slot: '12:00', slug: null, postFormat: null, status: 'open' },
+        { day: 'Fri', platform: 'linkedin', slot: '09:00', slug: null, postFormat: null, status: 'open' },
+      ];
+    }
+
     const slot = strategy.contentCalendar.find(
-      s => s.day.toLowerCase() === day.toLowerCase() &&
+      s => normalizeDay(s.day) === normDay &&
            s.platform.toLowerCase() === platform.toLowerCase() &&
            s.status === 'open'
     );
 
     if (!slot) {
-      console.error(`Error: No open slot found for ${day}/${platform}`);
+      console.error(`Error: No open slot found for ${normDay}/${platform}`);
       process.exit(1);
     }
 
@@ -146,6 +196,7 @@ switch (command) {
     }
     writeStrategy(strategy, 'monthly-social-review');
     console.error(`[STRATEGY] Insight added (${strategy.monthlyInsights.length} total).`);
+    console.log(JSON.stringify({ added: text, total: strategy.monthlyInsights.length }));
     break;
   }
 
