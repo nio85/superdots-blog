@@ -32,7 +32,7 @@
       <mj-column vertical-align="middle">
         <mj-text align="left" color="#FFFFFF" font-size="22px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" padding="0">
           <!--[if mso]><span style="color:#E8363B; font-size:10px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><span style="color:#E8363B; font-size:18px;">&#9679;</span><![endif]-->
-          <!--[if !mso]><!--><img src="https://superdots.sh/brand/superdots-logo-300x300-dark.png" width="36" height="36" alt="" style="display:inline-block;vertical-align:middle;border:0;flex-shrink:0;"><!--<![endif]-->
+          <!--[if !mso]><!--><img src="https://superdots.sh/brand/superdots-logomark.png" width="40" height="40" alt="" style="display:inline-block;vertical-align:middle;border:0;flex-shrink:0;"><!-- NOTE: welcome.html uses base64 inline to avoid Gmail image blocking --><!--<![endif]-->
           <span style="margin-left: 8px; vertical-align: middle;">superdots</span>
         </mj-text>
       </mj-column>
@@ -130,7 +130,7 @@
       <mj-column>
         <mj-text align="center" padding="0 0 4px">
           <!--[if mso]><span style="color:#E8363B; font-size:8px;">&#9679;</span><span style="color:#E8363B; font-size:11px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><![endif]-->
-          <!--[if !mso]><!--><img src="https://superdots.sh/brand/superdots-logo-300x300-dark.png" width="28" height="28" alt="" style="display:inline-block;vertical-align:middle;border:0;"><!--<![endif]-->
+          <!--[if !mso]><!--><img src="https://superdots.sh/brand/superdots-logomark.png" width="28" height="28" alt="" style="display:inline-block;vertical-align:middle;border:0;"><!--<![endif]-->
         </mj-text>
         <mj-text align="center" color="#E2E8F0" font-size="15px" font-family="'Space Grotesk', Arial, sans-serif" font-weight="500" padding="12px 0 4px">
           Practical AI for every department<span style="color:#E8363B;">.</span>
