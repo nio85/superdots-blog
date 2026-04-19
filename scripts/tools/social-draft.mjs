@@ -222,18 +222,24 @@ async function cmdUpdate() {
   if (getFlag('--content')) patch.content = getFlag('--content');
   if (getFlag('--scheduled-at')) patch.scheduledAt = new Date(getFlag('--scheduled-at')).toISOString();
   if (getFlag('--image-url')) patch.imageUrl = getFlag('--image-url');
-  if (getFlag('--post-format')) patch.postFormat = getFlag('--post-format');
+  if (getFlag('--post-format')) {
+    const VALID_FORMATS = ['image', 'carousel', 'link-only', 'document', 'video', 'text-only'];
+    const pf = getFlag('--post-format');
+    if (!VALID_FORMATS.includes(pf)) err(`Invalid --post-format: ${pf}. Valid: ${VALID_FORMATS.join(', ')}`);
+    patch.postFormat = pf;
+  }
   if (getFlag('--media-urls')) patch.mediaUrls = getFlag('--media-urls').split(',').map(u => u.trim()).filter(Boolean);
   if (getFlag('--document-url')) patch.documentUrl = getFlag('--document-url');
   if (getFlag('--article-url')) patch.articleUrl = getFlag('--article-url');
 
   const result = await withLockedDrafts((drafts) => {
     const idx = drafts.findIndex((d) => d.id === id);
-    if (idx === -1) err(`Draft not found: ${id}`);
+    if (idx === -1) return { result: null, newDrafts: null };
     drafts[idx] = { ...drafts[idx], ...patch };
     drafts[idx].qualityScore = computeQualityScore(drafts[idx]);
     return { result: drafts[idx], newDrafts: drafts };
   });
+  if (!result) err(`Draft not found: ${id}`);
 
   if (jsonOutput) { out(result); } else { log(`Draft updated: ${id} (quality: ${result.qualityScore}/100)`); }
 }
@@ -242,11 +248,12 @@ async function cmdDelete() {
   const id = args.find((a) => !a.startsWith('--') && a !== 'delete');
   if (!id) err('Usage: social-draft.mjs delete <id>');
 
-  await withLockedDrafts((drafts) => {
+  const found = await withLockedDrafts((drafts) => {
     const filtered = drafts.filter((d) => d.id !== id);
-    if (filtered.length === drafts.length) err(`Draft not found: ${id}`);
-    return { result: null, newDrafts: filtered };
+    if (filtered.length === drafts.length) return { result: false, newDrafts: null };
+    return { result: true, newDrafts: filtered };
   });
+  if (!found) err(`Draft not found: ${id}`);
 
   if (jsonOutput) { out({ ok: true }); } else { log(`Draft deleted: ${id}`); }
 }
