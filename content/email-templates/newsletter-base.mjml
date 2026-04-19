@@ -45,7 +45,7 @@
       <mj-column vertical-align="middle">
         <mj-text align="left" color="#FFFFFF" font-size="22px" font-weight="700" font-family="'Space Grotesk', Arial, sans-serif" padding="0">
           <!--[if mso]><span style="color:#E8363B; font-size:10px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><span style="color:#E8363B; font-size:18px;">&#9679;</span><![endif]-->
-          <!--[if !mso]><!--><span class="dot-sm"></span><span class="dot-md"></span><span class="dot-lg"></span><!--<![endif]-->
+          <!--[if !mso]><!--><svg width="24" height="24" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg><!--<![endif]-->
           <span style="margin-left: 8px; vertical-align: middle;">superdots</span>
         </mj-text>
       </mj-column>
@@ -186,7 +186,7 @@
       <mj-column>
         <mj-text align="center" padding="0 0 4px">
           <!--[if mso]><span style="color:#E8363B; font-size:8px;">&#9679;</span><span style="color:#E8363B; font-size:11px;">&#9679;</span><span style="color:#E8363B; font-size:14px;">&#9679;</span><![endif]-->
-          <!--[if !mso]><!--><span class="dot-sm"></span><span class="dot-md"></span><span class="dot-lg"></span><!--<![endif]-->
+          <!--[if !mso]><!--><svg width="20" height="20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg><!--<![endif]-->
         </mj-text>
         <mj-text align="center" color="#E2E8F0" font-size="15px" font-family="'Space Grotesk', Arial, sans-serif" font-weight="500" padding="12px 0 4px">
           Practical AI for every department<span style="color:#E8363B;">.</span>
