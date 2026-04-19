@@ -90,7 +90,10 @@ export async function runPipeline(name, { dryRun = false, vars = {}, companyId, 
     const match = Array.isArray(existing) && existing.find(i => i[field] === expectedTitle);
 
     if (match) {
-      const childCount = client.countChildren(match.id);
+      const childCount = await client.countChildren(match.id);
+      if (childCount < 0) {
+        console.warn(`WARNING: Could not check child count for ${match.identifier} (DB error). Proceeding cautiously.`);
+      }
       if (childCount > 0) {
         // Pipeline has subtasks — already running or completed, skip
         console.log(`Pipeline already exists with ${childCount} subtask(s) (${match.identifier}). Skipping.`);
