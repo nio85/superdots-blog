@@ -26,10 +26,10 @@ const SOCIAL_SIZES = {
 };
 
 const PAGE_SIZES = {
-  a4:            { width: '210mm', height: '297mm' },
-  'a4-landscape': { width: '297mm', height: '210mm' },
-  a5:            { width: '148mm', height: '210mm' },
-  letter:        { width: '8.5in', height: '11in' },
+  a4:            { format: 'A4',     landscape: false },
+  'a4-landscape': { format: 'A4',   landscape: true  },
+  a5:            { format: 'A5',     landscape: false },
+  letter:        { format: 'Letter', landscape: false },
 };
 
 const HELP = `Usage: node graphics.mjs <command> [options]
@@ -153,14 +153,18 @@ async function cmdPdf() {
   const input = resolveInput(file);
   const pageSize = getArg('--page-size', 'a4');
   if (!PAGE_SIZES[pageSize]) err(`Unknown page size: ${pageSize}. Valid: ${Object.keys(PAGE_SIZES).join(', ')}`);
-  const { width, height } = PAGE_SIZES[pageSize];
+  const { format, landscape } = PAGE_SIZES[pageSize];
   const output = resolveOutput(input, '.pdf', getArg('--output', null));
+  // Landscape templates manage their own padding — no external margins needed.
+  const margin = landscape
+    ? { top: '0', bottom: '0', left: '0', right: '0' }
+    : { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' };
 
   const browser = await launchBrowser();
   try {
     const page = await browser.newPage();
     await page.goto(`file://${input}`, { waitUntil: 'networkidle0', timeout: 30000 });
-    await page.pdf({ path: output, width, height, printBackground: true, margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' } });
+    await page.pdf({ path: output, format, landscape, printBackground: true, margin });
 
     const size = statSync(output).size;
     if (jsonOutput) {
