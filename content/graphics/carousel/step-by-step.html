@@ -35,25 +35,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 72px 80px;
+    padding: 64px 80px;
     position: relative;
     background: var(--sd-navy);
   }
 
   /* ─── BRAND BACKGROUND EFFECTS ─── */
 
-  /* Dot grid pattern — echoes the Superdot brand mark (site signature) */
+  /* Dot grid pattern — red-tinted, matching site .dots-brand */
   .slide::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.08) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgba(232, 54, 59, 0.18) 1.5px, transparent 1.5px);
     background-size: 18px 18px;
     pointer-events: none;
     z-index: 0;
   }
 
-  /* Glow elements — warm radial light (same as site PageHeader) */
+  /* Red glow — warm radial light (same as site PageHeader) */
   .slide-glow {
     position: absolute;
     width: 600px;
@@ -66,20 +66,20 @@
   .slide-glow--primary {
     bottom: -20%;
     left: -10%;
-    background: radial-gradient(ellipse, rgba(232,54,59,0.12) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(232,54,59,0.28) 0%, transparent 70%);
   }
   .slide-glow--secondary {
     top: -15%;
     right: -10%;
-    background: radial-gradient(ellipse, rgba(232,54,59,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(232,54,59,0.16) 0%, transparent 70%);
   }
 
-  /* Top accent line — gradient bar */
+  /* Top accent line — full-width gradient bar */
   .slide-accent-line {
     position: absolute;
-    top: 0; left: 80px; right: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 40%, transparent 100%);
     z-index: 1;
   }
 
@@ -89,21 +89,13 @@
     z-index: 1;
   }
 
-  /* ─── THREE-DOT BRAND MARK ─── */
+  /* ─── THREE-DOT BRAND MARK (SVG, 45° diagonal) ─── */
   .brand-dots {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
+    width: 28px;
+    height: 28px;
     margin-right: 10px;
+    flex-shrink: 0;
   }
-  .brand-dots span {
-    display: block;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-  .brand-dots span:nth-child(1) { width: 6px; height: 6px; }
-  .brand-dots span:nth-child(2) { width: 8px; height: 8px; }
-  .brand-dots span:nth-child(3) { width: 10px; height: 10px; }
 
   /* ─── HOOK SLIDE ─── */
   .hook-body {
@@ -115,7 +107,7 @@
   }
 
   .hook-label {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -139,7 +131,7 @@
     font-weight: 700;
     font-size: 200px;
     color: var(--accent);
-    opacity: 0.08;
+    opacity: 0.10;
     position: absolute;
     bottom: 40px;
     right: 60px;
@@ -156,7 +148,7 @@
   }
 
   .step-label {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -173,10 +165,14 @@
   }
 
   .step-detail {
-    font-size: 24px;
-    line-height: 1.5;
+    font-size: 36px;
+    line-height: 1.4;
     color: var(--sd-gray-400);
     max-width: 760px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 
   /* ─── CTA SLIDE ─── */
@@ -193,13 +189,14 @@
   .cta-heading {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
-    font-size: 42px;
+    font-size: 52px;
     line-height: 1.15;
     letter-spacing: -0.02em;
+    max-width: 800px;
   }
 
   .cta-url {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: 500;
     color: var(--accent);
     letter-spacing: 0.01em;
@@ -207,11 +204,11 @@
 
   .cta-button {
     display: inline-block;
-    padding: 16px 48px;
+    padding: 20px 56px;
     background: var(--accent);
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 12px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--sd-white);
     text-transform: uppercase;
@@ -233,24 +230,24 @@
   .wordmark {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 30px;
     letter-spacing: -0.02em;
   }
   .wordmark span { color: var(--accent); }
 
   .dept-badge {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 6px 16px;
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--sd-gray-400);
+    border: 1px solid var(--dept-color);
+    color: var(--dept-color);
   }
 
   .slide-counter {
-    font-size: 13px;
+    font-size: 20px;
     color: var(--sd-gray-400);
     letter-spacing: 0.05em;
   }
@@ -262,13 +259,13 @@
   }
 
   .footer-url {
-    font-size: 16px;
+    font-size: 22px;
     color: var(--sd-gray-400);
   }
   .footer-url strong { color: var(--sd-white); font-weight: 500; }
 
   .swipe-hint {
-    font-size: 16px;
+    font-size: 22px;
     color: var(--sd-gray-400);
     display: flex;
     align-items: center;
@@ -294,26 +291,9 @@
     border-right: 2px solid var(--sd-gray-400);
     transform: rotate(45deg);
   }
-
-  .dots {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 2;
-  }
-  .dots span {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.4;
-  }
-  .dots span:last-child { opacity: 1; }
 </style>
 </head>
-<body style="--accent: {{accentColor}};">
+<body style="--accent: {{accentColor}}; --dept-color: {{deptColor}};">
 
   <!-- SLIDE: hook -->
   <div class="slide" data-slide="hook">
@@ -322,7 +302,7 @@
     <div class="slide-accent-line"></div>
     <div class="header">
       <div class="wordmark-group">
-        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <svg class="brand-dots" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg>
         <div class="wordmark">superdots<span>.</span></div>
       </div>
       <div class="dept-badge">{{department}}</div>
@@ -332,10 +312,9 @@
       <h1 class="hook-title">{{hookTitle}}</h1>
     </div>
     <div class="footer-bar">
-      <div class="swipe-hint">Follow the steps <span class="arrow"></span></div>
+      <div class="swipe-hint">Swipe <span class="arrow"></span></div>
       <div class="slide-counter">1 / {{totalSlides}}</div>
     </div>
-    <div class="dots"><span></span><span></span><span></span></div>
   </div>
 
   <!-- SLIDE: step (repeat per step) -->
@@ -345,7 +324,7 @@
     <div class="step-number-bg">{{stepNumber}}</div>
     <div class="header">
       <div class="wordmark-group">
-        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <svg class="brand-dots" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg>
         <div class="wordmark">superdots<span>.</span></div>
       </div>
       <div class="dept-badge">{{department}}</div>
@@ -356,7 +335,7 @@
       <p class="step-detail">{{stepDetail}}</p>
     </div>
     <div class="footer-bar">
-      <div class="footer-url"><strong>superdots.sh</strong>/blog/{{slug}}</div>
+      <div class="footer-url"><strong>superdots.sh</strong></div>
       <div class="slide-counter">{{slideNumber}} / {{totalSlides}}</div>
     </div>
   </div>
@@ -368,16 +347,15 @@
     <div class="slide-accent-line"></div>
     <div class="header">
       <div class="wordmark-group">
-        <div class="brand-dots"><span></span><span></span><span></span></div>
+        <svg class="brand-dots" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="50" r="6" fill="#E8363B"/><circle cx="32" cy="32" r="8" fill="#E8363B"/><circle cx="50" cy="14" r="10" fill="#E8363B"/></svg>
         <div class="wordmark">superdots<span>.</span></div>
       </div>
     </div>
     <div class="cta-body">
-      <div class="cta-heading">Get the complete guide</div>
-      <div class="cta-url">superdots.sh/blog/{{slug}}</div>
+      <div class="cta-heading">{{ctaHeading}}</div>
+      <div class="cta-url">superdots.sh</div>
       <div class="cta-button">Follow the Full Guide</div>
     </div>
-    <div class="dots"><span></span><span></span><span></span></div>
   </div>
 
 </body>
