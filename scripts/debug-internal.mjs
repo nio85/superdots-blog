@@ -7,7 +7,7 @@
  *   2. Content pipeline — verify today's daily content task exists (weekdays)
  *   3. Stuck tasks — in_progress >24h without comment update
  *   4. Blocked tasks — blocked >48h
- *   5. Cron execution — check /tmp log files have today's entries
+ *   5. Cron execution — verify key Paperclip routines ran today
  *   6. Git deploy health — last Cloudflare Pages deploy <48h old
  *   7. Email delivery — verify SMTP auth to Gmail
  *   8. Build health — astro build dry run
@@ -29,7 +29,6 @@ import {
   REPORT_INTERNAL_PATH as REPORT_PATH,
   getPaperclipApiKey, createSmtpTransport,
 } from './config.mjs';
-import { readFileSync } from 'node:fs';
 
 const CF_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
 
@@ -126,26 +125,42 @@ async function checkBlockedTasks() {
 }
 
 async function checkCronExecution() {
-  const logs = [
-    'daily-content-pipeline.log',
-    'daily-summary-email.log',
-    'daily-proposals-email.log',
-  ];
+  // Check key Paperclip routines have run recently (replaced old /tmp log file check)
+  const routineIds = {
+    'Daily Content Pipeline': '02a7ad3c-4b14-498a-8164-02675f099317',
+    'Daily Summary Email — Morning': '761c331b-b5cf-4346-a1db-3799d14370a7',
+    'Daily Summary Email — Evening': 'fce51c1c-d6e5-4308-9903-007d478ab973',
+  };
   const results = [];
   let failures = 0;
 
-  for (const log of logs) {
-    const path = `/tmp/${log}`;
+  for (const [name, id] of Object.entries(routineIds)) {
     try {
-      const content = readFileSync(path, 'utf-8');
-      if (content.includes(today)) {
-        results.push(`${log}: OK`);
+      const runs = await api('GET', `/api/routines/${id}/runs`);
+      const recent = runs.find(r => r.createdAt?.startsWith(today));
+      if (recent) {
+        results.push(`${name}: ${recent.status}`);
+        if (recent.status === 'failed') failures++;
       } else {
-        results.push(`${log}: no entry for ${today}`);
-        failures++;
+        // Weekend skip for weekday-only routines
+        if (!isWeekday && name === 'Daily Content Pipeline') {
+          results.push(`${name}: skipped (weekend)`);
+        } else {
+          // Check if the routine is scheduled later today before flagging failure
+          const routine = await api('GET', `/api/routines/${id}`);
+          const trigger = routine.triggers?.find(t => t.kind === 'schedule');
+          const cronHour = trigger?.cronExpression ? parseInt(trigger.cronExpression.split(' ')[1], 10) : null;
+          const currentHour = new Date().getHours();
+          if (cronHour !== null && currentHour < cronHour) {
+            results.push(`${name}: pending (scheduled ${cronHour}:00)`);
+          } else {
+            results.push(`${name}: no run today`);
+            failures++;
+          }
+        }
       }
-    } catch {
-      results.push(`${log}: file not found`);
+    } catch (e) {
+      results.push(`${name}: ${e.message}`);
       failures++;
     }
   }
