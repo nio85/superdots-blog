@@ -98,7 +98,8 @@ if (slides[slides.length - 1].type !== 'cta') {
   slides.push({ type: 'cta' });
 }
 
-const accentColor = DEPT_COLORS[department] || '#E8363B';
+const accentColor = '#E8363B';  // Brand red — ALWAYS dominant
+const deptColor = DEPT_COLORS[department] || '#E8363B';
 const totalSlides = slides.length;
 
 // ── Template rendering ──────────────────────────────────────────────────────
@@ -110,6 +111,7 @@ function renderSlideHtml(slide, index) {
 
   // Global replacements
   html = html.replace(/\{\{accentColor\}\}/g, accentColor);
+  html = html.replace(/\{\{deptColor\}\}/g, deptColor);
   html = html.replace(/\{\{department\}\}/g, department);
   html = html.replace(/\{\{slug\}\}/g, escapeHtml(slug));
   html = html.replace(/\{\{totalSlides\}\}/g, String(totalSlides));
@@ -141,6 +143,12 @@ function renderSlideHtml(slide, index) {
     html = html.replace(/\{\{statValue\}\}/g, escapeHtml(slide.value || ''));
     html = html.replace(/\{\{statContext\}\}/g, escapeHtml(slide.context || ''));
     html = html.replace(/\{\{statDetail\}\}/g, escapeHtml(slide.detail || ''));
+  }
+
+  // For CTA slides — customizable heading
+  if (slide.type === 'cta') {
+    const ctaHeading = slide.heading || 'Read the full breakdown';
+    html = html.replace(/\{\{ctaHeading\}\}/g, escapeHtml(ctaHeading));
   }
 
   // For step slides (step-by-step)
