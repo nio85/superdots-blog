@@ -29,12 +29,12 @@ AI changes that. Here's how to write a complete, five-section BCP in three to fo
 
 ## What a BCP actually needs to include
 
-A **business continuity plan** is a documented process that defines how your organization keeps operating during and after a disruption — a cyberattack, a flood, a key employee leaving suddenly, a supplier collapse. Without a plan, you're improvising under pressure. With one, you're executing a procedure.
+A **business continuity plan** is a documented process that defines how your organization keeps operating during and after a disruption — a [cyberattack](/blog/ai-security-scanning), a flood, a key employee leaving suddenly, a supplier collapse. Without a plan, you're improvising under pressure. With one, you're executing a procedure.
 
 Every complete BCP has five sections. Skip one and the plan fails when you actually need it.
 
 1. **Business Impact Analysis (BIA)** — Which functions are critical, what downtime costs per hour, and how long each function can be offline before the damage becomes irreversible.
-2. **Risk Assessment** — The specific threats your business faces (data breach, power outage, supplier failure, key person departure), ranked by likelihood and impact.
+2. **Risk Assessment** — The specific threats your business faces (data breach, power outage, supplier failure, [key person departure](/blog/ai-for-hr)), ranked by likelihood and impact.
 3. **Recovery Strategies** — Step-by-step procedures for restoring each critical function after each type of disruption. This is where the actual work lives.
 4. **Communication Plan** — Who calls who, in what order, using what channels, when a disruption occurs.
 5. **Testing Procedure** — How you verify the plan works before you need it in a real emergency.

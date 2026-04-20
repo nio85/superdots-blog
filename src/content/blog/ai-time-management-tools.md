@@ -33,7 +33,7 @@ Here is what that looks like in practice: professionals who adopt AI scheduling 
 
 Most AI tools help you do one thing better. AI time management tools change the entire shape of your day.
 
-Think about where your time actually goes. McKinsey research found that knowledge workers spend 28% of their week managing email alone. Add meetings, scheduling back-and-forth, and calendar admin and you are looking at 40–50% of your week on logistics rather than actual work.
+Think about where your time actually goes. McKinsey research found that knowledge workers spend 28% of their week [managing email](/blog/manage-email-faster-with-ai) alone. Add meetings, scheduling back-and-forth, and calendar admin and you are looking at 40–50% of your week on logistics rather than actual work.
 
 That is the problem AI attacks directly. It does not just make you slightly faster at time management — it removes the category of work almost entirely.
 

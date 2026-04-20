@@ -86,7 +86,7 @@ Score each potential use case on two dimensions:
 
 2. **Customer support chatbot** — if you have a knowledge base, a chatbot can resolve common questions from day one.
 
-3. **Meeting transcription and summaries** — plug into your existing Zoom/Teams/Meet calls. No workflow changes needed.
+3. **[Meeting transcription and summaries](/blog/ai-meeting-notes-summaries-action-items)** — plug into your existing Zoom/Teams/Meet calls. No workflow changes needed.
 
 4. **Data entry automation** — connect your email to your CRM or spreadsheet. No manual copying.
 

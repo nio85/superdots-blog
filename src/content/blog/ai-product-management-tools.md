@@ -85,7 +85,7 @@ Underrated for PMs. Not just grammar checking — it rewrites for clarity, adjus
 
 **Dovetail**
 
-Built specifically for qualitative research. Upload interview recordings or transcripts, and it surfaces themes, tags quotes, and generates insight summaries. If you do regular user research, this pays for itself fast.
+Built specifically for qualitative research. Upload [interview recordings](/blog/ai-transcription-tools) or transcripts, and it surfaces themes, tags quotes, and generates insight summaries. If you do regular user research, this pays for itself fast.
 
 **Grain**
 

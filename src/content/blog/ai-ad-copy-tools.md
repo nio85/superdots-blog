@@ -103,7 +103,7 @@ Edit each for brand voice, accuracy, and sharpness. This is a quick pass, not a 
 
 ### Step 4: Test (automated, 1-2 weeks)
 
-Launch all variations as an A/B test (or A/B/C/D/E test). Use your ad platform's built-in optimization or a tool like AdCreative.ai or Madgicx for automated creative testing.
+Launch all variations as an [A/B test](/blog/ai-ab-testing-tools) (or A/B/C/D/E test). Use your ad platform's built-in optimization or a tool like AdCreative.ai or Madgicx for automated creative testing.
 
 Let the test run until you have statistical significance. For most campaigns, this means at least 1,000 impressions per variation and a clear winner on your primary metric (CTR, conversion rate, or CPA).
 

@@ -109,7 +109,7 @@ If you're working on a [logo design project with AI](/blog/ai-logo-design), the 
 
 **Rapid prototyping.** When you're building a [UX prototype](/blog/ai-ux-design-tools) and need a placeholder palette that doesn't look terrible, a 30-second Coolors session produces something good enough to move forward with.
 
-**Content marketing and social templates.** When a team needs to produce a lot of on-brand visual content without a designer involved in every piece, a locked palette from Coolors or Adobe Color gives non-designers a safe set of swatches to work within.
+**Content marketing and social templates.** When a team needs to produce a lot of on-brand [visual content](/blog/ai-content-creation) without a designer involved in every piece, a locked palette from Coolors or Adobe Color gives non-designers a safe set of swatches to work within.
 
 ## Takeaways
 
