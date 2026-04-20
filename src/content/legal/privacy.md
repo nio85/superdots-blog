@@ -2,7 +2,7 @@
 title: Privacy Policy | Superdots
 description: Privacy policy for superdots.sh — how we handle your data.
 pageTitle: Privacy Policy
-lastUpdated: 27 March 2026
+lastUpdated: 20 April 2026
 ---
 
 ## 1. Who we are
@@ -37,6 +37,11 @@ We collect the minimum data needed to run this Site:
 		<tr>
 			<td>Heatmaps and session recordings via Microsoft Clarity</td>
 			<td>Understand how visitors interact with pages so we can improve usability</td>
+			<td>Consent — Art. 6(1)(a)</td>
+		</tr>
+		<tr>
+			<td>Ad conversion data and retargeting identifiers via Reddit Pixel</td>
+			<td>Measure the effectiveness of Reddit advertising campaigns and build retargeting audiences for ads</td>
 			<td>Consent — Art. 6(1)(a)</td>
 		</tr>
 		<tr>
@@ -94,6 +99,12 @@ See our [Cookie Policy](/cookie-policy/) for the full list of cookies, their pur
 			<td><a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy</a></td>
 		</tr>
 		<tr>
+			<td>Reddit, Inc.</td>
+			<td>Ad conversion tracking and retargeting (Reddit Pixel)</td>
+			<td>Pseudonymised ad conversion events, page visit data, click IDs for campaign attribution</td>
+			<td><a href="https://www.reddit.com/policies/privacy-policy" rel="noopener noreferrer" target="_blank">Reddit Privacy</a></td>
+		</tr>
+		<tr>
 			<td>Cloudflare Pages</td>
 			<td>Hosting, CDN, DDoS protection</td>
 			<td>IP address, request metadata</td>
@@ -120,9 +131,11 @@ See our [Cookie Policy](/cookie-policy/) for the full list of cookies, their pur
 
 Google, Microsoft, Cloudflare, and Resend process data in the United States. All four providers are certified under the **EU–US Data Privacy Framework** (DPF) and incorporate **Standard Contractual Clauses (SCCs)** in their data processing agreements as additional transfer safeguards.
 
+**Reddit, Inc.** (Reddit Pixel, activated only with marketing consent) processes data in the United States. The transfer is governed by **Standard Contractual Clauses (SCCs)** as the legal mechanism under Art. 46(2)(c) GDPR. Reddit Pixel cookies are only set after you explicitly grant marketing consent.
+
 Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic (self-hosted on servers located in the European Union) and delivered via Resend. Resend is US-based and DPF-certified — see their [DPA](https://resend.com/legal/dpa) for transfer safeguards.
 
-You can review each provider's transfer documentation: [Google](https://policies.google.com/privacy/frameworks), [Microsoft](https://privacy.microsoft.com/en-us/privacystatement), [Cloudflare](https://www.cloudflare.com/cloudflare-customer-dpa/), [Resend](https://resend.com/legal/dpa).
+You can review each provider's transfer documentation: [Google](https://policies.google.com/privacy/frameworks), [Microsoft](https://privacy.microsoft.com/en-us/privacystatement), [Cloudflare](https://www.cloudflare.com/cloudflare-customer-dpa/), [Resend](https://resend.com/legal/dpa), [Reddit](https://www.reddit.com/policies/privacy-policy).
 
 ## 6. Data retention
 
@@ -130,6 +143,7 @@ You can review each provider's transfer documentation: [Google](https://policies
 - **Google Analytics data:** retained for 14 months (GA4 default), then automatically deleted.
 - **localStorage (theme):** persists until you clear your browser data.
 - **Microsoft Clarity data:** session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.
+- **Reddit Pixel data:** conversion and audience data retained by Reddit per their [data retention policy](https://www.reddit.com/policies/privacy-policy). The `_rdt_uuid` cookie has a 2-year lifetime; data associated with it is retained by Reddit for up to 2 years.
 - **Cloudflare logs:** retained per Cloudflare's standard retention (typically 72 hours for edge logs).
 - **Newsletter email addresses (confirmed):** retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).
 - **Newsletter email addresses (unconfirmed):** retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.
@@ -155,7 +169,7 @@ Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have
 - **Restrict processing** (Art. 18)
 - **Data portability** (Art. 20)
 - **Object** to processing based on legitimate interest (Art. 21)
-- **Withdraw consent** at any time for analytics cookies (GA4/Clarity) or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
+- **Withdraw consent** at any time for analytics cookies (GA4/Clarity), marketing cookies (Reddit Pixel), or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
 
 To exercise any of these rights, email [privacy@superdots.sh](mailto:privacy@superdots.sh). We will respond within 30 days.
 
