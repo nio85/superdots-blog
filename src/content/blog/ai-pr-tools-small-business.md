@@ -18,6 +18,7 @@ faqs:
     answer: "Prowly includes AI writing assistance for press release drafts and pitch suggestions. Prowly was acquired by Semrush in late 2025 and is transitioning into the Semrush AI PR Toolkit. Pricing starts at around $258/month billed annually — a meaningful cost for most small businesses. Worth it if you need a journalist database plus media monitoring in one place. Not worth it if you only need to write and distribute occasional press releases; Claude + free distribution channels cost 90% less."
   - question: "How do I pitch journalists using AI tools?"
     answer: "Use Claude or ChatGPT to draft a personalized pitch, then customize it manually. A good pitch is 3-4 short paragraphs: why this story fits their beat, the core news hook, key facts, and your contact. Find journalist email addresses through Anewstip (free tier available) or by checking publication staff pages and Twitter bios. AI can personalize at scale — generate 10 pitch variants for 10 different journalists in about 20 minutes — but each one needs a human review before you hit send."
+heroImage: "/images/blog/ai-pr-tools-small-business.webp"
 ---
 
 The infrastructure behind professional PR — journalist databases, wire distribution, media monitoring platforms — required either a full-service agency or a $50,000+ software budget a decade ago. The agency model has not changed. The software market has.
