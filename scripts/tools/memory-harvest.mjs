@@ -21,7 +21,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import {
   PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID, AGENTS,
-  getPaperclipApiKey,
+  getPaperclipApiKey, createPaperclipJwt,
 } from '../config.mjs';
 
 // --- Constants ---
@@ -60,8 +60,23 @@ const AGENT_NAME_TO_ID = Object.fromEntries(
 
 // --- API helpers ---
 
-function getAuth(agentId) {
-  const key = process.env.PAPERCLIP_API_KEY || getPaperclipApiKey(agentId);
+/**
+ * Get auth token for API calls.
+ * When targetAgentId matches the calling agent (normal heartbeat), use env JWT.
+ * When targeting a DIFFERENT agent (harvestAll), mint a fresh JWT for that agent
+ * so the server's POST route attributes the memory correctly (it overrides
+ * body.agentId with JWT sub).
+ */
+function getAuth(targetAgentId) {
+  const callingAgentId = process.env.PAPERCLIP_AGENT_ID;
+  // If targeting a different agent, we MUST mint a per-agent JWT
+  // because server overrides body.agentId with JWT sub
+  if (targetAgentId && callingAgentId && targetAgentId !== callingAgentId) {
+    const jwt = createPaperclipJwt(targetAgentId);
+    if (jwt) return jwt;
+    // Fall through if no JWT secret available
+  }
+  const key = process.env.PAPERCLIP_API_KEY || getPaperclipApiKey(targetAgentId);
   if (!key) throw new Error('No PAPERCLIP_API_KEY or JWT secret available');
   return key;
 }
