@@ -1,5 +1,5 @@
 ---
-title: "AI for Supply Chain Management: A Practical Guide"
+title: "AI for Supply Chain Management (2026)"
 description: "From demand forecasting to route optimization, learn how AI tools help operations teams build resilient supply chains without enterprise-grade budgets."
 pubDate: "2026-03-17T08:17:40Z"
 author: "Superdots Team"

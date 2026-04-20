@@ -1,5 +1,5 @@
 ---
-title: "Best AI Marketing Automation Tools for Small Business in 2026 (Ranked by Budget)"
+title: "Best AI Marketing Automation for Small Business"
 description: "The best AI marketing automation tools for small business in 2026. Ranked by budget with real pricing, comparison table, and a guide on what to automate first."
 pubDate: "2026-04-13"
 author: "Superdots Team"

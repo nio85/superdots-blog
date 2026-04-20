@@ -1,5 +1,5 @@
 ---
-title: "AI Quality Management Software for Service Businesses (2026)"
+title: "AI Quality Management Software (2026)"
 description: "Most QMS tools are built for factories. Here are the best AI quality management tools for agencies, SaaS companies, and professional services."
 pubDate: "2026-04-18"
 author: "Superdots Team"

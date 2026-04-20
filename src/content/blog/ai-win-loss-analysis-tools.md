@@ -1,5 +1,5 @@
 ---
-title: "Best AI Win/Loss Analysis Tools for Small Sales Teams (2026)"
+title: "Best AI Win/Loss Analysis Tools (2026)"
 description: "Compare the best AI win/loss analysis tools for SMB sales teams. Includes free options, pricing, and how to run analysis without Gong or Klue."
 pubDate: "2026-04-16"
 author: "Superdots Team"

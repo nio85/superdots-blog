@@ -1,5 +1,5 @@
 ---
-title: "AI Marketing Attribution Tools: Small Business Guide"
+title: "AI Marketing Attribution Tools (2026)"
 description: "AI marketing attribution tools finally answer Wanamaker's question. This guide covers GA4 data-driven attribution for free, plus when to upgrade to Triple Whale, Northbeam, or Ruler Analytics."
 pubDate: "2026-04-10"
 author: "Superdots Team"

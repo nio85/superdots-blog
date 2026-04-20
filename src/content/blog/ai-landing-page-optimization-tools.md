@@ -1,5 +1,5 @@
 ---
-title: "AI Landing Page Optimization Tools: What Actually Works for Paid Campaign Marketers (2026)"
+title: "AI Landing Page Optimization Tools (2026)"
 description: "Stop rebuilding. Start testing. The AI tools that actually improve conversion rates for paid campaigns — with pricing, traffic thresholds, and when each makes sense."
 pubDate: "2026-04-19"
 author: "Superdots Team"
