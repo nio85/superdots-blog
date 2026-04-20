@@ -257,7 +257,32 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
     s.defer = true;
     s.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
     s.setAttribute('data-domains', 'superdots.sh');
+    s.setAttribute('data-performance', 'true');
     document.head.appendChild(s);
+
+    // Umami Session Replays — consent-gated (loaded via SD_startUmamiRecorder)
+    window.SD_startUmamiRecorder = function() {
+      if (window.SD_umamiRecorderLoaded) return;
+      window.SD_umamiRecorderLoaded = true;
+      var r = document.createElement('script');
+      r.src = UMAMI_URL + '/recorder.js';
+      r.defer = true;
+      r.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+      r.setAttribute('data-sample-rate', '1');
+      r.setAttribute('data-mask-level', 'moderate');
+      r.setAttribute('data-max-duration', '300000');
+      document.head.appendChild(r);
+    };
+    // Auto-start if consent already granted
+    try {
+      var raw = localStorage.getItem('sd-consent-v2');
+      if (raw) {
+        var p = JSON.parse(raw);
+        if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now() && p.categories && p.categories.analytics) {
+          window.SD_startUmamiRecorder();
+        }
+      }
+    } catch(e) {}
   }
 </script>
 )}
