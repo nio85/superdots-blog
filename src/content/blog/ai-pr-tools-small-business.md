@@ -50,13 +50,15 @@ The free tier of PR tooling is more capable than most businesses realize.
 
 **Claude and ChatGPT free tiers** can draft press releases and pitches. The quality is meaningfully lower than their paid versions — slower generation, fewer capabilities, occasional refusals on commercial tasks — but functional for occasional use. For anyone planning to use AI for PR regularly, the $20/month subscription to either tool pays for itself in the first press release.
 
-| Tool | Best For | AI Features | Price |
-|------|----------|-------------|-------|
-| Google Alerts | Brand monitoring, media coverage tracking | None (rule-based) | Free |
-| Mention (free) | Basic brand monitoring, social mentions | Sentiment indicators | Free |
-| Claude (free tier) | Press release drafts, pitch writing | Full LLM capabilities | Free |
-| ChatGPT (free tier) | Press release drafts, pitch writing | Full LLM capabilities | Free |
-| Canva | PR visual assets, press kit graphics | AI image generation | Free / $15 mo |
+**Canva** handles the visual side of PR — press kit design, social announcement graphics, and media kit layout. The free tier includes press release and media kit templates you can adapt without design experience. For most small businesses, the primary PR use is creating a one-page media kit (company overview, logo variants, headshots, key metrics) that journalists often request alongside a pitch, and social graphics to accompany a launch announcement. The paid plan ($15/month) adds background removal, a brand kit with custom fonts and colors, and premium template access — useful if you need consistent visual branding across PR materials.
+
+| Tool | Best For | AI Features | Price | Limitation |
+|------|----------|-------------|-------|------------|
+| Google Alerts | Brand monitoring, media coverage tracking | None (rule-based) | Free | Misses paywalled content and social media |
+| Mention (free) | Basic brand monitoring, social mentions | Sentiment indicators | Free | Limited alert count; no historical data |
+| Claude (free tier) | Press release drafts, pitch writing | Full LLM capabilities | Free | Usage limits; slower than paid tier |
+| ChatGPT (free tier) | Press release drafts, pitch writing | Full LLM capabilities | Free | Usage limits; occasional commercial task refusals |
+| Canva | PR visual assets, press kit graphics | AI image generation | Free / $15 mo | Design only — no distribution or monitoring |
 
 The free stack — Google Alerts + Claude free + Canva free — handles basic PR monitoring and writing for $0. The limitation is volume: Claude's free tier has usage limits, and Google Alerts misses a significant slice of coverage. For a small business publishing one or two press releases per year, this is often sufficient.
 
@@ -74,12 +76,12 @@ The paid market breaks cleanly into two tiers: tools under $200/month designed f
 
 **Muck Rack** is the enterprise option — full PR platform with an AI journalist recommendation engine, media monitoring, and reporting. Pricing is not published; based on third-party reports (Rephonic, SignalGenesis), annual contracts typically start at $10,000-$15,000/year. Appropriate for PR agencies and in-house teams at companies with significant PR programs. Not relevant to most small businesses.
 
-| Tool | Best For | AI Features | Price | Free Trial |
-|------|----------|-------------|-------|------------|
-| Prezly | Media CRM + branded newsroom | AI translation, multilingual | ~$88/mo | 14 days |
-| Prowly (Semrush) | Press release distribution + journalist database | AI writing assistant | $258/mo (annual) | 7 days |
-| Anewstip | Journalist discovery, targeted outreach | AI pitch personalization | $200/mo (Standard) | Free tier |
-| Muck Rack | Full enterprise PR platform | AI journalist recommendations, briefs | ~$833+/mo | No |
+| Tool | Best For | AI Features | Price | Free Trial | Limitation |
+|------|----------|-------------|-------|------------|------------|
+| Prezly | Media CRM + branded newsroom | AI translation, multilingual | ~$88/mo | 14 days | Limited journalist database vs Prowly/Anewstip |
+| Prowly (Semrush) | Press release distribution + journalist database | AI writing assistant | $258/mo (annual) | 7 days | Platform uncertainty post-Semrush acquisition |
+| Anewstip | Journalist discovery, targeted outreach | AI pitch personalization | $200/mo (Standard) | Free tier | Outreach only — no press release builder or newsroom |
+| Muck Rack | Full enterprise PR platform | AI journalist recommendations, briefs | ~$833+/mo | No | Enterprise pricing; not relevant for most small businesses |
 
 For context: a traditional PR agency retainer for a small business runs $2,500-$7,500/month, according to agency pricing published by AMW Group and Green Flag Digital. The full paid tool stack — Prezly + Claude Pro + Anewstip — comes to approximately $308/month. That is a 90% cost reduction against even the cheapest agency retainer. The question, which the comparison does not answer, is whether you can do what an agency does without the relationships an agency brings.
 
