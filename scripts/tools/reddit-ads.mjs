@@ -18,6 +18,9 @@ const CLIENT_ID = process.env.REDDIT_CLIENT_ID;
 const CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.REDDIT_REFRESH_TOKEN;
 const AD_ACCOUNT_ID = process.env.REDDIT_AD_ACCOUNT_ID;
+// Default funding instrument (credit card ending in 1315). Set explicitly on every campaign
+// creation so Reddit doesn't require manual linking in the UI each time.
+const DEFAULT_FUNDING_INSTRUMENT_ID = process.env.REDDIT_FUNDING_INSTRUMENT_ID || '1653743';
 
 let accessToken = null;
 let tokenExpiresAt = 0;
@@ -177,6 +180,8 @@ async function main() {
       body.configured_status = body.configured_status || body.status || 'PAUSED';
       delete body.status;
       body.objective = body.objective || 'TRAFFIC';
+      // Always attach the default funding instrument unless explicitly overridden
+      if (!body.funding_instrument_id) body.funding_instrument_id = DEFAULT_FUNDING_INSTRUMENT_ID;
       const data = await api('POST', `/ad_accounts/${AD_ACCOUNT_ID}/campaigns`, { data: body });
       if (jsonOutput) { out(data); break; }
       log(`Campaign created: ${data.data?.id || data.id || JSON.stringify(data)}`);
