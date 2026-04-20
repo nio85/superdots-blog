@@ -55,7 +55,7 @@
           You're in<span style="color:#E8363B;">.</span>
         </mj-text>
         <mj-text font-size="17px" line-height="1.7" color="#E2E8F0" padding="0 0 12px">
-          Hi {contactfield=firstname|default:there},
+          Hi {contactfield=firstname|there},
         </mj-text>
         <mj-text font-size="16px" line-height="1.7" color="#94A3B8" padding="0 0 12px">
           Welcome to Superdots — practical, no-fluff content about AI and work. Every week we cover one real use case per department, with specific tools, real steps, and honest takes on where AI helps and where it doesn't.
@@ -147,7 +147,7 @@
           You're receiving this because you subscribed at superdots.sh
         </mj-text>
         <mj-text align="center" padding="0" css-class="footer-link">
-          {unsubscribetext}&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="{webview_url}" style="color:#94A3B8; font-size:13px;">View in browser</a>
+          {unsubscribe_text}&nbsp;&nbsp;&middot;&nbsp;&nbsp;{webview_text}
         </mj-text>
       </mj-column>
     </mj-section>
