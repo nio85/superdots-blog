@@ -46,7 +46,7 @@ Routine replies are where most email time goes. AI can draft responses in second
 - **Simple questions**: Draft a clear answer and flag it for your quick review.
 - **Scheduling coordination**: Propose available times without you opening your calendar.
 
-**How to do it**: Gmail's "Help Me Write" and Outlook's Copilot both offer inline draft generation. Type a one-line prompt ("politely decline this meeting and suggest next week") and the AI fills in the rest. [Superhuman](https://superhuman.com/ai) goes further — its AI learns your personal writing style from your sent messages, so drafts sound like you, not a chatbot. Their data shows users write emails twice as fast with AI assistance.
+**How to do it**: Gmail's "Help Me Write" and Outlook's Copilot both offer inline draft generation. Type a one-line prompt ("politely decline this meeting and suggest next week") and the AI fills in the rest. [Superhuman](https://superhuman.com/ai) goes further — its AI learns your [personal writing style](/blog/ai-writing-assistant-keep-your-voice) from your sent messages, so drafts sound like you, not a chatbot. Their data shows users write emails twice as fast with AI assistance.
 
 **The tone trap to avoid**: AI defaults to a slightly formal, agreeable tone. If your normal style is casual or direct, review drafts carefully or they'll sound off. Tools that learn your voice (Superhuman, Shortwave) handle this better than generic AI writing.
 

@@ -47,7 +47,7 @@ The free tier of PR tooling is more capable than most businesses realize.
 
 **Google Alerts** is the starting point for any PR monitoring program. Set up alerts for your company name, your founder's name, your key products, your top competitors, and 3-5 industry keywords. Google sends an email or RSS notification when it indexes new content matching those terms. It misses paywalled publications and social media platforms, but it catches a surprisingly large share of web coverage — and it is free.
 
-**Mention** offers a free tier for basic brand monitoring with a limited number of alerts. The free tier is enough to track a single brand name across news and some social platforms. According to Mention's published pricing, paid plans start at $29/month for expanded alerts and historical data. For a business just starting out with PR, the free tier is a reasonable starting point.
+**Mention** offers a free tier for basic [brand monitoring](/blog/ai-brand-monitoring) with a limited number of alerts. The free tier is enough to track a single brand name across news and some social platforms. According to Mention's published pricing, paid plans start at $29/month for expanded alerts and historical data. For a business just starting out with PR, the free tier is a reasonable starting point.
 
 **Claude and ChatGPT free tiers** can draft press releases and pitches. The quality is meaningfully lower than their paid versions — slower generation, fewer capabilities, occasional refusals on commercial tasks — but functional for occasional use. For anyone planning to use AI for PR regularly, the $20/month subscription to either tool pays for itself in the first press release.
 
@@ -69,7 +69,7 @@ The free stack — Google Alerts + Claude free + Canva free — handles basic PR
 
 The paid market breaks cleanly into two tiers: tools under $200/month designed for small businesses and boutique agencies, and enterprise platforms that are priced accordingly.
 
-**Prezly** is the clearest small-business option in the paid market. At approximately $88/month (€80/month on the entry plan), you get a media CRM, press release builder, email outreach, and a branded newsroom where your company's PR coverage is published. The AI features focus on translation — content can be localized into 40+ languages, which is useful if you pitch international publications. The 14-day free trial makes it easy to evaluate before committing.
+**Prezly** is the clearest small-business option in the paid market. At approximately $88/month (€80/month on the entry plan), you get a media CRM, press release builder, [email outreach](/blog/ai-email-marketing), and a branded newsroom where your company's PR coverage is published. The AI features focus on translation — content can be localized into 40+ languages, which is useful if you pitch international publications. The 14-day free trial makes it easy to evaluate before committing.
 
 **Prowly** was the standard recommendation for independent PR up until late 2025, when Semrush acquired it and began migrating users to the Semrush AI PR Toolkit. The platform includes an AI writing assistant, journalist database, and media monitoring. Pricing starts at $258/month billed annually — a significant step up from Prezly. The Semrush acquisition introduces platform uncertainty that is worth factoring into a long-term commitment.
 

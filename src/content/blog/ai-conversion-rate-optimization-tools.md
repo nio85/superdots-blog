@@ -154,7 +154,7 @@ Tools that use AI to route traffic or personalize content automatically — Unbo
 
 What I notice consistently in the user reviews and case studies across these tools: teams that see results are using AI to accelerate a testing process they already have. Teams that are hoping AI will create a testing process they don't have are consistently disappointed.
 
-If your marketing team has never run a systematic A/B test, no AI tool will fix that. The problem isn't analysis speed; it's process. Fix the process first.
+If your marketing team has never run a systematic [A/B test](/blog/ai-ab-testing-tools), no AI tool will fix that. The problem isn't analysis speed; it's process. Fix the process first.
 
 ## The Free Workflow: Using Claude or ChatGPT for CRO
 

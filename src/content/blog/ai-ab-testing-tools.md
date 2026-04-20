@@ -130,7 +130,7 @@ One honest note: VWO's pricing scales with traffic volume. At 500,000 monthly vi
 
 Optimizely is the choice when experimentation is an engineering discipline, not just a marketing function. Feature flags, server-side experiments, integration with CI/CD pipelines. The AI layer is more statistical engine than hypothesis generator — it helps design tests and calculate significance rather than suggesting what to test.
 
-Starting at $50/month for web experimentation, it's accessible. Its value scales with complexity. A landing page headline test doesn't require Optimizely. A backend experiment affecting recommendation logic might.
+Starting at $50/month for web experimentation, it's accessible. Its value scales with complexity. A [landing page](/blog/ai-landing-page-builder) headline test doesn't require Optimizely. A backend experiment affecting recommendation logic might.
 
 ### AB Tasty — Best for AI personalization at mid-market
 
