@@ -16,7 +16,7 @@ We divide cookies into three categories. When you visit the Site, a banner lets 
 | Category | Consent required | What it controls |
 |---|---|---|
 | **Necessary** | No — always active | Core site functionality (theme, consent record, bot protection) |
-| **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity |
+| **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity, Umami Session Replays |
 | **Marketing** | Yes — opt-in | Reddit Pixel (ad conversion tracking and retargeting) |
 
 Your choices are stored in your browser's localStorage and respected on every visit. You can change them at any time via the "Cookie settings" link in the footer.
@@ -46,25 +46,11 @@ These are essential for the Site to function correctly. Under Art. 5(3) of the e
 			<td>Until cleared</td>
 		</tr>
 		<tr>
-			<td><code>sd-cookie-consent</code></td>
+			<td><code>sd-consent-v2</code></td>
 			<td>superdots.sh</td>
-			<td>Records your overall consent choice (accepted all / rejected all / customized). Updated whenever you change your preferences.</td>
+			<td>Stores your cookie consent record as a JSON object containing: version, timestamp, expiry date, and per-category choices (analytics: true/false, marketing: true/false). Updated whenever you change your preferences.</td>
 			<td>localStorage</td>
-			<td>Until cleared</td>
-		</tr>
-		<tr>
-			<td><code>sd-cookie-consent-date</code></td>
-			<td>superdots.sh</td>
-			<td>Timestamp of when you last gave or refused cookie consent</td>
-			<td>localStorage</td>
-			<td>Until cleared</td>
-		</tr>
-		<tr>
-			<td><code>sd-cookie-consent-categories</code></td>
-			<td>superdots.sh</td>
-			<td>Stores your per-category consent choices as a JSON object (e.g. analytics: true/false, marketing: true/false). Enables granular category-level opt-in/out.</td>
-			<td>localStorage</td>
-			<td>Until cleared</td>
+			<td>6 months (auto-expires)</td>
 		</tr>
 		<tr>
 			<td><code>__cf_bm</code></td>
@@ -81,6 +67,8 @@ These are essential for the Site to function correctly. Under Art. 5(3) of the e
 **Umami Analytics** is a privacy-friendly, self-hosted analytics tool that **does not use cookies**, does not store IP addresses, and does not collect any personal data. Because Umami does not access or store information on your device, no consent is required under Art. 5(3) of the ePrivacy Directive. The legal basis for this processing is legitimate interest (Art. 6(1)(f) GDPR).
 
 Umami collects only aggregated, anonymous metrics: page URL, referrer, browser type, operating system, device type, and country (derived from IP at request time, IP not stored). It is hosted on Superdots infrastructure in the EU — no data is sent to third parties.
+
+**Umami Session Replays** (consent-gated) — when you give analytics consent, we may also record an anonymised replay of your browsing session (clicks, scrolls, page navigation). Form inputs and sensitive text are automatically masked. Recordings are stored on our self-hosted infrastructure (EU) and automatically deleted after 30 days. No personal data is extracted from replays. This feature requires your explicit analytics consent.
 
 ### Analytics (consent required — opt-in)
 
@@ -186,7 +174,7 @@ This tracking is covered by the consent you give when subscribing to the newslet
 
 In addition to cookies, the Site makes requests to third-party servers that may process your IP address:
 
-- **Umami Analytics** (`umami.bartoccini.cloud`) — loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
+- **Umami Analytics** (`umami.bartoccini.cloud`) — base tracker loaded on all pages without consent (cookie-free, no PII). Session replay recorder loaded only after analytics consent. Self-hosted on Superdots infrastructure; no data leaves the EU.
 - **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google (servers in the US; EU–US Data Privacy Framework adequacy decision and Standard Contractual Clauses apply).
 - **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
 - **Reddit Pixel** (`www.redditstatic.com`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting on Reddit. Data is sent to Reddit, Inc. (US) under Standard Contractual Clauses.

@@ -41,7 +41,7 @@ const isPolicyPage = pathname === '/privacy/' || pathname === '/privacy'
     </h2>
 
     <p id="sd-cc-banner-desc" class="sd-cc-lede">
-      We use <strong>Google Analytics</strong> and <strong>Microsoft Clarity</strong> to see which articles actually get read.
+      We use <strong>Google Analytics</strong>, <strong>Microsoft Clarity</strong>, and <strong>Umami Replays</strong> to see which articles actually get read and how visitors use the site.
       No personal data is sold, shared, or creepy.
     </p>
 
@@ -108,7 +108,7 @@ const isPolicyPage = pathname === '/privacy/' || pathname === '/privacy'
             <span class="sd-cc-sr">Toggle analytics</span>
           </label>
         </div>
-        <p class="sd-cc-cat-desc">Google Analytics and Microsoft Clarity. Aggregate reading patterns — no names, no selling.</p>
+        <p class="sd-cc-cat-desc">Google Analytics, Microsoft Clarity, and Umami session replays. Aggregate reading patterns — no names, no selling.</p>
       </div>
 
       <div class="sd-cc-cat" role="group" aria-labelledby="sd-cc-label-marketing">
@@ -147,6 +147,8 @@ declare global {
     clarity?: (...args: any[]) => void;
     SD_startClarity: () => void;
     SD_clarityLoaded: boolean;
+    SD_startUmamiRecorder: () => void;
+    SD_umamiRecorderLoaded: boolean;
   }
 }
 
@@ -227,11 +229,18 @@ function syncConsent(cats: Categories) {
   }
   if (cats.analytics) {
     if (typeof window.SD_startClarity === 'function') window.SD_startClarity();
+    if (typeof window.SD_startUmamiRecorder === 'function') window.SD_startUmamiRecorder();
   } else {
     if (typeof window.clarity === 'function') {
       try { window.clarity('stop'); } catch {}
     }
     window.SD_clarityLoaded = false;
+    // Umami recorder has no stop API — reload to terminate the recording
+    if (window.SD_umamiRecorderLoaded) {
+      window.SD_umamiRecorderLoaded = false;
+      window.location.reload();
+      return;
+    }
   }
 }
 

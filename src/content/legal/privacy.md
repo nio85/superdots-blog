@@ -35,6 +35,11 @@ We collect the minimum data needed to run this Site:
 			<td>Consent — Art. 6(1)(a)</td>
 		</tr>
 		<tr>
+			<td>Session replays via Umami Replays (self-hosted)</td>
+			<td>Understand how visitors interact with pages so we can improve usability — recordings are anonymised (form inputs masked), no personal data stored, auto-deleted after 30 days</td>
+			<td>Consent — Art. 6(1)(a)</td>
+		</tr>
+		<tr>
 			<td>Heatmaps and session recordings via Microsoft Clarity</td>
 			<td>Understand how visitors interact with pages so we can improve usability</td>
 			<td>Consent — Art. 6(1)(a)</td>
@@ -82,8 +87,8 @@ See our [Cookie Policy](/cookie-policy/) for the full list of cookies, their pur
 	<tbody>
 		<tr>
 			<td>Umami Analytics (self-hosted)</td>
-			<td>Privacy-friendly traffic analytics</td>
-			<td>Aggregated, anonymous page-view metrics only (page URL, referrer, browser, OS, device type, country derived from IP). IP addresses are used for geolocation but never stored. No cookies, no personal data, no cross-site tracking.</td>
+			<td>Privacy-friendly traffic analytics + session replays (consent-gated)</td>
+			<td>Aggregated, anonymous page-view metrics (page URL, referrer, browser, OS, device type, country derived from IP — no IP stored, no cookies). Session replays (only with consent): anonymised recordings of clicks, scrolls, and navigation with form inputs masked. Recordings auto-deleted after 30 days.</td>
 			<td>Self-hosted on Superdots infrastructure (EU) — no third-party data transfer</td>
 		</tr>
 		<tr>
@@ -139,7 +144,7 @@ You can review each provider's transfer documentation: [Google](https://policies
 
 ## 6. Data retention
 
-- **Umami Analytics data:** aggregated page-view metrics retained on our self-hosted server. No personal data or IP addresses are stored.
+- **Umami Analytics data:** aggregated page-view metrics retained on our self-hosted server. No personal data or IP addresses are stored. Session replay recordings (consent-gated) are automatically deleted after 30 days.
 - **Google Analytics data:** retained for 14 months (GA4 default), then automatically deleted.
 - **localStorage (theme):** persists until you clear your browser data.
 - **Microsoft Clarity data:** session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.
