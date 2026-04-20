@@ -2,7 +2,7 @@
 title: "Cookie Policy | Superdots"
 description: "Cookie policy for superdots.sh — what cookies we use and why."
 pageTitle: "Cookie Policy"
-lastUpdated: "14 April 2026"
+lastUpdated: "20 April 2026"
 ---
 
 ## What are cookies?
@@ -17,7 +17,7 @@ We divide cookies into three categories. When you visit the Site, a banner lets 
 |---|---|---|
 | **Necessary** | No — always active | Core site functionality (theme, consent record, bot protection) |
 | **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity |
-| **Marketing** | Yes — opt-in | Reserved for future use (none currently active) |
+| **Marketing** | Yes — opt-in | Reddit Pixel (ad conversion tracking and retargeting) |
 
 Your choices are stored in your browser's localStorage and respected on every visit. You can change them at any time via the "Cookie settings" link in the footer.
 
@@ -135,9 +135,46 @@ These cookies are set by Google Analytics 4 and Microsoft Clarity to help us und
 	</tbody>
 </table>
 
-### Marketing (consent required — not yet in use)
+### Marketing (consent required — opt-in)
 
-This category is reserved for future marketing and advertising cookies (e.g. retargeting pixels, social media cookies). **No marketing cookies are currently set on this Site.** This section will be updated when they are introduced, and you will be asked for fresh consent before they are activated.
+These cookies are used for ad conversion tracking and retargeting. They are only activated **after you give explicit consent** via the cookie banner, as required by Art. 5(3) ePrivacy Directive and Art. 6(1)(a) GDPR. If you decline or do not choose, these cookies are never set.
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Provider</th>
+			<th>Purpose</th>
+			<th>Type</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>_rdt_uuid</code></td>
+			<td>Reddit, Inc.</td>
+			<td>Assigns a unique identifier to track ad conversions and measure the effectiveness of Reddit advertising campaigns</td>
+			<td>HTTP cookie</td>
+			<td>2 years</td>
+		</tr>
+		<tr>
+			<td><code>rdt_uuid</code></td>
+			<td>Reddit, Inc.</td>
+			<td>Reddit UUID used for cross-site conversion tracking and retargeting audiences</td>
+			<td>HTTP cookie</td>
+			<td>2 years</td>
+		</tr>
+		<tr>
+			<td><code>rdt_cid</code></td>
+			<td>Reddit, Inc.</td>
+			<td>Click ID that links a Reddit ad click to a site visit, enabling attribution of conversions to specific ad campaigns</td>
+			<td>HTTP cookie</td>
+			<td>Session</td>
+		</tr>
+	</tbody>
+</table>
+
+Reddit, Inc. is headquartered in the United States. Data is transferred to Reddit's US servers under Standard Contractual Clauses (SCCs) as the transfer mechanism. See [Reddit's privacy policy](https://www.reddit.com/policies/privacy-policy) and [Reddit Ads data processing terms](https://advertising.reddithelp.com/en/categories/reddit-ads-policies/reddit-advertising-platform-terms) for details.
 
 ## Email tracking (newsletter subscribers only)
 
@@ -152,6 +189,7 @@ In addition to cookies, the Site makes requests to third-party servers that may 
 - **Umami Analytics** (`umami.bartoccini.cloud`) — loaded on all pages without consent (cookie-free, no PII). Self-hosted on Superdots infrastructure; no data leaves the EU.
 - **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google (servers in the US; EU–US Data Privacy Framework adequacy decision and Standard Contractual Clauses apply).
 - **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
+- **Reddit Pixel** (`www.redditstatic.com`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting on Reddit. Data is sent to Reddit, Inc. (US) under Standard Contractual Clauses.
 
 ## How to manage cookies
 
@@ -159,7 +197,7 @@ In addition to cookies, the Site makes requests to third-party servers that may 
 
 When you first visit the Site, a modal requires you to actively choose your cookie preferences before continuing. You have three options:
 
-- **Accept All** — enables Necessary and Analytics cookies.
+- **Accept All** — enables Necessary, Analytics, and Marketing cookies.
 - **Reject All** — enables Necessary cookies only. Analytics (GA4, Clarity) are not loaded.
 - **Customize** — opens a preferences panel where you can enable or disable each category individually.
 
