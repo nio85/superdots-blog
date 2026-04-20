@@ -178,26 +178,6 @@ Use the cohort insights to create HubSpot smart lists: customers whose acquisiti
 
 This workflow costs $0 and can be done in two hours. If it surfaces meaningful patterns, you'll have a much clearer picture of whether a paid CLV tool is worth it.
 
-## Frequently Asked Questions
-
-**What is the best free AI tool for calculating customer lifetime value?**
-GA4's cohort analysis is the most powerful free option for understanding CLV patterns. For SaaS businesses, Mixpanel's free tier adds product usage data to the analysis. Neither predicts individual CLV, but both show you which customer segments are most valuable and why.
-
-**Can HubSpot predict customer lifetime value?**
-HubSpot predicts deal close probability and contact conversion likelihood, which are inputs to CLV but not the same thing. For true CLV forecasting tied to long-term account value, you'd need HubSpot data connected to a dedicated analytics tool. The free HubSpot CRM plus GA4 cohort analysis gets you most of the way there for B2B teams.
-
-**How accurate is AI-based CLV prediction for small businesses?**
-Not very, and that's not a tool problem—it's a data problem. ML-based CLV models need sufficient historical data (typically 12–24 months of transactions, 500+ customers) to produce reliable predictions. Below those thresholds, simple cohort analysis is more accurate because it's based on real patterns rather than model extrapolation.
-
-**What's the difference between CLV and CLTV—and does it matter for tool choice?**
-CLV (Customer Lifetime Value) and CLTV (Customer Lifetime Value) are the same metric with different abbreviations. Some vendors use LTV. The formula and concept are identical. It doesn't affect tool choice, but if you're comparing vendor documentation, don't assume different abbreviations mean different calculations.
-
-**Which CLV tool works best for Shopify stores?**
-Klaviyo is the strongest native option—its CLV prediction integrates directly with Shopify order data and flows into email automations without manual steps. Putler is a good alternative if budget is tight and you want a standalone analytics view rather than an email platform.
-
-**When does a sales team actually need a dedicated CLV tool (vs. using CRM data)?**
-When you have more customers than you can personally track, more segments than you can manually manage, and enough revenue at risk that a 10% improvement in CLV would materially affect your business. For most B2B teams under 100 accounts, CRM data plus a quarterly cohort analysis in GA4 is more than enough. A dedicated tool earns its cost when you're managing hundreds of accounts and need automated segmentation and alerting.
-
 ---
 
 Customer lifetime value is the number that tells you where to focus. The tools above range from free cohort analysis to enterprise ML platforms—but the right tool for your business is almost certainly simpler and cheaper than vendors would have you believe. Start with GA4. Build the habit of looking at cohorts. When that becomes genuinely limiting, upgrade.
