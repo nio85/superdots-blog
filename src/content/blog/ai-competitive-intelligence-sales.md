@@ -1,5 +1,5 @@
 ---
-title: '8 AI Competitive Intelligence Tools for Sales Teams (2026)'
+title: "8 AI Competitive Intelligence Tools (2026)"
 description: 'Klue, Crayon, AlphaSense & 5 more — real pricing, a 90-min battlecard workflow, and honest takes on what actually wins deals. Updated April 2026.'
 pubDate: '2026-04-01T00:00:00.000Z'
 updatedDate: '2026-04-03'

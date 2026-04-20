@@ -1,5 +1,5 @@
 ---
-title: "AI Deal Intelligence: Know When Deals Are at Risk"
+title: "AI Deal Intelligence: At-Risk Deals (2026)"
 description: "Stop relying on rep gut feel for pipeline accuracy. AI deal intelligence analyzes activity, sentiment, and patterns to flag at-risk deals before it's too late."
 pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: "AI Sales Objection Handling Tools: Real-Time Coaching vs. Training Tools (2026)"
+title: "AI Sales Objection Handling Tools (2026)"
 description: "There are two types of AI objection handling tools and they solve different problems. Here's how to tell them apart, what each costs, and how to pick the right one."
 pubDate: "2026-04-14"
 author: "Superdots Team"

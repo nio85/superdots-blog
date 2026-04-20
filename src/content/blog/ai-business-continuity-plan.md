@@ -1,5 +1,5 @@
 ---
-title: "How to Write a Business Continuity Plan with AI: Step-by-Step Prompts and Tools (2026)"
+title: "AI for Business Continuity Planning (2026)"
 description: "Write a complete business continuity plan using Claude or ChatGPT. Five exact prompts, one per BCP section, plus honest takes on what AI can't do for you."
 pubDate: "2026-04-16"
 author: "Superdots Team"

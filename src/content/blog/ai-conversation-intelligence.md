@@ -1,5 +1,5 @@
 ---
-title: 'AI Conversation Intelligence Software: Gong vs Chorus (2026)'
+title: "AI Conversation Intelligence Software (2026)"
 description: 'Compare Gong, Chorus, Clari Copilot & Fireflies — AI that records every sales call, tracks objections, and shows exactly why deals stall. Real 2026 pricing.'
 pubDate: "2026-03-17T17:09:00Z"
 author: 'Superdots Team'

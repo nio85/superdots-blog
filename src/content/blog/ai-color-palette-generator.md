@@ -1,5 +1,5 @@
 ---
-title: "AI Color Palette Generators That Match Your Brand"
+title: "AI Color Palette Generators for Branding"
 description: "Stop guessing at colors. AI palette generators create on-brand color schemes in seconds — with accessibility checks and harmony rules built in."
 pubDate: "2026-03-17T09:29:39Z"
 author: "Superdots Team"

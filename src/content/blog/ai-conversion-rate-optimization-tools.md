@@ -1,5 +1,5 @@
 ---
-title: "AI Conversion Rate Optimization Tools: How to Tell What's Real"
+title: "AI Conversion Rate Optimization Tools (2026)"
 description: "Most AI CRO tools aren't using AI in any meaningful sense. Here's an honest breakdown of 6 tools, what they actually do, and a free workflow using Claude."
 pubDate: "2026-04-16"
 author: "Superdots Team"

@@ -1,5 +1,5 @@
 ---
-title: 'Best QA Scoring Tools for Customer Support (2026)'
+title: "Best QA Tools for Customer Support (2026)"
 description: 'Compare MaestroQA, Zendesk QA, Observe.AI & 3 more QA scoring tools — with per-agent pricing, setup timelines, and a free rubric template.'
 pubDate: "2026-04-10"
 author: 'Superdots Team'

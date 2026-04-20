@@ -1,5 +1,5 @@
 ---
-title: 'AI Guided Selling: Best Tools + 5-Step Setup Guide (2026)'
+title: "AI Guided Selling: Best Tools & Setup (2026)"
 description: "Gong, Highspot, and Clari compared with 2026 pricing. Team-size recommendations from 5 to 200+ reps, plus a 5-step checklist to go live without a RevOps hire."
 pubDate: "2026-04-17"
 author: "Superdots Team"

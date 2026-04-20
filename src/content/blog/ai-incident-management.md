@@ -1,5 +1,5 @@
 ---
-title: 'AI Incident Management Tools (2026): Triage Faster With AI'
+title: "AI Incident Management Tools (2026)"
 description: 'How PagerDuty, Datadog, Moogsoft & BigPanda use AI for incident detection, alert correlation, root cause analysis, and automated runbooks to cut MTTR.'
 pubDate: "2026-03-17T17:18:00Z"
 author: 'Superdots Team'

@@ -1,5 +1,5 @@
 ---
-title: "AI Sentiment Dashboard Tools 2026: Track Churn in Real Time"
+title: "AI Customer Sentiment Dashboard Tools (2026)"
 description: "Build a live AI sentiment dashboard that combines support tickets, reviews & social mentions. Spot churn signals early with real-time alerts. Setup guide included."
 pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
