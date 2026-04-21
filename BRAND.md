@@ -76,6 +76,10 @@ The single red dot (`.superdot`) is used as:
 
 Most AI content defaults to cold blue or purple palettes. We deliberately go warmer — red signals energy, directness, and humanity. Teal provides a cool counterbalance that still feels approachable rather than corporate. The unexpected pairing makes us instantly recognizable.
 
+### Dark is the brand canonical
+
+Superdots renders in dark mode by default for all new visitors. Navy (`--sd-navy` `#0B1222`) against the red `--sd-red` dot is the signature the site leads with. Light is a legitimate user choice — available via the toggle in the header — but it is an opt-in variant, not the default. Any design work should be validated against dark first; light must not look "more correct." The theme preference is persisted in `localStorage.sd-theme` and applied pre-paint to avoid flash on navigation.
+
 ---
 
 ### Typography
