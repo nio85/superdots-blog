@@ -42,7 +42,7 @@ The pattern across these three data sources is consistent enough to be treated a
 
 AI implementation failure is when a deployed AI system does not deliver measurable business value within the expected timeframe — distinct from technical failure, where the model underperforms, or pilot failure, where a proof of concept is abandoned before deployment. Most documented cases are implementation failures, not technical ones. The model works. The organizational context does not.
 
-When you look at where the bulk of enterprise AI is deployed, a pattern is visible. The highest-adoption use cases are the most visible ones: email drafting, report generation, meeting summaries, customer service templates, code autocomplete. These are tasks with clear inputs and outputs, easy to prototype, easy to demo, and easy to present to a budget committee. They generate slides that show hours saved per person per week, multiplied by headcount, multiplied by average salary — a number that looks compelling in a business case.
+When you look at where the bulk of enterprise AI is deployed, a pattern is visible. The highest-adoption use cases are the most visible ones: email drafting, report generation, [meeting summaries](/blog/ai-meeting-notes-summaries-action-items), customer service templates, code autocomplete. These are tasks with clear inputs and outputs, easy to prototype, easy to demo, and easy to present to a budget committee. They generate slides that show hours saved per person per week, multiplied by headcount, multiplied by average salary — a number that looks compelling in a business case.
 
 What these use cases are not, in most cases, is high-leverage.
 

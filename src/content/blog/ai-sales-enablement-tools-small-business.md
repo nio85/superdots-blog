@@ -26,7 +26,7 @@ Most small sales teams are paying for sales enablement software they don't need.
 
 Not because the tools are bad. Because they're built for 50-person sales orgs with dedicated enablement managers — and a 4-person B2B startup is not that. The ZoomInfo and Highspot demos are impressive. The contracts are $600-plus per month. The ROI math only works when you have enough reps to multiply across.
 
-Here's the honest version: if you have fewer than 5 sales reps, you probably don't need a dedicated sales enablement platform at all. What you need is a CRM that doesn't get in your way, a prospecting tool with decent AI, and a system for building and sharing playbooks. That stack costs $30–50 per month per rep and covers 90% of what enterprise tools do — for your team size.
+Here's the honest version: if you have fewer than 5 sales reps, you probably don't need a dedicated sales enablement platform at all. What you need is a [CRM](/blog/ai-crm-tools) that doesn't get in your way, a prospecting tool with decent AI, and a system for building and sharing playbooks. That stack costs $30–50 per month per rep and covers 90% of what enterprise tools do — for your team size.
 
 **AI sales enablement** is the practice of using AI to improve how sales teams find prospects, craft messaging, manage content, and coach reps — moving manual, time-consuming prep work to software so reps spend more time in actual conversations rather than building decks and writing emails from scratch.
 

@@ -99,7 +99,7 @@ If you close fewer than 20 deals per quarter, you don't need dedicated software.
 
 Here's a workflow that works for a 5-person team:
 
-**Step 1**: Export your last 30 closed deals from your CRM (HubSpot, Pipedrive, Salesforce — all support CSV export). Include: deal name, deal size, stage it was lost at, competitor mentioned, closed-lost reason, and any rep notes.
+**Step 1**: Export your last 30 closed deals from your [CRM](/blog/ai-crm-tools) (HubSpot, Pipedrive, Salesforce — all support CSV export). Include: deal name, deal size, stage it was lost at, competitor mentioned, closed-lost reason, and any rep notes.
 
 **Step 2**: Paste the export into Claude and use this prompt:
 

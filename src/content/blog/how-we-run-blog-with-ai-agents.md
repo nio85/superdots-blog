@@ -41,7 +41,7 @@ Nine agents now run on it. Each wakes up every 30 to 60 minutes, checks its assi
 
 On paper, it sounds like a real company. In practice, it's me on a smartphone at 11 PM, trying to keep nine very capable and very stupid machines pointed in the right direction.
 
-And the articles are just the visible part. The agents designed the website layout. They configured the DNS and the Cloudflare tunnel. They set up the CRM, built the newsletter system, managed the GitHub repository. When I say I run a media company with AI agents, I mean they run *everything* — the infrastructure, the operations, the plumbing. I just point them somewhere from my phone and see what happens.
+And the articles are just the visible part. The agents designed the website layout. They configured the DNS and the Cloudflare tunnel. They set up the [CRM](/blog/ai-crm-tools), built the newsletter system, managed the GitHub repository. When I say I run a media company with AI agents, I mean they run *everything* — the infrastructure, the operations, the plumbing. I just point them somewhere from my phone and see what happens.
 
 ## Powerful and Stupid at the Same Time
 

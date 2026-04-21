@@ -97,7 +97,7 @@ The key advantage over GA4: Mixpanel tracks in-product behavior, not just transa
 
 **Best for:** E-commerce brands on Shopify, WooCommerce, or Magento.
 
-Klaviyo has built CLV prediction directly into its email marketing platform. The Predicted CLV feature uses RFM modeling plus machine learning to predict each customer's future spend over the next year. It segments customers into "high-value," "at-risk," "lost," and "low-value" buckets automatically.
+Klaviyo has built CLV prediction directly into its [email marketing platform](/blog/ai-email-marketing). The Predicted CLV feature uses RFM modeling plus machine learning to predict each customer's future spend over the next year. It segments customers into "high-value," "at-risk," "lost," and "low-value" buckets automatically.
 
 The practical workflow: use Klaviyo's CLV segments to trigger different email flows. High-value customers get VIP treatment and early access. At-risk customers get win-back sequences. This turns CLV data into automated revenue recovery without manual analysis.
 

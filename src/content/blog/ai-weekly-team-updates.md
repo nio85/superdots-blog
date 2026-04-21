@@ -52,7 +52,7 @@ Here's the approach that consistently works. I think of it as three layers.
 
 ### Layer 1: Collect your inputs first (5 minutes)
 
-Before opening any AI tool, spend 5 minutes gathering your raw inputs in a scratchpad. This is not writing — it's just collecting. Scan your task manager, your Slack messages from the week, your calendar. Pull out the pieces:
+Before opening any AI tool, spend 5 minutes gathering your raw inputs in a scratchpad. This is not writing — it's just collecting. Scan your [task manager](/blog/ai-project-management-features-guide), your Slack messages from the week, your calendar. Pull out the pieces:
 
 - 3-5 things that happened this week (wins, completions, decisions made)
 - Any blockers or dependencies needing attention
