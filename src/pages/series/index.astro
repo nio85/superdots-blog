@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import { filterPublished } from '../../lib/posts';
 import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import { PILLARS } from '../../consts';
 
@@ -22,40 +24,31 @@ const pillarsWithCounts = PILLARS.map((p) => {
 		...p,
 		count: posts.length,
 		latestTitle: posts[0]?.data.title,
-		latestSlug: posts[0]?.slug,
 		accentColor: PILLAR_COLORS[p.slug] || '#E8363B',
 	};
 });
 ---
 
 <Base title="Series | Superdots" description="Four editorial series covering AI and work from every angle — tools, practical advice, big-picture thinking, and behind the scenes.">
-	<nav class="breadcrumb" aria-label="Breadcrumb">
-		<a href="/">Home</a>
-		<span aria-hidden="true">/</span>
-		<span aria-current="page">Series</span>
-	</nav>
+	<PageHeader
+		title="Our series"
+		kicker="Series"
+		subtitle="Four ways we explore AI and work. Pick the angle that fits how you think."
+		breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Series', href: '/series/' }]}
+	/>
 
-	<div class="page-header">
-		<h1>Our series<span class="dot-accent">.</span></h1>
-		<p class="subtitle">Four ways we explore AI and work. Pick the angle that fits how you think.</p>
-	</div>
-
-	<div class="pillar-grid">
+	<div class="post-grid">
 		{pillarsWithCounts.map((p) => (
-			<a href={`/series/${p.slug}/`} class="pillar-card" style={`--pillar-color: ${p.accentColor};`}>
-				<div class="pillar-dot" aria-hidden="true"></div>
-				<h2 class="pillar-name">{p.label}</h2>
-				<p class="pillar-desc">{p.description}</p>
-				{p.latestTitle && (
-					<p class="pillar-latest">
-						<span class="latest-label">Latest:</span> {p.latestTitle}
-					</p>
-				)}
-				<div class="pillar-footer">
-					<span class="pillar-count">{p.count} {p.count === 1 ? 'article' : 'articles'}</span>
-					<span class="pillar-cta">Browse series <span aria-hidden="true">&rarr;</span></span>
-				</div>
-			</a>
+			<PostCard
+				title={p.label}
+				description={p.description}
+				href={`/series/${p.slug}/`}
+				variant="series"
+				pillarColor={p.accentColor}
+				count={p.count}
+				latestTitle={p.latestTitle}
+				headingLevel="h2"
+			/>
 		))}
 	</div>
 
@@ -63,119 +56,13 @@ const pillarsWithCounts = PILLARS.map((p) => {
 </Base>
 
 <style>
-	.breadcrumb {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		padding-top: var(--space-4);
-	}
-	.breadcrumb a {
-		color: var(--color-text-muted);
-		text-decoration: none;
-	}
-	.breadcrumb a:hover { color: var(--color-primary); }
-	.breadcrumb span[aria-current] {
-		color: var(--color-text-strong);
-		font-weight: var(--weight-medium);
-	}
-
-	.subtitle {
-		color: var(--color-text-muted);
-		margin-bottom: var(--space-8);
-	}
-
-	.pillar-grid {
+	.post-grid {
 		display: grid;
 		gap: var(--space-5);
 	}
 	@media (min-width: 640px) {
-		.pillar-grid { grid-template-columns: repeat(2, 1fr); }
-	}
-
-	.pillar-card {
-		display: flex;
-		flex-direction: column;
-		padding: var(--space-6);
-		border-radius: var(--radius-lg);
-		background: var(--color-bg);
-		border: 1px solid var(--color-border);
-		border-left: 4px solid var(--pillar-color);
-		text-decoration: none;
-		transition: all var(--transition-base);
-	}
-	.pillar-card:hover {
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-md);
-		border-color: var(--pillar-color);
-		text-decoration: none;
-	}
-
-	.pillar-dot {
-		width: 10px;
-		height: 10px;
-		border-radius: var(--radius-full);
-		background: var(--pillar-color);
-		margin-bottom: var(--space-3);
-	}
-
-	.pillar-name {
-		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-strong);
-		margin: 0 0 var(--space-2);
-		line-height: var(--leading-tight);
-	}
-	.pillar-desc {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		line-height: var(--leading-snug);
-		margin: 0 0 var(--space-4);
-	}
-
-	.pillar-latest {
-		font-size: var(--text-sm);
-		color: var(--color-text);
-		margin: 0 0 var(--space-4);
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	}
-	.latest-label {
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-muted);
-	}
-
-	.pillar-footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: auto;
-		padding-top: var(--space-3);
-		border-top: 1px solid var(--color-border);
-	}
-	.pillar-count {
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		background: var(--color-bg-dim);
-		padding: var(--space-0-5) var(--space-2);
-		border-radius: var(--radius-full);
-	}
-	.pillar-cta {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--pillar-color);
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		transition: gap var(--transition-fast);
-	}
-	.pillar-card:hover .pillar-cta {
-		gap: var(--space-2);
+		.post-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 </style>

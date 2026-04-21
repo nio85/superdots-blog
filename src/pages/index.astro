@@ -127,17 +127,18 @@ const popularPosts = allPosts
 			<h2>Our series<span class="dot-accent">.</span></h2>
 			<a href="/series/" class="view-all">All series <span aria-hidden="true">&rarr;</span></a>
 		</div>
-		<div class="series-grid">
+		<div class="post-grid post-grid--series">
 			{pillarsWithLatest.map((p) => (
-				<a href={`/series/${p.slug}/`} class="series-card" style={`--pillar-color: ${p.accentColor};`}>
-					<div class="series-dot" aria-hidden="true"></div>
-					<h3 class="series-name">{p.label}</h3>
-					<p class="series-desc">{p.description}</p>
-					<div class="series-footer">
-						<span class="series-count">{p.count}</span>
-						<span class="series-cta">Browse <span aria-hidden="true">&rarr;</span></span>
-					</div>
-				</a>
+				<PostCard
+					title={p.label}
+					description={p.description}
+					href={`/series/${p.slug}/`}
+					variant="series"
+					pillarColor={p.accentColor}
+					count={p.count}
+					latestTitle={p.latestTitle}
+					headingLevel="h3"
+				/>
 			))}
 		</div>
 	</section>
@@ -609,83 +610,14 @@ const popularPosts = allPosts
 		}
 	}
 
-	/* Series section */
-	.series-grid {
-		display: grid;
-		gap: var(--space-4);
-		grid-template-columns: repeat(2, 1fr);
+	/* Series section — use the same PostCard grid as Latest / Popular */
+	.post-grid--series {
+		grid-template-columns: 1fr;
 	}
-	@media (max-width: 639px) {
-		.series-grid { grid-template-columns: 1fr; }
-	}
-	.series-card {
-		display: flex;
-		flex-direction: column;
-		padding: var(--space-5);
-		border-radius: var(--radius-lg);
-		background: var(--color-bg);
-		border: 1px solid var(--color-border);
-		border-left: 4px solid var(--pillar-color);
-		text-decoration: none;
-		transition: all var(--transition-base);
-	}
-	.series-card:hover {
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-md);
-		border-color: var(--pillar-color);
-		text-decoration: none;
-	}
-	.series-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: var(--radius-full);
-		background: var(--pillar-color);
-		margin-bottom: var(--space-2);
-	}
-	.series-name {
-		font-family: var(--font-display);
-		font-size: var(--text-base);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-strong);
-		margin: 0 0 var(--space-1);
-		line-height: var(--leading-tight);
-	}
-	.series-desc {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		line-height: var(--leading-snug);
-		margin: 0;
-		flex: 1;
-	}
-	.series-footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: var(--space-3);
-		padding-top: var(--space-2);
-		border-top: 1px solid var(--color-border);
-	}
-	.series-count {
-		font-size: var(--text-xs);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-muted);
-	}
-	.series-count::after {
-		content: ' articles';
-		font-weight: var(--weight-normal);
-	}
-	.series-cta {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--pillar-color);
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		transition: gap var(--transition-fast);
-	}
-	.series-card:hover .series-cta {
-		gap: var(--space-2);
+	@media (min-width: 640px) {
+		.post-grid--series {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	/* "What this is" manifesto — no card, no border, just typography */
