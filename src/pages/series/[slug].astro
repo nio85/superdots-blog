@@ -1,0 +1,241 @@
+---
+import { getCollection } from 'astro:content';
+import { filterPublished } from '../../lib/posts';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+import { PILLARS } from '../../consts';
+
+const PILLAR_COLORS: Record<string, string> = {
+	'dot-by-dot': '#E8363B',
+	'connecting-the-dots': '#14B8A6',
+	'the-big-picture': '#6366F1',
+	'behind-the-dots': '#F59E0B',
+};
+
+export function getStaticPaths() {
+	return PILLARS.map((p) => ({
+		params: { slug: p.slug },
+		props: { label: p.label, description: p.description, color: p.color },
+	}));
+}
+
+const { slug } = Astro.params;
+const { label, description } = Astro.props;
+const accentColor = PILLAR_COLORS[slug!] || '#E8363B';
+
+const allPosts = filterPublished(await getCollection('blog'));
+const posts = allPosts
+	.filter(({ data }) => (data.contentPillar || 'dot-by-dot') === slug)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featuredPosts = posts.slice(0, 3);
+const remainingPosts = posts.slice(3);
+---
+
+<Base title={`${label} | Superdots`} description={description}>
+	<nav class="breadcrumb" aria-label="Breadcrumb">
+		<a href="/">Home</a>
+		<span aria-hidden="true">/</span>
+		<a href="/series/">Series</a>
+		<span aria-hidden="true">/</span>
+		<span aria-current="page">{label}</span>
+	</nav>
+
+	<div class="page-header">
+		<div class="pillar-dot" aria-hidden="true" style={`background: ${accentColor};`}></div>
+		<h1>{label}<span class="dot-accent">.</span> <span class="article-count">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</span></h1>
+		<p class="subtitle">{description}</p>
+	</div>
+
+	{posts.length === 0 ? (
+		<p class="empty">No articles yet in this series. Check back soon.</p>
+	) : (
+		<>
+			{featuredPosts.length > 0 && (
+				<section class="featured-section">
+					<div class="section-label" style={`color: ${accentColor};`}>
+						<span class="superdot" style={`background: ${accentColor};`}></span>
+						Latest
+					</div>
+					<div class="featured-grid">
+						{featuredPosts.map((post) => (
+							<a href={`/blog/${post.slug}/`} class="featured-card" style={`border-color: ${accentColor};`}>
+								<h2 class="featured-title">{post.data.title}</h2>
+								<p class="featured-desc">{post.data.description}</p>
+								<span class="featured-cta" style={`color: ${accentColor};`}>Read article <span aria-hidden="true">&rarr;</span></span>
+							</a>
+						))}
+					</div>
+				</section>
+			)}
+
+			{remainingPosts.length > 0 && (
+				<>
+					<div class="section-label section-label--muted">
+						All Articles
+					</div>
+					<div class="post-grid">
+						{remainingPosts.map((post) => (
+							<PostCard
+								title={post.data.title}
+								description={post.data.description}
+								pubDate={post.data.pubDate}
+								department={post.data.department}
+								useCase={post.data.useCase}
+								slug={post.slug}
+								tags={post.data.tags}
+								contentPillar={post.data.contentPillar}
+								headingLevel="h2"
+							/>
+						))}
+					</div>
+				</>
+			)}
+		</>
+	)}
+
+	<NewsletterForm variant="banner" source={`series-${slug}`} />
+</Base>
+
+<style>
+	.breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		padding-top: var(--space-4);
+	}
+	.breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+	}
+	.breadcrumb a:hover {
+		color: var(--color-primary);
+	}
+	.breadcrumb span[aria-current] {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-medium);
+	}
+
+	.page-header {
+		position: relative;
+	}
+	.pillar-dot {
+		width: 12px;
+		height: 12px;
+		border-radius: var(--radius-full);
+		margin-bottom: var(--space-3);
+	}
+	.article-count {
+		display: inline-block;
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		color: var(--color-text-muted);
+		background: var(--color-bg-dim);
+		border: 1px solid var(--color-border);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-full);
+		vertical-align: middle;
+		letter-spacing: 0;
+	}
+	.subtitle {
+		color: var(--color-text-muted);
+		margin-bottom: var(--space-6);
+	}
+	.empty {
+		color: var(--color-text-muted);
+		font-style: italic;
+	}
+
+	.section-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-bottom: var(--space-4);
+	}
+	.section-label .superdot {
+		width: 8px;
+		height: 8px;
+		border-radius: var(--radius-full);
+		display: inline-block;
+	}
+	.section-label--muted {
+		color: var(--color-text-muted);
+	}
+
+	.featured-section {
+		margin-bottom: var(--space-8);
+	}
+	.featured-grid {
+		display: grid;
+		gap: var(--space-4);
+	}
+	@media (min-width: 640px) {
+		.featured-grid {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+	}
+	.featured-card {
+		display: flex;
+		flex-direction: column;
+		padding: var(--space-6);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		border: 2px solid;
+		text-decoration: none;
+		transition: all var(--transition-base);
+	}
+	.featured-card:hover {
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-md);
+		text-decoration: none;
+	}
+	.featured-title {
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+		line-height: var(--leading-tight);
+	}
+	.featured-desc {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+		margin: 0 0 var(--space-4);
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.featured-cta {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		margin-top: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		transition: gap var(--transition-fast);
+	}
+	.featured-card:hover .featured-cta {
+		gap: var(--space-2);
+	}
+
+	.post-grid {
+		display: grid;
+		gap: var(--space-5);
+	}
+	@media (min-width: 640px) {
+		.post-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+</style>
