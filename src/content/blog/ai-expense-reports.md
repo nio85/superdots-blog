@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:13:48Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-for-finance", "ai-tools", "productivity"]
 heroImage: "/images/blog/ai-expense-reports.webp"
 imageHint: "employee photographing receipt with phone while AI auto-fills expense report"

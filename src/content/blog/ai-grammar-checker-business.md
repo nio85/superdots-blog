@@ -5,6 +5,7 @@ pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-marketing']
 faqs:
   - question: "Is Grammarly still the best AI grammar checker?"

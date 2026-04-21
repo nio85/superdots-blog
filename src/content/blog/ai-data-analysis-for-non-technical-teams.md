@@ -5,6 +5,7 @@ pubDate: '2026-03-14'
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-data-analysis', 'ai-tools']
 heroImage: "/images/blog/ai-data-analysis-for-non-technical-teams.webp"
 imageHint: "non-technical professional typing plain English query into AI analytics tool to get chart"

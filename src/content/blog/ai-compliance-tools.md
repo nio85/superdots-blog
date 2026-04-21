@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-compliance-tools.webp"
 imageHint: "compliance officer reviewing flagged regulatory requirements on digital dashboard"

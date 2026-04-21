@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:15:29Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-debugging", "ai-engineering"]
 heroImage: "/images/blog/ai-debugging-guide.webp"
 imageHint: "developer using AI to trace error message back to root cause in code"

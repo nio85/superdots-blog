@@ -5,6 +5,7 @@ pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-pricing", "ai-sales", "ai-operations", "revenue-optimization"]
 heroImage: "/images/blog/ai-pricing-optimization.webp"
 faqs:

@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'design'
 useCase: 'communication'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-design']
 heroImage: "/images/blog/ai-design-tools-non-designers.webp"
 imageHint: "non-designer creating professional social media graphic using AI template builder"

@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-operations', 'ai-tools']
 heroImage: "/images/blog/ai-inventory-management.webp"
 imageHint: "warehouse manager reviewing AI reorder recommendations and stock level predictions"

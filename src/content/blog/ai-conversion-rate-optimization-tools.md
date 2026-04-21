@@ -5,6 +5,7 @@ pubDate: "2026-04-16"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["conversion rate optimization", "cro tools", "ai marketing", "landing pages", "personalization"]
 imageHint: "marketer at laptop examining heatmap overlays and A/B test results side by side on dual monitors"
 faqs:

@@ -5,6 +5,7 @@ pubDate: "2026-04-14"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["demand-forecasting", "ai-tools", "operations", "inventory-management", "small-business", "supply-chain"]
 imageHint: "small warehouse shelf with tablet showing demand forecast graphs and inventory counts"
 faqs:

@@ -98,7 +98,8 @@ git pull origin <existing-branch>
 ### Review and merge matrix
 | PR type | Reviewer | Fallback |
 |---|---|---|
-| `content/*` | Content Manager | CEO |
+| `content/*` (dot-by-dot pillar) | Content Manager | CEO |
+| `content/*` (connecting-the-dots, the-big-picture, behind-the-dots) | CEO (Luca) | Content Manager |
 | `fix/*`, `feat/*` | Founding Engineer | CEO |
 | `design/*` | Founding Engineer | Content Manager |
 | Legal pages | CEO | Founding Engineer |
@@ -117,10 +118,16 @@ Must: git pull first, commit as `hotfix: description (SUP-XXX)`, push, document 
 
 ## Content Standards
 
-- Every article needs: title, description, pubDate, author, department, useCase, tags
+- Every article needs: title, description, pubDate, author, contentPillar, tags
+- Valid contentPillars: `dot-by-dot` (default), `connecting-the-dots`, `the-big-picture`, `behind-the-dots`
 - Valid departments: engineering, marketing, sales, hr, finance, operations, legal, customer-support, design
+  - `department` is **required** for `dot-by-dot` and `connecting-the-dots` articles
+  - `department` is **optional** for `the-big-picture` and `behind-the-dots` articles
 - Valid useCases: automation, analysis, writing, communication
-- Every article MUST have a FAQ section (4-5 questions)
+  - `useCase` is **required** for `dot-by-dot` articles
+  - `useCase` is **optional** for all other pillars
+- Every `dot-by-dot` article MUST have a FAQ section (4-5 questions). FAQ is recommended but optional for other pillars.
+- **Note:** The `pillar: boolean` field (marks "complete guide" pages like "AI for HR") is a separate concept from `contentPillar` (editorial series). Don't confuse them.
 - pubDate: publication date. Can be today or any future date. Future-dated articles are merged and deployed normally but invisible to readers — they go live automatically at the daily 07:00 Europe/Rome rebuild on their date. Use future pubDates whenever spacing content makes sense: gap analysis batches, seasonal pieces, campaign series, event-driven articles. The Content Manager decides the date; the Copywriter sets it in frontmatter.
 
 ## Editorial Principles (mandatory for ALL agents)

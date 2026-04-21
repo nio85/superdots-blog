@@ -5,6 +5,7 @@ pubDate: '2026-03-21'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-customer-service', 'ai-customer-support', 'ai-chatbot', 'ai-help-desk', 'ai-ticket-routing', 'ai-voice-assistant', 'ai-customer-retention']
 faqs:
   - question: "What is AI for customer service and how does it work?"

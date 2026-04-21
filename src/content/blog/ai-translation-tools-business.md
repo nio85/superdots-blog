@@ -5,6 +5,7 @@ pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 faqs:
   - question: "Which AI translation tool is most accurate?"

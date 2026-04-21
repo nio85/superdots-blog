@@ -5,6 +5,7 @@ pubDate: '2026-04-26'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['sales', 'commission software', 'AI tools', 'small business']
 imageHint: 'sales manager and rep reviewing commission dashboard on laptop, colorful payout charts visible on screen'
 faqs:

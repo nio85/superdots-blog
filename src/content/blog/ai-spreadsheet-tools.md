@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-data-analysis", "productivity"]
 heroImage: "/images/blog/ai-spreadsheet-tools.webp"
 imageHint: "analyst typing plain-English formula request and watching AI generate spreadsheet formula"

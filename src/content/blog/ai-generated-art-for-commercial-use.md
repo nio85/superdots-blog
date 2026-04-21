@@ -5,6 +5,7 @@ pubDate: "2026-03-10"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-art"]
 heroImage: "/images/blog/ai-generated-art-for-commercial-use.webp"
 imageHint: "designer reviewing AI-generated image options alongside licensing information panel"

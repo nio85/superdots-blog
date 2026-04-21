@@ -5,6 +5,7 @@ pubDate: '2026-04-20'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai tools', 'sales', 'customer lifetime value', 'clv', 'revenue operations']
 slug: 'ai-customer-lifetime-value-prediction-tools'
 imageHint: "sales manager reviewing customer lifetime value dashboard on laptop with bar chart showing customer segments ranked by predicted revenue"

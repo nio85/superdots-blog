@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:00:00Z"
 author: 'Superdots Team'
 department: 'design'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-design']
 heroImage: "/images/blog/ai-brand-identity-tools.webp"
 faqs:

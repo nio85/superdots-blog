@@ -5,6 +5,7 @@ pubDate: '2026-03-25'
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-policy-writing.webp"
 faqs:

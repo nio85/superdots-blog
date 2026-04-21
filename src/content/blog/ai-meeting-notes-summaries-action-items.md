@@ -5,6 +5,7 @@ pubDate: '2026-03-13'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
+contentPillar: "dot-by-dot"
 tags: ['ai-meetings', 'productivity']
 heroImage: "/images/blog/ai-meeting-notes-summaries-action-items.webp"
 faqs:

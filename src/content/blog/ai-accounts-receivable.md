@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-accounts-receivable"]
 heroImage: "/images/blog/ai-accounts-receivable.webp"
 faqs:

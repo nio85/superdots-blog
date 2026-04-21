@@ -5,6 +5,7 @@ pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations', 'ai-implementation']
 faqs:
   - question: "How long does it take to implement AI in a business?"

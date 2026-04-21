@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:22:03Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-video"]
 heroImage: "/images/blog/ai-video-marketing-tools.webp"
 faqs:

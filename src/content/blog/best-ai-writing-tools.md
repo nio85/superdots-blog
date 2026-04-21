@@ -5,6 +5,7 @@ pubDate: "2026-03-23"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-writing']
 heroImage: "/images/blog/best-ai-writing-tools.webp"
 faqs:

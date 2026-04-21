@@ -5,6 +5,7 @@ pubDate: "2026-04-03"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-analytics", "ai-marketing-analytics", "marketing-dashboard"]
 imageHint: "marketer reviewing colorful dashboard charts on laptop in a bright office"
 faqs:

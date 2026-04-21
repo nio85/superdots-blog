@@ -6,6 +6,7 @@ author: 'Superdots Team'
 pillar: true
 department: 'hr'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-hr', 'ai-hr', 'ai-hiring', 'ai-onboarding', 'ai-workforce-planning']
 faqs:
   - question: "What is AI for HR and how does it work?"

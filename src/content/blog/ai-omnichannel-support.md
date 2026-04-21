@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:27:00Z"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-customer-support']
 heroImage: "/images/blog/ai-omnichannel-support.webp"
 faqs:

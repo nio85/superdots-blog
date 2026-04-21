@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-writing", "ai-tools", "productivity"]
 heroImage: "/images/blog/ai-social-media-content-calendar.webp"
 imageHint: "social media manager reviewing AI-populated monthly content calendar on screen"

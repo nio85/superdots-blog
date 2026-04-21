@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-proposals"]
 heroImage: "/images/blog/ai-proposal-generator.webp"
 faqs:

@@ -5,6 +5,7 @@ pubDate: "2026-03-27"
 author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-financial-modeling"]
 imageHint: "finance team reviewing scenario models on screen with charts and projections"
 faqs:

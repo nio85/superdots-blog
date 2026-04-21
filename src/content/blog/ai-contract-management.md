@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:24:38Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-legal", "ai-contract-management"]
 heroImage: "/images/blog/ai-contract-management.webp"
 faqs:

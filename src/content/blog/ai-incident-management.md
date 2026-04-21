@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:18:00Z"
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-engineering']
 heroImage: "/images/blog/ai-incident-management.webp"
 faqs:

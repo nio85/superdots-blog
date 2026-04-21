@@ -5,6 +5,7 @@ pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-presentations", "ai-sales"]
 heroImage: "/images/blog/ai-pitch-deck-generator.webp"
 faqs:

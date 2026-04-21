@@ -5,6 +5,7 @@ pubDate: "2026-03-27"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-negotiation"]
 imageHint: "two professionals at negotiation table with AI assistant interface on laptop screen"
 faqs:

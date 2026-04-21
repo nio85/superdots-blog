@@ -5,6 +5,7 @@ pubDate: '2026-03-21'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-hr', 'ai-tools', 'ai-hiring', 'ai-interview-scheduling']
 heroImage: "/images/blog/ai-interview-scheduling.webp"
 faqs:

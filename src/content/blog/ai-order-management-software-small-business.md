@@ -5,6 +5,7 @@ pubDate: "2026-04-24"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["order management", "AI tools", "operations", "small business"]
 imageHint: "small business owner at desk reviewing order dashboards on two monitors with shipping boxes in background"
 faqs:

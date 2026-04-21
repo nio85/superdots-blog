@@ -5,6 +5,7 @@ pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 faqs:
   - question: "How accurate are AI transcription tools?"

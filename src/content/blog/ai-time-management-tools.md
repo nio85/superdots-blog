@@ -5,6 +5,7 @@ pubDate: "2026-03-26"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-time-management"]
 imageHint: "professional at desk reviewing a clean AI-optimized calendar on laptop screen"
 faqs:

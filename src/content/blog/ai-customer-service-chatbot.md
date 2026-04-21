@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-customer-support']
 heroImage: "/images/blog/ai-customer-service-chatbot.webp"
 faqs:

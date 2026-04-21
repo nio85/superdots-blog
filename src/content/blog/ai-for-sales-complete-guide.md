@@ -6,6 +6,7 @@ author: 'Superdots Team'
 pillar: true
 department: 'sales'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-sales', 'ai-sales', 'ai-crm', 'ai-lead-scoring', 'ai-sales-forecasting', 'ai-prospecting']
 faqs:
   - question: "What is AI for sales and how does it help sales teams?"

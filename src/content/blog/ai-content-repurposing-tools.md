@@ -5,6 +5,7 @@ pubDate: "2026-04-07"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["content-repurposing", "ai-marketing-tools", "content-marketing", "social-media", "marketing-automation"]
 imageHint: "marketing team at whiteboard mapping content formats — podcast, video, blog, social posts — with arrows connecting them"
 faqs:

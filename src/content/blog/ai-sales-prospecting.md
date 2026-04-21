@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:23:34Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-prospecting"]
 heroImage: "/images/blog/ai-sales-prospecting.webp"
 faqs:

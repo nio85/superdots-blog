@@ -5,6 +5,7 @@ pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-data", "ai-productivity"]
 heroImage: "/images/blog/ai-data-cleaning-tools.webp"
 faqs:

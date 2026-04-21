@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-engineering", "ai-documentation"]
 heroImage: "/images/blog/ai-api-documentation.webp"
 faqs:

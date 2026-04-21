@@ -5,6 +5,7 @@ pubDate: "2026-04-09"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["sales", "ai-tools", "sales-enablement", "productivity"]
 imageHint: "minimalist desk with a well-organized playbook notebook open next to a laptop screen showing AI-generated content blocks"
 faqs:

@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-compensation"]
 heroImage: "/images/blog/ai-compensation-benchmarking.webp"
 faqs:

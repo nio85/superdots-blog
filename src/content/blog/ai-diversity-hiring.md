@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-hiring"]
 heroImage: "/images/blog/ai-diversity-hiring.webp"
 faqs:

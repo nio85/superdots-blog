@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
+contentPillar: "dot-by-dot"
 tags: ['ai-email', 'productivity', 'ai-tools']
 faqs:
   - question: "How much time can AI actually save on email?"

@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-sales', 'ai-data-analysis']
 heroImage: "/images/blog/ai-competitive-analysis.webp"
 imageHint: "sales professional reviewing AI-generated competitor comparison report before a call"

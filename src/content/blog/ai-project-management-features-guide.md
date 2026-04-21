@@ -5,6 +5,7 @@ pubDate: '2026-03-11'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-project-management', 'productivity', 'ai-tools']
 faqs:
   - question: "Which project management tools have the best AI features?"

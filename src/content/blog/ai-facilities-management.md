@@ -5,6 +5,7 @@ pubDate: '2026-03-25'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-operations', 'ai-tools']
 faqs:
   - question: "What is AI facilities management?"

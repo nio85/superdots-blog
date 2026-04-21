@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:04:36Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-for-hr", "ai-writing", "ai-tools"]
 heroImage: "/images/blog/ai-performance-reviews.webp"
 faqs:

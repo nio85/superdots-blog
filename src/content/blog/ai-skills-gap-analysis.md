@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:42:00Z"
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-hr']
 heroImage: "/images/blog/ai-skills-gap-analysis.webp"
 faqs:

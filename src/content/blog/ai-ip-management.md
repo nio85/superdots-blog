@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-legal", "ai-ip-management"]
 heroImage: "/images/blog/ai-ip-management.webp"
 faqs:

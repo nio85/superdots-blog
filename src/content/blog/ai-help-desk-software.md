@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:19:59Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-help-desk"]
 heroImage: "/images/blog/ai-help-desk-software.webp"
 faqs:

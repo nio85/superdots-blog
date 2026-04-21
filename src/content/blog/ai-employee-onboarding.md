@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-hr', 'productivity']
 heroImage: "/images/blog/ai-employee-onboarding.webp"
 faqs:

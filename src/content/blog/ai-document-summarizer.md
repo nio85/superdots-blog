@@ -5,6 +5,7 @@ pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-document-management", "ai-summarization", "productivity"]
 heroImage: "/images/blog/ai-document-summarizer.webp"
 faqs:

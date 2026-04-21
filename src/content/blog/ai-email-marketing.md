@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:00:07Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-writing", "ai-tools", "ai-email"]
 heroImage: "/images/blog/ai-email-marketing.webp"
 imageHint: "email marketer reviewing AI-generated campaign copy with subject line A/B options"

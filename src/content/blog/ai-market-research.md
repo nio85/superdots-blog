@@ -5,6 +5,7 @@ pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-analysis"]
 heroImage: "/images/blog/ai-market-research.webp"
 imageHint: "strategist reviewing AI-compiled market size report with competitor landscape summary"

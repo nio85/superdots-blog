@@ -5,6 +5,7 @@ pubDate: "2026-03-26"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-business-intelligence"]
 imageHint: "professional looking at interactive AI-generated business dashboard on large screen"
 faqs:

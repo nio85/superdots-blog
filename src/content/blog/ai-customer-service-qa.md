@@ -5,6 +5,7 @@ pubDate: "2026-04-10"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-customer-support']
 heroImage: "/images/blog/ai-customer-service-qa.webp"
 imageHint: "QA manager reviewing AI-scored support ticket quality against rubric checklist"

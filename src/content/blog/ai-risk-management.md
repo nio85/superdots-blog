@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:36:00Z"
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 heroImage: "/images/blog/ai-risk-management.webp"
 faqs:

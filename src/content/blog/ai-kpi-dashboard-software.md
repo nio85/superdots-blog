@@ -5,6 +5,7 @@ pubDate: "2026-04-23"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["kpi dashboard", "operations", "ai tools", "business metrics", "data analytics"]
 imageHint: "operations manager at a warehouse desk looking at multiple screens showing KPI charts and alert notifications"
 faqs:

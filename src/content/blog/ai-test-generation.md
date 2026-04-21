@@ -5,6 +5,7 @@ pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-testing", "ai-engineering"]
 heroImage: "/images/blog/ai-test-generation.webp"
 imageHint: "QA engineer reviewing AI-generated unit test suite with edge case coverage listed"

@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:24:10Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-engineering", "ai-monitoring"]
 heroImage: "/images/blog/ai-infrastructure-monitoring.webp"
 faqs:

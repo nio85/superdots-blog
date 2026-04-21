@@ -5,6 +5,7 @@ pubDate: "2026-04-17"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["battlecards", "sales-enablement", "competitive-intelligence", "ai-sales-tools", "sales-tools-2026"]
 imageHint: "sales rep at laptop reviewing competitive battlecard on screen before a video call"
 faqs:

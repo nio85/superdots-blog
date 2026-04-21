@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:03:00Z"
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-marketing']
 heroImage: "/images/blog/ai-brand-monitoring.webp"
 faqs:

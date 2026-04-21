@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-fleet-management"]
 heroImage: "/images/blog/ai-fleet-management.webp"
 faqs:

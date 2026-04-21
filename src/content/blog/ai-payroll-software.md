@@ -5,6 +5,7 @@ pubDate: "2026-03-25"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-payroll"]
 imageHint: "payroll dashboard showing automated calculations with AI verification checkmarks"
 faqs:

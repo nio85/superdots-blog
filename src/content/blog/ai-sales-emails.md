@@ -5,6 +5,7 @@ pubDate: "2026-03-16T23:16:03Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-writing", "ai-sales", "ai-tools"]
 heroImage: "/images/blog/ai-sales-emails.webp"
 imageHint: "sales rep reviewing AI-personalized cold email draft with tone and structure suggestions"

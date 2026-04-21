@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:33:00Z"
 author: 'Superdots Team'
 department: 'legal'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-legal']
 heroImage: "/images/blog/ai-regulatory-compliance-monitoring.webp"
 faqs:

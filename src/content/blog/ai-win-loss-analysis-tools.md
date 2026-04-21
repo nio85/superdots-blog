@@ -5,6 +5,7 @@ pubDate: "2026-04-16"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["sales", "competitive-intelligence", "win-loss-analysis", "AI tools"]
 imageHint: "Sales manager reviewing win/loss dashboard on laptop with AI insights showing deal outcome charts and competitor analysis"
 faqs:

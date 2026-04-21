@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:37:22Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-document-management"]
 heroImage: "/images/blog/ai-document-management.webp"
 faqs:

@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:31:47Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-employee-engagement"]
 heroImage: "/images/blog/ai-employee-engagement.webp"
 faqs:

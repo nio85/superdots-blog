@@ -5,6 +5,7 @@ pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 faqs:
   - question: "Can AI write a complete business report?"

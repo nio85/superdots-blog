@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-revenue-recognition"]
 heroImage: "/images/blog/ai-revenue-recognition.webp"
 faqs:

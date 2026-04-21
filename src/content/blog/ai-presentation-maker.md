@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'productivity', 'ai-design']
 heroImage: "/images/blog/ai-presentation-maker.webp"
 imageHint: "professional polishing AI-generated slide deck with branded template applied"
