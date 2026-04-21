@@ -1,6 +1,6 @@
 ---
 title: 'AI Process Mining: Find Bottlenecks Fast'
-description: 'AI process mining discovers and optimizes business processes by analyzing event logs — finding bottlenecks, deviations, and automation opportunities automatically.'
+description: 'AI process mining discovers and optimizes business processes by analyzing event logs — finding bottlenecks, deviations, and automation gaps.'
 pubDate: "2026-03-17T17:30:00Z"
 author: 'Superdots Team'
 department: 'operations'

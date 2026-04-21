@@ -1,6 +1,6 @@
 ---
 title: 'AI Sales Coaching: Train Reps While They Sell'
-description: "Discover how AI sales coaching tools analyze calls, emails, and deals to give reps real-time feedback — scaling coaching beyond what managers can handle alone."
+description: "AI sales coaching tools analyze calls, emails, and deals to give reps real-time feedback — scaling coaching beyond what managers can handle."
 pubDate: "2026-03-30"
 author: "Superdots Team"
 department: "sales"
