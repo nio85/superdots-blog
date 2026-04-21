@@ -41,7 +41,7 @@ That's it. It is not necessarily AI. It is not necessarily expensive software. I
 
 The first is a feeling. The second is a fact you can act on.
 
-The enterprise vendors built platforms for teams drowning in data across dozens of systems. But the underlying logic — measure the right things, look for patterns, decide what to change — works at any size.
+The enterprise vendors built platforms for teams drowning in data across dozens of systems. But the underlying logic — measure the right things, look for patterns, decide what to change — works at any size. (For a broader look at how AI fits into HR across hiring, onboarding, and performance, see our [complete guide to AI for HR](/blog/ai-for-hr).)
 
 ## 8 Metrics Worth Tracking (With Formulas)
 
