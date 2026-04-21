@@ -1,6 +1,6 @@
 ---
 title: "How to Use AI to Write Your Weekly Team Updates"
-description: "Stop spending 45 minutes on status reports. A practical framework for using AI to draft your weekly team updates in under 10 minutes — without losing your voice."
+description: "Stop spending 45 minutes on status reports. How to use AI to draft your weekly team updates in under 10 minutes — without losing your voice."
 pubDate: "2026-04-27"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
