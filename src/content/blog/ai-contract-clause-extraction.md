@@ -2,6 +2,7 @@
 title: 'AI Contract Clause Extraction: How Tools Work'
 description: "How AI tools extract indemnification, termination & NDA clauses — process, benchmarks, and how legal teams cut 500-contract reviews from months to two days."
 pubDate: "2026-03-17T00:00:00Z"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"

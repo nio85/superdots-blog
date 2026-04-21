@@ -2,6 +2,7 @@
 title: 'AI Automation for Business: Complete Guide 2026'
 description: 'How teams cut 20+ hours of manual work per month with AI — email, ops, finance, and supply chain automation. Real tool picks per use case. No code needed.'
 pubDate: '2026-03-21'
+updatedDate: '2026-04-21'
 author: 'Superdots Team'
 pillar: true
 department: 'operations'

@@ -2,6 +2,7 @@
 title: 'AI Code Security Scanners: Beyond SAST & DAST'
 description: 'Snyk, Semgrep & GitHub Advanced Security compared — AI code scanners that find what SAST and DAST miss: logic flaws, taint propagation, novel attacks.'
 pubDate: "2026-03-17T17:39:00Z"
+updatedDate: "2026-04-21"
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
