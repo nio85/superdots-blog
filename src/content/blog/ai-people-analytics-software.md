@@ -21,13 +21,13 @@ faqs:
     answer: "Almost certainly not. Visier is designed for organizations with 1,000+ employees and complex multi-system HR data. The pricing (custom contracts starting around $30,000/year) and implementation requirements are built around enterprise HR teams. For companies under 500 employees, Culture Amp, Lattice, or Leapsome will cover 90% of the same analytical ground at a fraction of the cost."
 ---
 
-I spent two weeks evaluating people analytics platforms. Every product demo was genuinely impressive. Beautiful dashboards. Predictive attrition models. AI-powered flight risk scores. Cohort analysis across five years of headcount data.
+Most people analytics demos are genuinely impressive.
 
-I was shopping for a team of 43 people.
+Beautiful dashboards. Predictive attrition models. AI-powered flight risk scores. Cohort analysis across five years of headcount data.
 
-The math wasn't adding up.
+The problem: nearly all of it was built for teams of 500 or more.
 
-Here's what I eventually figured out: the people analytics market built itself almost entirely around enterprise HR teams — the Amazons and Unilevers with dedicated analytics budgets and 50,000 employees generating enough signal to make machine learning meaningful. Everything else got handed a scaled-down enterprise product and a starter tier that cost $8/employee/month for features built assuming you had 500 of them.
+The people analytics market built itself almost entirely around enterprise HR teams — the Amazons and Unilevers with dedicated analytics budgets and 50,000 employees generating enough signal to make machine learning meaningful. Everyone else got handed a scaled-down enterprise product and a starter tier that costs $8/employee/month for features built assuming you had 500 of them.
 
 But what if you have 43 people? Or 80? What if you just want to understand why three people left in Q1, whether your hiring process is too slow, and whether your managers are stretched too thin — without a $40,000/year platform?
 
@@ -55,7 +55,7 @@ If 3 people left a team of 40, that's a 7.5% monthly rate — or roughly 90% ann
 ### 2. Time-to-Hire
 **Average days from job posting to signed offer**
 
-Calculate per department, not just overall. A 35-day average might be fine for engineering but slow for sales, where you're losing candidates to faster-moving companies. Industry median is around 28-42 days depending on the role.
+Calculate per department, not just overall. A 35-day average might be fine for engineering but slow for sales, where you're losing candidates to faster-moving companies. Industry median is around 28–42 days depending on the role (per SHRM benchmarking data).
 
 ### 3. Offer Acceptance Rate
 **(Offers accepted ÷ Offers extended) × 100**
@@ -222,6 +222,8 @@ Start this week: set up the 8-metric spreadsheet. Pull your last three months of
 If the spreadsheet reveals something surprising — a turnover rate higher than you thought, an offer acceptance rate that's dropped — that's the signal to invest in a platform. If the spreadsheet confirms what you already knew, you've saved yourself a year of $10/employee/month in software spend while you figure out the real problem.
 
 People analytics isn't enterprise software. It's a practice. And like most practices, a consistent simple version beats an inconsistent sophisticated one every time.
+
+For a broader view of where AI is transforming HR — recruiting, onboarding, performance, and beyond — see our [complete AI for HR guide](/blog/ai-for-hr).
 
 ---
 
