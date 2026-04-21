@@ -11,12 +11,14 @@ import ShareButtons from '../components/ShareButtons.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import type { CollectionEntry } from 'astro:content';
-import { TAGS } from '../consts';
+import { TAGS, PILLARS } from '../consts';
 import { authors } from '../data/authors';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, heroImage, tags, faqs, noindex, slug: propSlug, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, contentPillar, heroImage, tags, faqs, noindex, slug: propSlug, readingTime } = Astro.props;
+
+const pillarLabel = PILLARS.find(p => p.slug === (contentPillar || 'dot-by-dot'))?.label || 'Dot by Dot';
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -62,6 +64,7 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 					"url": `${siteUrl}/favicon.svg`
 				}
 			},
+			"articleSection": pillarLabel,
 			"mainEntityOfPage": {
 				"@type": "WebPage",
 				"@id": Astro.url.toString()
