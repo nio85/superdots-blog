@@ -1,7 +1,8 @@
 ---
 title: "AI Incident Triage Tools for SRE & DevOps Teams (2026)"
 description: 'AI incident triage for SRE teams — how PagerDuty, Datadog Watchdog, Moogsoft & BigPanda cut alert noise, surface root causes, and reduce MTTR by 40–60%.'
-pubDate: "2026-04-22T07:00:00Z"
+pubDate: "2026-03-17"
+updatedDate: "2026-04-21"
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
