@@ -19,6 +19,7 @@ faqs:
     answer: "Your prompt should include: the update's specific audience (your manager, your team, or cross-functional stakeholders), the format you want (executive summary plus wins plus blockers plus next week), your raw input bullets from the week, and a tone instruction such as 'direct and professional, no corporate filler.' Naming the audience explicitly is the single change that most improves the relevance of the draft."
   - question: "How much time can AI actually save on weekly status reports?"
     answer: "Most professionals who adopt an AI-assisted workflow report cutting update time from 30-45 minutes to 8-12 minutes per week. The biggest time savings come from eliminating the blank-page problem and the mental effort of aggregating inputs from memory. The remaining time goes to reviewing the draft, applying judgment, and light editing — the parts that actually require you."
+heroImage: "/images/blog/ai-weekly-team-updates.webp"
 ---
 
 Something happens every Friday afternoon in operations teams that's worth examining. Everyone who owes a weekly update goes quiet, stares at a blank document, and starts mentally reconstructing the past five days from memory — Slack threads, half-remembered decisions, meetings that blurred together. The update rarely takes the 10 minutes it should. It usually takes 40.
