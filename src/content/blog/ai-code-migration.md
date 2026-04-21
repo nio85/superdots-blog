@@ -1,7 +1,7 @@
 ---
-title: 'AI Code Migration: Upgrade Legacy Codebases'
-description: "Use AI to translate code between languages, identify breaking changes, and generate migration tests. Legacy upgrades, simplified."
-pubDate: "2026-03-17T00:00:00Z"
+title: 'AI Code Migration Guide (2026): Python, TypeScript & Legacy Systems'
+description: "AI prompts for Python→TypeScript, framework upgrades & legacy migrations. Step-by-step workflow with Claude, ChatGPT & GitHub Copilot. Includes test generation."
+pubDate: "2026-04-21"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
@@ -19,6 +19,10 @@ faqs:
     answer: "AI typically reduces migration time by 40-70%, depending on the migration type. A framework upgrade that would take a team 3 months might take 4-6 weeks with AI assistance. The savings come from automated code translation and boilerplate conversion, freeing developers to focus on the complex, judgment-dependent parts of the migration."
   - question: "What migrations work best with AI?"
     answer: "Version upgrades (Python 2→3, Angular 1→2+, .NET Framework→.NET Core) and language translations between similar paradigms (Java→Kotlin, JavaScript→TypeScript) work best. Pattern migrations (callbacks→promises→async/await) also work well. Architectural migrations (monolith→microservices, SQL→NoSQL) benefit from AI assistance but require more human decision-making."
+  - question: "Which AI tool is best for migrating Python to TypeScript?"
+    answer: "Claude and ChatGPT are the most effective tools for Python-to-TypeScript migration. Paste a Python module, describe the target (TypeScript with strict typing), and review the output — both models handle this translation reliably for typical business logic. Claude tends to produce more complete type annotations than other models. GitHub Copilot works well for file-by-file conversion inside your IDE. No tool handles edge cases in business logic automatically — plan to review any function that deals with dates, floating-point math, or external API responses."
+  - question: "Can GitHub Copilot automatically migrate legacy code?"
+    answer: "GitHub Copilot assists with code migration but does not automate it fully. It works best for line-by-line or function-by-function conversion when you describe the target language or framework in a comment. For larger migrations — converting an entire file or module — Claude or ChatGPT are more effective because you can provide full context about the source and target. Copilot's advantage is IDE integration: it suggests changes inline as you work, making it faster for incremental, file-by-file migration. For legacy systems with significant technical debt, plan to use Copilot for the mechanical conversion and reserve human review for business logic, error handling, and state management."
 imageHint: "engineer reviewing legacy code alongside AI-refactored version in split screen"
 ---
 
@@ -110,6 +114,18 @@ const UserProfile = ({ id }) => {
 ```
 
 That's idiomatic. It's not just translated — it's rewritten in the style of the target.
+
+## Which AI Tool to Use for Code Migration
+
+Not all AI tools handle code migration the same way. Here's a quick-reference guide to match the tool to your migration type:
+
+| Tool | Best For | How to Use It |
+|---|---|---|
+| GitHub Copilot | IDE-integrated, line-by-line refactoring | Open the file, describe the target in a comment, accept or adjust inline suggestions |
+| Claude / ChatGPT | Prompt-based batch migration of whole files or modules | Paste the file, describe source and target, review the full output |
+| Amazon Q | AWS workload migrations and Java modernization | Integrates with AWS tools; optimized for Java-to-Java upgrades and AWS service migrations |
+
+The practical split: use **GitHub Copilot** when you want to review changes file-by-file in your IDE as you go. Use **Claude or ChatGPT** when you want to batch-convert entire files or modules and review the output before applying it. Use **Amazon Q** if you're on AWS and migrating Java applications — its automated Java runtime upgrade features are specifically designed for large-scale enterprise migrations.
 
 ## The Migration Workflow
 

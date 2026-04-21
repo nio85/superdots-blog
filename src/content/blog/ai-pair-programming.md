@@ -166,4 +166,4 @@ Once you are comfortable with AI suggestions, use it for refactoring guidance. S
 
 Use AI for rubber-ducking architectural decisions. Describe your problem, constraints, and current thinking. Ask for alternative approaches and trade-offs. Verify suggestions against your experience and team context.
 
-For debugging-specific workflows, see our guide on [AI debugging](/blog/ai-debugging-guide). For a comprehensive overview of AI tools across engineering and other departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For debugging-specific workflows, see our guide on [AI debugging](/blog/ai-debugging-guide). For upgrading legacy systems or translating between languages, see our guide on [AI-assisted code migration](/blog/ai-code-migration/). For a comprehensive overview of AI tools across engineering and other departments, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
