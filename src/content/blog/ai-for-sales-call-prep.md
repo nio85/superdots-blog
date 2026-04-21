@@ -1,6 +1,6 @@
 ---
-title: "AI for Sales Call Prep: Research Prospects Fast"
-description: 'Use ChatGPT, Claude, or Gong to build a complete prospect brief in under 5 minutes. Includes free prompt template — works with Salesforce, HubSpot, or Pipedrive.'
+title: "AI for Sales Call Prep: Full Prospect Brief in 5 Minutes (2026)"
+description: 'ChatGPT, Claude, or Gong to build a complete prospect brief before any call in under 5 minutes. Free prompt template included — works with Salesforce, HubSpot, or Pipedrive.'
 pubDate: '2026-03-08'
 author: 'Superdots Team'
 department: 'sales'
