@@ -18,6 +18,7 @@ faqs:
     answer: "Supermetrics ($39-199/month per destination) is best for teams that primarily use Looker Studio or Google Sheets — low setup cost, wide connector library. Funnel.io ($399+/month) targets mid-market teams who need data warehousing and more sophisticated transformations. Improvado is enterprise-only with custom pricing and is overkill for teams under 50 people. For most B2B marketing teams sending weekly reports to leadership, Supermetrics plus Looker Studio covers 90% of the use case at 10% of the cost."
   - question: "How long does it take to set up automated marketing reporting?"
     answer: "Expect 2-4 hours for the initial setup: 30-60 minutes connecting data sources, 60-90 minutes building the Looker Studio template, and 30-60 minutes writing and testing your AI prompt for the insights section. After that, weekly maintenance is 10-15 minutes — scanning the automated data for anomalies, editing the AI-generated summary, and sending the report. The break-even point (setup time vs. time saved) is typically 2-3 weeks for teams currently spending 2+ hours per week on manual reporting."
+heroImage: "/images/blog/ai-marketing-reporting-automation.webp"
 ---
 
 Most marketing teams spend Friday afternoons building reports that nobody reads in full.
