@@ -19,6 +19,7 @@ faqs:
     answer: "The eight most actionable metrics for small and mid-sized teams are: monthly turnover rate, time-to-hire, offer acceptance rate, absenteeism rate, employee engagement score, manager span of control, headcount growth rate, and pay equity gap. Each can be calculated from data you likely already have in your HRIS. Start with turnover and time-to-hire — they have the clearest cost implications."
   - question: "Is Visier worth it for a company under 500 employees?"
     answer: "Almost certainly not. Visier is designed for organizations with 1,000+ employees and complex multi-system HR data. The pricing (custom contracts starting around $30,000/year) and implementation requirements are built around enterprise HR teams. For companies under 500 employees, Culture Amp, Lattice, or Leapsome will cover 90% of the same analytical ground at a fraction of the cost."
+heroImage: "/images/blog/ai-people-analytics-software.webp"
 ---
 
 Most people analytics demos are genuinely impressive.
