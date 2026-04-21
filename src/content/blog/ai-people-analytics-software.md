@@ -46,6 +46,8 @@ The enterprise vendors built platforms for teams drowning in data across dozens 
 
 ## 8 Metrics Worth Tracking (With Formulas)
 
+Are you sure you're tracking the right things — or just the things your HRIS exports by default?
+
 You do not need a platform to track these. You need a spreadsheet and 30 minutes per month.
 
 ### 1. Monthly Turnover Rate
@@ -134,6 +136,8 @@ Looking to go deeper on workforce strategy? See our guide to [AI for workforce p
 
 *Pricing based on documentation and published rates as of early 2026; verify with vendor before purchase.*
 
+But before you open a demo: does your team actually have enough headcount to make ML-driven attrition models meaningful? Most require 200+ employees to produce statistically reliable predictions. For teams under that threshold, the tools below are ranked by practical utility, not predictive sophistication.
+
 ## Tool Write-Ups
 
 ### Google Sheets + Claude — Free, Under 50 Employees
@@ -208,6 +212,8 @@ Three signals that your Google Sheets workflow has hit its limit:
 
 **3. You've grown past 80 employees** — Not a hard rule, but around this size, pattern detection from manual data becomes unreliable. There's enough signal that a platform trained on similar companies can surface things you'd miss.
 
+Most teams don't have a tools problem. They have a tracking-consistency problem. No platform fixes that.
+
 Until those three things are true: stick with the spreadsheet. Investing $8–11/employee/month before you need it doesn't make your analytics better — it makes your SaaS bill bigger.
 
 ---
@@ -217,6 +223,8 @@ If your people analytics are pointing to performance gaps, the next step is usua
 ---
 
 ## What's in It for You, Practically
+
+Before you demo anything, ask yourself: do you currently review any HR metric monthly? If the answer is no, the tool is not the bottleneck.
 
 Start this week: set up the 8-metric spreadsheet. Pull your last three months of data from whatever HRIS you're using. Ask Claude to analyze it.
 
