@@ -155,6 +155,7 @@ A knowledge base nobody visits is worthless. Bring it to your team:
 - Add a Slack bot that searches the KB when someone asks a question in a help channel.
 - Embed KB search in your internal tools and dashboards.
 - Make it part of [onboarding](/blog/ai-employee-onboarding) — new hires should learn to check the KB before asking a colleague.
+- If your team uses a customer-facing [chatbot platform](/blog/ai-chatbot-builder/), connect your knowledge base to it — chatbots drawing from a well-structured KB resolve significantly more queries without human handoff.
 
 ## Maintaining your knowledge base
 

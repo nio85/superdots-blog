@@ -230,7 +230,7 @@ QA leads actively search for scoring rubric templates, and no top-ranked competi
 
 **Industry-specific additions:** Financial services teams typically add "required disclosure language" as a separate binary criterion. Healthcare teams add "HIPAA-compliant data handling." Retail teams often add "upsell offer presented" as a scored criterion.
 
-If you're deploying [AI chatbot tools](/blog/ai-chatbot-builder/) alongside human agents, extend this rubric to cover bot interactions too — track where bots fail handoffs, misroute customers, or give incorrect information.
+If you're deploying [AI chatbot builders](/blog/ai-chatbot-builder/) alongside human agents, extend this rubric to cover bot interactions too — track where bots fail handoffs, misroute customers, or give incorrect information.
 
 ## Getting Started Without Boiling the Ocean
 
