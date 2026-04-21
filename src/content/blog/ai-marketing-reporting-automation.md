@@ -1,7 +1,7 @@
 ---
 title: "How to Cut Your Weekly Marketing Report From 3 Hours to 15 Minutes"
 description: "Stop spending Friday afternoons on reports nobody reads in full. Here's the 3-tool AI stack that pulls data, builds dashboards, and writes the insights automatically."
-pubDate: "2026-04-21"
+pubDate: "2026-04-26"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
@@ -25,7 +25,7 @@ Most marketing teams spend Friday afternoons building reports that nobody reads 
 
 The data lives in five different places. Someone exports a CSV from Meta Ads. Someone else pulls Google Analytics manually. The clicks don't match the platform numbers. Two hours later, you have a spreadsheet that your VP skims in 45 seconds during Monday standup.
 
-I looked at how high-performing marketing teams actually handle weekly reporting. The pattern is consistent: they've split the problem into three layers and automated each one separately.
+Looking at how high-performing marketing teams handle weekly reporting, the pattern is consistent: they've split the problem into three layers and automated each one separately.
 
 Here's what that stack looks like — and how to build it.
 
@@ -59,7 +59,7 @@ For B2B marketing teams sending weekly reports to 5-50 stakeholders, you need th
 
 **Total: under €70/month.** Setup time: 2-4 hours once. Weekly maintenance: 10-15 minutes.
 
-This stack covers Google Ads, Meta Ads, LinkedIn Ads, Google Analytics 4, and HubSpot. If you run all your paid channels through those five platforms, this handles 90% of your reporting surface.
+This stack covers Google Ads, Meta Ads, LinkedIn Ads, Google Analytics 4, and HubSpot. If you run all your paid channels through those five platforms, this handles 90% of your reporting surface. For teams using AI for deeper [marketing analytics](/blog/ai-marketing-analytics-tools) beyond weekly reporting, that guide covers additional tooling.
 
 ---
 
@@ -151,7 +151,7 @@ The first time you do this takes 10 minutes. After you've built the prompt templ
 
 **They never kill the weekly meeting.** The whole point of an automated report is to eliminate the "let me pull that up" meeting. If you're still running a 30-minute weekly marketing review that could be a well-structured Loom video or a shared document, you haven't finished the job.
 
-**They skip the insights layer.** A dashboard with no narrative sends the implicit message: "here are numbers, you figure out what they mean." Senior stakeholders don't have time for that. The 3-minute AI summary changes the report from a spreadsheet into a decision document.
+**They skip the insights layer.** A dashboard with no narrative sends the implicit message: "here are numbers, you figure out what they mean." Senior stakeholders don't have time for that. The 3-minute [AI-generated summary](/blog/ai-report-writing) changes the report from a spreadsheet into a decision document.
 
 ---
 
@@ -195,7 +195,7 @@ Every marketing team hits this moment: Google Ads says you got 47 conversions. H
 
 None of these numbers are wrong. They're measuring different things.
 
-This is the attribution reconciliation problem — and it's the reason many teams distrust their reports even after automating them. Before you commit to any reporting stack, you need to define which number is the "source of truth" for each metric. Otherwise, you'll spend more time explaining discrepancies than acting on insights.
+This is the [attribution reconciliation problem](/blog/ai-marketing-attribution-tools) — and it's the reason many teams distrust their reports even after automating them. Before you commit to any reporting stack, you need to define which number is the "source of truth" for each metric. Otherwise, you'll spend more time explaining discrepancies than acting on insights.
 
 **A practical attribution hierarchy:**
 
