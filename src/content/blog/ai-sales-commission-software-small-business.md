@@ -18,6 +18,7 @@ faqs:
     answer: 'No. HubSpot Sales Hub tracks deals, revenue, and pipeline but has no native commission calculation. QuotaPath integrates directly with HubSpot and pulls closed-won deals automatically — it is the most common pairing for HubSpot-based SMB sales teams.'
   - question: 'Which sales commission software integrates with QuickBooks?'
     answer: 'QuotaPath, SalesCookie, and Commissionly all support QuickBooks export or direct integration for payroll reconciliation. Performio also exports to QuickBooks and adds a formal audit trail. Spiff requires Salesforce and is enterprise-only — not practical for most SMBs.'
+heroImage: "/images/blog/ai-sales-commission-software-small-business.webp"
 ---
 
 Sales commission disputes are expensive. Not because the math is hard — because nobody trusts the source.
