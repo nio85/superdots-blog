@@ -4,7 +4,14 @@ import { filterPublished } from '../../lib/posts';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
-import { DEPARTMENTS, USE_CASES, TAGS } from '../../consts';
+import { DEPARTMENTS, USE_CASES, TAGS, PILLARS } from '../../consts';
+
+const PILLAR_COLORS: Record<string, string> = {
+	'dot-by-dot': '#E8363B',
+	'connecting-the-dots': '#14B8A6',
+	'the-big-picture': '#6366F1',
+	'behind-the-dots': '#F59E0B',
+};
 
 const posts = filterPublished(await getCollection('blog'));
 
@@ -31,17 +38,41 @@ for (const post of posts) {
 }
 const tagsWithContent = TAGS.filter((t) => (tagCounts.get(t.slug) ?? 0) > 0);
 
+// Count articles per pillar
+const pillarCounts = new Map<string, number>();
+for (const post of posts) {
+	const p = post.data.contentPillar || 'dot-by-dot';
+	pillarCounts.set(p, (pillarCounts.get(p) ?? 0) + 1);
+}
+
 const TAGS_PER_PAGE = 12;
 ---
 
-<Base title="Categories | Superdots" description="Browse AI guides by department or use case.">
+<Base title="Categories | Superdots" description="Browse AI guides by series, department, or use case.">
 	<meta slot="head" name="robots" content="noindex, follow" />
 	<PageHeader
 		title="Categories"
 		kicker="Browse topics"
-		subtitle="Browse guides by the team you're on or the problem you're solving. Pick a department or use case to find what's relevant to your work."
+		subtitle="Browse guides by series, team, or use case. Pick the angle that fits how you think."
 		breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Categories', href: '/category/' }]}
 	/>
+
+	<section class="cat-section">
+		<div class="cat-section-label">
+			<span class="superdot"></span>
+			By series
+		</div>
+		<div class="cat-grid cat-grid--dept">
+			{PILLARS.map((p) => (
+				<a href={`/series/${p.slug}/`} class="cat-card" style={`--card-accent: ${PILLAR_COLORS[p.slug]};`}>
+					<span class="cat-card-count">{pillarCounts.get(p.slug) ?? 0}</span>
+					<span class="cat-card-label">{p.label}</span>
+					<span class="cat-card-desc">{p.description}</span>
+					<span class="cat-card-cta">Browse <span aria-hidden="true">&rarr;</span></span>
+				</a>
+			))}
+		</div>
+	</section>
 
 	<section class="cat-section">
 		<div class="cat-section-label">
@@ -240,6 +271,14 @@ const TAGS_PER_PAGE = 12;
 	}
 	.cat-card:hover::before {
 		height: 100%;
+	}
+
+	/* Series pillar accent */
+	.cat-card[style*="--card-accent"]::before {
+		background: var(--card-accent);
+	}
+	.cat-card[style*="--card-accent"]:hover {
+		border-color: var(--card-accent);
 	}
 
 	/* Department accent */
