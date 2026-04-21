@@ -1,7 +1,8 @@
 ---
-title: 'AI Change Management: Lead AI Adoption Well'
-description: "Learn how AI tools help plan, communicate, and measure organizational change — especially when the change is AI adoption itself."
+title: 'AI Change Management: 6 Tools & Framework 2026'
+description: "Prosci AI, Leena AI & Microsoft Viva — 6 tools to plan, communicate, and measure AI adoption. A 3-phase change framework for HR and ops leaders in 2026."
 pubDate: "2026-03-24"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "hr"
 useCase: "communication"

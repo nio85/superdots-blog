@@ -1,7 +1,8 @@
 ---
-title: 'AI API Documentation: Auto-Sync Docs'
-description: "Speakeasy, Mintlify, and ReadMe auto-generate API docs from your OpenAPI spec and update them on every deploy — no more stale reference pages."
+title: 'AI API Doc Tools: Speakeasy, Mintlify & ReadMe'
+description: "Speakeasy, Mintlify & ReadMe compared — auto-generate API docs from OpenAPI and sync on every deploy. No more stale reference pages. Pricing for 2026."
 pubDate: "2026-03-17T09:26:03Z"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "engineering"
 useCase: "writing"
