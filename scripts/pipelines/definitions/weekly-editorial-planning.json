@@ -1,0 +1,180 @@
+{
+  "pipeline": {
+    "name": "weekly-editorial-planning",
+    "description": "Weekly editorial planning pipeline — plan next week's articles across all 4 content pillars",
+
+    "vars": {
+      "date": "{{TODAY}}"
+    },
+
+    "idempotency": {
+      "query": "[{{date}}] Weekly editorial planning",
+      "matchField": "title"
+    },
+
+    "parent": {
+      "title": "[{{date}}] Weekly editorial planning",
+      "assignee": "CONTENT_MANAGER",
+      "status": "todo",
+      "priority": "high",
+      "description": [
+        "## Weekly Editorial Planning — {{date}}",
+        "",
+        "Plan next week's articles across all 4 content pillars. Balance pillar targets, assign topics, and coordinate with SEO Expert for briefs.",
+        "",
+        "## Your responsibilities",
+        "1. Check current month's pillar balance (see step 1 below)",
+        "2. Plan next week's articles: assign pillar, topic, tentative pubDate",
+        "3. When SEO Expert finishes briefs: review them, assign writing styles, unblock Copywriter",
+        "4. For behind-the-dots: check if CEO has provided topic ideas (look for tasks tagged `editorial-idea`)",
+        "",
+        "## Monthly pillar targets",
+        "- Dot by Dot: 4-6 articles/month",
+        "- Connecting the Dots: 3-4 articles/month",
+        "- The Big Picture: 2 articles/month",
+        "- Behind the Dots: 1-2 articles/month",
+        "",
+        "Subtasks track individual steps."
+      ]
+    },
+
+    "tasks": [
+      {
+        "id": "pillar_audit",
+        "title": "[{{date}}] Pillar balance audit + weekly plan",
+        "assignee": "CONTENT_MANAGER",
+        "status": "todo",
+        "priority": "high",
+        "description": [
+          "## Step 1: Audit current month's pillar balance",
+          "",
+          "Run this to see what's been published per pillar this month:",
+          "```bash",
+          "cd /home/luca/superdots-blog",
+          "grep -r 'contentPillar:' src/content/blog/*.md | sed 's/.*contentPillar: *\"\\(.*\\)\"/\\1/' | sort | uniq -c | sort -rn",
+          "```",
+          "",
+          "Also check scheduled (future pubDate) articles:",
+          "```bash",
+          "grep -l 'contentPillar:' src/content/blog/*.md | xargs grep -l \"pubDate: '2026-04\" | xargs grep 'contentPillar:' | sed 's/.*contentPillar: *\"\\(.*\\)\"/\\1/' | sort | uniq -c",
+          "```",
+          "",
+          "## Step 2: Plan next week",
+          "",
+          "Based on the pillar balance, plan 3-4 articles for next week:",
+          "- Which pillars are behind target? Prioritize those.",
+          "- Assign: pillar, tentative topic, tentative pubDate, department (if applicable).",
+          "- For connecting-the-dots and the-big-picture: check if CEO has editorial ideas (search tasks tagged `editorial-idea`).",
+          "- For behind-the-dots: only plan if CEO has provided notes/outline.",
+          "",
+          "Post the weekly plan as a comment on this task, then set the SEO brief task to `todo`."
+        ]
+      },
+      {
+        "id": "seo_briefs",
+        "title": "[{{date}}] SEO briefs for planned articles",
+        "assignee": "SEO_EXPERT",
+        "status": "blocked",
+        "blockedBy": "pillar_audit",
+        "priority": "high",
+        "description": [
+          "## Write briefs for the planned articles",
+          "",
+          "The Content Manager has posted a weekly plan in the parent task. Write SEO briefs for each planned article.",
+          "",
+          "## Pillar-specific brief requirements",
+          "- **dot-by-dot**: Full SEO brief (keyword, competitor analysis, tool names, comparison table, 5+ FAQ questions). Standard format.",
+          "- **connecting-the-dots**: Keyword-supported brief. Find a 'how to' keyword angle. Focus on practical value and framework. Include 'Try this today' section outline.",
+          "- **the-big-picture**: Source-first brief. Thesis statement, 3+ sources to cite, counter-argument. Keyword is advisory.",
+          "- **behind-the-dots**: No brief needed (CEO-driven). Skip unless Content Manager asks for keyword suggestions.",
+          "",
+          "Every brief MUST include `contentPillar: \"<pillar-slug>\"` in the brief format.",
+          "",
+          "Post briefs as comments on the parent task."
+        ]
+      },
+      {
+        "id": "style_assign",
+        "title": "[{{date}}] Review briefs + assign styles",
+        "assignee": "CONTENT_MANAGER",
+        "status": "blocked",
+        "blockedBy": "seo_briefs",
+        "priority": "high",
+        "description": [
+          "## Review briefs and assign writing styles",
+          "",
+          "1. Review each SEO brief for quality and pillar fit",
+          "2. Assign writing style using the pillar-to-style affinity matrix in `/home/luca/paperclip/agents/superdots/style-library.md`",
+          "3. Post style parameters as comments on the Copywriter task",
+          "4. For behind-the-dots articles: mark as 'awaiting Luca input' if no CEO notes yet",
+          "5. Set Copywriter task to `todo`"
+        ]
+      },
+      {
+        "id": "write_articles",
+        "title": "[{{date}}] Write planned articles",
+        "assignee": "COPYWRITER",
+        "status": "blocked",
+        "blockedBy": "style_assign",
+        "priority": "high",
+        "description": [
+          "## Write articles per the weekly plan",
+          "",
+          "The Content Manager has posted style parameters and briefs. Write each article following:",
+          "- The assigned style from the Style Library",
+          "- The pillar-specific writing guidelines in your AGENTS.md (Content Pillars section)",
+          "- Standard Git Publishing Procedure (branch, PR, etc.)",
+          "",
+          "Remember: `contentPillar` is a REQUIRED frontmatter field. Set it exactly as specified in the brief.",
+          "",
+          "For behind-the-dots: base content on Luca's notes/outline. Do not fabricate experiences."
+        ]
+      },
+      {
+        "id": "images",
+        "title": "[{{date}}] Generate hero images",
+        "assignee": "FRONTEND_DESIGNER",
+        "status": "blocked",
+        "blockedBy": "write_articles",
+        "priority": "medium",
+        "description": [
+          "Generate AI hero images for each article on the same branch. Use `imageHint` from frontmatter.",
+          "Standard flow: `scripts/tools/generate-ai-images.mjs --slug <slug>`"
+        ]
+      },
+      {
+        "id": "legal_review",
+        "title": "[{{date}}] Legal compliance review",
+        "assignee": "LEGAL_EXPERT",
+        "status": "blocked",
+        "blockedBy": "images",
+        "priority": "medium",
+        "description": [
+          "Review all articles in this week's batch for legal compliance.",
+          "Standard checks: GDPR, AI claims accuracy, copyright, affiliate disclosures."
+        ]
+      },
+      {
+        "id": "final_review_merge",
+        "title": "[{{date}}] Final review + merge",
+        "assignee": "CONTENT_MANAGER",
+        "status": "blocked",
+        "blockedBy": "legal_review",
+        "priority": "high",
+        "description": [
+          "## Final review and merge",
+          "",
+          "1. Run the 9-point editorial review checklist (including new point 9: pillar fit)",
+          "2. For dot-by-dot: merge if checklist passes",
+          "3. For connecting-the-dots, the-big-picture, behind-the-dots: @mention CEO for final approval before merge",
+          "4. After merge: submit to IndexNow",
+          "",
+          "```bash",
+          "source .env",
+          "node scripts/tools/indexnow.mjs submit-url https://superdots.sh/blog/<slug>",
+          "```"
+        ]
+      }
+    ]
+  }
+}
