@@ -1,15 +1,21 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, PILLARS } from '../consts';
 
 const pathname = Astro.url.pathname;
 
 const navLinks = [
+	{ href: '/series/', label: 'Series' },
 	{ href: '/blog/', label: 'Articles' },
 	{ href: '/guides/', label: 'Guides' },
-	{ href: '/category/', label: 'Categories' },
-	{ href: '/tags/', label: 'Tags' },
 	{ href: '/about/', label: 'About' },
 ];
+
+const PILLAR_COLORS: Record<string, string> = {
+	'dot-by-dot': '#E8363B',
+	'connecting-the-dots': '#14B8A6',
+	'the-big-picture': '#6366F1',
+	'behind-the-dots': '#F59E0B',
+};
 ---
 
 <header>
@@ -25,7 +31,28 @@ const navLinks = [
 
 		<div class="nav-right">
 			<div class="nav-links" id="nav-links">
-				{navLinks.map(({ href, label }) => (
+				<div class="nav-dropdown">
+					<a
+						href="/series/"
+						class:list={[{ active: pathname.startsWith('/series/') }]}
+						aria-current={pathname.startsWith('/series/') ? 'page' : undefined}
+					>
+						Series
+						<svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+					</a>
+					<div class="dropdown-panel">
+						{PILLARS.map((p) => (
+							<a href={`/series/${p.slug}/`} class="dropdown-item">
+								<span class="dropdown-dot" style={`background: ${PILLAR_COLORS[p.slug]};`} aria-hidden="true"></span>
+								<span>
+									<span class="dropdown-item-name">{p.label}</span>
+									<span class="dropdown-item-desc">{p.description}</span>
+								</span>
+							</a>
+						))}
+					</div>
+				</div>
+				{navLinks.filter(l => l.href !== '/series/').map(({ href, label }) => (
 					<a
 						href={href}
 						class:list={[{ active: pathname.startsWith(href) }]}
@@ -84,22 +111,34 @@ const navLinks = [
 	<div class="mobile-menu-inner">
 		<nav class="mobile-menu-links">
 			{navLinks.map(({ href, label }, i) => (
-				<a
-					href={href}
-					class:list={['mobile-link', { active: pathname.startsWith(href) }]}
-					aria-current={pathname.startsWith(href) ? 'page' : undefined}
-					style={`--item-index: ${i}`}
-				>
-					<span class="mobile-link-indicator" aria-hidden="true">
-						<span class="indicator-line"></span>
-						<span class="indicator-dot"></span>
-					</span>
-					<span class="mobile-link-label">{label}</span>
-					<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<line x1="5" y1="12" x2="19" y2="12"></line>
-						<polyline points="12 5 19 12 12 19"></polyline>
-					</svg>
-				</a>
+				<>
+					<a
+						href={href}
+						class:list={['mobile-link', { active: pathname.startsWith(href) }]}
+						aria-current={pathname.startsWith(href) ? 'page' : undefined}
+						style={`--item-index: ${i}`}
+					>
+						<span class="mobile-link-indicator" aria-hidden="true">
+							<span class="indicator-line"></span>
+							<span class="indicator-dot"></span>
+						</span>
+						<span class="mobile-link-label">{label}</span>
+						<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<line x1="5" y1="12" x2="19" y2="12"></line>
+							<polyline points="12 5 19 12 12 19"></polyline>
+						</svg>
+					</a>
+					{href === '/series/' && (
+						<div class="mobile-series-sub">
+							{PILLARS.map((p) => (
+								<a href={`/series/${p.slug}/`} class="mobile-series-item" style={`--item-index: ${i}`}>
+									<span class="mobile-series-dot" style={`background: ${PILLAR_COLORS[p.slug]};`} aria-hidden="true"></span>
+									<span>{p.label}</span>
+								</a>
+							))}
+						</div>
+					)}
+				</>
 			))}
 		</nav>
 		<div class="mobile-menu-footer">
@@ -363,6 +402,74 @@ const navLinks = [
 	}
 	.nav-links a.active::after {
 		transform: scaleX(1);
+	}
+
+	/* Series dropdown */
+	.nav-dropdown {
+		position: relative;
+	}
+	.dropdown-chevron {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 2px;
+		transition: transform var(--transition-fast);
+	}
+	.nav-dropdown:hover .dropdown-chevron {
+		transform: rotate(180deg);
+	}
+	.dropdown-panel {
+		display: none;
+		position: absolute;
+		top: calc(100% + var(--space-2));
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-lg);
+		padding: var(--space-2);
+		min-width: 280px;
+		z-index: 100;
+	}
+	.nav-dropdown:hover .dropdown-panel,
+	.nav-dropdown:focus-within .dropdown-panel {
+		display: block;
+	}
+	.dropdown-item {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-3);
+		padding: var(--space-3) var(--space-3);
+		border-radius: var(--radius-md);
+		text-decoration: none;
+		transition: background var(--transition-fast);
+	}
+	.dropdown-item:hover {
+		background: var(--color-bg-dim);
+		text-decoration: none;
+	}
+	.dropdown-item::after { display: none; }
+	.dropdown-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: var(--radius-full);
+		flex-shrink: 0;
+		margin-top: 6px;
+	}
+	.dropdown-item-name {
+		display: block;
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		line-height: var(--leading-tight);
+	}
+	.dropdown-item-desc {
+		display: block;
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+		margin-top: 2px;
 	}
 
 	/* Theme Toggle */
@@ -638,6 +745,38 @@ const navLinks = [
 	.mobile-link.active .mobile-link-arrow {
 		opacity: 0.4;
 		transform: translateX(0);
+	}
+
+	/* Mobile series sub-items */
+	.mobile-series-sub {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		padding-left: var(--space-8);
+		margin-bottom: var(--space-2);
+	}
+	.mobile-series-item {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-2) var(--space-3);
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		color: var(--color-text-muted);
+		text-decoration: none;
+		border-radius: var(--radius-md);
+		transition: all var(--transition-fast);
+	}
+	.mobile-series-item:hover {
+		color: var(--color-text-strong);
+		background: rgba(255,255,255,0.05);
+		text-decoration: none;
+	}
+	.mobile-series-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: var(--radius-full);
+		flex-shrink: 0;
 	}
 
 	/* Footer branding */

@@ -1,0 +1,31 @@
+# Superdots
+> Practical AI for work — guides, insights, opinions, and the real story.
+
+Superdots is a one-person company run by Luca Bartoccini with 9 AI agents, publishing practical content about AI and work from a homelab in Italy.
+
+## About
+- [About Superdots](https://superdots.sh/about/)
+- [How We Work](https://superdots.sh/how-we-work/)
+- [About Luca Bartoccini](https://superdots.sh/about/luca/)
+
+## Series
+- [Dot by Dot](https://superdots.sh/series/dot-by-dot/) — Tool guides, how-to walkthroughs, and side-by-side comparisons
+- [Connecting the Dots](https://superdots.sh/series/connecting-the-dots/) — Practical AI + work advice you can apply today
+- [The Big Picture](https://superdots.sh/series/the-big-picture/) — Opinion, analysis, and the bigger trends shaping AI and work
+- [Behind the Dots](https://superdots.sh/series/behind-the-dots/) — Behind the scenes at Superdots. Real numbers, real mistakes
+
+## Key Content
+- [How We Run a Blog with 9 AI Agents](https://superdots.sh/blog/how-we-run-blog-with-ai-agents/)
+- [AI for Marketing Complete Guide](https://superdots.sh/blog/ai-for-marketing-complete-guide/)
+- [AI for Sales Complete Guide](https://superdots.sh/blog/ai-for-sales-complete-guide/)
+- [AI for HR Guide](https://superdots.sh/blog/ai-for-hr/)
+- [AI for Customer Service Guide](https://superdots.sh/blog/ai-for-customer-service-complete-guide/)
+- [AI Business Automation Guide](https://superdots.sh/blog/ai-automation-for-business-complete-guide/)
+
+## Content Approach
+Our content is AI-assisted and human-edited. We are transparent about this process. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable.
+
+## Contact
+- Founder: Luca Bartoccini
+- Email: luca@superdots.sh
+- Site: https://superdots.sh

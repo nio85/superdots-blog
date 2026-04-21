@@ -4,12 +4,30 @@ import { filterPublished } from '../lib/posts';
 import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
-import { SITE_DESCRIPTION, DEPARTMENTS } from '../consts';
+import { SITE_DESCRIPTION, DEPARTMENTS, PILLARS } from '../consts';
+
+const PILLAR_COLORS: Record<string, string> = {
+	'dot-by-dot': '#E8363B',
+	'connecting-the-dots': '#14B8A6',
+	'the-big-picture': '#6366F1',
+	'behind-the-dots': '#F59E0B',
+};
 
 const allPosts = filterPublished(await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const latestPosts = allPosts.slice(0, 6);
+
+const pillarsWithLatest = PILLARS.map((p) => {
+	const pillarPosts = allPosts.filter(({ data }) => (data.contentPillar || 'dot-by-dot') === p.slug);
+	return {
+		...p,
+		count: pillarPosts.length,
+		latestTitle: pillarPosts[0]?.data.title,
+		latestSlug: pillarPosts[0]?.slug,
+		accentColor: PILLAR_COLORS[p.slug] || '#E8363B',
+	};
+});
 
 const pillarGuides = [
 	{
@@ -66,14 +84,37 @@ const popularPosts = allPosts
 		</p>
 		<h1>Cut through the noise<span class="dot-accent">.</span><br/>Work smarter with AI<span class="dot-accent">.</span></h1>
 		<h2 class="hero-sub">
-			Practical, no-fluff guides on using AI across every department.
-			Real techniques you can apply today — not hype, not theory.
+			Guides, insights, opinions, and the real story of AI at work.
+			No hype, no theory — just what actually works.
 		</h2>
 		<div class="hero-actions">
 			<a href="/blog/" class="btn btn-primary btn-lg">Browse articles</a>
 			<a href="#newsletter" class="btn btn-secondary btn-lg">Subscribe</a>
 		</div>
 
+	</section>
+
+	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
+
+	<!-- Our Series -->
+	<section class="series-section">
+		<div class="section-header">
+			<h2>Our series<span class="dot-accent">.</span></h2>
+			<a href="/series/" class="view-all">All series <span aria-hidden="true">&rarr;</span></a>
+		</div>
+		<div class="series-grid">
+			{pillarsWithLatest.map((p) => (
+				<a href={`/series/${p.slug}/`} class="series-card" style={`--pillar-color: ${p.accentColor};`}>
+					<div class="series-dot" aria-hidden="true"></div>
+					<h3 class="series-name">{p.label}</h3>
+					<p class="series-desc">{p.description}</p>
+					<div class="series-footer">
+						<span class="series-count">{p.count}</span>
+						<span class="series-cta">Browse <span aria-hidden="true">&rarr;</span></span>
+					</div>
+				</a>
+			))}
+		</div>
 	</section>
 
 	<div class="section-divider" aria-hidden="true"><span class="superdot"></span></div>
@@ -507,5 +548,84 @@ const popularPosts = allPosts
 		.dept-arrow {
 			display: none;
 		}
+	}
+
+	/* Series section */
+	.series-grid {
+		display: grid;
+		gap: var(--space-4);
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: 639px) {
+		.series-grid { grid-template-columns: 1fr; }
+	}
+	.series-card {
+		display: flex;
+		flex-direction: column;
+		padding: var(--space-5);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-left: 4px solid var(--pillar-color);
+		text-decoration: none;
+		transition: all var(--transition-base);
+	}
+	.series-card:hover {
+		transform: translateY(-3px);
+		box-shadow: var(--shadow-md);
+		border-color: var(--pillar-color);
+		text-decoration: none;
+	}
+	.series-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: var(--radius-full);
+		background: var(--pillar-color);
+		margin-bottom: var(--space-2);
+	}
+	.series-name {
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-bold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-1);
+		line-height: var(--leading-tight);
+	}
+	.series-desc {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+		margin: 0;
+		flex: 1;
+	}
+	.series-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: var(--space-3);
+		padding-top: var(--space-2);
+		border-top: 1px solid var(--color-border);
+	}
+	.series-count {
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+	}
+	.series-count::after {
+		content: ' articles';
+		font-weight: var(--weight-normal);
+	}
+	.series-cta {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--pillar-color);
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		transition: gap var(--transition-fast);
+	}
+	.series-card:hover .series-cta {
+		gap: var(--space-2);
 	}
 </style>
