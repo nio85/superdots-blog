@@ -1,6 +1,6 @@
 ---
 title: 'AI Customer Lifetime Value Prediction Tools (2026): 7 Options From Free to Enterprise'
-description: 'Compare 7 AI CLV prediction tools for sales teams and RevOps: from free GA4 workflows to enterprise ML platforms. Includes honest pricing, B2B vs e-commerce breakdown, and a free CLV calculator workflow.'
+description: 'Compare 7 AI CLV prediction tools for sales and RevOps — free GA4 workflows to enterprise ML. Honest pricing, B2B vs e-commerce breakdown included.'
 pubDate: '2026-04-20'
 author: 'Superdots Team'
 department: 'sales'

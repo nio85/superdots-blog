@@ -1,6 +1,6 @@
 ---
 title: 'AI Skills Gap Analysis: Fix Workforce Gaps'
-description: 'AI skills gap analysis tools identify workforce skill shortages by analyzing job requirements, employee competencies, and market trends — then recommend targeted upskilling.'
+description: 'AI skills gap analysis tools identify workforce shortages by analyzing job requirements and employee competencies — then recommend targeted upskilling.'
 pubDate: "2026-03-17T17:42:00Z"
 author: 'Superdots Team'
 department: 'hr'

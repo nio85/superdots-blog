@@ -1,6 +1,6 @@
 ---
 title: "AI Pair Programming: Best Tools Compared in 2026"
-description: "Compare GitHub Copilot, Cursor, and Claude Code. How developers use AI pair programming beyond autocomplete: architecture, code review, and real debugging workflows."
+description: "GitHub Copilot, Cursor, and Claude Code compared. How developers use AI pair programming for architecture, code review, and real debugging workflows."
 pubDate: "2026-03-17T08:29:52Z"
 author: "Superdots Team"
 department: "engineering"

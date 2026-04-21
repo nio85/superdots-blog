@@ -1,6 +1,6 @@
 ---
 title: 'AI for Marketing: The Complete Guide'
-description: 'How marketing teams use AI to create content, personalize campaigns, optimize SEO, and track brand performance — without sacrificing authenticity or blowing the budget.'
+description: 'How marketing teams use AI to create content, personalize campaigns, optimize SEO, and track brand performance — without blowing the budget.'
 pubDate: '2026-03-21'
 author: 'Superdots Team'
 pillar: true
