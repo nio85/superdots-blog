@@ -346,6 +346,18 @@ const PILLAR_COLORS: Record<string, string> = {
 		transition: transform var(--transition-base);
 		flex-shrink: 0;
 	}
+	.logo-mark circle:nth-child(3) {
+		transform-origin: 50px 14px;
+		transform-box: fill-box;
+	}
+	.logo:hover .logo-mark circle:nth-child(3) {
+		animation: dot-breath 1.2s ease-in-out infinite;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.logo:hover .logo-mark circle:nth-child(3) {
+			animation: none;
+		}
+	}
 	.logo-text {
 		font-family: var(--font-display);
 		font-weight: var(--weight-bold);

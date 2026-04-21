@@ -1,0 +1,304 @@
+---
+/**
+ * AgentConstellation — the hero statement of Superdots.
+ *
+ * Ten dots: one human (Luca) at the centre, nine AI agents orbiting with
+ * desynchronised breath animation. Thin lines connect the human to each agent.
+ * Hovering a dot reveals a tooltip with the agent's name and role.
+ *
+ * Props:
+ *  - variant: 'hero' (large, homepage) | 'roster' (smaller, about page inline)
+ *  - height: pixel override for the SVG viewport
+ */
+import { AGENTS } from '../data/agents';
+
+interface Props {
+	variant?: 'hero' | 'roster';
+	height?: number;
+}
+
+const { variant = 'hero', height } = Astro.props;
+
+const defaultHeight = variant === 'hero' ? 420 : 280;
+const svgHeight = height ?? defaultHeight;
+
+// Canvas size — we lay out in a 1000x(ratio) viewBox, then scale responsively.
+const vbWidth = 1000;
+const vbHeight = Math.round((svgHeight / 420) * 420);
+
+const nodes = AGENTS.map((a) => ({
+	...a,
+	cx: a.position.x * vbWidth,
+	cy: a.position.y * vbHeight,
+	radius: a.kind === 'human' ? (variant === 'hero' ? 28 : 20) : (variant === 'hero' ? 14 : 10),
+}));
+
+const human = nodes.find((n) => n.kind === 'human')!;
+const aiNodes = nodes.filter((n) => n.kind === 'ai');
+---
+
+<div class:list={['constellation', `constellation--${variant}`]} data-variant={variant}>
+	<svg
+		class="constellation-svg"
+		viewBox={`0 0 ${vbWidth} ${vbHeight}`}
+		preserveAspectRatio="xMidYMid meet"
+		role="img"
+		aria-label="Nine AI agents orbiting Luca, the human founder of Superdots."
+	>
+		<defs>
+			<radialGradient id="human-glow" cx="50%" cy="50%" r="50%">
+				<stop offset="0%" stop-color="#E8363B" stop-opacity="0.45" />
+				<stop offset="55%" stop-color="#E8363B" stop-opacity="0.12" />
+				<stop offset="100%" stop-color="#E8363B" stop-opacity="0" />
+			</radialGradient>
+			{aiNodes.map((n) => (
+				<radialGradient id={`glow-${n.id}`} cx="50%" cy="50%" r="50%">
+					<stop offset="0%" stop-color={n.color} stop-opacity="0.3" />
+					<stop offset="60%" stop-color={n.color} stop-opacity="0.08" />
+					<stop offset="100%" stop-color={n.color} stop-opacity="0" />
+				</radialGradient>
+			))}
+		</defs>
+
+		{/* Background dot pattern — dominant per brand */}
+		<g class="constellation-bg" aria-hidden="true">
+			{Array.from({ length: 11 }).flatMap((_, row) =>
+				Array.from({ length: 25 }).map((_, col) => (
+					<circle
+						cx={col * 40 + 20}
+						cy={row * 40 + 20}
+						r="1.2"
+						fill="currentColor"
+						opacity="0.15"
+					/>
+				))
+			)}
+		</g>
+
+		{/* Connecting lines — human to each agent */}
+		<g class="constellation-lines" aria-hidden="true">
+			{aiNodes.map((n) => (
+				<line
+					x1={human.cx}
+					y1={human.cy}
+					x2={n.cx}
+					y2={n.cy}
+					stroke={n.color}
+					stroke-width="1"
+					stroke-opacity="0.22"
+					stroke-dasharray="100"
+					stroke-dashoffset="100"
+					data-agent-line={n.id}
+				/>
+			))}
+		</g>
+
+		{/* Agent dots with glow halos */}
+		<g class="constellation-agents">
+			{aiNodes.map((n, i) => (
+				<g class="agent-node" data-agent-id={n.id} data-agent-name={n.name} data-agent-role={n.role} style={`--agent-color: ${n.color}; --agent-delay: ${(i * 0.37).toFixed(2)}s;`}>
+					<circle class="agent-halo" cx={n.cx} cy={n.cy} r={n.radius * 3.2} fill={`url(#glow-${n.id})`} />
+					<circle class="agent-dot" cx={n.cx} cy={n.cy} r={n.radius} fill={n.color} />
+				</g>
+			))}
+		</g>
+
+		{/* Human dot — centre, larger, with halo */}
+		<g class="agent-node human-node" data-agent-id={human.id} data-agent-name={human.name} data-agent-role={human.role} style={`--agent-color: ${human.color};`}>
+			<circle class="human-halo" cx={human.cx} cy={human.cy} r={human.radius * 3.6} fill="url(#human-glow)" />
+			<circle class="human-ring" cx={human.cx} cy={human.cy} r={human.radius + 8} fill="none" stroke={human.color} stroke-width="1" stroke-opacity="0.5" />
+			<circle class="human-dot" cx={human.cx} cy={human.cy} r={human.radius} fill={human.color} />
+		</g>
+	</svg>
+
+	<div class="constellation-tooltip" id="constellation-tooltip" role="tooltip" aria-hidden="true">
+		<span class="tooltip-name"></span>
+		<span class="tooltip-role"></span>
+	</div>
+</div>
+
+<style>
+	.constellation {
+		position: relative;
+		width: 100%;
+		color: var(--color-text-muted);
+	}
+
+	.constellation-svg {
+		width: 100%;
+		height: auto;
+		display: block;
+		overflow: visible;
+	}
+
+	.constellation--hero {
+		aspect-ratio: 1000 / 420;
+		max-width: 920px;
+		margin: 0 auto;
+	}
+
+	.constellation--roster {
+		aspect-ratio: 1000 / 420;
+		max-width: 720px;
+	}
+
+	/* Breathing pulse on AI dots — desynchronised via --agent-delay */
+	.agent-node .agent-dot {
+		transform-origin: center;
+		transform-box: fill-box;
+		animation: dot-breath 4.2s ease-in-out infinite;
+		animation-delay: var(--agent-delay);
+		cursor: pointer;
+		transition: r 220ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.agent-node .agent-halo {
+		opacity: 0.7;
+		transition: opacity 220ms ease;
+		pointer-events: none;
+	}
+
+	.agent-node:hover .agent-dot,
+	.agent-node:focus-visible .agent-dot {
+		r: calc(var(--r, 14px) * 1.3);
+	}
+
+	.agent-node:hover .agent-halo,
+	.agent-node:focus-visible .agent-halo {
+		opacity: 1;
+	}
+
+	.human-node .human-dot {
+		transform-origin: center;
+		transform-box: fill-box;
+		animation: dot-breath 5.4s ease-in-out infinite;
+		cursor: pointer;
+	}
+
+	.human-node .human-ring {
+		transform-origin: center;
+		transform-box: fill-box;
+		animation: dot-breath 7s ease-in-out infinite reverse;
+	}
+
+	.human-node .human-halo {
+		animation: dot-breath 6s ease-in-out infinite;
+	}
+
+	/* Line draw animation on mount */
+	.constellation-lines line {
+		animation: line-draw 1400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+	.constellation-lines line:nth-child(odd) { animation-delay: 180ms; }
+	.constellation-lines line:nth-child(even) { animation-delay: 320ms; }
+
+	/* Tooltip (follows pointer, shown only when an agent-node is hovered) */
+	.constellation-tooltip {
+		position: absolute;
+		pointer-events: none;
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-md);
+		padding: var(--space-2) var(--space-3);
+		box-shadow: var(--shadow-md);
+		display: none;
+		flex-direction: column;
+		gap: 2px;
+		max-width: 260px;
+		z-index: 5;
+		opacity: 0;
+		transform: translate(-50%, calc(-100% - 12px));
+		transition: opacity 160ms ease;
+	}
+
+	.constellation-tooltip.is-visible {
+		display: flex;
+		opacity: 1;
+	}
+
+	.tooltip-name {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		letter-spacing: -0.01em;
+	}
+
+	.tooltip-role {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		line-height: var(--leading-snug);
+	}
+
+	/* Reduced motion — hard stop on all pulses and line draws */
+	@media (prefers-reduced-motion: reduce) {
+		.agent-node .agent-dot,
+		.human-node .human-dot,
+		.human-node .human-ring,
+		.human-node .human-halo {
+			animation: none;
+		}
+		.constellation-lines line {
+			animation: none;
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
+	}
+
+	/* Mobile — keep dots, drop the line animation (battery friendliness) */
+	@media (max-width: 639px) {
+		.constellation--hero {
+			aspect-ratio: 1000 / 520;
+		}
+		.constellation-lines line {
+			animation: none;
+			stroke-dashoffset: 0;
+			opacity: 1;
+			stroke-opacity: 0.14;
+		}
+		.agent-node .agent-dot {
+			animation-duration: 0s;
+		}
+	}
+</style>
+
+<script>
+	(function () {
+		const roots = document.querySelectorAll<HTMLElement>('.constellation');
+		roots.forEach((root) => {
+			const tooltip = root.querySelector<HTMLElement>('.constellation-tooltip');
+			if (!tooltip) return;
+			const nameEl = tooltip.querySelector<HTMLElement>('.tooltip-name');
+			const roleEl = tooltip.querySelector<HTMLElement>('.tooltip-role');
+			const nodes = root.querySelectorAll<SVGGElement>('.agent-node');
+
+			function show(node: SVGGElement, clientX: number, clientY: number) {
+				const rect = root.getBoundingClientRect();
+				const name = node.getAttribute('data-agent-name') || '';
+				const role = node.getAttribute('data-agent-role') || '';
+				if (nameEl) nameEl.textContent = name;
+				if (roleEl) roleEl.textContent = role;
+				tooltip!.classList.add('is-visible');
+				tooltip!.setAttribute('aria-hidden', 'false');
+				tooltip!.style.left = `${clientX - rect.left}px`;
+				tooltip!.style.top = `${clientY - rect.top}px`;
+			}
+			function hide() {
+				tooltip!.classList.remove('is-visible');
+				tooltip!.setAttribute('aria-hidden', 'true');
+			}
+
+			nodes.forEach((node) => {
+				node.setAttribute('tabindex', '0');
+				node.addEventListener('pointerenter', (e) => show(node, e.clientX, e.clientY));
+				node.addEventListener('pointermove', (e) => show(node, e.clientX, e.clientY));
+				node.addEventListener('pointerleave', hide);
+				node.addEventListener('focus', (e) => {
+					const r = (node as SVGGElement).getBoundingClientRect();
+					show(node, r.left + r.width / 2, r.top + r.height / 2);
+				});
+				node.addEventListener('blur', hide);
+			});
+		});
+	})();
+</script>

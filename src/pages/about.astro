@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { filterPublished } from '../lib/posts';
 import Base from '../layouts/Base.astro';
-import PageHeader from '../components/PageHeader.astro';
+import AgentConstellation from '../components/AgentConstellation.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { DEPARTMENTS } from '../consts';
 
@@ -50,12 +50,37 @@ const guides = [
 			]
 		})} />
 	</Fragment>
-	<PageHeader
-		title="Built by one person and nine AI agents"
-		kicker="About us"
-		subtitle="From a homelab in Italy. 8GB of RAM. No venture capital. Just practical guides that respect your time."
-		breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about/' }]}
-	/>
+	<nav class="about-breadcrumb" aria-label="Breadcrumb">
+		<ol>
+			<li><a href="/">Home</a></li>
+			<li aria-current="page">About</li>
+		</ol>
+	</nav>
+
+	<section class="about-hero">
+		<div class="about-hero-grid">
+			<div class="about-hero-copy">
+				<p class="about-kicker"><span class="superdot"></span> About Superdots</p>
+				<h1>Built by one person<br/>and nine AI agents<span class="dot-accent">.</span></h1>
+				<p class="about-lead">
+					From a homelab in Italy. 8GB of RAM. No venture capital.
+					Just practical guides that respect your time.
+				</p>
+			</div>
+			<div class="about-hero-portrait">
+				<div class="portrait-frame">
+					<img src="/images/authors/luca.jpg" alt="Luca Bartoccini, founder of Superdots" width="220" height="292" loading="eager" />
+					<span class="portrait-dot portrait-dot--1" aria-hidden="true"></span>
+					<span class="portrait-dot portrait-dot--2" aria-hidden="true"></span>
+					<span class="portrait-dot portrait-dot--3" aria-hidden="true"></span>
+				</div>
+				<p class="portrait-caption">
+					<strong>Luca Bartoccini</strong><br/>
+					<span>Founder · Editor · Human</span>
+				</p>
+			</div>
+		</div>
+	</section>
 
 	<div class="prose">
 		<p>
@@ -99,6 +124,11 @@ const guides = [
 			We're upfront about this: our content is AI-assisted and human-edited.
 			Here's exactly who does what.
 		</p>
+
+		<div class="team-constellation">
+			<AgentConstellation variant="roster" />
+		</div>
+
 		<div class="team-grid">
 			<div class="team-card team-card--human">
 				<span class="team-role">Human</span>
@@ -496,5 +526,156 @@ const guides = [
 		.approach-grid {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	/* ---- New About Hero ---- */
+	.about-breadcrumb {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		margin: var(--space-6) 0 var(--space-4);
+	}
+	.about-breadcrumb ol {
+		list-style: none;
+		display: flex;
+		gap: var(--space-2);
+		padding: 0;
+		margin: 0;
+		font-family: var(--font-mono);
+		letter-spacing: 0.02em;
+	}
+	.about-breadcrumb li + li::before {
+		content: "/";
+		margin-right: var(--space-2);
+		opacity: 0.5;
+	}
+	.about-breadcrumb a {
+		color: var(--color-text-muted);
+		text-decoration: none;
+	}
+	.about-breadcrumb a:hover {
+		color: var(--color-primary);
+	}
+
+	.about-hero {
+		padding: var(--space-6) 0 var(--space-10);
+		position: relative;
+	}
+	.about-hero-grid {
+		display: grid;
+		gap: var(--space-10);
+		grid-template-columns: 1.4fr 1fr;
+		align-items: center;
+	}
+	@media (max-width: 720px) {
+		.about-hero-grid {
+			grid-template-columns: 1fr;
+			gap: var(--space-6);
+		}
+	}
+
+	.about-kicker {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		font-weight: var(--weight-semibold);
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		color: var(--color-primary);
+		margin: 0 0 var(--space-4);
+	}
+	.about-kicker .superdot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-primary);
+		border-radius: var(--radius-full);
+	}
+
+	.about-hero h1 {
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 5vw, 3.25rem);
+		font-weight: var(--weight-bold);
+		line-height: 1.08;
+		letter-spacing: -0.03em;
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-5);
+	}
+	.about-lead {
+		font-size: var(--text-lg);
+		line-height: var(--leading-normal);
+		color: var(--color-text-muted);
+		margin: 0;
+		max-width: 46ch;
+	}
+
+	.about-hero-portrait {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.portrait-frame {
+		position: relative;
+		width: 220px;
+		height: 292px;
+	}
+	.portrait-frame img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+		filter: saturate(0.95);
+	}
+	.portrait-dot {
+		position: absolute;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.portrait-dot--1 {
+		width: 16px;
+		height: 16px;
+		top: -8px;
+		left: -8px;
+	}
+	.portrait-dot--2 {
+		width: 24px;
+		height: 24px;
+		top: 40%;
+		right: -12px;
+		opacity: 0.85;
+	}
+	.portrait-dot--3 {
+		width: 36px;
+		height: 36px;
+		bottom: -10px;
+		left: 25%;
+		opacity: 0.7;
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		.portrait-dot--1 { animation: dot-breath 3.8s ease-in-out infinite; }
+		.portrait-dot--2 { animation: dot-breath 5.2s ease-in-out infinite 0.6s; }
+		.portrait-dot--3 { animation: dot-breath 4.4s ease-in-out infinite 1.2s; }
+	}
+
+	.portrait-caption {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		text-align: center;
+		line-height: 1.4;
+		margin: 0;
+		letter-spacing: 0.04em;
+	}
+	.portrait-caption strong {
+		color: var(--color-text-strong);
+		font-weight: var(--weight-semibold);
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		letter-spacing: -0.01em;
+	}
+
+	.team-constellation {
+		margin: var(--space-8) 0 var(--space-8);
 	}
 </style>
