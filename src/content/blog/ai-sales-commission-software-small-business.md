@@ -59,7 +59,7 @@ For teams that don't need software yet, here's a functional setup you can run in
 
 **What you need:**
 - One shared Google Sheet (one data tab, one summary tab per rep)
-- A monthly CSV export from your CRM (HubSpot, Salesforce, or Pipedrive all support this)
+- A monthly CSV export from your [CRM](/blog/ai-crm-tools) (HubSpot, Salesforce, or Pipedrive all support this)
 - One formula per rep: `=SUMIF(rep_column, rep_name, revenue_column) * commission_rate`
 
 **Setup steps:**
@@ -181,7 +181,7 @@ Four criteria separate the tools that solve the problem from the ones that shift
 
 **Optimizing only for price per seat.** For a 5-rep team, the $30/month flat-rate tool beats the $15/seat tool. For a 3-rep team, the math flips (3 × $15 = $45 vs. $30 flat). Build the table for your current team size and your expected headcount in 12 months — both numbers matter.
 
-**Skipping the rep demo.** Admin demos show configuration screens and reporting dashboards. Rep demos show what your salespeople will actually open every day. Get both. If reps won't use the portal to check their own numbers, you're back to the same dispute conversations you had before buying the software.
+**Skipping the rep demo.** Admin demos show configuration screens and [reporting dashboards](/blog/ai-kpi-dashboard-software). Rep demos show what your salespeople will actually open every day. Get both. If reps won't use the portal to check their own numbers, you're back to the same dispute conversations you had before buying the software.
 
 ## The Exact Next Step
 

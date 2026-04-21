@@ -40,7 +40,7 @@ The "AI" part specifically refers to:
 
 - **Smart routing**: automatically sending orders to the nearest warehouse, the fulfillment center with available stock, or the carrier with the best rate for that parcel size
 - **Exception detection**: flagging address mismatches, suspected fraud, duplicate orders, or items that will be out of stock before the promised delivery date
-- **Demand forecasting**: predicting reorder points based on historical order velocity, not just static inventory thresholds
+- **[Demand forecasting](/blog/ai-demand-forecasting-tools-small-business)**: predicting reorder points based on historical order velocity, not just static inventory thresholds
 - **Customer communication**: auto-generating shipment updates, delay notices, and returns documentation
 
 Traditional OMS (pre-AI) did routing based on fixed rules you configured manually. Modern AI OMS learns from your order history and adapts. That distinction matters when you're choosing between platforms.
@@ -106,7 +106,7 @@ If you've passed the "do you need it?" test, here's where to spend your money.
 
 ### Ordoro ($59–$299/month)
 
-Ordoro is the best entry-level paid OMS for small e-commerce businesses. It handles dropshipping, wholesale, and direct fulfillment. The $59/month Express plan covers up to 700 orders/month with basic automation. The $299/month Pro plan adds multi-channel routing and advanced reporting.
+Ordoro is the best entry-level paid OMS for small e-commerce businesses. It handles dropshipping, wholesale, and direct fulfillment. The $59/month Express plan covers up to 700 orders/month with basic automation. The $299/month Pro plan adds multi-channel routing and [advanced reporting](/blog/ai-report-generator).
 
 What makes Ordoro notable for SMBs is its dropship vendor portal: suppliers get their own login to acknowledge and update orders, which cuts the back-and-forth that kills small ops teams. Based on Ordoro's published documentation, the vendor portal alone saves an average of 2 hours/week for businesses with 3+ active dropship suppliers.
 

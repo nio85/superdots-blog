@@ -72,7 +72,7 @@ You end up with a beautiful Looker Studio template that you still fill by hand e
 
 **Do this instead:**
 
-1. **List every data source you actually report on.** For most B2B marketing teams: Google Ads, Meta Ads, LinkedIn Ads, GA4, and one CRM (usually HubSpot or Salesforce).
+1. **List every data source you actually report on.** For most B2B marketing teams: Google Ads, Meta Ads, LinkedIn Ads, GA4, and one [CRM](/blog/ai-crm-tools) (usually HubSpot or Salesforce).
 
 2. **Pick one connector and stick with it.** Supermetrics is the right choice for most teams using Looker Studio. The Core plan starts at €39/month per destination and includes 100+ data source connectors. For teams who need BigQuery or warehouse destinations, Funnel.io handles the more complex schema transformations ($399+/month — enterprise territory).
 

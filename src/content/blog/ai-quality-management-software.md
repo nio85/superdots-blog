@@ -99,7 +99,7 @@ Two AI-assisted practices that matter more than any tool:
 
 **Sprint retrospective quality analysis**: At the end of each sprint, paste the sprint goals, the completed stories, and the bugs filed into Claude: *"What patterns do you see in how our sprint goals translated to outcomes? Where did we consistently under-deliver? Are there categories of bugs that keep appearing?"* This isn't a replacement for a good retro — it's a structured starting point that surfaces patterns humans tend to rationalize away.
 
-For teams that want dedicated tooling, monday.com's workdocs and automation features (from $14/user/month on the Standard plan) can create approval gates and checklists that enforce quality steps in the workflow. It's not pure QMS software, but it's flexible enough to build one.
+For teams that want dedicated tooling, monday.com's workdocs and [automation features](/blog/ai-workflow-automation) (from $14/user/month on the Standard plan) can create approval gates and checklists that enforce quality steps in the workflow. It's not pure QMS software, but it's flexible enough to build one.
 
 ### For Professional Services and Consulting
 

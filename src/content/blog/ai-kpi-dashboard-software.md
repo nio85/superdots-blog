@@ -125,7 +125,7 @@ You need dedicated AI dashboard software when:
 
 ### Databox — best for small ops teams
 
-Databox connects to over 100 data sources out of the box, including Shopify, QuickBooks, Google Analytics, and HubSpot. For a small operations team that runs on these tools, the setup time is genuinely short — under an hour for a basic ops dashboard.
+Databox connects to over 100 data sources out of the box, including Shopify, QuickBooks, Google Analytics, and [HubSpot](/blog/ai-crm-tools). For a small operations team that runs on these tools, the setup time is genuinely short — under an hour for a basic ops dashboard.
 
 Its AI Anomaly Detection (available from the Professional plan at $47/month) flags unusual metric behavior without manual threshold-setting. The trade-off: if your key KPIs require custom formulas across multiple sources — for example, a weighted OTIF calculation that accounts for order size and destination — you'll hit the edges of what Databox can handle.
 
