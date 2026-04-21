@@ -1,6 +1,6 @@
 ---
-title: "Best AI Sales Battlecard Software (2026)"
-description: "Honest comparison of Klue, Crayon, Kompyte & Battlecard.io — ranked by team size with 2026 pricing. Free ChatGPT workflow for teams under 10 reps. No vendor spin."
+title: "AI Battlecard Software Ranked: Klue, Crayon & Kompyte (2026)"
+description: "Which AI battlecard tool auto-updates when competitors change pricing? Klue, Crayon, Kompyte & Battlecard.io compared by team size. Free ChatGPT workflow for teams under 10 reps."
 pubDate: "2026-04-17"
 author: "Superdots Team"
 department: "sales"
