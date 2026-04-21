@@ -1,7 +1,8 @@
 ---
 title: "Best AI Demand Forecasting Tools for SMBs: Prediko ($49/mo) vs StockTrim vs Inventory Planner"
 description: "Compare 7 AI demand forecasting software options for SMBs: Prediko ($49/mo), StockTrim ($39/mo), Inventory Planner & more. 2026 pricing, free trials, SMB fit explained."
-pubDate: "2026-04-21"
+pubDate: "2026-04-04"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
