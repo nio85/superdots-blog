@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { filterPublished } from '../../lib/posts';
+import { toTagSlug, tagSlugToLabel } from '../../lib/tags';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
@@ -9,27 +10,23 @@ import { TAGS } from '../../consts';
 const posts = filterPublished(await getCollection('blog'));
 const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
 
-function slugToLabel(slug: string): string {
-	return slug
-		.split('-')
-		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-		.join(' ');
-}
-
-// Count articles per tag
+// Count articles per canonical tag slug (collapses casing/space variants)
 const tagCounts = new Map<string, number>();
 for (const post of posts) {
-	for (const tag of post.data.tags ?? []) {
-		tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+	const seen = new Set<string>();
+	for (const raw of post.data.tags ?? []) {
+		const slug = toTagSlug(raw);
+		if (!slug || seen.has(slug)) continue;
+		seen.add(slug);
+		tagCounts.set(slug, (tagCounts.get(slug) ?? 0) + 1);
 	}
 }
 
-// Build tag list with metadata
 const allTagSlugs = new Set([...tagCounts.keys(), ...TAGS.map((t) => t.slug)]);
 const allTags = [...allTagSlugs]
 	.map((slug) => ({
 		slug,
-		label: tagLookup.get(slug)?.label ?? slugToLabel(slug),
+		label: tagLookup.get(slug)?.label ?? tagSlugToLabel(slug),
 		description: tagLookup.get(slug)?.description ?? '',
 		count: tagCounts.get(slug) ?? 0,
 	}))

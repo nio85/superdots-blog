@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { filterPublished } from '../../lib/posts';
+import { toTagSlug, tagSlugToLabel } from '../../lib/tags';
 import Base from '../../layouts/Base.astro';
 import PostCard from '../../components/PostCard.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
@@ -10,26 +11,22 @@ export async function getStaticPaths() {
 	const posts = filterPublished(await getCollection('blog'));
 	const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
 
-	function slugToLabel(s: string): string {
-		return s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-	}
-
-	const allTags = new Set<string>();
+	const canonicalSlugs = new Set<string>();
 	for (const post of posts) {
-		for (const tag of post.data.tags ?? []) {
-			allTags.add(tag);
+		for (const raw of post.data.tags ?? []) {
+			const slug = toTagSlug(raw);
+			if (slug) canonicalSlugs.add(slug);
 		}
 	}
-	for (const t of TAGS) {
-		allTags.add(t.slug);
-	}
-	return [...allTags].map((slug) => {
+	for (const t of TAGS) canonicalSlugs.add(t.slug);
+
+	return [...canonicalSlugs].map((slug) => {
 		const known = tagLookup.get(slug);
 		return {
 			params: { tag: slug },
 			props: {
-				label: known?.label ?? slugToLabel(slug),
-				description: known?.description ?? `Articles tagged with ${slugToLabel(slug)}.`,
+				label: known?.label ?? tagSlugToLabel(slug),
+				description: known?.description ?? `Articles tagged with ${tagSlugToLabel(slug)}.`,
 			},
 		};
 	});
@@ -40,30 +37,29 @@ const { label, description } = Astro.props;
 
 const allPosts = filterPublished(await getCollection('blog'));
 const posts = allPosts
-	.filter(({ data }) => (data.tags ?? []).includes(tag!))
+	.filter(({ data }) => (data.tags ?? []).some((raw) => toTagSlug(raw) === tag))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// Compute related tags: tags that co-occur on articles with this tag
+// Related tags by canonical slug — collapses "AI tools"/"ai-tools" into one bucket
 const coTagCounts = new Map<string, number>();
 for (const post of posts) {
-	for (const t of post.data.tags ?? []) {
-		if (t !== tag) {
-			coTagCounts.set(t, (coTagCounts.get(t) || 0) + 1);
-		}
+	const seen = new Set<string>();
+	for (const raw of post.data.tags ?? []) {
+		const slug = toTagSlug(raw);
+		if (!slug || slug === tag || seen.has(slug)) continue;
+		seen.add(slug);
+		coTagCounts.set(slug, (coTagCounts.get(slug) || 0) + 1);
 	}
 }
 
 const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
-function slugToLabel(s: string): string {
-	return s.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-}
 
 const relatedTags = [...coTagCounts.entries()]
 	.sort((a, b) => b[1] - a[1])
 	.slice(0, 8)
 	.map(([slug, count]) => ({
 		slug,
-		label: tagLookup.get(slug)?.label ?? slugToLabel(slug),
+		label: tagLookup.get(slug)?.label ?? tagSlugToLabel(slug),
 		count,
 	}));
 ---
