@@ -1,7 +1,7 @@
 {
   "pipeline": {
     "name": "daily-content",
-    "description": "Daily editorial content production pipeline",
+    "description": "Daily content production pipeline — Dot by Dot pillar (tool guides, comparisons, how-tos)",
 
     "vars": {
       "date": "{{TODAY}}"
@@ -20,7 +20,7 @@
       "description": [
         "## Daily Content Pipeline — {{date}}",
         "",
-        "Coordinate today's content production: 1 excellent article per day, focused on Operations/Sales/Marketing departments only. Quality over quantity.",
+        "Coordinate today's content production: 1 Dot by Dot article (tool guide, comparison, how-to). All departments are fair game. Quality over quantity.",
         "",
         "## Your responsibilities",
         "1. When SEO Expert finishes briefs: review them, assign a writing style (see below), then unblock the Copywriter task (set it to `todo`) posting the style parameters as a comment",
