@@ -18,6 +18,7 @@ faqs:
     answer: "AI order management reduces errors by catching exceptions before they become problems: flagging address mismatches, detecting unusually large orders that may indicate fraud, auto-routing orders to the correct warehouse based on inventory levels, and predicting stockouts before they affect fulfillment. Based on Ordoro's published case studies, merchants using automated routing report 60–80% fewer manual routing errors."
   - question: "What's the difference between order management and inventory management software?"
     answer: "Order management software handles what happens after a customer places an order: routing to the right fulfillment center, tracking status, handling exceptions, and updating the customer. Inventory management tracks stock levels, purchase orders, and reorder points. Many tools combine both — Linnworks and Skubana/Extensiv do both well. If you only need one, start with inventory management; order management is only valuable when you have multiple fulfillment channels to route between."
+heroImage: "/images/blog/ai-order-management-software-small-business.webp"
 ---
 
 Most small businesses that buy order management software are solving the wrong problem.
