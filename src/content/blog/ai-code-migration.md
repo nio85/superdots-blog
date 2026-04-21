@@ -10,13 +10,13 @@ tags: ["ai-tools", "ai-engineering", "ai-code-migration"]
 heroImage: "/images/blog/ai-code-migration.webp"
 faqs:
   - question: "Can AI translate code from one language to another?"
-    answer: "Yes, with caveats. AI handles straightforward translations well — converting Python 2 to Python 3, Java to Kotlin, JavaScript to TypeScript, or AngularJS to React. It translates syntax, updates API calls, and adapts patterns. Complex translations involving language-specific features (Rust's ownership model, Go's concurrency patterns) need more human oversight. Expect 70-85% accuracy on initial translation, with manual refinement needed for the rest."
+    answer: "Yes, with caveats. AI handles straightforward translations well — converting Python 2 to Python 3, Java to Kotlin, JavaScript to TypeScript, or AngularJS to React. It translates syntax, updates API calls, and adapts patterns. Complex translations involving language-specific features (Rust's ownership model, Go's concurrency patterns) need more human oversight. Based on developer reports and vendor documentation, teams typically see 70-85% accuracy on initial translation, with manual refinement needed for the rest."
   - question: "How does AI handle framework migrations?"
     answer: "AI maps components and patterns between frameworks — converting React class components to hooks, migrating from Express to Fastify, or moving from REST to GraphQL. It understands framework conventions and generates idiomatic code for the target framework. The harder part is architectural changes (monolith to microservices), where AI assists but cannot make the design decisions for you."
   - question: "Does AI-generated migration code need testing?"
     answer: "Absolutely. AI can generate migration tests alongside the converted code, but you should also run your existing test suite against the migrated code. AI catches syntax and API changes reliably, but subtle behavioral differences — floating point handling, timezone logic, concurrency behavior — need human verification. Never deploy AI-migrated code without thorough testing."
   - question: "How long does an AI-assisted migration take compared to manual?"
-    answer: "AI typically reduces migration time by 40-70%, depending on the migration type. A framework upgrade that would take a team 3 months might take 4-6 weeks with AI assistance. The savings come from automated code translation and boilerplate conversion, freeing developers to focus on the complex, judgment-dependent parts of the migration."
+    answer: "Based on developer reports, AI assistance typically reduces migration time by 40-70%, depending on the migration type. A framework upgrade that would take a team 3 months might take 4-6 weeks with AI assistance. The savings come from automated code translation and boilerplate conversion, freeing developers to focus on the complex, judgment-dependent parts of the migration."
   - question: "What migrations work best with AI?"
     answer: "Version upgrades (Python 2→3, Angular 1→2+, .NET Framework→.NET Core) and language translations between similar paradigms (Java→Kotlin, JavaScript→TypeScript) work best. Pattern migrations (callbacks→promises→async/await) also work well. Architectural migrations (monolith→microservices, SQL→NoSQL) benefit from AI assistance but require more human decision-making."
   - question: "Which AI tool is best for migrating Python to TypeScript?"
@@ -178,7 +178,7 @@ Run those tests against the original code first to establish a baseline. Then ru
 
 ### Step 5: Handle the hard parts manually
 
-AI gets you 70-85% of the way there. The remaining 15-30% is where human judgment is non-negotiable.
+Based on developer reports, AI handles roughly 70-85% of the mechanical translation work. The remaining 15-30% is where human judgment is non-negotiable.
 
 Flag these for manual review:
 - Concurrency primitives (threading, async patterns, event loops)
