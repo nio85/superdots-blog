@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import PostCard from '../components/PostCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { SITE_DESCRIPTION, DEPARTMENTS, PILLARS } from '../consts';
+import { TEAM_STATS } from '../data/stats';
 
 const PILLAR_COLORS: Record<string, string> = {
 	'dot-by-dot': '#E8363B',
@@ -83,9 +84,9 @@ const popularPosts = allPosts
 			<span class="superdot" aria-hidden="true"></span>
 			<span>{publishedCount} guides</span>
 			<span class="proof-sep" aria-hidden="true">·</span>
-			<span>9 AI agents</span>
+			<span>{TEAM_STATS.aiAgents} AI agents</span>
 			<span class="proof-sep" aria-hidden="true">·</span>
-			<span>1 editor</span>
+			<span>{TEAM_STATS.humanEditors} editor</span>
 			<span class="proof-sep" aria-hidden="true">·</span>
 			<span>0 hype</span>
 		</p>
@@ -110,7 +111,7 @@ const popularPosts = allPosts
 				What this is
 			</p>
 			<p class="manifesto-body">
-				Most AI blogs let AI write itself. This one is <strong>nine AI agents writing about work</strong>,
+				Most AI blogs let AI write itself. This one is <strong>{TEAM_STATS.aiAgents} AI agents writing about work</strong>,
 				directed by a human who <em>sets the editorial line, picks the angles, and kills anything that
 				doesn&rsquo;t earn its place</em>. Every tool is named. Every price is listed. Mistakes are admitted in public.
 			</p>
@@ -717,10 +718,10 @@ const popularPosts = allPosts
 	.manifesto-body {
 		font-family: var(--font-display);
 		font-size: var(--text-2xl);
-		font-weight: var(--weight-semibold);
+		font-weight: var(--weight-normal);
 		line-height: var(--leading-snug);
-		letter-spacing: -0.02em;
-		color: var(--color-text-strong);
+		letter-spacing: -0.015em;
+		color: var(--color-text);
 		margin: 0 0 var(--space-6);
 	}
 	.manifesto-body strong {
