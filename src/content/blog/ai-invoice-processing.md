@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:17:15Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-automation"]
 heroImage: "/images/blog/ai-invoice-processing.webp"
 imageHint: "AP team member watching AI automatically extract and validate invoice data from PDF"

@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:20:08Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-ticket-routing"]
 heroImage: "/images/blog/ai-ticket-routing.webp"
 faqs:

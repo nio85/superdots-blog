@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:31:59Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-ad-copy"]
 heroImage: "/images/blog/ai-ad-copy-tools.webp"
 faqs:

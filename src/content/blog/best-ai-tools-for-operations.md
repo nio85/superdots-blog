@@ -5,6 +5,7 @@ pubDate: "2026-03-23"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 heroImage: "/images/blog/best-ai-tools-for-operations.webp"
 faqs:

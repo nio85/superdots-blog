@@ -5,6 +5,7 @@ pubDate: "2026-03-25"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-for-sales", "ai-writing"]
 imageHint: "business professional reviewing RFP document on screen with AI assistant suggestions"
 faqs:

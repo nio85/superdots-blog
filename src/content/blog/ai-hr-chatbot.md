@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-chatbot"]
 heroImage: "/images/blog/ai-hr-chatbot.webp"
 faqs:

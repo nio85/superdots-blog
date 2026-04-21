@@ -5,6 +5,7 @@ pubDate: "2026-03-10"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-video", "productivity"]
 heroImage: "/images/blog/best-ai-video-editing-tools.webp"
 imageHint: "video editor reviewing AI-automated cut and caption options in timeline editor"

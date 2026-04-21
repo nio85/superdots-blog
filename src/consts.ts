@@ -1,10 +1,17 @@
 export const SITE_TITLE = 'Superdots';
-export const SITE_DESCRIPTION = 'Practical AI guides for every department. No fluff, just useful stuff.';
+export const SITE_DESCRIPTION = 'Practical AI for work — guides, insights, opinions, and the real story. No fluff.';
 export const GA_MEASUREMENT_ID = 'G-DC2BTH9VKX';
 export const CLARITY_PROJECT_ID = 'vxukclgmnh';
 export const UMAMI_WEBSITE_ID = 'ad359e34-1608-4bf6-9e4e-e8200ed04b86';
 export const UMAMI_URL = 'https://umami.bartoccini.cloud';
 export const REDDIT_PIXEL_ID = import.meta.env.PUBLIC_REDDIT_PIXEL_ID || '';
+
+export const PILLARS = [
+	{ slug: 'dot-by-dot', label: 'Dot by Dot', description: 'Tool guides, how-to walkthroughs, and side-by-side comparisons.', color: 'red' },
+	{ slug: 'connecting-the-dots', label: 'Connecting the Dots', description: 'Practical AI + work advice you can apply today.', color: 'teal' },
+	{ slug: 'the-big-picture', label: 'The Big Picture', description: 'Opinion, analysis, and the bigger trends shaping AI and work.', color: 'indigo' },
+	{ slug: 'behind-the-dots', label: 'Behind the Dots', description: 'Behind the scenes at Superdots. Real numbers, real mistakes.', color: 'amber' },
+] as const;
 
 export const DEPARTMENTS = [
 	{ slug: 'engineering', label: 'Engineering', description: 'Guides that help engineering teams ship faster with AI — from smarter code reviews to automated documentation.' },

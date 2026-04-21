@@ -5,6 +5,7 @@ pubDate: "2026-04-10"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["marketing attribution", "ai analytics", "marketing tools", "small business", "GA4"]
 imageHint: "marketer at desk reviewing multi-channel attribution dashboard with funnel charts and revenue data on screen"
 faqs:

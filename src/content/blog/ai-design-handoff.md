@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "design"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-design", "ai-design-handoff"]
 heroImage: "/images/blog/ai-design-handoff.webp"
 faqs:

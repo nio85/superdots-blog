@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:29:52Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-engineering", "ai-pair-programming"]
 heroImage: "/images/blog/ai-pair-programming.webp"
 faqs:

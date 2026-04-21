@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:37:48Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-engineering", "ai-database"]
 heroImage: "/images/blog/ai-database-management.webp"
 faqs:

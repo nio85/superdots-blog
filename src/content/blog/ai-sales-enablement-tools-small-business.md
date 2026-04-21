@@ -5,6 +5,7 @@ pubDate: "2026-04-21"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["sales enablement", "ai tools", "small business", "sales", "crm"]
 imageHint: "small B2B sales team of 3-4 people at a startup office reviewing a sales pipeline dashboard on a shared screen"
 faqs:

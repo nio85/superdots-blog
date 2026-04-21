@@ -5,6 +5,7 @@ pubDate: "2026-03-19T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-reporting", "ai-productivity"]
 heroImage: "/images/blog/ai-report-generator.webp"
 faqs:

@@ -6,6 +6,7 @@ updatedDate: '2026-04-03'
 author: Superdots Team
 department: sales
 useCase: analysis
+contentPillar: "dot-by-dot"
 tags:
   - ai-tools
   - ai-sales

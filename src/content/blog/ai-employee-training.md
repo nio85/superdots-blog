@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:28:07Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-training"]
 heroImage: "/images/blog/ai-employee-training.webp"
 faqs:

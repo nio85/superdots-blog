@@ -5,6 +5,7 @@ pubDate: "2026-03-26"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-product-management"]
 imageHint: "product manager at a desk reviewing a digital roadmap on a laptop with AI interface"
 faqs:

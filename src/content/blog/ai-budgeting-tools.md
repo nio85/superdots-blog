@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-finance', 'ai-data-analysis']
 heroImage: "/images/blog/ai-budgeting-tools.webp"
 imageHint: "non-finance team member reviewing department spending breakdown with AI chart"

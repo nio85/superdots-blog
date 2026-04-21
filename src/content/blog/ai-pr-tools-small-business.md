@@ -5,6 +5,7 @@ pubDate: "2026-04-25"
 author: "Superdots Team"
 department: "marketing"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai pr tools", "small business pr", "ai press release", "media outreach"]
 imageHint: "small business owner at laptop writing a press release with AI tool interface visible on screen"
 faqs:

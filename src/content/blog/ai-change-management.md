@@ -5,6 +5,7 @@ pubDate: "2026-03-24"
 author: "Superdots Team"
 department: "hr"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-change-management", "ai-adoption"]
 heroImage: "/images/blog/ai-change-management.webp"
 faqs:

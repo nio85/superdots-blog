@@ -5,6 +5,7 @@ pubDate: "2026-04-14"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-for-operations", "ai-event-planning"]
 faqs:
   - question: "What can AI event planning tools actually do vs what still needs a human?"

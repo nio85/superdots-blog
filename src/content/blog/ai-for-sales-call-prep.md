@@ -5,6 +5,7 @@ pubDate: '2026-03-08'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-sales', 'ai-tools']
 heroImage: "/images/blog/ai-for-sales-call-prep.webp"
 imageHint: "sales rep reading AI-generated prospect brief five minutes before video call"

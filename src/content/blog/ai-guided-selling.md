@@ -5,6 +5,7 @@ pubDate: "2026-04-17"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-guided-selling"]
 heroImage: "/images/blog/ai-guided-selling.webp"
 imageHint: "sales rep viewing AI recommendations on screen during customer call"

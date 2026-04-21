@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-hr', 'ai-for-sales', 'ai-for-legal', 'ai-for-finance', 'ai-for-operations', 'ai-customer-support', 'ai-design']
 faqs:
   - question: "Which department benefits most from AI tools?"

@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:33:15Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-legal", "ai-document-review"]
 heroImage: "/images/blog/ai-legal-document-review.webp"
 faqs:

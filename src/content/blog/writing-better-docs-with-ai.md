@@ -5,6 +5,7 @@ pubDate: '2026-03-05'
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-writing', 'ai-tools']
 heroImage: "/images/blog/writing-better-docs-with-ai.webp"
 imageHint: "technical writer reviewing AI-improved documentation draft with clarity suggestions"

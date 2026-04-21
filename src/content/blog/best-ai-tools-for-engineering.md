@@ -5,6 +5,7 @@ pubDate: "2026-03-23"
 author: "Superdots Team"
 department: "engineering"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-engineering']
 heroImage: "/images/blog/best-ai-tools-for-engineering.webp"
 faqs:

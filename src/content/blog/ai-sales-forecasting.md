@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-sales', 'ai-data-analysis', 'ai-tools']
 heroImage: "/images/blog/ai-sales-forecasting.webp"
 faqs:

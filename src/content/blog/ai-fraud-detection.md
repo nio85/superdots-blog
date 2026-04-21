@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:39:45Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-fraud-detection"]
 heroImage: "/images/blog/ai-fraud-detection.webp"
 faqs:

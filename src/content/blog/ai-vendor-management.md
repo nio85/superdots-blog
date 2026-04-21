@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-vendor-management"]
 heroImage: "/images/blog/ai-vendor-management.webp"
 faqs:

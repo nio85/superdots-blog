@@ -5,6 +5,7 @@ pubDate: "2026-03-20T00:00:00Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-translation", "ai-marketing", "ai-communication", "localization"]
 heroImage: "/images/blog/ai-translation-tools.webp"
 faqs:

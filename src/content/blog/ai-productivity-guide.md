@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'productivity', 'ai-email', 'ai-meetings', 'ai-writing', 'ai-project-management', 'ai-knowledge-management']
 faqs:
   - question: "How much time can AI productivity tools save per week?"

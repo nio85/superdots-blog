@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:25:38Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-outreach"]
 heroImage: "/images/blog/ai-cold-outreach.webp"
 faqs:

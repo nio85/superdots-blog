@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:22:35Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-retention"]
 heroImage: "/images/blog/ai-customer-retention.webp"
 faqs:

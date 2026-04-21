@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:26:03Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-self-service"]
 heroImage: "/images/blog/ai-customer-self-service.webp"
 faqs:

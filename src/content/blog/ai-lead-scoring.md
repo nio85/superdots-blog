@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:41:49Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-lead-scoring"]
 heroImage: "/images/blog/ai-lead-scoring.webp"
 faqs:

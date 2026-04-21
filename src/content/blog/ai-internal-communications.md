@@ -5,6 +5,7 @@ pubDate: "2026-03-24"
 author: "Superdots Team"
 department: "hr"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-internal-communications", "ai-employee-engagement"]
 heroImage: "/images/blog/ai-internal-communications.webp"
 faqs:

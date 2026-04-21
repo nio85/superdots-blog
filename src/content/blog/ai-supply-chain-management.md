@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:17:40Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-supply-chain"]
 heroImage: "/images/blog/ai-supply-chain-management.webp"
 faqs:

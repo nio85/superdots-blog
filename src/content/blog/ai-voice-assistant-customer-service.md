@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:35:50Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-voice"]
 heroImage: "/images/blog/ai-voice-assistant-customer-service.webp"
 faqs:

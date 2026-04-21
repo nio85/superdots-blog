@@ -5,6 +5,7 @@ pubDate: '2026-03-10'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-email', 'productivity']
 heroImage: "/images/blog/automate-email-triage-with-ai.webp"
 imageHint: "professional's inbox showing AI-sorted priority emails with labels and auto-replies"

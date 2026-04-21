@@ -5,6 +5,7 @@ pubDate: "2026-03-25"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-for-operations", "ai-scheduling"]
 imageHint: "digital dashboard showing employee shift schedule with AI optimization indicators"
 faqs:

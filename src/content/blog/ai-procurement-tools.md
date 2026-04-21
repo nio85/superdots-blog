@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:43:48Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-procurement"]
 heroImage: "/images/blog/ai-procurement-tools.webp"
 faqs:

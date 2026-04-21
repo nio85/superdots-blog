@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:28:13Z"
 author: "Superdots Team"
 department: "design"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-design", "ai-image-generation"]
 heroImage: "/images/blog/ai-image-generation-marketing.webp"
 faqs:

@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-customer-support', 'ai-data-analysis']
 heroImage: "/images/blog/ai-customer-feedback-analysis.webp"
 imageHint: "CX analyst viewing AI-categorized customer feedback themes and sentiment trend chart"

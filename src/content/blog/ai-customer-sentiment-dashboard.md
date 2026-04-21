@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-sentiment-analysis"]
 heroImage: "/images/blog/ai-customer-sentiment-dashboard.webp"
 faqs:

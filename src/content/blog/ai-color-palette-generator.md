@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:29:39Z"
 author: "Superdots Team"
 department: "design"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-design", "ai-color"]
 heroImage: "/images/blog/ai-color-palette-generator.webp"
 faqs:

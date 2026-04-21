@@ -5,6 +5,7 @@ pubDate: "2026-04-22"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ab-testing", "marketing", "conversion-optimization", "ai-ab-testing"]
 imageHint: "split screen showing two webpage variants side by side with traffic allocation percentages and performance charts"
 faqs:

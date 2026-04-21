@@ -5,6 +5,7 @@ pubDate: "2026-04-14"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "sales-coaching", "objection-handling"]
 imageHint: "sales rep on laptop with AI coaching overlay showing live objection response suggestions during a call, professional office setting"
 faqs:

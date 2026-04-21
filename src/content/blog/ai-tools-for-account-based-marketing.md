@@ -5,6 +5,7 @@ pubDate: "2026-04-09"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["account-based marketing", "ABM", "marketing tools", "B2B marketing", "AI marketing", "Clay", "LinkedIn Sales Navigator"]
 imageHint: "two-person marketing team at laptops reviewing a short account list on screen with enrichment data and personalized email drafts side by side"
 faqs:

@@ -6,6 +6,7 @@ author: 'Superdots Team'
 pillar: true
 department: 'marketing'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-marketing', 'ai-marketing', 'ai-content-creation', 'ai-email-marketing', 'ai-seo', 'ai-social-media', 'ai-brand-monitoring']
 faqs:
   - question: "What is AI for marketing and how does it work?"

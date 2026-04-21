@@ -5,6 +5,7 @@ pubDate: "2026-04-16"
 author: "Superdots Team"
 department: "operations"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "operations", "business-continuity", "chatgpt-prompts", "risk-management"]
 imageHint: "operations manager reviewing printed business continuity plan at desk with laptop showing AI chat window open"
 faqs:

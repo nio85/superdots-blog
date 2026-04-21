@@ -5,6 +5,7 @@ pubDate: '2026-03-12'
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-writing', 'ai-tools']
 heroImage: "/images/blog/ai-writing-assistant-keep-your-voice.webp"
 faqs:

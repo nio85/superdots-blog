@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:26:40Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-tax"]
 heroImage: "/images/blog/ai-tax-preparation.webp"
 faqs:

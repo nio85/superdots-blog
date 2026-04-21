@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "legal"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-legal", "ai-legal-billing"]
 heroImage: "/images/blog/ai-legal-billing.webp"
 faqs:

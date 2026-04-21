@@ -5,6 +5,7 @@ pubDate: "2026-03-17T09:18:54Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-forecasting"]
 heroImage: "/images/blog/ai-financial-forecasting.webp"
 faqs:

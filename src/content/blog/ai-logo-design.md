@@ -5,6 +5,7 @@ pubDate: "2026-03-16T21:20:47Z"
 author: "Superdots Team"
 department: "design"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-design", "ai-tools"]
 heroImage: "/images/blog/ai-logo-design.webp"
 imageHint: "founder reviewing four AI-generated logo concepts for their startup brand"

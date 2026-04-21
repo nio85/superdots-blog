@@ -5,6 +5,7 @@ pubDate: '2026-03-15'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-hr', 'ai-tools']
 heroImage: "/images/blog/ai-for-recruiting.webp"
 faqs:

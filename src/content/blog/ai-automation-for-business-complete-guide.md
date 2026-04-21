@@ -6,6 +6,7 @@ author: 'Superdots Team'
 pillar: true
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations', 'ai-automation', 'ai-productivity', 'ai-project-management', 'ai-email', 'ai-supply-chain', 'ai-procurement', 'ai-data-analysis']
 faqs:
   - question: "What is AI automation for business?"

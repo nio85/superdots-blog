@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:24:00Z"
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-marketing']
 heroImage: "/images/blog/ai-landing-page-builder.webp"
 faqs:

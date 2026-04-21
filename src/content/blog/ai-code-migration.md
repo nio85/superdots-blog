@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-engineering", "ai-code-migration"]
 heroImage: "/images/blog/ai-code-migration.webp"
 faqs:

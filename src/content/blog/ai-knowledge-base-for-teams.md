@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'communication'
+contentPillar: "dot-by-dot"
 tags: ['ai-knowledge-management', 'productivity']
 heroImage: "/images/blog/ai-knowledge-base-for-teams.webp"
 imageHint: "team member typing question and receiving instant AI-sourced answer from company docs"

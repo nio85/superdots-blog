@@ -5,6 +5,7 @@ pubDate: '2026-03-21'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-for-hr', 'ai-tools', 'ai-hr', 'ai-employee-wellness']
 heroImage: "/images/blog/ai-employee-wellness.webp"
 faqs:

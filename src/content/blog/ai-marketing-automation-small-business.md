@@ -5,6 +5,7 @@ pubDate: "2026-04-13"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["marketing automation", "small business", "AI tools", "email marketing", "workflow automation"]
 imageHint: "solo marketer at a minimal desk looking at a laptop showing email automation flows, calm and focused, not overwhelmed"
 faqs:

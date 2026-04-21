@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:25:08Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-scheduling"]
 heroImage: "/images/blog/ai-scheduling-assistant.webp"
 faqs:

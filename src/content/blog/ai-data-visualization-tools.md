@@ -5,6 +5,7 @@ pubDate: "2026-03-17T16:19:00Z"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-data-analysis", "productivity"]
 heroImage: "/images/blog/ai-data-visualization-tools.webp"
 imageHint: "analyst selecting chart type from AI-recommended visualization options for business data"

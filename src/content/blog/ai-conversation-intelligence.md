@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:09:00Z"
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-sales']
 heroImage: "/images/blog/ai-conversation-intelligence.webp"
 faqs:

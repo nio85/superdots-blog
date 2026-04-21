@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:30:00Z"
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations']
 faqs:
   - question: "What is AI process mining?"

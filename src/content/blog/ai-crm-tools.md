@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:14:41Z"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-crm"]
 heroImage: "/images/blog/ai-crm-tools.webp"
 faqs:

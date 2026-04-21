@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:26:22Z"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-hr", "ai-workforce-planning"]
 heroImage: "/images/blog/ai-workforce-planning.webp"
 faqs:

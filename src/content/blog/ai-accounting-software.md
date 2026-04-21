@@ -5,6 +5,7 @@ pubDate: "2026-03-17T08:08:44Z"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-accounting"]
 heroImage: "/images/blog/ai-accounting-software.webp"
 faqs:

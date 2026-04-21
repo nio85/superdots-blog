@@ -5,6 +5,7 @@ pubDate: '2026-03-16'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-operations', 'ai-email', 'ai-customer-support', 'ai-for-hr', 'ai-for-legal', 'ai-project-management']
 faqs:
   - question: "What is AI automation?"

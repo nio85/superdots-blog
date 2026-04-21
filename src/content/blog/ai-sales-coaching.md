@@ -5,6 +5,7 @@ pubDate: "2026-03-30"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-sales", "ai-sales-coaching"]
 heroImage: "/images/blog/ai-sales-coaching.webp"
 imageHint: "sales manager reviewing AI coaching dashboard with call analytics"

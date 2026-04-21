@@ -5,6 +5,7 @@ pubDate: "2026-04-26"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "marketing-reporting", "ai-marketing", "marketing-analytics", "automation"]
 imageHint: "marketing manager reviewing a clean automated dashboard on laptop, colorful charts, relaxed posture suggesting time saved"
 faqs:

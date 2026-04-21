@@ -5,6 +5,7 @@ pubDate: "2026-03-17T00:00:00Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-customer-journey"]
 heroImage: "/images/blog/ai-customer-journey-mapping.webp"
 faqs:

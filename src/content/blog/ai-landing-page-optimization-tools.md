@@ -5,6 +5,7 @@ pubDate: "2026-04-19"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"
+contentPillar: "dot-by-dot"
 tags: ["landing pages", "conversion rate optimization", "ab-testing", "paid advertising", "marketing"]
 imageHint: "split-screen showing two landing page variants side by side with A/B test metrics dashboard and conversion rate graphs visible"
 faqs:

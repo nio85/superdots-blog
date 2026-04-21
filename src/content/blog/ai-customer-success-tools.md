@@ -5,6 +5,7 @@ pubDate: "2026-03-27"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-customer-success"]
 imageHint: "customer success manager reviewing health score dashboard with green and red indicators"
 faqs:

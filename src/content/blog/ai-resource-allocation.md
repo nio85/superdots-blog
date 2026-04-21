@@ -5,6 +5,7 @@ pubDate: "2026-03-30"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-operations", "ai-resource-allocation"]
 heroImage: "/images/blog/ai-resource-allocation.webp"
 imageHint: "operations manager viewing team workload dashboard with AI suggestions"

@@ -5,6 +5,7 @@ pubDate: "2026-04-18"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["operations", "quality-management", "AI tools", "service-business"]
 imageHint: "Operations manager reviewing quality checklist and AI workflow dashboard on screen in a modern service office"
 faqs:

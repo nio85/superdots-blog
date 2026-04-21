@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:06:00Z"
 author: 'Superdots Team'
 department: 'finance'
 useCase: 'analysis'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-finance']
 heroImage: "/images/blog/ai-cash-flow-forecasting.webp"
 faqs:

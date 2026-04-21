@@ -5,6 +5,7 @@ pubDate: "2026-03-17T07:30:01Z"
 author: "Superdots Team"
 department: "marketing"
 useCase: "writing"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-marketing", "ai-content-creation"]
 heroImage: "/images/blog/ai-content-creation.webp"
 faqs:

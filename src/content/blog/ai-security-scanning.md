@@ -5,6 +5,7 @@ pubDate: "2026-03-17T17:39:00Z"
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
+contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-engineering']
 heroImage: "/images/blog/ai-security-scanning.webp"
 imageHint: "security engineer reviewing AI-prioritized vulnerability list with remediation steps"

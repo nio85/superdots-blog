@@ -5,6 +5,7 @@ pubDate: "2026-04-08"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "change-management", "operations", "ai-operations", "adkar", "organizational-change"]
 imageHint: "operations manager reviewing a structured change management roadmap on a laptop with ADKAR phases visible on screen"
 faqs:

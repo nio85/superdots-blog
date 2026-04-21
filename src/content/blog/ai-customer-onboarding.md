@@ -5,6 +5,7 @@ pubDate: "2026-03-24"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"
+contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-customer-support", "ai-onboarding", "ai-automation"]
 heroImage: "/images/blog/ai-customer-onboarding.webp"
 faqs:
