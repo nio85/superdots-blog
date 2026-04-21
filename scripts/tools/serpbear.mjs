@@ -106,11 +106,21 @@ async function main() {
   switch (command) {
     case 'domains': {
       const data = await api('GET', '/api/domains');
-      if (jsonOutput) { out(data); break; }
       const domains = Array.isArray(data) ? data : data.domains || [];
+      // domain.keywordCount is set at creation and never updated — fetch live counts from /api/keywords
+      const counts = await Promise.all(domains.map(async (d) => {
+        try {
+          const kwResp = await api('GET', `/api/keywords?domain=${encodeURIComponent(d.domain)}`);
+          const kws = Array.isArray(kwResp?.keywords) ? kwResp.keywords : (Array.isArray(kwResp) ? kwResp : []);
+          return kws.length;
+        } catch { return null; }
+      }));
+      if (jsonOutput) { out(domains.map((d, i) => ({ ...d, keywordCountLive: counts[i] }))); break; }
       if (domains.length === 0) { log('No domains tracked.'); break; }
-      for (const d of domains) {
-        log(`  ${d.id ?? '-'}  ${d.domain}  (keywords: ${d.keywordCount ?? d.keyword_count ?? '?'})`);
+      for (let i = 0; i < domains.length; i++) {
+        const d = domains[i];
+        const live = counts[i];
+        log(`  ${d.id ?? '-'}  ${d.domain}  (keywords: ${live ?? '?'})`);
       }
       break;
     }
