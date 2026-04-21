@@ -1,6 +1,6 @@
 ---
-title: 'AI Report Writing: Generate Business Reports'
-description: 'Compare top AI report generators and learn the workflow from raw data to polished business reports. Save hours every reporting cycle.'
+title: 'Best AI for Business Reports: Tools & Workflow'
+description: 'ChatGPT, Notion AI & Julius compared for business reports — plus a workflow that takes raw data to polished report in under 60 minutes. Pricing included.'
 pubDate: '2026-03-18'
 author: 'Superdots Team'
 department: 'operations'

@@ -1,6 +1,6 @@
 ---
-title: 'AI Security Scanning: Find Vulnerabilities'
-description: 'AI security scanning tools find vulnerabilities that SAST and DAST miss by understanding code context, business logic flaws, and novel attack patterns.'
+title: 'AI Code Security Scanners: Beyond SAST & DAST'
+description: 'Snyk, Semgrep & GitHub Advanced Security compared — AI code scanners that find what SAST and DAST miss: logic flaws, taint propagation, novel attacks.'
 pubDate: "2026-03-17T17:39:00Z"
 author: 'Superdots Team'
 department: 'engineering'
