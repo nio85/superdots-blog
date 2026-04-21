@@ -11,7 +11,7 @@ faqs:
   - question: "Can I build an AI chatbot without coding?"
     answer: "Yes. Modern chatbot builders like Intercom Fin, Zendesk AI, and Chatfuel use visual interfaces where you connect your knowledge base, set conversation rules, and deploy — no code required. Setup typically takes 1-3 hours."
   - question: "How accurate are AI chatbots at answering customer questions?"
-    answer: "Modern AI chatbots resolve 40-70% of support tickets accurately when properly configured with a good knowledge base. Accuracy depends on the quality and completeness of your documentation. Start by targeting easy, frequent questions."
+    answer: "Based on vendor documentation and user reviews, well-configured chatbots resolve 40-70% of support tickets without human intervention. Accuracy depends on the quality and completeness of your knowledge base. Start by targeting easy, frequent questions."
   - question: "Will a chatbot frustrate my customers?"
     answer: "Bad chatbots frustrate customers. Good chatbots don't. The difference: good chatbots answer correctly, admit when they don't know, and hand off to a human smoothly. Always include an easy path to a real person."
   - question: "How much does an AI chatbot cost?"
@@ -189,12 +189,14 @@ Track these metrics from day one:
 
 | Metric | What it tells you | Target |
 |---|---|---|
-| Resolution rate | % of conversations fully resolved by bot | 40-60% |
+| Resolution rate | % of conversations fully resolved by bot | 40-60%† |
 | Handoff rate | % transferred to human agents | 30-50% |
 | CSAT (bot conversations) | Customer satisfaction with bot interactions | 80%+ |
 | First response time | How fast customers get initial answers | Under 10 seconds |
 | Deflection rate | % of tickets avoided by bot resolution | 30-50% |
 | False positive rate | % of conversations marked "resolved" incorrectly | Under 5% |
+
+†Resolution rate benchmark based on vendor-reported data from Intercom, Zendesk, and Tidio. Your actual rate depends on knowledge base quality and ticket complexity.
 
 If resolution rate is below 30%, your knowledge base needs work. If CSAT is below 70%, the bot is frustrating customers — check the handoff flow and answer quality.
 
