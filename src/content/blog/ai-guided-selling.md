@@ -34,7 +34,7 @@ Gong's research across 300,000+ sales calls found that reps who receive AI-sugge
 
 That's the premise behind AI guided selling: not replacing sales judgment, but filling the gaps where instinct is unreliable. Which product to recommend to this buyer profile. When to follow up based on what's actually worked before. What to include in a proposal given this prospect's behavior signals.
 
-What I found when comparing five tools across implementation depth, pricing, and actual team fit was that the market has a clear three-tier structure that most buyers don't realize going in — and picking from the wrong tier is the single most common implementation failure.
+Based on documentation, pricing pages, and practitioner reviews, the market has a clear three-tier structure — one that most buyers don't recognize until they're deep into vendor conversations, and picking from the wrong tier is the single most common implementation failure.
 
 This guide covers all three tiers, with a pricing table, a team-size fit guide, and a step-by-step implementation checklist that no competitor article currently offers.
 
