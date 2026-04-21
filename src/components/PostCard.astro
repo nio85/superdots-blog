@@ -1,12 +1,18 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-import { TAGS } from '../consts';
+import { TAGS, PILLARS } from '../consts';
+
+const PILLAR_BADGE_COLORS: Record<string, string> = {
+	'connecting-the-dots': '#14B8A6',
+	'the-big-picture': '#6366F1',
+	'behind-the-dots': '#F59E0B',
+};
 
 interface Props {
 	title: string;
 	description: string;
 	pubDate?: Date;
-	department: string;
+	department?: string;
 	useCase?: string;
 	slug?: string;
 	href?: string;
@@ -15,6 +21,7 @@ interface Props {
 	variant?: 'article' | 'guide';
 	readingTime?: number;
 	relatedCount?: number;
+	contentPillar?: string;
 }
 
 const {
@@ -30,7 +37,11 @@ const {
 	variant = 'article',
 	readingTime,
 	relatedCount,
+	contentPillar,
 } = Astro.props;
+
+const pillarBadgeColor = contentPillar ? PILLAR_BADGE_COLORS[contentPillar] : undefined;
+const pillarLabel = contentPillar ? PILLARS.find(p => p.slug === contentPillar)?.label : undefined;
 const Heading = headingLevel;
 
 const linkHref = href || `/blog/${slug}/`;
@@ -46,7 +57,10 @@ const tagMeta = tags
 <article class:list={['post-card', { 'post-card--guide': isGuide }]}>
 	<a href={linkHref}>
 		<div class="meta">
-			<span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>
+			{pillarBadgeColor && pillarLabel && (
+				<span class="badge badge-pillar" style={`border-color: ${pillarBadgeColor}; color: ${pillarBadgeColor};`}>{pillarLabel}</span>
+			)}
+			{department && <span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>}
 			{!isGuide && useCase && <span class="badge badge-usecase">{useCase}</span>}
 			{!isGuide && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
 		</div>
@@ -174,6 +188,10 @@ const tagMeta = tags
 		font-size: var(--text-xs);
 		color: var(--color-text-muted);
 		margin-left: auto;
+	}
+	.badge-pillar {
+		border: 1px solid;
+		background: transparent;
 	}
 	.badge-guide-dept {
 		background: var(--sd-teal-light);
