@@ -1,7 +1,8 @@
 ---
 title: "AI Battlecard Software Ranked: Klue, Crayon & Kompyte (2026)"
 description: "Klue, Crayon, Kompyte & Battlecard.io — AI battlecard tools compared by team size and live-update speed. Free ChatGPT workflow for teams under 10 reps."
-pubDate: "2026-04-21"
+pubDate: "2026-04-06"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
