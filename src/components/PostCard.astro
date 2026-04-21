@@ -1,6 +1,6 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-import { TAGS, PILLARS } from '../consts';
+import { PILLARS } from '../consts';
 
 const PILLAR_BADGE_COLORS: Record<string, string> = {
 	'connecting-the-dots': '#14B8A6',
@@ -35,10 +35,8 @@ const {
 	description,
 	pubDate,
 	department,
-	useCase,
 	slug,
 	href,
-	tags = [],
 	headingLevel = 'h3',
 	variant = 'article',
 	readingTime,
@@ -73,11 +71,6 @@ const pillarRgb = isSeries ? hexToRgbTriplet(pillarColor) : undefined;
 const seriesStyle = isSeries && pillarColor
 	? `--card-accent: ${pillarColor};${pillarRgb ? ` --card-accent-rgb: ${pillarRgb};` : ''}`
 	: undefined;
-
-const tagMeta = tags
-	.map((t) => TAGS.find((tm) => tm.slug === t))
-	.filter(Boolean)
-	.slice(0, 3);
 ---
 
 <article
@@ -90,7 +83,6 @@ const tagMeta = tags
 				<span class="badge badge-pillar" style={`border-color: ${pillarBadgeColor}; color: ${pillarBadgeColor};`}>{pillarLabel}</span>
 			)}
 			{department && !isSeries && <span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>}
-			{!isGuide && !isSeries && useCase && <span class="badge badge-usecase">{useCase}</span>}
 			{!isGuide && !isSeries && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
 			{isSeries && count !== undefined && (
 				<span class="series-count-badge">{count} {count === 1 ? 'article' : 'articles'}</span>
@@ -117,13 +109,6 @@ const tagMeta = tags
 				)}
 			</div>
 		) : null}
-		{tagMeta.length > 0 && !isSeries && (
-			<div class="tag-pills">
-				{tagMeta.map((t) => (
-					<a href={`/tags/${t!.slug}/`} class="badge badge-tag" onclick="event.stopPropagation()">{t!.label}</a>
-				))}
-			</div>
-		)}
 		<span class="read-more">{ctaText} <span aria-hidden="true">&rarr;</span></span>
 	</a>
 </article>
@@ -270,23 +255,6 @@ const tagMeta = tags
 		gap: var(--space-1);
 		font-size: var(--text-sm);
 		color: var(--color-text-muted);
-	}
-	.tag-pills {
-		display: flex;
-		gap: var(--space-1);
-		flex-wrap: wrap;
-		margin-bottom: var(--space-3);
-	}
-	.tag-pills .badge-tag {
-		font-size: var(--text-xs);
-		cursor: pointer;
-		text-decoration: none;
-		transition: all var(--transition-fast);
-	}
-	.tag-pills .badge-tag:hover {
-		background: var(--color-border-strong);
-		color: var(--color-text-strong);
-		text-decoration: none;
 	}
 	.read-more {
 		font-family: var(--font-display);

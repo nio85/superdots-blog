@@ -127,18 +127,20 @@ const popularPosts = allPosts
 			<h2>Our series<span class="dot-accent">.</span></h2>
 			<a href="/series/" class="view-all">All series <span aria-hidden="true">&rarr;</span></a>
 		</div>
-		<div class="post-grid post-grid--series">
+		<div class="carousel-track" aria-label="Editorial series">
 			{pillarsWithLatest.map((p) => (
-				<PostCard
-					title={p.label}
-					description={p.description}
-					href={`/series/${p.slug}/`}
-					variant="series"
-					pillarColor={p.accentColor}
-					count={p.count}
-					latestTitle={p.latestTitle}
-					headingLevel="h3"
-				/>
+				<div class="carousel-item">
+					<PostCard
+						title={p.label}
+						description={p.description}
+						href={`/series/${p.slug}/`}
+						variant="series"
+						pillarColor={p.accentColor}
+						count={p.count}
+						latestTitle={p.latestTitle}
+						headingLevel="h3"
+					/>
+				</div>
 			))}
 		</div>
 	</section>
@@ -610,14 +612,11 @@ const popularPosts = allPosts
 		}
 	}
 
-	/* Series section — use the same PostCard grid as Latest / Popular */
-	.post-grid--series {
-		grid-template-columns: 1fr;
-	}
-	@media (min-width: 640px) {
-		.post-grid--series {
-			grid-template-columns: repeat(2, 1fr);
-		}
+	/* Series section — horizontal carousel on every viewport, same behaviour
+	   as .guides-carousel. Cards share the common .carousel-track /
+	   .carousel-item styles defined lower in this file. */
+	.series-section {
+		padding: var(--space-4) 0 var(--space-8);
 	}
 
 	/* "What this is" manifesto — no card, no border, just typography */
