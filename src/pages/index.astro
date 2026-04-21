@@ -438,7 +438,10 @@ const popularPosts = allPosts
 		display: none;
 	}
 	.carousel-item {
-		flex: 0 0 280px;
+		/* Mobile: one card + a peek of the next (matches article grid: 1 col).
+		   Desktop: half-container (matches article grid: 2 cols). */
+		flex: 0 0 86vw;
+		max-width: 420px;
 		scroll-snap-align: start;
 	}
 	.carousel-item :global(.post-card) {
@@ -446,7 +449,8 @@ const popularPosts = allPosts
 	}
 	@media (min-width: 640px) {
 		.carousel-item {
-			flex: 0 0 300px;
+			flex: 0 0 calc(50% - var(--space-2));
+			max-width: none;
 		}
 	}
 
