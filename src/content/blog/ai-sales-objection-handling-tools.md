@@ -1,7 +1,7 @@
 ---
-title: "AI Sales Objection Handling Tools (2026)"
+title: "Two Types of AI Objection Handling Tools (Most Teams Buy the Wrong One)"
 description: "There are two types of AI objection handling tools and they solve different problems. Here's how to tell them apart, what each costs, and how to pick the right one."
-pubDate: "2026-04-14"
+pubDate: "2026-04-21"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
