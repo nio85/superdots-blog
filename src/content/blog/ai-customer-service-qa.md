@@ -1,7 +1,7 @@
 ---
-title: "6 Best AI QA Scoring Tools for Customer Support (2026)"
+title: "AI QA Scoring: Review 100% of Tickets, Not 2% (2026)"
 description: 'Your team reviews 2% of tickets. AI QA scores 100%. Compare MaestroQA, Zendesk QA, Observe.AI, Scorebuddy & more — real pricing and a free rubric template.'
-pubDate: "2026-04-10"
+pubDate: "2026-04-21"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'

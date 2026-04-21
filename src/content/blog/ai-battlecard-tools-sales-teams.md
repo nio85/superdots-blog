@@ -1,7 +1,7 @@
 ---
 title: "AI Battlecard Software Ranked: Klue, Crayon & Kompyte (2026)"
-description: "Which AI battlecard tool auto-updates when competitors change pricing? Klue, Crayon, Kompyte & Battlecard.io compared by team size. Free ChatGPT workflow for teams under 10 reps."
-pubDate: "2026-04-17"
+description: "Klue ($500+/mo), Crayon (from $1,500/mo), Kompyte & Battlecard.io — AI battlecard tools compared by team size and live-update speed. Free ChatGPT workflow for teams under 10 reps."
+pubDate: "2026-04-21"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
