@@ -1,7 +1,7 @@
 ---
-title: "AI Incident Management Tools (2026)"
-description: 'How PagerDuty, Datadog, Moogsoft & BigPanda use AI for incident detection, alert correlation, root cause analysis, and automated runbooks to cut MTTR.'
-pubDate: "2026-03-17T17:18:00Z"
+title: "AI Incident Triage Tools for SRE & DevOps Teams (2026)"
+description: 'AI incident triage for SRE teams — how PagerDuty, Datadog Watchdog, Moogsoft & BigPanda cut alert noise, surface root causes, and reduce MTTR by 40–60%.'
+pubDate: "2026-04-22T07:00:00Z"
 author: 'Superdots Team'
 department: 'engineering'
 useCase: 'automation'
