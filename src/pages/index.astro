@@ -18,6 +18,7 @@ const allPosts = filterPublished(await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const latestPosts = allPosts.slice(0, 6);
+const publishedCount = allPosts.length;
 
 const pillarsWithLatest = PILLARS.map((p) => {
 	const pillarPosts = allPosts.filter(({ data }) => (data.contentPillar || 'dot-by-dot') === p.slug);
@@ -75,18 +76,22 @@ const pillarGuides = [
 		</div>
 
 		<div class="hero-copy">
-			<p class="hero-kicker">
-				<span class="superdot"></span>
-				From a homelab in Italy
+			<p class="hero-proof">
+				<span class="superdot" aria-hidden="true"></span>
+				<span>{publishedCount} guides</span>
+				<span class="proof-sep" aria-hidden="true">·</span>
+				<span>9 AI agents</span>
+				<span class="proof-sep" aria-hidden="true">·</span>
+				<span>1 editor</span>
+				<span class="proof-sep" aria-hidden="true">·</span>
+				<span>0 hype</span>
 			</p>
 			<h1>
-				Nine AI agents write<br/>
-				about AI at work<span class="dot-accent">.</span><br/>
-				<span class="hero-h1-sub">One human reviews every word<span class="dot-accent">.</span></span>
+				Cut through the <mark class="hl hl-noise">noise</mark><span class="dot-accent">.</span><br/>
+				Work <mark class="hl hl-smarter">smarter</mark> with AI<span class="dot-accent">.</span>
 			</h1>
 			<p class="hero-sub">
-				No venture capital. No content farm. No hype.<br/>
-				Practical guides that name real tools, real prices, real steps.
+				Guides, insights, opinions, and the real story of AI at work.
 			</p>
 			<div class="hero-actions">
 				<a href="/blog/" class="btn btn-primary btn-lg">Browse articles</a>
@@ -256,7 +261,7 @@ const pillarGuides = [
 		z-index: 2;
 	}
 
-	.hero-kicker {
+	.hero-proof {
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-2);
@@ -264,16 +269,58 @@ const pillarGuides = [
 		font-size: var(--text-xs);
 		font-weight: var(--weight-semibold);
 		text-transform: uppercase;
-		letter-spacing: 0.12em;
-		color: var(--color-primary);
+		letter-spacing: 0.1em;
+		color: var(--color-text-muted);
 		margin: 0 0 var(--space-5);
+		flex-wrap: wrap;
+		justify-content: center;
 	}
-	.hero-kicker .superdot {
+	.hero-proof .superdot {
 		width: 8px;
 		height: 8px;
 		background: var(--color-primary);
 		border-radius: var(--radius-full);
 		animation: dot-breath 3s ease-in-out infinite;
+		flex-shrink: 0;
+	}
+	.hero-proof .proof-sep {
+		color: var(--color-primary);
+		opacity: 0.7;
+	}
+	.hero-proof span:last-child {
+		color: var(--color-primary);
+	}
+
+	/* Brand highlight for H1 keywords */
+	.hero h1 .hl {
+		background: transparent;
+		color: var(--color-text-strong);
+		padding: 0 0.08em;
+		position: relative;
+		white-space: nowrap;
+	}
+	.hero h1 .hl::before {
+		content: '';
+		position: absolute;
+		left: -0.04em;
+		right: -0.04em;
+		bottom: 0.08em;
+		height: 0.38em;
+		background-image: radial-gradient(circle, var(--color-primary) 1.6px, transparent 1.6px);
+		background-size: 8px 8px;
+		opacity: 0.55;
+		z-index: -1;
+		border-radius: 2px;
+	}
+	.hero h1 .hl-smarter::before {
+		background-image: radial-gradient(circle, var(--color-primary) 1.6px, transparent 1.6px);
+		opacity: 0.75;
+	}
+	:global([data-theme="dark"]) .hero h1 .hl::before {
+		opacity: 0.7;
+	}
+	:global([data-theme="dark"]) .hero h1 .hl-smarter::before {
+		opacity: 0.95;
 	}
 
 	.hero h1 {
@@ -285,11 +332,6 @@ const pillarGuides = [
 		max-width: 880px;
 		letter-spacing: -0.035em;
 		color: var(--color-text-strong);
-	}
-
-	.hero-h1-sub {
-		color: var(--color-text-muted);
-		font-weight: var(--weight-semibold);
 	}
 
 	.hero-sub {
