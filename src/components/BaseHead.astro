@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { ViewTransitions } from 'astro:transitions';
 import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL, REDDIT_PIXEL_ID } from '../consts';
 
 interface Props {
@@ -22,9 +21,6 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-<!-- Native browser view transitions between pages (brand feel: site as continuous surface) -->
-<ViewTransitions fallback="swap" />
 
 <!-- Theme: prevent FOUC by reading preference before render -->
 <script is:inline>

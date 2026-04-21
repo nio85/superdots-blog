@@ -134,17 +134,6 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 					<p class="description">{description}</p>
 					<div class="byline-row">
 						<div class="byline">
-							{isPersonalAuthor ? (
-								<img class="byline-avatar" src="/images/authors/luca.jpg" alt="" width="40" height="40" loading="lazy" />
-							) : (
-								<span class="byline-mark" aria-hidden="true">
-									<svg viewBox="0 0 64 64" fill="none" width="40" height="40">
-										<circle cx="14" cy="50" r="6" fill="#E8363B"/>
-										<circle cx="32" cy="32" r="8" fill="#E8363B"/>
-										<circle cx="50" cy="14" r="10" fill="#E8363B"/>
-									</svg>
-								</span>
-							)}
 							<span class="author">{author}</span>
 							<span class="separator">&middot;</span>
 							<FormattedDate date={pubDate} />
@@ -463,30 +452,6 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 		align-items: center;
 		gap: var(--space-2);
 		flex-wrap: wrap;
-	}
-	.byline-avatar {
-		width: 40px;
-		height: 40px;
-		border-radius: var(--radius-full);
-		object-fit: cover;
-		display: block;
-		margin-right: var(--space-1);
-		box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
-	}
-	.byline-mark {
-		display: inline-flex;
-		width: 40px;
-		height: 40px;
-		padding: 6px;
-		border-radius: var(--radius-full);
-		background: color-mix(in srgb, var(--color-primary) 12%, transparent);
-		align-items: center;
-		justify-content: center;
-		margin-right: var(--space-1);
-	}
-	.byline-mark svg {
-		width: 24px;
-		height: 24px;
 	}
 	.author {
 		font-weight: var(--weight-semibold);

@@ -2,10 +2,9 @@
 import FormattedDate from './FormattedDate.astro';
 import { TAGS, PILLARS } from '../consts';
 
-const PILLAR_COLORS: Record<string, string> = {
-	'dot-by-dot': '#E8363B',
+const PILLAR_BADGE_COLORS: Record<string, string> = {
 	'connecting-the-dots': '#14B8A6',
-	'the-big-picture': '#8B8BF5',
+	'the-big-picture': '#6366F1',
 	'behind-the-dots': '#F59E0B',
 };
 
@@ -19,13 +18,10 @@ interface Props {
 	href?: string;
 	tags?: string[];
 	headingLevel?: 'h2' | 'h3';
-	variant?: 'default' | 'feature' | 'quote' | 'guide';
+	variant?: 'article' | 'guide';
 	readingTime?: number;
 	relatedCount?: number;
 	contentPillar?: string;
-	quoteText?: string;
-	quoteAuthor?: string;
-	heroImage?: string;
 }
 
 const {
@@ -38,24 +34,19 @@ const {
 	href,
 	tags = [],
 	headingLevel = 'h3',
-	variant = 'default',
+	variant = 'article',
 	readingTime,
 	relatedCount,
 	contentPillar,
-	quoteText,
-	quoteAuthor,
-	heroImage,
 } = Astro.props;
 
-const pillarKey = contentPillar || 'dot-by-dot';
-const pillarColor = PILLAR_COLORS[pillarKey] || PILLAR_COLORS['dot-by-dot'];
-const pillarLabel = PILLARS.find((p) => p.slug === pillarKey)?.label;
+const pillarBadgeColor = contentPillar ? PILLAR_BADGE_COLORS[contentPillar] : undefined;
+const pillarLabel = contentPillar ? PILLARS.find(p => p.slug === contentPillar)?.label : undefined;
 const Heading = headingLevel;
 
 const linkHref = href || `/blog/${slug}/`;
 const isGuide = variant === 'guide';
-const isFeature = variant === 'feature';
-const isQuote = variant === 'quote';
+const ctaText = isGuide ? 'Read guide' : 'Read article';
 
 const tagMeta = tags
 	.map((t) => TAGS.find((tm) => tm.slug === t))
@@ -63,178 +54,121 @@ const tagMeta = tags
 	.slice(0, 3);
 ---
 
-<article
-	class:list={['post-card', `post-card--${variant}`]}
-	style={`--pillar-color: ${pillarColor};`}
-	data-pillar={pillarKey}
->
-	<a href={linkHref} class="post-card-link">
-		{isFeature && heroImage && (
-			<div class="feature-image" aria-hidden="true">
-				<img src={heroImage} alt="" loading="lazy" />
-			</div>
-		)}
-		{isFeature && !heroImage && (
-			<div class="feature-pattern" aria-hidden="true"></div>
-		)}
-
-		<div class="card-body">
-			<span class="pillar-dot" aria-hidden="true"></span>
-
-			<div class="meta">
-				{pillarLabel && (
-					<span class="badge-pillar-inline">{pillarLabel}</span>
-				)}
-				{department && !isQuote && <span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>}
-				{!isGuide && !isQuote && useCase && <span class="badge badge-usecase">{useCase}</span>}
-				{!isQuote && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
-			</div>
-
-			{isQuote && quoteText ? (
-				<blockquote class="quote-body">
-					<p class="quote-text">&ldquo;{quoteText}&rdquo;</p>
-					<footer class="quote-attribution">
-						<Heading class="quote-source-title">{title}</Heading>
-						{quoteAuthor && <span class="quote-author">— {quoteAuthor}</span>}
-					</footer>
-				</blockquote>
-			) : (
-				<>
-					<Heading class="card-title">
-						{title}
-						<span class="title-underline" aria-hidden="true"></span>
-					</Heading>
-					<p class="card-desc">{description}</p>
-				</>
+<article class:list={['post-card', { 'post-card--guide': isGuide }]}>
+	<a href={linkHref}>
+		<div class="meta">
+			{pillarBadgeColor && pillarLabel && (
+				<span class="badge badge-pillar" style={`border-color: ${pillarBadgeColor}; color: ${pillarBadgeColor};`}>{pillarLabel}</span>
 			)}
-
-			{isGuide && (readingTime || relatedCount) ? (
-				<div class="guide-meta">
-					{readingTime && readingTime > 0 && (
-						<span class="guide-meta-item">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-							{readingTime} min read
-						</span>
-					)}
-					{relatedCount && relatedCount > 0 && (
-						<span class="guide-meta-item">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-							+{relatedCount} related articles
-						</span>
-					)}
-				</div>
-			) : null}
-
-			{tagMeta.length > 0 && !isQuote && (
-				<div class="tag-pills">
-					{tagMeta.map((t) => (
-						<a href={`/tags/${t!.slug}/`} class="badge badge-tag" onclick="event.stopPropagation()">{t!.label}</a>
-					))}
-				</div>
-			)}
+			{department && <span class:list={['badge', isGuide ? 'badge-guide-dept' : 'badge-dept']}>{department}</span>}
+			{!isGuide && useCase && <span class="badge badge-usecase">{useCase}</span>}
+			{!isGuide && pubDate && <span class="date"><FormattedDate date={pubDate} /></span>}
 		</div>
+		<Heading class="card-title">{title}</Heading>
+		<p>{description}</p>
+		{isGuide && (readingTime || relatedCount) ? (
+			<div class="guide-meta">
+				{readingTime && readingTime > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+						{readingTime} min read
+					</span>
+				)}
+				{relatedCount && relatedCount > 0 && (
+					<span class="guide-meta-item">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+						+{relatedCount} related articles
+					</span>
+				)}
+			</div>
+		) : null}
+		{tagMeta.length > 0 && (
+			<div class="tag-pills">
+				{tagMeta.map((t) => (
+					<a href={`/tags/${t!.slug}/`} class="badge badge-tag" onclick="event.stopPropagation()">{t!.label}</a>
+				))}
+			</div>
+		)}
+		<span class="read-more">{ctaText} <span aria-hidden="true">&rarr;</span></span>
 	</a>
 </article>
 
 <style>
 	.post-card {
-		position: relative;
-		background: var(--color-bg-dim);
+		--card-accent: var(--color-primary);
+		--card-accent-light: var(--sd-red-light);
+		--card-accent-rgb: 232, 54, 59;
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
 		border-radius: var(--radius-lg);
-		transition: background 240ms ease;
+		padding: var(--space-6);
+		transition: all var(--transition-base);
+		position: relative;
 		overflow: hidden;
 	}
-
-	.post-card-link {
-		display: block;
-		padding: var(--space-5) var(--space-6) var(--space-6);
-		color: inherit;
-		text-decoration: none;
+	.post-card--guide {
+		--card-accent: var(--color-secondary);
+		--card-accent-light: var(--sd-teal-light);
+		--card-accent-rgb: 20, 184, 166;
 	}
-
-	.post-card-link:hover {
-		text-decoration: none;
-	}
-
-	.post-card:hover {
-		background: color-mix(in srgb, var(--pillar-color) 5%, var(--color-bg-dim));
-	}
-
-	/* The signature — a pillar dot that grows, plus an underline that draws under the title */
-	.pillar-dot {
-		display: block;
-		width: 10px;
-		height: 10px;
-		border-radius: var(--radius-full);
-		background: var(--pillar-color);
-		margin-bottom: var(--space-3);
-		transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
-	}
-
-	.post-card:hover .pillar-dot {
-		transform: scale(1.5);
-		box-shadow: 0 0 0 4px color-mix(in srgb, var(--pillar-color) 20%, transparent);
-	}
-
-	.card-body {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.meta {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		flex-wrap: wrap;
-		margin-bottom: var(--space-3);
-	}
-
-	.badge-pillar-inline {
-		font-family: var(--font-mono);
-		font-size: var(--text-xs);
-		font-weight: var(--weight-semibold);
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--pillar-color);
-		padding: 0;
-	}
-
-	.date {
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		margin-left: auto;
-		font-family: var(--font-mono);
-	}
-
-	.card-title {
-		font-family: var(--font-display);
-		font-size: var(--text-2xl);
-		font-weight: var(--weight-bold);
-		margin: 0 0 var(--space-3);
-		color: var(--color-text-strong);
-		letter-spacing: -0.025em;
-		line-height: var(--leading-tight);
-		position: relative;
-		display: inline-block;
-		padding-bottom: var(--space-1);
-	}
-
-	.title-underline {
+	/* Left border — grows on hover */
+	.post-card::before {
+		content: '';
 		position: absolute;
+		top: 0;
 		left: 0;
-		bottom: 0;
-		height: 2px;
-		width: 0;
-		background: var(--pillar-color);
-		border-radius: var(--radius-full);
-		transition: width 380ms cubic-bezier(0.16, 1, 0.3, 1);
+		width: 4px;
+		height: 0;
+		background: var(--card-accent);
+		border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+		transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
 	}
-
-	.post-card:hover .title-underline {
-		width: 100%;
+	/* Subtle gradient wash on hover */
+	.post-card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(var(--card-accent-rgb), 0.03) 0%, transparent 50%);
+		opacity: 0;
+		transition: opacity var(--transition-base);
+		pointer-events: none;
+		z-index: 0;
 	}
-
-	.card-desc {
+	.post-card:hover {
+		border-color: var(--card-accent);
+		box-shadow: var(--shadow-md), 0 4px 16px rgba(var(--card-accent-rgb), 0.06);
+		transform: translateY(-3px);
+	}
+	.post-card:hover::before {
+		height: 100%;
+	}
+	.post-card:hover::after {
+		opacity: 1;
+	}
+	.post-card a {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
+	.post-card a:hover {
+		text-decoration: none;
+	}
+	.post-card .card-title {
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+		margin: var(--space-3) 0 var(--space-2);
+		color: var(--color-text-strong);
+		letter-spacing: -0.02em;
+		transition: color var(--transition-fast);
+		line-height: var(--leading-tight);
+	}
+	.post-card:hover .card-title {
+		color: var(--card-accent);
+	}
+	.post-card p {
 		color: var(--color-text-muted);
 		font-size: var(--text-base);
 		margin: 0 0 var(--space-4);
@@ -244,157 +178,31 @@ const tagMeta = tags
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}
-
-	.tag-pills {
+	.meta {
 		display: flex;
-		gap: var(--space-1);
+		align-items: center;
+		gap: var(--space-2);
 		flex-wrap: wrap;
-		margin-top: var(--space-2);
 	}
-
-	.tag-pills .badge-tag {
+	.date {
 		font-size: var(--text-xs);
-		cursor: pointer;
-		text-decoration: none;
-		transition: all var(--transition-fast);
-		background: transparent;
-		border: 1px solid var(--color-border);
 		color: var(--color-text-muted);
+		margin-left: auto;
 	}
-
-	.tag-pills .badge-tag:hover {
-		border-color: var(--pillar-color);
-		color: var(--pillar-color);
-		text-decoration: none;
-	}
-
-	/* ---- Feature variant ---- */
-	.post-card--feature {
-		grid-column: span 2;
-	}
-
-	.post-card--feature .post-card-link {
-		display: flex;
-		flex-direction: column;
-		padding: 0;
-	}
-
-	.feature-image {
-		aspect-ratio: 16 / 8;
-		overflow: hidden;
-		background: var(--color-bg-code);
-		border-bottom: 2px solid var(--pillar-color);
-	}
-
-	.feature-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-	}
-
-	.post-card--feature:hover .feature-image img {
-		transform: scale(1.02);
-	}
-
-	.feature-pattern {
-		aspect-ratio: 16 / 7;
-		background-image: radial-gradient(circle, var(--pillar-color) 1.6px, transparent 1.6px);
-		background-size: 20px 20px;
-		opacity: 0.35;
-		border-bottom: 2px solid var(--pillar-color);
-	}
-
-	.post-card--feature .card-body {
-		padding: var(--space-6) var(--space-8) var(--space-8);
-	}
-
-	.post-card--feature .card-title {
-		font-size: var(--text-3xl);
-	}
-
-	.post-card--feature .card-desc {
-		-webkit-line-clamp: unset;
-		font-size: var(--text-lg);
-		line-height: var(--leading-normal);
-	}
-
-	/* ---- Quote variant (Phase 1: component ready, not wired yet) ---- */
-	.post-card--quote {
-		background: color-mix(in srgb, var(--pillar-color) 6%, var(--color-bg-dim));
-		border-top: 3px solid var(--pillar-color);
-	}
-
-	.quote-body {
-		margin: 0;
-		padding: 0;
-		border: none;
+	.badge-pillar {
+		border: 1px solid;
 		background: transparent;
 	}
-
-	.quote-text {
-		font-family: var(--font-display);
-		font-size: var(--text-2xl);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-		letter-spacing: -0.02em;
-		line-height: var(--leading-snug);
-		margin: 0 0 var(--space-4);
-	}
-
-	.quote-attribution {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-1);
-	}
-
-	.quote-source-title {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--pillar-color);
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		margin: 0;
-	}
-
-	.quote-author {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-	}
-
-	/* ---- Guide variant (existing behaviour preserved) ---- */
-	.post-card--guide {
-		background: var(--color-bg);
-		border: 1px solid var(--color-border);
-	}
-
-	.post-card--guide:hover {
-		border-color: var(--color-secondary, #14B8A6);
-		background: var(--color-bg);
-	}
-
 	.badge-guide-dept {
 		background: var(--sd-teal-light);
 		color: var(--sd-teal-dark);
-		font-family: var(--font-display);
-		font-size: var(--text-xs);
-		font-weight: var(--weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		padding: var(--space-1) var(--space-3);
-		border-radius: var(--radius-full);
 	}
-
 	.guide-meta {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-4);
-		margin-top: var(--space-2);
-		margin-bottom: var(--space-3);
+		margin-bottom: var(--space-4);
 	}
-
 	.guide-meta-item {
 		display: inline-flex;
 		align-items: center;
@@ -402,46 +210,34 @@ const tagMeta = tags
 		font-size: var(--text-sm);
 		color: var(--color-text-muted);
 	}
-
-	/* ---- Responsive ---- */
-	@media (max-width: 640px) {
-		.post-card--feature {
-			grid-column: span 1;
-		}
-		.post-card--feature .card-title {
-			font-size: var(--text-2xl);
-		}
-		.post-card--feature .card-body {
-			padding: var(--space-5) var(--space-5) var(--space-6);
-		}
-		.card-title {
-			font-size: var(--text-xl);
-		}
+	.tag-pills {
+		display: flex;
+		gap: var(--space-1);
+		flex-wrap: wrap;
+		margin-bottom: var(--space-3);
 	}
-
-	/* ---- Dark mode polish ---- */
-	:global([data-theme="dark"]) .post-card {
-		background: rgba(255, 255, 255, 0.025);
+	.tag-pills .badge-tag {
+		font-size: var(--text-xs);
+		cursor: pointer;
+		text-decoration: none;
+		transition: all var(--transition-fast);
 	}
-
-	:global([data-theme="dark"]) .post-card:hover {
-		background: color-mix(in srgb, var(--pillar-color) 10%, rgba(255, 255, 255, 0.03));
+	.tag-pills .badge-tag:hover {
+		background: var(--color-border-strong);
+		color: var(--color-text-strong);
+		text-decoration: none;
 	}
-
-	:global([data-theme="dark"]) .post-card--guide {
-		background: rgba(255, 255, 255, 0.025);
-		border-color: rgba(255, 255, 255, 0.08);
+	.read-more {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--card-accent);
+		transition: gap var(--transition-fast), letter-spacing var(--transition-fast);
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
-
-	:global([data-theme="dark"]) .post-card--quote {
-		background: color-mix(in srgb, var(--pillar-color) 12%, rgba(255, 255, 255, 0.025));
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.pillar-dot,
-		.title-underline,
-		.feature-image img {
-			transition: none;
-		}
+	.post-card:hover .read-more {
+		gap: var(--space-2);
 	}
 </style>
