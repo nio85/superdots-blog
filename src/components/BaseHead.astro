@@ -26,7 +26,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <script is:inline>
 (function() {
 	var stored = localStorage.getItem('sd-theme');
-	var theme = stored || 'auto';
+	var theme = stored || 'dark';
 	document.documentElement.setAttribute('data-theme', theme);
 })();
 </script>
