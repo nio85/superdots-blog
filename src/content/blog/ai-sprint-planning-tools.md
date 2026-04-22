@@ -28,11 +28,11 @@ heroImage: "/images/blog/ai-sprint-planning-tools.webp"
 
 ---
 
-Most engineering teams fail sprints not because they write bad code, but because they commit to the wrong amount of work. The fix is not more discipline in planning meetings — it is better data. AI tools that pull from your actual velocity history give you an external anchor: what your team realistically ships, not what feels achievable on a Monday morning.
+Kahneman and Tversky's planning fallacy research — replicated consistently in software development contexts — shows that humans anchor to best-case scenarios when estimating. Teams assign story points based on "if everything goes well," mentally simulating the optimistic path rather than the average one. The result is predictable: sprints that look achievable on Monday are overcommitted by Wednesday.
 
-This is, at its core, a data access problem. Kahneman and Tversky's planning fallacy research — replicated consistently in software development contexts — shows that humans anchor to best-case scenarios when estimating, discounting past evidence in favor of optimism. AI tools break that pattern by surfacing what your team actually delivered, not what it intended to.
+This is a data access problem, not a discipline problem. Teams commit to the wrong amount of work because they estimate from memory and optimism, not from actual velocity history. AI tools break that pattern by surfacing what your team actually delivered across past sprints — an external anchor that optimism cannot override.
 
-The question worth asking before buying anything: do you need a paid tool, or does Claude or ChatGPT, combined with your existing Jira data, solve the problem for free? This guide starts with the free path and works toward the cases where dedicated tooling earns its cost.
+The question worth asking before buying anything: do you actually need a paid tool, or does Claude or ChatGPT, combined with your existing Jira data, solve the problem for free? This guide starts with the free path and works toward the cases where dedicated tooling earns its cost.
 
 ---
 
