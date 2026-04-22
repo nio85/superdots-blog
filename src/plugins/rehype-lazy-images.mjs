@@ -1,7 +1,7 @@
-import { visit } from 'unist-util-visit';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import sizeOf from 'image-size';
+import { visit } from 'unist-util-visit';
 
 const publicDir = join(process.cwd(), 'public');
 

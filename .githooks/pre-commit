@@ -1,17 +1,29 @@
 #!/usr/bin/env bash
-# Pre-commit hook: lint frontmatter on staged .md files in src/content/blog/
+# Pre-commit hook:
+#   1. Lint frontmatter on staged .md files in src/content/blog/
+#   2. Run biome check on staged JS/TS/JSON files
+# Both are fast — should add <500ms to commit time.
 
+set -e
+
+ROOT=$(git rev-parse --show-toplevel)
+
+# --- 1. Frontmatter lint on blog articles ---
 STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '^src/content/blog/.*\.md$' || true)
 
-if [ -z "$STAGED_MD" ]; then
-  exit 0
+if [ -n "$STAGED_MD" ]; then
+  FILES=""
+  for f in $STAGED_MD; do
+    FILES="$FILES $ROOT/$f"
+  done
+  node "$ROOT/scripts/lint-frontmatter.mjs" $FILES
 fi
 
-# Build full paths
-ROOT=$(git rev-parse --show-toplevel)
-FILES=""
-for f in $STAGED_MD; do
-  FILES="$FILES $ROOT/$f"
-done
+# --- 2. Biome check on staged code files ---
+STAGED_CODE=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|js|jsx|mjs|cjs|json)$' | grep -v '^scripts/' | grep -v '^src/content/' | grep -v 'pnpm-lock.yaml' | grep -v '^\.github/' || true)
 
-node "$ROOT/scripts/lint-frontmatter.mjs" $FILES
+if [ -n "$STAGED_CODE" ]; then
+  # Biome respects biome.json config, so just pass the files
+  cd "$ROOT"
+  echo "$STAGED_CODE" | xargs pnpm exec biome check --no-errors-on-unmatched
+fi

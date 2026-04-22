@@ -8,28 +8,28 @@
 /* --- Design Tokens --- */
 :root {
 	/* Brand Colors */
-	--sd-red: #E8363B;
-	--sd-red-dark: #CC2D32;
-	--sd-red-light: #FEE2E2;
-	--sd-navy: #0B1222;
-	--sd-navy-light: #1E293B;
-	--sd-teal: #14B8A6;
-	--sd-teal-dark: #0D9488;
-	--sd-teal-light: #CCFBF1;
-	--sd-amber: #F59E0B;
-	--sd-amber-light: #FEF3C7;
+	--sd-red: #e8363b;
+	--sd-red-dark: #cc2d32;
+	--sd-red-light: #fee2e2;
+	--sd-navy: #0b1222;
+	--sd-navy-light: #1e293b;
+	--sd-teal: #14b8a6;
+	--sd-teal-dark: #0d9488;
+	--sd-teal-light: #ccfbf1;
+	--sd-amber: #f59e0b;
+	--sd-amber-light: #fef3c7;
 
 	/* Neutrals */
-	--sd-gray-50: #F8FAFC;
-	--sd-gray-100: #F1F5F9;
-	--sd-gray-200: #E2E8F0;
-	--sd-gray-300: #CBD5E1;
-	--sd-gray-400: #94A3B8;
-	--sd-gray-500: #64748B;
+	--sd-gray-50: #f8fafc;
+	--sd-gray-100: #f1f5f9;
+	--sd-gray-200: #e2e8f0;
+	--sd-gray-300: #cbd5e1;
+	--sd-gray-400: #94a3b8;
+	--sd-gray-500: #64748b;
 	--sd-gray-600: #475569;
 	--sd-gray-700: #334155;
-	--sd-gray-800: #1E293B;
-	--sd-gray-900: #0F172A;
+	--sd-gray-800: #1e293b;
+	--sd-gray-900: #0f172a;
 
 	/* Semantic Aliases */
 	--color-primary: var(--sd-red);
@@ -39,27 +39,27 @@
 	--color-text: var(--sd-navy-light);
 	--color-text-strong: var(--sd-navy);
 	--color-text-muted: var(--sd-gray-500);
-	--color-bg: #FFFFFF;
+	--color-bg: #ffffff;
 	--color-bg-dim: var(--sd-gray-50);
 	--color-bg-code: var(--sd-gray-100);
 	--color-border: var(--sd-gray-200);
 	--color-border-strong: var(--sd-gray-300);
 
 	/* Typography */
-	--font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	--font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+	--font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
 
 	/* Type Scale (Major Third — 1.25) */
-	--text-xs: 0.75rem;    /* 12px */
-	--text-sm: 0.875rem;   /* 14px */
-	--text-base: 1rem;     /* 16px */
-	--text-lg: 1.125rem;   /* 18px */
-	--text-xl: 1.25rem;    /* 20px */
-	--text-2xl: 1.5rem;    /* 24px */
-	--text-3xl: 1.875rem;  /* 30px */
-	--text-4xl: 2.25rem;   /* 36px */
-	--text-5xl: 3rem;      /* 48px */
+	--text-xs: 0.75rem; /* 12px */
+	--text-sm: 0.875rem; /* 14px */
+	--text-base: 1rem; /* 16px */
+	--text-lg: 1.125rem; /* 18px */
+	--text-xl: 1.25rem; /* 20px */
+	--text-2xl: 1.5rem; /* 24px */
+	--text-3xl: 1.875rem; /* 30px */
+	--text-4xl: 2.25rem; /* 36px */
+	--text-5xl: 3rem; /* 48px */
 
 	/* Line Heights */
 	--leading-tight: 1.2;
@@ -75,17 +75,17 @@
 
 	/* Spacing Scale (4px base) */
 	--space-0-5: 0.125rem; /* 2px */
-	--space-1: 0.25rem;  /* 4px */
-	--space-2: 0.5rem;   /* 8px */
-	--space-3: 0.75rem;  /* 12px */
-	--space-4: 1rem;     /* 16px */
-	--space-5: 1.25rem;  /* 20px */
-	--space-6: 1.5rem;   /* 24px */
-	--space-8: 2rem;     /* 32px */
-	--space-10: 2.5rem;  /* 40px */
-	--space-12: 3rem;    /* 48px */
-	--space-16: 4rem;    /* 64px */
-	--space-20: 5rem;    /* 80px */
+	--space-1: 0.25rem; /* 4px */
+	--space-2: 0.5rem; /* 8px */
+	--space-3: 0.75rem; /* 12px */
+	--space-4: 1rem; /* 16px */
+	--space-5: 1.25rem; /* 20px */
+	--space-6: 1.5rem; /* 24px */
+	--space-8: 2rem; /* 32px */
+	--space-10: 2.5rem; /* 40px */
+	--space-12: 3rem; /* 48px */
+	--space-16: 4rem; /* 64px */
+	--space-20: 5rem; /* 80px */
 
 	/* Layout */
 	--max-width-prose: 720px;
@@ -115,7 +115,7 @@
 /* Applied via data-theme="dark" on <html>. System preference fallback below. */
 [data-theme="dark"] {
 	--color-text: var(--sd-gray-200);
-	--color-text-strong: #FFFFFF;
+	--color-text-strong: #ffffff;
 	--color-text-muted: var(--sd-gray-400);
 	--color-bg: var(--sd-navy);
 	--color-bg-dim: var(--sd-gray-900);
@@ -133,7 +133,7 @@
 @media (prefers-color-scheme: dark) {
 	[data-theme="auto"] {
 		--color-text: var(--sd-gray-200);
-		--color-text-strong: #FFFFFF;
+		--color-text-strong: #ffffff;
 		--color-text-muted: var(--sd-gray-400);
 		--color-bg: var(--sd-navy);
 		--color-bg-dim: var(--sd-gray-900);
@@ -152,12 +152,12 @@
 [data-theme="dark"] .badge-dept,
 [data-theme="dark"] .badge-tag {
 	background: rgba(232, 54, 59, 0.15);
-	color: #F87171;
+	color: #f87171;
 }
 
 [data-theme="dark"] .badge-usecase {
 	background: rgba(20, 184, 166, 0.15);
-	color: #5EEAD4;
+	color: #5eead4;
 }
 
 [data-theme="dark"] .badge-tag {
@@ -168,11 +168,11 @@
 @media (prefers-color-scheme: dark) {
 	[data-theme="auto"] .badge-dept {
 		background: rgba(232, 54, 59, 0.15);
-		color: #F87171;
+		color: #f87171;
 	}
 	[data-theme="auto"] .badge-usecase {
 		background: rgba(20, 184, 166, 0.15);
-		color: #5EEAD4;
+		color: #5eead4;
 	}
 	[data-theme="auto"] .badge-tag {
 		background: var(--sd-gray-800);
@@ -185,14 +185,14 @@
 	background: rgba(232, 54, 59, 0.2);
 }
 [data-theme="dark"] .space-bar span {
-	color: #F87171;
+	color: #f87171;
 }
 @media (prefers-color-scheme: dark) {
 	[data-theme="auto"] .space-bar {
 		background: rgba(232, 54, 59, 0.2);
 	}
 	[data-theme="auto"] .space-bar span {
-		color: #F87171;
+		color: #f87171;
 	}
 }
 
@@ -235,19 +235,24 @@ body {
 
 [data-theme="dark"] ::selection {
 	background: rgba(232, 54, 59, 0.3);
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
 	[data-theme="auto"] ::selection {
 		background: rgba(232, 54, 59, 0.3);
-		color: #FFFFFF;
+		color: #ffffff;
 	}
 }
 
 /* --- Typography --- */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: var(--font-display);
 	color: var(--color-text-strong);
 	line-height: var(--leading-tight);
@@ -417,12 +422,12 @@ hr {
 
 .btn-primary {
 	background: var(--color-primary);
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 .btn-primary:hover {
 	background: var(--color-primary-hover);
-	color: #FFFFFF;
+	color: #ffffff;
 	box-shadow: var(--shadow-md);
 	transform: translateY(-1px);
 }
@@ -435,7 +440,7 @@ hr {
 
 .btn-secondary:hover {
 	background: var(--color-primary);
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 .btn-ghost {
@@ -661,7 +666,7 @@ hr {
 
 .section-divider::before,
 .section-divider::after {
-	content: '';
+	content: "";
 	flex: 1;
 	height: 1px;
 	background: var(--color-border);
@@ -676,8 +681,7 @@ hr {
 .fade-in {
 	opacity: 0;
 	transform: translateY(16px);
-	transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-				transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+	transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.is-visible {
@@ -737,7 +741,7 @@ hr {
 }
 
 .faq-item::before {
-	content: '';
+	content: "";
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -770,7 +774,7 @@ hr {
 
 .faq-question::marker {
 	display: none;
-	content: '';
+	content: "";
 }
 
 .faq-question:hover {
