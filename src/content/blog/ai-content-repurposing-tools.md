@@ -1,7 +1,8 @@
 ---
-title: "8 Best AI Content Repurposing Tools in 2026 (Tested, With Pricing)"
+title: "8 Best AI Content Repurposing Tools (2026)"
 description: "Castmagic, Pictory, Descript, OpusClip, Repurpose.io, Taplio, Copy.ai, Lately — compared by use case with real 2026 pricing. Which one fits your workflow?"
 pubDate: "2026-04-07"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"
