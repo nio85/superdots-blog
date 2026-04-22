@@ -48,7 +48,7 @@ export async function onRequestPost(context) {
 
 	// Create contact in Mautic with pending consent status
 	const mauticHeaders = {
-		'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+		Authorization: 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
 		'Content-Type': 'application/json',
 	};
 	if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
@@ -113,7 +113,7 @@ export async function onRequestPost(context) {
 	const emailRes = await fetch('https://api.resend.com/emails', {
 		method: 'POST',
 		headers: {
-			'Authorization': `Bearer ${RESEND_API_KEY}`,
+			Authorization: `Bearer ${RESEND_API_KEY}`,
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
@@ -149,13 +149,9 @@ function isValidEmail(email) {
 
 async function createToken(email, timestamp, action, secret) {
 	const encoder = new TextEncoder();
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(secret),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign']
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, [
+		'sign',
+	]);
 	const data = encoder.encode(`${email}:${timestamp}:${action}`);
 	const sig = await crypto.subtle.sign('HMAC', key, data);
 	return bufferToHex(sig);

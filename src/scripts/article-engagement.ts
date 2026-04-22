@@ -59,7 +59,7 @@ function initScrollMilestones(meta: ArticleMeta) {
 			ticking = true;
 			window.requestAnimationFrame(check);
 		},
-		{ passive: true },
+		{ passive: true }
 	);
 }
 
@@ -160,7 +160,7 @@ function initInternalLinkClicks(meta: ArticleMeta) {
 				useCase: meta.useCase,
 			});
 		},
-		{ capture: true },
+		{ capture: true }
 	);
 }
 
@@ -187,7 +187,7 @@ function initOutboundClicks(meta: ArticleMeta) {
 				...meta,
 			});
 		},
-		{ capture: true },
+		{ capture: true }
 	);
 }
 

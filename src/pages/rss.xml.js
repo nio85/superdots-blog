@@ -1,11 +1,12 @@
-import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import rss from '@astrojs/rss';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { filterPublished } from '../lib/posts';
 
 export async function GET(context) {
-	const sortedPosts = filterPublished(await getCollection('blog'))
-		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	const sortedPosts = filterPublished(await getCollection('blog')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	);
 	const lastBuildDate = sortedPosts[0]?.data.pubDate ?? new Date();
 	const siteUrl = context.site.toString().replace(/\/$/, '');
 	return rss({
