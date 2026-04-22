@@ -28,9 +28,9 @@ heroImage: "/images/blog/ai-sprint-planning-tools.webp"
 
 ---
 
-Kahneman and Tversky's planning fallacy research — replicated consistently in software development contexts — shows that humans anchor to best-case scenarios when estimating. Teams assign story points based on "if everything goes well," mentally simulating the optimistic path rather than the average one. The result is predictable: sprints that look achievable on Monday are overcommitted by Wednesday.
+Most engineering teams fail sprints not because they write bad code, but because they commit to the wrong amount of work. They estimate from memory and optimism — not from actual velocity history. The result is predictable: sprints that look achievable on Monday are overcommitted by Wednesday.
 
-This is a data access problem, not a discipline problem. Teams commit to the wrong amount of work because they estimate from memory and optimism, not from actual velocity history. AI tools break that pattern by surfacing what your team actually delivered across past sprints — an external anchor that optimism cannot override.
+Kahneman and Tversky's planning fallacy research — replicated consistently in software development contexts — explains why: humans anchor to best-case scenarios when estimating, mentally simulating the optimistic path rather than the average one. This is a data access problem, not a discipline problem. AI tools break that pattern by surfacing what your team actually delivered across past sprints — an external anchor that optimism cannot override.
 
 The question worth asking before buying anything: do you actually need a paid tool, or does Claude or ChatGPT, combined with your existing Jira data, solve the problem for free? This guide starts with the free path and works toward the cases where dedicated tooling earns its cost.
 
