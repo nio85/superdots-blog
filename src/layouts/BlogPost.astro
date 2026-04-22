@@ -10,15 +10,15 @@ import FaqAccordion from '../components/FaqAccordion.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import ArticleSchema from '../components/ArticleSchema.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import MidPostCTA from '../components/MidPostCTA.astro';
 import type { CollectionEntry } from 'astro:content';
-import { TAGS, PILLARS } from '../consts';
-import { authors } from '../data/authors';
+import { TAGS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
 const { title, description, pubDate, updatedDate, author, department, useCase, contentPillar, heroImage, tags, faqs, noindex, slug: propSlug, readingTime } = Astro.props;
-
-const pillarLabel = PILLARS.find(p => p.slug === (contentPillar || 'dot-by-dot'))?.label || 'Dot by Dot';
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -27,7 +27,6 @@ const ogImageSrc = heroImage
 		: heroImage.src
 	: undefined;
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://superdots.sh';
 const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
 
 const tagMeta = (tags ?? [])
@@ -35,8 +34,6 @@ const tagMeta = (tags ?? [])
 	.filter(Boolean);
 
 const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const authorData = authors[author] || authors["Superdots Team"];
-const isPersonalAuthor = author === "Luca Bartoccini";
 ---
 
 <!doctype html>
@@ -44,69 +41,16 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 	<head>
 		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
 		{noindex && <meta name="robots" content="noindex, follow" />}
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "Article",
-			"headline": title,
-			"description": description,
-			"author": isPersonalAuthor
-				? { "@type": "Person", "name": author, "url": `${siteUrl}${authorData.url}` }
-				: { "@type": "Organization", "name": author },
-			"datePublished": pubDate.toISOString(),
-			...(updatedDate && { "dateModified": updatedDate.toISOString() }),
-			...(ogImageSrc && { "image": new URL(ogImageSrc, Astro.url).toString() }),
-			"publisher": {
-				"@type": "Organization",
-				"name": "Superdots",
-				"url": siteUrl,
-				"logo": {
-					"@type": "ImageObject",
-					"url": `${siteUrl}/favicon.svg`
-				}
-			},
-			"articleSection": pillarLabel,
-			"mainEntityOfPage": {
-				"@type": "WebPage",
-				"@id": Astro.url.toString()
-			}
-		})} />
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "BreadcrumbList",
-			"itemListElement": [
-				{
-					"@type": "ListItem",
-					"position": 1,
-					"name": "Home",
-					"item": siteUrl
-				},
-				{
-					"@type": "ListItem",
-					"position": 2,
-					"name": "Blog",
-					"item": `${siteUrl}/blog`
-				},
-				{
-					"@type": "ListItem",
-					"position": 3,
-					"name": title
-				}
-			]
-		})} />
-		{faqs && faqs.length > 0 && (
-			<script type="application/ld+json" set:html={JSON.stringify({
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				"mainEntity": faqs.map((faq: { question: string; answer: string }) => ({
-					"@type": "Question",
-					"name": faq.question,
-					"acceptedAnswer": {
-						"@type": "Answer",
-						"text": faq.answer
-					}
-				}))
-			})} />
-		)}
+		<ArticleSchema
+			title={title}
+			description={description}
+			pubDate={pubDate}
+			updatedDate={updatedDate}
+			author={author}
+			contentPillar={contentPillar}
+			heroImageSrc={ogImageSrc}
+			faqs={faqs}
+		/>
 	</head>
 	<body data-article-slug={slug} data-article-department={department || ''} data-article-use-case={useCase || ''}>
 		<Header />
@@ -179,125 +123,13 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 					<FaqAccordion faqs={faqs} />
 				)}
 			</article>
-			<aside class="author-box">
-				<img src={authorData.avatar} alt={authorData.name} class:list={["author-box-avatar", { "author-box-avatar--icon": !isPersonalAuthor }]} width="40" height="40" loading="lazy" />
-				<div class="author-box-info">
-					<a href={authorData.url} class="author-box-name">{authorData.name}</a>
-					<span class="author-box-role">{authorData.role}</span>
-					<p class="author-box-bio">{authorData.bio}</p>
-				</div>
-			</aside>
+			<AuthorBox author={author} />
 			<NewsletterForm variant="banner" source="article-end" />
 			<RelatedArticles currentSlug={slug} department={department} useCase={useCase} tags={tags ?? []} />
 		</main>
 		<Footer />
 		<CookieConsent />
-		<!-- Mid-article CTA template (injected by JS at ~40% of content) -->
-		<template id="midpost-cta-template" data-department={department}>
-			<aside class="newsletter newsletter--midpost" data-source="article-inline" aria-label="Newsletter signup">
-				<div class="newsletter-dots" aria-hidden="true"></div>
-				<div class="newsletter-glow" aria-hidden="true"></div>
-				<div class="newsletter-inner">
-					<div class="newsletter-text">
-						<span class="superdot"></span>
-						<h3 class="newsletter-heading"></h3>
-						<p class="newsletter-desc"></p>
-					</div>
-					<form class="newsletter-form" aria-label="Newsletter signup">
-						<div class="newsletter-field">
-							<label for="newsletter-email-midpost" class="sr-only">Email address</label>
-							<input type="email" id="newsletter-email-midpost" name="email" placeholder="you@company.com" required autocomplete="email" data-clarity-mask="true" />
-							<button type="submit" class="btn btn-primary">Count me in</button>
-						</div>
-						<p class="newsletter-legal">No spam. We respect your <a href="/privacy#newsletter">privacy</a>. Unsubscribe anytime.</p>
-						<div class="newsletter-status" role="status" aria-live="polite"></div>
-					</form>
-				</div>
-			</aside>
-		</template>
-		<script>
-			// Inject mid-article CTA at ~40% of prose content
-			(function() {
-				const prose = document.getElementById('article-prose');
-				const tpl = document.getElementById('midpost-cta-template') as HTMLTemplateElement | null;
-				if (!prose || !tpl) return;
-
-				const children = Array.from(prose.children);
-				if (children.length < 6) return; // Skip short articles
-
-				const dept = tpl.dataset.department || '';
-				const deptCopy: Record<string, { heading: string; desc: string }> = {
-					sales: { heading: 'AI workflows for sales teams, every Tuesday', desc: 'Prospecting, objection handling, pipeline automation — one hands-on guide per week.' },
-					marketing: { heading: 'AI workflows for marketing teams, every Tuesday', desc: 'Content, campaigns, analytics — one hands-on guide per week.' },
-					hr: { heading: 'AI workflows for HR teams, every Tuesday', desc: 'Recruiting, onboarding, people ops — one hands-on guide per week.' },
-					finance: { heading: 'AI workflows for finance teams, every Tuesday', desc: 'Forecasting, reporting, compliance — one hands-on guide per week.' },
-					operations: { heading: 'AI workflows for ops teams, every Tuesday', desc: 'Process automation, supply chain, resource planning — one hands-on guide per week.' },
-					legal: { heading: 'AI workflows for legal teams, every Tuesday', desc: 'Contract review, research, compliance — one hands-on guide per week.' },
-					engineering: { heading: 'AI workflows for engineering teams, every Tuesday', desc: 'Code review, debugging, infrastructure — one hands-on guide per week.' },
-					design: { heading: 'AI workflows for design teams, every Tuesday', desc: 'Prototyping, asset generation, user research — one hands-on guide per week.' },
-					'customer-support': { heading: 'AI workflows for support teams, every Tuesday', desc: 'Ticket triage, knowledge base, response drafting — one hands-on guide per week.' },
-				};
-				const copy = deptCopy[dept] || { heading: 'Enjoying this? Get one like it every week', desc: 'Practical AI guides for your team — delivered every Tuesday.' };
-
-				const targetIndex = Math.floor(children.length * 0.4);
-				// Find nearest heading break for clean placement
-				let insertIndex = targetIndex;
-				for (let i = targetIndex; i < Math.min(targetIndex + 4, children.length); i++) {
-					const tag = children[i].tagName;
-					if (tag === 'H2' || tag === 'H3') {
-						insertIndex = i;
-						break;
-					}
-				}
-
-				const cta = tpl.content.cloneNode(true) as DocumentFragment;
-				const heading = cta.querySelector('.newsletter-heading');
-				const desc = cta.querySelector('.newsletter-desc');
-				if (heading) { heading.innerHTML = copy.heading + '<span class="dot-accent">.</span>'; }
-				if (desc) { desc.textContent = copy.desc; }
-				children[insertIndex].before(cta);
-
-				// Bind form submit for the injected CTA
-				const injectedForm = prose.querySelector('.newsletter--midpost .newsletter-form');
-				if (injectedForm) {
-					injectedForm.addEventListener('submit', async (e) => {
-						e.preventDefault();
-						const el = e.currentTarget as HTMLFormElement;
-						const input = el.querySelector('input[type="email"]') as HTMLInputElement;
-						const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
-						const status = el.querySelector('.newsletter-status') as HTMLElement;
-						const email = input.value.trim();
-						if (!email) return;
-						btn.disabled = true;
-						btn.textContent = 'Sending...';
-						status.textContent = '';
-						status.className = 'newsletter-status';
-						try {
-							const res = await fetch('/api/subscribe', {
-								method: 'POST',
-								headers: { 'Content-Type': 'application/json' },
-								body: JSON.stringify({ email, source: 'article-inline' }),
-							});
-							const data = await res.json();
-							if (res.ok) {
-								status.textContent = 'Check your inbox to confirm.';
-								status.classList.add('newsletter-status--success');
-								input.value = '';
-							} else {
-								status.textContent = data.error || 'Something went wrong.';
-								status.classList.add('newsletter-status--error');
-							}
-						} catch {
-							status.textContent = 'Network error. Please try again.';
-							status.classList.add('newsletter-status--error');
-						} finally {
-							btn.disabled = false;
-							btn.textContent = 'Count me in';
-						}
-					});
-				}
-			})();
-		</script>
+		<MidPostCTA department={department} />
 
 		<script>
 			import '../scripts/article-engagement.ts';
@@ -684,239 +516,4 @@ const isPersonalAuthor = author === "Luca Bartoccini";
 		}
 	}
 
-	/* Midpost CTA — injected from <template>, needs :global since elements lack scoped attributes */
-	:global(.newsletter--midpost) {
-		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		padding: var(--space-10) var(--space-8);
-		margin: var(--space-12) 0;
-		position: relative;
-		overflow: hidden;
-		text-align: center;
-	}
-	:global(.newsletter--midpost)::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	:global(.newsletter--midpost)::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	:global(.newsletter--midpost .newsletter-dots) {
-		position: absolute;
-		bottom: -10px;
-		left: -10px;
-		width: 100px;
-		height: 100px;
-		background-image: radial-gradient(circle, var(--color-border-strong) 1px, transparent 1px);
-		background-size: 14px 14px;
-		opacity: 0.2;
-		pointer-events: none;
-	}
-	:global(.newsletter--midpost .newsletter-glow) {
-		position: absolute;
-		top: -30%;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 400px;
-		height: 400px;
-		border-radius: 50%;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
-		filter: blur(40px);
-		pointer-events: none;
-	}
-	:global(.newsletter--midpost .newsletter-inner) {
-		max-width: 440px;
-		margin: 0 auto;
-		position: relative;
-		z-index: 1;
-	}
-	:global(.newsletter--midpost .newsletter-text) {
-		margin-bottom: var(--space-6);
-	}
-	:global(.newsletter--midpost .newsletter-text .superdot) {
-		display: inline-block;
-		width: 10px;
-		height: 10px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		margin-bottom: var(--space-3);
-		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
-	}
-	:global(.newsletter--midpost .newsletter-heading) {
-		font-family: var(--font-display);
-		font-size: var(--text-2xl);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-strong);
-		margin: 0 0 var(--space-2);
-		letter-spacing: -0.025em;
-		line-height: var(--leading-tight);
-	}
-	:global(.newsletter--midpost .newsletter-desc) {
-		color: var(--color-text-muted);
-		font-size: var(--text-sm);
-		letter-spacing: 0.02em;
-		text-transform: uppercase;
-		font-weight: var(--weight-medium);
-		opacity: 0.7;
-		margin: 0;
-	}
-	:global(.newsletter--midpost .newsletter-field) {
-		display: flex;
-		gap: var(--space-2);
-		justify-content: center;
-	}
-	:global(.newsletter--midpost .newsletter-field input) {
-		flex: 1;
-		max-width: 240px;
-		padding: var(--space-3) var(--space-4);
-		font-size: var(--text-base);
-		font-family: inherit;
-		border: 2px solid var(--color-border);
-		border-radius: var(--radius-md);
-		background: var(--color-bg);
-		color: var(--color-text);
-		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-		min-width: 0;
-	}
-	:global(.newsletter--midpost .newsletter-field input:focus) {
-		outline: none;
-		border-color: var(--color-primary);
-		box-shadow: var(--shadow-glow);
-	}
-	:global(.newsletter--midpost .newsletter-field input::placeholder) {
-		color: var(--color-text-muted);
-		opacity: 0.6;
-	}
-	:global(.newsletter--midpost .newsletter-field button) {
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-	:global(.newsletter--midpost .newsletter-legal) {
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		margin: var(--space-2) 0 0;
-		line-height: var(--leading-relaxed);
-		text-align: center;
-	}
-	:global(.newsletter--midpost .newsletter-legal a) {
-		color: var(--color-text-muted);
-		text-decoration: underline;
-		text-underline-offset: 2px;
-	}
-	:global(.newsletter--midpost .newsletter-legal a:hover) {
-		color: var(--color-primary);
-	}
-	:global(.newsletter--midpost .newsletter-status) {
-		font-size: var(--text-sm);
-		margin-top: var(--space-2);
-		min-height: 1.4em;
-		text-align: center;
-	}
-	:global(.newsletter--midpost .newsletter-status--success) {
-		color: var(--sd-teal, #14B8A6);
-	}
-	:global(.newsletter--midpost .newsletter-status--error) {
-		color: var(--color-primary);
-	}
-	/* Dark mode adjustments for midpost */
-	:global([data-theme="dark"] .newsletter--midpost) {
-		background: linear-gradient(135deg, var(--color-bg-dim) 0%, rgba(15, 23, 42, 0.8) 50%, var(--color-bg-dim) 100%);
-		border-color: var(--color-border);
-	}
-	:global([data-theme="dark"] .newsletter--midpost .newsletter-glow) {
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
-	}
-	@media (prefers-color-scheme: dark) {
-		:global([data-theme="auto"] .newsletter--midpost) {
-			background: linear-gradient(135deg, var(--color-bg-dim) 0%, rgba(15, 23, 42, 0.8) 50%, var(--color-bg-dim) 100%);
-			border-color: var(--color-border);
-		}
-		:global([data-theme="auto"] .newsletter--midpost .newsletter-glow) {
-			background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
-		}
-	}
-	/* Midpost mobile */
-	@media (max-width: 480px) {
-		:global(.newsletter--midpost) {
-			padding: var(--space-8) var(--space-5);
-		}
-		:global(.newsletter--midpost .newsletter-heading) {
-			font-size: var(--text-xl);
-		}
-		:global(.newsletter--midpost .newsletter-field) {
-			flex-direction: column;
-		}
-		:global(.newsletter--midpost .newsletter-field input) {
-			max-width: 100%;
-		}
-	}
-
-	/* Author box */
-	.author-box {
-		display: flex;
-		gap: var(--space-3);
-		align-items: center;
-		padding: var(--space-6);
-		margin: var(--space-8) auto;
-		max-width: var(--max-width-prose);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-lg);
-		background: var(--color-bg-dim);
-	}
-	.author-box-avatar {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		object-fit: cover;
-		flex-shrink: 0;
-	}
-	.author-box-avatar--icon {
-		border-radius: 0;
-		padding: var(--space-1);
-	}
-	.author-box-name {
-		font-family: var(--font-display);
-		font-weight: var(--weight-semibold);
-		font-size: var(--text-lg);
-		color: var(--color-text);
-		text-decoration: none;
-	}
-	.author-box-name:hover {
-		color: var(--sd-red);
-	}
-	.author-box-role {
-		display: block;
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		margin-bottom: var(--space-2);
-	}
-	.author-box-bio {
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		line-height: 1.5;
-		margin: 0;
-	}
-	@media (max-width: 480px) {
-		.author-box {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
-	}
 </style>
