@@ -24,7 +24,7 @@ let win: TestWindow;
 beforeEach(() => {
 	const freshWindow = new Window();
 	const w = freshWindow as unknown as Record<string, unknown>;
-	globalThis.window = w as typeof globalThis.window;
+	globalThis.window = w as unknown as typeof globalThis.window;
 	globalThis.document = w.document as typeof globalThis.document;
 	globalThis.localStorage = w.localStorage as Storage;
 	// biome-ignore lint/security/noGlobalEval: test fixture runs the production snippet in an isolated window
