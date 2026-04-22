@@ -30,6 +30,10 @@ jobs:
       # Build
       - run: npm run build
 
+      # CF Pages 301-redirects /404→/404/ but has no 404/index.html, causing a loop.
+      # Providing both files lets CF serve /404/ directly.
+      - run: mkdir -p dist/404 && cp dist/404.html dist/404/index.html
+
       - uses: actions/upload-artifact@v4
         with:
           name: dist
