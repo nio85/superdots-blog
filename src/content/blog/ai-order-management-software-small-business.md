@@ -1,7 +1,8 @@
 ---
-title: "AI Order Management Software for Small Business: What It Does, What It Costs, Whether You Need It"
+title: "AI Order Management Software for Small Business"
 description: "Most SMBs don't need enterprise OMS. Here's how to figure out what you actually need — and the free and paid tools that actually work."
 pubDate: "2026-04-24"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"

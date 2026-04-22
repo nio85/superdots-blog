@@ -1,7 +1,8 @@
 ---
-title: "AI A/B Testing Tools in 2026: What AI Actually Adds (And When It Doesn't Help)"
+title: "AI A/B Testing Tools in 2026: What They Add"
 description: "From multi-armed bandits to hypothesis generation: what AI genuinely changes about A/B testing, which tools do it best, and when traditional split testing still wins."
 pubDate: "2026-04-22"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "marketing"
 useCase: "analysis"

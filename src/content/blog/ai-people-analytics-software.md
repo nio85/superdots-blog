@@ -1,7 +1,8 @@
 ---
-title: "AI People Analytics Software: The Honest Guide for Teams Under 200"
+title: "AI People Analytics Software: Teams Under 200"
 description: "Most people analytics tools are built for enterprise HR. Here's what actually works for smaller teams — including a free Google Sheets + Claude workflow."
 pubDate: "2026-04-29"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "hr"

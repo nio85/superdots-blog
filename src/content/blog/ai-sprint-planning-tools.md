@@ -1,7 +1,8 @@
 ---
-title: 'Best AI Sprint Planning Tools in 2026 (Including the Free Workflow)'
+title: "Best AI Sprint Planning Tools in 2026"
 description: "Compare the best AI sprint planning tools for engineering teams in 2026 — from free Claude/ChatGPT workflows inside Jira to paid dedicated tools. With pricing, honest limitations, and a team-size decision guide."
 pubDate: "2026-04-30"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"

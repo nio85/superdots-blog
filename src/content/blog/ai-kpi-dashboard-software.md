@@ -1,7 +1,8 @@
 ---
-title: "AI KPI Dashboard Software for Operations Teams (2026): Track What Actually Matters"
+title: "AI KPI Dashboard Software for Operations (2026)"
 description: "The best AI KPI dashboard software for operations teams in 2026. Compare Databox, Geckoboard, Tableau Pulse, and more — with honest benchmarks and a free starting point."
 pubDate: "2026-04-23"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "operations"
 useCase: "analysis"
