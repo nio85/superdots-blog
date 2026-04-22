@@ -1,0 +1,138 @@
+---
+interface Props {
+	variant: 'inline' | 'banner' | 'compact' | 'hero' | 'midpost';
+}
+
+const { variant } = Astro.props;
+
+const btnText: Record<string, string> = {
+	banner: 'Subscribe',
+	inline: 'Send it to me',
+	compact: 'Subscribe free',
+	hero: 'Join free',
+	midpost: 'Send me the workflow',
+};
+---
+
+<form class:list={['newsletter-form', `newsletter-form--${variant}`]} aria-label="Newsletter signup">
+	<div class="newsletter-field">
+		<label for={`newsletter-email-${variant}`} class="sr-only">Email address</label>
+		<input
+			type="email"
+			id={`newsletter-email-${variant}`}
+			name="email"
+			placeholder={variant === 'compact' ? 'your@email.com' : 'you@company.com'}
+			required
+			autocomplete="email"
+			aria-describedby={`newsletter-legal-${variant}`}
+			data-clarity-mask="true"
+		/>
+		<button type="submit" class="btn btn-primary">{btnText[variant] || 'Subscribe'}</button>
+	</div>
+	{variant !== 'compact' && variant !== 'hero' && (
+		<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
+			No spam. We respect your <a href="/privacy#newsletter">privacy</a>. Unsubscribe anytime.
+		</p>
+	)}
+	{(variant === 'compact' || variant === 'hero') && (
+		<p class="newsletter-legal newsletter-legal--compact" id={`newsletter-legal-${variant}`}>
+			No spam, ever. <a href="/privacy#newsletter">Privacy</a>.
+		</p>
+	)}
+	<div class="newsletter-status" role="status" aria-live="polite"></div>
+</form>
+
+<script>
+	import '../scripts/newsletter-submit';
+</script>
+
+<style>
+	.newsletter-field {
+		display: flex;
+		gap: var(--space-2);
+	}
+	.newsletter-field input {
+		flex: 1;
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--text-base);
+		font-family: inherit;
+		border: 2px solid var(--color-border);
+		border-radius: var(--radius-md);
+		background: var(--color-bg);
+		color: var(--color-text);
+		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+		min-width: 0;
+	}
+	.newsletter-field input:focus {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: var(--shadow-glow);
+	}
+	.newsletter-field input::placeholder {
+		color: var(--color-text-muted);
+		opacity: 0.6;
+	}
+	.newsletter-field button {
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+	.newsletter-legal {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: var(--space-2) 0 0;
+		line-height: var(--leading-relaxed);
+	}
+	.newsletter-legal a {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.newsletter-legal a:hover {
+		color: var(--color-primary);
+	}
+	.newsletter-legal--compact {
+		font-size: var(--text-xs);
+		opacity: 0.7;
+	}
+	.newsletter-status {
+		font-size: var(--text-sm);
+		margin-top: var(--space-2);
+		min-height: 1.4em;
+	}
+	.newsletter-status--success {
+		color: var(--sd-teal, #14B8A6);
+	}
+	.newsletter-status--error {
+		color: var(--color-primary);
+	}
+
+	/* --- Banner/midpost variant overrides --- */
+	.newsletter-form--banner .newsletter-field,
+	.newsletter-form--midpost .newsletter-field { justify-content: center; }
+	.newsletter-form--banner .newsletter-field input,
+	.newsletter-form--midpost .newsletter-field input { max-width: 240px; }
+	.newsletter-form--banner .newsletter-legal,
+	.newsletter-form--banner .newsletter-status,
+	.newsletter-form--midpost .newsletter-legal,
+	.newsletter-form--midpost .newsletter-status { text-align: center; }
+
+	/* --- Compact variant overrides --- */
+	.newsletter-form--compact .newsletter-field input { padding: var(--space-2) var(--space-3); font-size: var(--text-sm); border-width: 1px; }
+	.newsletter-form--compact .newsletter-field button { padding: var(--space-2) var(--space-4); font-size: var(--text-sm); }
+
+	/* --- Hero variant overrides --- */
+	.newsletter-form--hero .newsletter-field { justify-content: center; }
+	.newsletter-form--hero .newsletter-field input { max-width: 260px; border-color: var(--color-border-strong); background: var(--color-bg); border-radius: var(--radius-md); }
+	.newsletter-form--hero .newsletter-field button { padding: var(--space-3) var(--space-6); border-radius: var(--radius-md); }
+	.newsletter-form--hero .newsletter-legal,
+	.newsletter-form--hero .newsletter-status { text-align: center; }
+
+	@media (max-width: 480px) {
+		.newsletter-field {
+			flex-direction: column;
+		}
+		.newsletter-form--midpost .newsletter-field input,
+		.newsletter-form--banner .newsletter-field input,
+		.newsletter-form--hero .newsletter-field input { max-width: 100%; }
+	}
+</style>
