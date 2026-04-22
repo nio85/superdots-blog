@@ -135,9 +135,7 @@ The practical question is whether your team's planning problems are large enough
 | ZenHub | $8.33/seat/mo | Automated sprint planning, AI prioritization | ✅ (GitHub Projects) | ✅ | GitHub-native teams |
 | Linear AI | $16/seat/mo (Business) | AI suggestions, auto-labeling | ❌ (native Linear only) | Partial | Startups on modern stack |
 | Jira AI (Atlassian Intelligence) | Included in Premium ($17.65+/seat/mo) | Sprint summarization, capacity warnings | ✅ (native) | Partial | Teams already on Jira Premium |
-| Notion AI | $10/seat/mo add-on | Meeting notes, sprint recaps | ❌ | ❌ | Teams using Notion for planning docs |
 | Baseliner.ai | ~$39/mo flat | Deep estimation calibration | ✅ (Jira + GitHub) | ✅✅ | Teams prioritizing estimate accuracy |
-| ClickUp AI | $7/seat/mo add-on | Task automation, sprint summaries | Partial | Partial | Teams already on ClickUp |
 
 ### ZenHub
 
