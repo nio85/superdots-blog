@@ -19,6 +19,7 @@ faqs:
     answer: "Paste your last 3 sprints' velocity data into Claude or ChatGPT with this prompt: 'Our last three sprint velocities were [X, Y, Z] story points. We have [N] developers with [holiday/PTO days] this sprint. Our backlog items total [X] story points. Flag any overcommitment risk and suggest a realistic sprint capacity.' Then cross-check the AI's output against your team's manual gut-check before committing."
   - question: "Is AI sprint planning worth it for a 5-person team?"
     answer: "The free Claude/ChatGPT workflow: yes, it takes 30 minutes to set up and saves time on every sprint. A paid dedicated tool: probably not until your team reaches 10+ people. The ROI calculus changes at scale — more developers mean more backlog items, more historical data for the AI to learn from, and more coordination overhead that automation genuinely reduces."
+heroImage: "/images/blog/ai-sprint-planning-tools.webp"
 ---
 
 > **What is AI sprint planning?** A workflow where AI tools analyze team velocity, estimate story points, and flag capacity risks — either through native integrations with tools like Jira and GitHub, or via LLM prompts (Claude, ChatGPT). The goal is to replace intuition-based commitments with data-backed sprint plans that teams can actually complete.
