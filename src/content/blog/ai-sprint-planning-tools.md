@@ -202,7 +202,3 @@ Based on the patterns across user feedback and tool documentation, a practical d
 AI sprint planning fits alongside [AI code review](/blog/ai-code-review-tools) tools and [AI pair programming](/blog/ai-pair-programming) assistants as part of a broader set of [AI tools for engineering](/blog/best-ai-tools-for-engineering) that reduce coordination overhead without replacing engineering judgment. The [AI project management](/blog/ai-project-management-features-guide) category overlaps significantly — sprint planning tools are a subset of it. And faster sprints enabled by better planning compound with [AI DevOps tools](/blog/ai-devops-tools) that reduce pipeline and incident overhead.
 
 The common thread: AI works best as a data layer that makes existing conversations more grounded — not as a replacement for the conversations themselves.
-
----
-
-*Post-publish note: add `ai sprint planning tools` to SerpBear tracking (tier2, engineering).*
