@@ -1,0 +1,85 @@
+---
+/**
+ * Author attribution box rendered at the end of every blog post.
+ * Pulls avatar/name/role/bio from src/data/authors.ts via the author slug.
+ */
+import { authors } from '../data/authors';
+
+interface Props {
+	author: string;
+}
+
+const { author } = Astro.props;
+const authorData = authors[author] || authors['Superdots Team'];
+const isPersonalAuthor = author === 'Luca Bartoccini';
+---
+
+<aside class="author-box">
+	<img
+		src={authorData.avatar}
+		alt={authorData.name}
+		class:list={['author-box-avatar', { 'author-box-avatar--icon': !isPersonalAuthor }]}
+		width="40"
+		height="40"
+		loading="lazy"
+	/>
+	<div class="author-box-info">
+		<a href={authorData.url} class="author-box-name">{authorData.name}</a>
+		<span class="author-box-role">{authorData.role}</span>
+		<p class="author-box-bio">{authorData.bio}</p>
+	</div>
+</aside>
+
+<style>
+	.author-box {
+		display: flex;
+		gap: var(--space-3);
+		align-items: center;
+		padding: var(--space-6);
+		margin: var(--space-8) auto;
+		max-width: var(--max-width-prose);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg-dim);
+	}
+	.author-box-avatar {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+	.author-box-avatar--icon {
+		border-radius: 0;
+		padding: var(--space-1);
+	}
+	.author-box-name {
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-size: var(--text-lg);
+		color: var(--color-text);
+		text-decoration: none;
+	}
+	.author-box-name:hover {
+		color: var(--sd-red);
+	}
+	.author-box-role {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		margin-bottom: var(--space-2);
+	}
+	.author-box-bio {
+		font-size: var(--text-sm);
+		color: var(--color-text-muted);
+		line-height: 1.5;
+		margin: 0;
+	}
+	@media (max-width: 480px) {
+		.author-box {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+</style>

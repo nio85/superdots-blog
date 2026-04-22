@@ -14,9 +14,7 @@ import type { CollectionEntry } from 'astro:content';
  *   import { filterPublished } from '../../lib/posts';
  *   const posts = filterPublished(await getCollection('blog'));
  */
-export function filterPublished(
-  posts: CollectionEntry<'blog'>[]
-): CollectionEntry<'blog'>[] {
-  const now = new Date();
-  return posts.filter((post) => post.data.pubDate <= now);
+export function filterPublished(posts: CollectionEntry<'blog'>[]): CollectionEntry<'blog'>[] {
+	const now = new Date();
+	return posts.filter((post) => post.data.pubDate <= now);
 }
