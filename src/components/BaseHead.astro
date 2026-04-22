@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL, REDDIT_PIXEL_ID } from '../consts';
+import { consentInlineScript } from '../lib/consent-inline';
 
 interface Props {
 	title: string;
@@ -31,38 +32,23 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 })();
 </script>
 
+<!-- Consent helper: defines window.SD_readConsent + window.SD_isOptedOut -->
+<script is:inline set:html={consentInlineScript} />
+
 <!-- Preconnect to third-party origins used by analytics (only after cookie consent) -->
 <script is:inline>
-(function() {
-	if (localStorage.getItem('sd-analytics-optout') === 'true') return;
-	var hasAnalyticsConsent = false;
-	// Primary: sd-consent-v2 (custom implementation)
-	try {
-		var raw = localStorage.getItem('sd-consent-v2');
-		if (raw) {
-			var p = JSON.parse(raw);
-			if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
-				hasAnalyticsConsent = !!(p.categories && p.categories.analytics);
-			}
-		}
-	} catch(e) {}
-	// Legacy fallbacks
-	if (!hasAnalyticsConsent) {
-		var pcMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-		if (pcMatch) {
-			try { hasAnalyticsConsent = (JSON.parse(decodeURIComponent(pcMatch[1])).categories || []).indexOf('analytics') !== -1; } catch(e) {}
-		} else {
-			hasAnalyticsConsent = localStorage.getItem('sd-cookie-consent') === 'accepted';
-		}
-	}
-	if (!hasAnalyticsConsent) return;
-	var pc = document.createElement('link');
-	pc.rel = 'preconnect'; pc.href = 'https://www.googletagmanager.com'; pc.crossOrigin = '';
-	document.head.appendChild(pc);
-	var dp = document.createElement('link');
-	dp.rel = 'dns-prefetch'; dp.href = 'https://www.clarity.ms';
-	document.head.appendChild(dp);
-})();
+	(() => {
+		if (window.SD_isOptedOut() || !window.SD_readConsent().analytics) return;
+		const pc = document.createElement('link');
+		pc.rel = 'preconnect';
+		pc.href = 'https://www.googletagmanager.com';
+		pc.crossOrigin = '';
+		document.head.appendChild(pc);
+		const dp = document.createElement('link');
+		dp.rel = 'dns-prefetch';
+		dp.href = 'https://www.clarity.ms';
+		document.head.appendChild(dp);
+	})();
 </script>
 
 <!-- Fonts: self-hosted variable (latin subset) — only preload critical fonts -->
@@ -130,120 +116,61 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 
 <!-- Google Analytics (GA4) — loaded only after cookie consent; skipped entirely when opted out -->
 <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
-if (localStorage.getItem('sd-analytics-optout') !== 'true') {
-	window.SD_GA_ID = gaId;
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	window.gtag = gtag;
+	if (!window.SD_isOptedOut()) {
+		window.SD_GA_ID = gaId;
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		window.gtag = gtag;
 
-	// Consent Mode v2: default all consent to denied (required for EU/EEA traffic)
-	gtag('consent', 'default', {
-		analytics_storage: 'denied',
-		ad_storage: 'denied',
-		ad_user_data: 'denied',
-		ad_personalization: 'denied',
-		wait_for_update: 500
-	});
+		// Consent Mode v2: default all consent to denied (required for EU/EEA traffic)
+		gtag('consent', 'default', {
+			analytics_storage: 'denied',
+			ad_storage: 'denied',
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			wait_for_update: 500,
+		});
 
-	(function() {
 		// Always load gtag.js so consent mode signals are sent to GA4
-		var s = document.createElement('script');
+		const s = document.createElement('script');
 		s.async = true;
 		s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
 		document.head.appendChild(s);
 		gtag('js', new Date());
 		gtag('config', gaId);
 
-		// Primary: sd-consent-v2 (custom implementation)
-		var storedCats = null;
-		try {
-			var raw = localStorage.getItem('sd-consent-v2');
-			if (raw) {
-				var p = JSON.parse(raw);
-				if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
-					storedCats = p.categories || null;
-				}
-			}
-		} catch(e) {}
-		if (storedCats) {
-			if (storedCats.analytics) {
-				gtag('consent', 'update', { analytics_storage: 'granted' });
-			}
-			if (storedCats.marketing) {
-				gtag('consent', 'update', {
-					ad_storage: 'granted',
-					ad_user_data: 'granted',
-					ad_personalization: 'granted'
-				});
-			}
-		} else {
-			// Legacy fallbacks (v3 cookie, v1 localStorage)
-			var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-			if (ccMatch) {
-				try {
-					var ccData = JSON.parse(decodeURIComponent(ccMatch[1]));
-					var cats = ccData.categories || [];
-					if (cats.indexOf('analytics') !== -1) {
-						gtag('consent', 'update', { analytics_storage: 'granted' });
-					}
-					if (cats.indexOf('marketing') !== -1) {
-						gtag('consent', 'update', {
-							ad_storage: 'granted',
-							ad_user_data: 'granted',
-							ad_personalization: 'granted'
-						});
-					}
-				} catch(e) {}
-			}
-			else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
-				gtag('consent', 'update', { analytics_storage: 'granted' });
-			}
+		const c = window.SD_readConsent();
+		if (c.analytics) {
+			gtag('consent', 'update', { analytics_storage: 'granted' });
 		}
-	})();
-}
+		if (c.marketing) {
+			gtag('consent', 'update', {
+				ad_storage: 'granted',
+				ad_user_data: 'granted',
+				ad_personalization: 'granted',
+			});
+		}
+	}
 </script>
 
 <!-- Microsoft Clarity — heatmaps & session recordings (consent-aware; skipped when opted out) -->
 {CLARITY_PROJECT_ID && (
 <script is:inline define:vars={{ clarityId: CLARITY_PROJECT_ID }}>
-if (localStorage.getItem('sd-analytics-optout') !== 'true') {
-	window.SD_CLARITY_ID = clarityId;
-	window.SD_startClarity = function() {
-		if (window.SD_clarityLoaded) return;
-		window.SD_clarityLoaded = true;
-		(function(c,l,a,r,i,t,y){
-			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-		})(window, document, "clarity", "script", clarityId);
-	};
-	// Primary: sd-consent-v2 (custom implementation)
-	var shouldStart = false;
-	try {
-		var raw = localStorage.getItem('sd-consent-v2');
-		if (raw) {
-			var p = JSON.parse(raw);
-			if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
-				shouldStart = !!(p.categories && p.categories.analytics);
-			}
-		}
-	} catch(e) {}
-	if (shouldStart) {
-		window.SD_startClarity();
-	} else {
-		// Legacy fallbacks
-		var ccClarityMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-		if (ccClarityMatch) {
-			try {
-				if ((JSON.parse(decodeURIComponent(ccClarityMatch[1])).categories || []).indexOf('analytics') !== -1) {
-					window.SD_startClarity();
-				}
-			} catch(e) {}
-		} else if (localStorage.getItem('sd-cookie-consent') === 'accepted') {
+	if (!window.SD_isOptedOut()) {
+		window.SD_CLARITY_ID = clarityId;
+		window.SD_startClarity = function() {
+			if (window.SD_clarityLoaded) return;
+			window.SD_clarityLoaded = true;
+			(function(c, l, a, r, i, t, y) {
+				c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+				t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+				y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+			})(window, document, 'clarity', 'script', clarityId);
+		};
+		if (window.SD_readConsent().analytics) {
 			window.SD_startClarity();
 		}
 	}
-}
 </script>
 )}
 
@@ -273,16 +200,9 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
       r.setAttribute('data-max-duration', '300000');
       document.head.appendChild(r);
     };
-    // Auto-start if consent already granted
-    try {
-      var raw = localStorage.getItem('sd-consent-v2');
-      if (raw) {
-        var p = JSON.parse(raw);
-        if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now() && p.categories && p.categories.analytics) {
-          window.SD_startUmamiRecorder();
-        }
-      }
-    } catch(e) {}
+    if (window.SD_readConsent().analytics) {
+      window.SD_startUmamiRecorder();
+    }
   }
 </script>
 )}
@@ -290,36 +210,21 @@ if (localStorage.getItem('sd-analytics-optout') !== 'true') {
 <!-- Reddit Pixel — marketing consent required (uses cookies) -->
 {REDDIT_PIXEL_ID && (
 <script is:inline define:vars={{ redditPixelId: REDDIT_PIXEL_ID }}>
-if (location.hostname === 'superdots.sh' && localStorage.getItem('sd-analytics-optout') !== 'true') {
-	var shouldLoad = false;
-	try {
-		var raw = localStorage.getItem('sd-consent-v2');
-		if (raw) {
-			var p = JSON.parse(raw);
-			if (p && p.version === 2 && new Date(p.expires).getTime() >= Date.now()) {
-				shouldLoad = !!(p.categories && p.categories.marketing);
+	if (location.hostname === 'superdots.sh' && !window.SD_isOptedOut() && window.SD_readConsent().marketing) {
+		!function(w, d) {
+			if (!w.rdt) {
+				var p = w.rdt = function() { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments); };
+				p.callQueue = [];
+				var t = d.createElement('script');
+				t.src = 'https://www.redditstatic.com/ads/pixel.js';
+				t.async = !0;
+				var s = d.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(t, s);
 			}
-		}
-	} catch(e) {}
-	if (!shouldLoad) {
-		var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]*)/);
-		if (ccMatch) {
-			try {
-				if ((JSON.parse(decodeURIComponent(ccMatch[1])).categories || []).indexOf('marketing') !== -1) {
-					shouldLoad = true;
-				}
-			} catch(e) {}
-		}
-	}
-	if (!shouldLoad && localStorage.getItem('sd-cookie-consent') === 'accepted') {
-		shouldLoad = true;
-	}
-	if (shouldLoad) {
-		!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js";t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);
+		}(window, document);
 		rdt('init', redditPixelId);
 		rdt('track', 'PageVisit');
 	}
-}
 </script>
 )}
 
