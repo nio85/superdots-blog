@@ -28,9 +28,9 @@ heroImage: "/images/blog/ai-sprint-planning-tools.webp"
 
 ---
 
-Sprint planning's most persistent problem is not people refusing to be realistic. It is that teams estimate without data, then discover that mid-sprint.
+In 1979, Daniel Kahneman and Amos Tversky documented what they called the planning fallacy: humans systematically underestimate how long tasks will take, even when they have clear evidence of past performance. Decades of replication in software development confirm the pattern holds exactly the same way. Engineering teams don't plan to fail sprints — they anchor to best-case scenarios, discount unexpected ticket complexity, and commit to work they could only complete if nothing went sideways.
 
-Based on user-reported data from agile teams using AI-assisted planning tools, the underlying cause is almost always the same: estimation is anchored to optimism rather than historical velocity. Teams remember their best sprints and plan toward them. They discount the PTO, the unexpected bug, the ticket that was "simple" until someone looked at the database schema.
+What makes this tractable with AI is that the planning fallacy is, at its core, a data access problem. Teams estimate from memory, which is optimistic by default. AI tools that pull from historical velocity, actual cycle times, and past sprint completions give teams an external anchor they can negotiate with — something more durable than willpower or mutual pressure to seem confident.
 
 The interesting question is not which paid AI tool to use. It is whether you need a paid tool at all — or whether Claude or ChatGPT, combined with your existing Jira data, can solve the problem for free. This guide explores that question honestly, starting with the free path and working toward the cases where dedicated tooling earns its cost.
 
@@ -46,7 +46,7 @@ Teams rarely track how their velocity *changes* over time. A team that completed
 
 ### Anchoring to best-case estimates
 
-Cognitive science research on estimation bias (documented in work by Kahneman and Tversky on planning fallacy, and replicated in software development contexts) consistently shows that humans anchor to best-case scenarios when estimating duration. Teams don't plan to fail — they plan based on "if everything goes well." AI estimation tools that calibrate against historical *actual* completion times counteract this anchoring effect.
+The planning fallacy described above shows up most visibly in story point estimation. Teams assign points based on "if everything goes well" — they mentally simulate the optimistic path, not the average one. AI estimation tools that calibrate against historical *actual* completion times (not just assigned points) counteract this by surfacing what the team actually delivered, not what they intended to deliver.
 
 ### Missing context before commitment
 
