@@ -1,0 +1,17 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 500,
+    "standard": "WCAG2AA",
+    "ignore": ["warning", "notice"],
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:4321/",
+    "http://localhost:4321/blog/",
+    "http://localhost:4321/blog/ai-for-marketing-complete-guide/",
+    "http://localhost:4321/about/"
+  ]
+}
