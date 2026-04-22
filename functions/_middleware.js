@@ -9,8 +9,8 @@ export async function onRequest(context) {
 	const url = new URL(context.request.url);
 	const path = url.pathname;
 
-	// Skip: root, already has trailing slash, file extensions, or API routes
-	if (path === '/' || path.endsWith('/') || /\.\w{1,10}$/.test(path) || path.startsWith('/api/')) {
+	// Skip: root, already has trailing slash, file extensions, API routes, or /404
+	if (path === '/' || path === '/404' || path.endsWith('/') || /\.\w{1,10}$/.test(path) || path.startsWith('/api/')) {
 		return context.next();
 	}
 
