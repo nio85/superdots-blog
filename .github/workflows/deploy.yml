@@ -36,8 +36,9 @@ jobs:
       - name: Lint code
         run: pnpm lint
 
-      # Note: typecheck (astro check) has 138 pre-existing errors — enabled locally
-      # via `pnpm typecheck` but not gated in CI until cleanup issue is resolved.
+      # TypeScript + Astro component typecheck
+      - name: Typecheck
+        run: pnpm typecheck
 
       # Build
       - run: pnpm build

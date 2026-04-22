@@ -8,7 +8,7 @@ import NewsletterForm from '../../components/NewsletterForm.astro';
 import { TAGS } from '../../consts';
 
 const posts = filterPublished(await getCollection('blog'));
-const tagLookup = new Map(TAGS.map((t) => [t.slug, t]));
+const tagLookup = new Map<string, (typeof TAGS)[number]>(TAGS.map((t) => [t.slug, t]));
 
 // Count articles per canonical tag slug (collapses casing/space variants)
 const tagCounts = new Map<string, number>();
