@@ -28,11 +28,11 @@ heroImage: "/images/blog/ai-sprint-planning-tools.webp"
 
 ---
 
-In 1979, Daniel Kahneman and Amos Tversky documented what they called the planning fallacy: humans systematically underestimate how long tasks will take, even when they have clear evidence of past performance. Decades of replication in software development confirm the pattern holds exactly the same way. Engineering teams don't plan to fail sprints — they anchor to best-case scenarios, discount unexpected ticket complexity, and commit to work they could only complete if nothing went sideways.
+Most engineering teams fail sprints not because they write bad code, but because they commit to the wrong amount of work. The fix is not more discipline in planning meetings — it is better data. AI tools that pull from your actual velocity history give you an external anchor: what your team realistically ships, not what feels achievable on a Monday morning.
 
-What makes this tractable with AI is that the planning fallacy is, at its core, a data access problem. Teams estimate from memory, which is optimistic by default. AI tools that pull from historical velocity, actual cycle times, and past sprint completions give teams an external anchor they can negotiate with — something more durable than willpower or mutual pressure to seem confident.
+This is, at its core, a data access problem. Kahneman and Tversky's planning fallacy research — replicated consistently in software development contexts — shows that humans anchor to best-case scenarios when estimating, discounting past evidence in favor of optimism. AI tools break that pattern by surfacing what your team actually delivered, not what it intended to.
 
-The interesting question is not which paid AI tool to use. It is whether you need a paid tool at all — or whether Claude or ChatGPT, combined with your existing Jira data, can solve the problem for free. This guide explores that question honestly, starting with the free path and working toward the cases where dedicated tooling earns its cost.
+The question worth asking before buying anything: do you need a paid tool, or does Claude or ChatGPT, combined with your existing Jira data, solve the problem for free? This guide starts with the free path and works toward the cases where dedicated tooling earns its cost.
 
 ---
 
