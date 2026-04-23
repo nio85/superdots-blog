@@ -17,9 +17,9 @@ faqs:
   - question: "How accurate is AI at auto-classifying documents?"
     answer: "AI auto-classification typically achieves 85-90% accuracy out of the box for common document types (contracts, invoices, reports, presentations). Accuracy improves to 95%+ after 2-3 months of corrections and training on your specific document patterns. The remaining edge cases — unusual formats, ambiguous documents, handwritten notes — still benefit from human review."
   - question: "What is the best AI document management software for small teams in 2026?"
-    answer: "For small teams, Notion AI and Glasscubes offer the best balance of AI-powered search and affordable pricing — starting around $8-10/user/month. Both integrate with Google Drive and Dropbox without requiring complex setup. Small teams typically need auto-tagging and semantic search more than enterprise compliance features, so avoid over-engineered platforms like M-Files or OpenText that are priced and designed for large organizations."
+    answer: "For small teams (under 25 people), Box AI and Guru offer the best value. Box Business starts at $20/user/month and includes AI classification, smart search, and integrations with Google Drive, SharePoint, and Dropbox. Guru's free tier covers basic knowledge search for teams under 10. If your team already uses Notion, the $10/user/month AI add-on adds semantic search and document summarization. For teams in regulated industries where compliance matters more than price, M-Files is worth the enterprise conversation — though it requires a sales call rather than self-serve signup."
   - question: "How does AI document management integrate with Google Drive and SharePoint?"
-    answer: "Most AI document management tools connect to Google Drive and SharePoint as an intelligence layer rather than replacing them. They access your files via OAuth or API, apply auto-classification and semantic tagging on top of your existing storage, and make everything searchable through a unified interface. Your files stay in Drive or SharePoint — the AI tool adds search and organization capabilities without migrating data. Setup typically takes 30-60 minutes and requires admin-level access to your cloud storage account."
+    answer: "Both integrations work via API and OAuth — no file migration required. For Google Drive, AI document management tools index your Docs, Sheets, and uploaded files in place; the AI reads content and applies classification tags without moving anything. For SharePoint, most tools connect through Microsoft Graph API, giving read access to all document libraries and sites. Setup takes 30–60 minutes per platform. One exception: Microsoft's own SharePoint Premium AI features are native to SharePoint but don't reach across to Google Drive, so if you use both platforms, a third-party tool like Box AI or M-Files is needed to index both simultaneously."
 imageHint: "knowledge worker searching company document archive using natural language query"
 ---
 
@@ -29,18 +29,17 @@ This is not a technology problem. It is an organization problem that technology 
 
 AI document management does not just add another storage location. It adds intelligence to the storage you already have — auto-classifying files, tagging content semantically, and surfacing documents based on what you actually need, not just what keywords match.
 
-## AI Document Management Tools Compared (2026)
+## Best AI Document Management Software at a Glance
 
-| Tool | Starting Price | Cloud Integrations | Best For |
-|---|---|---|---|
-| **Notion AI** | $8/user/month | Google Drive, Dropbox | Small teams wanting docs + knowledge base in one place |
-| **Glasscubes** | $10/user/month | Google Drive, Dropbox, OneDrive | Teams needing client portal + document management |
-| **Microsoft SharePoint + Syntex** | $5/user/month (Syntex add-on: $40) | OneDrive, Teams, Office 365 | Microsoft-heavy organizations with existing M365 licenses |
-| **Box AI** | $15/user/month | Google Drive, Slack, Salesforce, 1,500+ apps | Mid-size teams needing enterprise security with flexible integrations |
-| **M-Files** | Custom (typically $50+/user/month) | SharePoint, Salesforce, SAP | Regulated industries with complex compliance requirements |
-| **OpenText Content Cloud** | Custom (enterprise pricing) | SAP, Salesforce, Microsoft 365 | Large enterprises with existing OpenText or SAP infrastructure |
+| Tool | Pricing | Google Drive | SharePoint | Dropbox | Best for |
+|------|---------|:---:|:---:|:---:|---------|
+| **Box AI** | From $20/user/mo | ✓ | ✓ | ✓ | Teams across multiple cloud platforms |
+| **M-Files** | Pricing on request | ✓ | ✓ | ✓ | Regulated industries, complex workflows |
+| **Microsoft SharePoint Premium** | From $40/user/mo | — | Native | — | Microsoft 365 organizations |
+| **Guru** | Free; $18/user/mo (Team) | ✓ | ✓ | — | Knowledge-heavy teams |
+| **Laserfiche** | Contact sales | — | ✓ | — | Government and legal sectors |
 
-For teams just getting started, Notion AI and Box AI offer the most accessible entry points. M-Files and OpenText are purpose-built for regulated industries where compliance documentation and audit trails are non-negotiable.
+*Pricing as of April 2026 based on public documentation. Enterprise pricing varies.*
 
 ## What AI Document Management Does
 
@@ -109,7 +108,7 @@ AI applies retention rules automatically based on document classification. Contr
 
 ### PII detection
 
-AI scans documents for personally identifiable information — names, addresses, social security numbers, financial data, health information — and flags them for appropriate handling. This is critical for GDPR, CCPA, and HIPAA compliance, where mishandling PII has real consequences. Teams with ongoing audit requirements should pair this with dedicated [compliance document tracking](/blog/ai-compliance-tools) workflows that maintain records across regulatory frameworks.
+AI scans documents for personally identifiable information — names, addresses, social security numbers, financial data, health information — and flags them for appropriate handling. This is critical for GDPR, CCPA, and HIPAA compliance, where mishandling PII has real consequences.
 
 ### Audit trails
 
@@ -137,23 +136,27 @@ The value of AI document management increases with every source you connect. A s
 
 ## AI Document Management for Cloud Storage (Google Drive, SharePoint, OneDrive)
 
-Most teams already have files spread across Google Drive, SharePoint, and OneDrive. The good news: AI document management tools are designed to layer on top of these platforms rather than replace them.
+Most companies have not chosen a single cloud storage platform. They have two or three — Google Drive from before a Microsoft migration, SharePoint from the IT-mandated shift, and Dropbox accounts that predate both. AI document management works differently depending on which platforms you need to connect.
 
-The integration works through API connections. You grant the AI tool read access to your cloud storage accounts, and it indexes your existing files — reading content, extracting metadata, and applying classification. Your files physically stay in Google Drive or SharePoint. The AI tool sits on top, making them searchable and organized across all three platforms simultaneously.
+**Google Drive**: AI indexes Docs, Sheets, Slides, and all uploaded files without moving them. Tools like Box AI and M-Files connect via OAuth in under an hour and begin indexing in the background. Native Google Workspace AI Search does similar work but is limited to the Google ecosystem.
 
-This matters because migration is the biggest obstacle to adoption. If a tool required moving thousands of files to a new platform, few teams would do it. With cloud-native AI document management, you get the benefits — semantic search, auto-classification, unified access — without touching your existing file structure.
+**SharePoint**: Microsoft's own AI via SharePoint Premium is the most deeply integrated option here. Third-party tools like M-Files and Box AI also connect to SharePoint through Microsoft Graph API, indexing all libraries, sites, and document versions. If your organization is on Microsoft 365, check whether SharePoint Premium (formerly Syntex) is already licensed before paying for a separate tool — it may already cover your needs.
 
-Setup typically takes 30-60 minutes for a single platform. Connecting all three (Drive + SharePoint + OneDrive) usually takes under a day, depending on your organization's admin access configuration. Once connected, the AI retroactively indexes your existing files within 24-48 hours. New files are indexed as they are created.
+**OneDrive**: Treated similarly to SharePoint for indexing purposes. Most AI tools that connect SharePoint also index OneDrive as part of the same Microsoft 365 connection.
+
+**Dropbox**: Box AI and M-Files both support Dropbox connections. If Dropbox is your primary storage, Box AI is a natural choice — it works as an AI layer that reaches into Dropbox, SharePoint, and Google Drive simultaneously.
+
+The practical implication: if your team spans Google Workspace and Microsoft 365, you need an AI document management tool with cross-platform indexing rather than Microsoft's or Google's built-in AI, which each only cover their own ecosystem.
 
 ## Where AI Document Management Adds Most Value
 
 ### Regulated industries
 
-Finance, healthcare, legal, and government organizations have strict document handling requirements. AI auto-classification and retention policies reduce compliance burden while improving accuracy. PII detection and access control recommendations prevent the accidental exposure that creates regulatory risk.
+Finance, healthcare, legal, and government organizations have strict document handling requirements. AI auto-classification and retention policies reduce compliance burden while improving accuracy. PII detection and access control recommendations prevent the accidental exposure that creates regulatory risk. Teams that need detailed audit trails can pair document management with dedicated [compliance document tracking](/blog/ai-compliance-tools) tools for end-to-end governance coverage.
 
 ### Knowledge-heavy teams
 
-Consulting firms, law firms, research organizations, and agencies produce and consume enormous volumes of documents. The ability to find relevant prior work — past proposals, similar project deliverables, research findings — based on semantic similarity is a competitive advantage. Law firms in particular benefit from pairing AI document management with [legal document review](/blog/ai-legal-document-review) tooling to surface relevant case precedents and flag contract risks automatically.
+Consulting firms, law firms, research organizations, and agencies produce and consume enormous volumes of documents. The ability to find relevant prior work — past proposals, similar project deliverables, research findings — based on semantic similarity is a competitive advantage. Law firms in particular benefit from combining document management with [AI legal document review](/blog/ai-legal-document-review) to automate both finding and analyzing legal content.
 
 ### Onboarding new employees
 
