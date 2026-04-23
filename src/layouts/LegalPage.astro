@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import LegalBody from '../components/LegalBody.astro';
 
 interface Props {
 	title: string;
@@ -23,9 +24,9 @@ const { title, description, pageTitle, lastUpdated } = Astro.props;
 			<h1>{pageTitle}<span class="dot-accent">.</span></h1>
 			<p class="legal-meta">Last updated: {lastUpdated}</p>
 		</header>
-		<div class="legal-body">
+		<LegalBody>
 			<slot />
-		</div>
+		</LegalBody>
 		<footer class="legal-footer">
 			<p>
 				Questions? Contact <a href="mailto:privacy@superdots.sh">privacy@superdots.sh</a>
@@ -34,25 +35,12 @@ const { title, description, pageTitle, lastUpdated } = Astro.props;
 	</article>
 </Base>
 
-<script>
-	// Wrap raw HTML tables in .table-scroll for horizontal scrolling.
-	// Legal markdown uses raw <table> tags which bypass the rehype plugin.
-	document.querySelectorAll('.legal-body table').forEach((table) => {
-		if (table.parentElement?.classList.contains('table-scroll')) return;
-		const wrapper = document.createElement('div');
-		wrapper.className = 'table-scroll';
-		table.parentNode!.insertBefore(wrapper, table);
-		wrapper.appendChild(table);
-	});
-</script>
-
 <style>
 	.legal-page {
 		max-width: var(--max-width-prose);
 		margin: 0 auto;
 	}
 
-	/* --- Header --- */
 	.legal-header {
 		position: relative;
 		overflow: hidden;
@@ -81,112 +69,6 @@ const { title, description, pageTitle, lastUpdated } = Astro.props;
 		margin: 0;
 	}
 
-	/* --- Body --- */
-	.legal-body {
-		line-height: var(--leading-relaxed);
-		overflow-wrap: break-word;
-		word-break: break-word;
-	}
-	.legal-body :global(h2) {
-		font-family: var(--font-display);
-		font-size: var(--text-xl);
-		margin-top: var(--space-10);
-		margin-bottom: var(--space-4);
-		padding-bottom: var(--space-2);
-		border-bottom: 1px solid var(--color-border);
-	}
-	.legal-body :global(h3) {
-		font-family: var(--font-display);
-		font-size: var(--text-lg);
-		margin-top: var(--space-6);
-		margin-bottom: var(--space-3);
-	}
-	.legal-body :global(ul),
-	.legal-body :global(ol) {
-		padding-left: var(--space-6);
-	}
-	.legal-body :global(li) {
-		margin-bottom: 0.5em;
-	}
-	.legal-body :global(li::marker) {
-		color: var(--color-primary);
-	}
-	.legal-body :global(strong) {
-		color: var(--color-text-strong);
-	}
-	/* Responsive table wrapper — wraps every <table> via rehype plugin */
-	.legal-body :global(.table-scroll) {
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		margin: var(--space-6) 0;
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--color-border);
-		background:
-			linear-gradient(to right, var(--color-bg) 30%, transparent),
-			linear-gradient(to left, var(--color-bg) 30%, transparent),
-			linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent 15px),
-			linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent 15px);
-		background-position: left center, right center, left center, right center;
-		background-repeat: no-repeat;
-		background-size: 20px 100%, 20px 100%, 15px 100%, 15px 100%;
-		background-attachment: local, local, scroll, scroll;
-	}
-	.legal-body :global(.table-scroll::-webkit-scrollbar) {
-		height: 6px;
-	}
-	.legal-body :global(.table-scroll::-webkit-scrollbar-track) {
-		background: var(--color-bg-dim);
-		border-radius: var(--radius-full);
-	}
-	.legal-body :global(.table-scroll::-webkit-scrollbar-thumb) {
-		background: var(--color-border-strong);
-		border-radius: var(--radius-full);
-	}
-	.legal-body :global(.table-scroll::-webkit-scrollbar-thumb:hover) {
-		background: var(--color-text-muted);
-	}
-	/* Table base styles */
-	.legal-body :global(table) {
-		width: 100%;
-		border-collapse: collapse;
-		font-size: var(--text-sm);
-		margin: 0;
-		min-width: 480px;
-	}
-	.legal-body :global(th) {
-		text-align: left;
-		font-weight: var(--weight-semibold);
-		font-family: var(--font-display);
-		padding: var(--space-3) var(--space-4);
-		background: var(--color-bg-dim);
-		border-bottom: 2px solid var(--color-primary);
-		font-size: var(--text-xs);
-		letter-spacing: 0.05em;
-		color: var(--color-text-strong);
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-	.legal-body :global(td) {
-		padding: var(--space-3) var(--space-4);
-		border-bottom: 1px solid var(--color-border);
-		vertical-align: top;
-	}
-	.legal-body :global(tr:last-child td) {
-		border-bottom: none;
-	}
-	.legal-body :global(tr:hover td) {
-		background: var(--color-bg-dim);
-	}
-	.legal-body :global(code) {
-		font-family: var(--font-mono);
-		font-size: 0.85em;
-		background: var(--color-bg-code);
-		padding: 0.15em 0.4em;
-		border-radius: var(--radius-sm);
-		border: 1px solid var(--color-border);
-	}
-
-	/* --- Footer nav --- */
 	.legal-footer {
 		margin-top: var(--space-12);
 		padding-top: var(--space-6);
@@ -202,19 +84,6 @@ const { title, description, pageTitle, lastUpdated } = Astro.props;
 	@media (max-width: 768px) {
 		.legal-header {
 			padding: var(--space-8) 0 var(--space-6);
-		}
-		.legal-body :global(.table-scroll) {
-			margin: var(--space-4) calc(-1 * var(--space-4));
-			border-radius: 0;
-			border-left: none;
-			border-right: none;
-		}
-		.legal-body :global(th),
-		.legal-body :global(td) {
-			padding: var(--space-2) var(--space-3);
-		}
-		.legal-body :global(th) {
-			font-size: var(--text-xs);
 		}
 	}
 </style>
