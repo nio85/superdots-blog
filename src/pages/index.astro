@@ -127,21 +127,29 @@ const popularPosts = allPosts
 			<h2>Our series<span class="dot-accent">.</span></h2>
 			<a href="/series/" class="view-all">All series <span aria-hidden="true">&rarr;</span></a>
 		</div>
-		<div class="carousel-track" aria-label="Editorial series">
-			{pillarsWithLatest.map((p) => (
-				<div class="carousel-item">
-					<PostCard
-						title={p.label}
-						description={p.description}
-						href={`/series/${p.slug}/`}
-						variant="series"
-						pillarColor={p.accentColor}
-						count={p.count}
-						latestTitle={p.latestTitle}
-						headingLevel="h3"
-					/>
-				</div>
-			))}
+		<div class="carousel-wrapper" data-carousel>
+			<div class="carousel-track" aria-label="Editorial series">
+				{pillarsWithLatest.map((p) => (
+					<div class="carousel-item">
+						<PostCard
+							title={p.label}
+							description={p.description}
+							href={`/series/${p.slug}/`}
+							variant="series"
+							pillarColor={p.accentColor}
+							count={p.count}
+							latestTitle={p.latestTitle}
+							headingLevel="h3"
+						/>
+					</div>
+				))}
+			</div>
+			<button class="carousel-btn carousel-btn--prev" aria-label="Precedente" disabled>
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+			</button>
+			<button class="carousel-btn carousel-btn--next" aria-label="Successivo">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+			</button>
 		</div>
 	</section>
 
@@ -207,18 +215,26 @@ const popularPosts = allPosts
 			<h2>Complete AI guides<span class="dot-accent">.</span></h2>
 			<a href="/guides/" class="view-all">All guides <span aria-hidden="true">&rarr;</span></a>
 		</div>
-		<div class="carousel-track">
-			{pillarGuides.map((guide) => (
-				<div class="carousel-item">
-					<PostCard
-						title={guide.title}
-						description={guide.description}
-						department={guide.department}
-						href={guide.href}
-						variant="guide"
-					/>
-				</div>
-			))}
+		<div class="carousel-wrapper" data-carousel>
+			<div class="carousel-track">
+				{pillarGuides.map((guide) => (
+					<div class="carousel-item">
+						<PostCard
+							title={guide.title}
+							description={guide.description}
+							department={guide.department}
+							href={guide.href}
+							variant="guide"
+						/>
+					</div>
+				))}
+			</div>
+			<button class="carousel-btn carousel-btn--prev" aria-label="Precedente" disabled>
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+			</button>
+			<button class="carousel-btn carousel-btn--next" aria-label="Successivo">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+			</button>
 		</div>
 	</section>
 
@@ -240,6 +256,34 @@ const popularPosts = allPosts
 		</div>
 	</section>
 </Base>
+
+<script is:inline>
+(function () {
+	document.querySelectorAll('[data-carousel]').forEach(function (wrapper) {
+		var track = wrapper.querySelector('.carousel-track');
+		var prev = wrapper.querySelector('.carousel-btn--prev');
+		var next = wrapper.querySelector('.carousel-btn--next');
+		if (!track || !prev || !next) return;
+
+		function updateButtons() {
+			prev.disabled = track.scrollLeft <= 1;
+			next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+		}
+
+		function scrollByItem(dir) {
+			var item = track.querySelector('.carousel-item');
+			var gap = 16; // --space-4
+			var amount = item ? (item.offsetWidth + gap) : 320;
+			track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+		}
+
+		prev.addEventListener('click', function () { scrollByItem(-1); });
+		next.addEventListener('click', function () { scrollByItem(1); });
+		track.addEventListener('scroll', updateButtons, { passive: true });
+		updateButtons();
+	});
+})();
+</script>
 
 <style>
 	/* Hero — full-bleed breakout from main container */
@@ -421,7 +465,6 @@ const popularPosts = allPosts
 	/* Guides Carousel */
 	.guides-carousel {
 		padding: var(--space-4) 0 var(--space-8);
-		overflow-x: clip;
 	}
 	.carousel-track {
 		display: flex;
@@ -458,6 +501,45 @@ const popularPosts = allPosts
 		.carousel-item {
 			flex: 0 0 calc(31% - var(--space-2));
 			max-width: none;
+		}
+	}
+	.carousel-wrapper {
+		position: relative;
+	}
+	.carousel-btn {
+		display: none;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		width: 36px;
+		height: 36px;
+		border-radius: var(--radius-full);
+		border: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text-muted);
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		transition: border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+		box-shadow: var(--shadow-sm);
+		padding: 0;
+	}
+	.carousel-btn:hover {
+		border-color: var(--color-border-strong);
+		color: var(--color-text-strong);
+		box-shadow: var(--shadow-md);
+	}
+	.carousel-btn:disabled {
+		opacity: 0.25;
+		cursor: default;
+		pointer-events: none;
+	}
+	.carousel-btn--prev { left: calc(-1 * var(--space-5)); }
+	.carousel-btn--next { right: calc(-1 * var(--space-5)); }
+	@media (min-width: 640px) {
+		.carousel-btn {
+			display: flex;
 		}
 	}
 
@@ -628,7 +710,6 @@ const popularPosts = allPosts
 	   .carousel-item styles defined lower in this file. */
 	.series-section {
 		padding: var(--space-4) 0 var(--space-8);
-		overflow-x: clip;
 	}
 
 	/* "What this is" manifesto — no card, no border, just typography */
