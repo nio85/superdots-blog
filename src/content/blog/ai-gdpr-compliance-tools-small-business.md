@@ -41,7 +41,7 @@ GDPR compliance is a data privacy framework, not a software purchase. It require
 1. **A lawful basis for processing** every category of personal data you hold
 2. **A privacy policy** that accurately describes what you collect, why, how long you keep it, and who you share it with
 3. **Cookie consent** (for websites using non-essential cookies) that is informed, specific, and revocable
-4. **A process for Data Subject Access Requests** — individuals have the right to request, correct, or delete their data within 30 days
+4. **A process for Data Subject Access Requests** — individuals have the right to request, correct, or delete their data within one month (extendable to three months for complex or numerous requests)
 5. **Data breach notification** procedures
 6. **Vendor agreements** (Data Processing Agreements) with any third-party processors
 
@@ -76,13 +76,13 @@ Generate a GDPR-compliant privacy policy that covers:
 - Cookie usage
 ```
 
-The output will be structurally correct and cover the required GDPR disclosures. It will not be customised to your specific legal risk profile. Have a lawyer or privacy consultant review it before publishing. The ICO estimates that a basic GDPR legal review costs £200–£500 from a specialist firm — considerably less than generating compliance documents from scratch.
+The output will be structurally correct and cover the required GDPR disclosures. It will not be customised to your specific legal risk profile. Have a lawyer or privacy consultant review it before publishing. Market rates for a basic GDPR document review from a specialist privacy firm typically run £200–£500 — considerably less than generating compliance documents from scratch.
 
 ChatGPT produces comparable output. Neither Claude nor ChatGPT tracks regulatory updates automatically, so you'll need to review the policy when EU guidance changes.
 
 ### 2. DSAR Response Drafting
 
-A Data Subject Access Request requires you to compile all personal data you hold on an individual and send it within 30 days. For a small business, the data gathering is manual — pull from your CRM, email platform, payment processor, and database — but the response letter follows a predictable format.
+A Data Subject Access Request requires you to compile all personal data you hold on an individual and send it within one month. For complex or numerous requests, Art. 12(3) GDPR allows a two-month extension — but you must notify the individual within the first month. For a small business, the data gathering is manual — pull from your CRM, email platform, payment processor, and database — but the response letter follows a predictable format.
 
 Claude can draft the response letter once you have the data:
 
