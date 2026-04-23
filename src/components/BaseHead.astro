@@ -35,20 +35,19 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <!-- Consent helper: defines window.SD_readConsent + window.SD_isOptedOut -->
 <script is:inline set:html={consentInlineScript} />
 
-<!-- Preconnect to third-party origins used by analytics (only after cookie consent) -->
+<!-- Analytics deferral: queue scripts to load after page is interactive -->
 <script is:inline>
-	(() => {
-		if (window.SD_isOptedOut() || !window.SD_readConsent().analytics) return;
-		const pc = document.createElement('link');
-		pc.rel = 'preconnect';
-		pc.href = 'https://www.googletagmanager.com';
-		pc.crossOrigin = '';
-		document.head.appendChild(pc);
-		const dp = document.createElement('link');
-		dp.rel = 'dns-prefetch';
-		dp.href = 'https://www.clarity.ms';
-		document.head.appendChild(dp);
-	})();
+	window.SD_deferAnalytics = function(fn) {
+		function run() {
+			if (typeof requestIdleCallback === 'function') {
+				requestIdleCallback(fn);
+			} else {
+				setTimeout(fn, 200);
+			}
+		}
+		if (document.readyState === 'complete') { run(); }
+		else { window.addEventListener('load', run, { once: true }); }
+	};
 </script>
 
 <!-- Fonts: self-hosted variable (latin subset) — only preload critical fonts -->
@@ -114,7 +113,7 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage.toString()} />
 
-<!-- Google Analytics (GA4) — loaded only after cookie consent; skipped entirely when opted out -->
+<!-- Google Analytics (GA4) — consent defaults sync (EU compliance), script load deferred -->
 <script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
 	if (!window.SD_isOptedOut()) {
 		window.SD_GA_ID = gaId;
@@ -122,7 +121,6 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 		function gtag() { dataLayer.push(arguments); }
 		window.gtag = gtag;
 
-		// Consent Mode v2: default all consent to denied (required for EU/EEA traffic)
 		gtag('consent', 'default', {
 			analytics_storage: 'denied',
 			ad_storage: 'denied',
@@ -131,29 +129,30 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 			wait_for_update: 500,
 		});
 
-		// Always load gtag.js so consent mode signals are sent to GA4
-		const s = document.createElement('script');
-		s.async = true;
-		s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-		document.head.appendChild(s);
-		gtag('js', new Date());
-		gtag('config', gaId);
+		window.SD_deferAnalytics(function() {
+			var s = document.createElement('script');
+			s.async = true;
+			s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+			document.head.appendChild(s);
+			gtag('js', new Date());
+			gtag('config', gaId);
 
-		const c = window.SD_readConsent();
-		if (c.analytics) {
-			gtag('consent', 'update', { analytics_storage: 'granted' });
-		}
-		if (c.marketing) {
-			gtag('consent', 'update', {
-				ad_storage: 'granted',
-				ad_user_data: 'granted',
-				ad_personalization: 'granted',
-			});
-		}
+			var c = window.SD_readConsent();
+			if (c.analytics) {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
+			if (c.marketing) {
+				gtag('consent', 'update', {
+					ad_storage: 'granted',
+					ad_user_data: 'granted',
+					ad_personalization: 'granted',
+				});
+			}
+		});
 	}
 </script>
 
-<!-- Microsoft Clarity — heatmaps & session recordings (consent-aware; skipped when opted out) -->
+<!-- Microsoft Clarity — heatmaps & session recordings (deferred, consent-aware) -->
 {CLARITY_PROJECT_ID && (
 <script is:inline define:vars={{ clarityId: CLARITY_PROJECT_ID }}>
 	if (!window.SD_isOptedOut()) {
@@ -168,26 +167,16 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 			})(window, document, 'clarity', 'script', clarityId);
 		};
 		if (window.SD_readConsent().analytics) {
-			window.SD_startClarity();
+			window.SD_deferAnalytics(function() { window.SD_startClarity(); });
 		}
 	}
 </script>
 )}
 
-<!-- Umami Analytics (privacy-friendly, cookie-free — no consent gate needed) -->
-<!-- Runtime hostname check: loads only on superdots.sh, not on .pages.dev previews or localhost -->
+<!-- Umami Analytics (privacy-friendly, cookie-free — deferred) -->
 {UMAMI_WEBSITE_ID && (
 <script is:inline define:vars={{ UMAMI_URL, UMAMI_WEBSITE_ID }}>
   if (location.hostname === 'superdots.sh') {
-    var s = document.createElement('script');
-    s.src = UMAMI_URL + '/script.js';
-    s.defer = true;
-    s.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
-    s.setAttribute('data-domains', 'superdots.sh');
-    s.setAttribute('data-performance', 'true');
-    document.head.appendChild(s);
-
-    // Umami Session Replays — consent-gated (loaded via SD_startUmamiRecorder)
     window.SD_startUmamiRecorder = function() {
       if (window.SD_umamiRecorderLoaded) return;
       window.SD_umamiRecorderLoaded = true;
@@ -200,30 +189,41 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
       r.setAttribute('data-max-duration', '300000');
       document.head.appendChild(r);
     };
-    if (window.SD_readConsent().analytics) {
-      window.SD_startUmamiRecorder();
-    }
+    window.SD_deferAnalytics(function() {
+      var s = document.createElement('script');
+      s.src = UMAMI_URL + '/script.js';
+      s.defer = true;
+      s.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+      s.setAttribute('data-domains', 'superdots.sh');
+      s.setAttribute('data-performance', 'true');
+      document.head.appendChild(s);
+      if (window.SD_readConsent().analytics) {
+        window.SD_startUmamiRecorder();
+      }
+    });
   }
 </script>
 )}
 
-<!-- Reddit Pixel — marketing consent required (uses cookies) -->
+<!-- Reddit Pixel — marketing consent required (deferred) -->
 {REDDIT_PIXEL_ID && (
 <script is:inline define:vars={{ redditPixelId: REDDIT_PIXEL_ID }}>
 	if (location.hostname === 'superdots.sh' && !window.SD_isOptedOut() && window.SD_readConsent().marketing) {
-		!function(w, d) {
-			if (!w.rdt) {
-				var p = w.rdt = function() { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments); };
-				p.callQueue = [];
-				var t = d.createElement('script');
-				t.src = 'https://www.redditstatic.com/ads/pixel.js';
-				t.async = !0;
-				var s = d.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(t, s);
-			}
-		}(window, document);
-		rdt('init', redditPixelId);
-		rdt('track', 'PageVisit');
+		window.SD_deferAnalytics(function() {
+			!function(w, d) {
+				if (!w.rdt) {
+					var p = w.rdt = function() { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments); };
+					p.callQueue = [];
+					var t = d.createElement('script');
+					t.src = 'https://www.redditstatic.com/ads/pixel.js';
+					t.async = !0;
+					var s = d.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(t, s);
+				}
+			}(window, document);
+			rdt('init', redditPixelId);
+			rdt('track', 'PageVisit');
+		});
 	}
 </script>
 )}
