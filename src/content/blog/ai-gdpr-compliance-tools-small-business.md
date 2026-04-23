@@ -19,6 +19,7 @@ faqs:
     answer: "Purpose-built platforms like DataGrail connect to your SaaS stack — Salesforce, HubSpot, Stripe, databases — and generate a unified data map of what data exists per individual. When a DSAR comes in, the platform queries each connected system and compiles the response. At the SMB level, Claude can draft the response letter once you manually gather the data. The AI writes the disclosure; you still do the data retrieval. Full automation requires a platform like DataGrail or OneTrust, both of which are priced for mid-market and enterprise."
   - question: "Does GDPR apply to my small business if I'm based outside the EU?"
     answer: "Yes, if you collect data from EU residents — regardless of where your business is located. A US e-commerce store selling to German customers is subject to GDPR for those customers' data. The territorial scope (Article 3 GDPR) catches any business that monitors EU individuals or offers goods and services to them. Small businesses often assume they are exempt by size or geography. They are not. ICO guidance is freely available and worth reading if you have any EU traffic."
+heroImage: "/images/blog/ai-gdpr-compliance-tools-small-business.webp"
 ---
 
 Most small businesses added cookie consent banners in 2018 when GDPR came into force and considered the matter largely resolved. The compliance market has since produced dozens of tools that install in minutes, cost between €0 and €30 per month, and promise to make GDPR manageable. The software adoption happened. The workflows didn't change.
