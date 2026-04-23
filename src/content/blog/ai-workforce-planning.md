@@ -1,7 +1,8 @@
 ---
-title: "AI for Workforce Planning & Headcount Modeling (2026)"
+title: "AI for Workforce Planning & Headcount (2026)"
 description: "How HR teams use AI for headcount modeling, forecasting, and attrition prediction. Visier, Workday Adaptive, and Mosaic compared with real 2026 pricing."
 pubDate: "2026-03-17T07:26:22Z"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"

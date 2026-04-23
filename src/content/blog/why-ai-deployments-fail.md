@@ -1,7 +1,8 @@
 ---
-title: "Why Most AI Deployments Fail — What the Research Actually Shows"
+title: "Why AI Deployments Fail — What Research Shows"
 description: "74% of companies report no tangible value from AI. McKinsey, BCG, and Gartner data shows why — and it has almost nothing to do with the technology."
 pubDate: "2026-04-28"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 contentPillar: "the-big-picture"
 tags: ["ai-strategy", "enterprise-ai", "ai-implementation", "ai-roi"]

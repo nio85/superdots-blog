@@ -1,7 +1,8 @@
 ---
-title: "AI Sales Enablement Tools for Small Business (2026): What Actually Works Under $100/Month"
+title: "AI Sales Enablement Tools for Small Business"
 description: "The honest guide to AI sales enablement tools for small B2B teams — tiered by team size, with real pricing. No five-figure platforms required."
 pubDate: "2026-04-21"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"

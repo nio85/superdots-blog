@@ -1,8 +1,8 @@
 ---
-title: 'AI Code Migration Guide (2026): Python & TypeScript'
+title: 'AI Code Migration: Python & TypeScript (2026)'
 description: "AI prompts for Python→TypeScript & framework migrations. Step-by-step with Claude, ChatGPT & GitHub Copilot. Includes test generation."
 pubDate: "2026-03-17"
-updatedDate: "2026-04-21"
+updatedDate: "2026-04-22"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
