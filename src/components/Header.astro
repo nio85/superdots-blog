@@ -1,7 +1,6 @@
 ---
 import { SITE_TITLE } from '../consts';
 import ThemeToggle from './ThemeToggle.astro';
-import SeriesDropdown from './SeriesDropdown.astro';
 import MobileMenu from './MobileMenu.astro';
 
 const pathname = Astro.url.pathname;
@@ -27,8 +26,7 @@ const navLinks = [
 
 		<div class="nav-right">
 			<div class="nav-links" id="nav-links">
-				<SeriesDropdown pathname={pathname} />
-				{navLinks.filter(l => l.href !== '/series/').map(({ href, label }) => (
+				{navLinks.map(({ href, label }) => (
 					<a
 						href={href}
 						class:list={[{ active: pathname.startsWith(href) }]}

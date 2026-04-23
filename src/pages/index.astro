@@ -421,6 +421,7 @@ const popularPosts = allPosts
 	/* Guides Carousel */
 	.guides-carousel {
 		padding: var(--space-4) 0 var(--space-8);
+		overflow-x: clip;
 	}
 	.carousel-track {
 		display: flex;
@@ -449,7 +450,13 @@ const popularPosts = allPosts
 	}
 	@media (min-width: 640px) {
 		.carousel-item {
-			flex: 0 0 calc(50% - var(--space-2));
+			flex: 0 0 calc(45% - var(--space-2));
+			max-width: none;
+		}
+	}
+	@media (min-width: 1024px) {
+		.carousel-item {
+			flex: 0 0 calc(31% - var(--space-2));
 			max-width: none;
 		}
 	}
@@ -621,6 +628,7 @@ const popularPosts = allPosts
 	   .carousel-item styles defined lower in this file. */
 	.series-section {
 		padding: var(--space-4) 0 var(--space-8);
+		overflow-x: clip;
 	}
 
 	/* "What this is" manifesto — no card, no border, just typography */
