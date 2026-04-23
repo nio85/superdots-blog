@@ -19,6 +19,7 @@ faqs:
     answer: "For solo operators and very small teams, yes — especially when combined with AI. The real problem isn't Excel itself but unstructured Excel: no version control, no audit trail, models only one person understands. A disciplined Excel setup with Claude for scenario analysis outperforms a badly configured $500/month tool. Excel breaks down when you need real-time actuals feeds, multi-user collaboration without version conflicts, or automated board reporting."
   - question: "What AI FP&A tool works best with QuickBooks or Xero?"
     answer: "Causal (now part of Lucanet) and Mosaic both offer native QuickBooks and Xero integrations with automated actuals sync. Rows connects via API or Zapier. For the free path, export from QuickBooks or Xero into a Google Sheet and build dashboards in Looker Studio. Datarails is built specifically around Excel-connected data pulls and supports both QuickBooks Online and Xero directly."
+heroImage: "/images/blog/ai-fpa-software-small-business.webp"
 ---
 
 A 2024 study led by Prof. Pak-Lok Poon found that 94% of business spreadsheets used in decision-making contain errors. Most finance professionals who hear this nod in recognition. The curious part isn't the number — it's what happens next: most of them keep using the same spreadsheets anyway.
