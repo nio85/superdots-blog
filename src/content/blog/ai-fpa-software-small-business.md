@@ -74,6 +74,8 @@ The most underrated FP&A stack. A well-structured Excel file connected to a Clau
 
 **Limitation**: No automated data pulls. Every number is entered manually.
 
+**Google Sheets + Looker Studio** is worth calling out separately as the dashboard layer within the free path. Google Sheets handles the model; Looker Studio (free, by Google) connects to it and renders live charts, pivot tables, and formatted reports you can share with a board or investors without exporting a single file. For a 10-person business that needs clean monthly reporting without a dedicated finance tool, this combination is often sufficient. The limitation is the same as Excel: no automated actuals feed, so data stays as current as whoever last updated the sheet.
+
 ---
 
 ### Tier 2 — Modern Spreadsheet Tools ($0–$50/month per user)
@@ -185,6 +187,6 @@ The fastest path to better FP&A is not finding the right software — it is fixi
 
 1. **Connect your accounting system to one spreadsheet.** Use QuickBooks or Xero's native export to Google Sheets, or use Rows for a live connection. Get your actuals flowing in one place before adding any modeling layer on top.
 2. **Build one clean model with explicit assumptions.** Label every assumption tab. Use Claude to stress-test it: paste your inputs and ask it to model a 20% revenue shortfall across 6 months. This one exercise often reveals gaps in your spreadsheet architecture before they cause problems.
-3. **Evaluate paid tools against your real model, not demos.** Every tool in Tiers 3 and 4 offers a trial or demo session with your own numbers. Use it. A tool that looks clean on sample data often breaks against your actual chart of accounts.
+3. **Evaluate paid tools against your real model, not demos.** Most tools offer a demo session with your own numbers — request it before any sales conversation. Mosaic and Jirav both require a sales call before access, but you can ask them to run a live session against your actual chart of accounts. A tool that looks clean on sample data often breaks against your real data structure.
 
 If you are spending more than 3 hours per week maintaining your forecast, that is the signal that dedicated software is worth the cost. Until then, the free path holds.
