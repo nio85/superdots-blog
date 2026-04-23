@@ -1,4 +1,6 @@
 ---
+import NewsletterField from './NewsletterField.astro';
+
 interface Props {
 	variant?: 'inline' | 'banner' | 'compact' | 'hero' | 'midpost';
 	source?: string;
@@ -17,13 +19,6 @@ const descText: Record<string, string> = {
 	inline: 'Sales, Marketing, or Operations — specific tools, real steps, honest takes.',
 	hero: '',
 	midpost: 'Sales, Marketing, or Operations — specific tools, real steps, honest takes.',
-};
-const btnText: Record<string, string> = {
-	banner: 'Subscribe',
-	inline: 'Send it to me',
-	compact: 'Subscribe free',
-	hero: 'Join free',
-	midpost: 'Send me the workflow',
 };
 ---
 
@@ -47,113 +42,12 @@ const btnText: Record<string, string> = {
 		{variant === 'compact' && (
 			<p class="newsletter-compact-label">One workflow, every Tuesday<span class="dot-accent">.</span></p>
 		)}
-		<form class="newsletter-form" aria-label="Newsletter signup">
-			<div class="newsletter-field">
-				<label for={`newsletter-email-${variant}`} class="sr-only">Email address</label>
-				<input
-					type="email"
-					id={`newsletter-email-${variant}`}
-					name="email"
-					placeholder={variant === 'compact' ? 'your@email.com' : 'you@company.com'}
-					required
-					autocomplete="email"
-					aria-describedby={`newsletter-legal-${variant}`}
-					data-clarity-mask="true"
-				/>
-				<button type="submit" class="btn btn-primary">{btnText[variant] || 'Subscribe'}</button>
-			</div>
-			{variant !== 'compact' && variant !== 'hero' && (
-				<p class="newsletter-legal" id={`newsletter-legal-${variant}`}>
-					No spam. We respect your <a href="/privacy#newsletter">privacy</a>. Unsubscribe anytime.
-				</p>
-			)}
-			{(variant === 'compact' || variant === 'hero') && (
-				<p class="newsletter-legal newsletter-legal--compact" id={`newsletter-legal-${variant}`}>
-					No spam, ever. <a href="/privacy#newsletter">Privacy</a>.
-				</p>
-			)}
-			<div class="newsletter-status" role="status" aria-live="polite"></div>
-		</form>
+		<NewsletterField variant={variant} />
 	</div>
 </div>
 
-<script>
-	document.querySelectorAll('.newsletter-form').forEach((form) => {
-		form.addEventListener('submit', async (e) => {
-			e.preventDefault();
-			const el = e.currentTarget as HTMLFormElement;
-			const input = el.querySelector('input[type="email"]') as HTMLInputElement;
-			const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
-			const status = el.querySelector('.newsletter-status') as HTMLElement;
-			const source = el.closest('.newsletter')?.getAttribute('data-source') || 'unknown';
-
-			const email = input.value.trim();
-			if (!email) return;
-
-			btn.disabled = true;
-			btn.textContent = 'Sending...';
-			status.textContent = '';
-			status.className = 'newsletter-status';
-
-			try {
-				const res = await fetch('/api/subscribe', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ email, source }),
-				});
-				const data = await res.json();
-
-				if (res.ok) {
-					status.textContent = 'Check your inbox to confirm your subscription.';
-					status.classList.add('newsletter-status--success');
-					input.value = '';
-
-					// GA4 conversion event: newsletter signup
-					if (typeof window.gtag === 'function') {
-						window.gtag('event', 'generate_lead', {
-							event_category: 'newsletter',
-							event_label: source,
-							value: 1,
-						});
-					}
-
-					// Umami custom event (parallel to GA4) — tracks signup by CTA source/variant
-					const container = el.closest('.newsletter') as HTMLElement | null;
-					const variantClass = container ? Array.from(container.classList).find((c) => c.startsWith('newsletter--')) : null;
-					const variant = variantClass ? variantClass.replace('newsletter--', '') : 'unknown';
-					if (typeof window.umami !== 'undefined') {
-						window.umami.track('newsletter_signup', {
-							source,
-							variant,
-							path: location.pathname,
-						});
-					}
-				} else {
-					status.textContent = data.error || 'Something went wrong. Please try again.';
-					status.classList.add('newsletter-status--error');
-				}
-			} catch {
-				status.textContent = 'Network error. Please try again.';
-				status.classList.add('newsletter-status--error');
-			} finally {
-				btn.disabled = false;
-				const resetContainer = el.closest('.newsletter') as HTMLElement | null;
-				const resetVariantCls = resetContainer ? Array.from(resetContainer.classList).find((c) => c.startsWith('newsletter--')) : null;
-				const resetVariant = resetVariantCls ? resetVariantCls.replace('newsletter--', '') : 'banner';
-				const resetLabels: Record<string, string> = {
-					banner: 'Subscribe',
-					inline: 'Send it to me',
-					compact: 'Subscribe free',
-					hero: 'Join free',
-					midpost: 'Send me the workflow',
-				};
-				btn.textContent = resetLabels[resetVariant] || 'Subscribe';
-			}
-		});
-	});
-</script>
-
 <style>
+	/* --- Base --- */
 	.newsletter {
 		border: 2px solid var(--color-border);
 		border-radius: var(--radius-xl);
@@ -164,7 +58,6 @@ const btnText: Record<string, string> = {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 320px;
 	}
-	/* Red left accent bar */
 	.newsletter::before {
 		content: '';
 		position: absolute;
@@ -173,343 +66,6 @@ const btnText: Record<string, string> = {
 		width: 4px;
 		height: 100%;
 		background: var(--color-primary);
-	}
-	.newsletter--banner {
-		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		padding: var(--space-10) var(--space-8);
-		text-align: center;
-	}
-	.newsletter--banner::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	.newsletter--banner::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	.newsletter--banner .newsletter-inner {
-		max-width: 460px;
-		margin: 0 auto;
-	}
-	.newsletter--banner .newsletter-text {
-		margin-bottom: var(--space-6);
-	}
-	.newsletter--banner .newsletter-text .superdot {
-		width: 10px;
-		height: 10px;
-		margin-bottom: var(--space-3);
-		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
-	}
-	.newsletter--banner .newsletter-heading {
-		font-size: var(--text-2xl);
-		letter-spacing: -0.025em;
-	}
-	.newsletter--banner .newsletter-desc {
-		font-size: var(--text-sm);
-		font-weight: var(--weight-medium);
-		opacity: 0.7;
-	}
-	.newsletter-social-proof {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		margin: var(--space-3) 0 0;
-		opacity: 0.75;
-		letter-spacing: 0.01em;
-	}
-	.newsletter-social-proof::before {
-		content: '';
-		display: inline-block;
-		width: 5px;
-		height: 5px;
-		background: var(--color-primary);
-		border-radius: 50%;
-		opacity: 0.7;
-		flex-shrink: 0;
-	}
-	.newsletter--banner .newsletter-field {
-		justify-content: center;
-	}
-	.newsletter--banner .newsletter-field input {
-		max-width: 240px;
-	}
-	.newsletter--banner .newsletter-legal {
-		text-align: center;
-	}
-	.newsletter--banner .newsletter-status {
-		text-align: center;
-	}
-	.newsletter--inline {
-		background: transparent;
-		margin: var(--space-4) 0;
-		padding: var(--space-5) var(--space-4);
-		border-radius: var(--radius-lg);
-	}
-	.newsletter--compact {
-		background: transparent;
-		border: none;
-		margin: 0;
-		padding: 0;
-	}
-	.newsletter--compact::before {
-		display: none;
-	}
-	.newsletter-compact-label {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-		margin: 0 0 var(--space-2);
-		letter-spacing: -0.01em;
-	}
-	.newsletter--compact .newsletter-field input {
-		padding: var(--space-2) var(--space-3);
-		font-size: var(--text-sm);
-		border-width: 1px;
-	}
-	.newsletter--compact .newsletter-field button {
-		padding: var(--space-2) var(--space-4);
-		font-size: var(--text-sm);
-	}
-	.newsletter-legal--compact {
-		font-size: var(--text-xs);
-		opacity: 0.7;
-	}
-	/* Hero variant — premium inline signup in hero section */
-	.newsletter--hero {
-		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 60%);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		margin: 0;
-		padding: var(--space-6) var(--space-8);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
-	}
-	.newsletter--hero::before {
-		display: none;
-	}
-	.newsletter--hero .newsletter-inner {
-		max-width: 480px;
-		margin: 0 auto;
-	}
-	.newsletter-hero-label {
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-muted);
-		margin: 0 0 var(--space-4);
-		text-align: center;
-	}
-	.newsletter-hero-label .dot-accent {
-		color: var(--color-primary);
-	}
-	.newsletter--hero .newsletter-field {
-		justify-content: center;
-	}
-	.newsletter--hero .newsletter-field input {
-		max-width: 260px;
-		border-color: var(--color-border-strong);
-		background: var(--color-bg);
-		border-radius: var(--radius-md);
-	}
-	.newsletter--hero .newsletter-field button {
-		padding: var(--space-3) var(--space-6);
-		border-radius: var(--radius-md);
-	}
-	.newsletter--hero .newsletter-legal {
-		text-align: center;
-	}
-	.newsletter--hero .newsletter-status {
-		text-align: center;
-	}
-	/* Midpost variant — eye-catching inline CTA for mid-article */
-	.newsletter--midpost {
-		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-xl);
-		padding: var(--space-10) var(--space-8);
-		margin: var(--space-12) 0;
-		position: relative;
-		overflow: hidden;
-		text-align: center;
-	}
-	.newsletter--midpost::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	.newsletter--midpost::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60px;
-		height: 3px;
-		border-radius: var(--radius-full);
-		background: var(--color-primary);
-	}
-	.newsletter--midpost .newsletter-inner {
-		max-width: 440px;
-		margin: 0 auto;
-	}
-	.newsletter--midpost .newsletter-text {
-		margin-bottom: var(--space-6);
-	}
-	.newsletter--midpost .newsletter-text .superdot {
-		width: 10px;
-		height: 10px;
-		margin-bottom: var(--space-3);
-		box-shadow: 0 0 12px rgba(232, 54, 59, 0.3);
-	}
-	.newsletter--midpost .newsletter-heading {
-		font-size: var(--text-2xl);
-		letter-spacing: -0.025em;
-	}
-	.newsletter--midpost .newsletter-desc {
-		font-size: var(--text-sm);
-		font-weight: var(--weight-medium);
-		opacity: 0.7;
-	}
-	.newsletter--midpost .newsletter-field {
-		justify-content: center;
-	}
-	.newsletter--midpost .newsletter-field input {
-		max-width: 240px;
-	}
-	.newsletter--midpost .newsletter-legal {
-		text-align: center;
-	}
-	.newsletter--midpost .newsletter-status {
-		text-align: center;
-	}
-	/* Dot pattern decoration */
-	.newsletter-dots {
-		position: absolute;
-		top: -10px;
-		right: -10px;
-		width: 140px;
-		height: 140px;
-		background-image: radial-gradient(circle, var(--color-border-strong) 1px, transparent 1px);
-		background-size: 14px 14px;
-		opacity: 0.3;
-		pointer-events: none;
-	}
-	.newsletter--midpost .newsletter-dots {
-		top: auto;
-		bottom: -10px;
-		left: -10px;
-		right: auto;
-		width: 100px;
-		height: 100px;
-		opacity: 0.2;
-	}
-	/* Subtle gradient glow */
-	.newsletter-glow {
-		position: absolute;
-		bottom: -40%;
-		right: -15%;
-		width: 300px;
-		height: 300px;
-		border-radius: 50%;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
-		filter: blur(30px);
-		pointer-events: none;
-	}
-	.newsletter--midpost .newsletter-glow {
-		top: -30%;
-		bottom: auto;
-		left: 50%;
-		right: auto;
-		transform: translateX(-50%);
-		width: 400px;
-		height: 400px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
-		filter: blur(40px);
-	}
-	/* Banner variant — dots bottom-left, glow centered like midpost */
-	.newsletter--banner .newsletter-dots {
-		top: auto;
-		bottom: -10px;
-		left: -10px;
-		right: auto;
-		width: 100px;
-		height: 100px;
-		opacity: 0.2;
-	}
-	.newsletter--banner .newsletter-glow {
-		top: -30%;
-		bottom: auto;
-		left: 50%;
-		right: auto;
-		transform: translateX(-50%);
-		width: 400px;
-		height: 400px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%);
-		filter: blur(40px);
-	}
-	/* Hero variant — subtle dot + glow decorations */
-	.newsletter--hero .newsletter-dots {
-		top: auto;
-		bottom: -6px;
-		right: -6px;
-		width: 80px;
-		height: 80px;
-		opacity: 0.15;
-	}
-	.newsletter--hero .newsletter-glow {
-		top: -40%;
-		bottom: auto;
-		left: 50%;
-		right: auto;
-		transform: translateX(-50%);
-		width: 300px;
-		height: 300px;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, transparent 70%);
-		filter: blur(30px);
-	}
-	:global([data-theme="dark"]) .newsletter-glow {
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
-	}
-	:global([data-theme="dark"]) .newsletter--hero {
-		background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
-		border-color: var(--color-border);
-	}
-	:global([data-theme="dark"]) .newsletter--banner {
-		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
-	}
-	@media (prefers-color-scheme: dark) {
-		:global([data-theme="auto"]) .newsletter-glow {
-			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
-		}
-		:global([data-theme="auto"]) .newsletter--hero {
-			background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%);
-			border-color: var(--color-border);
-		}
 	}
 	.newsletter-inner {
 		max-width: 560px;
@@ -536,103 +92,181 @@ const btnText: Record<string, string> = {
 		letter-spacing: -0.02em;
 		line-height: var(--leading-tight);
 	}
-	.newsletter--inline .newsletter-heading {
-		font-size: var(--text-lg);
-	}
 	.newsletter-desc {
 		color: var(--color-text-muted);
 		font-size: var(--text-base);
 		margin: 0;
 	}
-	.newsletter-field {
-		display: flex;
-		gap: var(--space-2);
+
+	/* --- Decorations --- */
+	.newsletter-dots {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		width: 140px;
+		height: 140px;
+		background-image: radial-gradient(circle, var(--color-border-strong) 1px, transparent 1px);
+		background-size: 14px 14px;
+		opacity: 0.3;
+		pointer-events: none;
 	}
-	.newsletter-field input {
-		flex: 1;
-		padding: var(--space-3) var(--space-4);
-		font-size: var(--text-base);
-		font-family: inherit;
-		border: 2px solid var(--color-border);
-		border-radius: var(--radius-md);
-		background: var(--color-bg);
-		color: var(--color-text);
-		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-		min-width: 0;
+	.newsletter-glow {
+		position: absolute;
+		bottom: -40%;
+		right: -15%;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.06) 0%, transparent 70%);
+		filter: blur(30px);
+		pointer-events: none;
 	}
-	.newsletter-field input:focus {
-		outline: none;
-		border-color: var(--color-primary);
-		box-shadow: var(--shadow-glow);
+	:global([data-theme="dark"]) .newsletter-glow {
+		background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
 	}
-	.newsletter-field input::placeholder {
-		color: var(--color-text-muted);
-		opacity: 0.6;
-	}
-	.newsletter-field button {
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-	.newsletter-legal {
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		margin: var(--space-2) 0 0;
-		line-height: var(--leading-relaxed);
-	}
-	.newsletter-legal a {
-		color: var(--color-text-muted);
-		text-decoration: underline;
-		text-underline-offset: 2px;
-	}
-	.newsletter-legal a:hover {
-		color: var(--color-primary);
-	}
-	.newsletter-status {
-		font-size: var(--text-sm);
-		margin-top: var(--space-2);
-		min-height: 1.4em;
-	}
-	.newsletter-status--success {
-		color: var(--sd-teal, #14B8A6);
-	}
-	.newsletter-status--error {
-		color: var(--color-primary);
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .newsletter-glow {
+			background: radial-gradient(circle, rgba(232, 54, 59, 0.1) 0%, transparent 70%);
+		}
 	}
 
+	/* --- Banner variant --- */
+	.newsletter--banner {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		padding: var(--space-10) var(--space-8);
+		text-align: center;
+	}
+	.newsletter--banner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--banner::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		border-radius: var(--radius-full);
+		background: var(--color-primary);
+	}
+	.newsletter--banner .newsletter-inner { max-width: 460px; margin: 0 auto; }
+	.newsletter--banner .newsletter-text { margin-bottom: var(--space-6); }
+	.newsletter--banner .newsletter-text .superdot { width: 10px; height: 10px; margin-bottom: var(--space-3); box-shadow: 0 0 12px rgba(232, 54, 59, 0.3); }
+	.newsletter--banner .newsletter-heading { font-size: var(--text-2xl); letter-spacing: -0.025em; }
+	.newsletter--banner .newsletter-desc { font-size: var(--text-sm); font-weight: var(--weight-medium); opacity: 0.7; }
+	.newsletter--banner .newsletter-dots { top: auto; bottom: -10px; left: -10px; right: auto; width: 100px; height: 100px; opacity: 0.2; }
+	.newsletter--banner .newsletter-glow { top: -30%; bottom: auto; left: 50%; right: auto; transform: translateX(-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%); filter: blur(40px); }
+	:global([data-theme="dark"]) .newsletter--banner { background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%); }
+	.newsletter-social-proof {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: var(--space-3) 0 0;
+		opacity: 0.75;
+		letter-spacing: 0.01em;
+	}
+	.newsletter-social-proof::before {
+		content: '';
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		background: var(--color-primary);
+		border-radius: 50%;
+		opacity: 0.7;
+		flex-shrink: 0;
+	}
+
+	/* --- Inline variant --- */
+	.newsletter--inline {
+		background: transparent;
+		margin: var(--space-4) 0;
+		padding: var(--space-5) var(--space-4);
+		border-radius: var(--radius-lg);
+	}
+	.newsletter--inline .newsletter-heading { font-size: var(--text-lg); }
+
+	/* --- Compact variant --- */
+	.newsletter--compact {
+		background: transparent;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	.newsletter--compact::before { display: none; }
+	.newsletter-compact-label {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-strong);
+		margin: 0 0 var(--space-2);
+		letter-spacing: -0.01em;
+	}
+
+	/* --- Hero variant --- */
+	.newsletter--hero {
+		background: linear-gradient(135deg, rgba(232, 54, 59, 0.03) 0%, transparent 60%);
+		border: 1px solid var(--color-border);
+		margin: 0;
+		padding: var(--space-6) var(--space-8);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+	}
+	.newsletter--hero::before { display: none; }
+	.newsletter--hero .newsletter-inner { max-width: 480px; margin: 0 auto; }
+	.newsletter-hero-label {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		color: var(--color-text-muted);
+		margin: 0 0 var(--space-4);
+		text-align: center;
+	}
+	.newsletter-hero-label .dot-accent { color: var(--color-primary); }
+	.newsletter--hero .newsletter-dots { top: auto; bottom: -6px; right: -6px; width: 80px; height: 80px; opacity: 0.15; }
+	.newsletter--hero .newsletter-glow { top: -40%; bottom: auto; left: 50%; right: auto; transform: translateX(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(232, 54, 59, 0.04) 0%, transparent 70%); filter: blur(30px); }
+	:global([data-theme="dark"]) .newsletter--hero { background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%); border-color: var(--color-border); }
+	@media (prefers-color-scheme: dark) {
+		:global([data-theme="auto"]) .newsletter--hero { background: linear-gradient(135deg, rgba(232, 54, 59, 0.06) 0%, transparent 60%); border-color: var(--color-border); }
+	}
+
+	/* --- Midpost variant --- */
+	.newsletter--midpost {
+		background: linear-gradient(135deg, var(--color-bg-dim) 0%, var(--color-bg) 50%, var(--color-bg-dim) 100%);
+		border: 1px solid var(--color-border);
+		padding: var(--space-10) var(--space-8);
+		margin: var(--space-12) 0;
+		text-align: center;
+	}
+	.newsletter--midpost::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; border-radius: var(--radius-full); background: var(--color-primary); }
+	.newsletter--midpost::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; border-radius: var(--radius-full); background: var(--color-primary); }
+	.newsletter--midpost .newsletter-inner { max-width: 440px; margin: 0 auto; }
+	.newsletter--midpost .newsletter-text { margin-bottom: var(--space-6); }
+	.newsletter--midpost .newsletter-text .superdot { width: 10px; height: 10px; margin-bottom: var(--space-3); box-shadow: 0 0 12px rgba(232, 54, 59, 0.3); }
+	.newsletter--midpost .newsletter-heading { font-size: var(--text-2xl); letter-spacing: -0.025em; }
+	.newsletter--midpost .newsletter-desc { font-size: var(--text-sm); font-weight: var(--weight-medium); opacity: 0.7; }
+	.newsletter--midpost .newsletter-dots { top: auto; bottom: -10px; left: -10px; right: auto; width: 100px; height: 100px; opacity: 0.2; }
+	.newsletter--midpost .newsletter-glow { top: -30%; bottom: auto; left: 50%; right: auto; transform: translateX(-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(232, 54, 59, 0.05) 0%, transparent 70%); filter: blur(40px); }
+
+	/* --- Responsive --- */
 	@media (max-width: 480px) {
-		.newsletter-field {
-			flex-direction: column;
-		}
-		.newsletter {
-			padding: var(--space-6) var(--space-4);
-		}
-		.newsletter--midpost {
-			padding: var(--space-8) var(--space-5);
-		}
-		.newsletter--midpost .newsletter-heading {
-			font-size: var(--text-xl);
-		}
-		.newsletter--midpost .newsletter-field input {
-			max-width: 100%;
-		}
-		.newsletter--banner {
-			padding: var(--space-8) var(--space-5);
-		}
-		.newsletter--banner .newsletter-heading {
-			font-size: var(--text-xl);
-		}
-		.newsletter--banner .newsletter-field input {
-			max-width: 100%;
-		}
-		.newsletter--hero {
-			padding: var(--space-5) var(--space-4);
-		}
-		.newsletter--hero .newsletter-field input {
-			max-width: 100%;
-		}
-		.newsletter-dots {
-			width: 80px;
-			height: 80px;
-		}
+		.newsletter { padding: var(--space-6) var(--space-4); }
+		.newsletter--midpost { padding: var(--space-8) var(--space-5); }
+		.newsletter--midpost .newsletter-heading { font-size: var(--text-xl); }
+		.newsletter--banner { padding: var(--space-8) var(--space-5); }
+		.newsletter--banner .newsletter-heading { font-size: var(--text-xl); }
+		.newsletter--hero { padding: var(--space-5) var(--space-4); }
+		.newsletter-dots { width: 80px; height: 80px; }
 	}
 </style>
