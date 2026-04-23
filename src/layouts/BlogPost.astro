@@ -13,6 +13,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 import ArticleSchema from '../components/ArticleSchema.astro';
 import AuthorBox from '../components/AuthorBox.astro';
 import MidPostCTA from '../components/MidPostCTA.astro';
+import { getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
@@ -26,6 +27,24 @@ const ogImageSrc = heroImage
 		? heroImage
 		: heroImage.src
 	: undefined;
+
+// Build preload hint for hero image LCP optimization
+let heroPreloadHref = '';
+let heroPreloadSrcset = '';
+let heroPreloadType = '';
+if (heroImage) {
+	if (typeof heroImage === 'string') {
+		heroPreloadHref = heroImage;
+	} else {
+		const widths = [400, 800, 1200, 1600];
+		const images = await Promise.all(
+			widths.map((w) => getImage({ src: heroImage, width: w, format: 'avif' }))
+		);
+		heroPreloadSrcset = images.map((img, i) => `${img.src} ${widths[i]}w`).join(', ');
+		heroPreloadHref = images[1].src;
+		heroPreloadType = 'image/avif';
+	}
+}
 
 const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
 
@@ -41,6 +60,11 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 	<head>
 		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
 		{noindex && <meta name="robots" content="noindex, follow" />}
+		{heroPreloadSrcset ? (
+			<link rel="preload" as="image" type={heroPreloadType} imagesrcset={heroPreloadSrcset} imagesizes="(max-width: 720px) 100vw, 720px" fetchpriority="high" />
+		) : heroPreloadHref ? (
+			<link rel="preload" as="image" href={heroPreloadHref} fetchpriority="high" />
+		) : null}
 		<ArticleSchema
 			title={title}
 			description={description}
