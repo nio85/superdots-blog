@@ -65,7 +65,7 @@ List every place your team stores information. Be thorough:
 - **Informal docs:** Slack channels, email threads, meeting recordings
 - **Tribal knowledge:** Processes that only one or two people know
 
-This list will be longer than you expect. That is the point.
+This list will be longer than you expect. That is the point. If your team relies heavily on shared drives as a primary store, dedicated [document management tools](/blog/ai-document-management) can add AI-powered search and auto-classification on top — complementing your knowledge base rather than replacing it.
 
 ### Step 2: Categorize by value and freshness
 
