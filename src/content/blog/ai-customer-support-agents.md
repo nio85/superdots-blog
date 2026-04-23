@@ -19,6 +19,7 @@ faqs:
     answer: "Published resolution rates range from 40% to 80%, but those numbers need context. Intercom reports Fin resolves around 50% of conversations on average. Resolution rate depends heavily on knowledge base quality, ticket complexity, and how 'resolved' is defined. A ticket closed without escalation isn't always a ticket resolved to the customer's satisfaction — and that distinction matters."
   - question: "Do AI agents work for B2B SaaS support or only B2C?"
     answer: "Both, but the use case differs significantly. B2C support benefits most from deflection — high-volume, predictable queries like order status and password resets. B2B SaaS is more complex: lower volume, higher stakes, account-specific context. Zendesk AI and Salesforce Agentforce handle B2B better due to CRM integration depth. Intercom Fin works well for B2B SaaS teams with a structured knowledge base."
+heroImage: "/images/blog/ai-customer-support-agents.webp"
 ---
 
 Spend an afternoon trying to figure out whether your support team needs an AI agent or just a better chatbot. Two hours in, you'll have seventeen tabs open, three vendor comparison articles that say different things, and still no answer.
