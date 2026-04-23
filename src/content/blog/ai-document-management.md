@@ -1,6 +1,6 @@
 ---
-title: 'AI Document Management Software (2026): Auto-Tag, Classify & Search'
-description: "Compare the best AI document management tools for 2026 — auto-tag, classify, and search files across Google Drive, SharePoint, and Dropbox. Includes real 2026 pricing."
+title: 'AI Document Management Software (2026): Auto-Tag & Search'
+description: "Compare the best AI document management tools for 2026 — auto-tag, classify, and search files. Includes real 2026 pricing."
 pubDate: "2026-03-17T08:37:22Z"
 updatedDate: "2026-04-23"
 author: "Superdots Team"
