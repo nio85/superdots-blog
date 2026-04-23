@@ -121,9 +121,10 @@ const seriesStyle = isSeries && pillarColor
 		--card-accent-rgb: 232, 54, 59;
 		background: var(--color-bg);
 		border: 1px solid var(--color-border);
+		border-top: 3px solid var(--card-accent);
 		border-radius: var(--radius-lg);
 		padding: var(--space-6);
-		transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+		transition: border-color var(--transition-base), box-shadow var(--transition-base);
 		position: relative;
 		overflow: hidden;
 	}
@@ -160,13 +161,11 @@ const seriesStyle = isSeries && pillarColor
 	}
 	/* Hover state — gated behind (hover: hover) so touch devices never
 	   activate it (prevents the "stuck active card after drag-scroll"
-	   bug in horizontal carousels). Simplified: no left-border reveal,
-	   no gradient wash — just a clean border/shadow/lift. */
+	   bug in horizontal carousels). */
 	@media (hover: hover) {
 		.post-card:hover {
 			border-color: var(--card-accent);
-			box-shadow: var(--shadow-md), 0 4px 16px rgba(var(--card-accent-rgb), 0.08);
-			transform: translateY(-2px);
+			box-shadow: var(--shadow-md), 0 4px 16px rgba(var(--card-accent-rgb), 0.12);
 		}
 	}
 	.post-card a {
