@@ -16,19 +16,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+          run_install: false
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
+      - run: pnpm install --frozen-lockfile
 
       # Frontmatter lint — duplicate keys, required fields, valid enums
       - name: Lint frontmatter
-        run: node scripts/lint-frontmatter.mjs
+        run: pnpm lint:content
+
+      # Code lint + format check (Biome)
+      - name: Lint code
+        run: pnpm lint
+
+      # TypeScript + Astro component typecheck
+      - name: Typecheck
+        run: pnpm typecheck
 
       # Build
-      - run: npm run build
+      - run: pnpm build
 
       # CF Pages 301-redirects /404→/404/ but has no 404/index.html, causing a loop.
       # Providing both files lets CF serve /404/ directly.

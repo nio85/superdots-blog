@@ -1,5 +1,8 @@
 ---
-import { SITE_TITLE, PILLARS } from '../consts';
+import { SITE_TITLE } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
+import SeriesDropdown from './SeriesDropdown.astro';
+import MobileMenu from './MobileMenu.astro';
 
 const pathname = Astro.url.pathname;
 
@@ -9,13 +12,6 @@ const navLinks = [
 	{ href: '/guides/', label: 'Guides' },
 	{ href: '/about/', label: 'About' },
 ];
-
-const PILLAR_COLORS: Record<string, string> = {
-	'dot-by-dot': '#E8363B',
-	'connecting-the-dots': '#14B8A6',
-	'the-big-picture': '#6366F1',
-	'behind-the-dots': '#F59E0B',
-};
 ---
 
 <header>
@@ -31,27 +27,7 @@ const PILLAR_COLORS: Record<string, string> = {
 
 		<div class="nav-right">
 			<div class="nav-links" id="nav-links">
-				<div class="nav-dropdown">
-					<a
-						href="/series/"
-						class:list={[{ active: pathname.startsWith('/series/') }]}
-						aria-current={pathname.startsWith('/series/') ? 'page' : undefined}
-					>
-						Series
-						<svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-					</a>
-					<div class="dropdown-panel">
-						{PILLARS.map((p) => (
-							<a href={`/series/${p.slug}/`} class="dropdown-item">
-								<span class="dropdown-dot" style={`background: ${PILLAR_COLORS[p.slug]};`} aria-hidden="true"></span>
-								<span>
-									<span class="dropdown-item-name">{p.label}</span>
-									<span class="dropdown-item-desc">{p.description}</span>
-								</span>
-							</a>
-						))}
-					</div>
-				</div>
+				<SeriesDropdown pathname={pathname} />
 				{navLinks.filter(l => l.href !== '/series/').map(({ href, label }) => (
 					<a
 						href={href}
@@ -63,28 +39,7 @@ const PILLAR_COLORS: Record<string, string> = {
 				))}
 			</div>
 
-			<button
-				class="theme-toggle"
-				id="theme-toggle"
-				type="button"
-				aria-label="Toggle dark mode"
-				title="Toggle theme"
-			>
-				<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<circle cx="12" cy="12" r="5"></circle>
-					<line x1="12" y1="1" x2="12" y2="3"></line>
-					<line x1="12" y1="21" x2="12" y2="23"></line>
-					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-					<line x1="1" y1="12" x2="3" y2="12"></line>
-					<line x1="21" y1="12" x2="23" y2="12"></line>
-					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-				</svg>
-				<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-				</svg>
-			</button>
+			<ThemeToggle />
 
 			<button
 				class="hamburger"
@@ -100,175 +55,9 @@ const PILLAR_COLORS: Record<string, string> = {
 			</button>
 		</div>
 	</nav>
-
 </header>
 
-<!-- Mobile menu overlay — outside header to avoid backdrop-filter containing block -->
-<div class="mobile-overlay" id="mobile-overlay"></div>
-
-<!-- Mobile menu panel — full-screen premium, outside header -->
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
-	<div class="mobile-menu-inner">
-		<nav class="mobile-menu-links">
-			{navLinks.map(({ href, label }, i) => (
-				<a
-					href={href}
-					class:list={['mobile-link', { active: pathname.startsWith(href) }]}
-					aria-current={pathname.startsWith(href) ? 'page' : undefined}
-					style={`--item-index: ${i}`}
-				>
-					<span class="mobile-link-indicator" aria-hidden="true">
-						<span class="indicator-line"></span>
-						<span class="indicator-dot"></span>
-					</span>
-					<span class="mobile-link-label">{label}</span>
-					<svg class="mobile-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<line x1="5" y1="12" x2="19" y2="12"></line>
-						<polyline points="12 5 19 12 12 19"></polyline>
-					</svg>
-				</a>
-			))}
-		</nav>
-		<div class="mobile-menu-footer">
-			<div class="mobile-menu-brand">
-				<svg class="mobile-brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-					<circle cx="14" cy="50" r="6" fill="#E8363B"/>
-					<circle cx="32" cy="32" r="8" fill="#E8363B"/>
-					<circle cx="50" cy="14" r="10" fill="#E8363B"/>
-				</svg>
-				<span class="mobile-brand-text">{SITE_TITLE}</span>
-			</div>
-		</div>
-	</div>
-	<!-- Decorative background elements -->
-	<div class="mobile-menu-bg" aria-hidden="true">
-		<div class="bg-gradient"></div>
-		<div class="bg-dots"></div>
-	</div>
-</div>
-
-<script is:inline>
-(function() {
-	// Theme toggle
-	var themeBtn = document.getElementById('theme-toggle');
-	if (themeBtn) {
-		function getEffectiveTheme() {
-			var theme = document.documentElement.getAttribute('data-theme') || 'auto';
-			if (theme === 'auto') {
-				return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-			}
-			return theme;
-		}
-
-		function updateButton() {
-			var effective = getEffectiveTheme();
-			themeBtn.setAttribute('aria-label', effective === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-		}
-
-		themeBtn.addEventListener('click', function() {
-			var current = getEffectiveTheme();
-			var next = current === 'dark' ? 'light' : 'dark';
-			document.documentElement.setAttribute('data-theme', next);
-			localStorage.setItem('sd-theme', next);
-			updateButton();
-		});
-
-		updateButton();
-	}
-
-	// Mobile menu
-	var hamburger = document.getElementById('hamburger');
-	var mobileMenu = document.getElementById('mobile-menu');
-	var overlay = document.getElementById('mobile-overlay');
-	if (!hamburger || !mobileMenu || !overlay) return;
-
-	var isOpen = false;
-
-	var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-	function openMenu() {
-		isOpen = true;
-		hamburger.classList.add('is-active');
-		hamburger.setAttribute('aria-expanded', 'true');
-		hamburger.setAttribute('aria-label', 'Close menu');
-		mobileMenu.classList.add('is-open');
-		overlay.classList.add('is-visible');
-		document.body.style.overflow = 'hidden';
-
-		// Staggered entrance for menu items
-		if (!prefersReducedMotion) {
-			var links = mobileMenu.querySelectorAll('.mobile-link');
-			for (var i = 0; i < links.length; i++) {
-				links[i].classList.remove('is-visible');
-			}
-			requestAnimationFrame(function() {
-				for (var i = 0; i < links.length; i++) {
-					(function(el, delay) {
-						setTimeout(function() { el.classList.add('is-visible'); }, delay);
-					})(links[i], 80 + i * 80);
-				}
-			});
-		} else {
-			var links = mobileMenu.querySelectorAll('.mobile-link');
-			for (var i = 0; i < links.length; i++) {
-				links[i].classList.add('is-visible');
-			}
-		}
-
-		// Focus first link
-		var firstLink = mobileMenu.querySelector('a');
-		if (firstLink) setTimeout(function() { firstLink.focus(); }, prefersReducedMotion ? 0 : 200);
-	}
-
-	function closeMenu() {
-		isOpen = false;
-		hamburger.classList.remove('is-active');
-		hamburger.setAttribute('aria-expanded', 'false');
-		hamburger.setAttribute('aria-label', 'Open menu');
-		mobileMenu.classList.remove('is-open');
-		overlay.classList.remove('is-visible');
-		document.body.style.overflow = '';
-		hamburger.focus();
-	}
-
-	hamburger.addEventListener('click', function() {
-		if (isOpen) closeMenu();
-		else openMenu();
-	});
-
-	overlay.addEventListener('click', closeMenu);
-
-	// Keyboard: Escape to close, trap focus
-	document.addEventListener('keydown', function(e) {
-		if (e.key === 'Escape' && isOpen) {
-			closeMenu();
-		}
-		if (e.key === 'Tab' && isOpen) {
-			var focusable = mobileMenu.querySelectorAll('a, button');
-			var focusArray = Array.prototype.slice.call(focusable);
-			// Include hamburger in the trap
-			focusArray.unshift(hamburger);
-			var first = focusArray[0];
-			var last = focusArray[focusArray.length - 1];
-			if (e.shiftKey && document.activeElement === first) {
-				e.preventDefault();
-				last.focus();
-			} else if (!e.shiftKey && document.activeElement === last) {
-				e.preventDefault();
-				first.focus();
-			}
-		}
-	});
-
-	// Close on resize above mobile breakpoint
-	var mql = window.matchMedia('(min-width: 768px)');
-	function handleResize(e) {
-		if (e.matches && isOpen) closeMenu();
-	}
-	if (mql.addEventListener) mql.addEventListener('change', handleResize);
-	else mql.addListener(handleResize);
-})();
-</script>
+<MobileMenu navLinks={navLinks} pathname={pathname} />
 
 <style>
 	header {
@@ -313,7 +102,6 @@ const PILLAR_COLORS: Record<string, string> = {
 		justify-content: space-between;
 	}
 
-	/* Logo */
 	.logo {
 		display: inline-flex;
 		align-items: center;
@@ -342,14 +130,12 @@ const PILLAR_COLORS: Record<string, string> = {
 		letter-spacing: -0.02em;
 	}
 
-	/* Nav right group */
 	.nav-right {
 		display: flex;
 		align-items: center;
 		gap: var(--space-4);
 	}
 
-	/* Desktop nav links */
 	.nav-links {
 		display: flex;
 		gap: var(--space-6);
@@ -392,110 +178,6 @@ const PILLAR_COLORS: Record<string, string> = {
 		transform: scaleX(1);
 	}
 
-	/* Series dropdown */
-	.nav-dropdown {
-		position: relative;
-	}
-	.dropdown-chevron {
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: 2px;
-		transition: transform var(--transition-fast);
-	}
-	.nav-dropdown:hover .dropdown-chevron {
-		transform: rotate(180deg);
-	}
-	.dropdown-panel {
-		display: none;
-		position: absolute;
-		top: calc(100% + var(--space-2));
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--color-bg);
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-lg);
-		padding: var(--space-2);
-		min-width: 280px;
-		z-index: 100;
-	}
-	.nav-dropdown:hover .dropdown-panel,
-	.nav-dropdown:focus-within .dropdown-panel {
-		display: block;
-	}
-	.dropdown-item {
-		display: flex;
-		align-items: flex-start;
-		gap: var(--space-3);
-		padding: var(--space-3) var(--space-3);
-		border-radius: var(--radius-md);
-		text-decoration: none;
-		transition: background var(--transition-fast);
-	}
-	.dropdown-item:hover {
-		background: var(--color-bg-dim);
-		text-decoration: none;
-	}
-	.dropdown-item::after { display: none; }
-	.dropdown-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: var(--radius-full);
-		flex-shrink: 0;
-		margin-top: 6px;
-	}
-	.dropdown-item-name {
-		display: block;
-		font-family: var(--font-display);
-		font-size: var(--text-sm);
-		font-weight: var(--weight-semibold);
-		color: var(--color-text-strong);
-		line-height: var(--leading-tight);
-	}
-	.dropdown-item-desc {
-		display: block;
-		font-size: var(--text-xs);
-		color: var(--color-text-muted);
-		line-height: var(--leading-snug);
-		margin-top: 2px;
-	}
-
-	/* Theme Toggle */
-	.theme-toggle {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 36px;
-		height: 36px;
-		border: 1px solid var(--color-border);
-		border-radius: var(--radius-md);
-		background: var(--color-bg-dim);
-		color: var(--color-text-muted);
-		cursor: pointer;
-		transition: all var(--transition-fast);
-		padding: 0;
-		flex-shrink: 0;
-		z-index: 110;
-	}
-	.theme-toggle:hover {
-		color: var(--color-text-strong);
-		border-color: var(--color-border-strong);
-		background: var(--color-bg);
-	}
-
-	/* Sun/moon icon visibility */
-	.icon-sun { display: none; }
-	.icon-moon { display: block; }
-
-	:global([data-theme="dark"]) .icon-sun { display: block; }
-	:global([data-theme="dark"]) .icon-moon { display: none; }
-
-	@media (prefers-color-scheme: dark) {
-		:global([data-theme="auto"]) .icon-sun { display: block; }
-		:global([data-theme="auto"]) .icon-moon { display: none; }
-	}
-
-	/* Hamburger button — hidden on desktop */
 	.hamburger {
 		display: none;
 		flex-direction: column;
@@ -524,8 +206,6 @@ const PILLAR_COLORS: Record<string, string> = {
 		transition: all var(--transition-base);
 		transform-origin: center;
 	}
-
-	/* Hamburger → X animation */
 	.hamburger.is-active .hamburger-line:nth-child(1) {
 		transform: translateY(7px) rotate(45deg);
 	}
@@ -537,232 +217,6 @@ const PILLAR_COLORS: Record<string, string> = {
 		transform: translateY(-7px) rotate(-45deg);
 	}
 
-	/* Mobile overlay */
-	.mobile-overlay {
-		display: none;
-		position: fixed;
-		inset: 0;
-		background: rgba(11, 18, 34, 0.6);
-		z-index: 90;
-		opacity: 0;
-		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-backdrop-filter: blur(4px);
-		backdrop-filter: blur(4px);
-	}
-	.mobile-overlay.is-visible {
-		opacity: 1;
-	}
-
-	/* Mobile menu panel — full-screen premium */
-	.mobile-menu {
-		display: none;
-		position: fixed;
-		inset: 0;
-		z-index: 95;
-		overflow-y: auto;
-		overflow-x: hidden;
-		background: var(--color-bg);
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
-					visibility 0ms 400ms;
-	}
-	:global([data-theme="dark"]) .mobile-menu {
-		background: var(--sd-navy);
-	}
-	@media (prefers-color-scheme: dark) {
-		:global([data-theme="auto"]) .mobile-menu {
-			background: var(--sd-navy);
-		}
-	}
-	.mobile-menu.is-open {
-		opacity: 1;
-		visibility: visible;
-		transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1),
-					visibility 0ms 0ms;
-	}
-
-	/* Background decorations */
-	.mobile-menu-bg {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		overflow: hidden;
-	}
-	.bg-gradient {
-		position: absolute;
-		bottom: -20%;
-		right: -20%;
-		width: 70vw;
-		height: 70vw;
-		border-radius: 50%;
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.08) 0%, transparent 70%);
-		filter: blur(40px);
-	}
-	:global([data-theme="dark"]) .bg-gradient {
-		background: radial-gradient(circle, rgba(232, 54, 59, 0.12) 0%, transparent 70%);
-	}
-	@media (prefers-color-scheme: dark) {
-		:global([data-theme="auto"]) .bg-gradient {
-			background: radial-gradient(circle, rgba(232, 54, 59, 0.12) 0%, transparent 70%);
-		}
-	}
-	.bg-dots {
-		position: absolute;
-		top: 15%;
-		left: 8%;
-		width: 120px;
-		height: 120px;
-		background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
-		background-size: 16px 16px;
-		opacity: 0.5;
-	}
-
-	/* Inner layout */
-	.mobile-menu-inner {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-height: 100vh;
-		min-height: 100dvh;
-		padding: calc(60px + var(--space-10)) var(--space-8) var(--space-10);
-	}
-
-	.mobile-menu-links {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2);
-	}
-
-	/* Individual menu link — premium style */
-	.mobile-link {
-		display: flex;
-		align-items: center;
-		gap: var(--space-5);
-		padding: var(--space-5) var(--space-4);
-		font-family: var(--font-display);
-		font-size: var(--text-3xl);
-		font-weight: var(--weight-bold);
-		color: var(--color-text-muted);
-		text-decoration: none;
-		border-radius: var(--radius-lg);
-		transition: color 200ms ease, background 200ms ease;
-		letter-spacing: -0.01em;
-		/* Staggered entrance */
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	.mobile-link.is-visible {
-		opacity: 1;
-		transform: translateY(0);
-		transition: color 200ms ease, background 200ms ease,
-					opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
-					transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-	}
-	@media (prefers-reduced-motion: reduce) {
-		.mobile-link {
-			opacity: 1;
-			transform: none;
-			transition: color 200ms ease, background 200ms ease;
-		}
-	}
-	.mobile-link:hover {
-		color: var(--color-text-strong);
-		background: var(--color-bg-dim);
-		text-decoration: none;
-	}
-	.mobile-link.active {
-		color: var(--color-text-strong);
-	}
-
-	/* Premium active indicator */
-	.mobile-link-indicator {
-		display: flex;
-		align-items: center;
-		gap: 0;
-		width: 28px;
-		flex-shrink: 0;
-		position: relative;
-	}
-	.indicator-line {
-		width: 0;
-		height: 2px;
-		background: var(--color-primary);
-		border-radius: var(--radius-full);
-		transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
-	}
-	.indicator-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: var(--radius-full);
-		background: transparent;
-		border: 2px solid transparent;
-		transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
-		flex-shrink: 0;
-	}
-	.mobile-link.active .indicator-line {
-		width: 14px;
-	}
-	.mobile-link.active .indicator-dot {
-		background: var(--color-primary);
-		border-color: var(--color-primary);
-		box-shadow: 0 0 8px rgba(232, 54, 59, 0.4);
-	}
-	.mobile-link:hover .indicator-dot {
-		border-color: var(--color-border-strong);
-	}
-
-	.mobile-link-label {
-		flex: 1;
-	}
-
-	/* Arrow icon — slides in on hover */
-	.mobile-link-arrow {
-		opacity: 0;
-		transform: translateX(-8px);
-		transition: all 200ms ease;
-		color: var(--color-text-muted);
-		flex-shrink: 0;
-	}
-	.mobile-link:hover .mobile-link-arrow {
-		opacity: 0.6;
-		transform: translateX(0);
-	}
-	.mobile-link.active .mobile-link-arrow {
-		opacity: 0.4;
-		transform: translateX(0);
-	}
-
-	/* Footer branding */
-	.mobile-menu-footer {
-		margin-top: auto;
-		padding-top: var(--space-12);
-	}
-	.mobile-menu-brand {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		opacity: 0.3;
-	}
-	.mobile-brand-mark {
-		width: 16px;
-		height: 16px;
-		color: var(--color-primary);
-		flex-shrink: 0;
-	}
-	.mobile-brand-text {
-		font-family: var(--font-display);
-		font-weight: var(--weight-semibold);
-		font-size: var(--text-sm);
-		color: var(--color-text-muted);
-		letter-spacing: -0.02em;
-	}
-
-	/* ---- Responsive breakpoints ---- */
-
-	/* Tablet and below: show hamburger, hide desktop links */
 	@media (max-width: 767px) {
 		.nav-links {
 			display: none;
@@ -770,19 +224,8 @@ const PILLAR_COLORS: Record<string, string> = {
 		.hamburger {
 			display: flex;
 		}
-		.mobile-overlay {
-			display: block;
-			pointer-events: none;
-		}
-		.mobile-overlay.is-visible {
-			pointer-events: auto;
-		}
-		.mobile-menu {
-			display: block;
-		}
 	}
 
-	/* Small tablets: tighten spacing */
 	@media (max-width: 480px) {
 		nav {
 			padding: var(--space-3) var(--space-4);

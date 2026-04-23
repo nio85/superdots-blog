@@ -4,7 +4,7 @@ Disallow: /analytics-optout
 Disallow: /design-system
 Disallow: /cdn-cgi/
 
-# Allow legitimate search crawlers
+# Search crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -14,14 +14,55 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Allow SEO analysis bots (needed for link building discoverability)
+# SEO analysis bots
 User-agent: AhrefsBot
 Allow: /
 
 User-agent: SemrushBot
 Allow: /
 
-# Block known bad/aggressive bots
+# AI crawlers — explicitly allowed (GEO strategy: we want to be cited by LLMs)
+# Aligned with llms.txt and "9 AI agents writing" editorial positioning.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Blocked: known aggressive or low-value crawlers
 User-agent: DotBot
 Disallow: /
 
@@ -35,30 +76,6 @@ User-agent: PetalBot
 Disallow: /
 
 User-agent: Bytespider
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: cohere-ai
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: PerplexityBot
 Disallow: /
 
 Sitemap: https://superdots.sh/sitemap-index.xml

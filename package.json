@@ -3,6 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,25 +15,42 @@
     "deploy:dry": "node scripts/deploy.mjs --dry-run",
     "generate-images": "node scripts/generate-ai-images.mjs",
     "generate-images:dry": "node scripts/generate-ai-images.mjs --dry-run",
-    "generate-images:all": "node scripts/generate-ai-images.mjs --all"
+    "generate-images:all": "node scripts/generate-ai-images.mjs --all",
+    "lint:content": "node scripts/lint-frontmatter.mjs",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:a11y": "pa11y-ci",
+    "check": "pnpm lint && pnpm test && pnpm lint:content"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.0",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "~3.2.1",
-    "@marp-team/marp-cli": "^4.3.1",
     "astro": "^4.16.0",
+    "image-size": "^2.0.2",
+    "sharp": "^0.34.5",
+    "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@biomejs/biome": "^1.9.4",
+    "@marp-team/marp-cli": "^4.3.1",
     "docx": "^9.6.1",
     "dotenv": "^17.3.1",
     "googleapis": "^171.4.0",
     "gray-matter": "^4.0.3",
-    "image-size": "^2.0.2",
+    "happy-dom": "^20.9.0",
     "mjml": "^4.18.0",
     "nodemailer": "^8.0.2",
+    "pa11y-ci": "^4.1.0",
     "puppeteer": "^24.40.0",
     "replicate": "^1.4.0",
-    "sharp": "^0.34.5",
     "tweetnacl": "^1.0.3",
-    "unist-util-visit": "^5.1.0"
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
   }
 }

@@ -18,7 +18,7 @@ export async function onRequestGet(context) {
 
 	const url = new URL(request.url);
 	const email = (url.searchParams.get('email') || '').trim().toLowerCase();
-	const ts = parseInt(url.searchParams.get('ts') || '0', 10);
+	const ts = Number.parseInt(url.searchParams.get('ts') || '0', 10);
 	const token = url.searchParams.get('token') || '';
 
 	if (!email || !ts || !token) {
@@ -39,7 +39,7 @@ export async function onRequestGet(context) {
 	// Update contact in Mautic: set consent_status to confirmed
 	const mauticBase = MAUTIC_API_URL.replace(/\/$/, '');
 	const mauticHeaders = {
-		'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+		Authorization: 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
 		'Content-Type': 'application/json',
 	};
 	if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
@@ -125,13 +125,13 @@ export async function onRequestGet(context) {
 			const welcomeRes = await fetch('https://api.resend.com/emails', {
 				method: 'POST',
 				headers: {
-					'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+					Authorization: `Bearer ${env.RESEND_API_KEY}`,
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
 					from: 'Superdots <newsletter@superdots.sh>',
 					to: [email],
-					subject: 'Welcome to Superdots — here\'s your AI Tools Cheatsheet',
+					subject: "Welcome to Superdots — here's your AI Tools Cheatsheet",
 					html: welcomeEmailHtml(),
 				}),
 			});
@@ -149,20 +149,22 @@ export async function onRequestGet(context) {
 			await fetch('https://ads-api.reddit.com/api/v2/conversions/events/' + env.REDDIT_PIXEL_ID, {
 				method: 'POST',
 				headers: {
-					'Authorization': 'Bearer ' + env.REDDIT_CONVERSION_TOKEN,
+					Authorization: 'Bearer ' + env.REDDIT_CONVERSION_TOKEN,
 					'Content-Type': 'application/json',
 				},
 				body: await (async () => {
 					const hashBuf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.toLowerCase().trim()));
-					const emailHash = [...new Uint8Array(hashBuf)].map(b => b.toString(16).padStart(2, '0')).join('');
+					const emailHash = [...new Uint8Array(hashBuf)].map((b) => b.toString(16).padStart(2, '0')).join('');
 					return JSON.stringify({
 						test_mode: false,
-						events: [{
-							event_at: new Date().toISOString(),
-							event_type: { tracking_type: 'Lead' },
-							user: { email: emailHash },
-							event_metadata: { currency: 'EUR', value_decimal: 0 },
-						}],
+						events: [
+							{
+								event_at: new Date().toISOString(),
+								event_type: { tracking_type: 'Lead' },
+								user: { email: emailHash },
+								event_metadata: { currency: 'EUR', value_decimal: 0 },
+							},
+						],
 					});
 				})(),
 			});
@@ -202,13 +204,9 @@ function welcomeEmailHtml() {
 
 async function createToken(email, timestamp, action, secret) {
 	const encoder = new TextEncoder();
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(secret),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign']
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, [
+		'sign',
+	]);
 	const data = encoder.encode(`${email}:${timestamp}:${action}`);
 	const sig = await crypto.subtle.sign('HMAC', key, data);
 	return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -248,7 +246,7 @@ function page(title, heading, message, isSuccess) {
 function successPage() {
 	return page(
 		'Subscription Confirmed',
-		'You\'re in!',
+		"You're in!",
 		'Your subscription is confirmed. Check your inbox for a welcome email with your free AI Tools Cheatsheet.',
 		true
 	);

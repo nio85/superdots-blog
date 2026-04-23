@@ -41,7 +41,7 @@ async function handleUnsubscribe(context) {
 	// Delete contact from Mautic (GDPR Art. 17 — right to erasure)
 	const mauticBase = MAUTIC_API_URL.replace(/\/$/, '');
 	const mauticHeaders = {
-		'Authorization': 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
+		Authorization: 'Basic ' + btoa(`${MAUTIC_USERNAME}:${MAUTIC_PASSWORD}`),
 	};
 	if (env.CF_ACCESS_CLIENT_ID && env.CF_ACCESS_CLIENT_SECRET) {
 		mauticHeaders['CF-Access-Client-Id'] = env.CF_ACCESS_CLIENT_ID;
@@ -49,10 +49,9 @@ async function handleUnsubscribe(context) {
 	}
 
 	// Find contact by email
-	const searchRes = await fetch(
-		`${mauticBase}/api/contacts?search=email:${encodeURIComponent(email)}&limit=1`,
-		{ headers: mauticHeaders }
-	);
+	const searchRes = await fetch(`${mauticBase}/api/contacts?search=email:${encodeURIComponent(email)}&limit=1`, {
+		headers: mauticHeaders,
+	});
 
 	if (!searchRes.ok) {
 		console.error('Mautic search error:', await searchRes.text());
@@ -98,13 +97,9 @@ async function handleUnsubscribe(context) {
 
 async function createToken(email, action, secret) {
 	const encoder = new TextEncoder();
-	const key = await crypto.subtle.importKey(
-		'raw',
-		encoder.encode(secret),
-		{ name: 'HMAC', hash: 'SHA-256' },
-		false,
-		['sign']
-	);
+	const key = await crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, [
+		'sign',
+	]);
 	const data = encoder.encode(`${email}:${action}`);
 	const sig = await crypto.subtle.sign('HMAC', key, data);
 	return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -144,8 +139,8 @@ function page(title, heading, message, isSuccess) {
 function successPage() {
 	return page(
 		'Unsubscribed',
-		'You\'ve been unsubscribed',
-		'You won\'t receive any more emails from us. If this was a mistake, you can always subscribe again.',
+		"You've been unsubscribed",
+		"You won't receive any more emails from us. If this was a mistake, you can always subscribe again.",
 		true
 	);
 }

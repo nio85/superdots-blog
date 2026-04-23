@@ -1,11 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { rehypeLazyImages } from './src/plugins/rehype-lazy-images.mjs';
 import { rehypeResponsiveTables } from './src/plugins/rehype-responsive-tables.mjs';
 import { rehypeTrailingSlash } from './src/plugins/rehype-trailing-slash.mjs';
-import fs from 'node:fs';
-import path from 'node:path';
 
 // Build-time date for static pages without explicit lastmod
 const buildDate = new Date().toISOString().slice(0, 10);
@@ -44,7 +44,13 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !page.includes('/design-system') && !page.includes('/analytics-optout') && !page.includes('/tags/') && !page.includes('/category/') && !page.includes('/404') && !noindexSlugs.has(page),
+			filter: (page) =>
+				!page.includes('/design-system') &&
+				!page.includes('/analytics-optout') &&
+				!page.includes('/tags/') &&
+				!page.includes('/category/') &&
+				!page.includes('/404') &&
+				!noindexSlugs.has(page),
 			serialize(item) {
 				const lastmod = lastmodMap.get(item.url);
 				item.lastmod = lastmod || buildDate;
