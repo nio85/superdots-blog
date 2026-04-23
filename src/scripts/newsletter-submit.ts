@@ -1,3 +1,10 @@
+interface BindOptions {
+	source: string;
+	successText?: string;
+	sendingText?: string;
+	defaultText?: string;
+}
+
 const BUTTON_LABELS: Record<string, string> = {
 	banner: 'Subscribe',
 	inline: 'Send it to me',
@@ -12,20 +19,32 @@ function getVariant(el: HTMLFormElement): string {
 	return cls ? cls.replace('newsletter--', '') : 'unknown';
 }
 
-document.querySelectorAll('.newsletter-form').forEach((form) => {
+export function bindNewsletterForm(
+	form: HTMLFormElement,
+	opts: BindOptions,
+): void {
+	const {
+		source,
+		successText = 'Check your inbox to confirm your subscription.',
+		sendingText = 'Sending...',
+		defaultText,
+	} = opts;
+
 	form.addEventListener('submit', async (e) => {
 		e.preventDefault();
 		const el = e.currentTarget as HTMLFormElement;
 		const input = el.querySelector('input[type="email"]') as HTMLInputElement;
 		const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
 		const status = el.querySelector('.newsletter-status') as HTMLElement;
-		const source = el.closest('.newsletter')?.getAttribute('data-source') || 'unknown';
 
 		const email = input.value.trim();
 		if (!email) return;
 
+		const variant = getVariant(el);
+		const restoreLabel = defaultText || BUTTON_LABELS[variant] || 'Subscribe';
+
 		btn.disabled = true;
-		btn.textContent = 'Sending...';
+		btn.textContent = sendingText;
 		status.textContent = '';
 		status.className = 'newsletter-status';
 
@@ -38,7 +57,7 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
 			const data = await res.json();
 
 			if (res.ok) {
-				status.textContent = 'Check your inbox to confirm your subscription.';
+				status.textContent = successText;
 				status.classList.add('newsletter-status--success');
 				input.value = '';
 
@@ -50,7 +69,6 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
 					});
 				}
 
-				const variant = getVariant(el);
 				if (typeof window.umami !== 'undefined') {
 					window.umami.track('newsletter_signup', { source, variant, path: location.pathname });
 				}
@@ -63,7 +81,12 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
 			status.classList.add('newsletter-status--error');
 		} finally {
 			btn.disabled = false;
-			btn.textContent = BUTTON_LABELS[getVariant(el)] || 'Subscribe';
+			btn.textContent = restoreLabel;
 		}
 	});
+}
+
+document.querySelectorAll<HTMLFormElement>('.newsletter-form').forEach((form) => {
+	const source = form.closest('.newsletter')?.getAttribute('data-source') || 'unknown';
+	bindNewsletterForm(form, { source });
 });

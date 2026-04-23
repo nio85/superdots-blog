@@ -6,8 +6,6 @@
  * Copy is department-specific when a known department is provided, otherwise
  * falls back to a generic variant.
  *
- * NOTE: submit logic is currently duplicated with NewsletterForm.astro.
- * Consolidation tracked in Epic #8 (duplicate logic consolidation).
  */
 
 interface Props {
@@ -121,43 +119,15 @@ const { department = '' } = Astro.props;
 		if (desc) desc.textContent = copy.desc;
 		children[insertIndex].before(cta);
 
-		// Bind submit handler on the injected form
-		const injectedForm = prose.querySelector('.newsletter--midpost .newsletter-form');
+		// Bind submit handler using the shared utility
+		const injectedForm = prose.querySelector('.newsletter--midpost .newsletter-form') as HTMLFormElement | null;
 		if (!injectedForm) return;
-		injectedForm.addEventListener('submit', async (e) => {
-			e.preventDefault();
-			const el = e.currentTarget as HTMLFormElement;
-			const input = el.querySelector('input[type="email"]') as HTMLInputElement;
-			const btn = el.querySelector('button[type="submit"]') as HTMLButtonElement;
-			const status = el.querySelector('.newsletter-status') as HTMLElement;
-			const email = input.value.trim();
-			if (!email) return;
-			btn.disabled = true;
-			btn.textContent = 'Sending...';
-			status.textContent = '';
-			status.className = 'newsletter-status';
-			try {
-				const res = await fetch('/api/subscribe', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ email, source: 'article-inline' }),
-				});
-				const data = await res.json();
-				if (res.ok) {
-					status.textContent = 'Check your inbox to confirm.';
-					status.classList.add('newsletter-status--success');
-					input.value = '';
-				} else {
-					status.textContent = data.error || 'Something went wrong.';
-					status.classList.add('newsletter-status--error');
-				}
-			} catch {
-				status.textContent = 'Network error. Please try again.';
-				status.classList.add('newsletter-status--error');
-			} finally {
-				btn.disabled = false;
-				btn.textContent = 'Count me in';
-			}
+
+		import('../scripts/newsletter-submit').then(({ bindNewsletterForm }) => {
+			bindNewsletterForm(injectedForm, {
+				source: 'article-inline',
+				defaultText: 'Count me in',
+			});
 		});
 	})();
 </script>
