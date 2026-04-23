@@ -249,7 +249,7 @@ const TAGS_PER_PAGE = 12;
 		background: var(--color-bg);
 		border: 1px solid var(--color-border);
 		text-decoration: none;
-		transition: all var(--transition-base);
+		transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 		overflow: hidden;
 		min-height: 110px;
 	}
@@ -260,9 +260,11 @@ const TAGS_PER_PAGE = 12;
 		top: 0;
 		left: 0;
 		width: 4px;
-		height: 0;
+		height: 100%;
+		transform: scaleY(0);
+		transform-origin: top;
 		border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-		transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
+		transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 	}
 	.cat-card:hover {
 		transform: translateY(-3px);
@@ -270,7 +272,7 @@ const TAGS_PER_PAGE = 12;
 		text-decoration: none;
 	}
 	.cat-card:hover::before {
-		height: 100%;
+		transform: scaleY(1);
 	}
 
 	/* Series pillar accent */
@@ -390,7 +392,7 @@ const TAGS_PER_PAGE = 12;
 		border: 2px solid var(--color-primary);
 		border-radius: var(--radius-full);
 		cursor: pointer;
-		transition: all var(--transition-base);
+		transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 	}
 	.btn-load-more:hover {
 		background: var(--color-primary);
@@ -429,7 +431,7 @@ const TAGS_PER_PAGE = 12;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-full);
 		text-decoration: none;
-		transition: all var(--transition-fast), opacity var(--transition-slow), transform var(--transition-slow);
+		transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-slow), transform var(--transition-slow);
 		white-space: nowrap;
 	}
 	.cat-chip:hover {
