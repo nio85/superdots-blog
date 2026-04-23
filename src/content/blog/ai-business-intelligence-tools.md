@@ -185,7 +185,7 @@ Take the charts that answered your questions and arrange them on a dashboard. Sh
 **Step 6: Replace the spreadsheet report.**
 Once your dashboard answers the same questions as your manual report, retire the spreadsheet. This is the moment the time savings become real.
 
-For a deeper look at the underlying process, see our guides on [AI spreadsheet tools](/blog/ai-spreadsheet-tools) and [AI report writing](/blog/ai-report-writing). When your BI queries are producing results you want to share more visually, the [data visualization layer](/blog/ai-data-visualization-tools) is where chart types, animated dashboards, and presentation-ready outputs live — beyond what most BI tools offer natively.
+For a deeper look at the underlying process, see our guides on [AI spreadsheet tools](/blog/ai-spreadsheet-tools) and [AI report writing](/blog/ai-report-writing). For richer charts and interactive dashboards beyond standard BI output, explore dedicated [data visualization layer](/blog/ai-data-visualization-tools) tools.
 
 ## What to Look For in an AI BI Tool
 

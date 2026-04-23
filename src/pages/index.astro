@@ -403,7 +403,7 @@ const popularPosts = allPosts
 		background: var(--color-bg);
 		color: var(--color-text-strong);
 		text-decoration: none;
-		transition: all var(--transition-base);
+		transition: border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
 		cursor: pointer;
 	}
 	.btn-secondary:hover {
@@ -523,7 +523,7 @@ const popularPosts = allPosts
 		font-weight: var(--weight-semibold);
 		color: var(--color-text-strong);
 		text-decoration: none;
-		transition: all var(--transition-base);
+		transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 		position: relative;
 		overflow: hidden;
 	}
@@ -573,7 +573,7 @@ const popularPosts = allPosts
 	.dept-arrow {
 		opacity: 0;
 		transform: translateX(-6px);
-		transition: all var(--transition-fast);
+		transition: opacity var(--transition-fast), transform var(--transition-fast);
 		color: var(--color-text-muted);
 		flex-shrink: 0;
 	}
