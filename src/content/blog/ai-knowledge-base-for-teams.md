@@ -15,7 +15,7 @@ Your best employee just quit. They took two weeks of vacation before their last 
 
 This is not a people problem. It is a systems problem. And it is fixable.
 
-An AI-powered internal knowledge base does not just store your documents in a slightly fancier folder. It makes your team's collective knowledge searchable, current, and useful — even when the person who wrote it is long gone.
+An AI-powered internal knowledge base does not just store your documents in a slightly fancier folder. It makes your team's collective knowledge searchable, current, and useful — even when the person who wrote it is long gone. For teams that also need AI classification and search across files scattered across Google Drive, SharePoint, and Dropbox, a dedicated [document management tools](/blog/ai-document-management) layer handles the unstructured file side of this problem.
 
 ## Why teams keep losing knowledge
 
