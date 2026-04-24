@@ -5,6 +5,7 @@ export const CLARITY_PROJECT_ID = 'vxukclgmnh';
 export const UMAMI_WEBSITE_ID = 'ad359e34-1608-4bf6-9e4e-e8200ed04b86';
 export const UMAMI_URL = 'https://umami.bartoccini.cloud';
 export const REDDIT_PIXEL_ID = import.meta.env.PUBLIC_REDDIT_PIXEL_ID || '';
+export const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID || '';
 
 export const PILLARS = [
 	{

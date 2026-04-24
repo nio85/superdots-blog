@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL, REDDIT_PIXEL_ID } from '../consts';
+import { SITE_TITLE, GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL, REDDIT_PIXEL_ID, META_PIXEL_ID } from '../consts';
 import { consentInlineScript } from '../lib/consent-inline';
 
 interface Props {
@@ -223,6 +223,26 @@ const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '';
 			}(window, document);
 			rdt('init', redditPixelId);
 			rdt('track', 'PageVisit');
+		});
+	}
+</script>
+)}
+
+<!-- Meta Pixel — marketing consent required (deferred) -->
+{META_PIXEL_ID && (
+<script is:inline define:vars={{ metaPixelId: META_PIXEL_ID }}>
+	if (location.hostname === 'superdots.sh' && !window.SD_isOptedOut() && window.SD_readConsent().marketing) {
+		window.SD_deferAnalytics(function() {
+			!function(f, b, e, v, n, t, s) {
+				if (f.fbq) return;
+				n = f.fbq = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+				if (!f._fbq) f._fbq = n;
+				n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+				t = b.createElement(e); t.async = !0; t.src = v;
+				s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+			}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', metaPixelId);
+			fbq('track', 'PageView');
 		});
 	}
 </script>
