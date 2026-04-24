@@ -184,4 +184,4 @@ Everything else is implementation detail.
 
 ---
 
-*For the full picture on marketing optimization, see our guides on [AI conversion rate optimization tools](/blog/ai-conversion-rate-optimization-tools), [AI landing page optimization](/blog/ai-landing-page-optimization-tools), and [the best AI tools for marketing](/blog/best-ai-tools-for-marketing).*
+*For the full picture on marketing optimization, see our guides on [AI conversion rate optimization tools](/blog/ai-conversion-rate-optimization-tools), [AI landing page optimization](/blog/ai-landing-page-optimization-tools), and [the best AI tools for marketing](/blog/ai-for-marketing-complete-guide).*
