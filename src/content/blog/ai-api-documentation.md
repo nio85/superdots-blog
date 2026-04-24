@@ -93,7 +93,7 @@ Here's a stack that works well for an API team that wants AI-assisted documentat
 
 1. **Source of truth**: OpenAPI spec committed to the repo, auto-generated from code annotations where possible (FastAPI, tsoa, Springdoc).
 2. **Reference docs**: Mintlify or ReadMe, importing the spec via CI on every merge to main. Reference section is auto-generated; guides and tutorials are human-written with AI assistance.
-3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations.
+3. **Editor tooling**: GitHub Copilot or Cursor for doc writers, configured to index the codebase so suggestions are grounded in real implementations. See our [AI coding tools](/blog/ai-code-generation-tools/) comparison for full pricing and feature breakdowns.
 4. **Sync enforcement**: A GitHub Actions check — part of the [AI-powered DevOps](/blog/ai-devops-tools/) pipeline — that compares the committed spec against the running service's `/openapi.json` endpoint and fails the build on drift.
 5. **Review integration**: A step in your PR template that asks "did you update the spec?" for any PR touching an API endpoint. Pair this with an AI reviewer that checks the diff and flags missing spec changes.
 
