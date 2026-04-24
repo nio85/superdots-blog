@@ -21,11 +21,11 @@ faqs:
 heroImage: "/images/blog/how-to-build-ai-workflow-design-team.webp"
 ---
 
-I've been thinking about a pattern I noticed while spending two weeks auditing how a 4-person design studio was actually using AI. Every designer on the team had adopted at least one AI tool. The lead designer used Midjourney for mood boards. The UX designer ran copy through Claude. The junior designer had started using Figma's AI features for wireframe variations. On paper, they were an AI-forward team.
+A pattern emerges consistently in design teams that have adopted AI: individual tool adoption does not compound into team-level efficiency. The bottleneck isn't tool selection — it's workflow coordination.
 
-And yet, when I asked the studio lead how much time AI had saved the team overall, he paused for a long moment. "Honestly? I'm not sure it's saved us any time at all." Each individual had gotten faster at their part of the work. But the workflow between them — briefs, feedback loops, handoffs, documentation — was exactly as slow as it had ever been.
+Design teams report the same experience: one designer uses Midjourney for mood boards, another runs copy through Claude, a third uses Figma's AI features for wireframe variations. On paper, they're an AI-forward team. In practice, the workflow between them — briefs, feedback loops, handoffs, documentation — is exactly as slow as it was before. Each individual got faster. The team did not.
 
-What I found in that audit changed how I think about AI adoption for creative teams. The bottleneck was never tool adoption. It was workflow coordination.
+This gap between individual and team-level adoption is the core design AI problem.
 
 ## Why individual AI adoption doesn't compound
 
@@ -33,13 +33,13 @@ Figma's 2025 design survey found that 78% of designers were already using AI too
 
 There's a concept in organizational psychology called *transactive memory* — the idea that teams function better not when every person knows everything, but when everyone knows who knows what and how to access it. The same principle applies to tools and processes. A team where one person uses AI for mood boards and another uses it for copy has gained two individual capabilities. A team with a shared workflow has gained a *system* — one that compounds, transfers knowledge to new hires, and produces consistent outputs.
 
-Research on habit formation from the University of College London found that new behaviors become automatic in 18 to 254 days, with the wide range depending largely on whether the behavior is practiced in a stable context. Individual habits are fragile. Team processes provide the stable context that makes habits stick.
+Research on habit formation from University College London (UCL) found that new behaviors become automatic in 18 to 254 days, with the wide range depending largely on whether the behavior is practiced in a stable context. Individual habits are fragile. Team processes provide the stable context that makes habits stick.
 
 What this means practically: the AI tools your team members are already using are a foundation, not a workflow. The workflow is what connects them.
 
 ## The Design AI Stack
 
-Over the past several months, I've been piecing together a framework from what I've seen work in small design teams. I call it the Design AI Stack — four layers that build on each other, starting from the most individual and moving toward the most collaborative.
+Here is a four-layer framework for moving from individual AI use to a shared team workflow. The Design AI Stack builds each layer on the previous one, starting from the most individual tasks and moving toward the most collaborative standards.
 
 You don't need to implement all four at once. But each layer makes the next one easier.
 
@@ -75,7 +75,7 @@ The highest-friction points in most design processes aren't the design itself. T
 
 **Design specs → Figma Dev Mode or Zeplin AI.** Both generate property specifications automatically from finished designs. If your developers are still copying spacing values from Figma comments, that's a workflow gap with a straightforward fix. We covered this in detail in our guide to [AI design handoff tools](/blog/ai-design-handoff).
 
-What surprised me most in my audit was how much time was disappearing in this layer specifically. The design work itself was fast. The work *around* the design — synthesizing feedback, writing specs, preparing handoff — was eating 30 to 40 percent of total project time.
+Where time actually disappears in this layer surprises most teams. The design work itself is often fast. The work *around* the design — synthesizing feedback, writing specs, preparing handoff — eats 30 to 40 percent of total project time, based on time-tracking data from teams that have measured it.
 
 ### Layer 4 — Transfer to team standards
 
@@ -89,7 +89,7 @@ A functional prompt library for a 4-person team can be built in a single working
 
 ## What AI still can't do for design teams
 
-I want to be honest about where this framework breaks down, because I've seen teams get frustrated when AI doesn't perform where they expected it to.
+Here is where the framework breaks down — worth naming directly, because this is where teams get frustrated.
 
 AI cannot replace strategic design thinking. Understanding what a client actually needs versus what they're asking for, deciding which of three directions is right for a brand's positioning, knowing when to push back — these require judgment that comes from experience and relationship context. No prompt library solves for that.
 
@@ -113,4 +113,4 @@ You don't need to implement all four layers to see results. Here is where to sta
 
 **Next week**: Share the prompt with one other designer. Ask them to test it and give feedback. You now have the beginning of a shared prompt library and a small team standard.
 
-That's the whole first layer of the stack. The other three follow naturally from there — I've found that once a team experiences one shared AI workflow that works, they build the next one themselves.
+That's the whole first layer of the stack. The other three follow naturally once a team has one shared AI workflow that actually works.
