@@ -37,11 +37,6 @@ faqs:
 
 Here's how to pick an AI guided selling tool, what it costs, and how to go live in 30 days without hiring a RevOps team. The market has three tiers — most buyers don't discover this until they're deep in vendor conversations and have picked from the wrong one.
 
-**Quick answer by team size:**
-- Under 20 reps → Gong (deal visibility + coaching) or Highspot (content adoption) — skip Clari, Seismic, and Einstein until you have RevOps support
-- 20–100 reps → Gong + Highspot combined, or Clari if forecast accuracy is your bottleneck
-- 100+ reps on Salesforce → Add Salesforce Einstein before buying a net-new tool
-
 Gong's research across 300,000+ sales calls found that reps who receive AI-suggested next steps and follow them close 28% more deals than reps who don't. What's interesting is that those reps aren't necessarily better salespeople — they're just acting on better information at the right moment.
 
 That's the premise behind AI guided selling: not replacing sales judgment, but filling the gaps where instinct is unreliable. Which product to recommend to this buyer profile. When to follow up based on what's actually worked before. What to include in a proposal given this prospect's behavior signals.
@@ -49,6 +44,11 @@ That's the premise behind AI guided selling: not replacing sales judgment, but f
 Based on documentation, pricing pages, and practitioner reviews, the market has a clear three-tier structure — and picking from the wrong tier is the single most common implementation failure.
 
 This guide covers all three tiers, with a pricing table, a team-size fit guide, and a 5-step implementation checklist you can start this week.
+
+> **Quick Answer:** What is AI guided selling?
+> - AI analyzes your deal history and buyer signals to tell reps what to do next
+> - Tools range from $0 (Zoho Zia for existing Zoho users) to $140/user/month (Gong)
+> - You can go live in 30 days without hiring a RevOps team using our 5-step checklist below
 
 ## What Is AI Guided Selling?
 
