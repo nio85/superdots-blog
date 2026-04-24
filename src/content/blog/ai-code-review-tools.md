@@ -31,7 +31,7 @@ Traditional static analysis tools (linters, SAST scanners) check for known patte
 
 AI code review tools go further:
 
-**Bug detection.** They analyze code changes in context — not just the diff, but how it interacts with the rest of the codebase. They catch null pointer issues, off-by-one errors, race conditions, and logic flaws that pattern-matching tools miss.
+**Bug detection.** They analyze code changes in context — not just the diff, but how it interacts with the rest of the codebase. They catch null pointer issues, off-by-one errors, race conditions, and logic flaws that pattern-matching tools miss. AI reviewers also flag ORM patterns that cause [database performance](/blog/ai-database-management/) problems — N+1 queries, missing eager loads, and over-fetching — before they reach production.
 
 **PR summarization.** Every PR gets an auto-generated summary: what changed, why it matters, which files are most critical to review. This saves reviewers 5-10 minutes of orientation per PR.
 
