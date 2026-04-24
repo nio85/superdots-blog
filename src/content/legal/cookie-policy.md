@@ -189,7 +189,7 @@ Reddit, Inc. is headquartered in the United States. Data is transferred to Reddi
 			<td>Meta Platforms, Inc.</td>
 			<td>Click ID that links a Facebook/Instagram ad click to a site visit, enabling conversion attribution</td>
 			<td>HTTP cookie</td>
-			<td>90 days</td>
+			<td>2 years</td>
 		</tr>
 	</tbody>
 </table>

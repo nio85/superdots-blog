@@ -174,7 +174,10 @@ export async function onRequestGet(context) {
 	}
 
 	// Meta Conversions API: report newsletter confirmation as Lead event
-	if (env.META_PIXEL_ID && env.META_CAPI_TOKEN) {
+	// Only fire if _fbp cookie is present (= user granted marketing consent and loaded Meta Pixel)
+	const cookies = request.headers.get('Cookie') || '';
+	const hasFbpConsent = cookies.includes('_fbp=');
+	if (env.META_PIXEL_ID && env.META_CAPI_TOKEN && hasFbpConsent) {
 		try {
 			const hashBuf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.toLowerCase().trim()));
 			const emailHash = [...new Uint8Array(hashBuf)].map((b) => b.toString(16).padStart(2, '0')).join('');
