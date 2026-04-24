@@ -38,9 +38,9 @@ An AI chatbot is a decision tree with a personality. It recognizes keywords, mat
 
 **An AI customer support agent is categorically different.** An AI customer support agent is software that can understand a customer's request, look up information in connected systems, and take action — like issuing a refund or updating an account record — without human intervention, escalating to a human only when the situation falls outside its scope.
 
-Agents act on your systems. Chatbots respond from your knowledge base.
+Agents act on your systems. Chatbots respond from your [knowledge base](/blog/ai-knowledge-base-for-teams/).
 
-The distinction matters because the price, setup requirements, and failure modes are completely different. You wouldn't evaluate a CRM and a spreadsheet with the same criteria.
+The distinction matters because the price, setup requirements, and failure modes are completely different. You wouldn't evaluate a [CRM](/blog/ai-crm-tools/) and a spreadsheet with the same criteria.
 
 ## The decision tree: before you look at any tool
 
