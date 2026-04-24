@@ -109,7 +109,7 @@ The data layer is where conversation intelligence gets really powerful. Across t
 
 Forecast accuracy in most sales organizations is dismal. Reps are optimistic by nature. Managers don't have time to deep-dive every deal. The result: surprises at quarter end when "committed" deals slip or disappear.
 
-AI deal intelligence tools analyze the signals that predict deal outcomes — email sentiment, meeting frequency, stakeholder engagement, timeline changes, competitive mentions, and dozens of other factors — to flag at-risk deals before they stall. Instead of waiting for a rep to admit a deal is in trouble, managers see early warning signals and can intervene while there's still time to save it. Those risk signals can then feed into [AI guided selling](/blog/ai-guided-selling/) systems that surface specific next-best-action recommendations to help reps get the deal back on track.
+AI deal intelligence tools analyze the signals that predict deal outcomes — email sentiment, meeting frequency, stakeholder engagement, timeline changes, competitive mentions, and dozens of other factors — to flag at-risk deals before they stall. Instead of waiting for a rep to admit a deal is in trouble, managers see early warning signals and can intervene while there's still time to save it. Those risk signals can then feed into [AI guided selling platforms](/blog/ai-guided-selling/) that surface specific next-best-action recommendations to help reps get the deal back on track.
 
 The best deal intelligence tools go beyond binary "at risk / on track" classifications. They surface the specific factors driving risk — missing stakeholders, declining engagement, stalled procurement — so managers know exactly what needs to happen to get a deal back on track.
 
@@ -133,7 +133,7 @@ AI competitive analysis tools monitor competitor activity continuously — websi
 
 For reps, this means walking into competitive deals with current information instead of six-month-old talking points. For product marketing, it means spotting competitive shifts early enough to respond strategically.
 
-**Go deeper:** [AI Competitive Analysis: How Sales Teams Prep Smarter, Faster](/blog/ai-competitive-analysis/) shows how to set up automated competitor monitoring and build battlecards that stay current. For a platform-by-platform comparison of dedicated [competitive battlecard tools](/blog/ai-battlecard-tools-sales-teams/) — including free options, enterprise platforms, and a team-size decision guide — see our battlecard software guide.
+**Go deeper:** [AI Competitive Analysis: How Sales Teams Prep Smarter, Faster](/blog/ai-competitive-analysis/) shows how to set up automated competitor monitoring and build battlecards that stay current. For a platform-by-platform comparison of dedicated [AI battlecard tools](/blog/ai-battlecard-tools-sales-teams/) — including free options, enterprise platforms, and a team-size decision guide — see our battlecard software guide.
 
 ## Proposal generation
 
