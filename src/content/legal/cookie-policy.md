@@ -2,7 +2,7 @@
 title: "Cookie Policy | Superdots"
 description: "Cookie policy for superdots.sh — what cookies we use and why."
 pageTitle: "Cookie Policy"
-lastUpdated: "20 April 2026"
+lastUpdated: "24 April 2026"
 ---
 
 ## What are cookies?
@@ -189,7 +189,7 @@ Reddit, Inc. is headquartered in the United States. Data is transferred to Reddi
 			<td>Meta Platforms, Inc.</td>
 			<td>Click ID that links a Facebook/Instagram ad click to a site visit, enabling conversion attribution</td>
 			<td>HTTP cookie</td>
-			<td>2 years</td>
+			<td>90 days</td>
 		</tr>
 	</tbody>
 </table>

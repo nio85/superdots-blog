@@ -2,7 +2,7 @@
 title: Privacy Policy | Superdots
 description: Privacy policy for superdots.sh — how we handle your data.
 pageTitle: Privacy Policy
-lastUpdated: 20 April 2026
+lastUpdated: 24 April 2026
 ---
 
 ## 1. Who we are
@@ -162,7 +162,7 @@ You can review each provider's transfer documentation: [Google](https://policies
 - **localStorage (theme):** persists until you clear your browser data.
 - **Microsoft Clarity data:** session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.
 - **Reddit Pixel data:** conversion and audience data retained by Reddit per their [data retention policy](https://www.reddit.com/policies/privacy-policy). The `_rdt_uuid` cookie has a 2-year lifetime; data associated with it is retained by Reddit for up to 2 years.
-- **Meta Pixel data:** conversion and audience data retained by Meta per their [data policy](https://www.facebook.com/privacy/policy/). The `_fbp` cookie has a 90-day lifetime; data associated with it is retained by Meta for up to 2 years.
+- **Meta Pixel data:** conversion and audience data retained by Meta per their [data policy](https://www.facebook.com/privacy/policy/). Both the `_fbp` and `_fbc` cookies have a 90-day lifetime; data associated with them is retained by Meta for up to 2 years.
 - **Cloudflare logs:** retained per Cloudflare's standard retention (typically 72 hours for edge logs).
 - **Newsletter email addresses (confirmed):** retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).
 - **Newsletter email addresses (unconfirmed):** retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.
@@ -190,7 +190,7 @@ Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have
 - **Object** to processing based on legitimate interest (Art. 21)
 - **Withdraw consent** at any time for analytics cookies (GA4/Clarity), marketing cookies (Reddit Pixel, Meta Pixel), or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
 
-To exercise any of these rights, email [privacy@superdots.sh](mailto:privacy@superdots.sh). We will respond within 30 days.
+To exercise any of these rights, email [privacy@superdots.sh](mailto:privacy@superdots.sh). We will respond within one month. If your request is complex or we receive a high volume of requests, we may extend this period by up to two additional months; if so, we will notify you within the first month and explain the reason for the extension (Art. 12(3) GDPR).
 
 ## 9. Complaints
 
