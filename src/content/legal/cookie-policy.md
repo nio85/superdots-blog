@@ -17,7 +17,7 @@ We divide cookies into three categories. When you visit the Site, a banner lets 
 |---|---|---|
 | **Necessary** | No — always active | Core site functionality (theme, consent record, bot protection) |
 | **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity, Umami Session Replays |
-| **Marketing** | Yes — opt-in | Reddit Pixel (ad conversion tracking and retargeting) |
+| **Marketing** | Yes — opt-in | Reddit Pixel and Meta Pixel (ad conversion tracking and retargeting) |
 
 Your choices are stored in your browser's localStorage and respected on every visit. You can change them at any time via the "Cookie settings" link in the footer.
 
@@ -164,6 +164,38 @@ These cookies are used for ad conversion tracking and retargeting. They are only
 
 Reddit, Inc. is headquartered in the United States. Data is transferred to Reddit's US servers under Standard Contractual Clauses (SCCs) as the transfer mechanism. See [Reddit's privacy policy](https://www.reddit.com/policies/privacy-policy) and [Reddit Ads data processing terms](https://advertising.reddithelp.com/en/categories/reddit-ads-policies/reddit-advertising-platform-terms) for details.
 
+### Meta Pixel cookies
+
+<table>
+	<thead>
+		<tr>
+			<th>Cookie name</th>
+			<th>Provider</th>
+			<th>Purpose</th>
+			<th>Type</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>_fbp</code></td>
+			<td>Meta Platforms, Inc.</td>
+			<td>Identifies the browser for ad delivery and measurement across Facebook and Instagram campaigns</td>
+			<td>HTTP cookie</td>
+			<td>90 days</td>
+		</tr>
+		<tr>
+			<td><code>_fbc</code></td>
+			<td>Meta Platforms, Inc.</td>
+			<td>Click ID that links a Facebook/Instagram ad click to a site visit, enabling conversion attribution</td>
+			<td>HTTP cookie</td>
+			<td>90 days</td>
+		</tr>
+	</tbody>
+</table>
+
+Meta Platforms, Inc. is headquartered in the United States. Data is transferred under the EU-U.S. Data Privacy Framework and Standard Contractual Clauses (SCCs). See [Meta's privacy policy](https://www.facebook.com/privacy/policy/) for details.
+
 ## Email tracking (newsletter subscribers only)
 
 If you subscribe to our newsletter, our marketing automation system (Mautic, self-hosted in the EU) uses a **tracking pixel** (a tiny invisible image) to detect email opens, and **link rewriting** to measure which links you click. This is not a cookie — it operates within the email itself, not on the Site. Mautic associates this data with your email address to help us understand which content resonates.
@@ -178,6 +210,7 @@ In addition to cookies, the Site makes requests to third-party servers that may 
 - **Google Analytics** (`www.googletagmanager.com`) — only loaded after consent. Sends pseudonymised usage data to Google (servers in the US; EU–US Data Privacy Framework adequacy decision and Standard Contractual Clauses apply).
 - **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
 - **Reddit Pixel** (`www.redditstatic.com`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting on Reddit. Data is sent to Reddit, Inc. (US) under Standard Contractual Clauses.
+- **Meta Pixel** (`connect.facebook.net`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting and lookalike audiences on Facebook and Instagram. Data is sent to Meta Platforms, Inc. (US) under the EU-U.S. Data Privacy Framework and Standard Contractual Clauses.
 
 ## How to manage cookies
 

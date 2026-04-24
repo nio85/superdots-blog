@@ -155,6 +155,17 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		<CookieConsent />
 		<MidPostCTA department={department} />
 
+		<script is:inline>
+			if (typeof fbq === 'function') {
+				var el = document.body;
+				fbq('track', 'ViewContent', {
+					content_name: el.getAttribute('data-article-slug') || document.title,
+					content_category: el.getAttribute('data-article-department') || 'blog',
+					content_type: 'article'
+				});
+			}
+		</script>
+
 		<script>
 			import '../scripts/article-engagement.ts';
 		</script>

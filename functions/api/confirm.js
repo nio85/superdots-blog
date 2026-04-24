@@ -173,6 +173,32 @@ export async function onRequestGet(context) {
 		}
 	}
 
+	// Meta Conversions API: report newsletter confirmation as Lead event
+	if (env.META_PIXEL_ID && env.META_CAPI_TOKEN) {
+		try {
+			const hashBuf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.toLowerCase().trim()));
+			const emailHash = [...new Uint8Array(hashBuf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+			await fetch(`https://graph.facebook.com/v21.0/${env.META_PIXEL_ID}/events`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					data: [
+						{
+							event_name: 'Lead',
+							event_time: Math.floor(Date.now() / 1000),
+							action_source: 'website',
+							event_source_url: 'https://superdots.sh/api/confirm',
+							user_data: { em: [emailHash] },
+						},
+					],
+					access_token: env.META_CAPI_TOKEN,
+				}),
+			});
+		} catch (e) {
+			console.error('Meta CAPI error:', e);
+		}
+	}
+
 	return successPage();
 }
 
