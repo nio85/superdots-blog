@@ -17,7 +17,7 @@ faqs:
   - question: "What is natural language to SQL?"
     answer: "Natural language to SQL tools let you write database queries in plain English instead of SQL. You type 'show me all customers who signed up last month and haven't made a purchase' and the tool generates the correct SQL query. This makes database data accessible to non-technical team members."
   - question: "What is the best AI tool for SQL query optimization?"
-    answer: "For PostgreSQL teams, pganalyze is the dedicated option — it analyzes query execution plans, recommends indexes, and tracks workload trends, starting around $399/month for up to 5 servers. Datadog Database Monitoring (~$70/host/month) covers MySQL, PostgreSQL, and SQL Server with AI-powered anomaly detection. For one-off query analysis, general-purpose AI tools like Claude can review individual SQL statements at no extra cost."
+    answer: "For PostgreSQL teams, pganalyze is the dedicated option — it analyzes query execution plans, recommends indexes, and tracks workload trends, starting around $399/month for up to 5 servers (as of April 2026, per vendor pricing pages). Datadog Database Monitoring (~$70/host/month) covers MySQL, PostgreSQL, and SQL Server with AI-powered anomaly detection. For one-off query analysis, general-purpose AI tools like Claude can review individual SQL statements at no extra cost."
   - question: "Can AI manage database indexes automatically?"
     answer: "AI tools like pganalyze and Percona PMM analyze your full query workload and recommend which indexes to add, modify, or drop — weighing read performance gains against write overhead and storage cost. Some tools can apply recommended indexes in a staging environment automatically for testing. Applying changes to production still requires human review and approval to prevent unexpected regressions in write-heavy workloads."
 imageHint: "database administrator reviewing AI query optimization suggestions in terminal"
@@ -33,13 +33,15 @@ AI database tools change this equation. They bring DBA-level analysis to teams t
 
 ## Top 5 AI Database Tools at a Glance
 
-| Tool | Use Case | Price | DB Support |
-|---|---|---|---|
-| pganalyze | Query optimization, index recommendations, explain plan analysis | From ~$399/month (up to 5 servers) | PostgreSQL only |
-| Datadog Database Monitoring | Query performance tracking, anomaly detection, workload visibility | From ~$70/host/month | MySQL, PostgreSQL, SQL Server, MongoDB |
-| Percona Monitoring and Management (PMM) | Open-source query analytics, slow query detection, schema insights | Free (self-hosted) | MySQL, PostgreSQL, MongoDB |
-| RDS Performance Insights | AWS-native query load visualization, top SQL identification | Free (7-day history); ~$0.02/vCPU-hour beyond | AWS RDS / Aurora only |
-| Claude / general-purpose AI | One-off query analysis, ORM pattern review, migration planning | Pay-per-use or subscription | Any SQL dialect |
+| Tool | Best For | Price | DB Support | Limitation |
+|---|---|---|---|---|
+| pganalyze | Query optimization, index recommendations, explain plan analysis | From ~$399/month (up to 5 servers) | PostgreSQL only | PostgreSQL only — no MySQL, SQL Server, or MongoDB support |
+| Datadog Database Monitoring | Query performance tracking, anomaly detection, workload visibility | From ~$70/host/month | MySQL, PostgreSQL, SQL Server, MongoDB | Costs compound fast at scale — multiple high-traffic hosts get expensive quickly |
+| Percona Monitoring and Management (PMM) | Open-source query analytics, slow query detection, schema insights | Free (self-hosted) | MySQL, PostgreSQL, MongoDB | Requires self-hosting overhead — setup and maintenance fall on your team |
+| RDS Performance Insights | AWS-native query load visualization, top SQL identification | Free (7-day history); ~$0.02/vCPU-hour beyond | AWS RDS / Aurora only | AWS-only — not available for self-hosted or other cloud databases |
+| Claude / general-purpose AI | One-off query analysis, ORM pattern review, migration planning | Pay-per-use or subscription | Any SQL dialect | No persistent monitoring — you have to bring queries to it manually |
+
+*Pricing as of April 2026, per vendor pricing pages. Verify current rates before purchasing.*
 
 The right choice depends on your stack. PostgreSQL teams get the most value from pganalyze's workload-aware index engine. Multi-database environments benefit from Datadog's unified view. Teams without budget for paid tooling can start with Percona PMM and use a general-purpose AI for query-level analysis.
 
