@@ -89,7 +89,7 @@ Measure quarterly. Fast growth without proportional management expansion creates
 ### 8. Pay Equity Gap
 **% difference in average compensation between demographic groups for equivalent roles**
 
-Even at small company sizes, pay equity gaps compound quickly. A 5% gap at hire becomes an 8% gap at the first review cycle. Calculate by gender and by role level. Target: under 3%.
+Even at small company sizes, [pay equity](/blog/ai-compensation-benchmarking/) gaps compound quickly. A 5% gap at hire becomes an 8% gap at the first review cycle. Calculate by gender and by role level. Target: under 3%.
 
 ## The Free Workflow: Google Sheets + Claude
 
@@ -110,7 +110,7 @@ Most HRIS tools (BambooHR, Gusto, Rippling, even basic ones) let you export term
 
 Copy your last 6–12 months of metrics data and ask: *"Analyze this HR data for a [X]-person company. Flag any trends I should investigate, calculate monthly and annualized turnover, and identify two or three patterns worth a closer look."*
 
-Claude will surface what your spreadsheet won't tell you automatically — things like "your absenteeism rate has increased in three consecutive months" or "your offer acceptance rate dropped at the same time you extended time-to-hire."
+Claude will surface what your spreadsheet won't tell you automatically — things like "your absenteeism rate has increased in three consecutive months" or "your offer acceptance rate dropped at the same time you extended [time-to-hire](/blog/ai-interview-scheduling/)."
 
 **Step 4: Save the summary**
 
@@ -185,7 +185,7 @@ Pricing starts around $5–8/employee/month, making it competitive for mid-marke
 
 ### Leapsome — Best for EU Teams and OKR Alignment
 
-Leapsome is the most European product on this list — built with GDPR compliance as a core design principle rather than a compliance add-on. For companies operating primarily in the EU, that matters: data residency, processing agreements, and consent workflows are handled natively.
+Leapsome is the most European product on this list — built with [GDPR compliance](/blog/ai-gdpr-compliance-tools-small-business/) as a core design principle rather than a compliance add-on. For companies operating primarily in the EU, that matters: data residency, processing agreements, and consent workflows are handled natively.
 
 Beyond compliance, Leapsome differentiates by connecting people analytics directly to OKR and goal data. The theory: turnover patterns, engagement scores, and performance trends make more sense when viewed against whether teams are hitting their objectives. A team missing OKRs for two consecutive quarters that also has rising absenteeism is telling a different story than a high-OKR team with the same absenteeism rate.
 

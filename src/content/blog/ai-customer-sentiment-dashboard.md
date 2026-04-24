@@ -95,7 +95,7 @@ Trends only matter if someone acts on them. Alerting closes the loop.
 
 Set threshold-based alerts: "Notify the support lead when negative sentiment in the performance category increases more than 20% above the 7-day rolling average." Or volume-based alerts: "Alert when more than 10 tickets mention the same feature within 4 hours."
 
-Route different alert types to different people. Product issues go to the engineering lead. Billing complaints go to the account management team. Churn-risk signals go to customer success. Alerts that go to everyone usually get acted on by no one.
+Route different alert types to different people. Product issues go to the engineering lead. Billing complaints go to the account management team. Churn-risk signals go to [customer success](/blog/ai-customer-success-tools/). Alerts that go to everyone usually get acted on by no one.
 
 ## Building the Dashboard: What to Actually Build
 

@@ -30,7 +30,7 @@ So this guide starts with a question most FP&A software lists skip entirely: **c
 
 ## What FP&A Software Actually Does
 
-**Financial planning and analysis (FP&A) is the forward-looking half of finance** — budgeting for the year ahead, forecasting next quarter's cash flow, modeling what happens if you hire two salespeople or lose your biggest client. It is distinct from accounting software, which records what has already happened.
+**Financial planning and analysis (FP&A) is the forward-looking half of finance** — budgeting for the year ahead, forecasting next quarter's [cash flow](/blog/ai-cash-flow-forecasting/), modeling what happens if you hire two salespeople or lose your biggest client. It is distinct from accounting software, which records what has already happened.
 
 Most small businesses run accounting tools like QuickBooks or Xero for the historical side, then cobble together forecasts in Excel. That works until it doesn't. A 2024 analysis by Limelight noted that the average finance team member spends a disproportionate share of their week on data gathering and reconciliation — not on the analysis that actually informs decisions. The spreadsheet becomes the bottleneck.
 
@@ -131,7 +131,7 @@ Pricing is not publicly listed. According to Vendr's 2025 procurement data, Mosa
 
 #### Jirav
 
-Jirav is an all-in-one cloud FP&A platform that explicitly targets small and midsize businesses. It covers budgeting, workforce planning, scenario modeling, and reporting in one tool, with native integrations to QuickBooks Online, Xero, Sage, and several other accounting systems. According to The Finance Weekly, Jirav is designed for SMBs that need integrated headcount and financial planning without an enterprise implementation project.
+Jirav is an all-in-one cloud FP&A platform that explicitly targets small and midsize businesses. It covers budgeting, [workforce planning](/blog/ai-workforce-planning/), scenario modeling, and reporting in one tool, with native integrations to QuickBooks Online, Xero, Sage, and several other accounting systems. According to The Finance Weekly, Jirav is designed for SMBs that need integrated headcount and financial planning without an enterprise implementation project.
 
 Pricing is custom, but Jirav positions itself as more accessible than Mosaic or Planful. Expect to enter a sales process before seeing numbers.
 
