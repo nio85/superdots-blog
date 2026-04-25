@@ -2,7 +2,7 @@
 title: "Cookie Policy | Superdots"
 description: "Cookie policy for superdots.sh — what cookies we use and why."
 pageTitle: "Cookie Policy"
-lastUpdated: "24 April 2026"
+lastUpdated: "25 April 2026"
 ---
 
 ## What are cookies?
@@ -17,7 +17,7 @@ We divide cookies into three categories. When you visit the Site, a banner lets 
 |---|---|---|
 | **Necessary** | No — always active | Core site functionality (theme, consent record, bot protection) |
 | **Analytics** | Yes — opt-in | Google Analytics 4, Microsoft Clarity, Umami Session Replays |
-| **Marketing** | Yes — opt-in | Reddit Pixel and Meta Pixel (ad conversion tracking and retargeting) |
+| **Marketing** | Yes — opt-in | Reddit Pixel, Meta Pixel (ad conversion tracking and retargeting), and Skimlinks (affiliate link attribution) |
 
 Your choices are stored in your browser's localStorage and respected on every visit. You can change them at any time via the "Cookie settings" link in the footer.
 
@@ -196,6 +196,31 @@ Reddit, Inc. is headquartered in the United States. Data is transferred to Reddi
 
 Meta Platforms, Inc. is headquartered in the United States. Data is transferred under the EU-U.S. Data Privacy Framework and Standard Contractual Clauses (SCCs). See [Meta's privacy policy](https://www.facebook.com/privacy/policy/) for details.
 
+### Skimlinks cookies
+
+<table>
+	<thead>
+		<tr>
+			<th>Cookie name</th>
+			<th>Provider</th>
+			<th>Purpose</th>
+			<th>Type</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Various (<code>skimlinks_*</code>)</td>
+			<td>Skimlinks (Taboola, Inc.)</td>
+			<td>Affiliate link attribution — tracks which product links you click so that Superdots can receive a commission from merchants. No personal data is sold or shared for advertising purposes.</td>
+			<td>HTTP cookie</td>
+			<td>Up to 30 days</td>
+		</tr>
+	</tbody>
+</table>
+
+Skimlinks is operated by Taboola, Inc., headquartered in the United States. Data is transferred under Standard Contractual Clauses (SCCs). See [Skimlinks' privacy policy](https://skimlinks.com/privacy-policies/) for details.
+
 ## Email tracking (newsletter subscribers only)
 
 If you subscribe to our newsletter, our marketing automation system (Mautic, self-hosted in the EU) uses a **tracking pixel** (a tiny invisible image) to detect email opens, and **link rewriting** to measure which links you click. This is not a cookie — it operates within the email itself, not on the Site. Mautic associates this data with your email address to help us understand which content resonates.
@@ -211,6 +236,7 @@ In addition to cookies, the Site makes requests to third-party servers that may 
 - **Microsoft Clarity** (`www.clarity.ms`) — only loaded after consent. Records anonymised heatmaps and session replays to help us improve site usability. [Clarity privacy info](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent).
 - **Reddit Pixel** (`www.redditstatic.com`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting on Reddit. Data is sent to Reddit, Inc. (US) under Standard Contractual Clauses.
 - **Meta Pixel** (`connect.facebook.net`) — only loaded after marketing consent. Tracks ad conversions and enables retargeting and lookalike audiences on Facebook and Instagram. Data is sent to Meta Platforms, Inc. (US) under the EU-U.S. Data Privacy Framework and Standard Contractual Clauses.
+- **Skimlinks** (`s.skimresources.com`) — only loaded after marketing consent. Automatically converts outbound product links into affiliate links so Superdots can earn a commission from merchants. Data is sent to Taboola, Inc. (US) under Standard Contractual Clauses.
 
 ## How to manage cookies
 

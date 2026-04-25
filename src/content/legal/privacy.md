@@ -2,7 +2,7 @@
 title: Privacy Policy | Superdots
 description: Privacy policy for superdots.sh — how we handle your data.
 pageTitle: Privacy Policy
-lastUpdated: 24 April 2026
+lastUpdated: 25 April 2026
 ---
 
 ## 1. Who we are
@@ -52,6 +52,11 @@ We collect the minimum data needed to run this Site:
 		<tr>
 			<td>Ad conversion data and retargeting identifiers via Meta Pixel</td>
 			<td>Measure the effectiveness of Meta (Facebook/Instagram) advertising campaigns, build retargeting and lookalike audiences</td>
+			<td>Consent — Art. 6(1)(a)</td>
+		</tr>
+		<tr>
+			<td>Affiliate link click attribution via Skimlinks</td>
+			<td>Automatically convert outbound product links into affiliate links so Superdots can earn a commission from merchants</td>
 			<td>Consent — Art. 6(1)(a)</td>
 		</tr>
 		<tr>
@@ -121,6 +126,12 @@ See our [Cookie Policy](/cookie-policy/) for the full list of cookies, their pur
 			<td><a href="https://www.facebook.com/privacy/policy/" rel="noopener noreferrer" target="_blank">Meta Privacy</a></td>
 		</tr>
 		<tr>
+			<td>Taboola, Inc. (Skimlinks)</td>
+			<td>Affiliate link attribution</td>
+			<td>Outbound product link clicks, merchant referral data for commission tracking</td>
+			<td><a href="https://skimlinks.com/privacy-policies/" rel="noopener noreferrer" target="_blank">Skimlinks Privacy</a></td>
+		</tr>
+		<tr>
 			<td>Cloudflare Pages</td>
 			<td>Hosting, CDN, DDoS protection</td>
 			<td>IP address, request metadata</td>
@@ -151,9 +162,11 @@ Google, Microsoft, Cloudflare, and Resend process data in the United States. All
 
 **Meta Platforms, Inc.** (Meta Pixel, activated only with marketing consent) processes data in the United States. The transfer is governed by the **EU-U.S. Data Privacy Framework** and **Standard Contractual Clauses (SCCs)** under Art. 46(2)(c) GDPR. Meta Pixel cookies are only set after you explicitly grant marketing consent.
 
+**Taboola, Inc.** (Skimlinks, activated only with marketing consent) processes data in the United States. The transfer is governed by **Standard Contractual Clauses (SCCs)** under Art. 46(2)(c) GDPR. Skimlinks cookies are only set after you explicitly grant marketing consent.
+
 Newsletter subscriber data (email addresses, engagement metrics) is managed by Mautic (self-hosted on servers located in the European Union) and delivered via Resend. Resend is US-based and DPF-certified — see their [DPA](https://resend.com/legal/dpa) for transfer safeguards.
 
-You can review each provider's transfer documentation: [Google](https://policies.google.com/privacy/frameworks), [Microsoft](https://privacy.microsoft.com/en-us/privacystatement), [Cloudflare](https://www.cloudflare.com/cloudflare-customer-dpa/), [Resend](https://resend.com/legal/dpa), [Reddit](https://www.reddit.com/policies/privacy-policy).
+You can review each provider's transfer documentation: [Google](https://policies.google.com/privacy/frameworks), [Microsoft](https://privacy.microsoft.com/en-us/privacystatement), [Cloudflare](https://www.cloudflare.com/cloudflare-customer-dpa/), [Resend](https://resend.com/legal/dpa), [Reddit](https://www.reddit.com/policies/privacy-policy), [Skimlinks](https://skimlinks.com/privacy-policies/).
 
 ## 6. Data retention
 
@@ -163,6 +176,7 @@ You can review each provider's transfer documentation: [Google](https://policies
 - **Microsoft Clarity data:** session recordings and heatmap data retained for 30 days by Microsoft, then automatically deleted.
 - **Reddit Pixel data:** conversion and audience data retained by Reddit per their [data retention policy](https://www.reddit.com/policies/privacy-policy). The `_rdt_uuid` cookie has a 2-year lifetime; data associated with it is retained by Reddit for up to 2 years.
 - **Meta Pixel data:** conversion and audience data retained by Meta per their [data policy](https://www.facebook.com/privacy/policy/). Both the `_fbp` and `_fbc` cookies have a 90-day lifetime; data associated with them is retained by Meta for up to 2 years.
+- **Skimlinks data:** affiliate click attribution data retained by Taboola per their [privacy policy](https://skimlinks.com/privacy-policies/). Cookies have a maximum 30-day lifetime.
 - **Cloudflare logs:** retained per Cloudflare's standard retention (typically 72 hours for edge logs).
 - **Newsletter email addresses (confirmed):** retained until you unsubscribe. Upon unsubscription, your email and engagement history are immediately deleted from our marketing automation system (Mautic, self-hosted, EU).
 - **Newsletter email addresses (unconfirmed):** retained for up to 30 days after signup. If you do not confirm your subscription within this period, your email and related data are automatically deleted.
@@ -188,7 +202,7 @@ Under GDPR (and Italian D.Lgs. 196/2003 as amended by D.Lgs. 101/2018), you have
 - **Restrict processing** (Art. 18)
 - **Data portability** (Art. 20)
 - **Object** to processing based on legitimate interest (Art. 21)
-- **Withdraw consent** at any time for analytics cookies (GA4/Clarity), marketing cookies (Reddit Pixel, Meta Pixel), or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
+- **Withdraw consent** at any time for analytics cookies (GA4/Clarity), marketing cookies (Reddit Pixel, Meta Pixel, Skimlinks), or newsletter subscription, without affecting the lawfulness of prior processing (Art. 7(3)). Note: Umami Analytics runs without cookies and does not require consent — you can still object to this processing under Art. 21.
 
 To exercise any of these rights, email [privacy@superdots.sh](mailto:privacy@superdots.sh). We will respond within one month. If your request is complex or we receive a high volume of requests, we may extend this period by up to two additional months; if so, we will notify you within the first month and explain the reason for the extension (Art. 12(3) GDPR).
 
