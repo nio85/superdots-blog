@@ -39,6 +39,8 @@ jobs:
 
       - name: Build
         run: pnpm build
+        env:
+          PUBLIC_SKIMLINKS_PUBLISHER_ID: ${{ secrets.PUBLIC_SKIMLINKS_PUBLISHER_ID }}
 
       - name: Fix 404 redirect loop
         run: mkdir -p dist/404 && cp dist/404.html dist/404/index.html
