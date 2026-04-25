@@ -19,6 +19,7 @@ faqs:
     answer: "Yes, but differently. Use AI to help you recall: paste in the employee's objectives and ask it to prompt you with questions — 'What projects touched goal 1? What challenges came up?' Your answers become the raw material. Don't let AI fill in what you can't remember — invented specifics are worse than acknowledged gaps. Use it as a memory aid, not an evidence substitute."
   - question: "Will HR or legal have an issue with AI-assisted performance reviews?"
     answer: "Usually no. AI as a drafting and structuring tool is functionally the same as using a writing assistant or template. Most HR teams are fine with it when humans make the final judgments and the review reflects actual events. EU AI Act high-risk rules apply to autonomous employment decision-making, not to writing assistance. When in doubt, disclose it — transparency is both the ethical and trust-building choice."
+heroImage: "/images/blog/how-to-use-ai-for-performance-reviews.webp"
 ---
 
 Most managers who try AI for performance reviews use it for the one part it handles worst: writing the review from scratch.
