@@ -175,7 +175,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 
 		{SKIMLINKS_PUBLISHER_ID && (
 		<script is:inline define:vars={{ skimlinksId: SKIMLINKS_PUBLISHER_ID }}>
-			if (location.hostname === 'superdots.sh') {
+			if (location.hostname === 'superdots.sh' && !window.SD_isOptedOut() && window.SD_readConsent().marketing) {
 				window.SD_deferAnalytics(function() {
 					var s = document.createElement('script');
 					s.async = true;
