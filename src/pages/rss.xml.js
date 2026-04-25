@@ -16,6 +16,7 @@ export async function GET(context) {
 		xmlns: {
 			atom: 'http://www.w3.org/2005/Atom',
 			dc: 'http://purl.org/dc/elements/1.1/',
+			media: 'http://search.yahoo.com/mrss/',
 		},
 		customData: [
 			`<language>en</language>`,
@@ -31,7 +32,7 @@ export async function GET(context) {
 				link: `/blog/${post.slug}/`,
 				customData: [
 					post.data.author ? `<dc:creator>${post.data.author}</dc:creator>` : '',
-					imageUrl ? `<enclosure url="${imageUrl}" type="image/webp" length="0"/>` : '',
+					imageUrl ? `<media:content url="${imageUrl}" medium="image" type="image/webp"/>` : '',
 				]
 					.filter(Boolean)
 					.join('\n'),
