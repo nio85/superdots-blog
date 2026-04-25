@@ -21,17 +21,17 @@ faqs:
     answer: "Usually no. AI as a drafting and structuring tool is functionally the same as using a writing assistant or template. Most HR teams are fine with it when humans make the final judgments and the review reflects actual events. EU AI Act high-risk rules apply to autonomous employment decision-making, not to writing assistance. When in doubt, disclose it — transparency is both the ethical and trust-building choice."
 ---
 
-The problem with AI-generated performance reviews isn't the AI. It's that managers are using it for the wrong part of the job.
+Most managers who try AI for performance reviews use it for the one part it handles worst: writing the review from scratch.
 
-The reflex is understandable: review season arrives, you open ChatGPT, type "write a performance review for [name]," paste in a few notes, and hit go. What comes back is technically a performance review. It uses the right words. It has the right structure. And it sounds like every other AI-generated performance review anyone has ever read — which is to say, it sounds like nothing.
+The sequence goes like this. Review season arrives. You open ChatGPT, type "write a performance review for [name]," paste in a few notes, and hit go. What comes back is technically a performance review — right words, right structure. And it sounds like every other AI-generated review anyone has ever read, which is to say it sounds like nothing. The employee can tell. You can tell. It goes back in the draft pile.
 
-That's the wrong question. The right one is: *how do I use AI before I write, so that when I write, I actually have something to say?*
+The fix isn't a better prompt. It's inserting AI at a different point in the process entirely.
 
 ## What most managers get wrong
 
-When managers report disappointment with AI-assisted reviews, the pattern is consistent. They asked AI to do the hard part — write specific, meaningful feedback — without giving it what it needs: specific, meaningful observations. AI is a transformer, not an oracle. It can reshape input, restructure it, and make it clearer. It cannot invent the substance.
+HR managers and team leads who've shifted to AI-assisted reviews describe the same failure mode, almost word for word: they asked AI to do the hard part — write specific, meaningful feedback — without giving it what it actually needs: specific, meaningful observations. AI is a transformer, not an oracle. It can reshape input, restructure it, and make it clearer. It cannot invent the substance.
 
-The managers who get real value from AI for reviews use it as a thinking tool, not a writing tool. They use it:
+The managers who get real value use AI as a thinking tool, not a writing tool. They use it:
 
 - To organize raw observations before writing anything
 - To surface gaps and recency bias in their own notes
