@@ -19,6 +19,7 @@ faqs:
     answer: "Under 100 words for the initial email. Prospects receive dozens of cold emails per week. A long email signals that you value your own words more than their time. The structure that works: one specific observation (from your research), one sentence connecting it to what you do, one low-friction ask. Nothing else."
   - question: "Can AI help me personalize cold emails at scale?"
     answer: "Yes, but not by writing them at scale. The scalable part is research: AI can process LinkedIn profiles, company news, recent funding announcements, and job postings to surface personalization hooks for dozens of prospects in the time it used to take to research one. The writing still benefits from human judgment — but you can write 20 personalized openers in an hour when AI has done the research upfront."
+heroImage: "/images/blog/how-to-use-ai-for-cold-email.webp"
 ---
 
 In 1953, David Ogilvy sat down to write an advertisement for Rolls-Royce. He had been given the job weeks earlier. He spent most of those weeks reading Rolls-Royce engineering reports, not writing.
