@@ -13,7 +13,9 @@ import CookieConsent from '../components/CookieConsent.astro';
 import ArticleSchema from '../components/ArticleSchema.astro';
 import AuthorBox from '../components/AuthorBox.astro';
 import MidPostCTA from '../components/MidPostCTA.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { getImage } from 'astro:assets';
+import { SKIMLINKS_PUBLISHER_ID } from '../consts';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
@@ -140,6 +142,7 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 				)}
 				<div class="article-divider" aria-hidden="true"><span class="superdot"></span></div>
 				<TableOfContents />
+				{SKIMLINKS_PUBLISHER_ID && <AffiliateDisclosure />}
 				<div class="prose" id="article-prose">
 					<slot />
 				</div>
@@ -169,6 +172,19 @@ const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
 		<script>
 			import '../scripts/article-engagement.ts';
 		</script>
+
+		{SKIMLINKS_PUBLISHER_ID && (
+		<script is:inline define:vars={{ skimlinksId: SKIMLINKS_PUBLISHER_ID }}>
+			if (location.hostname === 'superdots.sh') {
+				window.SD_deferAnalytics(function() {
+					var s = document.createElement('script');
+					s.async = true;
+					s.src = 'https://s.skimresources.com/js/' + skimlinksId + '.skimlinks.js';
+					document.body.appendChild(s);
+				});
+			}
+		</script>
+		)}
 	</body>
 </html>
 
