@@ -13,17 +13,29 @@ export async function GET(context) {
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
-		xmlns: { atom: 'http://www.w3.org/2005/Atom' },
+		xmlns: {
+			atom: 'http://www.w3.org/2005/Atom',
+			dc: 'http://purl.org/dc/elements/1.1/',
+		},
 		customData: [
 			`<language>en</language>`,
 			`<lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>`,
 			`<atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>`,
 		].join('\n'),
-		items: sortedPosts.map((post) => ({
-			title: post.data.title,
-			pubDate: post.data.pubDate,
-			description: post.data.description,
-			link: `/blog/${post.slug}/`,
-		})),
+		items: sortedPosts.map((post) => {
+			const imageUrl = post.data.heroImage ? `${siteUrl}${post.data.heroImage}` : null;
+			return {
+				title: post.data.title,
+				pubDate: post.data.pubDate,
+				description: post.data.description,
+				link: `/blog/${post.slug}/`,
+				customData: [
+					post.data.author ? `<dc:creator>${post.data.author}</dc:creator>` : '',
+					imageUrl ? `<enclosure url="${imageUrl}" type="image/webp" length="0"/>` : '',
+				]
+					.filter(Boolean)
+					.join('\n'),
+			};
+		}),
 	});
 }
