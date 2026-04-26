@@ -270,7 +270,7 @@ async function testLiveEndpoints() {
 function testSetupScript() {
   console.log('\n── Setup Script Check ──\n');
 
-  const setupCode = readFileSync('scripts/mautic-setup-fields.mjs', 'utf-8');
+  const setupCode = readFileSync('scripts/oneshot/mautic-setup-fields.mjs', 'utf-8');
 
   const expectedFields = [
     'consent_status',
@@ -308,7 +308,7 @@ function testSetupScript() {
 function testMigrationScript() {
   console.log('\n── Migration Script Check ──\n');
 
-  const migCode = readFileSync('scripts/migrate-resend-to-mautic.mjs', 'utf-8');
+  const migCode = readFileSync('scripts/oneshot/migrate-resend-to-mautic.mjs', 'utf-8');
 
   const checks = [
     ['--dry-run support', /dry.?run/i],

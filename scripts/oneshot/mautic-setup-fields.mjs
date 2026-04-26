@@ -11,7 +11,7 @@
  *   CF_ACCESS_CLIENT_SECRET - (optional) Cloudflare Access service token
  *
  * Usage:
- *   MAUTIC_API_URL=... MAUTIC_USERNAME=... MAUTIC_PASSWORD=... node scripts/mautic-setup-fields.mjs
+ *   MAUTIC_API_URL=... MAUTIC_USERNAME=... MAUTIC_PASSWORD=... node scripts/oneshot/mautic-setup-fields.mjs
  */
 
 import { config } from 'dotenv';

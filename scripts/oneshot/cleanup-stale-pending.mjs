@@ -18,8 +18,8 @@
  *   CF_ACCESS_CLIENT_SECRET - (optional)
  *
  * Usage:
- *   node scripts/cleanup-stale-pending.mjs            # Delete stale contacts + send report
- *   node scripts/cleanup-stale-pending.mjs --dry-run   # Preview only (no email)
+ *   node scripts/oneshot/cleanup-stale-pending.mjs            # Delete stale contacts + send report
+ *   node scripts/oneshot/cleanup-stale-pending.mjs --dry-run   # Preview only (no email)
  */
 
 import { config } from 'dotenv';

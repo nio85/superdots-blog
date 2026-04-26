@@ -18,3 +18,7 @@ skills/
 # Backups
 resend-audience-backup-*.json
 logs/
+
+# Generated graphics templates (one-off HTML files, not source assets)
+content/graphics/*-motion.html
+content/graphics/tool-comparison-*.html
