@@ -19,6 +19,25 @@ skills/
 resend-audience-backup-*.json
 logs/
 
+# Agent working memory
+memory/decisions/
+
+# Presentation binaries (source .md stays, compiled outputs go to Nextcloud)
+slidev/decks/*.pdf
+slidev/decks/*.pptx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Wrangler local state
+.wrangler/
+
 # Generated graphics templates (one-off HTML files, not source assets)
 content/graphics/*-motion.html
 content/graphics/tool-comparison-*.html
