@@ -1,0 +1,95 @@
+---
+import { GA_MEASUREMENT_ID, CLARITY_PROJECT_ID, UMAMI_WEBSITE_ID, UMAMI_URL } from '../consts';
+---
+
+<!-- Google Analytics (GA4) — consent defaults sync (EU compliance), script load deferred -->
+<script is:inline define:vars={{ gaId: GA_MEASUREMENT_ID }}>
+	if (!window.SD_isOptedOut()) {
+		window.SD_GA_ID = gaId;
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		window.gtag = gtag;
+
+		gtag('consent', 'default', {
+			analytics_storage: 'denied',
+			ad_storage: 'denied',
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			wait_for_update: 500,
+		});
+
+		window.SD_deferAnalytics(function() {
+			var s = document.createElement('script');
+			s.async = true;
+			s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+			document.head.appendChild(s);
+			gtag('js', new Date());
+			gtag('config', gaId);
+
+			var c = window.SD_readConsent();
+			if (c.analytics) {
+				gtag('consent', 'update', { analytics_storage: 'granted' });
+			}
+			if (c.marketing) {
+				gtag('consent', 'update', {
+					ad_storage: 'granted',
+					ad_user_data: 'granted',
+					ad_personalization: 'granted',
+				});
+			}
+		});
+	}
+</script>
+
+<!-- Microsoft Clarity — heatmaps & session recordings (deferred, consent-aware) -->
+{CLARITY_PROJECT_ID && (
+<script is:inline define:vars={{ clarityId: CLARITY_PROJECT_ID }}>
+	if (!window.SD_isOptedOut()) {
+		window.SD_CLARITY_ID = clarityId;
+		window.SD_startClarity = function() {
+			if (window.SD_clarityLoaded) return;
+			window.SD_clarityLoaded = true;
+			(function(c, l, a, r, i, t, y) {
+				c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+				t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+				y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+			})(window, document, 'clarity', 'script', clarityId);
+		};
+		if (window.SD_readConsent().analytics) {
+			window.SD_deferAnalytics(function() { window.SD_startClarity(); });
+		}
+	}
+</script>
+)}
+
+<!-- Umami Analytics (privacy-friendly, cookie-free — deferred) -->
+{UMAMI_WEBSITE_ID && (
+<script is:inline define:vars={{ UMAMI_URL, UMAMI_WEBSITE_ID }}>
+  if (location.hostname === 'superdots.sh') {
+    window.SD_startUmamiRecorder = function() {
+      if (window.SD_umamiRecorderLoaded) return;
+      window.SD_umamiRecorderLoaded = true;
+      var r = document.createElement('script');
+      r.src = UMAMI_URL + '/recorder.js';
+      r.defer = true;
+      r.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+      r.setAttribute('data-sample-rate', '1');
+      r.setAttribute('data-mask-level', 'moderate');
+      r.setAttribute('data-max-duration', '300000');
+      document.head.appendChild(r);
+    };
+    window.SD_deferAnalytics(function() {
+      var s = document.createElement('script');
+      s.src = UMAMI_URL + '/script.js';
+      s.defer = true;
+      s.setAttribute('data-website-id', UMAMI_WEBSITE_ID);
+      s.setAttribute('data-domains', 'superdots.sh');
+      s.setAttribute('data-performance', 'true');
+      document.head.appendChild(s);
+      if (window.SD_readConsent().analytics) {
+        window.SD_startUmamiRecorder();
+      }
+    });
+  }
+</script>
+)}

@@ -1,0 +1,36 @@
+---
+interface Props {
+	siteUrl: string;
+	isHomePage: boolean;
+}
+
+const { siteUrl, isHomePage } = Astro.props;
+---
+
+<!-- Organization schema (all pages) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "Superdots",
+	"url": siteUrl,
+	"logo": `${siteUrl}/favicon.svg`,
+	"sameAs": []
+})} />
+
+{isHomePage && (
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Superdots",
+		"url": siteUrl,
+		"description": "Practical AI guides for every department. No fluff, just useful stuff.",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": {
+				"@type": "EntryPoint",
+				"urlTemplate": `${siteUrl}/blog?q={search_term_string}`
+			},
+			"query-input": "required name=search_term_string"
+		}
+	})} />
+)}
