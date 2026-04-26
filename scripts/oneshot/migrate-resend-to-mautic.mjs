@@ -13,8 +13,8 @@
  *   CF_ACCESS_CLIENT_SECRET - (optional)
  *
  * Usage:
- *   node scripts/migrate-resend-to-mautic.mjs           # Full migration
- *   node scripts/migrate-resend-to-mautic.mjs --dry-run  # Preview only
+ *   node scripts/oneshot/migrate-resend-to-mautic.mjs           # Full migration
+ *   node scripts/oneshot/migrate-resend-to-mautic.mjs --dry-run  # Preview only
  */
 
 import { config } from 'dotenv';
