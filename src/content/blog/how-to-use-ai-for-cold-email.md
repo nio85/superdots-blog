@@ -10,7 +10,7 @@ tags: ["cold-email", "ai-for-sales", "outbound", "prospecting", "email"]
 imageHint: "sales rep at desk with research notes and email draft side by side, AI interface in background showing prospect intelligence"
 faqs:
   - question: "Does AI actually help with cold email open rates?"
-    answer: "It depends on how you use it. AI used to write emails usually hurts open rates — output is generic, prospects can tell. AI used to research prospects before writing can significantly improve rates by helping you identify specific hooks. The research-first approach is where the leverage is. Writing is the last step, not the first."
+    answer: "AI typically hurts open rates when used to write emails — the output is generic and prospects recognize it immediately. It can improve rates when used for research first, because research produces specific hooks that earn attention. The lever is where in the workflow you apply it. Writing is the last step, not the first."
   - question: "What's the best AI prompt for cold email?"
     answer: "The most useful prompt isn't for the email itself. It's for research: 'Based on [prospect's LinkedIn headline, recent post, company news], what is one specific challenge this person is likely facing right now that [your product] addresses?' Use that answer as the context for your opener. Then write the opener yourself."
   - question: "How do I make AI-written cold emails sound less robotic?"
@@ -19,6 +19,7 @@ faqs:
     answer: "Under 100 words for the initial email. Prospects receive dozens of cold emails per week. A long email signals that you value your own words more than their time. The structure that works: one specific observation (from your research), one sentence connecting it to what you do, one low-friction ask. Nothing else."
   - question: "Can AI help me personalize cold emails at scale?"
     answer: "Yes, but not by writing them at scale. The scalable part is research: AI can process LinkedIn profiles, company news, recent funding announcements, and job postings to surface personalization hooks for dozens of prospects in the time it used to take to research one. The writing still benefits from human judgment — but you can write 20 personalized openers in an hour when AI has done the research upfront."
+heroImage: "/images/blog/how-to-use-ai-for-cold-email.webp"
 ---
 
 In 1953, David Ogilvy sat down to write an advertisement for Rolls-Royce. He had been given the job weeks earlier. He spent most of those weeks reading Rolls-Royce engineering reports, not writing.
@@ -47,7 +48,7 @@ When a cold email references something specific — a talk you gave last month, 
 
 This is not a trick. It's how human attention works. We ignore messages that feel broadcast. We engage with messages that feel addressed to us specifically.
 
-Joe Girard understood this before email existed. He sold 13,001 cars between 1963 and 1978 — still the Guinness World Record for retail sales. His system was methodical: index cards with every customer's name, birthday, family details, car history. He sent personalized cards every month. Not form letters with names swapped. Cards that referenced specific things about specific people. Every month. To thousands of customers simultaneously.
+Joe Girard understood this before email existed. He sold 13,001 cars between 1963 and 1978 — still the Guinness World Record for retail sales *(Guinness World Records)*. His system was methodical: index cards with every customer's name, birthday, family details, car history. He sent personalized cards every month. Not form letters with names swapped. Cards that referenced specific things about specific people. Every month. To thousands of customers simultaneously.
 
 What Girard automated was the logistics — the mailing system, the card printing, the tracking. What he never automated was the signal: that he knew who you were.
 
@@ -93,7 +94,7 @@ Subject lines are worth testing and AI can help you run variations quickly. Give
 
 What's interesting is that the subject line is usually not the bottleneck reps think it is. If your open rates are low, the problem is often list quality — wrong prospects — not copy. If reply rates are low, that's a copy problem. These are different diagnoses with different fixes.
 
-## The internal links that matter
+## Making this repeatable
 
 If you're building out a repeatable outbound motion, the research workflow above pairs well with a structured [AI sales playbook](/blog/ai-sales-playbook-software) — the research prompts become part of the playbook, not a one-off step. When you get to objection handling, [AI tools for sales objection handling](/blog/ai-sales-objection-handling-tools) can help you prepare responses to the objections your research workflow surfaces. And if competitive positioning is showing up in cold email responses, [AI battlecard tools](/blog/ai-battlecard-tools-sales-teams) can give your team live competitive context without having to research it manually for each call.
 
