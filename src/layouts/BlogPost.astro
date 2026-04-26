@@ -55,12 +55,15 @@ const tagMeta = (tags ?? [])
 	.filter(Boolean);
 
 const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+const BRAND_SUFFIX = ' | Superdots';
+const pageTitle = (title.length + BRAND_SUFFIX.length > 60) ? title : `${title}${BRAND_SUFFIX}`;
 ---
 
 <!doctype html>
 <html lang="en" data-theme="dark">
 	<head>
-		<BaseHead title={`${title} | Superdots`} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
+		<BaseHead title={pageTitle} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
 		{noindex && <meta name="robots" content="noindex, follow" />}
 		{heroPreloadSrcset ? (
 			<link rel="preload" as="image" type={heroPreloadType} imagesrcset={heroPreloadSrcset} imagesizes="(max-width: 720px) 100vw, 720px" fetchpriority="high" />

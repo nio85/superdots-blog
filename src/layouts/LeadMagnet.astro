@@ -12,9 +12,12 @@ interface Props {
 }
 
 const { title, subtitle, description, features, previewImage, downloadUrl, source } = Astro.props;
+
+const BRAND_SUFFIX = ' | Superdots';
+const pageTitle = (title.length + BRAND_SUFFIX.length > 60) ? title : `${title}${BRAND_SUFFIX}`;
 ---
 
-<Base title={`${title} | Superdots`} description={description}>
+<Base title={pageTitle} description={description}>
 	<div class="lm">
 		<!-- Hero -->
 		<section class="lm-hero">
