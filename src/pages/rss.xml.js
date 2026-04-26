@@ -2,6 +2,7 @@ import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { filterPublished } from '../lib/posts';
+import { buildRssCustomData, postsToRssItems } from '../lib/rss';
 
 export async function GET(context) {
 	const sortedPosts = filterPublished(await getCollection('blog')).sort(
@@ -18,25 +19,7 @@ export async function GET(context) {
 			dc: 'http://purl.org/dc/elements/1.1/',
 			media: 'http://search.yahoo.com/mrss/',
 		},
-		customData: [
-			`<language>en</language>`,
-			`<lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>`,
-			`<atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>`,
-		].join('\n'),
-		items: sortedPosts.map((post) => {
-			const imageUrl = post.data.heroImage ? `${siteUrl}${post.data.heroImage}` : null;
-			return {
-				title: post.data.title,
-				pubDate: post.data.pubDate,
-				description: post.data.description,
-				link: `/blog/${post.slug}/`,
-				customData: [
-					post.data.author ? `<dc:creator>${post.data.author}</dc:creator>` : '',
-					imageUrl ? `<media:content url="${imageUrl}" medium="image" type="image/webp"/>` : '',
-				]
-					.filter(Boolean)
-					.join('\n'),
-			};
-		}),
+		customData: buildRssCustomData(siteUrl, lastBuildDate),
+		items: postsToRssItems(sortedPosts, siteUrl),
 	});
 }
