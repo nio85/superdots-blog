@@ -2,7 +2,7 @@
 title: 'AI Landing Page Builder: No Dev Needed'
 description: 'AI landing page builders create, test, and optimize conversion-focused pages — from copy generation to layout optimization to automated A/B testing.'
 pubDate: "2026-03-17T17:24:00Z"
-updatedDate: "2026-05-10"
+updatedDate: "2026-04-27"
 author: 'Superdots Team'
 department: 'marketing'
 useCase: 'writing'
@@ -178,7 +178,7 @@ Pricing starts at $99/month (Grow plan), which includes unlimited traffic, custo
 
 **Best for:** Teams running mobile-first paid campaigns where speed matters.
 
-Swipe Pages is built specifically for AMP (Accelerated Mobile Pages) — landing pages that load near-instantly on mobile devices. Google-sourced mobile traffic benefits most from this: AMP pages routinely load in under 2 seconds, compared to the 5–8 second averages that lose more than half of mobile visitors before they see the headline.
+Swipe Pages is built specifically for AMP (Accelerated Mobile Pages) — landing pages that load near-instantly on mobile devices. Google-sourced mobile traffic benefits most from this: based on AMP benchmark data, AMP pages routinely load in under 2 seconds, compared to the 5–8 second averages that, per Google research, cause more than half of mobile visitors to abandon a page before the headline loads.
 
 Their AI assistant generates page copy and layout from a brief, with templates optimized for paid social and Google Ads traffic. If a significant share of your campaign clicks come from mobile, Swipe Pages' speed advantage outweighs the lighter analytics compared to Unbounce or Instapage.
 
@@ -238,7 +238,7 @@ AI-generated pages are first drafts. Treat them that way. The teams that publish
 
 ### Ignoring mobile
 
-More than 60% of landing page traffic comes from mobile devices. Always preview your page on mobile before publishing. Most AI landing page builders generate responsive pages, but the mobile layout still needs manual review. A headline that looks great on desktop might wrap awkwardly on a phone screen.
+According to Google's mobile benchmarks, more than 60% of landing page traffic comes from mobile devices. Always preview your page on mobile before publishing. Most AI landing page builders generate responsive pages, but the mobile layout still needs manual review. A headline that looks great on desktop might wrap awkwardly on a phone screen.
 
 ### Too many form fields
 
