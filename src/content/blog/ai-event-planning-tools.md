@@ -322,7 +322,7 @@ Look at where you spend the most manual hours in event planning. For most teams,
 
 - **Venue sourcing and vendor coordination** — If you spend days emailing venues and comparing proposals, start with Cvent or Nowadays to automate the search and comparison process.
 - **Attendee communication** — If your inbox is full of registration confirmations, reminder emails, and post-event follow-ups, start with Bizzabo or Splash to automate these sequences.
-- **Post-event reporting** — If compiling event metrics takes longer than the event itself, start with a tool that generates analytics automatically.
+- **[Post-event reporting](/blog/ai-report-generator)** — If compiling event metrics takes longer than the event itself, start with a tool that generates analytics automatically.
 
 ### Connect to your existing systems
 

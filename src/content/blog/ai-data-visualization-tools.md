@@ -284,11 +284,11 @@ If NL queries are your main reason for switching, ThoughtSpot leads the pack. Po
 
 **Executive dashboards**: Power BI, Tableau, or ThoughtSpot. Executives want to open a dashboard and immediately understand performance. ThoughtSpot's search-first approach is especially effective here — executives type a question and get an answer without navigating complex dashboards. Pair your visualization layer with dedicated [KPI dashboards](/blog/ai-kpi-dashboard-software) to track the specific metrics leadership cares about most.
 
-**Sales pipeline visualization**: Tableau (with Salesforce integration) or Power BI. Connect directly to your CRM data and build pipeline views, forecasting charts, and rep performance dashboards. For building presentations from this data, pair with an [AI presentation maker](/blog/ai-presentation-maker/).
+**Sales pipeline visualization**: Tableau (with Salesforce integration) or Power BI. Connect directly to your CRM data and build pipeline views, [forecasting charts](/blog/ai-sales-forecasting), and rep performance dashboards. For building presentations from this data, pair with an [AI presentation maker](/blog/ai-presentation-maker/).
 
 **Marketing performance**: Looker (for Google Ads and Analytics integration), Zoho Analytics (for Zoho CRM users), or Infogram (for client-facing reports that need to look polished).
 
-**Financial reporting**: Power BI or Zoho Analytics. Both handle complex financial models, multi-period comparisons, and regulatory reporting formats. Power BI's Excel integration is particularly strong for finance teams. Combine with [automated report generation](/blog/ai-report-generator) tools to schedule and distribute these reports without manual effort.
+**Financial reporting**: Power BI or Zoho Analytics. Both handle complex [financial models](/blog/ai-financial-modeling-tools), multi-period comparisons, and regulatory reporting formats. Power BI's Excel integration is particularly strong for finance teams. Combine with [automated report generation](/blog/ai-report-generator) tools to schedule and distribute these reports without manual effort.
 
 **Operations and supply chain**: ThoughtSpot or Power BI. Operations teams need real-time monitoring and the ability to drill into anomalies quickly. Combine with [AI project management tools](/blog/ai-project-management-features-guide/) for end-to-end operational visibility.
 

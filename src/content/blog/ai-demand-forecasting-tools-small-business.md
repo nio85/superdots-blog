@@ -35,7 +35,7 @@ Last spring, she ordered 3,000 units of a planter that had been trending upward 
 
 "The spreadsheet told me to order more," she said. "It just couldn't tell me when to stop."
 
-Elena's story is unremarkable. Small businesses lose an estimated 2-5% of revenue annually to forecasting errors — overstock tying up cash, stockouts losing sales. The question isn't whether better forecasting would help. It's whether AI forecasting specifically is worth the cost and complexity for a business her size.
+Elena's story is unremarkable. Small businesses lose an estimated 2-5% of revenue annually to forecasting errors — overstock [tying up cash](/blog/ai-cash-flow-forecasting), stockouts losing sales. The question isn't whether better forecasting would help. It's whether AI forecasting specifically is worth the cost and complexity for a business her size.
 
 The honest answer: it depends. And most articles about AI demand forecasting won't tell you that, because most of them are written by the vendors selling the tools.
 
@@ -107,7 +107,7 @@ Integrations are broader than Prediko's: Shopify, BigCommerce, Unleashed, Cin7, 
 
 **Starting at ~$120-250/month (revenue-based) | 14-day free trial**
 
-Inventory Planner was acquired by Sage and sits at the intersection of forecasting and financial planning. Its strength is multi-channel: Shopify, Amazon, BigCommerce, WooCommerce, Walmart, Faire, plus wholesale. If Elena from our opening story used Inventory Planner, all her channels would feed into one forecast.
+Inventory Planner was acquired by Sage and sits at the intersection of forecasting and [financial planning](/blog/ai-fpa-software-small-business). Its strength is multi-channel: Shopify, Amazon, BigCommerce, WooCommerce, Walmart, Faire, plus wholesale. If Elena from our opening story used Inventory Planner, all her channels would feed into one forecast.
 
 The tool generates buying recommendations at the SKU level — not just "you'll sell X units" but "order Y units by this date to arrive before your stockout window." For a business juggling multiple suppliers and sales channels, that operational specificity matters more than a percentage improvement in forecast accuracy.
 
