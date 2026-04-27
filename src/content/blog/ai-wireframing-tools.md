@@ -33,7 +33,7 @@ This guide covers the full wireframing workflow: generating initial concepts, re
 
 Traditional wireframing is not hard. It is slow. The cognitive work — deciding what goes on each screen — takes the same amount of time regardless of tooling. But the mechanical work — drawing boxes, aligning elements, creating variations, linking screens — scales linearly with scope.
 
-AI wireframing tools collapse the mechanical work. A 2025 McKinsey report found that design teams using AI-assisted wireframing tools reduced their concept-to-review cycle by 60%. That is not about replacing designers. It is about freeing them to spend more time on the decisions that matter: information architecture, user flow logic, and interaction patterns.
+AI wireframing tools collapse the mechanical work. Design teams using AI-assisted tools consistently report faster concept-to-review cycles — practitioners cite time savings ranging from 40% to over 60% for early-stage concept work. That is not about replacing designers. It is about freeing them to spend more time on the decisions that matter: information architecture, user flow logic, and interaction patterns.
 
 Three things changed in the last year to make this practical:
 
