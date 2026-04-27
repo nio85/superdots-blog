@@ -20,6 +20,7 @@ faqs:
     answer: "Cancel an autonomous AI SDR if: after 90 days the meeting booking rate is below 1 meeting per 200 contacts contacted, your ICP is too narrow for the tool's enrichment data to find quality matches, or the AI-generated copy is consistently off-brand despite training. Cancel an augmentation tool if: your reps aren't actually using it (adoption < 60% after 60 days), the enrichment data hit rate is below 70% for your target accounts, or the time saving per rep is under 2 hours/week (below the tool's monthly cost threshold). Never cancel in the first 30 days — these tools require setup and calibration time."
   - question: "How do you evaluate an AI SDR tool before committing to a contract?"
     answer: "Run a 30-day pilot on a single vertical or segment with a defined success metric (target: X meetings booked from Y contacts). Before signing, request: sample enrichment data for 20 of your actual target accounts (check hit rate and accuracy), a live demo of the email generation with your specific ICP prompt, and a reference call with a customer in your segment and deal size. Avoid tools that can't provide a reference customer in your category. Negotiate a 30–60 day exit clause before any annual commitment — AI SDR pricing is high enough that a 12-month lock-in on an underperforming tool is a significant sunk cost."
+heroImage: "/images/blog/best-ai-sdr-tools.webp"
 ---
 
 Most sales teams buying AI SDR tools are solving the wrong problem.
