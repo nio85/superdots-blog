@@ -2,7 +2,7 @@
 title: 'AI for Revenue Recognition: ASC 606 Guide'
 description: "Simplify ASC 606 compliance with AI that automates contract analysis, performance obligation identification, and revenue allocation."
 pubDate: "2026-03-17T00:00:00Z"
-updatedDate: "2026-05-06"
+updatedDate: "2026-04-27"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
@@ -17,7 +17,7 @@ faqs:
   - question: "Can AI handle contract modifications under ASC 606?"
     answer: "Yes. AI tools monitor your contract repository and automatically route modifications into the revenue recognition workflow when executed. They evaluate whether the modification creates a separate contract or amends the existing one under ASC 606-10-25-12, recalculate revenue allocation, and update recognition schedules accordingly. A complete audit trail is preserved — original terms, modification terms, classification rationale, and the updated schedule — so auditors can reconstruct every change."
   - question: "Is AI-generated revenue recognition accurate enough for external audit?"
-    answer: "AI-generated revenue schedules are auditable when the tool provides a transparent audit trail: which contract terms drove each calculation, what policies were applied, where variable consideration was estimated and how. According to accounting firms including Deloitte and BDO (whose ASC 606 guidance was updated in late 2025), consistency and documentation are the core audit requirements — both of which AI excels at. The qualification is that the underlying policy configuration must be correct; AI applies whatever methodology you give it."
+    answer: "AI-generated revenue schedules are auditable when the tool provides a transparent audit trail: which contract terms drove each calculation, what policies were applied, where variable consideration was estimated and how. BDO's ASC 606 Blueprint (October 2025) and Deloitte's Revenue Recognition Roadmap (November 2025) both identify consistency and documentation as the core audit requirements — both of which AI excels at. The qualification is that the underlying policy configuration must be correct; AI applies whatever methodology you give it."
   - question: "What size company needs AI for revenue recognition?"
     answer: "Any company managing more than 50–100 active contracts with multiple performance obligations will see meaningful benefit. The ROI case is strongest for SaaS companies with bundled pricing, professional services firms with time-and-materials and fixed-fee work, and manufacturers with equipment-plus-service arrangements. If your team spends more than a week each quarter on revenue calculations, automation will pay for itself within the first close cycle."
 imageHint: "accounting team reviewing AI-automated revenue waterfall chart for ASC 606 compliance"
@@ -59,7 +59,7 @@ Here is what the workflow looks like in practice.
 
 You feed contracts into the system — PDFs, Word documents, signed order forms. The AI reads them and extracts the relevant terms: parties, effective dates, deliverables, pricing schedules, payment terms, modification clauses, termination provisions.
 
-This alone saves significant time. Manual contract review for revenue purposes typically takes 30–90 minutes per agreement. AI completes the same extraction in seconds, with structured output that feeds directly into the recognition workflow.
+This alone saves significant time. Manual contract review for revenue purposes typically takes 30–90 minutes per agreement. According to vendor documentation from platforms including Zuora and Chargebee, AI extraction runs in under a minute for most standard agreements — with structured output that feeds directly into the recognition workflow.
 
 The better tools flag ambiguity. If a contract contains language that could be interpreted multiple ways under ASC 606 — for example, whether a setup service is a separate performance obligation or an activity to fulfill the contract — the system surfaces it for human review rather than silently making a choice.
 
@@ -176,7 +176,7 @@ ASC 606 and IFRS 15 were issued in 2014 and have been updated several times sinc
 
 **The FASB Post-Implementation Review.** The FASB conducted a Post-Implementation Review (PIR) of ASC 606 in 2025 to assess whether the standard achieved its intended objectives. The review found that while the standard generally works as intended, certain areas — including principal versus agent determinations and contract modifications in complex arrangements — continue to generate diversity in practice. Finance teams should revisit their policies in these areas if their configurations have not been reviewed recently.
 
-**Updated practitioner guidance.** BDO updated its ASC 606 Blueprint in October 2025, and Deloitte published a revised Revenue Recognition Roadmap in November 2025. Both are available publicly and represent the most current practitioner interpretation of how to apply the standard. If your AI system's accounting policies were configured more than two years ago, it is worth checking your setup against these updated guides — particularly if your contracts involve software licenses, variable consideration, or sale-and-leaseback arrangements.
+**Updated practitioner guidance.** BDO updated its [ASC 606 Blueprint (October 2025)](https://arch.bdo.com/Revenue-Recognition-Under-ASC-606), and Deloitte published a revised Revenue Recognition Roadmap in November 2025 (available to DART subscribers; practitioners frequently cite it as the most comprehensive technical reference). Both represent the most current interpretation of how to apply the standard. If your AI system's accounting policies were configured more than two years ago, it is worth checking your setup against these updated guides — particularly if your contracts involve software licenses, variable consideration, or sale-and-leaseback arrangements.
 
 **IFRS 15 minor divergences.** ASC 606 and IFRS 15 are no longer fully converged, with minor differences emerging in specific practical expedients and disclosure requirements. If your company reports under both US GAAP and IFRS, ensure your revenue recognition tool supports dual-treatment reporting — Sage Intacct and Zuora both do; not all platforms handle this cleanly.
 
