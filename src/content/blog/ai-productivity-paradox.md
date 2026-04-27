@@ -17,6 +17,7 @@ faqs:
     answer: "Legal services and healthcare show the sharpest paradox. Legal AI adoption jumped from 19% to 79% in a single year, yet most law firms haven't redesigned billing models to capture the value. Healthcare AI adoption remains under 10% system-wide due to regulatory and governance constraints. Manufacturing shows surface-level gains that often evaporate once legacy system integration costs are factored in."
   - question: "What do companies that actually benefit from AI do differently?"
     answer: "BCG's analysis of AI 'leaders' versus laggards found that companies seeing real gains allocate their AI investment roughly as 10% algorithms, 20% technology and data, and 70% people and processes — including workflow redesign, change management, and new measurement frameworks. The distinction isn't the tools they buy. It's whether they change what work gets done, not just how existing work gets done."
+heroImage: "/images/blog/ai-productivity-paradox.webp"
 ---
 
 Companies are spending more on AI than on any technology transition in history. Global AI investment reached $1.5 trillion in 2025, according to Gartner — with generative AI alone accounting for $644 billion, growing 76% year over year. Adoption figures have moved correspondingly: McKinsey's 2025 state of AI report found 78% of companies now use AI in at least one business function, up from 55% just two years earlier.
