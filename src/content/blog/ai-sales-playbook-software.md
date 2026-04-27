@@ -97,7 +97,7 @@ The reason this matters for the DIY build: you're not trying to replicate Highsp
 
 ## The Free Alternative: Build Your Own in 3 Hours
 
-This works. I've seen it used by a 6-person SaaS sales team that previously paid $400/month for a dedicated platform, cancelled it, and rebuilt in three hours. Their reps report using the new version more because it's faster to search and actually current.
+This works. Teams using this approach report ditching dedicated platforms after realizing the DIY version is faster to search and actually stays current — the freshness advantage compounds over time.
 
 Here's exactly how to do it.
 
