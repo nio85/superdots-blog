@@ -95,13 +95,13 @@ Every vendor thinks their platform is right for everyone. It isn't. This decisio
 
 ## What AI Battlecard Tools Actually Do
 
-**Sales battlecard software** is a category of tools that give sales reps structured, quick-reference guides on how to win deals against specific competitors — covering objection responses, competitor weaknesses, pricing counter-arguments, and landmine questions that surface rival limitations. Before comparing platforms, it's worth being clear on what "sales battlecard software" actually means — because vendors use the term to describe very different capabilities.
+**Sales battlecard software** is a category of tools that give sales reps structured, quick-reference guides on how to win deals against specific competitors — covering [objection responses](/blog/ai-sales-objection-handling-tools), competitor weaknesses, pricing counter-arguments, and landmine questions that surface rival limitations. Before comparing platforms, it's worth being clear on what "sales battlecard software" actually means — because vendors use the term to describe very different capabilities.
 
 At one end: **competitive intelligence platforms** (Klue, Crayon, Kompyte). These continuously monitor competitor websites, job postings, review sites, press releases, and social media. When a competitor changes their pricing page or publishes a new case study, the platform flags it. AI synthesizes those signals into battlecard updates and pushes them to sales reps via Slack, Salesforce, or a browser extension. The battlecard is a downstream output of a broader [competitive intelligence workflow](/blog/ai-competitive-intelligence-sales/). (For a deeper look at how these platforms work, see our full guide to competitive intelligence platforms.)
 
 At the other end: **AI-assisted battlecard generators** (Battlecard by Northr, or a prompt in Claude/ChatGPT). You provide the inputs — competitor website, G2 reviews, LinkedIn positioning — and AI produces a structured battlecard draft. No continuous monitoring, no auto-updates. You run it when you need it.
 
-In between: **sales enablement platforms with battlecard modules** (Mindtickle). The battlecard is a feature inside a larger sales readiness system that includes training, coaching, role-plays, and certification. You're not buying a battlecard tool — you're buying an enablement platform that happens to include battlecards.
+In between: **[sales enablement platforms](/blog/ai-sales-enablement-tools-small-business) with battlecard modules** (Mindtickle). The battlecard is a feature inside a larger sales readiness system that includes training, coaching, role-plays, and certification. You're not buying a battlecard tool — you're buying an enablement platform that happens to include battlecards.
 
 Which category you need comes before any tool comparison.
 

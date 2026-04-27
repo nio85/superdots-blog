@@ -67,7 +67,7 @@ Good tools let you customize the rubric completely. You are not stuck with gener
 
 - Did the agent verify identity before accessing the account?
 - Did the agent offer a relevant upsell without being pushy?
-- Did the agent document the resolution in the CRM?
+- Did the agent document the resolution in the [CRM](/blog/ai-crm-tools/)?
 - Did the agent use the required compliance language for financial disclosures?
 
 The AI assigns a score for each criterion and a composite score for the overall interaction. Every single one. Not 2%. All of them.
@@ -167,7 +167,7 @@ Roll out a new [employee training module](/blog/ai-employee-training/) and watch
 
 ### Customer experience signals
 
-Aggregate sentiment trends can predict churn before it shows up in your retention data. A downward trend in customer satisfaction scores for a specific segment is an early warning. Act on it before customers leave.
+Aggregate sentiment trends can predict churn before it shows up in your retention data. A downward trend in [customer satisfaction scores](/blog/ai-customer-sentiment-dashboard) for a specific segment is an early warning. Act on it before customers leave.
 
 ## 6 Best AI Customer Service QA Tools for 2026
 
@@ -192,7 +192,7 @@ The AI customer service QA market has matured. Here are the tools teams are usin
 
 **Assembled.** Combines workforce management with quality analytics. Useful if you want QA data and scheduling data in one place — agents' quality scores sit alongside their schedule efficiency metrics. Pricing: contact sales; primarily mid-market and enterprise.
 
-**Qualtrics XM.** Enterprise-grade experience management with AI-driven analytics. Best for large organizations that want to connect QA data with broader customer experience metrics, NPS, and CSAT at the enterprise level. Pricing: enterprise contact only.
+**Qualtrics XM.** Enterprise-grade experience management with AI-driven analytics. Best for large organizations that want to connect QA data with broader [customer experience metrics](/blog/ai-customer-feedback-analysis), NPS, and CSAT at the enterprise level. Pricing: enterprise contact only.
 
 What none of the top-ranked competitors will tell you: every tool on this list has a coverage limitation. Observe.AI is voice-first; using it for chat-heavy teams adds friction. Zendesk QA only works within the Zendesk ecosystem. Qualtrics requires a dedicated implementation engagement. Match the tool to your primary channel before evaluating features.
 
