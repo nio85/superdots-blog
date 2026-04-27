@@ -17,6 +17,7 @@ faqs:
     answer: "Successful companies measure outcomes, not adoption. Metrics like licenses activated, employees using AI tools, or hours of AI-assisted work tell you nothing about business value. The useful metrics are downstream: error rates in a specific process, time-to-decision on a specific workflow, resolution rates in a specific support queue."
   - question: "Is 'AI-first' a useful strategic label?"
     answer: "No. The label creates the illusion of strategy without the substance. A company is better served by asking: which specific process is broken, what would success look like, and do our people have what they need? Companies that can answer those three questions don't need a label. The label is a substitute for the harder work of deciding what you actually want to improve."
+heroImage: "/images/blog/ai-first-strategy-what-it-really-means.webp"
 ---
 
 Most companies calling themselves "AI-first" have no idea what they mean by it.
