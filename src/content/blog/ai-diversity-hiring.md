@@ -30,7 +30,7 @@ AI addresses some of these problems directly.
 
 ### Where AI genuinely helps
 
-**Structured criteria applied consistently.** When you define scoring criteria upfront — required skills, relevant experience, specific qualifications — and apply them through an AI screening tool, every candidate gets evaluated against the same rubric. The 100th resume gets the same scrutiny as the first. This matters because manual resume review is subject to decision fatigue, and fatigue correlates with worse decisions for candidates who need to overcome implicit bias to begin with.
+**Structured criteria applied consistently.** When you define scoring criteria upfront — required skills, relevant experience, specific qualifications — and apply them through an [AI screening tool](/blog/ai-resume-screening), every candidate gets evaluated against the same rubric. The 100th resume gets the same scrutiny as the first. This matters because manual resume review is subject to decision fatigue, and fatigue correlates with worse decisions for candidates who need to overcome implicit bias to begin with.
 
 **Language analysis in job descriptions.** This is the highest-ROI use of AI for diversity specifically. Decades of research show that certain language patterns reduce applications from women, older workers, and non-native speakers. Words like "aggressive," "dominate," and "rockstar" suppress female applications by 20-30%. Credential inflation — requiring degrees for roles that do not need them — excludes candidates without traditional pathways into the field. AI can audit a job description in seconds and flag these patterns before the post goes live.
 

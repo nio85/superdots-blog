@@ -166,9 +166,9 @@ Once categorization is running smoothly, turn on automated reconciliation. The A
 
 ### Phase 3: Forecasting and reporting (weeks 8-12)
 
-With a few months of clean, AI-categorized data, you can start using forecasting features. The AI has learned your revenue patterns, expense timing, and cash flow cycles. Set up automated cash flow forecasts and compare them against actuals each month to calibrate.
+With a few months of clean, AI-categorized data, you can start using forecasting features. The AI has learned your revenue patterns, expense timing, and cash flow cycles. Set up automated [cash flow forecasts](/blog/ai-cash-flow-forecasting) and compare them against actuals each month to calibrate.
 
-**What to measure:** Forecast accuracy (predicted vs actual cash position). Time saved on financial reporting. Earlier visibility into cash flow issues.
+**What to measure:** Forecast accuracy (predicted vs actual cash position). Time saved on [financial reporting](/blog/ai-report-generator). Earlier visibility into cash flow issues.
 
 ### Phase 4: Advanced automation (month 4+)
 

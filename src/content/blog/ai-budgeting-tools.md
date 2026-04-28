@@ -72,7 +72,7 @@ You do not have to ask for these insights. The AI surfaces them proactively, the
 
 ### Visual dashboards from raw data
 
-Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and dashboards automatically:
+Most budget data lives in tables and exports that are hard to read. AI tools can turn that raw data into charts, graphs, and [dashboards](/blog/ai-kpi-dashboard-software) automatically:
 
 - Upload a CSV of monthly expenses and get a trend chart in seconds.
 - Ask for a breakdown of spending by category and get a pie chart.
@@ -167,7 +167,7 @@ Theory is great. Here are three workflows you can set up today that will save yo
 4. Ask: "If I add [specific planned changes], how does that change the quarterly projection?"
 5. Use the adjusted forecast as your starting point for the quarterly planning conversation.
 
-For multi-variable scenarios — headcount changes, new contracts, pricing shifts — [AI financial modeling tools](/blog/ai-financial-modeling-tools) can run the projections that go beyond what a budget tracker supports.
+For multi-variable scenarios — headcount changes, new [contracts](/blog/ai-contract-management), pricing shifts — [AI financial modeling tools](/blog/ai-financial-modeling-tools) can run the projections that go beyond what a budget tracker supports.
 
 **Why this works:** Building a forecast from scratch is painful. Starting with an AI-generated projection based on real spending data is much easier. You are editing and refining instead of creating from nothing. And the AI catches trends you might miss — like a steadily increasing cloud bill that will blow the budget if left unchecked.
 

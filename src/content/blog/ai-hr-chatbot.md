@@ -77,7 +77,7 @@ Your HR documentation is probably scattered across a SharePoint, a Confluence wi
 3. Tag documents by topic so the retrieval layer can find them accurately
 4. Establish a process for keeping the knowledge base current (policy changes, benefits updates, etc.)
 
-Tools like Notion, Confluence, and Google Drive all have integrations with major HR chatbot platforms. The knowledge base doesn't need to be fancy — it needs to be accurate and maintained.
+Tools like Notion, Confluence, and Google Drive all have integrations with major HR chatbot platforms. Your [knowledge base](/blog/ai-knowledge-base-for-teams) doesn't need to be fancy — it needs to be accurate and maintained.
 
 ### Choose the Right Platform
 
@@ -151,4 +151,4 @@ And on the talent acquisition side, chatbots are increasingly used in [AI recrui
 
 The goal isn't to eliminate HR — it's to eliminate the part of HR that feels like a human search engine. When your team isn't spending half their day answering the same ten questions, they have capacity for the work that actually takes a person.
 
-For the full picture of how AI is transforming people operations — from chatbots to recruiting, onboarding, and workforce planning — see our [complete guide to AI for HR](/blog/ai-for-hr).
+For the full picture of how AI is transforming people operations — from chatbots to recruiting, onboarding, and [workforce planning](/blog/ai-workforce-planning) — see our [complete guide to AI for HR](/blog/ai-for-hr).

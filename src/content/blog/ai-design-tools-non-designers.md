@@ -162,9 +162,9 @@ AI design tools are not going to replace professional designers. But they will �
 
 ### Hire a designer for:
 
-- **Brand identity.** Your logo, visual system, and brand guidelines should be designed by a human who understands your market positioning — though [AI logo design tools](/blog/ai-logo-design) can give you solid starting concepts to refine. This is a one-time investment that makes all your AI-generated content better.
+- **Brand identity.** Your logo, visual system, and [brand guidelines](/blog/ai-brand-identity-tools) should be designed by a human who understands your market positioning — though [AI logo design tools](/blog/ai-logo-design) can give you solid starting concepts to refine. This is a one-time investment that makes all your AI-generated content better.
 - **High-stakes external materials.** Investor decks, product launch pages, trade show booths, annual reports. These represent your company to people who are making decisions about you.
-- **Complex infographics and data visualization.** AI can generate simple charts, but turning complex data into a clear visual story requires design thinking that tools do not have yet.
+- **Complex infographics and [data visualization](/blog/ai-data-visualization-tools).** AI can generate simple charts, but turning complex data into a clear visual story requires design thinking that tools do not have yet.
 - **Anything that requires originality.** If you need a visual concept that has never been done before, you need a human creative. AI remixes existing patterns — it does not invent new ones.
 
 The smartest approach: hire a designer to build your brand system — logo, colors, fonts, templates, and guidelines. Then use AI tools to execute within that system for everyday content. You get professional quality at scale without a full-time design hire.
