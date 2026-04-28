@@ -81,7 +81,7 @@ The Freddy AI add-on pricing is a hidden trap. Freshdesk starts at $15/agent/mon
 
 Here is the math: a 10-person team handling 500 tickets a week, with Freddy attempting to resolve 40%, generates roughly 800 sessions per week. At $49/100 sessions, that is $1,568/month in session fees alone — before the $150 base license. The $15/agent headline price becomes something very different by the time the invoice arrives.
 
-When configured well, Freddy works. Triage accuracy reaches 85-90% after a month on organized historical data. The Answer Bot handles auto-resolution across email and chat. Agent Assist surfaces relevant past tickets and knowledge base articles inline without the agent leaving the ticket view.
+When configured well, Freddy works. Teams report triage accuracy of 85–90% after the first month on well-organized historical data. The Answer Bot handles auto-resolution across email and chat. Agent Assist surfaces relevant past tickets and knowledge base articles inline without the agent leaving the ticket view.
 
 For teams under 200 tickets/week, the session math is manageable and Freshdesk's native integrations with Shopify, Salesforce, and HubSpot make it a practical choice. For higher volumes, the per-session model punishes success. For teams evaluating [AI customer support agents](/blog/ai-customer-support-agents) as a standalone layer on top of an existing platform, see our dedicated guide.
 
@@ -259,7 +259,7 @@ For a broader view of AI-driven support analytics, see our guide on [AI customer
 
 **Week 1–2 — Suggested responses only.** AI surfaces suggestions; humans review and send every time. No risk to customer experience. Immediate speed gain. Your team builds confidence in the AI's judgment.
 
-**Week 3–4 — Auto-triage.** Enable automatic ticket categorization and routing. Monitor accuracy for two weeks. Most platforms reach 85-90%+ triage accuracy within the first month on well-organized historical data.
+**Week 3–4 — Auto-triage.** Enable automatic ticket categorization and routing. Monitor accuracy for two weeks. Most platforms report 85–90%+ triage accuracy within the first month on well-organized historical data.
 
 **Month 2 — Auto-resolution for one ticket type.** Pick the highest-volume, most predictable type — password resets or order status checks. Set a high confidence threshold (90%+). Monitor CSAT for two weeks before expanding.
 
