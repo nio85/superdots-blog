@@ -20,7 +20,7 @@ faqs:
   - question: "How much does AI help desk software cost?"
     answer: "Mid-market tools like Freshdesk start around $15/agent/month, but Freddy AI sessions cost $49 per 100 on top of that. Enterprise platforms like Zendesk bundle AI agents in Suite plans from $55/agent/month. Intercom charges $0.99 per AI resolution. Flat-fee alternatives like HappyFox ($26/agent/mo) and Tidio ($29/mo) include AI at no extra charge. Always calculate the total cost including AI add-ons before comparing plans."
   - question: "What is a good auto-resolution rate for AI help desk software?"
-    answer: "A realistic starting target is 20-30% auto-resolution in the first month. After 2-3 months of optimization, well-configured platforms reach 40-50%. Freshworks reports Freddy AI achieves up to 80% resolution rates for customers with strong knowledge base content. The key factor is knowledge base quality — better content means higher resolution rates."
+    answer: "A realistic starting target is 20-30% auto-resolution in the first month. After 2-3 months of optimization, well-configured platforms reach 40-50%. Freshworks claims Freddy AI can reach up to 80% resolution rates for customers with strong knowledge base content — verify against your own ticket mix. The key factor is knowledge base quality — better content means higher resolution rates."
   - question: "What's the difference between IT helpdesk and customer support software?"
     answer: "IT helpdesks (Freshservice, Jira Service Management) handle internal employee tickets — hardware issues, software access, onboarding. Customer support software (Freshdesk, Zendesk, Intercom) handles external customer requests. IT tools integrate with CMDB and asset management; CS tools integrate with CRM and e-commerce platforms. Choosing the wrong category means paying for integrations you'll never use."
   - question: "Which AI help desk tools charge per AI resolution vs. flat fee?"
@@ -91,7 +91,7 @@ For teams under 200 tickets/week, the session math is manageable and Freshdesk's
 
 **Best for:** SaaS companies where most support happens in-product or in-app.
 
-The $0.99 per resolution model is, I think, the most honest pricing in this list. You pay when Fin closes a ticket. Not when it tries. Not per seat regardless of outcome.
+The $0.99 per resolution model is arguably the most honest pricing in this list. You pay when Fin closes a ticket. Not when it tries. Not per seat regardless of outcome.
 
 The math inverts at scale. At 5,000+ monthly resolutions, per-resolution pricing often beats flat per-seat platforms that bill regardless of AI usage. At low volume, $0.99 per resolution looks expensive per outcome.
 
@@ -243,7 +243,7 @@ For most teams handling more than 500 AI-attempted tickets per month, bundled pl
 
 Establish baselines before enabling AI features. These four metrics are the ones that matter:
 
-**Auto-resolution rate:** The percentage of tickets resolved without human intervention. Teams typically report 20–30% auto-resolution in the first month. After 2–3 months with a well-maintained knowledge base: 40–50%. According to Freshworks, Freddy AI reaches up to 80% resolution rates for customers with strong knowledge base content.
+**Auto-resolution rate:** The percentage of tickets resolved without human intervention. Teams typically report 20–30% auto-resolution in the first month. After 2–3 months with a well-maintained knowledge base: 40–50%. Freshworks claims Freddy AI can reach up to 80% resolution rates for customers with strong knowledge base content — verify against your own ticket mix.
 
 **First response time:** AI should reduce this to near-zero for auto-resolved tickets, and noticeably for agent-assisted ones.
 
