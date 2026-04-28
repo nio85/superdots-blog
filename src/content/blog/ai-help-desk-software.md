@@ -43,17 +43,17 @@ There is a second mistake almost nobody avoids: buying the wrong category. IT he
 
 ## The 9 Best AI Help Desk Tools at a Glance
 
-| Tool | Best for | Starting price | AI included? | Free trial |
-|---|---|---|---|---|
-| Zendesk | Large CS teams | $55/agent/mo | Yes (all Suite plans) | 14 days |
-| Freshdesk | SMB CS teams | $15/agent/mo | Add-on ($49/100 sessions) | 21 days |
-| Intercom | SaaS & chat-heavy CS | $39/seat/mo | Pay-per-resolution ($0.99) | 14 days |
-| Tidio | E-commerce & SMBs | $29/mo flat | Yes | 7 days |
-| Zoho Desk | Zoho ecosystem teams | $14/agent/mo | Yes (Professional tier+) | 15 days |
-| Freshservice | Mid-market IT | $19/agent/mo | Add-on ($49/100 sessions) | 21 days |
-| Jira Service Mgmt | Atlassian teams | $17.65/agent/mo | Yes (Standard tier+) | 7 days |
-| HappyFox | IT teams, flat pricing | $26/agent/mo | Yes | 14 days |
-| ManageEngine SDP | SMB & enterprise IT | $10/tech/mo | Yes (Enterprise tier) | 30 days |
+| Tool | Best for | Starting price | AI included? | Free trial | Limitation |
+|---|---|---|---|---|---|
+| Zendesk | Large CS teams | $55/agent/mo | Yes (all Suite plans) | 14 days | $825+/mo floor for 15 agents |
+| Freshdesk | SMB CS teams | $15/agent/mo | Add-on ($49/100 sessions) | 21 days | Session fee math at scale |
+| Intercom | SaaS & chat-heavy CS | $39/seat/mo | Pay-per-resolution ($0.99) | 14 days | Chat-primary only |
+| Tidio | E-commerce & SMBs | $29/mo flat | Yes | 7 days | Ceiling at ~50 agents |
+| Zoho Desk | Zoho ecosystem teams | $14/agent/mo | Yes (Professional tier+) | 15 days | Weak outside Zoho ecosystem |
+| Freshservice | Mid-market IT | $19/agent/mo | Add-on ($49/100 sessions) | 21 days | Same session-fee caveat as Freshdesk |
+| Jira Service Mgmt | Atlassian teams | $17.65/agent/mo | Yes (Standard tier+) | 7 days | Heavy setup (2–3 weeks) |
+| HappyFox | IT teams, flat pricing | $26/agent/mo | Yes | 14 days | Rule-based at lower tiers |
+| ManageEngine SDP | SMB & enterprise IT | $10/tech/mo | Yes (Enterprise tier) | 30 days | AI requires Enterprise tier |
 
 ---
 
@@ -243,7 +243,7 @@ For most teams handling more than 500 AI-attempted tickets per month, bundled pl
 
 Establish baselines before enabling AI features. These four metrics are the ones that matter:
 
-**Auto-resolution rate:** The percentage of tickets resolved without human intervention. Realistic first-month target: 20-30%. After 2-3 months with a well-maintained knowledge base: 40-50%. According to Freshworks, Freddy AI reaches up to 80% resolution rates for customers with strong knowledge base content.
+**Auto-resolution rate:** The percentage of tickets resolved without human intervention. Teams typically report 20–30% auto-resolution in the first month. After 2–3 months with a well-maintained knowledge base: 40–50%. According to Freshworks, Freddy AI reaches up to 80% resolution rates for customers with strong knowledge base content.
 
 **First response time:** AI should reduce this to near-zero for auto-resolved tickets, and noticeably for agent-assisted ones.
 
