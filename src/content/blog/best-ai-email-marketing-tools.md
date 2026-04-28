@@ -8,7 +8,7 @@ contentPillar: "dot-by-dot"
 department: "marketing"
 useCase: "writing"
 tags: ["email-marketing", "ai-tools", "marketing-automation"]
-heroImage: "/images/blog/ai-email-marketing.webp"
+heroImage: "/images/blog/best-ai-email-marketing-tools.webp"
 imageHint: "marketing manager comparing two email platform dashboards side by side on a laptop screen"
 faqs:
   - question: "What is the best AI email marketing tool for small businesses?"

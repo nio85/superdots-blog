@@ -18,6 +18,7 @@ faqs:
     answer: "No — and the reasons go beyond code quality. Human code review does three things AI currently cannot: it transfers institutional knowledge about why systems are designed the way they are, it calibrates junior developer judgment over time, and it surfaces architectural concerns that exist across PRs rather than within them. AI is well-suited to catch what's wrong; humans are needed to explain what's right and why the distinction matters."
   - question: "How do you implement AI code review without losing code quality?"
     answer: "The 3-layer protocol: Layer 1 is fully automated AI review for syntax, style, security, and test coverage. Layer 2 is human senior review for architecture and design decisions — AI feedback not shown. Layer 3 is synchronous pair review for junior developers on anything touching core systems. Layers 2 and 3 are not optional when the sprint gets busy. That's the only implementation that maintains velocity without sacrificing the learning infrastructure human review provides."
+heroImage: "/images/blog/how-to-run-ai-code-reviews-without-slowing-team-down.webp"
 ---
 
 Priya joined a B2B SaaS startup in Berlin as a junior backend developer in January. By week three, her team had integrated CodeRabbit into the PR workflow. Merge times dropped from two days to four hours. The senior engineers were pleased.
