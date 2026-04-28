@@ -7,6 +7,7 @@ contentPillar: "connecting-the-dots"
 department: "finance"
 tags: ["ai-tools", "finance", "month-end-close", "accounting", "financial-operations"]
 imageHint: "finance professional at a desk reviewing monthly close timeline on dual monitors, spreadsheet on one screen and AI chat interface on the other, calm focused atmosphere"
+heroImage: "/images/blog/how-to-cut-days-from-month-end-close-with-ai.webp"
 faqs:
   - question: "Can AI automate the month-end close?"
     answer: "AI can automate specific high-volume tasks within the close — duplicate transaction detection, journal entry drafting, variance commentary, and reporting templates. It cannot automate the close itself. The close requires human judgment for materiality decisions, accounting estimates, and posting entries to your books. The practical ceiling for AI in the close is around 40-50% of total close hours, concentrated in Days 1-3. Days 4-5 remain primarily human."

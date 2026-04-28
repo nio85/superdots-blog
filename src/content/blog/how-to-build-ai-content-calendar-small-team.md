@@ -7,6 +7,7 @@ contentPillar: "connecting-the-dots"
 department: "marketing"
 tags: ["ai-tools", "marketing", "content-planning", "content-calendar"]
 imageHint: "two-person marketing team at a desk with a whiteboard calendar, laptop showing AI chat interface, sticky notes with content ideas around them"
+heroImage: "/images/blog/how-to-build-ai-content-calendar-small-team.webp"
 faqs:
   - question: "How can AI help with content planning?"
     answer: "AI tools like Claude or ChatGPT can suggest content themes from your keyword targets, generate a full month of prioritized ideas in minutes, and produce content briefs from those ideas. The biggest practical gain isn't idea generation — it's structure. Small teams report cutting monthly planning sessions from 3-4 hours to under 2 hours by reacting to an AI-generated draft instead of building from a blank whiteboard."
