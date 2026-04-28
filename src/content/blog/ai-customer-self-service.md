@@ -157,7 +157,7 @@ If you are building AI self-service from scratch, do this in order:
 
 1. **Audit and improve your top 50 help articles.** Make them AI-readable: clear structure, direct answers, customer language.
 2. **Enable AI search on your knowledge base.** Test it against your 20 most common questions before launching.
-3. **Deploy a chatbot on your highest-volume channel** — usually your website — covering your top ten ticket types. Connect it to your existing knowledge base.
+3. **Deploy an [AI chatbot builder](/blog/ai-chatbot-builder/) on your highest-volume channel** — usually your website — covering your top ten ticket types. Connect it to your existing knowledge base.
 4. **Add one backend integration** — start with order status or password reset, something with a clear, safe, automated path.
 5. **Build your escalation flow.** Human handoff should be seamless and context-preserving from day one.
 
