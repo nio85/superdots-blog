@@ -83,7 +83,7 @@ AI identifies flaky tests by analyzing historical test results. It looks for tes
 
 Once identified, AI can quarantine flaky tests — running them separately so they do not block the main pipeline — and provide diagnostic data to help engineers fix the root cause.
 
-**The impact:** Engineers stop wasting time investigating false failures. The test suite becomes trustworthy again. Real failures get caught immediately instead of being assumed flaky.
+**The impact:** Engineers stop wasting time investigating false failures. The [test suite](/blog/ai-test-generation) becomes trustworthy again. Real failures get caught immediately instead of being assumed flaky.
 
 ### Build time prediction
 
@@ -187,7 +187,7 @@ A response time of 400ms might be normal during peak hours but anomalous at 3 AM
 
 ### Alert correlation
 
-When an incident occurs, it triggers a cascade of alerts. The database is slow, which makes the API slow, which makes the frontend slow, which triggers alerts on all three. An on-call engineer gets three pages for one root cause.
+When an incident occurs, it triggers a cascade of alerts. The [database](/blog/ai-database-management) is slow, which makes the API slow, which makes the frontend slow, which triggers alerts on all three. An on-call engineer gets three pages for one root cause.
 
 AI correlates related alerts into a single incident. It groups alerts by time, service dependency, and causal relationship. Instead of 12 alerts, the engineer sees one incident with 12 related signals. That is the difference between clarity and chaos at 3 AM.
 

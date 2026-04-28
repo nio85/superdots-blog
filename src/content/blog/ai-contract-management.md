@@ -32,7 +32,7 @@ Most companies do not have a contract management problem. They have a filing pro
 
 ### The real issues
 
-**Contracts live everywhere.** Some are in the CRM. Some are in email. Some are in a shared drive with inconsistent naming conventions. Some are printed and sitting in a physical file somewhere. When contracts are scattered, nobody has a complete picture.
+**Contracts live everywhere.** Some are in the [CRM](/blog/ai-crm-tools). Some are in email. Some are in a shared drive with inconsistent naming conventions. Some are printed and sitting in a physical file somewhere. When contracts are scattered, nobody has a complete picture.
 
 **Manual tracking does not scale.** A legal team managing 200 contracts can keep track with a spreadsheet. At 2,000 contracts, the spreadsheet breaks. Key dates slip. Renewal deadlines pass. Obligations go unmonitored.
 
@@ -125,7 +125,7 @@ A phased approach works best. Trying to do everything at once overwhelms the tea
 **Goal:** Never miss a renewal or termination window again.
 
 1. **Verify renewal dates and terms** for contracts expiring in the next 6 months. These are the ones where missed deadlines cost real money.
-2. **Set up alert workflows.** Define who gets notified, when, and what the escalation path is.
+2. **Set up alert [workflows](/blog/ai-workflow-automation).** Define who gets notified, when, and what the escalation path is.
 3. **Create renewal decision templates.** When an alert fires, the owner should have a clear process: review usage, check spend, decide to renew/renegotiate/terminate.
 
 **Value at this stage:** Eliminated surprise renewals. This alone often pays for the tool.

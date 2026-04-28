@@ -138,7 +138,7 @@ The basic analysis is straightforward: do employees in equivalent roles with equ
 
 The hard part is defining "equivalent." Manual analysis typically controls for job title and level, then looks at averages. That misses a lot.
 
-AI-powered pay equity analysis controls for:
+AI-powered [pay equity analysis](/blog/ai-people-analytics-software) controls for:
 
 - Role and level (standard)
 - Location
@@ -192,7 +192,7 @@ And AI will not surface insights you don't ask it for. Build a practice of regul
 
 HR leaders often face skepticism when proposing compensation analysis initiatives. The ROI framing that lands:
 
-**Turnover cost.** A single mid-level engineering departure costs 50-150% of annual salary in recruiting, onboarding, and productivity loss. If AI compensation benchmarking identifies and retains five at-risk employees per year, the ROI on even a $20,000 tool subscription is clear.
+**Turnover cost.** A single mid-level engineering departure costs 50-150% of annual salary in recruiting, [onboarding](/blog/ai-employee-onboarding), and productivity loss. If AI compensation benchmarking identifies and retains five at-risk employees per year, the ROI on even a $20,000 tool subscription is clear.
 
 **Hiring efficiency.** Offers that land are cheaper than offers that don't. If real-time benchmarks reduce offer decline rates by 20%, you're spending less time and recruiter capacity per hire. This pairs directly with [AI for recruiting](/blog/ai-for-recruiting) — accurate comp data is only useful if your pipeline is generating qualified candidates worth making offers to.
 

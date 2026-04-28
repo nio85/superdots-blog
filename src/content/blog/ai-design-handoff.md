@@ -114,7 +114,7 @@ Here is how a team running an AI-assisted handoff process actually works.
 
 **Step 2: AI generates specs on file handoff.** When the designer changes the file status to "Ready for development," the AI integration triggers automatically, generates the spec document, and posts it to the relevant Jira or Linear ticket. Teams using [AI project management features](/blog/ai-project-management-features-guide/) can automate this handoff notification end-to-end. No manual annotation needed.
 
-**Step 3: AI generates the initial component code.** The developer receives both the spec and a code file with the component implemented in the team's framework. They review it, adjust the parts that need adjustment (usually state management, interaction logic, and API wiring), and move to the next component.
+**Step 3: AI generates the initial component code.** The developer receives both the spec and a code file with the component implemented in the team's framework. They [review it](/blog/ai-code-review-tools), adjust the parts that need adjustment (usually state management, interaction logic, and [API wiring](/blog/ai-api-documentation)), and move to the next component.
 
 **Step 4: Automated visual regression runs on each PR.** Every pull request targeting staging triggers a visual diff against the Figma file. Mismatches are flagged inline in the PR. The developer either fixes the discrepancy or documents why the deviation is intentional.
 

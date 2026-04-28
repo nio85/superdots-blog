@@ -53,7 +53,7 @@ This eliminates the "wrong folder" problem. It does not matter where someone sav
 
 Beyond basic classification, AI extracts specific attributes from each document: client name, project name, date range, key topics, department, document status (draft, final, signed). These tags are applied automatically and make documents filterable and searchable in ways that folder structures never could.
 
-A search for "all contracts with Acme Corp signed in 2025" returns results instantly — because every contract has been tagged with the client name, document type, and signing date, even if they are scattered across three different drives and two email inboxes.
+A search for "all [contracts](/blog/ai-contract-management) with Acme Corp signed in 2025" returns results instantly — because every contract has been tagged with the client name, document type, and signing date, even if they are scattered across three different drives and two email inboxes.
 
 ### Semantic search
 
@@ -156,7 +156,7 @@ Finance, healthcare, legal, and government organizations have strict document ha
 
 ### Knowledge-heavy teams
 
-Consulting firms, law firms, research organizations, and agencies produce and consume enormous volumes of documents. The ability to find relevant prior work — past proposals, similar project deliverables, research findings — based on semantic similarity is a competitive advantage. Law firms in particular benefit from combining document management with [AI legal document review](/blog/ai-legal-document-review) to automate both finding and analyzing legal content.
+Consulting firms, law firms, research organizations, and agencies produce and consume enormous volumes of documents. The ability to find relevant prior work — past [proposals](/blog/ai-rfp-response-tools), similar project deliverables, research findings — based on semantic similarity is a competitive advantage. Law firms in particular benefit from combining document management with [AI legal document review](/blog/ai-legal-document-review) to automate both finding and analyzing legal content.
 
 ### Onboarding new employees
 
