@@ -1,8 +1,8 @@
 ---
-title: '3 Best AI API Documentation Tools (2026)'
-description: "Speakeasy, Mintlify & ReadMe compared: auto-generate API docs from OpenAPI specs and sync on every deploy. No stale references. Free tiers available."
+title: 'AI API Doc Tools: Speakeasy, Mintlify & ReadMe'
+description: "Speakeasy, Mintlify & ReadMe compared — auto-generate API docs from OpenAPI and sync on every deploy. No more stale reference pages. Pricing for 2026."
 pubDate: "2026-03-17T09:26:03Z"
-updatedDate: "2026-04-28"
+updatedDate: "2026-04-21"
 author: "Superdots Team"
 department: "engineering"
 useCase: "writing"
