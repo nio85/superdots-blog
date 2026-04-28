@@ -109,7 +109,7 @@ Tidio is the most straightforward pricing in this comparison. Flat monthly fee. 
 
 For a team of 8 agents that would otherwise pay $15 × 8 = $120/month on Freshdesk base (before Freddy add-ons), Tidio's $29/month Starter plan changes the economics entirely.
 
-The ceiling is real. Lyro handles e-commerce conversations well: order tracking, return policies, product questions. It is not built for complex multi-step technical support or enterprise customization. Above 50 agents, Tidio shows its limits.
+The ceiling is real. Lyro handles e-commerce conversations well: order tracking, return policies, product questions. It is not built for complex multi-step technical support or enterprise customization. Above 50 agents, Tidio shows its limits. Teams that only need a [no-code chatbot builder](/blog/ai-chatbot-builder/) without ticketing can use Tidio's entry tier — or consider Chatfuel, which is pure chatbot without help desk overhead.
 
 Where it wins: Shopify and WooCommerce integration is native. Lyro answers "where is my order?" with live tracking data, not a link to a tracking page. For small teams with predictable ticket types and high chat volume, it is the most cost-efficient option in this comparison.
 
