@@ -1,8 +1,8 @@
 ---
 title: "Best AI Customer Service QA Tools (2026) — With Pricing"
-description: "6 AI tools that score 100% of your support interactions — MaestroQA, Zendesk QA, Observe.AI, Scorebuddy. Real pricing, voice/chat/email coverage, and a free QA rubric."
+description: "6 AI tools that auto-score 100% of support interactions — MaestroQA, Zendesk QA, Observe.AI, Scorebuddy. Pricing, coverage, and a free QA rubric."
 pubDate: "2026-03-17"
-updatedDate: "2026-04-27"
+updatedDate: "2026-04-29"
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'analysis'

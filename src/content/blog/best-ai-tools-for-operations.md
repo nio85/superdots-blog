@@ -1,8 +1,8 @@
 ---
 title: "15 Best AI Tools for Operations Teams in 2026"
-description: "15 AI tools reviewed for operations teams in 2026 — workflow automation, AI agents, process mining, project management, and connected workspace. Honest reviews with real pricing."
+description: "15 AI tools for operations teams in 2026 — workflow automation, AI agents, process mining, and project management. Real pricing, honest reviews."
 pubDate: "2026-03-23"
-updatedDate: "2026-04-28"
+updatedDate: "2026-04-29"
 author: "Superdots Team"
 department: "operations"
 useCase: "automation"

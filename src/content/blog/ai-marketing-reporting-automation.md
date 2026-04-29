@@ -1,8 +1,8 @@
 ---
 title: "Cut Marketing Reports From 3 Hours to 15 Min"
-description: "Stop spending Friday afternoons on reports nobody reads in full. Here's the 3-tool AI stack that pulls data, builds dashboards, and writes the insights automatically."
+description: "Stop spending Friday afternoons on reports. Here's the 3-tool AI stack that pulls data, builds dashboards, and writes insights automatically."
 pubDate: "2026-04-26"
-updatedDate: "2026-04-22"
+updatedDate: "2026-04-29"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"

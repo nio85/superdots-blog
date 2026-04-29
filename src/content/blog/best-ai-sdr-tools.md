@@ -1,7 +1,8 @@
 ---
-title: "Best AI SDR Tools (2026): Autonomous vs. Augmented — Honest Comparison"
-description: "Autonomous AI SDRs (11x, Artisan, AiSDR) vs. AI augmentation tools (Clay, Apollo, Reply.io): honest pricing, decision framework, and which category actually fits your team size and budget."
+title: "Best AI SDR Tools (2026): Autonomous vs. Augmented"
+description: "Autonomous AI SDRs (11x, Artisan, AiSDR) vs. augmentation tools (Clay, Apollo, Reply.io): honest pricing, decision framework, and which fits your team."
 pubDate: "2026-04-27"
+updatedDate: "2026-04-29"
 author: "Superdots Team"
 department: "sales"
 useCase: "automation"
