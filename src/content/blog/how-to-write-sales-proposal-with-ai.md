@@ -19,6 +19,7 @@ faqs:
     answer: "Two to five pages for most B2B deals. AI tends to over-generate — the prompt templates in this guide deliberately cap the executive summary at one paragraph. A shorter, more personalized proposal typically outperforms a longer generic one. If you need detailed pricing or technical specs, consider a two-document format: a short proposal plus a separate appendix."
   - question: "What's the biggest mistake when using AI for sales proposals?"
     answer: "Skipping the discovery context entirely. Prompting AI with 'write a proposal for [company name]' gives you a Wikipedia article about their industry. Prompting with their actual pain points, budget signals, and decision timeline — in their own words — gives you something that maps to their real situation. The discovery call is the most valuable input in the entire workflow."
+heroImage: "/images/blog/how-to-write-sales-proposal-with-ai.webp"
 ---
 
 Most reps write their proposals from memory, not from what the prospect actually said on the call. That's the problem — and it explains why so many AI-generated proposals get deleted without a reply.
