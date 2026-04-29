@@ -1,7 +1,7 @@
 ---
 title: "How to Write a Sales Proposal With AI (That Actually Gets Signed)"
-description: "Stop starting from a blank page. The 5-step discovery-to-proposal workflow that turns your call notes into a personalized proposal in under an hour."
-pubDate: "2026-04-29"
+description: "Most reps write proposals from memory, not from what the buyer said. The 5-step Note-to-Proposal Workflow turns your discovery call notes into a personalized proposal in under an hour."
+pubDate: "2026-05-06"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "sales"
@@ -21,15 +21,15 @@ faqs:
     answer: "Skipping the discovery context entirely. Prompting AI with 'write a proposal for [company name]' gives you a Wikipedia article about their industry. Prompting with their actual pain points, budget signals, and decision timeline — in their own words — gives you something that maps to their real situation. The discovery call is the most valuable input in the entire workflow."
 ---
 
-The majority of AI-generated proposals get deleted without a response. Not because the buyer wasn't interested. Because the proposal read like it could have been written for anyone.
+Most reps write their proposals from memory, not from what the prospect actually said on the call. That's the problem — and it explains why so many AI-generated proposals get deleted without a reply.
 
-That's the actual problem with how most sales teams use AI for proposals today. They're starting from a blank page — pasting a company name into ChatGPT and asking for a proposal — and getting output that's structurally sound and completely disconnected from what the buyer said on the call.
+The average rep spends 2+ hours on a proposal that reflects maybe 30% of what the buyer said during the discovery call. The rest gets filled in from assumptions, product templates, and generic AI output. The buyer reads it, recognizes it could have been written for any company, and files it in the "not urgent" folder.
 
-**A discovery call transcript is worth more than any AI tool you'll buy this year.** The 45 minutes you spent understanding their stack, their timeline, their budget signals, and the exact words they used to describe their biggest problem — that's the input that makes AI-generated proposals land. Without it, you're generating expensive boilerplate.
+**The fix isn't a better AI tool. It's a better input.** The 45 minutes you spent on that call — their exact words, their specific problem, their urgency signals — is the raw material that makes a proposal land. Without it, you're just generating polished boilerplate faster.
 
-This guide covers the 5-step discovery-to-proposal workflow: from call transcript to pain point extraction to a personalized proposal that references the buyer's own language.
+This guide covers the Note-to-Proposal Workflow: 5 steps from discovery call to a personalized proposal that quotes the buyer back to themselves.
 
-## Why most AI-generated proposals fail
+## What most reps get wrong
 
 Most advice about AI and proposals focuses on the wrong variable. It recommends tools (Jasper, Proposify, PandaDoc) when the problem is inputs, not tools.
 
@@ -41,7 +41,7 @@ Three failure modes account for nearly every rejected AI proposal:
 
 All three problems have the same root cause: the AI was given company-level information, not call-level information.
 
-## The 5-step discovery-to-proposal workflow
+## The Note-to-Proposal Workflow
 
 The workflow at a glance:
 
@@ -163,13 +163,17 @@ Fix each flagged gap before sending. This review takes 10–15 minutes and remov
 
 ## Try this today
 
-Take a discovery call you completed in the last two weeks. Open Claude or ChatGPT (both free at the basic tier). Paste your call notes — even rough bullet points — and run the Step 2 prompt: extract the buyer's 3 pain points and their exact words.
+Open claude.ai (free). Find the notes from your most recent discovery call — rough bullet points are fine.
 
-Look at the output. If it surfaces a problem you remember but didn't emphasize in the proposal you sent — or a phrase they used that you paraphrased in your own language — that's the leverage you left on the table.
+Paste them with this exact prompt:
 
-This exercise takes less than 5 minutes. It's the fastest way to see whether your current proposal process is missing the most valuable input it could have.
+> *"From these discovery call notes, list the 3 main business problems this buyer mentioned. Rank them by urgency. For each problem, quote the closest thing to their exact words."*
 
-Once the proposal goes out, the follow-up is where many deals stall. [AI for Sales Follow-Up Emails](/blog/ai-sales-emails) walks through how to apply the same transcript-based approach to follow-up messages that reference specific things the buyer said — not generic "just checking in" notes.
+Read the output. If it surfaces a problem you remember but didn't emphasize in the proposal you sent — or a phrase they used that you paraphrased in your own language — that's the leverage you left on the table. Use it in your follow-up.
 
-For a full overview of how sales teams are applying AI across the entire funnel — from prospecting through close — [AI for Sales: The Complete Guide](/blog/ai-for-sales-complete-guide) covers every stage with the same specificity.
+This takes 5 minutes. If you haven't sent a proposal yet for this deal, use the output to run the full Note-to-Proposal Workflow above before you do.
+
+Once the proposal goes out, the follow-up is where most deals stall — not because the buyer lost interest, but because the check-in emails don't reference what was actually said. [AI for Sales Follow-Up Emails](/blog/ai-sales-emails) covers how to apply the same transcript-based approach to every follow-up.
+
+For how AI applies across the full sales funnel — prospecting, call prep, proposals, close — [AI for Sales: The Complete Guide](/blog/ai-for-sales-complete-guide) covers every stage.
 
