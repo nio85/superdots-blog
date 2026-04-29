@@ -23,7 +23,7 @@ faqs:
 
 Most reps write their proposals from memory, not from what the prospect actually said on the call. That's the problem — and it explains why so many AI-generated proposals get deleted without a reply.
 
-The average rep spends 2+ hours on a proposal that reflects maybe 30% of what the buyer said during the discovery call. The rest gets filled in from assumptions, product templates, and generic AI output. The buyer reads it, recognizes it could have been written for any company, and files it in the "not urgent" folder.
+Practitioners commonly report spending 2+ hours on proposals that still fail to capture what the buyer actually said on the call. The rest gets filled in from assumptions, product templates, and generic AI output. The buyer reads it, recognizes it could have been written for any company, and files it in the "not urgent" folder.
 
 **The fix isn't a better AI tool. It's a better input.** The 45 minutes you spent on that call — their exact words, their specific problem, their urgency signals — is the raw material that makes a proposal land. Without it, you're just generating polished boilerplate faster.
 
