@@ -45,16 +45,18 @@ const related = others
 					<a href={`/blog/${post.slug}/`}>
 						<span class="related-title">{post.data.title}</span>
 						<span class="related-meta">
-							<span class="badge badge-dept">{post.data.department}</span>
+							{post.data.department && <span class="badge badge-dept">{post.data.department}</span>}
 							<FormattedDate date={post.data.pubDate} />
 						</span>
 					</a>
 				</li>
 			))}
 		</ul>
-		<a href={`/category/department/${department}/`} class="explore-dept">
-			Explore all {deptLabel} guides <span aria-hidden="true">&rarr;</span>
-		</a>
+		{department && (
+			<a href={`/category/department/${department}/`} class="explore-dept">
+				Explore all {deptLabel} guides <span aria-hidden="true">&rarr;</span>
+			</a>
+		)}
 	</aside>
 )}
 
