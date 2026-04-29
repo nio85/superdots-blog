@@ -72,7 +72,7 @@ For teams already using a CRM, connecting your support platform to your customer
 
 ### 2. Context Persistence
 
-Identity resolution tells you who the customer is. Context persistence tells you what they've been dealing with. For more on this topic, check out [AI Customer Service QA: Automate Quality Scoring for Every Interaction](/blog/ai-customer-service-qa/).
+Identity resolution tells you who the customer is. Context persistence tells you what they've been dealing with.
 
 This means when a customer moves from chat to phone, the phone agent sees:
 
@@ -81,7 +81,7 @@ This means when a customer moves from chat to phone, the phone agent sees:
 - The customer's product details, subscription tier, and account status
 - A brief AI-generated summary of the situation
 
-This AI-generated summary is the key differentiator. Raw transcripts are long. Agents don't have time to read through ten messages before responding. AI omnichannel platforms condense the history into a two- or three-sentence brief: "Customer reported a double charge on March 12. Refund was initiated on March 14 but hasn't appeared. Customer is on the Pro plan, has been a member for 2 years, and has escalated once before." For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
+This AI-generated summary is the key differentiator. Raw transcripts are long. Agents don't have time to read through ten messages before responding. AI omnichannel platforms condense the history into a two- or three-sentence brief: "Customer reported a double charge on March 12. Refund was initiated on March 14 but hasn't appeared. Customer is on the Pro plan, has been a member for 2 years, and has escalated once before."
 
 That summary travels across channels. It updates after each interaction. The customer never repeats themselves.
 
@@ -150,7 +150,7 @@ Most modern platforms include AI features out of the box. Prioritize these:
 
 - **Auto-summarization**: Condense prior interactions into agent-facing briefs
 - **Intent classification**: Automatically tag and route incoming messages
-- **Suggested responses**: AI drafts responses for agents to review and send
+- **Suggested responses**: AI drafts responses for agents to review and send — pair with [AI QA scoring](/blog/ai-customer-service-qa) to ensure response quality stays consistent across all channels
 - **Sentiment detection**: Flag negative sentiment for proactive intervention
 
 Start with auto-summarization and intent classification. They deliver the fastest ROI with the least risk of a bad customer experience.
@@ -180,7 +180,7 @@ Teams that implement AI omnichannel support consistently report:
 
 - **25-40% reduction in average handle time** due to context persistence and auto-summarization
 - **15-20% improvement in first-contact resolution** because routing matches issues to the right agents
-- **30-50% decrease in customer effort scores** as repetition drops
+- **30-50% decrease in customer effort scores** as repetition drops — lower effort scores are among the strongest predictors of [customer retention](/blog/ai-customer-retention), so this metric compounds in long-term value
 - **10-15% increase in CSAT** driven by faster, more personalized responses
 
 Booksy, the appointment booking platform, demonstrates this at scale. By implementing AI-powered omnichannel support, they automated 70% of customer service tickets and save $600,000 annually. Their key move: unifying channels first, then layering AI on top.

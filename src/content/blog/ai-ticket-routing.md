@@ -64,7 +64,7 @@ This hybrid approach gives you the speed of automation for 80-90% of tickets whi
 
 ## Key Features to Evaluate in AI Routing Tools
 
-Not all AI routing tools are equal. Here is what separates the good ones from the ones that will frustrate your team. For more on this topic, check out [AI for Customer Retention: Predict and Prevent Churn](/blog/ai-customer-retention/).
+Not all AI routing tools are equal. Here is what separates the good ones from the ones that will frustrate your team.
 
 ### Must-haves
 
@@ -90,7 +90,7 @@ Not all AI routing tools are equal. Here is what separates the good ones from th
 
 ## Implementation Checklist
 
-Setting up AI ticket routing is not a one-click install. Here is what you need before you start, and the steps to get it running. For more on this topic, check out [How to Build an AI-Powered Customer Self-Service Portal](/blog/ai-customer-self-service/).
+Setting up AI ticket routing is not a one-click install. Here is what you need before you start, and the steps to get it running.
 
 ### Before you start
 
@@ -144,7 +144,7 @@ You need numbers to justify the investment and to know if it is working. Track t
 
 **Average resolution time.** How long from ticket creation to resolution? Correct routing means faster resolution because the right agent handles it from the start.
 
-**CSAT scores.** Customer satisfaction should improve as wait times and transfers decrease. Track this by channel and category to see where AI routing has the most impact.
+**CSAT scores.** Customer satisfaction should improve as wait times and transfers decrease — faster resolution is one of the strongest levers for [customer retention](/blog/ai-customer-retention). Track this by channel and category to see where AI routing has the most impact.
 
 **Agent utilization.** Are agents spending more time solving problems and less time reading misrouted tickets? Track time-to-first-action (how long between assignment and the agent's first response).
 
@@ -160,7 +160,7 @@ AI routing fixes this by reading tickets, understanding intent, and matching cus
 
 Start with a high confidence threshold and shadow mode. Train on your data, not generic models. Build feedback loops so the system gets smarter over time.
 
-The goal is not to remove humans from triage. It is to route 80-90% of tickets automatically so your team can focus on the complex ones that actually need human judgment.
+The goal is not to remove humans from triage. It is to route 80-90% of tickets automatically so your team can focus on the complex ones that actually need human judgment. Pair this with a [customer self-service portal](/blog/ai-customer-self-service) to deflect the simplest questions before they become tickets at all.
 
 Here is what to do next:
 

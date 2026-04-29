@@ -58,7 +58,7 @@ The Gen-3 Alpha model can take a static image of a product and animate it — ad
 
 Where Runway stands out for design teams:
 
-- **Image-to-video** turns your existing brand visuals into motion content. Upload a hero image, describe the motion you want ("slow zoom in, particles drift upward"), and export.
+- **Image-to-video** turns your existing brand visuals into motion content — including images created with [AI image generation tools](/blog/ai-image-generation-marketing). Upload a hero image, describe the motion you want ("slow zoom in, particles drift upward"), and export.
 - **Inpainting and outpainting** let you extend or modify generated clips without reshooting.
 - **Multi-motion brush** lets you define what moves and what stays still in a scene.
 
@@ -84,7 +84,7 @@ Rive's AI features handle:
 
 For product and UI work, Rive is the right tool. You are building animations that will actually run in your product — not video files you are converting and compressing.
 
-The free plan covers most individual projects. Team plans start around $40/month and add shared libraries and collaboration. For more on this topic, check out [AI Color Palette Generators That Match Your Brand](/blog/ai-color-palette-generator/).
+The free plan covers most individual projects. Team plans start around $40/month and add shared libraries and collaboration.
 
 **Best for:** UI animations, interactive components, Lottie-format exports for web and mobile.
 
@@ -185,9 +185,9 @@ The right tool depends on your output format and use case, not your budget.
 
 Tools only create value if they fit how your team actually works. A few approaches that work in practice:
 
-**Create a motion template library.** Use Jitter or Rive to build a set of branded animation templates — text reveals, logo animations, slide transitions, CTA effects. Store them as reusable components. New team members can create on-brand motion without starting from scratch.
+**Create a motion template library.** Use Jitter or Rive to build a set of branded animation templates — text reveals, logo animations, slide transitions, CTA effects. If your brand palette needs definition first, an [AI color palette generator](/blog/ai-color-palette-generator) can extract consistent colors from your logo or reference imagery. Store them as reusable components. New team members can create on-brand motion without starting from scratch.
 
-**Add motion as a default to static assets.** Any static social graphic should have an animated version. Add it to your brief template. With AI tools, the incremental effort is 15-20 minutes per asset. The engagement difference on social is consistently significant.
+**Add motion as a default to static assets.** Any static social graphic should have an animated version. Add it to your brief template. If you are still defining your visual system, [AI brand identity tools](/blog/ai-brand-identity-tools) can establish the logo, color, and typography foundation before you animate at scale. With AI tools, the incremental effort is 15-20 minutes per asset. The engagement difference on social is consistently significant.
 
 **Build a Lottie component library alongside your design system.** If you have a design system, animated versions of your components belong in it. Use Rive or Lottiefiles to build them once and reuse across every product surface.
 

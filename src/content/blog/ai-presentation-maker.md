@@ -88,7 +88,7 @@ This takes three minutes to write and saves you 30 minutes of editing.
 
 **Template 1: Sales pitch**
 
-> Create a 10-slide sales presentation for [product/service] targeting [specific audience]. Start with the problem they face, then present our solution with 3 specific benefits. Include a slide for social proof (use placeholder text for customer quotes), a pricing overview slide, and a clear next-steps slide. Tone: confident, not pushy. No slides with more than 5 bullet points. For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
+> Create a 10-slide sales presentation for [product/service] targeting [specific audience]. Start with the problem they face, then present our solution with 3 specific benefits. Include a slide for social proof (use placeholder text for customer quotes), a pricing overview slide, and a clear next-steps slide. Tone: confident, not pushy. No slides with more than 5 bullet points.
 
 **Template 2: Quarterly business review**
 
@@ -189,7 +189,7 @@ Think about two dimensions: how important is this presentation, and how much tim
 
 **High stakes, short time** (last-minute client presentation, emergency board update): Use AI for structure and content ideas, but expect to heavily customize. Start with a prompt that is as detailed as possible to minimize rework. An AI-generated outline you refine is still faster than staring at a blank slide.
 
-**High stakes, plenty of time** (annual strategy deck, major sales pitch, investor presentation): Build from scratch using your best template. Use AI as a brainstorming partner — ask it to suggest structures, critique your flow, or write first-draft speaker notes. But the slides themselves should be hand-crafted.
+**High stakes, plenty of time** (annual strategy deck, major sales pitch, investor presentation): Build from scratch using your best template. For investor presentations specifically, a dedicated [AI pitch deck generator](/blog/ai-pitch-deck-generator) understands investor narrative structure better than a general slide tool. Use AI as a brainstorming partner — ask it to suggest structures, critique your flow, or write first-draft speaker notes. But the slides themselves should be hand-crafted.
 
 The honest answer is that most workplace presentations fall into the first two categories. The weekly update, the project review, the training walkthrough — these do not need to be works of art. They need to be clear, accurate, and done.
 
@@ -199,7 +199,7 @@ For those presentations, an AI presentation maker saves real time. Generate the 
 
 If your presentation relies heavily on charts, tables, or data visualizations, AI slide tools are less helpful. They can generate placeholder charts, but you will replace every one of them with real data anyway.
 
-For data-heavy decks, a better workflow is to build your charts in the tool where your data lives — Excel, Google Sheets, or a BI tool — and then import them into slides. If you need help with the analysis step, check out our guide on [AI data analysis for non-technical teams](/blog/ai-data-analysis-for-non-technical-teams). Get the data right first, then build slides around it.
+For data-heavy decks, a better workflow is to build your charts in the tool where your data lives — Excel, Google Sheets, or a BI tool — or use dedicated [AI data visualization tools](/blog/ai-data-visualization-tools) that turn raw data into chart-ready visuals automatically. Import them into slides rather than letting the AI slide tool generate placeholder charts. If you need help with the analysis step, check out our guide on [AI data analysis for non-technical teams](/blog/ai-data-analysis-for-non-technical-teams). Get the data right first, then build slides around it.
 
 ## The Bottom Line
 
