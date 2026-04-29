@@ -63,13 +63,13 @@ Now turn each idea into an actual post. This is where most people stall — and 
 
 ### For LinkedIn posts
 
-LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post: For more on this topic, check out [AI Email Marketing: How to Write Campaigns That Convert](/blog/ai-email-marketing/).
+LinkedIn rewards storytelling, specific insights, and genuine takes. Use this prompt for each post:
 
 *"Write a LinkedIn post about [topic]. The audience is [target]. Keep it under 200 words. Start with a hook — a surprising fact, a contrarian opinion, or a relatable frustration. End with a question or call to action. Tone: conversational, direct, no buzzwords."*
 
 ### For X/Twitter posts
 
-Short, punchy, opinionated. Prompt: For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
+Short, punchy, opinionated. Prompt:
 
 *"Write a tweet about [topic] for [audience]. Maximum 280 characters. Make it specific and slightly provocative — something worth replying to."*
 
@@ -128,7 +128,7 @@ Posts with images get significantly more engagement. If you are not a designer, 
 - **Ideogram or DALL-E**: Generate custom illustrations for abstract topics. Useful for thought leadership posts where stock photos feel lazy.
 - **Screenshot + annotation**: Sometimes the best visual is a screenshot of something real (a dashboard, a before/after, a customer message) with a quick highlight. No AI needed.
 
-For more on creating visual content without design skills, see our guide on [AI presentation tools for non-designers](/blog/ai-presentation-maker/) — the principles for slide design apply directly to social media graphics.
+For more on creating visual content without design skills, see our guide on [AI presentation tools for non-designers](/blog/ai-presentation-maker/) — the principles for slide design apply directly to social media graphics. If you run paid social campaigns, [AI ad copy tools](/blog/ai-ad-copy-tools) apply the same batch-drafting workflow to your sponsored posts.
 
 ## Making it sustainable: the weekly check-in
 
@@ -164,4 +164,4 @@ Building a social media content calendar with AI is not about automating away yo
 
 The workflow: define your pillars once, generate ideas monthly, draft and edit in batches, schedule everything in advance, check in weekly. Total time investment: one afternoon per month plus 30 minutes per week.
 
-That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. For the full picture of how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).
+That is realistic. That is sustainable. And that is how you build a social media presence that actually grows your business — without adding "content creator" to your job title. The same batch-and-schedule logic applies to [email marketing campaigns](/blog/ai-email-marketing) — plan monthly, automate sends, measure what converts. For the full picture of how AI supports every marketing function, see our [complete guide to AI for marketing](/blog/ai-for-marketing-complete-guide). For AI tools across all departments, check out our [AI tools for business guide](/blog/ai-tools-for-business-guide/).

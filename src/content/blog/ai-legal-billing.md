@@ -56,7 +56,7 @@ The core capability is activity monitoring. AI billing tools watch what you do �
 
 **Email and calendar.** Every email sent or received is associated with a client matter based on the email addresses involved, subject lines, and content. Calendar events become time entries automatically. A 45-minute call on your calendar turns into a 45-minute time entry with the client name, matter number, and a description pulled from the meeting notes.
 
-**Documents.** The tool tracks which documents you open, edit, and create, and for how long. Time spent in a specific contract draft is attributed to the relevant matter. Time in a brief gets attributed to the corresponding case. You do not have to do anything — the system records it as you work.
+**Documents.** The tool tracks which documents you open, edit, and create, and for how long. Time spent in a specific contract draft is attributed to the relevant matter. Time in a brief gets attributed to the corresponding case. You do not have to do anything — the system records it as you work. Teams that also use [AI legal document review tools](/blog/ai-legal-document-review) can connect the review workflow directly to billing, so time spent on document analysis flows into the timesheet automatically.
 
 **Phone calls.** Calls made through integrated systems — VoIP platforms, mobile apps with billing integrations — are logged automatically with duration and associated contact.
 
@@ -72,7 +72,7 @@ The review takes 5-10 minutes instead of 20-30. You catch things you would have 
 
 ## Anomaly Detection: Catching Errors Before the Client Does
 
-Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
+Manual billing creates errors in both directions — hours underreported due to leakage, and billing mistakes that create client disputes. AI catches both.
 
 ### What anomaly detection looks for
 
@@ -90,7 +90,7 @@ Manual billing creates errors in both directions — hours underreported due to 
 
 These are not hypothetical errors. They show up in manual billing systems at every firm. The difference is whether someone catches them before or after the client receives the invoice.
 
-Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean. For more on this topic, check out [AI for Intellectual Property Management: Track and Protect Your IP](/blog/ai-ip-management/).
+Catching them after means a billing dispute, a revised invoice, a damaged relationship, and sometimes a write-down. Catching them before is invisible — the client never sees the error, and the invoice arrives clean.
 
 ## Generating Client-Ready Invoices
 
@@ -143,7 +143,7 @@ The use case varies by how you bill.
 
 **Contingency work.** Time tracking for contingency matters feeds into lodestar calculations if you need to support a fee award. Detailed, contemporaneous time records are far more defensible than reconstructed ones.
 
-**Corporate legal departments.** In-house teams often need to track time for internal chargebacks or outside counsel management. AI helps legal ops teams see how internal hours are allocated without burdening attorneys with manual reporting.
+**Corporate legal departments.** In-house teams often need to track time for internal chargebacks or outside counsel management. AI helps legal ops teams see how internal hours are allocated without burdening attorneys with manual reporting. For IP-intensive departments, [AI IP management tools](/blog/ai-ip-management) can connect docketing and billing to give a complete picture of portfolio costs by matter.
 
 ## What to Look for When Choosing a Tool
 

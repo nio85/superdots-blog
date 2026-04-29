@@ -51,7 +51,7 @@ AI can flag documents that haven't been reviewed in a set period, detect when co
 
 ### Summarization and synthesis
 
-When someone asks a question, AI doesn't just link to a document. It can pull the relevant section and present a concise answer, with a link to the full source for verification. This cuts the time from question to answer from minutes to seconds.
+When someone asks a question, AI doesn't just link to a document. It can pull the relevant section and present a concise answer — similar to how standalone [AI document summarizer tools](/blog/ai-document-summarizer) condense long reports, but embedded directly in your team's search workflow. This cuts the time from question to answer from minutes to seconds.
 
 ## How to audit your existing knowledge
 
@@ -83,13 +83,13 @@ High-value content is anything that gets used regularly, covers a critical proce
 Ask your team two questions:
 
 1. "What questions do you answer repeatedly for other people?"
-2. "What took you the longest to figure out when you started?" For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
+2. "What took you the longest to figure out when you started?"
 
-The answers show you what knowledge exists in heads but not in documents. These gaps are your highest-priority content to create.
+The answers show you what knowledge exists in heads but not in documents — and often reveal [skills gaps](/blog/ai-skills-gap-analysis) your training programs haven't addressed yet. These gaps are your highest-priority content to create.
 
 ## Structuring content for AI retrieval
 
-AI retrieval works best when your content follows certain patterns. This is not about formatting for the sake of formatting — it directly affects how well your AI can find and present answers. For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
+AI retrieval works best when your content follows certain patterns. This is not about formatting for the sake of formatting — it directly affects how well your AI can find and present answers.
 
 ### Write atomic documents
 

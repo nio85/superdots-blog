@@ -53,12 +53,12 @@ Data cleaning is the task that eats more time than actual analysis. AI handles t
 
 ### Generate formulas from descriptions
 
-When you do need a formula, AI writes it for you: For more on this topic, check out [AI Tools for Data Entry: Stop Typing, Start Automating](/blog/ai-tools-for-data-entry/).
+When you do need a formula, AI writes it for you:
 
 - "Write a formula that calculates the running average of column C for the last 7 entries"
 - "Create a conditional format that turns cells red if the value is more than 2 standard deviations from the mean"
 
-The AI generates the formula, you paste it in and verify. This is faster than Googling the syntax and adapting a Stack Overflow answer to your specific spreadsheet. And unlike copying a formula from the internet, AI-generated formulas reference your actual column names and data structure. For more on this topic, check out [AI Document Summarizer Tools: Read Less, Know More at Work](/blog/ai-document-summarizer/).
+The AI generates the formula, you paste it in and verify. This is faster than Googling the syntax and adapting a Stack Overflow answer to your specific spreadsheet. And unlike copying a formula from the internet, AI-generated formulas reference your actual column names and data structure.
 
 ### Build reports and dashboards
 
@@ -68,7 +68,7 @@ Monthly reporting is where spreadsheets go to consume entire afternoons. AI shor
 - "Build a chart comparing this quarter to last quarter for the top 5 product lines"
 - "Generate a one-page report with key metrics and commentary"
 
-Some AI spreadsheet tools go further, generating formatted reports with annotations — essentially turning raw data into something you can present in a meeting without additional work.
+Some AI spreadsheet tools go further, generating formatted reports with annotations — essentially turning raw data into something you can present in a meeting without additional work. For reports that need executive-level narrative alongside the data, [AI document summarizer tools](/blog/ai-document-summarizer) can condense multi-page analyses into a one-page brief.
 
 ## The tools worth knowing about
 
@@ -104,7 +104,7 @@ If your data lives in databases or BI tools, you might need something beyond a s
 
 **Before**: Scroll through 5,000 rows looking for inconsistencies. Manually fix formatting. Run dedup formulas. Spot-check results.
 
-**After**: Upload the messy file. Type: "Clean this data — standardize date formats, remove duplicates, flag rows with missing required fields, and fix obvious typos in the company name column." Review the AI's changes (always review), approve, done.
+**After**: Upload the messy file. Type: "Clean this data — standardize date formats, remove duplicates, flag rows with missing required fields, and fix obvious typos in the company name column." Review the AI's changes (always review), approve, done. If messy incoming data is the root cause, [AI data entry automation](/blog/ai-tools-for-data-entry) solves the problem upstream before it reaches your spreadsheet.
 
 ### Ad-hoc analysis (was "ask the analyst," now 5 minutes)
 

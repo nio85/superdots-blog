@@ -71,7 +71,7 @@ Feed AI a competitor's website, recent blog posts, product pages, and press rele
 **Example prompt:**
 *"Analyze these five pages from [competitor]. Identify their primary value proposition, target customer profile, three key differentiators they emphasize, and any messaging changes compared to [previous version/date]. Present findings in a comparison table."*
 
-Do this for three to five competitors and you have a competitive landscape overview in an afternoon. For a deeper dive into AI-powered competitive analysis workflows, see our full guide on [AI competitive analysis](/blog/ai-competitive-analysis/). For more on this topic, check out [AI Ad Copy Tools That Actually Convert](/blog/ai-ad-copy-tools/).
+Do this for three to five competitors and you have a competitive landscape overview in an afternoon. For a deeper dive into AI-powered competitive analysis workflows, see our full guide on [AI competitive analysis](/blog/ai-competitive-analysis/). Once you understand how competitors position themselves, [AI ad copy tools](/blog/ai-ad-copy-tools) can help you test differentiated angles for your own campaigns.
 
 ### 2. Customer sentiment analysis
 
@@ -79,7 +79,7 @@ Your customers are already telling you what they think — in reviews, support t
 
 **How to do it:**
 
-Gather customer feedback from multiple sources: app store reviews, G2/Capterra reviews, social media mentions, support ticket themes, community forums. Feed them into an AI tool and ask for: For related guidance, see our guide on [How to Create Marketing Content with AI (Without Sounding Generic)](/blog/ai-content-creation/).
+Gather customer feedback from multiple sources: app store reviews, G2/Capterra reviews, social media mentions, support ticket themes, community forums. Feed them into an AI tool and ask for:
 
 - Top five positive themes (what do customers love?)
 - Top five negative themes (what frustrates them?)
@@ -152,7 +152,7 @@ AI-generated research has a trust problem, and it should. Here is how to make su
 Here is a monthly research routine that takes about four hours total:
 
 **Weekly (30 minutes each):**
-- Monday: Run competitor monitoring scan. Note any changes in messaging, features, or pricing.
+- Monday: Run competitor monitoring scan using [AI brand monitoring tools](/blog/ai-brand-monitoring) for automated alerts. Note any changes in messaging, features, or pricing.
 - Wednesday: Review aggregated customer sentiment. Flag emerging themes for the product team.
 
 **Monthly (2 hours):**
