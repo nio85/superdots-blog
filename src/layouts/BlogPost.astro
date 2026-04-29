@@ -97,8 +97,8 @@ const pageTitle = (title.length + BRAND_SUFFIX.length > 60) ? title : `${title}$
 						</ol>
 					</nav>
 					<div class="meta">
-						<a href={`/category/department/${department}/`} class="badge badge-dept">{department}</a>
-						<a href={`/category/use-case/${useCase}/`} class="badge badge-usecase">{useCase}</a>
+						{department && <a href={`/category/department/${department}/`} class="badge badge-dept">{department}</a>}
+						{useCase && <a href={`/category/use-case/${useCase}/`} class="badge badge-usecase">{useCase}</a>}
 						{tagMeta.map((t) => (
 							<a href={`/tags/${t!.slug}/`} class="badge badge-tag">{t!.label}</a>
 						))}
