@@ -1,5 +1,5 @@
 ---
-title: "Best Sales Battlecard Software in 2026: Klue, Crayon & Free Option"
+title: "Best Sales Battlecard Software: Klue, Crayon & Free Option"
 description: "Klue wins for enterprise. Crayon for mid-market. Free ChatGPT workflow for teams under 10. Real 2026 pricing. Which one fits your team size and budget?"
 pubDate: "2026-04-06"
 updatedDate: "2026-04-29"
