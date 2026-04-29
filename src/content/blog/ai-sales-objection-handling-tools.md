@@ -108,7 +108,7 @@ The core value: eliminating the blank screen moment. A rep who knows the right r
 **Pricing:** ~$1,600/user/year in licensing fees, plus a platform fee of $5,000+ (minimum). A 10-person team pays an effective $200/user/month all-in — verified across multiple third-party pricing analyses as of Q1 2026. 3-seat minimum. Annual contracts only.  
 **Best for:** AE teams in complex B2B sales; organizations that need call analytics AND real-time coaching in one platform
 
-Gong is the market leader in conversation intelligence, and its real-time assist layer is its most underused feature. During a live call, Gong can surface [battlecard](/blog/ai-battlecard-tools-sales-teams/) content — competitor comparisons, pricing responses, reference customers — automatically when it detects the rep is on a specific topic.
+Gong is the market leader in conversation intelligence, and its real-time assist layer is its most underused feature. During a live call, Gong can surface content from your [AI battlecard tools](/blog/ai-battlecard-tools-sales-teams/) — competitor comparisons, pricing responses, reference customers — automatically when it detects the rep is on a specific topic.
 
 The pricing is the primary barrier. For a team of 5, the platform fee alone represents $1,000/user/year before you touch per-user licensing. Gong makes financial sense at 10+ seats where the platform fee distributes across more users.
 
