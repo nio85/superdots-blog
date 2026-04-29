@@ -1,8 +1,8 @@
 ---
-title: "Best AI Help Desk Software (2026): 9 Tools for IT and Customer Support"
-description: "The only vendor-neutral comparison of AI help desk software in 2026 — covering IT helpdesk and customer support separately, with real pricing including AI add-on fees."
+title: "Best AI Help Desk Software (2026): IT & Customer Support"
+description: "Vendor-neutral comparison of AI help desk software in 2026 — IT helpdesk and customer support, with real pricing including AI add-on fees."
 pubDate: "2026-03-17T08:19:59Z"
-updatedDate: "2026-05-06"
+updatedDate: "2026-04-29"
 author: "Superdots Team"
 department: "customer-support"
 useCase: "automation"

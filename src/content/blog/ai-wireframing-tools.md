@@ -1,8 +1,8 @@
 ---
 title: 'AI Wireframing Tools: Text to Prototype'
-description: 'The best AI wireframing tools in 2026: Figma Make, Uizard, Framer Wireframer, Relume, Visily, Google Stitch, and TeleportHQ — with current pricing and honest trade-offs.'
+description: 'The best AI wireframing tools in 2026: Figma Make, Uizard, Framer Wireframer, Relume, Visily, and TeleportHQ — with pricing and honest trade-offs.'
 pubDate: "2026-03-17T17:45:00Z"
-updatedDate: "2026-05-04"
+updatedDate: "2026-04-29"
 author: 'Superdots Team'
 department: 'design'
 useCase: 'writing'

@@ -1,7 +1,8 @@
 ---
 title: 'Best AI Sales Commission Software for Small Teams in 2026'
-description: "Most small sales teams overpay for commission software — or don't need it at all. Here's the honest breakdown: free options, the best paid tools (with pricing), and a decision matrix by team size."
+description: "Most small sales teams overpay for commission software. Free options, best paid tools with pricing, and a decision matrix by team size."
 pubDate: '2026-04-26'
+updatedDate: '2026-04-29'
 author: 'Superdots Team'
 department: 'sales'
 useCase: 'automation'

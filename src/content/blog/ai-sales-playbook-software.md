@@ -1,8 +1,8 @@
 ---
-title: 'Best AI Sales Playbook Software in 2026: 6 Tools Compared (+ Free Alternative)'
-description: "Compare the top AI sales playbook software tools in 2026 — Highspot, Seismic, Mindtickle, Showpad, Allego, and Guru with real pricing. Plus: how to build a better playbook free in 3 hours."
+title: 'Best AI Sales Playbook Software in 2026: 6 Tools'
+description: "Compare Highspot, Seismic, Mindtickle, Showpad, Allego, and Guru — AI sales playbook tools in 2026 with real pricing and a free 3-hour build guide."
 pubDate: "2026-04-09"
-updatedDate: "2026-04-28"
+updatedDate: "2026-04-29"
 author: "Superdots Team"
 department: "sales"
 useCase: "writing"
