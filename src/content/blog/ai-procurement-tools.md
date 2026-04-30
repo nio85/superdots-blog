@@ -74,7 +74,7 @@ Once spending is classified, AI helps identify which categories deserve strategi
 - **Price trending up.** Categories where costs are increasing faster than market benchmarks. Renegotiation opportunity.
 - **Savings potential.** AI benchmarks your pricing against market data and estimates the savings achievable through negotiation, consolidation, or supplier switching.
 
-Most companies find 5-15% in addressable savings from their first AI-powered spend analysis. On a $20M annual spend, that is $1-3M.
+Most companies find 5-15% in addressable savings from their first AI-powered spend analysis. On a $20M annual spend, that is $1-3M. For operations teams that also manage inventory, pairing spend data with [demand forecasting](/blog/ai-demand-forecasting-tools-small-business/) tools turns historical purchasing analysis into forward-looking replenishment planning.
 
 ## AI for Supplier Discovery and Evaluation
 

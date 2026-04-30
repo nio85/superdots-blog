@@ -137,7 +137,7 @@ The ethical line matters here. Engagement monitoring should be transparent, aggr
 
 ## Workforce planning and headcount forecasting
 
-Spreadsheet-based workforce planning breaks down at scale. When you're modeling hiring needs across multiple departments, geographies, and growth scenarios, the complexity overwhelms even the most sophisticated Excel models.
+Spreadsheet-based [workforce planning and headcount forecasting](/blog/ai-workforce-planning/) breaks down at scale. When you're modeling hiring needs across multiple departments, geographies, and growth scenarios, the complexity overwhelms even the most sophisticated Excel models.
 
 AI workforce planning tools ingest data from your HRIS, financial systems, project pipelines, and market benchmarks to generate dynamic headcount forecasts. They model scenarios — what happens if revenue grows 20%? What if attrition increases in engineering? — and show you the hiring, training, and restructuring implications of each.
 
