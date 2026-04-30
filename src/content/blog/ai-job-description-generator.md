@@ -50,15 +50,15 @@ In an attempt to attract ATS-friendly applicants, many JDs load up on keyword li
 
 ## AI job description generators compared
 
-| Tool | Best for | Price | Free tier | Bias detection | ATS integration |
-|------|----------|-------|-----------|----------------|-----------------|
-| **ChatGPT / Claude** | Free drafting | $20/month (paid) | Yes | None | No |
-| **Ongig** | Enterprise bias analysis | Custom (contact) | No | Advanced | Yes |
-| **Textio** | Inclusive language scoring | Custom (contact) | No | Advanced | Yes |
-| **Manatal** | SMB full-stack recruiting | $15/user/month | 14-day trial | Basic | Yes (built-in ATS) |
-| **Workable AI** | Mid-market with ATS | $299+/month | No (demo) | Basic | Yes (built-in ATS) |
-| **Grammarly Business** | Teams already on Grammarly | $15/member/month | Limited | Basic | No |
-| **Indeed's AI tool** | Free with Indeed posting | Free | Yes (full) | None | Yes (Indeed only) |
+| Tool | Best for | Price | Free tier | Bias detection | ATS integration | Limitation |
+|------|----------|-------|-----------|----------------|-----------------|------------|
+| **ChatGPT / Claude** | Free drafting | $20/month (paid) | Yes | None | No | No bias detection or ATS integration — manual check required |
+| **Ongig** | Enterprise bias analysis | Custom (contact) | No | Advanced | Yes | Enterprise-only pricing; self-published benchmarks carry conflict of interest |
+| **Textio** | Inclusive language scoring | Custom (contact) | No | Advanced | Yes | Sized for 500+ orgs; overkill for SMB |
+| **Manatal** | SMB full-stack recruiting | $15/user/month | 14-day trial | Basic | Yes (built-in ATS) | Template-based JD drafts, not contextual; weak bias detection |
+| **Workable AI** | Mid-market with ATS | $299+/month | No (demo) | Basic | Yes (built-in ATS) | Platform pricing hard to justify for small or infrequent hiring |
+| **Grammarly Business** | Teams already on Grammarly | $15/member/month | Limited | Basic | No | Can't generate JDs from scratch; no compliance flagging |
+| **Indeed's AI tool** | Free with Indeed posting | Free | Yes (full) | None | Yes (Indeed only) | No ATS export, no bias detection, drafts are generic |
 
 ## Tool breakdown
 
@@ -78,7 +78,7 @@ Ongig specializes in one thing: turning biased, bloated job descriptions into in
 
 The bias analysis goes deeper than gender coding. Ongig flags ageist language, disability-exclusionary language, and requirements that create disparate impact without business justification — the same lens EEOC investigators use when evaluating AI hiring tools. Ongig's Text Analyzer surfaces alternatives and explains why each flag matters, which makes the suggestions easier to act on than a raw word list.
 
-Pricing is custom (enterprise-only, contact for quote). Worth the conversation for organizations posting 50+ roles per year or operating under consent decrees or regulatory scrutiny. For smaller teams, it's pricing is likely overkill relative to alternatives.
+Pricing is custom (enterprise-only, contact for quote). Worth the conversation for organizations posting 50+ roles per year or operating under consent decrees or regulatory scrutiny. For smaller teams, its pricing is likely overkill relative to alternatives.
 
 **Honest caveat:** Ongig sells JD bias-detection software, which means their own blog content about bias (including their widely-cited "15 AI JD tools" article) has an inherent conflict of interest. Their analysis of competitors is useful but not neutral.
 
