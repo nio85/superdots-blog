@@ -15,7 +15,8 @@ import AuthorBox from '../components/AuthorBox.astro';
 import MidPostCTA from '../components/MidPostCTA.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { getImage } from 'astro:assets';
-import { SKIMLINKS_PUBLISHER_ID } from '../consts';
+import { SKIMLINKS_PUBLISHER_ID, PILLARS } from '../consts';
+import { authors } from '../data/authors';
 import type { CollectionEntry } from 'astro:content';
 import { TAGS } from '../consts';
 
@@ -50,6 +51,10 @@ if (heroImage) {
 
 const slug = propSlug || Astro.url.pathname.replace(/^\/blog\//, '').replace(/\/$/, '');
 
+const authorData = authors[author] || authors['Superdots Team'];
+const authorAbsoluteUrl = new URL(authorData.url, Astro.site).toString();
+const pillarLabel = PILLARS.find((p) => p.slug === (contentPillar || 'dot-by-dot'))?.label;
+
 const tagMeta = (tags ?? [])
 	.map((t: string) => TAGS.find((tm) => tm.slug === t))
 	.filter(Boolean);
@@ -63,7 +68,19 @@ const pageTitle = (title.length + BRAND_SUFFIX.length > 60) ? title : `${title}$
 <!doctype html>
 <html lang="en" data-theme="dark">
 	<head>
-		<BaseHead title={pageTitle} description={description} image={ogImageSrc} type="article" publishedTime={pubDate.toISOString()} modifiedTime={updatedDate?.toISOString()} />
+		<BaseHead
+				title={pageTitle}
+				description={description}
+				image={ogImageSrc}
+				type="article"
+				publishedTime={pubDate.toISOString()}
+				modifiedTime={updatedDate?.toISOString()}
+				ogTitle={title}
+				imageAlt={title}
+				articleAuthorUrl={authorAbsoluteUrl}
+				section={pillarLabel}
+				tags={tags}
+			/>
 		{noindex && <meta name="robots" content="noindex, follow" />}
 		{heroPreloadSrcset ? (
 			<link rel="preload" as="image" type={heroPreloadType} imagesrcset={heroPreloadSrcset} imagesizes="(max-width: 720px) 100vw, 720px" fetchpriority="high" />
