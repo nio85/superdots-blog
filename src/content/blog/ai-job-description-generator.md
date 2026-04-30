@@ -18,11 +18,11 @@ faqs:
   - question: "What's the difference between an AI job description generator and a general AI writing tool?"
     answer: "Purpose-built JD generators know the structure of effective job postings — they understand how to write requirements versus responsibilities, incorporate ATS-friendly keywords without stuffing, and most include built-in bias detection. General AI writing tools (ChatGPT, Claude) write everything, which means you provide detailed instructions to get a proper JD. The tradeoff: specialized tools are faster and include compliance features; general AI is cheaper and more flexible. For teams doing 1-10 hires per year, general AI plus a free bias-check tool is usually the better ROI."
   - question: "How long does it take to write a job description with AI?"
-    answer: "With ChatGPT or Claude and a solid prompt: 5-10 minutes for the first draft, another 5-10 minutes to review and edit, plus 5 minutes for a bias check — 20-25 minutes total versus the 1-2 hours most hiring managers report spending manually. Purpose-built tools like Workable AI or Ongig cut first-draft time to 2-3 minutes because they know your company context and previous postings. The savings compound fast when hiring for multiple roles simultaneously."
+    answer: "With ChatGPT or Claude and a solid prompt: 5-10 minutes for the first draft, another 5-10 minutes to review and edit, plus 5 minutes for a bias check — 20-25 minutes total. Most hiring managers report spending 1-2 hours on this manually. Purpose-built tools like Workable AI or Ongig cut first-draft time to 2-3 minutes because they know your company context and previous postings. The savings compound fast when hiring for multiple roles simultaneously."
 heroImage: "/images/blog/ai-job-description-generator.webp"
 ---
 
-ZipRecruiter analyzed millions of job postings and found something that should make every hiring manager stop. Postings written in fully gender-neutral language attracted 42% more applicants than those containing gendered wording. Not more applicants from underrepresented groups. More applicants, period — because inclusive language signals a welcoming culture to everyone.
+ZipRecruiter analyzed millions of job postings and found something that should make every hiring manager stop. Postings written in fully gender-neutral language attracted 42% more applicants than those containing gendered wording ([ZipRecruiter, 2016](https://slate.com/human-interest/2016/09/way-fewer-people-apply-when-job-descriptions-contain-gendered-words.html)). Not more applicants from underrepresented groups. More applicants, period — because inclusive language signals a welcoming culture to everyone.
 
 The finding raises an uncomfortable question: if language matters this much, why do most job descriptions still read like they were written in 1997? The answer is friction. Most hiring managers write JDs from scratch, under time pressure, copying language from old postings that inherited bias from even older ones.
 
@@ -52,12 +52,12 @@ In an attempt to attract ATS-friendly applicants, many JDs load up on keyword li
 
 | Tool | Best for | Price | Free tier | Bias detection | ATS integration |
 |------|----------|-------|-----------|----------------|-----------------|
-| **ChatGPT / Claude** | Free drafting | $20/month (paid) | Yes | None built-in | No |
+| **ChatGPT / Claude** | Free drafting | $20/month (paid) | Yes | None | No |
 | **Ongig** | Enterprise bias analysis | Custom (contact) | No | Advanced | Yes |
 | **Textio** | Inclusive language scoring | Custom (contact) | No | Advanced | Yes |
 | **Manatal** | SMB full-stack recruiting | $15/user/month | 14-day trial | Basic | Yes (built-in ATS) |
 | **Workable AI** | Mid-market with ATS | $299+/month | No (demo) | Basic | Yes (built-in ATS) |
-| **Grammarly Business** | Teams already on Grammarly | $15/member/month | Limited | Tone/clarity | No |
+| **Grammarly Business** | Teams already on Grammarly | $15/member/month | Limited | Basic | No |
 | **Indeed's AI tool** | Free with Indeed posting | Free | Yes (full) | None | Yes (Indeed only) |
 
 ## Tool breakdown
@@ -104,7 +104,7 @@ Workable's AI assistant generates job descriptions directly inside the ATS, pull
 
 Pricing starts at $299/month (Standard plan, up to 10 users) and scales with team size. Unlike Manatal, Workable doesn't publish per-user pricing — you're buying a platform, not a seat. The AI features are included across plans.
 
-Workable works better for teams that are already committed to a structured hiring process. If you're running ad hoc recruiting with no consistent process, you won't get the full value. If you want to set the right salary range before posting, the [AI compensation benchmarking](/blog/ai-compensation-benchmarking) step pairs naturally with Workable's job setup workflow.
+Workable works better for teams that are already committed to a structured hiring process. If you're running ad hoc recruiting with no consistent process, you won't get the full value. If you want to set the right salary range before posting, the [AI compensation benchmarking](/blog/ai-compensation-benchmarking) step pairs naturally with Workable's job setup workflow. Once applications come in, [scheduling interviews with AI](/blog/ai-interview-scheduling) completes the workflow within the same platform.
 
 ### Grammarly Business — best for teams already on the platform
 
@@ -124,7 +124,7 @@ The limitation: no export to other ATS platforms, no bias detection, no learning
 
 ## The 5-minute JD Integrity Check
 
-Whatever tool generates your first draft, run this check before posting. I call it the **JD Integrity Check** — five passes, five minutes, covers 80% of the issues that cause problems downstream.
+Whatever tool generates your first draft, run this check before posting. This is the **JD Integrity Check** — five passes, five minutes, covers 80% of the issues that cause problems downstream.
 
 **Pass 1 — Bias scan (60 seconds)**
 Paste the full text into [Gender Decoder](https://gender-decoder.katmatfield.com) (free). Flag any masculine-coded or feminine-coded words. Replace them with gender-neutral alternatives. Common swaps: "competitive" → "motivated," "dominate" → "lead," "nurturing" → "supportive" → "collaborative."
@@ -152,6 +152,6 @@ The 20% of the work AI can't do: deciding whether the role is right for your tea
 For most HR teams:
 - **Under 20 hires/year**: ChatGPT or Claude with the prompt above + Gender Decoder is the right stack. No paid tool needed.
 - **20-100 hires/year**: Manatal or Workable — the ATS integration saves enough time to justify the cost.
-- **100+ hires/year or compliance-sensitive industries**: Ongig or Textio. The bias audit documentation they provide is worth more than the JD drafting.
+- **100+ hires/year or compliance-sensitive industries**: Ongig or Textio. The bias audit documentation they provide is worth more than the JD drafting. Once you make the hire, [AI-assisted onboarding](/blog/ai-employee-onboarding) is the logical next step in the same tool stack.
 
-One thing all seven tools agree on: a JD that takes 20 minutes to write with AI, reviewed for 5 minutes with the Integrity Check, outperforms one that took 2 hours to write by hand. The speed isn't the point — it's what you do with the recovered time. [Scheduling interviews faster](/blog/ai-interview-scheduling) and [building a stronger onboarding plan](/blog/ai-employee-onboarding) for the hire you make both matter more than the JD itself.
+One thing all seven tools agree on: a JD that takes 20 minutes to write with AI, reviewed for 5 minutes with the Integrity Check, outperforms one that took 2 hours to write by hand. The speed isn't the point — it's what you do with the recovered time. Scheduling interviews faster and building a stronger onboarding plan for the hire you make both matter more than the JD itself.
