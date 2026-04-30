@@ -7,7 +7,7 @@ department: 'hr'
 useCase: 'writing'
 contentPillar: 'dot-by-dot'
 tags: ['ai-tools', 'ai-hr', 'employee-handbook', 'hr-documentation']
-heroImage: '/images/blog/ai-employee-handbook-generator.webp'
+heroImage: "/images/blog/ai-employee-handbook-generator.webp"
 imageHint: 'HR manager reviewing an employee handbook draft on a laptop with AI writing suggestions visible on screen'
 faqs:
   - question: 'Can AI generate a legally compliant employee handbook?'
