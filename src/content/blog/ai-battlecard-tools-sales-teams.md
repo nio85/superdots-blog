@@ -1,8 +1,8 @@
 ---
-title: "Best Sales Battlecard Software: Klue, Crayon & Free Option"
-description: "Klue wins for enterprise. Crayon for mid-market. Free ChatGPT workflow for teams under 10. Real 2026 pricing. Which one fits your team size and budget?"
+title: "Best AI Battlecard Tools for Sales Teams: Klue vs Crayon"
+description: "Klue wins for enterprise. Crayon for mid-market. Free ChatGPT AI battlecard workflow for teams under 10. Real 2026 pricing. Which fits your team size?"
 pubDate: "2026-04-06"
-updatedDate: "2026-04-29"
+updatedDate: "2026-04-30"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"
