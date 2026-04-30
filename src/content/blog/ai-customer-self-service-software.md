@@ -111,7 +111,7 @@ Where Tidio earns its place: early-stage companies and small e-commerce business
 
 ## Freshdesk Self-Service Module — Best If You Already Use Freshdesk
 
-If your team runs on Freshdesk, its built-in self-service tools deserve consideration before you add another vendor to the stack. Freshdesk includes a knowledge base, customer portal, and Freddy AI in every plan — including the free tier. The free plan supports up to 10 agents (updated from the previously noted 2) with a knowledge base and customer portal included.
+If your team runs on Freshdesk, its built-in self-service tools deserve consideration before you add another vendor to the stack. Freshdesk includes a knowledge base, customer portal, and Freddy AI in every plan — including the free tier. The free plan supports up to 2 agents with a knowledge base and customer portal included.
 
 Freddy AI, Freshdesk's AI layer, answers questions from the knowledge base, suggests articles in ticket workflows for agents, and can be embedded as a chatbot widget. The depth of Freddy's AI features scales with your Freshdesk plan — the Growth plan at $15/agent/month adds more automation; Pro and Enterprise tiers add advanced AI capabilities.
 
@@ -119,7 +119,7 @@ The advantage of staying in the Freshdesk ecosystem is tight integration between
 
 The limitation: if your customers need a self-service experience that stands fully independently from your support platform — a well-designed portal, rich content structure, advanced search — purpose-built knowledge base tools like Helpjuice or Document360 are better. Freshdesk's self-service module is good enough, not best-in-class.
 
-**Best for**: Teams already on Freshdesk who want to activate self-service without adding another tool. **Starting price**: Free (10 agents). Growth plan at $15/agent/month for more AI features.
+**Best for**: Teams already on Freshdesk who want to activate self-service without adding another tool. **Starting price**: Free (2 agents). Growth plan at $15/agent/month for more AI features.
 
 ## Zoho Desk — Best for Multi-Channel Self-Service
 
