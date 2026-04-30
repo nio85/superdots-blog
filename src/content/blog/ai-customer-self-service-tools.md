@@ -19,6 +19,7 @@ faqs:
     answer: "Yes — and SMBs often get disproportionate leverage because they cannot hire out of a ticket backlog the way large teams can. The best SMB entry point is either Tidio or Crisp free tier plus a structured knowledge base covering your 30 most common support topics. That combination handles routine ticket deflection without enterprise pricing. The constraint is almost always content quality, not tool capability: a thin knowledge base limits any tool, regardless of price."
   - question: "How long does it take to set up an AI self-service portal?"
     answer: "Basic setup — chatbot configured, widget live, connected to a knowledge base — takes an afternoon with tools like Tidio or Crisp. A fully functional AI self-service system with quality content takes 2–4 weeks if you already have 30+ help articles written, or 2–3 months if you are building content from scratch. The largest investment is content: writing clear, resolution-first articles that the AI can actually use. The tool setup is fast; the knowledge base foundation is the slow part."
+heroImage: "/images/blog/ai-customer-self-service-tools.webp"
 ---
 
 The support ticket queue grows with the business. The headcount allocated to answer it does not. At some point, that asymmetry forces a structural decision — not "should we use AI?" but "which tool fits our query mix and budget, and what happens to our team when it works?"
