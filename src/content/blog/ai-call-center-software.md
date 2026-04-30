@@ -7,7 +7,7 @@ department: 'customer-support'
 useCase: 'automation'
 contentPillar: 'dot-by-dot'
 tags: ['ai-tools', 'ai-customer-support', 'call-center', 'contact-center']
-heroImage: '/images/blog/ai-call-center-software.webp'
+heroImage: "/images/blog/ai-call-center-software.webp"
 imageHint: 'call center agent wearing headset with real-time AI transcription and suggestions displayed on screen beside them'
 faqs:
   - question: 'What is the difference between AI call center software and a traditional contact center platform?'
