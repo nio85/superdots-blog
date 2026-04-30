@@ -7,7 +7,7 @@ department: 'customer-support'
 useCase: 'automation'
 contentPillar: 'dot-by-dot'
 tags: ['ai-tools', 'ai-customer-support', 'ai-self-service', 'knowledge-base']
-heroImage: '/images/blog/ai-customer-self-service-software.webp'
+heroImage: "/images/blog/ai-customer-self-service-software.webp"
 imageHint: 'customer browsing a self-service portal on a laptop and finding an instant answer without contacting support'
 faqs:
   - question: 'What is the difference between AI customer self-service software and a help desk?'
