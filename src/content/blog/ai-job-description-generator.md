@@ -7,7 +7,7 @@ department: 'hr'
 useCase: 'writing'
 contentPillar: "dot-by-dot"
 tags: ['ai-for-hr', 'ai-tools', 'ai-job-descriptions', 'recruiting', 'writing']
-imageHint: "HR professional reviewing a job description on a laptop with a bias detection dashboard showing highlighted language and inclusion scores"
+imageHint: "three abstract human silhouettes as geometric teal forms at varying heights, a large layered document shape with abstract colored bars suggesting inclusion scoring, a bold red checkmark as the dominant focal element, subtle teal connection lines, no text no words no letters"
 faqs:
   - question: "Are AI-generated job descriptions legal?"
     answer: "AI-generated job descriptions are legal, but the regulatory environment is tightening. The EU AI Act classifies AI-assisted hiring tools as high-risk systems — enforcement deadlines hit in 2026 and apply to US employers screening EU candidates. New York City's Local Law 144 requires annual bias audits for automated employment decision tools, with candidate notification. The safest approach: use AI to draft the description, then run it through a bias-check tool before posting, and document your human review process. Never post an AI-generated JD without a human reviewing it for accuracy, completeness, and compliance."
@@ -19,6 +19,7 @@ faqs:
     answer: "Purpose-built JD generators know the structure of effective job postings — they understand how to write requirements versus responsibilities, incorporate ATS-friendly keywords without stuffing, and most include built-in bias detection. General AI writing tools (ChatGPT, Claude) write everything, which means you provide detailed instructions to get a proper JD. The tradeoff: specialized tools are faster and include compliance features; general AI is cheaper and more flexible. For teams doing 1-10 hires per year, general AI plus a free bias-check tool is usually the better ROI."
   - question: "How long does it take to write a job description with AI?"
     answer: "With ChatGPT or Claude and a solid prompt: 5-10 minutes for the first draft, another 5-10 minutes to review and edit, plus 5 minutes for a bias check — 20-25 minutes total versus the 1-2 hours most hiring managers report spending manually. Purpose-built tools like Workable AI or Ongig cut first-draft time to 2-3 minutes because they know your company context and previous postings. The savings compound fast when hiring for multiple roles simultaneously."
+heroImage: "/images/blog/ai-job-description-generator.webp"
 ---
 
 ZipRecruiter analyzed millions of job postings and found something that should make every hiring manager stop. Postings written in fully gender-neutral language attracted 42% more applicants than those containing gendered wording. Not more applicants from underrepresented groups. More applicants, period — because inclusive language signals a welcoming culture to everyone.
