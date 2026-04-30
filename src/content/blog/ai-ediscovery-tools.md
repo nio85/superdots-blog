@@ -26,7 +26,7 @@ faqs:
 imageHint: "legal team reviewing AI-prioritized relevant documents for litigation case"
 ---
 
-A typical commercial litigation matter generates 500,000 to 2 million documents. Employment disputes, regulatory investigations, IP cases — they all produce massive volumes of emails, contracts, chat messages, and files that need to be collected, processed, reviewed, and produced.
+A typical commercial litigation matter generates 500,000 to 2 million documents. Employment disputes, [regulatory investigations](/blog/ai-regulatory-compliance-monitoring/), [IP cases](/blog/ai-ip-management/) — they all produce massive volumes of emails, contracts, chat messages, and files that need to be collected, processed, reviewed, and produced.
 
 At traditional review rates of 40-60 documents per hour, reviewing one million documents requires 16,000-25,000 attorney hours. At $50-$150 per hour for contract reviewers, that is $800,000 to $3.75 million — just for the review phase.
 

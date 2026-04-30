@@ -29,7 +29,7 @@ Here's how to use AI API documentation tools effectively — which ones are wort
 
 Code comments get stale. Specs drift from implementation. Engineers who know the context move to other teams. These are documentation problems every project faces, but APIs have an extra layer of complexity: your docs are your product interface for external developers (or for internal teams treating your service as a black box).
 
-Bad API docs have a measurable cost. Developers abandon integrations, support tickets pile up asking questions already answered somewhere in your docs, and onboarding new engineers takes longer than it should. The problem is rarely a lack of information — it's that the information is scattered, outdated, or buried in Slack threads.
+Bad API docs have a measurable cost. Developers abandon integrations, [support tickets](/blog/ai-ticket-routing/) pile up asking questions already answered somewhere in your docs, and onboarding [new engineers](/blog/ai-employee-onboarding/) takes longer than it should. The problem is rarely a lack of information — it's that the information is scattered, outdated, or buried in Slack threads.
 
 AI tools attack the problem from two angles: generating the first draft from existing code or specs, and making it easier to maintain docs as the API changes. Neither angle is magic, but both are genuinely useful.
 

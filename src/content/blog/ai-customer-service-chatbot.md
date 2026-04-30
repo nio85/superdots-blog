@@ -30,7 +30,7 @@ Before you invest time in this, set the right expectations.
 
 - Answering common questions using your help docs and FAQs
 - Collecting information before routing to a human (account details, issue category, urgency)
-- Handling simple actions like order status checks, password resets, or appointment scheduling
+- Handling simple actions like order status checks, password resets, or [appointment scheduling](/blog/ai-scheduling-assistant/)
 - Providing instant responses 24/7, including outside business hours
 
 **What it will not do:**
@@ -56,7 +56,7 @@ You do not need to evaluate 30 tools. Focus on these criteria and you will narro
 
 ### Nice-to-haves
 
-- Multi-channel support (website, email, WhatsApp, social DMs)
+- [Multi-channel support](/blog/ai-omnichannel-support/) (website, email, WhatsApp, social DMs)
 - Multilingual capabilities
 - Custom conversation flows for specific scenarios
 - CSAT surveys built into the chat experience
@@ -135,7 +135,7 @@ When the handoff happens, the agent should see:
 - What the bot already tried
 - Any information the customer provided (account number, order ID, etc.)
 
-Nothing makes a customer angrier than explaining their problem a second time. Make sure your platform passes context to the agent's queue.
+Nothing makes a customer angrier than explaining their problem a second time. Make sure your platform passes context to the agent's [queue](/blog/ai-ticket-routing/).
 
 ### Design the transition message
 
