@@ -105,6 +105,16 @@ Both platforms are suitable for this use case. Claude tends to produce longer, m
 
 **Best for**: HR teams willing to invest in building good prompts in exchange for the highest-quality output. **Price**: $20/month (Claude Pro or ChatGPT Plus).
 
+## Document360 — Best for Teams Managing a Large Policy Library
+
+Document360 is not a handbook generator in the way Trainual or Waybook are — it is a knowledge base platform. Its place on this list is for HR teams that need to manage a large, multi-document policy library (handbook, code of conduct, benefits guide, department-specific SOPs) as a structured, searchable resource rather than a single PDF or Word document.
+
+The AI layer in Document360 assists with drafting and editing individual articles within the knowledge base, suggests related articles to link, and generates summaries for long policy documents. The platform handles versioning well — useful for teams who update policies annually and need to track what changed between versions without maintaining separate document archives.
+
+The limitation: Document360 is overkill if you just need a handbook. Its value is in scale — managing dozens of interconnected policy documents, maintaining a public-facing help center alongside internal HR documentation, and giving employees a searchable portal rather than a static file. For a standalone 40-page employee handbook, Trainual, Waybook, or a Claude/ChatGPT workflow is simpler and cheaper.
+
+**Best for**: HR teams at 200+ employees who need a structured, searchable policy library beyond a single handbook. **Starting price**: $14/user/month (Professional). **Free trial**: Yes.
+
 ## Step-by-Step: Using AI to Write Your Employee Handbook
 
 **Step 1 — Gather your inputs before you start generating.**
