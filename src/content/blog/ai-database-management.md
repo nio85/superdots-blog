@@ -57,7 +57,7 @@ That model mostly disappeared. Cloud databases, DevOps culture, and smaller team
 
 **Missing indexes are invisible.** You would not know an index is missing unless you analyze query execution plans. Most developers do not do this proactively. They do it reactively, after something is already slow.
 
-**N+1 queries hide in ORMs.** Object-relational mappers make database access easy — and make it easy to accidentally generate hundreds of queries where one would suffice. The N+1 query problem is the most common performance issue in web applications, and it is not visible in the code.
+**N+1 queries hide in ORMs.** Object-relational mappers make database access easy — and make it easy to accidentally generate hundreds of queries where one would suffice. The [N+1 query problem](/blog/ai-code-review-tools/) is the most common performance issue in web applications, and it is not visible in the code.
 
 **Schema decisions have compounding effects.** A denormalization that made sense for the first use case causes consistency issues for the fifth. A missing foreign key leads to orphaned records. These structural decisions are hard to fix later and harder to spot without expertise.
 
@@ -219,7 +219,7 @@ This does not make migration easy, but it makes it less likely to fail in unexpe
 
 ### Safe migration workflows
 
-AI can generate migration rollback scripts automatically, verify that forward and rollback migrations are consistent, and test migrations against a snapshot of production data before you run them for real.
+AI can generate migration rollback scripts automatically, verify that forward and rollback migrations are consistent, and [test migrations](/blog/ai-test-generation/) against a snapshot of production data before you run them for real.
 
 ## Getting Started Without a DBA Team
 

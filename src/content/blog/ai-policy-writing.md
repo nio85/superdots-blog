@@ -32,7 +32,7 @@ Here's how to use them — and which tools are worth your time.
 
 ## The policy writing bottleneck
 
-Most organizations have dozens of internal policies: data privacy, remote work, expense reimbursement, anti-harassment, acceptable use, travel, social media, BYOD. Each one needs to be written, reviewed, approved, distributed, acknowledged, and periodically updated.
+Most organizations have dozens of internal policies: data privacy, remote work, [expense reimbursement](/blog/ai-expense-reports/), anti-harassment, acceptable use, travel, social media, BYOD. Each one needs to be written, reviewed, approved, distributed, acknowledged, and periodically updated.
 
 The problem isn't that any single policy is hard to write. The problem is volume and maintenance.
 
@@ -48,7 +48,7 @@ AI policy tools handle three core functions:
 
 **Draft generation.** You describe the policy you need — "remote work policy for a 200-person company in California" — and the AI generates a structured first draft. Good tools pull from regulatory frameworks and industry templates, not just generic language.
 
-**Compliance checking.** Some tools cross-reference your draft against relevant regulations (GDPR, HIPAA, state labor laws) and flag potential gaps. This isn't a substitute for legal review, but it catches obvious misses — like a data privacy policy that doesn't mention data subject rights.
+**Compliance checking.** Some tools cross-reference your draft against relevant regulations ([GDPR](/blog/ai-gdpr-compliance-tools-small-business/), HIPAA, state labor laws) and flag potential gaps. This isn't a substitute for legal review, but it catches obvious misses — like a data privacy policy that doesn't mention data subject rights.
 
 **Version control and distribution.** Dedicated policy platforms track every edit, manage approval workflows, and handle distribution to employees with acknowledgment tracking. This is where purpose-built tools justify their cost over general-purpose AI.
 
@@ -177,7 +177,7 @@ This step is non-negotiable. No matter how good the AI draft looks, a qualified 
 
 Most organizations route policies through:
 
-1. **Subject matter expert** (HR, IT, operations) → content accuracy
+1. **Subject matter expert** ([HR](/blog/ai-for-hr/), IT, operations) → content accuracy
 2. **Legal counsel** → regulatory compliance and liability review
 3. **Leadership** → approval and sign-off
 

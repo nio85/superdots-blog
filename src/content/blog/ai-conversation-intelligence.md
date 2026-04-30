@@ -36,7 +36,7 @@ The result is data where there used to be guesswork. Talk ratios. Objection patt
 
 At its core, AI conversation intelligence platforms do four things:
 
-**Record and transcribe.** Every sales call — phone, Zoom, Teams, Google Meet — gets recorded and converted to text. Modern platforms hit 90-95% accuracy and handle multiple speakers, crosstalk, and industry jargon reasonably well.
+**Record and transcribe.** Every sales call — phone, Zoom, Teams, Google Meet — gets recorded and [transcribed](/blog/ai-transcription-tools/) to text. Modern platforms hit 90-95% accuracy and handle multiple speakers, crosstalk, and industry jargon reasonably well.
 
 **Identify speakers and structure.** The AI knows who said what. It separates the rep's talk time from the prospect's. It identifies questions, monologues, and back-and-forth exchanges. This structure is what makes everything else possible.
 
@@ -103,7 +103,7 @@ This surfaces patterns you would never catch manually:
 - **Competitor frequency trends.** Competitor A was mentioned on 12% of calls in January and 28% of calls in March. They are gaining mindshare. You need to respond.
 - **Feature comparisons.** Prospects keep saying "Competitor B has a native integration with [tool]." Now you know exactly which feature gap is costing you deals.
 - **Positioning gaps.** When reps talk about your platform, prospects respond neutrally. When they talk about a competitor, prospects use words like "easy" and "fast." The AI catches the sentiment difference.
-- **Win/loss by competitor.** You can filter deals by which competitor was mentioned and see close rates. Maybe you win 60% of competitive deals against Competitor A but only 30% against Competitor B. That tells you where to invest in differentiation.
+- **[Win/loss by competitor](/blog/ai-win-loss-analysis-tools/).** You can filter deals by which competitor was mentioned and see close rates. Maybe you win 60% of competitive deals against Competitor A but only 30% against Competitor B. That tells you where to invest in differentiation.
 
 Gong, Clari Copilot, and Chorus all support custom competitor trackers. You define the names and variations (including common misspellings and abbreviations), and the AI flags every mention across every call.
 
@@ -192,7 +192,7 @@ AI conversation intelligence does not live in isolation. The insights it generat
 - **Deal intelligence.** Call-level signals roll up into [AI deal intelligence](/blog/ai-deal-intelligence/) platforms that score pipeline health. A deal where sentiment has been declining across calls gets flagged before it stalls.
 - **Call prep.** Before a follow-up call, [AI for sales call prep](/blog/ai-for-sales-call-prep/) can pull the transcript from the last conversation, highlight unresolved objections, and suggest talking points.
 - **Customer feedback.** Post-sale, the same conversation analysis applies to customer success calls. [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/) surfaces churn risk signals and expansion opportunities from ongoing conversations.
-- **CRM enrichment.** Conversation data flows back into Salesforce, HubSpot, or your CRM of choice — updating contact records with topics discussed, objections raised, and next steps agreed.
+- **CRM enrichment.** Conversation data flows back into Salesforce, HubSpot, or your [CRM of choice](/blog/ai-crm-tools/) — updating contact records with topics discussed, objections raised, and next steps agreed.
 - **Forecasting.** Conversation-level signals (sentiment, engagement, next step quality) improve forecast accuracy when combined with pipeline data.
 
 ## Actionable Takeaways

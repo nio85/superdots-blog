@@ -151,7 +151,7 @@ You do not need a 40-page brand book. A clear, concise guidelines document — e
 
 ## Consistency across channels: the real test
 
-A brand identity only works if it looks the same everywhere. Your website, LinkedIn, Twitter, email newsletters, pitch decks, invoices, packaging — every touchpoint needs to feel like the same company.
+A brand identity only works if it looks the same everywhere. Your website, LinkedIn, Twitter, [email newsletters](/blog/ai-email-marketing/), [pitch decks](/blog/ai-pitch-deck-generator/), invoices, packaging — every touchpoint needs to feel like the same company.
 
 This is the hardest part. And it is where AI brand identity tools earn their keep.
 
@@ -160,7 +160,7 @@ This is the hardest part. And it is where AI brand identity tools earn their kee
 The workflow looks like this:
 
 1. **Build your brand kit in a central tool.** Upload your logo files, define your colors, add your fonts. Canva, Figma, and Frontify all support this.
-2. **Create templates for every channel.** Social media headers, post templates, email headers, presentation slides, business cards. Do this once.
+2. **Create templates for every channel.** [Social media](/blog/ai-social-media-content-calendar/) headers, post templates, email headers, presentation slides, business cards. Do this once.
 3. **Share templates with your team.** Make sure everyone uses the templates instead of starting from scratch.
 4. **Audit quarterly.** Check your actual outputs against your guidelines. Drift happens slowly — regular checks catch it early.
 

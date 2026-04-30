@@ -173,7 +173,7 @@ It's worth including here because it's the most accessible entry point for teams
 - You have a complex product where the "right answer" depends on detecting context (the prospect just mentioned a competitor, or said "not in budget")
 - You have existing battlecard content that reps aren't using consistently
 - You're managing 10+ AE seats where the Gong platform fee amortizes reasonably
-- You have high win rate variability across your sales team — real-time tools enforce consistent playbook execution, narrowing the gap between top and bottom quartile reps
+- You have [high win rate variability](/blog/ai-win-loss-analysis-tools/) across your sales team — real-time tools enforce consistent playbook execution, narrowing the gap between top and bottom quartile reps
 
 **Use both if:**
 - You're running a serious B2B sales team with AEs handling $50K+ deals
@@ -210,11 +210,11 @@ This section doesn't appear in most vendor articles — for obvious reasons.
 
 **When the objection is legitimate.** If your pricing is genuinely high for what you deliver, no amount of AI-trained objection handling fixes that. "It's too expensive" sometimes means "your value story doesn't justify your price." AI helps reps handle the objection more skillfully; it doesn't create value that isn't there.
 
-**When the sales process is broken.** Objections late in the sales cycle often signal that discovery was incomplete. If reps are hitting "we're happy with our current vendor" in closing calls, the real issue is that they didn't qualify ICP fit early enough. An AI tool for the late-stage objection doesn't fix the upstream qualification problem.
+**When the sales process is broken.** Objections late in the sales cycle often signal that discovery was incomplete. If reps are hitting "we're happy with our current vendor" in closing calls, the real issue is that they didn't [qualify ICP fit](/blog/ai-sales-prospecting/) early enough. An AI tool for the late-stage objection doesn't fix the upstream qualification problem.
 
 **When ICP clarity is missing.** Real-time coaching tools surface battlecards and responses — but those responses need to be built for specific buyer types. A "not in budget" objection from a cost-conscious SMB founder needs a different response than the same objection from an enterprise procurement manager running a competitive RFP. If you haven't done the work to map objections to buyer segments, the AI has nothing useful to surface.
 
-**When data quality is poor.** Gong and Chorus learn from your call data. If your team isn't recording calls consistently, or your CRM notes don't capture outcome context, the AI analysis degrades. Garbage in, garbage out.
+**When data quality is poor.** Gong and Chorus learn from your call data. If your team isn't recording calls consistently, or your [CRM notes](/blog/ai-crm-tools/) don't capture outcome context, the AI analysis degrades. Garbage in, garbage out.
 
 ---
 

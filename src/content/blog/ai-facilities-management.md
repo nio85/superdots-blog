@@ -77,7 +77,7 @@ This data drives better decisions about space allocation, desk-sharing ratios, c
 
 ### Automated work order management
 
-AI triages incoming maintenance requests, routes them to the right technician based on skill and location, predicts parts needs, and schedules work to minimize disruption. This eliminates the manual dispatch bottleneck and ensures urgent issues get fast responses while routine work is batched efficiently.
+AI triages incoming maintenance requests, routes them to the right technician based on skill and location, predicts parts needs, and [schedules work](/blog/ai-scheduling-assistant/) to minimize disruption. This eliminates the manual dispatch bottleneck and ensures urgent issues get fast responses while routine work is batched efficiently.
 
 ## 7 AI facilities management tools worth evaluating
 
@@ -115,7 +115,7 @@ Facilio is built for facilities teams that do not have dedicated data engineers.
 
 - Unified O&M platform covering maintenance, energy, and sustainability
 - Condition-based maintenance with IoT sensor integration
-- Carbon tracking and ESG reporting built in
+- Carbon tracking and [ESG reporting](/blog/ai-report-generator/) built in
 - **Pricing:** Starting at $500-1,500/month for mid-size facilities
 - **Best for:** 50,000-500,000 square foot portfolios, especially multi-site operators
 
@@ -264,7 +264,7 @@ You do not need to pick a vendor or install sensors to start moving toward AI fa
 
 4. **Check your BMS capabilities.** Can it export data via BACnet or API? If yes, most AI platforms can connect to it. If no, you will need a gateway device — factor that into your budget.
 
-5. **Request demos from 2-3 vendors** that match your building size and primary use case. Use your baseline data to ask for projected ROI specific to your facility.
+5. **Request demos from 2-3 [vendors](/blog/ai-vendor-management/)** that match your building size and primary use case. Use your baseline data to ask for projected ROI specific to your facility.
 
 For a broader view of how AI transforms operations beyond facilities, explore our guide to the [best AI tools for operations](/blog/best-ai-tools-for-operations) teams.
 

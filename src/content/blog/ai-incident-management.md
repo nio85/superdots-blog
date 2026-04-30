@@ -31,7 +31,7 @@ Your mean time to detect is 12 minutes. Mean time to acknowledge is another 8. T
 
 This is the reality of incident management at most companies. The tools are good at collecting data. They are bad at turning that data into fast action. Engineers drown in alerts, spend too long on triage, and reinvestigate the same failure modes repeatedly.
 
-AI incident management closes these gaps. Not by replacing engineers, but by handling the repetitive, data-heavy parts of incident response that slow humans down. Detection gets faster because AI spots anomalies before they trigger threshold alerts. Triage gets faster because AI correlates alerts and suggests severity. Resolution gets faster because AI surfaces probable root causes and executes known runbooks automatically.
+AI incident management closes these gaps. Not by replacing engineers, but by handling the repetitive, data-heavy parts of incident response that slow humans down. Detection gets faster because AI spots anomalies before they trigger threshold alerts. Triage gets faster because AI correlates alerts and suggests severity. Resolution gets faster because AI surfaces probable root causes and executes known [runbooks automatically](/blog/ai-workflow-automation/).
 
 This is not theoretical. Teams using AI-powered incident management report 40-60% reductions in mean time to resolution (MTTR). Here is how it works, tool by tool, step by step.
 
@@ -157,7 +157,7 @@ AI postmortem generation solves the data-gathering problem. The AI watches the i
 - **A timeline.** Every alert, every human action, every automated response — timestamped and ordered. When did the first anomaly appear? When was the incident acknowledged? When was the root cause identified? When was the fix deployed?
 - **Impact assessment.** How many users were affected? How many requests failed? What was the total downtime? The AI calculates this from your telemetry data.
 - **Root cause summary.** Based on the investigation, what was the proximate cause? What was the contributing cause? The AI drafts this from the correlations it identified during the incident.
-- **Action items.** Based on similar past incidents and industry best practices, the AI suggests follow-up actions — infrastructure changes, monitoring improvements, runbook updates.
+- **Action items.** Based on similar past incidents and industry best practices, the AI suggests [follow-up actions](/blog/ai-project-management-features-guide/) — infrastructure changes, monitoring improvements, runbook updates.
 
 The engineer reviews the AI-generated draft, adds context the AI could not know (like "we also discussed changing our deployment strategy"), and publishes. A task that used to take 2-3 hours takes 20-30 minutes.
 
@@ -182,7 +182,7 @@ You do not need to adopt everything at once. Here is a practical sequence:
 AI is not a magic fix for dysfunctional incident management. It will not help if:
 
 - **Your monitoring has gaps.** AI needs data. If you are not collecting metrics, logs, or traces from critical services, AI cannot detect anomalies it cannot see. Fix your observability first.
-- **Your incidents are caused by process failures.** If outages happen because someone pushed to production without testing, AI can detect the outage faster — but the fix is a process change, not a technology change.
+- **Your incidents are caused by process failures.** If outages happen because someone pushed to production without [proper testing](/blog/ai-test-generation/), AI can detect the outage faster — but the fix is a process change, not a technology change.
 - **You have no incident history.** AI root cause analysis and runbook matching depend on historical data. If you have never tracked incidents systematically, the AI has nothing to learn from. Start recording incidents now, even manually.
 - **Your team does not trust automation.** AI runbook automation only works if engineers trust it enough to let it act. This trust is earned through transparency — the AI must explain what it is doing and why. Build trust gradually.
 
