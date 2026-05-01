@@ -71,7 +71,7 @@ The contrarian insight here: Mailchimp is not the best AI platform in this compa
 
 ## HubSpot Marketing Hub
 
-HubSpot's AI email features are genuinely strong — and genuinely expensive. The AI email writer, smart send-time optimization, AI-powered A/B test recommendations, and content assistant are all well-integrated with the CRM, which is the point. When your contact records, deal stages, and email behavior all live in the same system, the AI has more signal to work with. HubSpot's smart send recommendations improve with every campaign because each email interaction enriches the CRM contact record automatically.
+HubSpot's AI email features are genuinely strong — and genuinely expensive. The AI email writer, smart send-time optimization, AI-powered A/B test recommendations, and content assistant are all well-integrated with the [CRM](/blog/ai-crm-tools), which is the point. When your contact records, deal stages, and email behavior all live in the same system, the AI has more signal to work with. HubSpot's smart send recommendations improve with every campaign because each email interaction enriches the CRM contact record automatically.
 
 The AI content assistant can generate emails from a brief, suggest subject line variants, and recommend which contacts to include in a segment based on CRM attributes. For teams already running HubSpot Sales and Service Hubs, adding Marketing Hub creates a unified AI layer across the entire customer lifecycle — not just email. That integration is hard to replicate by stitching together separate tools.
 

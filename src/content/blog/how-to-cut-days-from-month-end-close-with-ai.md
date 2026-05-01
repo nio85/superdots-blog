@@ -35,7 +35,7 @@ A typical 5-day close for a 2-3 person finance team looks like this:
 
 - **Day 1**: Pulling transaction data, checking reconciliation templates against prior month, identifying discrepancies that need investigation
 - **Day 2**: Drafting accrual entries, checking against prior period, reviewing pending journal entries
-- **Day 3**: Variance analysis — explaining the differences between current and prior period P&L for management reporting
+- **Day 3**: Variance analysis — explaining the differences between current and prior period P&L for [management reporting](/blog/ai-report-generator)
 - **Day 4**: Building the reporting pack — management commentary, executive summary, formatting
 - **Day 5**: Final controller review, corrections, sign-off, and submission
 
@@ -54,7 +54,7 @@ This framework assumes a 2-3 person finance team using standard accounting softw
 **Typical time**: 3-4 hours of manual matching and template review  
 **With AI**: 1-1.5 hours
 
-Export your bank and credit card transactions as a CSV. Paste the export into Claude with this prompt:
+Export your bank and [credit card transactions](/blog/ai-expense-reports) as a CSV. Paste the export into Claude with this prompt:
 
 > *"You are reviewing a transaction export for month-end reconciliation. Identify: (1) any duplicate transactions — same amount, date within 3 days, similar description; (2) round-number transactions over $1,000 that appear only once and have no prior-period equivalent; (3) any transaction categories that look misclassified based on the description. Flag these for review."*
 

@@ -31,7 +31,7 @@ The AI had reviewed the implementation. No one had reviewed the thinking.
 
 ## What AI code review does, and what it misses
 
-AI code review tools — CodeRabbit, GitHub Copilot Code Review, Qodo — are genuinely good at a specific class of problem. They catch syntax errors, style inconsistencies, missing test coverage, common security vulnerabilities, and naming convention violations. They do this consistently across every PR, at any hour, without the variable attention that human reviewers bring to their fifth review of the afternoon.
+AI code review tools — CodeRabbit, GitHub Copilot Code Review, Qodo — are genuinely good at a specific class of problem. They catch syntax errors, style inconsistencies, [missing test coverage](/blog/ai-test-generation), [common security vulnerabilities](/blog/ai-security-scanning), and naming convention violations. They do this consistently across every PR, at any hour, without the variable attention that human reviewers bring to their fifth review of the afternoon.
 
 What they're not good at: explaining why a particular architectural choice creates problems three refactors from now. Recognizing when a technically correct implementation will confuse the next developer who has to maintain it. Noticing that a junior developer's approach reveals a gap in their mental model of the system — a gap that will compound if not addressed.
 
@@ -55,13 +55,13 @@ The protocol below keeps the velocity gains from AI review while preserving the 
 
 **Layer 1 — Automated AI review (all PRs)**
 
-All PRs run through AI review before any human sees them. The AI handles: syntax and style enforcement, test coverage requirements, security vulnerability patterns, and documentation completeness. This layer is fully automated. No human intervention unless the AI flags something that requires judgment.
+All PRs run through AI review before any human sees them. The AI handles: syntax and style enforcement, test coverage requirements, security vulnerability patterns, and [documentation completeness](/blog/writing-better-docs-with-ai). This layer is fully automated. No human intervention unless the AI flags something that requires judgment.
 
 Key configuration decision: don't let AI review block merges for stylistic flags. Block on security vulnerabilities and failed tests. Route style and coverage feedback to the developer as non-blocking suggestions. The distinction matters because blocking merges on style defeats the velocity purpose and teaches developers to optimize for the AI rather than for the code.
 
 **Layer 2 — Human senior review (architecture and design)**
 
-For any PR touching core systems, new service integrations, or data model changes: a senior developer reviews architecture and design decisions, independent of the AI feedback. The AI output is not shown to the senior reviewer in this context — they're reviewing the system thinking, not the implementation surface.
+For any PR touching core systems, new service integrations, or [data model changes](/blog/ai-database-management): a senior developer reviews architecture and design decisions, independent of the AI feedback. The AI output is not shown to the senior reviewer in this context — they're reviewing the system thinking, not the implementation surface.
 
 This layer is explicitly human-only. The senior developer's job in Layer 2 is not to catch what the AI caught. It's to ask: does the structure of this solution reflect sound reasoning about the system? Will the team be able to maintain this six months from now? What does this approach reveal about how the developer understands the codebase?
 

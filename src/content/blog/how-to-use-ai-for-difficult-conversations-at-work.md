@@ -42,7 +42,7 @@ AI doesn't eliminate the discomfort of difficult conversations. But it can elimi
 
 ## The 3-step AI prep protocol
 
-This protocol takes roughly 40 minutes. It works for any difficult workplace conversation — performance issues, salary decisions, conflict mediation, hard feedback. The tool to use is Claude (claude.ai) or ChatGPT. No account configuration or plugins required.
+This protocol takes roughly 40 minutes. It works for any difficult workplace conversation — performance issues, [salary decisions](/blog/ai-compensation-benchmarking), conflict mediation, hard feedback. The tool to use is Claude (claude.ai) or ChatGPT. No account configuration or plugins required.
 
 ### Step 1: Clarify what you actually want (10 minutes)
 
@@ -126,7 +126,7 @@ AI doesn't know the person. It doesn't know the history between you, the power d
 
 AI-generated scripts sound prepared. Don't read them verbatim in the actual meeting — the person across from you will notice, and it will make the conversation feel staged when it needs to feel human. Use the phrases you developed as anchors, not as a script.
 
-For terminations and performance improvement plans: always run the framework by your HR team and legal counsel before the meeting, not just by an AI. Compliance requirements, documentation standards, and legally appropriate phrasing vary by jurisdiction and employment type. AI can help you get your thinking clear. HR and legal are what make the conversation sound.
+For terminations and performance improvement plans: always run the framework by your [HR team](/blog/ai-for-hr) and legal counsel before the meeting, not just by an AI. Compliance requirements, documentation standards, and legally appropriate phrasing vary by jurisdiction and employment type. AI can help you get your thinking clear. HR and legal are what make the conversation sound.
 
 And finally: the preparation helps with words. It doesn't eliminate the anxiety of sitting across from someone and delivering hard news. That's appropriate. Some discomfort in a difficult conversation is a sign that you're taking it seriously. The goal isn't to feel nothing. The goal is to be clear.
 

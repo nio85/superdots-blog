@@ -193,7 +193,7 @@ Reply.io is a sales engagement platform with AI email sequence generation, reply
 
 **Limitations:**
 - AI personalization relies on the data your team has already enriched — it won't source new contact data
-- Integration with CRMs (Salesforce, HubSpot) requires setup; data sync can be inconsistent
+- Integration with [CRMs](/blog/ai-crm-tools) (Salesforce, HubSpot) requires setup; data sync can be inconsistent
 - Pricing per-seat makes it expensive at scale relative to flat-rate tools
 
 **When to choose Reply.io:** You have a team of 3–8 reps running email sequences manually and want to add AI personalization and automation without disrupting your existing workflow.
