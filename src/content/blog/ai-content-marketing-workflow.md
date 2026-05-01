@@ -6,7 +6,7 @@ author: "Superdots Team"
 department: "marketing"
 contentPillar: "connecting-the-dots"
 tags: ["ai", "content-marketing", "workflow", "small-team", "marketing-tools"]
-imageHint: "two-person marketing team reviewing a content workflow diagram on a whiteboard with a laptop showing an AI writing interface"
+imageHint: "two people collaborating at a glowing laptop, surrounded by abstract geometric shapes representing content stages and pipeline flow, warm coral and navy palette"
 faqs:
   - question: "What is the best AI tool for content marketing strategy?"
     answer: "For most small marketing teams, Claude ($20/month) is the best all-round tool for content marketing strategy — it covers brief creation, long-form drafting, and repurposing in a single subscription. For research, pair it with Perplexity.ai (free). For SEO optimization, NeuronWriter ($19/month) is the most cost-effective option. The right combination depends on which stage is your current bottleneck, but Claude + Perplexity + NeuronWriter covers 90% of what a 1–3 person team needs at $39/month total."
@@ -18,6 +18,7 @@ faqs:
     answer: "A 1,500-word article can go from research to publishable draft in 2–3 hours with AI assistance, compared to 6–8 hours without. The time sink is no longer writing — it's editing. AI drafts require a substantive human pass to inject real examples, correct inaccuracies, and align with brand voice. Budget 45–60 minutes of editing per 1,500 words regardless of how clean the draft looks. Articles with original data, customer stories, or proprietary insight take longer because those inputs must come from a human."
   - question: "What should AI not write for you?"
     answer: "Anything where your unique perspective is the product. That means: your original point of view on industry trends, proprietary research or internal data, customer stories and case studies, genuine thought leadership that disagrees with conventional wisdom, and content requiring deep subject matter expertise. AI generates competent averages — it synthesizes what's already been published at scale. Your job is to push past that average with insight only you can provide. If an AI could write it without your input, ask whether it's worth publishing at all."
+heroImage: "/images/blog/ai-content-marketing-workflow.webp"
 ---
 
 [Adobe research (2025)](https://business.adobe.com/blog/71-percent-of-marketers-say-content-demand-to-increase-5x) found that 96% of marketing teams have seen content demand at least double over the last two years — with 62% reporting demand that's grown five times or more. What's interesting is not the number itself. It's the mismatch it reveals: the teams producing that content haven't grown at anything close to the same rate.
