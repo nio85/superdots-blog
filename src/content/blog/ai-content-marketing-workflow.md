@@ -59,7 +59,7 @@ Most small teams are using AI for stage 3 and occasionally stage 5. The ones out
 
 > "What are the most common questions that one- to three-person marketing teams search for about AI content tools in 2025? Focus on topics where existing content is generic, outdated, or written for large enterprise teams."
 
-What I find useful about this approach is that it surfaces question patterns, not just keyword clusters — and that distinction is where most AI research prompts fail. Keyword volume tells you what's popular; question patterns tell you what people are actually trying to figure out.
+What's useful about this approach is that it surfaces question patterns, not just keyword clusters — and that distinction is where most AI research prompts fail. Keyword volume tells you what's popular; question patterns tell you what people are actually trying to figure out.
 
 **Where human judgment is irreplaceable:** AI identifies what's popular. It cannot tell whether a topic fits current positioning, overlaps with existing rankings, or matches where the audience is in their decision journey. That editorial call — "is this worth our time?" — takes about ten minutes per topic and requires a human.
 
@@ -121,7 +121,7 @@ Budget 45–60 minutes of editing per 1,500 words. If that sounds like a lot, co
 
 **How to choose:** NeuronWriter is the right choice for most small teams. It analyzes the top-ranking articles for a target keyword and surfaces the semantic terms, headings, and content gaps the draft is missing — at a price point that makes sense for teams publishing fewer than 8 articles per month. Surfer SEO provides more granular SERP analysis and is worth the premium for higher-volume publishing.
 
-**What AI does well here:** These tools automate what used to require manually reading the top 10 ranking articles and taking notes on what they cover. The output — a content score, a list of missing terms, suggested headings — replaces 90 minutes of manual competitive analysis with a 10-minute review.
+**What AI does well here:** These tools automate what used to require manually reading the top 10 ranking articles and taking notes on what they cover. The output — a content score, a list of missing terms, suggested headings — replaces an hour or more of manual competitive analysis with a 10-minute review.
 
 **Where human judgment is irreplaceable:** A content score of 85/100 confirms keyword coverage. It says nothing about whether the article is genuinely useful, clearly written, or accurate. The final editorial pass — reading it as a reader, not as a writer — is what determines whether it's worth publishing.
 
@@ -187,18 +187,18 @@ The AI Content Engine is designed to accelerate the parts of content production 
 
 ## Full Tool Stack and Monthly Costs
 
-| Tool | What it does | Price | Alternative |
+| Tool | Price | Best For | Limitation |
 |---|---|---|---|
-| Perplexity.ai | Topic research, live search synthesis | Free / $20/mo Pro | ChatGPT free tier |
-| ChatGPT Plus | Research, repurposing, variation | $20/mo | Claude Pro |
-| Claude Pro | Brief creation, long-form drafting | $20/mo | ChatGPT Plus |
-| Jasper | AI writing with brand voice controls | $49/mo (Creator) | Claude + style guide |
-| NeuronWriter | SEO content optimization | $19/mo (Bronze) | Surfer SEO |
-| Surfer SEO | Advanced SERP analysis + content scoring | $99/mo (Essential) | NeuronWriter |
-| Buffer | Social scheduling, 3 channels | $18/mo (Essentials) | Postiz (free, self-hosted) |
-| GA4 | Traffic and conversion analytics | Free | — |
-| Google Search Console | Search impressions, CTR, rankings | Free | Bing Webmaster Tools |
-| Semrush | Full SERP data, competitor analysis | $140/mo (Pro) | Ahrefs ($129/mo) |
+| Perplexity.ai | Free / $20/mo Pro | Topic research and live search synthesis | No keyword volume data |
+| ChatGPT Plus | $20/mo | Research, repurposing, and short-format variation | Less coherent than Claude over long articles |
+| Claude Pro | $20/mo | Brief creation, long-form drafting, repurposing | No live web access on standard prompts |
+| Jasper | $49/mo (Creator) | Brand voice controls and team collaboration | Unnecessary overhead for solo writers |
+| NeuronWriter | $19/mo (Bronze) | SEO content optimization for teams under 8 articles/month | Less granular SERP data than Surfer |
+| Surfer SEO | $99/mo (Essential) | Advanced SERP analysis and content scoring at scale | Overkill for teams publishing fewer than 8 articles/month |
+| Buffer | $18/mo (Essentials) | Social scheduling across up to 3 channels | Channel limit on Essentials plan |
+| GA4 | Free | Traffic and conversion analytics | Steep learning curve; not built for SEO analysis |
+| Google Search Console | Free | Search impressions, CTR, and keyword rankings | Own site data only; no competitor insight |
+| Semrush | $140/mo (Pro) | Full SERP data and in-depth competitor analysis | Expensive for teams that only need occasional competitor research |
 
 **Minimum viable stack for a 1–2 person team:** Claude + NeuronWriter + Buffer = **$57/month**
 
@@ -228,4 +228,4 @@ Paste the brief back:
 
 The result won't be publication-ready. It will be a complete working draft — which is the hardest part to generate from nothing. Edit it for 45–60 minutes, fact-check the claims, add one real example, and you have a publishable article.
 
-What research on small-team content workflows consistently shows is that the bottleneck isn't writing — it's starting. This 30-minute sequence removes that bottleneck.
+The consistent pattern across small-team content workflows is that the bottleneck isn't writing — it's starting. This 30-minute sequence removes that bottleneck.
