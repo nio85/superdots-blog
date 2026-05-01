@@ -20,9 +20,9 @@ faqs:
     answer: "Anything where your unique perspective is the product. That means: your original point of view on industry trends, proprietary research or internal data, customer stories and case studies, genuine thought leadership that disagrees with conventional wisdom, and content requiring deep subject matter expertise. AI generates competent averages — it synthesizes what's already been published at scale. Your job is to push past that average with insight only you can provide. If an AI could write it without your input, ask whether it's worth publishing at all."
 ---
 
-New research from Adobe found that 96% of marketing teams have seen content demand at least double over the last two years — with 62% reporting demand that's grown five times or more. What's interesting is not the number itself. It's the mismatch it reveals: the teams producing that content haven't grown at anything close to the same rate.
+[Adobe research (2025)](https://business.adobe.com/blog/71-percent-of-marketers-say-content-demand-to-increase-5x) found that 96% of marketing teams have seen content demand at least double over the last two years — with 62% reporting demand that's grown five times or more. What's interesting is not the number itself. It's the mismatch it reveals: the teams producing that content haven't grown at anything close to the same rate.
 
-Most small marketing teams — one, two, or three people — are expected to deliver enterprise-level content volume on startup-level budgets. The result is a predictable pattern: teams skip the research phase, write without a brief, publish without optimizing, and never find time to measure what's working. The content exists, but the system doesn't.
+What's interesting isn't the pressure itself — it's what teams actually do when they try to respond to it. I've been mapping the pattern, and it's consistent enough across one- to three-person teams to suggest it's structural, not circumstantial: teams skip research, write without a brief, publish without optimizing, and never find time to measure what's working. The content exists, but the system doesn't.
 
 What separates the small teams that consistently publish high-performing content isn't talent or budget. It's a documented workflow where AI handles the repetitive work and humans stay in control of the decisions that require judgment.
 
@@ -59,7 +59,7 @@ Most small teams are using AI for stage 3 and occasionally stage 5. The ones out
 
 > "What are the most common questions that one- to three-person marketing teams search for about AI content tools in 2025? Focus on topics where existing content is generic, outdated, or written for large enterprise teams."
 
-What's particularly useful about this approach: AI surfaces the question patterns behind search behavior, not just keyword clusters. This often reveals angles that keyword tools miss because they measure volume, not intent.
+What I find useful about this approach is that it surfaces question patterns, not just keyword clusters — and that distinction is where most AI research prompts fail. Keyword volume tells you what's popular; question patterns tell you what people are actually trying to figure out.
 
 **Where human judgment is irreplaceable:** AI identifies what's popular. It cannot tell whether a topic fits current positioning, overlaps with existing rankings, or matches where the audience is in their decision journey. That editorial call — "is this worth our time?" — takes about ten minutes per topic and requires a human.
 
@@ -79,7 +79,7 @@ What's particularly useful about this approach: AI surfaces the question pattern
 
 > "Write a content brief for an article targeting 'AI content marketing workflow for small teams.' Audience: one-to-three-person marketing teams at B2B companies. Competitors to beat: [paste 3 URLs]. Include: primary keyword, five secondary keywords, recommended H2 structure, and ten questions the article must answer."
 
-What's interesting about brief creation as an AI use case: the brief itself reduces the variables that make AI drafts unreliable. A well-written brief functions as a set of constraints that narrow the model's output toward something coherent and on-topic.
+What's interesting about brief creation as an AI use case is that the brief itself works as a constraint system — it reduces the variables that make AI drafts unreliable. A well-structured brief functions like guardrails that narrow the model's output toward something coherent and on-topic.
 
 **Where human judgment is irreplaceable:** Validating that the keyword intent matches the content type. An article targeting "best AI writing tools" has commercial-informational intent (comparison format expected). An article targeting "how to use AI for writing" has how-to intent. AI doesn't always catch this distinction — and publishing the wrong format for the intent is one of the cleaner ways to fail at ranking.
 
@@ -96,7 +96,7 @@ What's interesting about brief creation as an AI use case: the brief itself redu
 
 **What AI does well here:** Given a solid brief, Claude produces a complete 1,500-word draft in under five minutes. What matters is being precise about what "good" means: this is a starting point, not a finished article.
 
-Research on AI content tools consistently shows that the productivity gain comes not from skipping editing but from eliminating the blank-page problem. The time saved is in getting from zero to something workable — not in reducing the editorial work that follows.
+Research on AI content tools consistently shows that the productivity gain comes not from skipping editing but from eliminating the blank-page problem. The time saved is in getting from zero to something workable — not in reducing the editorial work that follows. What most teams underestimate is the editing step that comes after.
 
 For an honest look at where AI content drafts typically fail and how to fix them, see our guide on [AI content creation](/blog/ai-content-creation).
 
@@ -140,7 +140,7 @@ Budget 45–60 minutes of editing per 1,500 words. If that sounds like a lot, co
 
 > "Repurpose this article into: three LinkedIn posts (different angles, same topic), two short posts for Twitter/X, and a 100-word email teaser for a newsletter. Match [brief description of brand tone]."
 
-This takes five minutes and replaces two hours of manual reformatting. For higher-volume content distribution workflows, dedicated [AI content repurposing tools](/blog/ai-content-repurposing-tools) like Castmagic and Taplio offer additional automation for audio, video, and platform-native formats.
+What I've noticed is that five minutes of repurposing replaces about two hours of manual reformatting — and the output is consistently good enough to publish without major edits. For higher-volume content distribution workflows, dedicated [AI content repurposing tools](/blog/ai-content-repurposing-tools) like Castmagic and Taplio offer additional automation for audio, video, and platform-native formats.
 
 For teams looking to connect distribution scheduling with automated reporting, [AI marketing reporting automation](/blog/ai-marketing-reporting-automation) tools can tie these workflows together — surfacing performance data without manual dashboard checks.
 
@@ -161,7 +161,7 @@ For teams looking to connect distribution scheduling with automated reporting, [
 
 > "This is a list of my top 50 articles by impression volume from Google Search Console. Which pages have more than 500 impressions but less than 3% click-through rate? Rank them by impression volume."
 
-The result is a prioritized refresh list that would otherwise take an hour to compile manually. For a deeper look at AI tools built specifically for this kind of analysis, see [AI marketing analytics tools](/blog/ai-marketing-analytics-tools).
+The result is a prioritized refresh list that would otherwise take an hour to compile manually. What this reveals — almost always — is a title or meta description problem, not a content problem. For a deeper look at AI tools built specifically for this kind of analysis, see [AI marketing analytics tools](/blog/ai-marketing-analytics-tools).
 
 **Where human judgment is irreplaceable:** The decision of what to do with the data. AI surfaces what's underperforming. Deciding whether to update, expand, redirect, or remove a piece of content requires understanding the business context behind it — something no tool can automate.
 
