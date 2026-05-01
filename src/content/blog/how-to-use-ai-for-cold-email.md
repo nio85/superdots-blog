@@ -44,7 +44,7 @@ Ogilvy's insight applies directly: the quality of the output is bounded by the q
 
 There's a reason personalization in cold email works that goes deeper than tactics.
 
-When a cold email references something specific — a talk you gave last month, a job posting that signals a strategic shift, a recent customer win mentioned on your company LinkedIn — the reader's brain registers it as evidence of effort. Effort signals interest. Interest signals that you might actually have something relevant to say. The reader gives you the next sentence.
+When a cold email references something specific — a talk you gave last month, a job posting that signals a strategic shift, a [recent customer win](/blog/ai-win-loss-analysis-tools) mentioned on your company LinkedIn — the reader's brain registers it as evidence of effort. Effort signals interest. Interest signals that you might actually have something relevant to say. The reader gives you the next sentence.
 
 This is not a trick. It's how human attention works. We ignore messages that feel broadcast. We engage with messages that feel addressed to us specifically.
 
@@ -86,7 +86,7 @@ The second sentence earns the next sentence. The first one doesn't.
 
 **Step 3: Let AI draft the body and CTA.**
 
-Once the opener is done — the one sentence that proves you did your homework — the rest of the email can follow a template. Your value prop, your differentiator, your ask. These don't need to be personalized. They need to be clear and brief. AI is good at this. Give it your opener and ask it to complete the email in under 80 words.
+Once the opener is done — the one sentence that proves you did your homework — the rest of the email can follow a template. Your value prop, your [differentiator](/blog/ai-competitive-analysis), your ask. These don't need to be personalized. They need to be clear and brief. AI is good at this. Give it your opener and ask it to complete the email in under 80 words.
 
 **Step 4: Test subject lines with AI.**
 

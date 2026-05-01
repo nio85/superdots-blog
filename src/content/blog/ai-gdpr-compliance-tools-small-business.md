@@ -82,7 +82,7 @@ ChatGPT produces comparable output. Neither Claude nor ChatGPT tracks regulatory
 
 ### 2. DSAR Response Drafting
 
-A Data Subject Access Request requires you to compile all personal data you hold on an individual and send it within one month. For complex or numerous requests, Art. 12(3) GDPR allows a two-month extension — but you must notify the individual within the first month. For a small business, the data gathering is manual — pull from your CRM, email platform, payment processor, and database — but the response letter follows a predictable format.
+A Data Subject Access Request requires you to compile all personal data you hold on an individual and send it within one month. For complex or numerous requests, Art. 12(3) GDPR allows a two-month extension — but you must notify the individual within the first month. For a small business, the data gathering is manual — pull from your [CRM](/blog/ai-crm-tools), email platform, payment processor, and database — but the response letter follows a predictable format.
 
 Claude can draft the response letter once you have the data:
 

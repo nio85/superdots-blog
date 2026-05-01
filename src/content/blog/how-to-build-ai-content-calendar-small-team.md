@@ -66,7 +66,7 @@ For each selected theme, run this prompt:
 
 > *"For the theme '[theme]', generate 8 specific content ideas that match my keyword targets and a publishing capacity of [X pieces/month]. For each idea, include: the working title, the primary keyword it targets, and the recommended format (how-to guide, comparison, case study, etc.). Flag which 3 you'd prioritize if I can only publish 3 pieces this month."*
 
-This step surfaces something that whiteboard planning rarely does: format distribution. Small teams tend to default to the format they're most comfortable with — usually text articles — and miss opportunities for social carousels, video scripts, or email sequences that serve the same keyword with less production effort.
+This step surfaces something that whiteboard planning rarely does: format distribution. Small teams tend to default to the format they're most comfortable with — usually text articles — and miss opportunities for [social carousels](/blog/ai-social-media-content-calendar), video scripts, or [email sequences](/blog/ai-email-marketing) that serve the same keyword with less production effort.
 
 ### Step 4: Sanity-check against capacity (15 minutes)
 

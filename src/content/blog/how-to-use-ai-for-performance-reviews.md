@@ -63,7 +63,7 @@ For teams that want to ground feedback in year-round data, [AI people analytics 
 
 ## The three prompts every manager needs
 
-Here's the pre-review framework that HR teams who've made this shift use consistently. Run these three prompts in sequence before writing a single word of the actual review.
+Here's the pre-review framework that [HR teams](/blog/ai-for-hr) who've made this shift use consistently. Run these three prompts in sequence before writing a single word of the actual review.
 
 **Prompt 1: The brain dump organizer**
 
@@ -125,7 +125,7 @@ Plan 20-30 minutes after this to edit and polish. You'll be revising something s
 
 **Not reading the draft aloud.** AI prose reads fine on screen and hollow in a 1:1 conversation. If you're discussing the review with your employee, read it aloud before the meeting. You'll immediately hear what sounds like you and what sounds like a template.
 
-**Expecting efficiency from the wrong step.** AI saves time on drafting, not on observation. If you consistently reach review season with nothing to work from, the fix is a year-round note-taking habit — not a better prompt. Even 5 minutes after each 1:1 to log one specific thing changes what you have to work with in December.
+**Expecting efficiency from the wrong step.** AI saves time on drafting, not on observation. If you consistently reach review season with nothing to work from, the fix is a year-round [note-taking](/blog/ai-note-taking-apps) habit — not a better prompt. Even 5 minutes after each 1:1 to log one specific thing changes what you have to work with in December.
 
 ## Try this today
 
