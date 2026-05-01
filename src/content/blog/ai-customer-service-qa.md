@@ -12,7 +12,7 @@ heroImage: "/images/blog/ai-customer-service-qa.webp"
 imageHint: "QA manager reviewing AI-scored support ticket quality against rubric checklist"
 faqs:
   - question: "What is the best AI QA scoring tool for small support teams?"
-    answer: "For small support teams under 20 agents, Zendesk QA has the lowest barrier to entry — roughly $25 per agent per month as a Zendesk add-on, with no enterprise setup overhead. Scorebuddy is the best alternative if you use a different helpdesk, starting around $40 per agent per month with flexible rubric customization. Both work well for teams that want 100% interaction scoring without the implementation complexity of Observe.AI or Qualtrics XM. The key filter: pick whichever tool connects directly to your existing helpdesk so you are not manually exporting conversations."
+    answer: "For small support teams (under 20 agents), Klaus is the most accessible entry point — it offers a free tier and pay-as-you-go pricing that doesn't penalize you for limited agent count. MaestroQA and Scorebuddy have more powerful rubric customization but their per-agent pricing adds up quickly at smaller scale. Start with Klaus to build your QA process, then evaluate moving to a more enterprise platform once you're scoring 100% of interactions consistently and have calibrated your rubric."
   - question: "How does AI QA scoring differ from random sampling?"
     answer: "Random sampling reviews 1–3% of interactions — a supervisor manually listens to a handful of calls and fills out a scorecard. AI QA scores every single interaction automatically: every call, every chat, every email, the same day. The practical difference is not just speed. A 2024 ICMI study found that teams reviewing fewer than 5% of interactions missed 60% of compliance violations. Beyond compliance, 100% scoring surfaces patterns invisible in a 2% sample — an agent whose empathy scores dropped this month, or a product topic that consistently generates low-satisfaction calls — and flags them in near real-time rather than weeks later."
   - question: "What are the best QA scoring tools for customer support teams?"
@@ -39,14 +39,16 @@ faqs:
 | Zendesk QA | Zendesk shops | Chat, email | ~$25/mo add-on |
 | Observe.AI | High-volume call centers | Voice-first | Contact sales |
 | Scorebuddy | Complex rubrics | Omnichannel | ~$40/agent/mo |
+| Klaus | SMB teams | Chat, email, tickets | Free tier available |
 | Assembled | WFM + QA combo | Chat, email | Contact sales |
-| Qualtrics XM | Enterprise | Omnichannel | Enterprise |
 
 Your QA team reviews maybe 2% of customer interactions. The other 98% go unchecked. You have no idea what happened in those conversations. You do not know if agents followed the script, if customers left angry, or if someone promised a refund they should not have.
 
 That is not quality assurance. That is quality guessing.
 
 AI customer service QA changes this. It scores every interaction — every call, every chat, every email — automatically. No sampling. No bias. No two-week lag between the conversation and the feedback.
+
+As a QA lead, you need a tool your analysts will trust — one that scores consistently enough to hold in an agent coaching session without the agent disputing the rubric.
 
 ## Why Manual QA Fails at Scale
 
