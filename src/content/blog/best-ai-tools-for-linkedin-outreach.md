@@ -98,7 +98,7 @@ Clay pulls prospect data from dozens of sources — LinkedIn profiles, company n
 
 The results can be striking. AI-personalized first lines based on specific signals (a prospect's recent post, a company milestone, a mutual connection) generate meaningfully higher reply rates than generic personalization. Based on user reviews and case studies shared by Clay and similar tools, personalized outreach typically sees connection acceptance rates in the 25–40% range versus 10–15% for generic templates — though your results will vary based on targeting quality and audience.
 
-Clay connects to most CRMs (HubSpot, Pipedrive, Salesforce) and can feed into email sequencing tools. For LinkedIn specifically, it generates the research output you send manually.
+Clay connects to most [CRMs](/blog/ai-crm-tools/) (HubSpot, Pipedrive, Salesforce) and can feed into email sequencing tools. For LinkedIn specifically, it generates the research output you send manually.
 
 See our guide to [AI sales prospecting](/blog/ai-sales-prospecting) for how Clay fits into a broader prospecting workflow.
 
@@ -112,7 +112,7 @@ LaGrowthMachine runs sequences across LinkedIn, email, and Twitter from a single
 
 The honest assessment: it carries more risk than personalization-only tools, but less than high-volume automation tools. Users who keep daily LinkedIn connection requests at 20–25 and maintain good acceptance rates generally don't report account issues. Users who try to push volume beyond that have more mixed experiences.
 
-The multichannel capability is genuinely useful for B2B outreach — a LinkedIn connection request followed by a personalized email and a Twitter follow produces better results than any single-channel sequence. If you want multichannel and are willing to configure send limits carefully, LaGrowthMachine is one of the more thoughtfully designed tools in this category.
+The multichannel capability is genuinely useful for B2B outreach — a LinkedIn connection request followed by a [personalized email](/blog/how-to-use-ai-for-cold-email/) and a Twitter follow produces better results than any single-channel sequence. If you want multichannel and are willing to configure send limits carefully, LaGrowthMachine is one of the more thoughtfully designed tools in this category.
 
 ### Dripify
 
@@ -162,7 +162,7 @@ Better messages to fewer, more targeted prospects outperforms more messages to m
 
 The pattern that works: Use Sales Navigator or Clay to identify 15–20 high-fit prospects per day. Use AI (Clay, or ChatGPT with prospect research) to write a personalized first line that references something specific to that person. Send manually or through a compliant tool at conservative limits.
 
-After connection: send a value-oriented first message (share something relevant, not a pitch). Wait a week before a follow-up. Two touches maximum before moving on.
+After connection: send a [value-oriented first message](/blog/ai-sales-playbook-software/) (share something relevant, not a pitch). Wait a week before a follow-up. Two touches maximum before moving on.
 
 That sequence, run at 15 prospects per day, generates better results than 100 generic automated requests — and doesn't put your account at risk.
 

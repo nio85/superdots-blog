@@ -37,7 +37,7 @@ Industry surveys consistently find that project managers spend 40–60% of their
 
 Scientific management created the measurement problem it was trying to solve.
 
-The good news is that AI is exceptionally good at the visible, formulaic part of project management. The status report template that takes 90 minutes to write from scratch takes 15 minutes to edit from an AI draft. The meeting notes that get backlogged for three days get summarized in minutes with a transcript and a prompt. The risk list that requires digging through a month of status updates gets assembled from bullet points in seconds.
+The good news is that AI is exceptionally good at the visible, formulaic part of project management. The [status report](/blog/ai-report-writing/) template that takes 90 minutes to write from scratch takes 15 minutes to edit from an AI draft. The meeting notes that get backlogged for three days get summarized in minutes with a transcript and a prompt. The risk list that requires digging through a month of status updates gets assembled from bullet points in seconds.
 
 None of that is management. But it consumes management time. AI gives it back.
 
@@ -80,7 +80,7 @@ The output is a first draft. Review it for accuracy — AI occasionally misinter
 **What it replaces:** The 30-minute post-meeting note summary that often doesn't happen for three days.
 **What it produces:** Structured action items with owners and dates, plus a meeting summary.
 
-Most video conferencing tools (Zoom, Google Meet, Microsoft Teams) now offer AI transcription built in. If yours does, turn it on. The transcript becomes the raw input.
+Most video conferencing tools (Zoom, Google Meet, Microsoft Teams) now offer [AI transcription](/blog/ai-transcription-tools/) built in. If yours does, turn it on. The transcript becomes the raw input.
 
 The prompt:
 
@@ -103,7 +103,7 @@ If you don't have automatic transcription, take rough bullets during the meeting
 
 ### Workflow 3: Risk identification
 
-**What it replaces:** The risk log that only gets updated when something goes wrong.
+**What it replaces:** The [risk log](/blog/ai-risk-management/) that only gets updated when something goes wrong.
 **What it produces:** A risk log with likelihood/impact ratings and suggested mitigations.
 
 Give AI your project brief and ask it to find the risks:

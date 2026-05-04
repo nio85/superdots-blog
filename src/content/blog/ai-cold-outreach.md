@@ -49,7 +49,7 @@ AI addresses every one of these problems — not by removing the human judgment 
 
 Think of AI as three capabilities stacked together:
 
-**Research compression.** A good cold email requires knowing enough about the prospect to say something relevant. AI can scan a LinkedIn profile, company website, recent news, and job postings in seconds and pull out the specific talking points that matter — recent initiatives, signals of pain, competitive context. What took 10-15 minutes per prospect now takes under two.
+**Research compression.** A good cold email requires knowing enough about the prospect to say something relevant. AI can scan a LinkedIn profile, company website, recent news, and job postings in seconds and pull out the specific talking points that matter — recent initiatives, signals of pain, [competitive context](/blog/ai-competitive-analysis/). What took 10-15 minutes per prospect now takes under two.
 
 **First-draft generation.** Given a prospect brief and a clear angle, AI produces a workable draft in 30 seconds. It will not be perfect — you still need to edit — but a solid first draft eliminates the blank-page problem and the tendency to fall back on templates when you are under time pressure.
 

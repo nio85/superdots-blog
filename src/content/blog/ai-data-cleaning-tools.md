@@ -61,7 +61,7 @@ AI spots values that do not fit the pattern. A revenue entry of $10 in a column 
 
 ### Auto-categorization
 
-AI can classify unstructured text into categories. Free-text job title fields get mapped to standard titles. Product descriptions get tagged by category. Address fields get parsed into street, city, state, and zip. This turns messy free-text data into structured data you can actually filter and analyze.
+AI can classify unstructured text into categories. Free-text job title fields get mapped to standard titles. Product descriptions get tagged by category. Address fields get parsed into street, city, state, and zip. This turns messy free-text data into [structured data](/blog/ai-workflow-automation/) you can actually filter and analyze.
 
 For teams already using [AI spreadsheet tools](/blog/ai-spreadsheet-tools), data cleaning is often the first and most valuable use case.
 

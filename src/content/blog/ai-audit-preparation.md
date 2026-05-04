@@ -32,7 +32,7 @@ AI does not change what auditors require. It changes how much of that assembly y
 
 Most finance leaders know audits are expensive. Few have actually counted the hours.
 
-A typical SOC 2 Type II audit prep cycle runs four to eight weeks of active work across your team. A SOX audit is longer. Evidence gathering alone — pulling logs, exporting reports, collecting signed policies, chasing department heads for confirmations — accounts for roughly 60% of that time. The remaining 40% goes to organizing documents, cross-referencing controls against framework requirements, and writing the narrative that explains how controls satisfy each requirement.
+A typical SOC 2 Type II audit prep cycle runs four to eight weeks of active work across your team. A SOX audit is longer. Evidence gathering alone — pulling logs, exporting reports, collecting [signed policies](/blog/ai-legal-document-review/), chasing department heads for confirmations — accounts for roughly 60% of that time. The remaining 40% goes to organizing documents, cross-referencing controls against framework requirements, and writing the narrative that explains how controls satisfy each requirement.
 
 None of that is high-skill work. It is high-volume, repetitive, error-prone work. And it pulls your best people away from analysis, forecasting, and the decisions that actually require their judgment.
 

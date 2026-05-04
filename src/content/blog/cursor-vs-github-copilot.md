@@ -34,7 +34,7 @@ Here's what actually matters when you're choosing an AI coding assistant for a t
 
 ## The three questions that determine the right choice
 
-**Data privacy**: Does your code leave the building? Under what terms? Who can see it? For most engineering teams handling proprietary software or regulated data, the answer to this question eliminates tools before you evaluate anything else.
+**Data privacy**: Does your code leave the building? Under what terms? Who can see it? For most engineering teams handling proprietary software or [regulated data](/blog/ai-gdpr-compliance-tools-small-business/), the answer to this question eliminates tools before you evaluate anything else.
 
 **IDE compatibility**: Cursor is a standalone editor. GitHub Copilot is a plugin. If your team uses JetBrains — IntelliJ, PyCharm, WebStorm — Cursor is not currently an option for them. This single constraint ends the comparison for a large number of organizations.
 
@@ -102,7 +102,7 @@ Cursor is an AI-native IDE — a VS Code fork with AI built into the editor rath
 
 **Your team uses JetBrains**. This is the clearest case. If half your backend engineers are on IntelliJ and the other half on VS Code, Cursor is not a viable option for the whole team. Copilot is the only major AI coding assistant with polished JetBrains support.
 
-**You're already deep in the GitHub ecosystem**. Pull request reviews, Actions pipelines, repository search — Copilot Enterprise integrates with all of it. If your workflow is GitHub-native, Copilot Enterprise's integrations create compounding value that Cursor doesn't replicate.
+**You're already deep in the GitHub ecosystem**. [Pull request reviews](/blog/how-to-run-ai-code-reviews-without-slowing-team-down/), Actions pipelines, repository search — Copilot Enterprise integrates with all of it. If your workflow is GitHub-native, Copilot Enterprise's integrations create compounding value that Cursor doesn't replicate.
 
 **You're deploying to more than 50 developers**. At scale, the per-seat cost difference is not marginal. Copilot Business at $19/seat versus Cursor Business at $40/seat is a $21/seat difference. At 100 developers, that's $2,100 per month — $25,200 per year. Unless multi-file editing is central to your team's workflow in a way that creates measurable productivity gains, that difference is hard to justify.
 
@@ -110,7 +110,7 @@ Cursor is an AI-native IDE — a VS Code fork with AI built into the editor rath
 
 ## When to choose Cursor
 
-**Multi-file refactoring is a core part of your work**. Cursor's Composer feature is meaningfully better than anything Copilot currently offers for large, cross-file edits. If your team regularly does architecture migrations, codebase restructuring, or bulk code changes across dozens of files, Cursor's advantage in this area is real and consistent. See our guide to [AI code generation tools](/blog/ai-code-generation-tools) for a broader comparison of what these tools can and can't do.
+**Multi-file refactoring is a core part of your work**. Cursor's Composer feature is meaningfully better than anything Copilot currently offers for large, cross-file edits. If your team regularly does architecture migrations, [codebase restructuring](/blog/ai-code-migration/), or bulk code changes across dozens of files, Cursor's advantage in this area is real and consistent. See our guide to [AI code generation tools](/blog/ai-code-generation-tools) for a broader comparison of what these tools can and can't do.
 
 **Your team is small and VS Code-only**. For a 5–15 person team where everyone uses VS Code, the per-seat cost difference matters less, and Cursor's features justify the premium. The $400/month for 10 developers is comparable to Copilot Enterprise pricing for the same team.
 
