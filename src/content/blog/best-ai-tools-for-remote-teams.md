@@ -7,6 +7,7 @@ contentPillar: "dot-by-dot"
 department: "operations"
 useCase: "automation"
 tags: ["ai-tools", "remote-work", "ai-for-operations", "team-productivity", "distributed-teams"]
+heroImage: "/images/blog/best-ai-tools-for-remote-teams.webp"
 imageHint: "remote team members on video call grid, collaborative digital workspace, distributed team icons across different timezones"
 faqs:
   - question: "What are the best AI tools for remote team communication?"
