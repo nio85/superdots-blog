@@ -32,7 +32,7 @@ That same pattern is playing out in project management today.
 
 Project managers today don't lack visibility tools. They have Jira, Asana, Monday, ClickUp, Linear, Notion — each one generating more data about project status than any previous generation could have imagined. And yet the most common complaint from project managers at every level is that they spend most of their time reporting on work rather than doing it.
 
-Research suggests project managers spend 40–60% of their time on administrative tasks: status reports, meeting notes, risk log updates, stakeholder decks, RAID log maintenance, sprint retrospective summaries. The actual management work — anticipating blockers, helping stuck engineers think through problems, building alignment between teams who want different things — gets the remaining time.
+Industry surveys consistently find that project managers spend 40–60% of their time on administrative tasks — a figure cited in PMI's Pulse of the Profession reports and Asana's Anatomy of Work data: status reports, meeting notes, risk log updates, stakeholder decks, RAID log maintenance, sprint retrospective summaries. The actual management work — anticipating blockers, helping stuck engineers think through problems, building alignment between teams who want different things — gets the remaining time.
 
 Scientific management created the measurement problem it was trying to solve.
 
