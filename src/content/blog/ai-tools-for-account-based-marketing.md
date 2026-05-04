@@ -9,6 +9,7 @@ useCase: "automation"
 contentPillar: "dot-by-dot"
 tags: ["account-based marketing", "ABM", "marketing tools", "B2B marketing", "AI marketing", "Clay", "LinkedIn Sales Navigator"]
 imageHint: "two-person marketing team at laptops reviewing a short account list on screen with enrichment data and personalized email drafts side by side"
+heroImage: "/images/blog/ai-tools-for-account-based-marketing.webp"
 faqs:
   - question: "What is the best AI tool for account-based marketing?"
     answer: "For small teams, Clay is the strongest starting point — it handles account enrichment and list building with a free tier (100 Data Credits) and paid plans from $185/month for the Launch plan. Pair it with LinkedIn Sales Navigator ($99.99/month) for buying signals and HubSpot Starter ($20/month) for email sequences. That three-tool foundation covers 80% of what enterprise ABM platforms charge $2,000+/month to deliver."
