@@ -166,7 +166,3 @@ After connection: send a value-oriented first message (share something relevant,
 That sequence, run at 15 prospects per day, generates better results than 100 generic automated requests — and doesn't put your account at risk.
 
 For the rest of your sales workflow, see our guide to [AI sales proposals](/blog/how-to-write-sales-proposal-with-ai) and [AI cold outreach tools](/blog/ai-cold-outreach) for email.
-
-## Internal links
-
-For broader context on sales prospecting tools, see our [AI sales prospecting guide](/blog/ai-sales-prospecting).
