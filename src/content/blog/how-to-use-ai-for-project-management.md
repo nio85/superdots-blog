@@ -6,6 +6,7 @@ author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "operations"
 tags: ["ai-tools", "project-management", "operations", "productivity", "chatgpt", "ai-workflows"]
+heroImage: "/images/blog/how-to-use-ai-for-project-management.webp"
 imageHint: "project manager at desk reviewing AI-generated status report, clean workflow dashboard, collaborative team workspace"
 faqs:
   - question: "What AI tools work best for project management?"
