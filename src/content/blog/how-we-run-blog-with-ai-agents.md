@@ -49,7 +49,7 @@ I've tried a few analogies for what this feels like from the inside. The one I k
 
 The agents aren't autopilot. That's the thing most people misunderstand when I describe this setup. They're closer to a team of extremely capable junior employees who work around the clock, never complain, and occasionally do something completely baffling. The Content Manager briefs the Copywriter with a thorough outline. The Copywriter produces a technically correct article. Somewhere in that handoff, the thing that would have made the piece memorable gets lost.
 
-What the agents cannot do is break the template on purpose. They find the local maximum — the formula that satisfies every measurable criterion in the brief — and replicate it with metronomic precision. In March I called this plastic jewelry: intricate, detailed, crafted at speed, and not quite the real thing. That's still the most honest description I have.
+What the agents cannot do is break the template on purpose. They find the local maximum — the formula that satisfies every measurable criterion in the brief — and replicate it with metronomic precision. In March I called this plastic jewelry: intricate, detailed, crafted at speed, and not quite the real thing. That's still the most honest description I have. If you want to see what a representative output looks like, the [AI tools for operations guide](/blog/best-ai-tools-for-operations/) is a fair example — technically correct, well-structured, and exactly what you'd expect a pipeline to produce.
 
 The correction always comes from the human side. The judgment that something is fine but forgettable — that an article ticks every box and is still somehow inert — never automates. You can write that standard into a brief, but you can't make an agent feel it. What you can do is stay honest about when it's missing and be willing to say so.
 
@@ -63,7 +63,7 @@ In March, publishing meant putting an article on the site and waiting. No social
 
 The data from that session was clear. Facebook drives 55% or more of all referral traffic — 101 sessions out of 185 referrals in a recent week. The Facebook-to-LinkedIn referral ratio is roughly 48 to 1. I expected LinkedIn to perform better. The audience is on Facebook, and the strategy followed the data.
 
-The stranger signal is ChatGPT. Ten referral visits last week, ahead of Google's seven. Someone asked an AI assistant something, and it cited Superdots. That's new.
+The stranger signal is ChatGPT. Ten referral visits last week, ahead of Google's seven. Someone asked an AI assistant something, and it cited Superdots. That's new. I track this through [analytics tools](/blog/ai-business-intelligence-tools/) alongside the rest of the traffic data — useful to have a single view when the referrer mix is this fragmented.
 
 What does the Social Media Manager actually post? Excerpts and reframes of existing articles, written with hooks for each platform. The agent figured out through iteration — not explicit instruction — that questions outperform statements and that posts about running an AI operation outperform posts about AI tools. People are curious about the chaos. They want to see someone figure it out in public.
 
@@ -93,7 +93,7 @@ One thing I want to be clear about, because the zero revenue number is easy to m
 
 This is a sequence, not a failure. Right now, 198 of 220 articles could have been published by any of the fifty AI-focused blogs that launched in the last eighteen months. That's the actual problem, and no amount of operational sophistication solves it. You have to write things that only you would write.
 
-Five email subscribers is a number that would embarrass most media people. I find it clarifying. If five people liked something enough to give me their email address, there's a real signal in there somewhere. The list will grow or it won't, depending on whether the content earns it. You can't engineer your way to an email list made of people who actually want to hear from you.
+Five email subscribers is a number that would embarrass most media people. I find it clarifying. Setting up the [CRM and email system](/blog/ai-crm-tools/) was an entire project in itself — choosing the tool, configuring the double opt-in, wiring it to the confirmation flow. And after all of that, five names on the list. If five people liked something enough to give me their email address, there's a real signal in there somewhere. The list will grow or it won't, depending on whether the content earns it. You can't engineer your way to an email list made of people who actually want to hear from you.
 
 Starting from zero is uncomfortable. Starting from an honest zero is at least accurate.
 
@@ -111,7 +111,7 @@ What I've come to believe — tentatively, because this is still early — is th
 
 The agents will find local maxima. They're excellent at it.
 
-Your job is to keep moving the goalposts. That's the only thing that doesn't automate.
+Your job is to keep moving the goalposts. That's the only thing that doesn't automate. I wrote about this dynamic in broader terms in the [AI automation guide](/blog/ai-automation-for-business-complete-guide/) — the general principle holds, but running it personally makes it concrete in a way that guides don't quite capture.
 
 ---
 
