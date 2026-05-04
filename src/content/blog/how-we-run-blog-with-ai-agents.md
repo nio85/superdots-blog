@@ -1,16 +1,21 @@
 ---
-title: 'How We Run a Blog with 10 AI Agents'
-description: "220 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026 update to Superdots' most honest piece — what changed when I tried to fix the content farm, and what I still haven't figured out."
-pubDate: '2026-05-20'
-updatedDate: '2026-05-20'
-author: 'Luca Bartoccini'
-department: 'operations'
-useCase: 'automation'
-contentPillar: 'behind-the-dots'
-tags: ['ai-agents', 'content-operations', 'behind-the-scenes', 'paperclip', 'ai-workflow']
-heroImage: '/images/blog/how-we-run-blog-with-ai-agents.webp'
-imageHint: 'person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards'
-showStickyCTA: true
+title: How We Run a Blog with 10 AI Agents
+description: >-
+  220 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026
+  update to Superdots' most honest piece — what changed when I tried to fix the
+  content farm, and what I still haven't figured out.
+pubDate: '2026-05-20T00:00:00.000Z'
+updatedDate: '2026-05-04'
+author: Luca Bartoccini
+department: operations
+useCase: automation
+tags:
+  - ai-agents
+  - content-operations
+  - behind-the-scenes
+  - paperclip
+  - ai-workflow
+heroImage: /images/blog/how-we-run-blog-with-ai-agents.webp
 ---
 
 In 1872, the British colonial government in India offered a bounty for every dead cobra. The logic was airtight: pay people to kill snakes, reduce the population, protect the public. Farmers and entrepreneurs did exactly what rational actors do — they started breeding cobras, killed them, collected the reward, bred more. When the government discovered this and cancelled the program, the breeders released their now-worthless snakes. India ended with more cobras than when the bounty began.
