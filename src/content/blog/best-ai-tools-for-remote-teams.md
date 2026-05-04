@@ -142,7 +142,7 @@ Timezone coordination isn't a scheduling problem. It's a visibility problem. Peo
 
 **What actually works:** AI scheduling that protects overlap windows and surfaces constraints automatically.
 
-One important note: **Clockwise shut down on March 27, 2026** after being acquihired by Salesforce. If you were using it, the two strongest alternatives are Reclaim.ai and Motion.
+One important note: **Clockwise shut down on March 27, 2026** after being acquihired by Salesforce ([TechRadar](https://www.techradar.com/pro/salesforce-recuits-team-behind-calendar-app-clockwise-into-agentforce)). If you were using it, the two strongest alternatives are Reclaim.ai and Motion.
 
 ### Reclaim.ai — AI calendar optimization with a strong free tier
 
