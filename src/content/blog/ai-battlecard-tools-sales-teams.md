@@ -1,8 +1,8 @@
 ---
-title: "Best AI Battlecard Software: Klue, Crayon & Kompyte Compared (2026)"
+title: "Best AI Battlecard Software: Klue, Crayon & Kompyte (2026)"
 description: "Klue for enterprise, Crayon for mid-market, free ChatGPT under 10 reps. PMM use cases, auto-built from call recordings, 2026 pricing — pick the right tier."
 pubDate: "2026-04-06"
-updatedDate: "2026-05-01"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 department: "sales"
 useCase: "analysis"

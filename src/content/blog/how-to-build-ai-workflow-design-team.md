@@ -1,7 +1,8 @@
 ---
 title: "How to Build an AI Workflow for Your Design Team"
-description: "A practical 4-step framework for design managers: how to map bottlenecks, assign AI to the right tasks, build your handoff layer, and standardize AI use across a 2–8 person team."
+description: "A 4-step framework for design managers: map bottlenecks, assign AI tasks, build your handoff layer, and standardize AI use across your team."
 pubDate: "2026-05-02"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "design"
