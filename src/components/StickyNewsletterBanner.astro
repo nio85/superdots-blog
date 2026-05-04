@@ -44,8 +44,9 @@ const { source = 'article-sticky' } = Astro.props;
 	const SCROLL_THRESHOLD = 0.2;
 
 	function init() {
-		const banner = document.getElementById('sticky-newsletter-cta');
-		if (!banner) return;
+		const el = document.getElementById('sticky-newsletter-cta');
+		if (!el) return;
+		const banner: HTMLElement = el;
 
 		const dismissed = localStorage.getItem(DISMISS_KEY);
 		if (dismissed && Date.now() < Number(dismissed)) return;
