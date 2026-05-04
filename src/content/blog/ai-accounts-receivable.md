@@ -2,20 +2,25 @@
 title: 'AI Accounts Receivable: Get Paid Faster'
 description: "Stop chasing payments manually. AI AR tools predict payment timing, automate follow-ups, and prioritize collection efforts for better cash flow."
 pubDate: "2026-03-17T09:26:03Z"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 department: "finance"
 useCase: "automation"
 contentPillar: "dot-by-dot"
 tags: ["ai-tools", "ai-finance", "ai-accounts-receivable"]
 heroImage: "/images/blog/ai-accounts-receivable.webp"
+imageHint: "finance professional reviewing unpaid invoices on dual-monitor workstation"
 faqs:
   - question: "Can AI AR tools integrate with my accounting software?"
-    answer: "Yes. Most AI accounts receivable platforms integrate with major ERPs and accounting systems — QuickBooks, NetSuite, Xero, Sage, SAP, and Microsoft Dynamics. They pull invoice data, payment history, and customer records directly from your existing system rather than requiring you to maintain a separate database. Some tools like Versapay and HighRadius offer native ERP connectors, while others use API integrations or middleware like Zapier. The integration typically takes 1-3 weeks depending on your ERP complexity and data volume."
+    answer: "Yes. Most AI accounts receivable platforms integrate with major ERPs and accounting systems — QuickBooks, NetSuite, Xero, Sage, SAP, and Microsoft Dynamics 365. They pull invoice data, payment history, and customer records directly from your existing system. Tools like Versapay and HighRadius offer native ERP connectors; others use API integrations or middleware like Zapier. Integration typically takes 1–4 weeks depending on your ERP complexity and data volume."
   - question: "How much can AI reduce days sales outstanding?"
-    answer: "Companies using AI-driven AR automation commonly report DSO reductions of 20-30% within the first six months. The gains come from multiple factors working together: invoices go out faster with fewer errors, payment reminders are timed to when each customer is most likely to pay, disputes get flagged and resolved earlier, and your AR team focuses human effort on the accounts that actually need it. The biggest improvements come from organizations that previously relied on manual, calendar-based follow-up sequences."
+    answer: "According to a Wakefield Research study commissioned by Billtrust, 99% of companies using AI in AR reduced DSO, with 75% cutting it by 6 days or more. The gains come from faster invoice delivery, behavior-based payment reminders, earlier dispute resolution, and better prioritization of human effort on high-risk accounts. The biggest improvements come from organizations that previously relied on manual, calendar-based follow-up sequences."
   - question: "Will automated follow-ups damage customer relationships?"
-    answer: "Not if done well. The key is personalization and timing. AI AR tools do not blast generic reminder emails on a fixed schedule. They analyze each customer's payment history and communication preferences to send the right message at the right time. A customer who always pays on day 28 gets a gentle reminder on day 25, not an aggressive collection notice on day 15. Most customers actually prefer clear, professional payment communication over the alternative — hearing nothing until a frustrated accounts manager calls them weeks past due."
-imageHint: "finance professional reviewing unpaid invoices on dual-monitor workstation"
+    answer: "Not if done well. The key is personalization and timing. AI AR tools analyze each customer's payment history and communication preferences to send the right message at the right time. A customer who always pays on day 28 gets a gentle reminder on day 25, not an aggressive collection notice on day 15. Most customers prefer clear, professional payment communication over frustrated calls weeks past due."
+  - question: "What's the difference between AI AR tools for SMBs vs. enterprise?"
+    answer: "SMB-focused tools (Gaviti, Kolleno, Centime) offer faster setup — typically 2–4 weeks — with transparent or modular pricing and lighter ERP requirements. Enterprise platforms (HighRadius, Billtrust) have deeper predictive analytics and cash application automation but require significant implementation investment and are best suited to companies with $50M+ revenue and high invoice volume. Mid-market tools like Tesorio and YayPay by Quadient sit in between."
+  - question: "How long does implementation take for an AI AR platform?"
+    answer: "It ranges from 2 weeks to 6 months depending on the platform and your ERP complexity. Lighter tools like Gaviti and Kolleno can be live in 2–4 weeks for companies with clean ERP data. Mid-market platforms like Tesorio and YayPay typically take 4–8 weeks. Enterprise platforms like HighRadius and Billtrust often require 3–6 months for full deployment, especially when cash application automation and custom ERP connectors are involved."
 ---
 
 Your AR team is spending hours every week sending the same emails to the same customers about the same late invoices. Meanwhile, the invoices that are about to go 60 days overdue are sitting quietly in a spreadsheet, unnoticed.
@@ -44,6 +49,8 @@ A mid-sized B2B company with $10M in annual revenue and a 45-day DSO has roughly
 
 Beyond the working capital math, consider the labor cost. If an AR specialist earns $55K/year and spends 40% of their time on manual follow-up and cash application, that's $22K/year of salary going toward work that automation handles better. Multiply across a team of three and the case for tooling investment becomes obvious.
 
+According to a Wakefield Research study commissioned by Billtrust, 99% of companies using AI in AR have reduced DSO — and 75% cut it by 6 days or more. For a company with $10M revenue and 45-day DSO, shaving 6 days off represents roughly $165K in freed working capital.
+
 Then there's the cost of errors and missed follow-up. Invoices that fall through the cracks, disputes that drag on for months because nobody tracked the communication history, customers who slip into 90-day overdue status because the reminder cadence wasn't aggressive enough. These costs don't show up cleanly on a P&L but they compound.
 
 ## Key Features to Evaluate
@@ -62,7 +69,7 @@ The scoring models improve over time as they ingest your specific payment histor
 
 ### Cash Application Automation
 
-If your team spends significant time matching payments to invoices, cash application automation alone can justify a platform investment. AI systems handle straight-through processing for clean matches and surface exceptions for human review. Billtrust's cash application module, for example, claims 80–90% straight-through processing rates for companies with high invoice volume.
+If your team spends significant time matching payments to invoices, cash application automation alone can justify a platform investment. AI systems handle straight-through processing for clean matches and surface exceptions for human review. Billtrust's cash application module claims 80–90% straight-through processing rates for companies with high invoice volume.
 
 This connects closely to [AI invoice processing](/blog/ai-invoice-processing) — the two capabilities are often bundled in the same platform, and the efficiency gains compound when they work together.
 
@@ -72,19 +79,36 @@ The single most underrated AR feature is making it easy for customers to pay. A 
 
 ### ERP and Accounting Integration
 
-This is table stakes but worth verifying in detail during evaluation. AI AR platforms need to write back to your ERP in real time — cash application updates, dispute status, invoice creation. Weak integration means your AR system becomes a separate workflow that duplicates rather than replaces work in your ERP. Check specifically for native connectors to your ERP (NetSuite, SAP, Oracle, Dynamics, QuickBooks) rather than relying on Zapier-style middleware.
+This is table stakes but worth verifying in detail during evaluation. AI AR platforms need to write back to your ERP in real time — cash application updates, dispute status, invoice creation. Weak integration means your AR system becomes a separate workflow that duplicates rather than replaces work in your ERP. Check specifically for native connectors to your ERP (NetSuite, SAP, Oracle, Microsoft Dynamics 365, QuickBooks) rather than relying on middleware.
 
 ## Tools Worth Evaluating
 
-**HighRadius** — Enterprise-grade, strongest predictive analytics and cash application AI. Best fit for companies with $100M+ revenue and high invoice volume. Significant implementation effort but deep capability.
+| Tool | Best For | Pricing | Typical Implementation |
+|------|----------|---------|------------------------|
+| HighRadius | Enterprise ($100M+ revenue), high invoice volume | Custom (sales-led) | 3–6 months |
+| Billtrust | Mid-to-large market, complex remittance data | Custom (sales-led) | 2–4 months |
+| Versapay | Mid-to-enterprise, improving customer payment UX | Custom (sales-led) | 4–8 weeks |
+| YayPay by Quadient | Mid-market on Salesforce or NetSuite | Custom (sales-led) | 4–8 weeks |
+| Tesorio | Mid-market, SaaS/tech companies | Custom (sales-led) | 4–8 weeks |
+| Gaviti | SMB to mid-market ($5M–$50M revenue) | Modular, based on features | 2–4 weeks |
+| Kolleno | SMB to mid-market, simpler AR stacks | Pricing on request | 2–3 weeks |
+| Centime | SMB to mid-market (AP+AR+cash in one platform) | Transparent plans | 2–4 weeks |
 
-**Billtrust** — Strong cash application automation and payment network. Mid-to-large market. Particularly good if you're dealing with complex remittance data.
+**HighRadius** — Enterprise-grade, strongest predictive analytics and cash application AI. Best fit for companies with $100M+ revenue and high invoice volume. Significant implementation effort (3–6 months) but deep capability. Pricing is custom and enterprise-level.
 
-**Versapay** — Collaborative AR focus, excellent customer portal, strong for improving customer relationships while reducing DSO. Mid-to-enterprise market.
+**Billtrust** — Strong cash application automation and payment network. Mid-to-large market. Particularly good if you're dealing with complex remittance data or high invoice volumes. Claims 80–90% straight-through processing on cash application.
 
-**YayPay by Quadient** — Clean UI, solid predictive scoring, faster to implement than HighRadius. Good fit for mid-market companies on Salesforce or NetSuite.
+**Versapay** — Collaborative AR focus, excellent customer portal, strong for improving customer relationships while reducing DSO. Mid-to-enterprise market. The portal-first approach is a genuine differentiator if customer payment experience is your primary friction point.
 
-**Gaviti** — Lighter-weight, faster time to value, better for companies with $5M–$50M revenue who want automation without a six-month implementation project.
+**YayPay by Quadient** — Clean UI, solid predictive scoring, faster to implement than HighRadius. Good fit for mid-market companies already on Salesforce or NetSuite. Implementation typically takes 4–8 weeks.
+
+**Tesorio** — Purpose-built for SaaS and tech companies with subscription billing and complex revenue recognition. Particularly strong on cash flow forecasting powered by AR data. Pricing is custom; aimed at mid-market and scale-ups.
+
+**Gaviti** — Lighter-weight, faster time to value, better for companies with $5M–$50M revenue who want automation without a six-month implementation project. Modular pricing based on features and company size.
+
+**Kolleno** — Mid-market focused with a clean interface, strong dispute management, and solid integrations with QuickBooks, Xero, NetSuite, and Sage. Best for companies with straightforward AR workflows who want setup in under a month.
+
+**Centime** — Stands out for combining AP, AR, and cash management in a single platform, which matters if you want a unified view of cash flow. Offers transparent pricing (unlike most competitors). Particularly good fit for companies on NetSuite, Sage Intacct, or QuickBooks.
 
 For context on how these tools fit into the broader finance stack, see the comparison in [AI accounting software](/blog/ai-accounting-software).
 
@@ -108,9 +132,11 @@ There's also a fraud angle worth noting: unusual payment patterns flagged by you
 
 ## Actionable Takeaways
 
-**Calculate your current DSO and the working capital impact of a 10-day reduction.** This gives you a concrete ROI target to evaluate tools against — not a vague promise of "efficiency."
+**Calculate your current DSO and the working capital impact of a 6-day reduction.** The Wakefield Research/Billtrust study found 75% of AI AR users achieved at least this — use it as your floor case ROI target, not a ceiling.
 
 **Audit where your AR team's time goes before buying software.** If 70% of late invoices come from 20% of customers, you might solve most of the problem with better manual prioritization before any automation investment.
+
+**Match tool complexity to your revenue scale.** Companies under $50M revenue: start with Gaviti, Kolleno, or Centime — setup in weeks, not months. Companies over $100M with high invoice volume: HighRadius and Billtrust justify their implementation cost. Mid-market: Tesorio and YayPay are the right range.
 
 **Start with payment portals if you're on a tight budget.** Giving customers a self-service way to view and pay invoices is low-cost, fast to implement, and directly reduces DSO. It's the highest-ROI entry point into AR modernization.
 
@@ -119,4 +145,3 @@ There's also a fraud angle worth noting: unusual payment patterns flagged by you
 **Integrate your AR data with [AI cash flow forecasting](/blog/ai-cash-flow-forecasting).** The value of accurate AR prediction multiplies when it feeds into your broader financial planning. This is the connection most teams leave on the table.
 
 The goal isn't to automate everything. It's to stop spending human attention on work a system can handle better, so your AR team can focus on the judgment calls that actually require them.
-
