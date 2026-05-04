@@ -1,7 +1,8 @@
 ---
-title: "AI GDPR Compliance Tools for Small Business (2026): What Actually Helps"
-description: "A practical guide to AI-powered GDPR compliance tools for SMBs — from free Claude workflows to Cookiebot and Termly. What AI adds, and what it still can't replace."
+title: "AI GDPR Compliance Tools for Small Business (2026)"
+description: "AI GDPR compliance tools for SMBs: from free Claude workflows to Cookiebot and Termly. What AI adds, and what it still can't replace."
 pubDate: "2026-05-03"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "legal"

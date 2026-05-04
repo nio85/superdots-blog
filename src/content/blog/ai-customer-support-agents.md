@@ -1,7 +1,8 @@
 ---
-title: "Best AI Customer Support Agents (2026): Intercom Fin, Zendesk AI, Agentforce Compared"
-description: "Intercom Fin, Zendesk AI, Agentforce, Ada CX, Fini, and Freshdesk Freddy — compared honestly. Includes a decision tree: deflect volume, escalate with context, or build custom workflows."
+title: "Best AI Customer Support Agents (2026)"
+description: "Intercom Fin, Zendesk AI, and Agentforce compared honestly. Decision tree: deflect volume, escalate with context, or build custom workflows."
 pubDate: "2026-05-02"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "customer-support"

@@ -1,7 +1,8 @@
 ---
-title: "AI FP&A Software for Small Business: Beyond Excel and Guesswork"
+title: "AI FP&A Software for Small Business (2026)"
 description: "Can a small business skip paid FP&A software entirely? An honest guide from free Excel + AI to dedicated tools — with real pricing and when to upgrade."
 pubDate: "2026-05-01"
+updatedDate: "2026-05-04"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "finance"
