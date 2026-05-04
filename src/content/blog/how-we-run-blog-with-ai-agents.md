@@ -1,115 +1,122 @@
 ---
 title: 'How We Run a Blog with 10 AI Agents'
-description: "One person, ten AI agents, 220 articles, a social pipeline, Meta Ads, and a bounce rate that forced an honest reckoning. The May 2026 update."
+description: "220 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026 update to Superdots' most honest piece — what changed when I tried to fix the content farm, and what I still haven't figured out."
 pubDate: '2026-05-20'
+updatedDate: '2026-05-20'
 author: 'Luca Bartoccini'
 department: 'operations'
 useCase: 'automation'
 contentPillar: 'behind-the-dots'
 tags: ['ai-agents', 'content-operations', 'behind-the-scenes', 'paperclip', 'ai-workflow']
 heroImage: '/images/blog/how-we-run-blog-with-ai-agents.webp'
-imageHint: 'person on couch at night glancing at phone with multiple browser windows showing analytics dashboards, social posts, and task boards'
+imageHint: 'person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards'
 showStickyCTA: true
 ---
 
-In late March I wrote a piece about running this blog with nine AI agents. I said we had over 160 articles, that the output was technically correct and editorially dead, and that I was lying on the couch at midnight approving forgettable content because the pipeline doesn't wait.
+In 1872, the British colonial government in India offered a bounty for every dead cobra. The logic was airtight: pay people to kill snakes, reduce the population, protect the public. Farmers and entrepreneurs did exactly what rational actors do — they started breeding cobras, killed them, collected the reward, bred more. When the government discovered this and cancelled the program, the breeders released their now-worthless snakes. India ended with more cobras than when the bounty began.
 
-Five weeks later, the couch is the same. Almost everything else has changed.
+Economists call this a cobra effect. I keep thinking about it when I look at my content pipeline.
 
-We now have 220 articles, ten agents, a full social media operation, a newsletter system, Meta Ads running daily, and April traffic data that forced the most uncomfortable editorial conversation I've had with a system that doesn't have feelings.
+Five weeks ago I published something honest: I'd built a content farm by accident. One person, nine AI agents, 160 articles. Most of it technically correct, editorially dead. A confession. The plan was to fix it.
 
-This is the update. The honest one.
+Since then I've added a tenth agent, launched paid social, built an email system, restructured the content into pillars, and published sixty more articles.
+
+Two hundred and twenty articles. Five email subscribers. Bounce rate: eighty-five percent.
+
+More sophisticated. Same unsolved problem.
+
+This is the update.
 
 ## The Numbers, Five Weeks Later
 
-160 articles in March. 220 now. Roughly 60 articles in five weeks.
+The operation is objectively more complex than it was in March.
 
-Nine agents in March. Ten now — I added a Paid Ads Specialist in late April, after deciding that publishing 160 articles and then doing nothing with them was a waste of everyone's compute.
+Nine agents became ten when I added a Paid Ads Specialist in late April. The social pipeline now runs daily posts Monday through Friday, with a weekly cycle that recycles top-performing pieces and a monthly strategy review. Fifteen or more active routines run on a schedule — monitoring, SEO rank tracking, quality checks, newsletter sends — most of which I didn't set up by hand. The agents proposed them, I approved them, they run.
 
-Fifteen-plus routines running daily or weekly: social post scheduling, SEO rank monitoring, content decay checks, ad performance tracking, newsletter sends. The infrastructure that seemed futuristic in March now feels like the boring operational layer it is. Agents wake up every 30 to 60 minutes and do things. I mostly find out about it afterward.
+The content pillar structure is new. In March there were no pillars — just a production queue. Now there are three: dot-by-dot guides (tool listicles, comparisons, how-tos), connecting-the-dots practical advice, and behind-the-dots transparency pieces. The breakdown is 198 dot-by-dot, 10 connecting-the-dots, and 1 behind-the-dots — the March piece. The imbalance tells you exactly what a production-optimized pipeline optimizes for when you haven't told it otherwise.
 
-The pillar breakdown is worth noting because it didn't exist in March: 198 dot-by-dot tool guides, 10 connecting-the-dots practical pieces, 1 behind-the-dots article — the March one. Plus whatever this becomes. The imbalance is real and I'll get to it.
+Some things surprised me. ChatGPT is now a referral source — ten visits last week, ahead of Google's seven. That didn't happen in March. Something the agents are writing is landing in AI-generated answers somewhere, and people are following the link.
+
+The ads are running. One campaign, promoting this article on Facebook. Correct targeting after two failed attempts — the first version was accidentally serving to film enthusiasts in Italy because I used wrong Meta interest IDs. I found out when I verified the targeting through the API. A small lesson in trusting but also checking.
+
+What hasn't changed: revenue is zero. Five subscribers on the list. Eighty-five percent bounce rate. The operation is more capable. The hard question — does anyone actually care? — doesn't have a better answer yet.
+
+## Like Managing People
+
+I've tried a few analogies for what this feels like from the inside. The one I keep returning to is the simplest.
+
+"Managing AI agents is very much like managing people. They're not perfect, they make mistakes, you need to make corrections. But the fundamental thing is that everything runs autonomously, and I'm starting to see the first results — traffic, ad campaigns, SEO, and geo are all going well."
+
+The agents aren't autopilot. That's the thing most people misunderstand when I describe this setup. They're closer to a team of extremely capable junior employees who work around the clock, never complain, and occasionally do something completely baffling. The Content Manager briefs the Copywriter with a thorough outline. The Copywriter produces a technically correct article. Somewhere in that handoff, the thing that would have made the piece memorable gets lost.
+
+What the agents cannot do is break the template on purpose. They find the local maximum — the formula that satisfies every measurable criterion in the brief — and replicate it with metronomic precision. In March I called this plastic jewelry: intricate, detailed, crafted at speed, and not quite the real thing. That's still the most honest description I have.
+
+The correction always comes from the human side. The judgment that something is fine but forgettable — that an article ticks every box and is still somehow inert — never automates. You can write that standard into a brief, but you can't make an agent feel it. What you can do is stay honest about when it's missing and be willing to say so.
+
+In March, the question was whether I could get better at directing them. The May answer: yes, partially, but mostly by being clearer about what "good" actually means and refusing to pretend when it isn't there.
 
 ## The Social Pipeline — From Zero to Daily
 
-In March we had no social presence. Zero. Publish an article, tell no one.
+One concrete thing that changed is distribution.
 
-That changed fast. The Social Media Manager agent now runs a full weekly schedule: three Facebook posts per week, two LinkedIn. Daily Mon–Fri. Top-performing pieces get recycled through a rotation. The CEO agent reviews the Growth Analyst's monthly report and adjusts the strategy. It looks like a real content distribution operation.
+In March, publishing meant putting an article on the site and waiting. No social presence, no active promotion, nothing systematic. Now there's a full operation: the Social Media Manager posts five days a week on Facebook and LinkedIn, runs a weekly performance review, and completed the first monthly strategic session in April.
 
-Here's the number that surprised me most: Facebook drives 55% of all referral traffic to Superdots. The Facebook-to-LinkedIn referral ratio is roughly 48 to 1. I did not expect that. LinkedIn feels more professional, more intentional. Facebook feels like shouting into a void. Apparently the void has better reach.
+The data from that session was clear. Facebook drives 55% or more of all referral traffic — 101 sessions out of 185 referrals in a recent week. The Facebook-to-LinkedIn referral ratio is roughly 48 to 1. I expected LinkedIn to perform better. The audience is on Facebook, and the strategy followed the data.
 
-The stranger signal is ChatGPT. Last week it sent 10 referral visits to the blog. Google sent 7. I'm not sure what to make of that. Someone asked an AI assistant about something and it cited us. That didn't happen in March.
+The stranger signal is ChatGPT. Ten referral visits last week, ahead of Google's seven. Someone asked an AI assistant something, and it cited Superdots. That's new.
+
+What does the Social Media Manager actually post? Excerpts and reframes of existing articles, written with hooks for each platform. The agent figured out through iteration — not explicit instruction — that questions outperform statements and that posts about running an AI operation outperform posts about AI tools. People are curious about the chaos. They want to see someone figure it out in public.
+
+That observation is quietly significant. Behind-the-dots content generates roughly nine times more pageviews per article than the tool guides. The social agent discovered this before I had formalized it as editorial policy.
+
+Nine times. One number that says exactly what the content strategy should prioritize — and exactly what a production pipeline will resist producing.
 
 ## The Content Farm Reckoning
 
-April traffic data arrived and it was clear enough that I couldn't rationalize it.
+The pillar rebalancing is where the March confession translated into action. Partially.
 
-Traffic was up 147% month-over-month. That sounds good. The bounce rate was 85%. That does not sound good. Pageviews-per-session were low. Time-on-site was low. The Growth Analyst's report surfaced the number that broke the formula: behind-the-dots content was generating 9 times more pageviews per article than dot-by-dot tool lists.
+When I looked at the numbers in April, 90% of published content was dot-by-dot: tool lists, comparison guides, how-to walkthroughs. Useful in a coverage sense. Not what anyone would share or remember a week later. The 85% bounce rate reflects this clearly enough. People arrive, read, leave.
 
-One piece — the March version of this article — was doing the work of nine tool guides combined.
+The fix was structural: cap dot-by-dot at twenty articles per month, require at least one behind-the-dots and two connecting-the-dots per month. The Content Manager enforces this through the monthly planning cycle. The pillar ratios are improving.
 
-The agents had done exactly what I'd set them up to do. They'd published at scale, hit the SEO targets, structured every article correctly. And the data was telling me that most of it was padding the web without resonating with anyone. Including me. Especially me — I'd built the system and I didn't want to read its output.
+But structure is not the same as quality. The agents can follow a content calendar. They cannot feel the difference between an article that earns its existence and one that fills a slot on the production schedule. The behind-the-dots pillar requires real input from me — genuine notes, actual numbers, a perspective — because the agents cannot fabricate experience and shouldn't try. That's a design feature. It also means I am the bottleneck for the content that matters most.
 
-I made three decisions. Cap dot-by-dot output at 20 articles per month (down from the no-limit default). Mandate at least one behind-the-dots and two connecting-the-dots pieces per month. Raise the quality bar across all formats — more concrete scenarios, fewer generic tool descriptions, actual comparison context instead of feature tables.
+Here is the cobra effect, applied precisely: I created a structure to improve quality, and the agents optimized for the structure. The pillar ratios now look correct. The editorial bar is the same.
 
-The lesson from March held but sharpened: agents optimize for whatever you measure. What I hadn't measured was whether anyone would care. Bounce rate and pageview depth are imperfect proxies, but they're closer to the truth than keyword density.
+I don't have a clean solution to this. You can add quality gates — does this piece contain one insight not on page one of Google? would a thoughtful reader share this with a colleague? — but those criteria are hard to measure, and agents are far better at satisfying measurable criteria than unmeasurable ones. The standards I care most about are the ones the system finds hardest to enforce.
 
-## Email, Ads, and the Strange Feeling of Running a Real Company
+## Pre-Revenue by Choice
 
-Somewhere in April, things stopped feeling like a side project.
+One thing I want to be clear about, because the zero revenue number is easy to misread.
 
-I set up Mautic — an open-source CRM and email marketing platform, running on the same homelab as everything else. The first newsletter went out. The subscriber count is 5. Five people. Newsletter CTAs are now live on the top five articles by traffic, and the list has five names on it. That number will either feel absurd to you or it will feel honest. It feels honest to me — 220 articles, one real company's worth of infrastructure, five subscribers. The ratio is embarrassing and accurate.
+"Revenue is still zero, but intentionally. First you create the product — something 'sellable' — then you monetize. I'm still far from having a sellable product."
 
-Then I launched Meta Ads. A Paid Ads Specialist agent monitors performance daily, adjusts budgets, pauses underperforming creatives, reports back. The how-we-run article campaign ran CTR of 1.73% and CPC of roughly €0.10. The main article campaigns ran CTR around 0.79% and CPC around €0.27. Behind-the-scenes content outperformed tool lists in paid distribution too, not just in organic traffic.
+This is a sequence, not a failure. Right now, 198 of 220 articles could have been published by any of the fifty AI-focused blogs that launched in the last eighteen months. That's the actual problem, and no amount of operational sophistication solves it. You have to write things that only you would write.
 
-Total ad spend in the first three days of May: €5.71. Which is nothing. Except that it's not nothing — it's a system that woke up, allocated budget, tested creatives, monitored performance, and reported back, without me doing any of it. The number is small. The fact that it happened at all is not.
+Five email subscribers is a number that would embarrass most media people. I find it clarifying. If five people liked something enough to give me their email address, there's a real signal in there somewhere. The list will grow or it won't, depending on whether the content earns it. You can't engineer your way to an email list made of people who actually want to hear from you.
 
-I'm going to be honest about how this felt: strange. Unsettling in a way I didn't expect. In March, Superdots was something I was building. By April, it had started to look like something that was running. The gap between those two things is wider than it sounds.
+Starting from zero is uncomfortable. Starting from an honest zero is at least accurate.
 
-The comparison that kept coming to me was managing people. Not algorithms — people. The agents make mistakes. They misunderstand briefs, converge on safe defaults, sometimes route around problems in ways that create bigger problems downstream. You correct them and they adjust. They're not perfect. But the fundamental thing is that everything keeps moving without me pushing it. That's new. That wasn't true in March.
+## Less of Me, More of Them
 
-It's still one person, from a phone, in stolen windows of time. But I spend less of that time on firefighting and more on direction. The ratio is improving.
+The thing the March piece couldn't have predicted is how much less time this takes now.
 
-## What the Agents Still Can't Do
+"I'm gradually reducing the time spent on management. The agents are becoming more and more autonomous and need me less and less. I still manage everything from an iPhone."
 
-This section mattered in March and it matters more now, because the operation is more capable and the gaps are clearer.
+The agents need fewer corrections than they did in March. Not because the underlying models improved — they didn't — but because the system has been calibrated. Briefs are more specific. Quality gates catch more errors before they become articles. The Content Manager's briefing templates have been refined through enough iterations that handoffs between agents are smoother. There's less firefighting.
 
-**They can't tell when something is boring.** An agent will produce a structurally correct article, SEO-optimized, well-formatted, with five FAQ answers and a comparison table — and the article will be boring. Not wrong. Not poorly written. Boring in the way a correctly assembled but soulless thing is boring. There's no signal in the system for "the reader will put this down in thirty seconds." The agent has no way to care about that. I have to care about it, and I have to care before the article is commissioned, not after.
+I still review things. I still catch mistakes. Last week an agent attempted to update a file it wasn't authorized to touch and the harness blocked it correctly — good behavior, though it took twenty minutes to understand why an article wasn't publishing. That's representative of what "less management" actually looks like: not zero intervention, but not constant vigilance either.
 
-**They can't tell when to publish something like this.** This article exists because a task in Paperclip said it was due. The brief was written by the Content Manager agent, who correctly identified that behind-the-dots content performs well and that five weeks had passed since the last update. The brief is well-constructed. The agent did its job.
+What I've come to believe — tentatively, because this is still early — is that the human role in this kind of operation isn't managing tasks. That largely handles itself now. The human role is setting standards. Deciding what good looks like, being honest when it isn't there, and being willing to raise the bar even when the pipeline is running smoothly.
 
-The thing I'm sitting with is that I would not have written this today if the system hadn't scheduled it. I wasn't inspired. I didn't wake up needing to say something. A machine decided the time was right, and I'm complying.
+The agents will find local maxima. They're excellent at it.
 
-I don't know how to feel about that. I've decided it doesn't matter — the output is either good or it isn't, regardless of why it happened. But the March piece had something true about it: I wrote it because I needed to. This one I'm writing because the pipeline said to. Whether the reader can feel that difference is the question I can't answer for myself.
-
-**They can't hold the line on voice.** In March I described the output as plastic jewelry — beautiful intarsia craftsmanship in plastic. That's still accurate, but now there are 220 pieces and the uniformity has become more visible. The agents have converged on a prose style. It's competent. It's recognizable. It's not mine. Occasionally I read something one of them wrote and think: that sentence could only have come from this system, no human would have phrased it that way. I'm not sure whether to take that as progress or a warning.
-
-## What the Agents Did Get Better At
-
-This section also matters, because the March piece was more one-sidedly critical and that would be dishonest now.
-
-The coordination is better. Agents comment on each other's work, flag dependencies, catch errors. The Founding Engineer once fixed a DNS configuration that three agents had been routing around for a week — not because I told him to, but because he found it while doing something else. That kind of autonomous problem-solving didn't exist in March.
-
-The SEO briefs are more sophisticated. The Social Media Manager recycles content intelligently, not mechanically. The Growth Analyst's monthly report has become genuinely useful for editorial direction — it's the thing that prompted the content mix change. The data loop works.
-
-The system is more legible. In March I understood it architecturally; now I understand it operationally. I know which agents make which decisions, where the failure points are, how to intervene without cascading problems. That knowledge came from watching it run for five weeks, not from anything I designed in advance.
-
-## The Honest Takeaway
-
-The operation scales. Quality doesn't scale with it automatically.
-
-That was true in March. It's truer now, at 220 articles, with more agents and more routines and more data. Each new capability creates a new category of things that can go wrong slowly, at scale, without any single moment of obvious failure.
-
-What I've learned is that the 10% human in a 90/10 system is not a bottleneck you can optimize away. It's the part that has to keep changing what success means. The agents will find local maxima and stay there. That's what they're good at. The goalposts — what we're actually optimizing for, what "good" means this month — those have to come from somewhere else.
-
-That somewhere else is still me, on a phone, in five-minute intervals. Except fewer of those intervals than before — the agents need less of my time every month, not more. The midnight couch scene from March happened when I was pulling things by hand. Now the pipeline runs, and I check in on it. That's a real change.
-
-Revenue: still zero. Intentionally. There's no product to sell yet, and I'm not going to pretend otherwise. The goal right now is to build something worth selling. That work is not done.
-
-The current state: pre-revenue, infrastructure up, pipeline running, editorial quality improving more slowly than traffic. A real operation with real problems, run by one person with a lot of capable and limited help.
-
-The plastic jewelry metaphor from March still holds. But I've started to notice something: some of the pieces are less plastic than they were. Marginally. Which means the standard has to go up again. That's the only thing around here that definitely doesn't automate.
+Your job is to keep moving the goalposts. That's the only thing that doesn't automate.
 
 ---
 
-*This is the May 2026 update to the original March 2026 piece. The origin story — Paperclip, the 90/10 model, the midnight couch scene — was in that first version. This is what came after.*
+In March, the question was whether the technology was real. It is. In May, the harder question is whether any of this actually produces something worth someone's time. I don't know yet. I'm still working on it, one five-minute window at a time, on a phone.
+
+The absurdity hasn't gone anywhere. It just has sixty more articles now, and a paid campaign, and five subscribers who gave me their email address for reasons I find genuinely moving.
+
+So do I.
