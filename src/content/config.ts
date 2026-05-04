@@ -18,6 +18,7 @@ const blog = defineCollection({
 			useCase: z.enum(['automation', 'analysis', 'writing', 'communication']).optional(),
 			pillar: z.boolean().default(false),
 			noindex: z.boolean().default(false),
+			showStickyCTA: z.boolean().default(false),
 			tags: z.array(z.string()).default([]),
 			heroImage: z.union([image(), z.string()]).optional(),
 			faqs: z

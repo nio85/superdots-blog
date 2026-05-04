@@ -13,6 +13,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 import ArticleSchema from '../components/ArticleSchema.astro';
 import AuthorBox from '../components/AuthorBox.astro';
 import MidPostCTA from '../components/MidPostCTA.astro';
+import StickyNewsletterBanner from '../components/StickyNewsletterBanner.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import { getImage } from 'astro:assets';
 import { SKIMLINKS_PUBLISHER_ID, PILLARS } from '../consts';
@@ -22,7 +23,7 @@ import { TAGS } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string; readingTime?: number };
 
-const { title, description, pubDate, updatedDate, author, department, useCase, contentPillar, heroImage, tags, faqs, noindex, slug: propSlug, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, author, department, useCase, contentPillar, heroImage, tags, faqs, noindex, showStickyCTA, slug: propSlug, readingTime } = Astro.props;
 
 // Resolve OG image URL for meta tags (works with both local ImageMetadata and string URLs)
 const ogImageSrc = heroImage
@@ -177,6 +178,7 @@ const pageTitle = (title.length + BRAND_SUFFIX.length > 60) ? title : `${title}$
 		<Footer />
 		<CookieConsent />
 		<MidPostCTA department={department} />
+		{showStickyCTA && <StickyNewsletterBanner />}
 
 		<script is:inline>
 			if (typeof fbq === 'function') {

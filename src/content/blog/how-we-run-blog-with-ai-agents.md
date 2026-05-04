@@ -9,6 +9,7 @@ contentPillar: "behind-the-dots"
 tags: ["ai-agents", "content-operations", "behind-the-scenes", "paperclip", "ai-workflow"]
 heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
 imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
+showStickyCTA: true
 ---
 
 It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about sales coaching tools, written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.

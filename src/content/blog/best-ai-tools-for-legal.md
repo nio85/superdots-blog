@@ -21,6 +21,7 @@ faqs:
   - question: "How do legal AI tools handle confidentiality?"
     answer: "Reputable legal AI tools offer SOC 2 Type II compliance, data encryption at rest and in transit, and contractual guarantees about data isolation. Most enterprise tools like Ironclad and Relativity do not use client data to train their models. Always review the vendor's data processing agreement and confirm they meet your jurisdiction's confidentiality requirements before uploading sensitive documents."
 imageHint: "lawyer at desk reviewing AI legal research and contract review tools on laptop"
+showStickyCTA: true
 ---
 
 Legal teams have a higher bar for adopting new technology than almost any other department. Attorney-client privilege, strict confidentiality obligations, regulatory requirements, and professional conduct rules mean that "move fast and break things" is not an option. When a legal team evaluates AI tools, security and compliance are not nice-to-haves — they are table stakes.

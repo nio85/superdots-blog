@@ -23,6 +23,7 @@ faqs:
   - question: "What is the best AI tool to turn a blog post into a video?"
     answer: "Pictory is the most purpose-built option. Paste a blog post URL or text and Pictory generates a narrated video with stock footage, auto-matched visuals, and captions in minutes. The Starter plan ($25/month, or $19/month billed annually) covers most content team needs. Lumen5 is a solid free-tier alternative for teams that want basic slide-style video without a monthly commitment. Neither replaces a video editor for polished production — but both replace hours of manual assembly work."
 heroImage: "/images/blog/ai-content-repurposing-tools.webp"
+showStickyCTA: true
 ---
 
 Priya manages content for a B2B SaaS company with a five-person marketing team. Every Tuesday after the weekly podcast drops, the same thing happens: she opens a transcription tool for the show notes, manually extracts quotes for LinkedIn, writes a newsletter intro from scratch, and asks their designer for a quote card. By Friday afternoon she has five derivative assets from one 40-minute recording.
