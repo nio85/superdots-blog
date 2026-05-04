@@ -162,7 +162,7 @@ Once your first automation is running smoothly, expand to related tasks:
 
 - **Email triage** — automatically sort and route incoming emails. See our guide on [automating email triage with AI](/blog/automate-email-triage-with-ai/).
 - **[Document management](/blog/ai-document-management/)** — auto-file and tag documents as they arrive
-- **Reporting** — pull data from multiple systems into automated reports
+- **[Reporting](/blog/ai-report-generator/)** — pull data from multiple systems into automated reports
 
 For a broader view of what's possible without code, see our [AI automation guide](/blog/ai-automation-guide/).
 

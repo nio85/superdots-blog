@@ -188,7 +188,7 @@ Flag these for manual review:
 - Authentication and session handling
 - Any code that does math on money
 
-These areas have subtle behavioral differences between language versions and frameworks that AI may translate syntactically correct but semantically wrong. A developer needs to read them.
+These areas have [subtle behavioral differences](/blog/ai-code-review-tools/) between language versions and frameworks that AI may translate syntactically correct but semantically wrong. A developer needs to read them.
 
 ## Framework Migrations: A Practical Example
 

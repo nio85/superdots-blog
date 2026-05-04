@@ -71,7 +71,7 @@ The key feature for remote teams is that Loom automatically transcribes every vi
 
 Otter.ai is less about recording videos and more about capturing conversations accurately. It transcribes meetings in real time, identifies speakers, and generates summaries with action items. It connects to Zoom, Google Meet, and Microsoft Teams.
 
-The practical use case for async teams: send Otter.ai summaries instead of meeting notes. Anyone who couldn't attend gets a searchable transcript, not a wall of bullet points.
+The practical use case for async teams: send Otter.ai summaries instead of meeting notes. Anyone who couldn't attend gets a [searchable transcript](/blog/ai-transcription-tools/), not a wall of bullet points.
 
 - **Free**: 300 minutes/month, basic summaries
 - **Pro**: $8.33/user/month (annual) — 1,200 minutes, unlimited transcription
@@ -102,7 +102,7 @@ When every call has a complete AI-generated transcript, summary, and action item
 
 Fathom is the rare case where the free plan is genuinely useful without nagging you to upgrade. It records and transcribes every Zoom, Google Meet, or Teams call with unlimited storage — no meeting caps.
 
-The standout feature for distributed teams is Fathom's CRM sync on paid plans: every meeting auto-logs to HubSpot or Salesforce with a summary and action items. For remote sales and customer success teams, this eliminates post-call admin entirely.
+The standout feature for distributed teams is Fathom's [CRM sync](/blog/ai-crm-tools/) on paid plans: every meeting auto-logs to HubSpot or Salesforce with a summary and action items. For remote sales and customer success teams, this eliminates post-call admin entirely.
 
 The free plan caps AI summaries at 5 per month. If you're in meetings daily, you'll want Team tier.
 
