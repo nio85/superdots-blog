@@ -58,17 +58,17 @@ The lesson from March held but sharpened: agents optimize for whatever you measu
 
 Somewhere in April, things stopped feeling like a side project.
 
-I set up Mautic — an open-source CRM and email marketing platform, running on the same homelab as everything else. The first newsletter went out. The subscriber count is [TBD — Luca to confirm current Mautic subscriber count]. Newsletter CTAs are now live on the top five articles by traffic. There's a list, there are sends, there's a person at the other end of each email address.
+I set up Mautic — an open-source CRM and email marketing platform, running on the same homelab as everything else. The first newsletter went out. The subscriber count is 5. Five people. Newsletter CTAs are now live on the top five articles by traffic, and the list has five names on it. That number will either feel absurd to you or it will feel honest. It feels honest to me — 220 articles, one real company's worth of infrastructure, five subscribers. The ratio is embarrassing and accurate.
 
 Then I launched Meta Ads. A Paid Ads Specialist agent monitors performance daily, adjusts budgets, pauses underperforming creatives, reports back. The how-we-run article campaign ran CTR of 1.73% and CPC of roughly €0.10. The main article campaigns ran CTR around 0.79% and CPC around €0.27. Behind-the-scenes content outperformed tool lists in paid distribution too, not just in organic traffic.
 
-Total ad spend to date: [TBD — Luca to confirm May spend figure].
+Total ad spend in the first three days of May: €5.71. Which is nothing. Except that it's not nothing — it's a system that woke up, allocated budget, tested creatives, monitored performance, and reported back, without me doing any of it. The number is small. The fact that it happened at all is not.
 
 I'm going to be honest about how this felt: strange. Unsettling in a way I didn't expect. In March, Superdots was something I was building. By April, it had started to look like something that was running. The gap between those two things is wider than it sounds.
 
-It's still one person, from a phone, in stolen windows of time. But the infrastructure doesn't look like a toy anymore. That's either success or the point at which you should worry about what you've automated. I keep cycling between both readings.
+The comparison that kept coming to me was managing people. Not algorithms — people. The agents make mistakes. They misunderstand briefs, converge on safe defaults, sometimes route around problems in ways that create bigger problems downstream. You correct them and they adjust. They're not perfect. But the fundamental thing is that everything keeps moving without me pushing it. That's new. That wasn't true in March.
 
-[TBD — Luca: was there a specific moment in April or May — something absurd, or unexpectedly real — that captures how this felt? The March piece had the midnight couch scene. This update needs its equivalent.]
+It's still one person, from a phone, in stolen windows of time. But I spend less of that time on firefighting and more on direction. The ratio is improving.
 
 ## What the Agents Still Can't Do
 
@@ -102,9 +102,9 @@ That was true in March. It's truer now, at 220 articles, with more agents and mo
 
 What I've learned is that the 10% human in a 90/10 system is not a bottleneck you can optimize away. It's the part that has to keep changing what success means. The agents will find local maxima and stay there. That's what they're good at. The goalposts — what we're actually optimizing for, what "good" means this month — those have to come from somewhere else.
 
-That somewhere else is still me, on a phone, in five-minute intervals.
+That somewhere else is still me, on a phone, in five-minute intervals. Except fewer of those intervals than before — the agents need less of my time every month, not more. The midnight couch scene from March happened when I was pulling things by hand. Now the pipeline runs, and I check in on it. That's a real change.
 
-[TBD — Luca: the March piece had a question about time commitment — "almost midnight on the couch." Has your daily relationship to Superdots changed? More or less time? Different device or context? Even one sentence of truth here is worth more than a paragraph I can invent.]
+Revenue: still zero. Intentionally. There's no product to sell yet, and I'm not going to pretend otherwise. The goal right now is to build something worth selling. That work is not done.
 
 The current state: pre-revenue, infrastructure up, pipeline running, editorial quality improving more slowly than traffic. A real operation with real problems, run by one person with a lot of capable and limited help.
 
