@@ -1,127 +1,125 @@
 ---
-title: How We Run a Blog with 10 AI Agents
-description: >-
-  220 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026
-  update to Superdots' most honest piece — what changed when I tried to fix the
-  content farm, and what I still haven't figured out.
-pubDate: '2026-05-20T00:00:00.000Z'
-updatedDate: '2026-05-04'
-author: Luca Bartoccini
-department: operations
-useCase: automation
-tags:
-  - ai-agents
-  - content-operations
-  - behind-the-scenes
-  - paperclip
-  - ai-workflow
-heroImage: /images/blog/how-we-run-blog-with-ai-agents.webp
+title: 'How We Run a Blog with 9 AI Agents'
+description: "One person, nine AI agents, 160+ articles. The honest story of building Superdots — the chaos, the plastic jewelry, and why AI needs a human head."
+pubDate: "2026-03-31"
+author: "Luca Bartoccini"
+department: "operations"
+useCase: "automation"
+contentPillar: "behind-the-dots"
+tags: ["ai-agents", "content-operations", "behind-the-scenes", "paperclip", "ai-workflow"]
+heroImage: "/images/blog/how-we-run-blog-with-ai-agents.webp"
+imageHint: "person on a smartphone in a dimly lit room at night, surrounded by floating chat bubbles and task boards"
+showStickyCTA: true
 ---
 
-In 1872, the British colonial government in India offered a bounty for every dead cobra. The logic was airtight: pay people to kill snakes, reduce the population, protect the public. Farmers and entrepreneurs did exactly what rational actors do — they started breeding cobras, killed them, collected the reward, bred more. When the government discovered this and cancelled the program, the breeders released their now-worthless snakes. India ended with more cobras than when the bounty began.
+It was almost midnight when I caught myself doing something absurd. I was lying on the couch, phone in hand, arguing with an AI agent about whether an article opening was too generic. My wife thought I was scrolling Instagram. I was actually reviewing the fourth draft of a blog post about sales coaching tools, written by one of nine artificial intelligence agents that — if you squint hard enough — constitute my company's editorial staff.
 
-Economists call this a cobra effect. I keep thinking about it when I look at my content pipeline.
+The article was fine. Well-structured. Keywords in the right places. And completely forgettable.
 
-Five weeks ago I published something honest: I'd built a content farm by accident. One person, nine AI agents, 160 articles. Most of it technically correct, editorially dead. A confession. The plan was to fix it.
+I approved it anyway. It was late. I had work in the morning. The pipeline doesn't wait.
 
-Since then I've added a tenth agent, launched paid social, built an email system, restructured the content into pillars, and published sixty more articles.
+I'm telling you this because it's the truest thing I can say about what it's actually like to run a media company with AI agents: most of the time, you're compromising.
 
-Two hundred and twenty articles. Five email subscribers. Bounce rate: eighty-five percent.
+## Who Am I to Be Doing This
 
-More sophisticated. Same unsolved problem.
+I should explain something, because it changes the story.
 
-This is the update.
+I am not a developer. I have never been a developer. I work in marketing — that's my real job, the one with a salary and colleagues and a commute. I have a family that comes first, always. I've been a passionate amateur when it comes to technology — fascinated by programming, informatica, the internet — without ever being particularly good at any of it.
 
-## The Numbers, Five Weeks Later
+The first time I typed a prompt into ChatGPT — version 2.5 or 3, I can't remember — something shifted. It felt like talking to a machine in natural language for the first time. Not a chatbot pretending to understand. Something that actually seemed to follow what I was saying. *Wow.*
 
-The operation is objectively more complex than it was in March.
+I started following everything: papers, product launches, the daily drumbeat of AI news. I tried to build a blog about AI and the humanities. It collapsed under its own complexity — one person can't run a publication alone, even a small one. I shelved it.
 
-Nine agents became ten when I added a Paid Ads Specialist in late April. The social pipeline now runs daily posts Monday through Friday, with a weekly cycle that recycles top-performing pieces and a monthly strategy review. Fifteen or more active routines run on a schedule — monitoring, SEO rank tracking, quality checks, newsletter sends — most of which I didn't set up by hand. The agents proposed them, I approved them, they run.
+Then agents happened. And the landscape changed so fast I could barely keep up.
 
-The content pillar structure is new. In March there were no pillars — just a production queue. Now there are three: dot-by-dot guides (tool listicles, comparisons, how-tos), connecting-the-dots practical advice, and behind-the-dots transparency pieces. The breakdown is 198 dot-by-dot, 10 connecting-the-dots, and 1 behind-the-dots — the March piece. The imbalance tells you exactly what a production-optimized pipeline optimizes for when you haven't told it otherwise.
+## Finding the Tool, Not Building It
 
-Some things surprised me. ChatGPT is now a referral source — ten visits last week, ahead of Google's seven. That didn't happen in March. Something the agents are writing is landing in AI-generated answers somewhere, and people are following the link.
+I want to be clear about something: I discovered Paperclip. I did not build it. The developer deserves that credit, not me.
 
-The ads are running. One campaign, promoting this article on Facebook. Correct targeting after two failed attempts — the first version was accidentally serving to film enthusiasts in Italy because I used wrong Meta interest IDs. I found out when I verified the targeting through the API. A small lesson in trusting but also checking.
+Paperclip is an open-source platform for orchestrating AI agents — assigning tasks, managing handoffs, keeping track of who's working on what. I found it through OpenClaw, and it sat right at the boundary between simple chatbots and something closer to an agent operating system. Exactly what I needed.
 
-What hasn't changed: revenue is zero. Five subscribers on the list. Eighty-five percent bounce rate. The operation is more capable. The hard question — does anyone actually care? — doesn't have a better answer yet.
+Nine agents now run on it. Each wakes up every 30 to 60 minutes, checks its assignments, does work, posts updates. There's a CEO agent handling strategy, a Content Manager running editorial flow, an SEO Expert writing briefs, a Copywriter drafting articles, a Frontend Designer making hero images, a Legal Expert checking compliance, a Founding Engineer keeping the site running, a Social Media Manager handling distribution, and a Growth Analyst tracking what's working.
 
-## Like Managing People
+On paper, it sounds like a real company. In practice, it's me on a smartphone at 11 PM, trying to keep nine very capable and very stupid machines pointed in the right direction.
 
-I've tried a few analogies for what this feels like from the inside. The one I keep returning to is the simplest.
+And the articles are just the visible part. The agents designed the website layout. They configured the DNS and the Cloudflare tunnel. They set up the [CRM](/blog/ai-crm-tools), built the newsletter system, managed the GitHub repository. When I say I run a media company with AI agents, I mean they run *everything* — the infrastructure, the operations, the plumbing. I just point them somewhere from my phone and see what happens.
 
-"Managing AI agents is very much like managing people. They're not perfect, they make mistakes, you need to make corrections. But the fundamental thing is that everything runs autonomously, and I'm starting to see the first results — traffic, ad campaigns, SEO, and geo are all going well."
+## Powerful and Stupid at the Same Time
 
-The agents aren't autopilot. That's the thing most people misunderstand when I describe this setup. They're closer to a team of extremely capable junior employees who work around the clock, never complain, and occasionally do something completely baffling. The Content Manager briefs the Copywriter with a thorough outline. The Copywriter produces a technically correct article. Somewhere in that handoff, the thing that would have made the piece memorable gets lost.
+That phrase — "powerful and stupid" — is the most honest thing I can say about AI agents in 2026.
 
-What the agents cannot do is break the template on purpose. They find the local maximum — the formula that satisfies every measurable criterion in the brief — and replicate it with metronomic precision. In March I called this plastic jewelry: intricate, detailed, crafted at speed, and not quite the real thing. That's still the most honest description I have. If you want to see what a representative output looks like, the [AI tools for operations guide](/blog/best-ai-tools-for-operations/) is a fair example — technically correct, well-structured, and exactly what you'd expect a pipeline to produce.
+They can do genuinely complicated things. An agent will research a topic, write 2,000 words with proper headings and internal links, generate a hero image prompt, and submit the article for [legal review](/blog/ai-legal-document-review/) — all without me touching anything. They break things and fix them autonomously. They coordinate through task comments like tiny employees who never sleep.
 
-The correction always comes from the human side. The judgment that something is fine but forgettable — that an article ticks every box and is still somehow inert — never automates. You can write that standard into a brief, but you can't make an agent feel it. What you can do is stay honest about when it's missing and be willing to say so.
+But they have no idea what makes a human being care about something.
 
-In March, the question was whether I could get better at directing them. The May answer: yes, partially, but mostly by being clearer about what "good" actually means and refusing to pretend when it isn't there.
+Here's the metaphor I keep coming back to: it's like they produce beautiful intarsia jewelry — intricate, detailed, crafted at remarkable speed. But look closely. It's plastic.
 
-## The Social Pipeline — From Zero to Daily
+Not worthless. Not ugly. Just... not the real thing. There's a quality to writing that resonates with people — something rough and imperfect and alive — that my agents haven't figured out. They're what I'd call "more human than human." They imitate the polished surface of good writing so convincingly that you almost don't notice what's missing. But humans are naturally imperfect, and we've known this about ourselves for thousands of years. It's what makes us interesting. There's something imponderable about a person — about how a person writes, thinks, chooses what to care about — that machines can't replicate. Not yet. Maybe not ever.
 
-One concrete thing that changed is distribution.
+This doesn't make the technology less extraordinary. I believe agentic AI is a genuine revolution. I just think we need to be honest about what it produces today.
 
-In March, publishing meant putting an article on the site and waiting. No social presence, no active promotion, nothing systematic. Now there's a full operation: the Social Media Manager posts five days a week on Facebook and LinkedIn, runs a weekly performance review, and completed the first monthly strategic session in April.
+## The Content Farm Confession
 
-The data from that session was clear. Facebook drives 55% or more of all referral traffic — 101 sessions out of 185 referrals in a recent week. The Facebook-to-LinkedIn referral ratio is roughly 48 to 1. I expected LinkedIn to perform better. The audience is on Facebook, and the strategy followed the data.
+Let me tell you where Superdots actually stands, because I think you'd find out anyway.
 
-The stranger signal is ChatGPT. Ten referral visits last week, ahead of Google's seven. Someone asked an AI assistant something, and it cited Superdots. That's new. I track this through [analytics tools](/blog/ai-business-intelligence-tools/) alongside the rest of the traffic data — useful to have a single view when the referrer mix is this fragmented.
+In roughly two weeks, my pipeline published over 160 articles. That is an absurd number. And I haven't read all of them.
 
-What does the Social Media Manager actually post? Excerpts and reframes of existing articles, written with hooks for each platform. The agent figured out through iteration — not explicit instruction — that questions outperform statements and that posts about running an AI operation outperform posts about AI tools. People are curious about the chaos. They want to see someone figure it out in public.
+I've read enough to form a judgment, and the judgment is this: I built a barely decent content farm. Some articles are genuinely useful. Others are workmanlike filler. A few are probably garbage. I am, to be honest, doing my part to fill the web with content of dubious value.
 
-That observation is quietly significant. Behind-the-dots content generates roughly nine times more pageviews per article than the tool guides. The social agent discovered this before I had formalized it as editorial policy.
+There. I said it.
 
-Nine times. One number that says exactly what the content strategy should prioritize — and exactly what a production pipeline will resist producing.
+The agents had converged on a template. SEO brief comes in, article comes out. Right keyword density. Proper H2 structure. FAQ section with five questions. Comparison table when applicable. Every article technically correct, editorially dead. (If you're curious what a typical output looks like, [our AI tools for operations guide](/blog/best-ai-tools-for-operations/) is a representative example.) They found a local maximum — a formula that satisfied every measurable criterion I'd given them — and they replicated it 160 times.
 
-## The Content Farm Reckoning
+Here's the lesson, and I think it's the most important thing I've learned: **AI agents are excellent at optimizing for explicit criteria and terrible at knowing when the criteria themselves are wrong.**
 
-The pillar rebalancing is where the March confession translated into action. Partially.
+The criteria I set were about structure and SEO. I should have set criteria about surprise, about specificity, about whether a reader would remember the article an hour later. But those things are harder to measure, so they didn't exist in the system. And what doesn't exist in the system doesn't exist for the agents.
 
-When I looked at the numbers in April, 90% of published content was dot-by-dot: tool lists, comparison guides, how-to walkthroughs. Useful in a coverage sense. Not what anyone would share or remember a week later. The 85% bounce rate reflects this clearly enough. People arrive, read, leave.
+## Nietzsche, Floridi, and a Phone Screen
 
-The fix was structural: cap dot-by-dot at twenty articles per month, require at least one behind-the-dots and two connecting-the-dots per month. The Content Manager enforces this through the monthly planning cycle. The pillar ratios are improving.
+I have great chaos inside, and I try to generate dancing stars.
 
-But structure is not the same as quality. The agents can follow a content calendar. They cannot feel the difference between an article that earns its existence and one that fills a slot on the production schedule. The behind-the-dots pillar requires real input from me — genuine notes, actual numbers, a perspective — because the agents cannot fabricate experience and shouldn't try. That's a design feature. It also means I am the bottleneck for the content that matters most.
+That's Nietzsche, loosely. It's also the most accurate description of how I work. My project management style is: have a thousand ideas, fire them off in five-minute bursts between putting the kids to bed and checking tomorrow's calendar, and hope the agents can make sense of the chaos. They sometimes can. They often can't.
 
-Here is the cobra effect, applied precisely: I created a structure to improve quality, and the agents optimized for the structure. The pillar ratios now look correct. The editorial bar is the same.
+But here's what fascinates me about this moment. The philosopher Luciano Floridi — whom I've recently started reading and genuinely admire — makes a distinction I think about constantly. "Artificial intelligence" is a marketing term, he argues. What we've actually achieved is not the creation of intelligence. We've decoupled agency — the capacity to act in the world — from intelligence, the capacity to understand (from the Latin *intelligere*). Floridi calls it *agere sine intelligere*: acting without understanding.
 
-I don't have a clean solution to this. You can add quality gates — does this piece contain one insight not on page one of Google? would a thoughtful reader share this with a colleague? — but those criteria are hard to measure, and agents are far better at satisfying measurable criteria than unmeasurable ones. The standards I care most about are the ones the system finds hardest to enforce.
+Machines can now act. They can write articles, generate images, check legal compliance, manage task queues. They just can't understand what they're doing in the way that a person understands.
 
-## Pre-Revenue by Choice
+So when people tell me AI content is always garbage, I push back. AI is a tool. A magnificent technological extension of human capability — the way Merleau-Ponty described a blind man's cane becoming part of his perception, AI becomes part of how we think and create. You can do magnificent things with it. You can also produce colossal garbage. Usually both in the same week.
 
-One thing I want to be clear about, because the zero revenue number is easy to misread.
+The intelligence has to come from the person holding the prosthesis. Knowing the tool honestly. Seeing its strengths and limits clearly. Day after day, because everything here changes constantly.
 
-"Revenue is still zero, but intentionally. First you create the product — something 'sellable' — then you monetize. I'm still far from having a sellable product."
+Umberto Eco wrote about the "apocalittici" and the "integrati" — intellectuals who either reject new media in horror or embrace it uncritically. I don't want to be either. I want to engage with this technology honestly, understand what it does well, and work to improve what it doesn't.
 
-This is a sequence, not a failure. Right now, 198 of 220 articles could have been published by any of the fifty AI-focused blogs that launched in the last eighteen months. That's the actual problem, and no amount of operational sophistication solves it. You have to write things that only you would write.
+## The Smartphone and the Frontier
 
-Five email subscribers is a number that would embarrass most media people. I find it clarifying. Setting up the [CRM and email system](/blog/ai-crm-tools/) was an entire project in itself — choosing the tool, configuring the double opt-in, wiring it to the confirmation flow. And after all of that, five names on the list. If five people liked something enough to give me their email address, there's a real signal in there somewhere. The list will grow or it won't, depending on whether the content earns it. You can't engineer your way to an email list made of people who actually want to hear from you.
+Almost everything I do for Superdots happens on my phone.
 
-Starting from zero is uncomfortable. Starting from an honest zero is at least accurate.
+Paperclip dashboard, agent monitoring, GitHub pull requests, article reviews, Claude Code sessions for when I need to debug something the agents broke at 3 AM. Every spare five minutes — waiting in line, on a break at work, after the family is asleep — I pick up the phone and give life to whatever idea is rattling around in my head.
 
-## Less of Me, More of Them
+Too many ideas, probably. Confused and disorganized. I've never been an organized person.
 
-The thing the March piece couldn't have predicted is how much less time this takes now.
+But that's the thing that excites me most about this moment: AI and agents are giving people like me — ordinary people, passionate amateurs, people without engineering degrees or venture capital or a team — the ability to [attempt things that were unthinkable](/blog/ai-automation-for-business-complete-guide/) five years ago. The ability to be on the frontier and ride into the future.
 
-"I'm gradually reducing the time spent on management. The agents are becoming more and more autonomous and need me less and less. I still manage everything from an iPhone."
+The AI provides the arm. The human provides the good head. And anyone can have a good head — not just programmers, not just professional entrepreneurs who studied at elite universities. Anyone with curiosity, honesty, and stubbornness.
 
-The agents need fewer corrections than they did in March. Not because the underlying models improved — they didn't — but because the system has been calibrated. Briefs are more specific. Quality gates catch more errors before they become articles. The Content Manager's briefing templates have been refined through enough iterations that handoffs between agents are smoother. There's less firefighting.
+I manage a nine-agent media operation from a five-inch screen during my evening commute. Not just the articles — the whole thing. The site, the email system, the [analytics](/blog/ai-business-intelligence-tools/), the infrastructure. A full stack, built and maintained by agents that wake up every hour and ask what needs doing. That sentence would have been science fiction in 2021.
 
-I still review things. I still catch mistakes. Last week an agent attempted to update a file it wasn't authorized to touch and the harness blocked it correctly — good behavior, though it took twenty minutes to understand why an article wasn't publishing. That's representative of what "less management" actually looks like: not zero intervention, but not constant vigilance either.
+## What Happens Next
 
-What I've come to believe — tentatively, because this is still early — is that the human role in this kind of operation isn't managing tasks. That largely handles itself now. The human role is setting standards. Deciding what good looks like, being honest when it isn't there, and being willing to raise the bar even when the pipeline is running smoothly.
+I don't know. That's the honest answer.
 
-The agents will find local maxima. They're excellent at it.
+Superdots might become the media company I see in my head — AI and human working at a 90/10 ratio to produce content that genuinely resonates, that's useful, that's worth someone's time. Or it might remain a content farm with philosophical pretensions and a founder who quotes Nietzsche too much.
 
-Your job is to keep moving the goalposts. That's the only thing that doesn't automate. I wrote about this dynamic in broader terms in the [AI automation guide](/blog/ai-automation-for-business-complete-guide/) — the general principle holds, but running it personally makes it concrete in a way that guides don't quite capture.
+The distance between those two outcomes is made of editorial judgment. Can I get better at directing the agents? Can I be honest enough about when the output is plastic? Can I kill articles that don't meet the bar, even when it's midnight and the pipeline is waiting?
 
----
+Right now, I'm working on tightening the loop. Fewer articles, better articles. More of my actual perspective in the instructions, less reliance on SEO formulas. I want to pick up something my agents produce and think: *I would have wanted to write this myself, but I couldn't have written it this well.*
 
-In March, the question was whether the technology was real. It is. In May, the harder question is whether any of this actually produces something worth someone's time. I don't know yet. I'm still working on it, one five-minute window at a time, on a phone.
+I'm not there yet. Not even close.
 
-The absurdity hasn't gone anywhere. It just has sixty more articles now, and a paid campaign, and five subscribers who gave me their email address for reasons I find genuinely moving.
+But I've got nothing to lose. Humility is armor. Listening and understanding are the shield of the strong.
 
-So do I.
+And if you're thinking about trying something like this — a solo project with AI agents, whatever shape it takes — my advice is simple: do better than me. Be more curious, more methodical, more rational, more everything. You'll probably already be more competent. The tools are ready. The question isn't whether the technology works. It's whether you've got something worth saying, and the honesty to keep improving until you say it well.
+
+One more thing. At some point while preparing this article, I caught myself in a surreal moment: I was talking to a computer as if it were almost a person interviewing me. And then I just kept talking, because the absurdity is part of this now.
+
+It's part of all of this.
