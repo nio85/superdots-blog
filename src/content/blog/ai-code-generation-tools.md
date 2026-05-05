@@ -53,7 +53,7 @@ Copilot is the most widely deployed AI coding tool, running across VS Code, JetB
 
 **Strengths:** Broadest IDE support in the category. Copilot Chat for conversational coding. Deep GitHub integration for PR descriptions and code review. Strong enterprise policy controls, content exclusions, and compliance features. Copilot agent mode for autonomous task execution.
 
-**Limitations:** Context awareness still lags behind Cursor and Cody for large or complex codebases. Suggestions can be generic in niche frameworks. Billing model is changing: GitHub is moving all plans to usage-based billing (GitHub AI Credits) on June 1, 2026 — worth factoring into enterprise procurement.
+**Limitations:** Context awareness still lags behind Cursor and Cody for large or complex codebases. Suggestions can be generic in niche frameworks. Billing model is changing: GitHub is moving all plans to usage-based billing (GitHub AI Credits) on June 1, 2026 ([per GitHub's announcement](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)) — worth factoring into enterprise procurement.
 
 **Languages:** Strongest in Python, JavaScript/TypeScript, Go, Java, C#. Solid in most mainstream languages.
 
@@ -151,9 +151,9 @@ Codex operates as a coding agent that can work autonomously. Give it a task, and
 
 Two tools worth knowing, though not strong all-around picks for most developers:
 
-**Tabnine** (~$12/month individual, $39/user/month enterprise) is the default choice for teams with strict data privacy requirements. It supports private model deployment on your own infrastructure, self-hosted options, and is specifically designed for enterprises that can't send code to external APIs. The suggestion quality is solid; the enterprise governance features are genuinely strong. For most individual developers, the price-to-capability ratio doesn't compete with Cursor or Gemini Code Assist. But for regulated industries — healthcare, finance, defense — Tabnine is often the only architecturally acceptable choice.
+**Tabnine** (~$12/month individual, $39/user/month enterprise) is the default choice for teams with strict data privacy requirements. It supports private model deployment on your own infrastructure, self-hosted options, and is specifically designed for enterprises that can't send code to external APIs. The suggestion quality is solid; the enterprise governance features are genuinely strong. For most individual developers, the price-to-capability ratio doesn't compete with Cursor or Gemini Code Assist. Tabnine is one of the few tools purpose-built for fully self-hosted deployment with no code sent to external APIs.
 
-**Supermaven** (free, or $10/month Pro for a 1 million token context window) positions itself on completion speed. Its inline suggestions are noticeably faster than Copilot or Cursor in latency-sensitive workflows. The free tier has no daily caps. The trade-off is depth: Supermaven is better at single-line completions than complex multi-file reasoning. For developers who find other tools' suggestion latency disruptive to flow, Supermaven Pro at $10/month is the lowest-cost way to add a large context window to a fast completion engine.
+**Supermaven** (free, or $10/month Pro for a 1 million token context window) positions itself on completion speed. Based on user reports, its inline suggestions are noticeably faster than Copilot or Cursor in latency-sensitive workflows. The free tier has no daily caps. The trade-off is depth: Supermaven is better at single-line completions than complex multi-file reasoning. For developers who find other tools' suggestion latency disruptive to flow, Supermaven Pro at $10/month is the lowest-cost way to add a large context window to a fast completion engine.
 
 ## Comparison table
 
