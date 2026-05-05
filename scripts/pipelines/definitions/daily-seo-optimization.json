@@ -35,7 +35,11 @@
         "- No keyword stuffing — natural prose only",
         "- Internal links must be in-sentence, contextual",
         "- **NEVER change pubDate**. Update `updatedDate: \"{{date}}\"` in frontmatter instead.",
-        "- One PR per article, with BOTH copy/meta + internal links bundled."
+        "- One PR per article, with BOTH copy/meta + internal links bundled.",
+        "",
+        "## Orchestration via @-mentions (CRITICAL — do not skip)",
+        "As orchestrator (you, **@Content Manager**), you receive @mentions when each cross-agent step finishes. **Wake immediately on mention** — verify the step output, then transition the NEXT blocked task from `blocked` → `todo` and @mention the next executor.",
+        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat."
       ]
     },
     "tasks": [
@@ -64,7 +68,11 @@
           "- Optimization patterns that worked (e.g., 'CTA in meta moved CTR by Y%')",
           "- Patterns that didn't work (avoid)",
           "",
-          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)"
+          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -106,7 +114,11 @@
           "2. <slug> — pos X.X, Y impr/wk, CTR Z%, last edited <date>",
           "```",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -148,7 +160,11 @@
           "- Time to measure: 14 days",
           "```",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -175,7 +191,11 @@
           "",
           "Post PR URLs as comment.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -199,7 +219,11 @@
           "",
           "Comment merged URLs.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -222,7 +246,11 @@
           "",
           "Post the IndexNow response as comment.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Content Manager** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {

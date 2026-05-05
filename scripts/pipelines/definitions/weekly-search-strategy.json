@@ -29,7 +29,11 @@
         "6. When step 6 finishes → unblock step 7 (write-history) and run it yourself.",
         "7. When step 7 done → close this parent task.",
         "",
-        "Subtasks track each step. Coordinate via comments."
+        "Subtasks track each step. Coordinate via comments.",
+        "",
+        "## Orchestration via @-mentions (CRITICAL — do not skip)",
+        "As orchestrator (you, **@Growth Analyst**), you receive @mentions when each cross-agent step finishes. **Wake immediately on mention** — verify the step output, then transition the NEXT blocked task from `blocked` → `todo` and @mention the next executor.",
+        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat."
       ]
     },
     "tasks": [
@@ -102,7 +106,11 @@
           "",
           "Post a structured summary comment with: aggregate impressions/clicks/CTR/position trend (vs prev 7d), top 5 winners, top 5 losers, top 3 emerging queries, anomalies.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. Transition next task (seo_analysis) from `blocked` → `todo` and @mention **@SEO Expert** to wake them."
         ]
       },
       {
@@ -136,7 +144,11 @@
           "### Recommended SEO actions (max 5)",
           "Each: which article/page, what change, expected outcome, effort (S/M/L).",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Growth Analyst** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -169,7 +181,11 @@
           "### Coordination notes for SEO Expert",
           "Any conflict with SEO recommendations? Any shared assets (schema, llms.txt, FAQ structure) that need joint decision?",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Growth Analyst** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
@@ -207,7 +223,11 @@
           "- Source: SEO / GEO / both",
           "```",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. Transition next task (execute) from `blocked` → `todo` and @mention **@Content Manager** to wake them."
         ]
       },
       {
@@ -235,7 +255,11 @@
           "",
           "Post a comment on this task listing all created issue identifiers (e.g., SUP-1234, SUP-1235...).",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@Growth Analyst** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {

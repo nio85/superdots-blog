@@ -29,7 +29,11 @@
         "6. Step 6 → unblock step 7 (write-history).",
         "7. Step 7 → close parent.",
         "",
-        "Coordinate with SEO Expert if any change touches schema, FAQ structure, or canonical."
+        "Coordinate with SEO Expert if any change touches schema, FAQ structure, or canonical.",
+        "",
+        "## Orchestration via @-mentions (CRITICAL — do not skip)",
+        "As orchestrator (you, **@GEO Specialist**), you receive @mentions when each cross-agent step finishes. **Wake immediately on mention** — verify the step output, then transition the NEXT blocked task from `blocked` → `todo` and @mention the next executor.",
+        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat."
       ]
     },
     "tasks": [
@@ -225,7 +229,11 @@
           "",
           "If no changes needed: comment 'llms.txt current — no PR needed'.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. Transition next task (execute) from `blocked` → `todo` and @mention **@Content Manager** to wake them."
         ]
       },
       {
@@ -257,7 +265,11 @@
           "",
           "Comment with all created issue IDs.",
           "",
-          "Set task to done."
+          "Set task to done.",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. @mention **@GEO Specialist** in a comment with a brief summary of your output, so they can verify and unblock the next step. Without this, they'll wait up to 2h for their next scheduled heartbeat."
         ]
       },
       {
