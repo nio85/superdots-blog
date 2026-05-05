@@ -28,7 +28,13 @@
         "",
         "Run every weekday 18:00 Europe/Rome. Skip weekends.",
         "",
-        "**Monday note**: lookback window for gather step uses 3 days (covers Sat+Sun+Fri evening) instead of 24h. The pipeline auto-adjusts via the `gather` step's SQL."
+        "**Monday note**: lookback window for gather step uses 3 days (covers Sat+Sun+Fri evening) instead of 24h. The pipeline auto-adjusts via the `gather` step's SQL.",
+        "",
+        "## Comment hygiene (avoid thread clutter)",
+        "- Do NOT post status comments like 'I'm starting' or 'I'm blocked' — the task status (`todo`/`in_progress`/`blocked`/`done`) already conveys this.",
+        "- Each step posts EXACTLY ONE comment: the structured output. The same comment also @mentions the next agent if applicable.",
+        "- Orchestrator (you, when applicable) consolidates verification + transition + @mention next agent into ONE comment per handoff.",
+        "- The parent task gets at most 2 comments per run: 'pipeline started' (optional) and final summary at close."
       ]
     },
     "tasks": [
@@ -286,12 +292,12 @@
           "",
           "## Step 1 — Update yesterday's memory outcome",
           "",
-          "From [{{read_history.identifier}}] you found yesterday's memory ID. Based on what you observed today (did the predicted top priorities resolve? did blockers persist?), update the outcome tag:",
+          "Based on what you observed today vs yesterday's predictions (top priorities resolved? blockers persisted?), update yesterday's outcome. The helper auto-finds the prior run.",
           "",
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# Replace <yesterday-memory-id> with the actual ID. Use 'good' if predictions held, 'neutral' if mixed, 'negative' if priorities slipped.",
-          "node scripts/tools/pipeline-memory.mjs update-outcome daily-coordination-digest <yesterday-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome-latest daily-coordination-digest good  # auto-finds prior run, idempotent",
           "```",
           "",
           "If yesterday was the first run (no prior memory), skip this step.",

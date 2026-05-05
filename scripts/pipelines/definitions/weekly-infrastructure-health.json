@@ -25,7 +25,13 @@
         "## Your responsibilities (you're sole owner — Founding Engineer runs all steps)",
         "1. read-history → 2. external-audit → 3. internal-audit → 4. update-check → 5. synthesize → 6. execute → 7. write-history",
         "",
-        "Critical issues = urgent issues created immediately. Moderate = batched into a single weekly issue."
+        "Critical issues = urgent issues created immediately. Moderate = batched into a single weekly issue.",
+        "",
+        "## Comment hygiene (avoid thread clutter)",
+        "- Do NOT post status comments like 'I'm starting' or 'I'm blocked' — the task status (`todo`/`in_progress`/`blocked`/`done`) already conveys this.",
+        "- Each step posts EXACTLY ONE comment: the structured output. The same comment also @mentions the next agent if applicable.",
+        "- Orchestrator (you, when applicable) consolidates verification + transition + @mention next agent into ONE comment per handoff.",
+        "- The parent task gets at most 2 comments per run: 'pipeline started' (optional) and final summary at close."
       ]
     },
     "tasks": [
@@ -210,7 +216,7 @@
           "",
           "```bash",
           "# Replace <last-week-memory-id> with the ID from read_history",
-          "node scripts/tools/pipeline-memory.mjs update-outcome weekly-infrastructure-health <last-week-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome-latest weekly-infrastructure-health good  # auto-finds prior run, idempotent",
           "```",
           "",
           "Then compose THIS WEEK's memory entry. Use a unique tmp file (avoid collisions on re-run):",

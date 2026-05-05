@@ -39,7 +39,13 @@
         "",
         "## Orchestration via @-mentions (CRITICAL — do not skip)",
         "As orchestrator (you, **@Content Manager**), you receive @mentions when each cross-agent step finishes. **Wake immediately on mention** — verify the step output, then transition the NEXT blocked task from `blocked` → `todo` and @mention the next executor.",
-        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat."
+        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat.",
+        "",
+        "## Comment hygiene (avoid thread clutter)",
+        "- Do NOT post status comments like 'I'm starting' or 'I'm blocked' — the task status (`todo`/`in_progress`/`blocked`/`done`) already conveys this.",
+        "- Each step posts EXACTLY ONE comment: the structured output. The same comment also @mentions the next agent if applicable.",
+        "- Orchestrator (you, when applicable) consolidates verification + transition + @mention next agent into ONE comment per handoff.",
+        "- The parent task gets at most 2 comments per run: 'pipeline started' (optional) and final summary at close."
       ]
     },
     "tasks": [
@@ -267,12 +273,12 @@
           "",
           "## Step 1 — Update yesterday's outcome",
           "",
-          "From [{{read_history.identifier}}] you have yesterday's memory ID. Based on observed position/CTR movement on yesterday's articles (check via gsc.mjs):",
+          "Update yesterday's run outcome based on metrics movement (use gsc.mjs to check). Helper auto-finds prior memory — no ID tracking needed.",
           "",
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# 'good' if metrics improved as expected, 'neutral' if flat, 'negative' if regressed",
-          "node scripts/tools/pipeline-memory.mjs update-outcome daily-seo-optimization <yesterday-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome-latest daily-seo-optimization good  # auto-finds prior run, idempotent",
           "```",
           "",
           "Skip if first run or if it's too early to measure (< 7 days since optimization).",

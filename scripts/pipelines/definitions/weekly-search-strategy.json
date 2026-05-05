@@ -33,7 +33,13 @@
         "",
         "## Orchestration via @-mentions (CRITICAL — do not skip)",
         "As orchestrator (you, **@Growth Analyst**), you receive @mentions when each cross-agent step finishes. **Wake immediately on mention** — verify the step output, then transition the NEXT blocked task from `blocked` → `todo` and @mention the next executor.",
-        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat."
+        "This is what keeps the pipeline moving fast. Without it, each handoff costs up to 2h waiting for the next executor's scheduled heartbeat.",
+        "",
+        "## Comment hygiene (avoid thread clutter)",
+        "- Do NOT post status comments like 'I'm starting' or 'I'm blocked' — the task status (`todo`/`in_progress`/`blocked`/`done`) already conveys this.",
+        "- Each step posts EXACTLY ONE comment: the structured output. The same comment also @mentions the next agent if applicable.",
+        "- Orchestrator (you, when applicable) consolidates verification + transition + @mention next agent into ONE comment per handoff.",
+        "- The parent task gets at most 2 comments per run: 'pipeline started' (optional) and final summary at close."
       ]
     },
     "tasks": [
@@ -276,12 +282,12 @@
           "",
           "## Step 1 — Update last week's memory outcome",
           "",
-          "Based on what you saw in [{{read_history.identifier}}] (last week's predictions) vs what actually happened this week, update the outcome tag of last week's memory:",
+          "Update last week's outcome based on this week's observations. Helper auto-finds prior run.",
           "",
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# Replace <last-week-memory-id> with ID from read_history. 'good' = predictions held, 'neutral' = mixed, 'negative' = predictions wrong / regressions.",
-          "node scripts/tools/pipeline-memory.mjs update-outcome weekly-search-strategy <last-week-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome-latest weekly-search-strategy good  # auto-finds prior run, idempotent",
           "```",
           "",
           "Skip this if first run (no prior memory).",

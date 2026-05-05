@@ -6,6 +6,7 @@
  *   node scripts/tools/pipeline-memory.mjs recall <pipeline-slug> "<query>" [--limit 10] [--days 60]
  *   node scripts/tools/pipeline-memory.mjs write  <pipeline-slug> --content <file|-> --outcome <pending|good|neutral|negative> [--tag <extra>]...
  *   node scripts/tools/pipeline-memory.mjs update-outcome <pipeline-slug> <memory-id> <good|neutral|negative>
+ *   node scripts/tools/pipeline-memory.mjs update-outcome-latest <pipeline-slug> <good|neutral|negative>
  *
  * Tags applied automatically on write:
  *   pipeline:<slug>     — always
@@ -324,6 +325,62 @@ async function cmdUpdateOutcome(slug, memoryId, newOutcome) {
   console.log(`Tags now: ${newTags.join(', ')}`);
 }
 
+async function cmdUpdateOutcomeLatest(slug, newOutcome) {
+  if (!slug || !newOutcome) {
+    console.error('Usage: update-outcome-latest <pipeline-slug> <good|neutral|negative>');
+    console.error('Finds the most recent memory tagged pipeline:<slug> and updates its outcome.');
+    console.error('Use this in step 7 (write-history) BEFORE writing the new memory — finds the prior run automatically.');
+    process.exit(1);
+  }
+  if (!['good', 'neutral', 'negative'].includes(newOutcome)) {
+    console.error('outcome must be one of: good, neutral, negative');
+    process.exit(1);
+  }
+
+  const list = await api(
+    'GET',
+    `/api/companies/${PAPERCLIP_COMPANY_ID}/memories?tag=${encodeURIComponent(`pipeline:${slug}`)}&limit=50`,
+  );
+  const items = Array.isArray(list) ? list
+    : Array.isArray(list?.memories) ? list.memories
+    : Array.isArray(list?.results) ? list.results
+    : Array.isArray(list?.items) ? list.items
+    : [];
+
+  if (items.length === 0) {
+    console.log(`No prior memories for pipeline:${slug} — nothing to update (likely first run). Skipping.`);
+    return;
+  }
+
+  // Sort by created_at DESC, take most recent
+  items.sort((a, b) => {
+    const ta = new Date(a.created_at || a.createdAt || 0).getTime();
+    const tb = new Date(b.created_at || b.createdAt || 0).getTime();
+    return tb - ta;
+  });
+  const target = items[0];
+
+  // Don't update if its outcome is already non-pending (already evaluated by a prior run)
+  const currentOutcome = (target.tags || []).find((t) => t.startsWith('outcome:'));
+  if (currentOutcome && currentOutcome !== 'outcome:pending') {
+    console.log(`Most recent memory ${target.id} already has ${currentOutcome} — skipping update (already evaluated).`);
+    return;
+  }
+
+  const oldTags = (target.tags || []).filter((t) => !t.startsWith('outcome:'));
+  const newTags = [...oldTags, `outcome:${newOutcome}`];
+
+  await api('PATCH', `/api/companies/${PAPERCLIP_COMPANY_ID}/memories/${target.id}`, {
+    tags: newTags,
+  });
+
+  const date = (target.created_at || target.createdAt || '').slice(0, 10);
+  console.log(`Updated previous run's outcome:`);
+  console.log(`  Memory: ${target.id} (${date})`);
+  console.log(`  Outcome: pending → ${newOutcome}`);
+  console.log(`  Tags now: ${newTags.join(', ')}`);
+}
+
 // ----- Entry -----
 
 async function main() {
@@ -339,12 +396,15 @@ async function main() {
       await cmdWrite(slug, flags);
     } else if (cmd === 'update-outcome') {
       await cmdUpdateOutcome(slug, positional[0], positional[1]);
+    } else if (cmd === 'update-outcome-latest') {
+      await cmdUpdateOutcomeLatest(slug, positional[0]);
     } else {
-      console.error('Unknown command. Use: recall | write | update-outcome');
+      console.error('Unknown command. Use: recall | write | update-outcome | update-outcome-latest');
       console.error('');
       console.error('  node scripts/tools/pipeline-memory.mjs recall <slug> "<query>" [--limit 10] [--days 60]');
       console.error('  node scripts/tools/pipeline-memory.mjs write  <slug> --content <file|-> --outcome pending [--agent KEY] [--tag X]');
       console.error('  node scripts/tools/pipeline-memory.mjs update-outcome <slug> <memory-id> <good|neutral|negative>');
+      console.error('  node scripts/tools/pipeline-memory.mjs update-outcome-latest <slug> <good|neutral|negative>');
       process.exit(1);
     }
   } catch (e) {
