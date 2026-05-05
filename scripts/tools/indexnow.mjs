@@ -148,6 +148,20 @@ async function main() {
       if (!url) err('Usage: indexnow.mjs submit-url <url>');
       // Ensure full URL
       const fullUrl = url.startsWith('http') ? url : `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+      // Refuse to submit URLs that don't resolve (typically future-dated articles
+      // that won't go live until their daily 07:00 Rome rebuild). The standing
+      // "IndexNow: daily new articles" routine handles those — never schedule a
+      // per-article one-shot routine to work around this check.
+      if (!dryRun) {
+        try {
+          const head = await fetch(fullUrl, { method: 'HEAD', redirect: 'follow' });
+          if (head.status === 404) {
+            err(`URL returned 404: ${fullUrl}\nLikely a future-dated article. Do NOT create a one-shot routine — the daily IndexNow routine (cron 30 7 * * *) will submit it automatically on its pubDate.`);
+          }
+        } catch (e) {
+          log(`Warning: HEAD check failed (${e.message}) — proceeding with submission anyway.`);
+        }
+      }
       const result = await submitBatch([fullUrl]);
       if (jsonOutput) out(result);
       break;
