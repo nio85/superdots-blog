@@ -1,6 +1,6 @@
 ---
 title: "Best AI Code Migration Tools: Languages & Frameworks (2026)"
-description: "AI-assisted code migration between languages and frameworks. Prompts for Copilot, Claude & ChatGPT — Python, TypeScript, React, Java & more. Includes test generation."
+description: "AI code migration between languages and frameworks. Prompts for Copilot, Claude & ChatGPT — Python, TypeScript, React, Java. Includes test generation."
 pubDate: "2026-03-17"
 updatedDate: "2026-05-05"
 author: "Superdots Team"
