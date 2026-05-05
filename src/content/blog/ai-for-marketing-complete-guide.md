@@ -97,7 +97,7 @@ AI social media tools compress this entire workflow. Content calendar generation
 
 The real value is consistency. Most brands fail at social media not because they lack ideas, but because they can't maintain the posting frequency required to build an audience. AI removes the production bottleneck that causes most social calendars to fall apart by week two.
 
-**Go deeper:** [How to Build an AI Social Media Content Calendar](/blog/ai-social-media-content-calendar/) shows how to plan, generate, and schedule a full month of social content — even if you don't have a dedicated social media manager.
+**Go deeper:** [How to Build an AI Social Media Content Calendar](/blog/ai-social-media-content-calendar/) shows how to plan, generate, and schedule a full month of social content — even if you don't have a dedicated social media manager. And [AI Content Repurposing Tools: Matched to Your Output Channel](/blog/ai-content-repurposing-tools/) shows how to turn one long-form asset — a podcast episode, webinar, or blog post — into a full week of social posts, newsletter sections, and short video clips.
 
 ## Advertising and conversion optimization
 
