@@ -89,6 +89,8 @@ Every AI-drafted post needs your edit. Specifically:
 
 Budget 3-5 minutes per post for editing. For 20 posts, that is about 90 minutes of editing after AI does the initial drafting.
 
+For teams with existing podcast episodes, webinars, or long-form videos, this drafting step can be skipped entirely. Dedicated [AI content repurposing tools](/blog/ai-content-repurposing-tools/) — Castmagic for written formats, OpusClip for short clips — automatically extract social posts, newsletter sections, and video clips from a single recording. One 40-minute episode can fill two weeks of a content calendar without writing from scratch.
+
 ## Step 4: Build the calendar and schedule (30 minutes)
 
 Now organize your posts into a calendar. You can use a spreadsheet, Notion, or a dedicated scheduling tool. Here is a simple structure:
