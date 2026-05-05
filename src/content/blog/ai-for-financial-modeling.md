@@ -18,7 +18,7 @@ faqs:
   - question: "How long does it take to set up AI for financial modeling?"
     answer: "For general-purpose AI assistants (Claude or ChatGPT), setup is immediate — no integration required. The time investment is building a reusable prompt library for recurring tasks: data prep, assumption generation, variance commentary, and reporting narratives. Most finance teams develop this over 2–3 close cycles. For dedicated FP&A platforms that connect to your ERP or spreadsheet environment, implementation ranges from a few days (Causal) to several weeks (Datarails), depending on data complexity."
   - question: "Is AI financial modeling accurate enough for board presentations?"
-    answer: "AI-generated outputs require human review before board use — accuracy depends entirely on the accuracy of the data and assumptions you provide. Where AI consistently adds value at the board-presentation stage is narration: turning model outputs into clear, well-structured commentary. Finance teams report that AI-drafted board summaries reduce writing time by 50–70% while maintaining accuracy after human review. Financial figures should always be verified by the controller before the pack is distributed."
+    answer: "AI-generated outputs require human review before board use — accuracy depends entirely on the accuracy of the data and assumptions you provide. Where AI consistently adds value at the board-presentation stage is narration: turning model outputs into clear, well-structured commentary. Finance teams commonly report that AI-drafted board summaries reduce writing time by 50–70% while maintaining accuracy after human review (based on user-reported outcomes, not controlled studies). Financial figures should always be verified by the controller before the pack is distributed."
 ---
 
 In 1979, Dan Bricklin was sitting in a Harvard Business School classroom watching his professor build a financial model on a blackboard. Every time an assumption changed — revenue grew faster, costs shifted, a new scenario emerged — the professor had to erase and recalculate every number downstream by hand. Bricklin had an idea: what if the relationships between numbers were stored separately from the numbers themselves? Change one input, and everything that depends on it updates automatically.
@@ -51,13 +51,15 @@ The decision rule is simple: if the task requires reasoning, drafting, or patter
 
 ## AI in FP&A at a glance
 
-| Modeling stage | Best AI approach | Tool | Reported time saved |
+| Modeling stage | Best AI approach | Tool | Commonly reported time savings† |
 |---|---|---|---|
 | Data prep and cleaning | Anomaly detection prompt on CSV export | Claude or ChatGPT | 60–70% |
 | Assumption generation | Scenario prompt with historical driver data | Claude or ChatGPT | 40–50% |
 | Variance analysis | Commentary draft from P&L comparison | Claude or ChatGPT | 50–65% |
 | Board reporting | Narrative generation from model outputs | Claude or ChatGPT | 50–70% |
 | Connected scenario modeling | Integrated model platform | Causal, Datarails | Varies |
+
+*† Based on user-reported outcomes, not controlled studies.*
 
 ## Stage 1 — Data preparation and cleaning
 
@@ -109,7 +111,7 @@ Paste the current and prior period P&L into Claude:
 
 > *"Act as a CFO preparing variance commentary for a management report. The table below shows current versus prior month P&L. Explain the 5 largest variances in plain English — what changed, whether it's favorable or unfavorable, and any pattern management should note. Three sentences per variance."*
 
-The output requires editing. AI does not know why revenue was soft in March — that context is yours. What it produces is a first draft with the structure and tone already correct, so you are editing rather than constructing from a blank page. Finance teams using this approach report 50–65% reduction in commentary writing time per cycle.
+The output requires editing. AI does not know why revenue was soft in March — that context is yours. What it produces is a first draft with the structure and tone already correct, so you are editing rather than constructing from a blank page. Finance teams using this approach commonly report 50–65% reduction in commentary writing time per cycle *(based on user-reported outcomes, not controlled studies)*.
 
 For budget vs. actual variance at the platform level, [AI budgeting tools](/blog/ai-budgeting-tools) covers software that automates exception flagging against budget rather than relying on manual prompt runs.
 
