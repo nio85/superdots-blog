@@ -19,6 +19,7 @@ faqs:
   - question: "Can AI automatically catch duplicate expenses and policy violations?"
     answer: "Yes — this is one of the strongest real AI use cases in this category. Ramp and Brex flag duplicate receipts and out-of-policy spend in real time, before reimbursement rather than after. Expensify catches duplicates and flags violations on submission. The key difference is timing: AI-native platforms catch problems at the point of spend, not when the employee files a report two weeks later."
 imageHint: "finance manager at desk reviewing expense reports on laptop, multiple software dashboards visible, clean modern office setting"
+heroImage: "/images/blog/ai-expense-management-software.webp"
 ---
 
 Most finance managers at 50-person companies are still managing expenses the same way they did in 2015. The software has changed. The workflow hasn't.
