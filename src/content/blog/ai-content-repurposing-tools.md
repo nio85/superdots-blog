@@ -103,7 +103,7 @@ Taplio generates LinkedIn-native posts from any source content (blog, transcript
 
 **Best for:** B2B companies and founders building a LinkedIn presence. Sales professionals publishing regular thought leadership.
 
-**The honest warning:** Taplio has a 2.1/5 Trustpilot rating. Common complaints: billing issues, difficult cancellation. The DM automation features have caused LinkedIn account restrictions for some users — LinkedIn's terms explicitly prohibit certain automation. If you enable these features, understand the risk. Lower-risk alternative: Buffer ($18/month) for scheduling + Claude for content writing.
+**The honest warning:** Taplio has a [2.1/5 Trustpilot rating](https://www.trustpilot.com/review/taplio.com). Common complaints: billing issues, difficult cancellation. The DM automation features have caused LinkedIn account restrictions for some users — LinkedIn's terms explicitly prohibit certain automation. If you enable these features, understand the risk. Lower-risk alternative: Buffer ($18/month) for scheduling + Claude for content writing.
 
 ### Copy.ai ($29–$249/month) — Multi-Format Text Workflows
 
@@ -125,7 +125,7 @@ The complementary workflow: Castmagic first (generate written assets), then Repu
 
 **Pricing:** Starter at $35/month (3 social accounts). Pro at $79/month (10 accounts). 14-day free trial, no credit card required.
 
-**The limit:** Trustpilot score is 2.9/5. Most common complaint: workflow bugs and sync errors. Test thoroughly during the free trial before committing to an annual plan.
+**The limit:** [Trustpilot score is 2.9/5](https://www.trustpilot.com/review/repurpose.io). Most common complaint: workflow bugs and sync errors. Test thoroughly during the free trial before committing to an annual plan.
 
 ### Descript ($24/month annual) — Podcast Editing and Repurposing Combined
 
