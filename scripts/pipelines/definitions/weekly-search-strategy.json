@@ -2,17 +2,14 @@
   "pipeline": {
     "name": "weekly-search-strategy",
     "description": "Weekly unified Search performance pipeline — historical context + SEO + GEO analysis → prioritized actions",
-
     "vars": {
       "date": "{{TODAY}}",
       "slug": "weekly-search-strategy"
     },
-
     "idempotency": {
       "query": "[{{date}}] Weekly Search Strategy",
       "matchField": "title"
     },
-
     "parent": {
       "title": "[{{date}}] Weekly Search Strategy",
       "assignee": "GROWTH_ANALYST",
@@ -35,7 +32,6 @@
         "Subtasks track each step. Coordinate via comments."
       ]
     },
-
     "tasks": [
       {
         "id": "read_history",
@@ -54,7 +50,7 @@
           "echo \"recall exit: $?\"",
           "```",
           "",
-          "**If recall exits non-zero** (3 = Ollama unavailable, 2 = network/auth): do NOT mark this task done. Post the error as a comment and set status to `blocked`. The downstream SEO/GEO analysis depends on historical context — proceeding without it would replay last week's mistakes blind.",
+          "**If recall exits non-zero**: do NOT block the pipeline. Instead, post a warning comment ('Memory recall failed: <error>. Proceeding without historical context for this run.') and continue with the rest of the steps using only current data. Only block the pipeline if the WRITE step (last task) fails — that's where we'd lose this run's learning forever. Exit codes: 3 = Ollama unavailable (most common, transient), 2 = network/auth (catastrophic, escalate to Founding Engineer).",
           "",
           "If recall succeeds:",
           "- Post the output as a comment",
@@ -66,7 +62,7 @@
           "- Articles/queries previously flagged",
           "- Interventions tried + outcomes (if recorded)",
           "",
-          "Set task to done (only if recall succeeded)."
+          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)"
         ]
       },
       {
@@ -261,7 +257,7 @@
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# Replace <last-week-memory-id> with ID from read_history. 'good' = predictions held, 'neutral' = mixed, 'negative' = predictions wrong / regressions.",
-          "node scripts/tools/pipeline-memory.mjs update-outcome <last-week-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome weekly-search-strategy <last-week-memory-id> good",
           "```",
           "",
           "Skip this if first run (no prior memory).",

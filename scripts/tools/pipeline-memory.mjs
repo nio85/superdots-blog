@@ -5,7 +5,7 @@
  * Usage:
  *   node scripts/tools/pipeline-memory.mjs recall <pipeline-slug> "<query>" [--limit 10] [--days 60]
  *   node scripts/tools/pipeline-memory.mjs write  <pipeline-slug> --content <file|-> --outcome <pending|good|neutral|negative> [--tag <extra>]...
- *   node scripts/tools/pipeline-memory.mjs update-outcome <memory-id> <good|neutral|negative>
+ *   node scripts/tools/pipeline-memory.mjs update-outcome <pipeline-slug> <memory-id> <good|neutral|negative>
  *
  * Tags applied automatically on write:
  *   pipeline:<slug>     — always
@@ -286,9 +286,9 @@ async function cmdWrite(slug, flags) {
   }
 }
 
-async function cmdUpdateOutcome(memoryId, newOutcome) {
-  if (!memoryId || !newOutcome) {
-    console.error('Usage: update-outcome <memory-id> <good|neutral|negative>');
+async function cmdUpdateOutcome(slug, memoryId, newOutcome) {
+  if (!slug || !memoryId || !newOutcome) {
+    console.error('Usage: update-outcome <pipeline-slug> <memory-id> <good|neutral|negative>');
     process.exit(1);
   }
   if (!['good', 'neutral', 'negative'].includes(newOutcome)) {
@@ -296,9 +296,24 @@ async function cmdUpdateOutcome(memoryId, newOutcome) {
     process.exit(1);
   }
 
-  // Read current memory
-  const memory = await api('GET', `/api/companies/${PAPERCLIP_COMPANY_ID}/memories/${memoryId}`);
-  const oldTags = (memory.tags || []).filter((t) => !t.startsWith('outcome:'));
+  // No GET-single endpoint exists. Use list filtered by tag to find the memory + its current tags.
+  const list = await api(
+    'GET',
+    `/api/companies/${PAPERCLIP_COMPANY_ID}/memories?tag=${encodeURIComponent(`pipeline:${slug}`)}&limit=200`,
+  );
+  const items = Array.isArray(list) ? list
+    : Array.isArray(list?.memories) ? list.memories
+    : Array.isArray(list?.results) ? list.results
+    : Array.isArray(list?.items) ? list.items
+    : [];
+  const target = items.find((m) => m.id === memoryId);
+  if (!target) {
+    console.error(`Memory ${memoryId} not found among entries tagged pipeline:${slug}.`);
+    console.error(`Verify the memory ID and pipeline slug. Listed ${items.length} memories with that tag.`);
+    process.exit(2);
+  }
+
+  const oldTags = (target.tags || []).filter((t) => !t.startsWith('outcome:'));
   const newTags = [...oldTags, `outcome:${newOutcome}`];
 
   await api('PATCH', `/api/companies/${PAPERCLIP_COMPANY_ID}/memories/${memoryId}`, {
@@ -323,13 +338,13 @@ async function main() {
     } else if (cmd === 'write') {
       await cmdWrite(slug, flags);
     } else if (cmd === 'update-outcome') {
-      await cmdUpdateOutcome(slug, positional[0]);
+      await cmdUpdateOutcome(slug, positional[0], positional[1]);
     } else {
       console.error('Unknown command. Use: recall | write | update-outcome');
       console.error('');
       console.error('  node scripts/tools/pipeline-memory.mjs recall <slug> "<query>" [--limit 10] [--days 60]');
       console.error('  node scripts/tools/pipeline-memory.mjs write  <slug> --content <file|-> --outcome pending [--agent KEY] [--tag X]');
-      console.error('  node scripts/tools/pipeline-memory.mjs update-outcome <memory-id> <good|neutral|negative>');
+      console.error('  node scripts/tools/pipeline-memory.mjs update-outcome <slug> <memory-id> <good|neutral|negative>');
       process.exit(1);
     }
   } catch (e) {

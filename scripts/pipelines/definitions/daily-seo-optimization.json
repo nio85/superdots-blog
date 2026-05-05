@@ -2,17 +2,14 @@
   "pipeline": {
     "name": "daily-seo-optimization",
     "description": "Daily SEO optimization — combine quick-wins copy/meta optimization + internal linking into a single PR per article, informed by past optimization history",
-
     "vars": {
       "date": "{{TODAY}}",
       "slug": "daily-seo-optimization"
     },
-
     "idempotency": {
       "query": "[{{date}}] Daily SEO Optimization",
       "matchField": "title"
     },
-
     "parent": {
       "title": "[{{date}}] Daily SEO Optimization",
       "assignee": "CONTENT_MANAGER",
@@ -41,7 +38,6 @@
         "- One PR per article, with BOTH copy/meta + internal links bundled."
       ]
     },
-
     "tasks": [
       {
         "id": "read_history",
@@ -60,7 +56,7 @@
           "echo \"recall exit: $?\"",
           "```",
           "",
-          "**If recall exits non-zero** (3 = Ollama unavailable, 2 = network/auth): do NOT mark task done. Set status to `blocked`, post error as comment. Without history we'd risk re-optimizing the same articles repeatedly.",
+          "**If recall exits non-zero**: do NOT block the pipeline. Instead, post a warning comment ('Memory recall failed: <error>. Proceeding without historical context for this run.') and continue with the rest of the steps using only current data. Only block the pipeline if the WRITE step (last task) fails — that's where we'd lose this run's learning forever. Exit codes: 3 = Ollama unavailable (most common, transient), 2 = network/auth (catastrophic, escalate to Founding Engineer).",
           "",
           "If recall succeeds, post the output as a comment. Identify:",
           "- Articles optimized in last 30 days (DON'T re-optimize unless 14+ days passed since last edit)",
@@ -68,7 +64,7 @@
           "- Optimization patterns that worked (e.g., 'CTA in meta moved CTR by Y%')",
           "- Patterns that didn't work (avoid)",
           "",
-          "Set task to done (only if recall succeeded)."
+          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)"
         ]
       },
       {
@@ -248,7 +244,7 @@
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# 'good' if metrics improved as expected, 'neutral' if flat, 'negative' if regressed",
-          "node scripts/tools/pipeline-memory.mjs update-outcome <yesterday-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome daily-seo-optimization <yesterday-memory-id> good",
           "```",
           "",
           "Skip if first run or if it's too early to measure (< 7 days since optimization).",

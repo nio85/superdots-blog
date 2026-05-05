@@ -2,18 +2,15 @@
   "pipeline": {
     "name": "daily-coordination-digest",
     "description": "Daily Coordination Digest — Program Manager aggregates yesterday's pipeline outputs, dedupes, prioritizes, publishes to docs/daily-status.md + email",
-
     "vars": {
       "date": "{{TODAY}}",
       "slug": "daily-coordination-digest",
       "weekday": "{{WEEKDAY}}"
     },
-
     "idempotency": {
       "query": "[{{date}}] Daily Coordination Digest",
       "matchField": "title"
     },
-
     "parent": {
       "title": "[{{date}}] Daily Coordination Digest",
       "assignee": "PROGRAM_MANAGER",
@@ -34,7 +31,6 @@
         "**Monday note**: lookback window for gather step uses 3 days (covers Sat+Sun+Fri evening) instead of 24h. The pipeline auto-adjusts via the `gather` step's SQL."
       ]
     },
-
     "tasks": [
       {
         "id": "read_history",
@@ -51,7 +47,7 @@
           "echo \"recall exit: $?\"",
           "```",
           "",
-          "**If recall exits non-zero** (3 = Ollama unavailable, 2 = network/auth): do NOT mark this task done. Post the error output as a comment and set status to `blocked`. Until the memory layer is healthy, the digest cannot use historical context.",
+          "**If recall exits non-zero**: do NOT block the pipeline. Instead, post a warning comment ('Memory recall failed: <error>. Proceeding without historical context for this run.') and continue with the rest of the steps using only current data. Only block the pipeline if the WRITE step (last task) fails — that's where we'd lose this run's learning forever. Exit codes: 3 = Ollama unavailable (most common, transient), 2 = network/auth (catastrophic, escalate to Founding Engineer).",
           "",
           "If recall succeeds, identify:",
           "- Items flagged but not resolved over multiple days (escalation candidates)",
@@ -295,7 +291,7 @@
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# Replace <yesterday-memory-id> with the actual ID. Use 'good' if predictions held, 'neutral' if mixed, 'negative' if priorities slipped.",
-          "node scripts/tools/pipeline-memory.mjs update-outcome <yesterday-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome daily-coordination-digest <yesterday-memory-id> good",
           "```",
           "",
           "If yesterday was the first run (no prior memory), skip this step.",

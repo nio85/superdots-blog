@@ -2,17 +2,14 @@
   "pipeline": {
     "name": "weekly-infrastructure-health",
     "description": "Weekly Infrastructure Health pipeline — deep audit of external + internal + container state, with historical context",
-
     "vars": {
       "date": "{{TODAY}}",
       "slug": "weekly-infrastructure-health"
     },
-
     "idempotency": {
       "query": "[{{date}}] Weekly Infrastructure Health",
       "matchField": "title"
     },
-
     "parent": {
       "title": "[{{date}}] Weekly Infrastructure Health",
       "assignee": "FOUNDING_ENGINEER",
@@ -31,7 +28,6 @@
         "Critical issues = urgent issues created immediately. Moderate = batched into a single weekly issue."
       ]
     },
-
     "tasks": [
       {
         "id": "read_history",
@@ -48,7 +44,7 @@
           "echo \"recall exit: $?\"",
           "```",
           "",
-          "**If recall exits non-zero** (e.g. exit 3 = Ollama unavailable, exit 2 = network/auth error): do NOT mark this task done. Post the error output as a comment and set status to `blocked`. The Founding Engineer on-call will investigate the memory layer before this pipeline can proceed.",
+          "**If recall exits non-zero**: do NOT block the pipeline. Instead, post a warning comment ('Memory recall failed: <error>. Proceeding without historical context for this run.') and continue with the rest of the steps using only current data. Only block the pipeline if the WRITE step (last task) fails — that's where we'd lose this run's learning forever. Exit codes: 3 = Ollama unavailable (most common, transient), 2 = network/auth (catastrophic, escalate to Founding Engineer).",
           "",
           "If recall succeeds (exit 0), identify:",
           "- Recurring issues (same alert >2x in past 90 days)",
@@ -214,7 +210,7 @@
           "",
           "```bash",
           "# Replace <last-week-memory-id> with the ID from read_history",
-          "node scripts/tools/pipeline-memory.mjs update-outcome <last-week-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome weekly-infrastructure-health <last-week-memory-id> good",
           "```",
           "",
           "Then compose THIS WEEK's memory entry. Use a unique tmp file (avoid collisions on re-run):",

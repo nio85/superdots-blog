@@ -2,17 +2,14 @@
   "pipeline": {
     "name": "weekly-geo-authority",
     "description": "Weekly GEO Authority pipeline — brand mention sweep + AI citation test + citability pass + llms.txt refresh",
-
     "vars": {
       "date": "{{TODAY}}",
       "slug": "weekly-geo-authority"
     },
-
     "idempotency": {
       "query": "[{{date}}] Weekly GEO Authority",
       "matchField": "title"
     },
-
     "parent": {
       "title": "[{{date}}] Weekly GEO Authority",
       "assignee": "GEO_SPECIALIST",
@@ -35,7 +32,6 @@
         "Coordinate with SEO Expert if any change touches schema, FAQ structure, or canonical."
       ]
     },
-
     "tasks": [
       {
         "id": "read_history",
@@ -52,7 +48,7 @@
           "echo \"recall exit: $?\"",
           "```",
           "",
-          "**If recall exits non-zero** (3 = Ollama unavailable, 2 = network/auth): do NOT mark this task done. Set status to `blocked`, post error as comment.",
+          "**If recall exits non-zero**: do NOT block the pipeline. Instead, post a warning comment ('Memory recall failed: <error>. Proceeding without historical context for this run.') and continue with the rest of the steps using only current data. Only block the pipeline if the WRITE step (last task) fails — that's where we'd lose this run's learning forever. Exit codes: 3 = Ollama unavailable (most common, transient), 2 = network/auth (catastrophic, escalate to Founding Engineer).",
           "",
           "**Coordination check**: if Weekly Search Strategy ran today (Mon 09:00, scheduled before this), look for memory tagged `pipeline:weekly-search-strategy run:<current-week>`. Read its `geo-analysis` findings to avoid double-analyzing the same data.",
           "",
@@ -65,7 +61,7 @@
           "",
           "If baseline run: state 'BASELINE — establishing first GEO data point'.",
           "",
-          "Set task to done (only if recall succeeded)."
+          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)"
         ]
       },
       {
@@ -283,7 +279,7 @@
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
           "# 'good' if BAS / citation rate moved as predicted; 'neutral' mixed; 'negative' regressed",
-          "node scripts/tools/pipeline-memory.mjs update-outcome <last-week-memory-id> good",
+          "node scripts/tools/pipeline-memory.mjs update-outcome weekly-geo-authority <last-week-memory-id> good",
           "```",
           "",
           "Skip if first run.",
