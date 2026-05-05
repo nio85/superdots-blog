@@ -38,7 +38,7 @@
 
   "brandStyle": {
     "basePrompt": "Warm, modern abstract illustration. Bold geometric shapes with layered depth. Deep navy background (#0B1222). Subtle dot-grid texture overlay across the composition. Warm radial glow from bottom-left edge — soft red (#E8363B at 12% opacity). Flat design with overlapping planes creating depth. Generous negative space. Centered composition with clear focal point. No text, no words, no letters, no logos. Human and approachable, not cold or clinical.",
-    "negativeElements": "text, words, letters, logos, watermarks, signatures, photorealistic faces, stock photo style, clip art, cartoonish, busy, cluttered, low quality, robots, android, sci-fi, matrix, neon, cold blue, corporate sterile, circuit board cliché"
+    "negativeElements": "text, words, letters, logos, watermarks, signatures, photorealistic faces, stock photo style, clip art, cartoonish, busy, cluttered, low quality, robots, android, sci-fi, matrix, neon, cold blue, corporate sterile, circuit board cliché, handshake, hands shaking, clasped hands, human hands, greeting gesture, handshaking"
   },
 
   "departments": {
@@ -56,8 +56,8 @@
     },
     "sales": {
       "accent": "#F59E0B",
-      "mood": "warm, optimistic, human connection",
-      "promptHint": "Warm amber highlights, abstract handshake or bridge motifs, flowing pipeline shapes, golden light accents conveying trust and opportunity.",
+      "mood": "warm, optimistic, forward momentum",
+      "promptHint": "Warm amber highlights, abstract funnel and conversion arc shapes, ascending trajectory lines, flowing pipeline forms, golden light accents suggesting deals closing and targets reached. Dynamic forward momentum — opportunity in motion.",
       "icon": "abstract diamond shapes"
     },
     "hr": {
