@@ -141,7 +141,7 @@ Budget 45–60 minutes of editing per 1,500 words. If that sounds like a lot, co
 
 > "Repurpose this article into: three LinkedIn posts (different angles, same topic), two short posts for Twitter/X, and a 100-word email teaser for a newsletter. Match [brief description of brand tone]."
 
-Based on workflows documented by small teams using AI repurposing tools, five minutes of repurposing replaces about two hours of manual reformatting — and the output is consistently good enough to publish without major edits. For higher-volume content distribution workflows, dedicated [AI content repurposing tools](/blog/ai-content-repurposing-tools) like Castmagic and Taplio offer additional automation for audio, video, and platform-native formats.
+Based on workflows documented by small teams using AI repurposing tools, five minutes of repurposing replaces about two hours of manual reformatting — and the output is consistently good enough to publish without major edits. For higher-volume content distribution workflows, dedicated [AI content repurposing tools](/blog/ai-content-repurposing-tools/) like Castmagic and Taplio offer additional automation for audio, video, and platform-native formats.
 
 For teams looking to connect distribution scheduling with automated reporting, [AI marketing reporting automation](/blog/ai-marketing-reporting-automation) tools can tie these workflows together — surfacing performance data without manual dashboard checks.
 

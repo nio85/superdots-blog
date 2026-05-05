@@ -57,6 +57,8 @@ Go through the list and:
 
 You now have a month of content ideas. Total time: 20 minutes.
 
+A faster way to fill the remaining slots: repurpose content you already have. One blog post or podcast episode generates 5-8 social posts with different angles. [AI content repurposing tools](/blog/ai-content-repurposing-tools/) automate the conversion — upload the source asset and get LinkedIn posts, newsletter snippets, and short video clips in one pass, ready to slot directly into your calendar.
+
 ## Step 3: Draft the posts (1-2 hours)
 
 Now turn each idea into an actual post. This is where most people stall — and where AI helps the most.
