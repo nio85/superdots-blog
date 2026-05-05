@@ -60,7 +60,7 @@ The transcript is the input for everything that follows. The quality of your pro
 
 **If you record calls**, three tools cover this reliably:
 
-- **Gong** ($1,200+/user/year, enterprise): Full transcription, talk-time analytics, deal intelligence. Best for teams that want call analysis alongside transcription.
+- **Gong** ($1,200+/user/year, enterprise): Full [transcription](/blog/ai-transcription-tools), talk-time analytics, deal intelligence. Best for teams that want call analysis alongside transcription.
 - **Fireflies.ai** (free for 3 seats with limits; $19/user/month for unlimited): Works in Google Meet, Zoom, and Teams. The free tier covers most individual reps.
 - **Otter.ai** (free for 300 minutes/month; $16.99/user/month Pro): Simpler interface than Fireflies, strong for one-on-one calls. The free tier covers 4–5 standard discovery calls per month.
 
@@ -160,7 +160,7 @@ Once your proposal draft is complete, paste the full text and run this prompt:
 - Pricing that's presented without context ("why does it cost this much?")
 - Claims about outcomes that aren't connected to the buyer's specific situation from the call
 
-Fix each flagged gap before sending. This review takes 10–15 minutes and removes the objections that kill deals in procurement — the ones the buyer never actually voices out loud. For teams that want purpose-built tools for this step, [AI Sales Objection Handling Tools](/blog/ai-sales-objection-handling-tools) covers options that integrate objection detection directly with CRM data.
+Fix each flagged gap before sending. This review takes 10–15 minutes and removes the objections that kill deals in procurement — the ones the buyer never actually voices out loud. For teams that want purpose-built tools for this step, [AI Sales Objection Handling Tools](/blog/ai-sales-objection-handling-tools) covers options that integrate objection detection directly with [CRM](/blog/ai-crm-tools) data.
 
 ## Try this today
 

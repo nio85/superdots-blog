@@ -133,7 +133,7 @@ Budget 45–60 minutes of editing per 1,500 words. If that sounds like a lot, co
 **What the job is:** Publish the article and distribute it across the channels where the audience actually is — without manually reformatting everything for each platform.
 
 **Tools:**
-- Claude or ChatGPT — for repurposing the article into social posts, email teaser, and newsletter content
+- Claude or ChatGPT — for repurposing the article into [social posts](/blog/ai-social-media-content-calendar), email teaser, and [newsletter](/blog/ai-email-marketing) content
 - [Buffer](https://buffer.com) — $18/month (Essentials plan, 3 channels)
 - Postiz — free and self-hosted, for teams that prefer not to pay for scheduling
 

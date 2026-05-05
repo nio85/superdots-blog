@@ -37,7 +37,7 @@ This is the update.
 
 The operation is objectively more complex than it was in March.
 
-Nine agents became ten when I added a Paid Ads Specialist in late April. The social pipeline now runs daily posts Monday through Friday, with a weekly cycle that recycles top-performing pieces and a monthly strategy review. Fifteen or more active routines run on a schedule — monitoring, SEO rank tracking, quality checks, newsletter sends — most of which I didn't set up by hand. The agents proposed them, I approved them, they run.
+Nine agents became ten when I added a Paid Ads Specialist in late April. The [social pipeline](/blog/ai-social-media-content-calendar) now runs daily posts Monday through Friday, with a weekly cycle that recycles top-performing pieces and a monthly strategy review. Fifteen or more active routines run on a schedule — monitoring, SEO rank tracking, quality checks, [newsletter](/blog/ai-email-marketing) sends — most of which I didn't set up by hand. The agents proposed them, I approved them, they run.
 
 The content pillar structure is new. In March there were no pillars — just a production queue. Now there are three: dot-by-dot guides (tool listicles, comparisons, how-tos), connecting-the-dots practical advice, and behind-the-dots transparency pieces. The breakdown is 198 dot-by-dot, 10 connecting-the-dots, and 1 behind-the-dots — the March piece. The imbalance tells you exactly what a production-optimized pipeline optimizes for when you haven't told it otherwise.
 

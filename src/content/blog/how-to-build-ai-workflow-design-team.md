@@ -48,7 +48,7 @@ You don't need to implement all four at once. But each layer makes the next one 
 
 Before touching any tool, spend 15 minutes understanding where your team's time actually goes. The answer is usually not where you expect.
 
-Common culprits in 2–8 person design teams: brief interpretation (translating a vague client ask into a concrete direction), reference collection (mood boards, competitor analysis, visual benchmarks), wireframe iteration (producing multiple layout directions for client feedback), handoff documentation (specs, annotations, developer notes), and feedback consolidation (turning scattered Loom comments and email threads into a prioritized action list).
+Common culprits in 2–8 person design teams: brief interpretation (translating a vague client ask into a concrete direction), reference collection (mood boards, [competitor analysis](/blog/ai-competitive-analysis), visual benchmarks), wireframe iteration (producing multiple layout directions for client feedback), handoff documentation (specs, annotations, developer notes), and feedback consolidation (turning scattered Loom comments and email threads into a prioritized action list).
 
 Run this audit with Claude or ChatGPT. Paste your actual task list and time estimates with the prompt: *"Which of these tasks are most repetitive, most time-consuming, and most likely to benefit from AI? Give me the top 3."* The output won't be perfect — you'll need to apply your own context — but it surfaces patterns you've stopped noticing.
 
@@ -60,7 +60,7 @@ The second layer is where most teams actually start — and why they struggle. T
 
 Start with the most repeatable tasks, where you already know what good looks like.
 
-**Mood boards → Midjourney or Adobe Firefly.** Build a shared prompt template that includes your brand's visual language, preferred references, and aesthetic direction. A well-constructed template produces usable direction in 5 minutes versus 90 minutes of manual curation. The template is the asset, not the image.
+**Mood boards → Midjourney or Adobe Firefly.** Build a shared prompt template that includes your [brand's visual language](/blog/ai-brand-identity-tools), preferred references, and aesthetic direction. A well-constructed template produces usable direction in 5 minutes versus 90 minutes of manual curation. The template is the asset, not the image.
 
 **Wireframe variation → Figma AI or Relume.** Figma's AI generates layout options from a text description. Relume produces full page structures from a brief. Neither replaces design judgment, but both give you something to react to faster than a blank canvas. Our review of [AI wireframing tools](/blog/ai-wireframing-tools) covers what's currently worth using.
 

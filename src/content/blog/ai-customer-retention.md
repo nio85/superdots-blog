@@ -30,7 +30,7 @@ AI changes this. Not by making retention automatic, but by making at-risk custom
 
 The math is simple but worth stating clearly.
 
-**A 5% increase in retention can boost profits by 25-95%.** This comes from the compounding effect of customer lifetime value. A customer who stays three years is not just 3x more valuable than a one-year customer — they spend more per year, cost less to support, and refer others.
+**A 5% increase in retention can boost profits by 25-95%.** This comes from the compounding effect of [customer lifetime value](/blog/ai-customer-lifetime-value-prediction-tools). A customer who stays three years is not just 3x more valuable than a one-year customer — they spend more per year, cost less to support, and refer others.
 
 **Churn compounds too.** If you lose 5% of customers per month, you are replacing your entire customer base every 20 months. Your acquisition team is running just to stand still. Improve retention by just a few percentage points and you free up growth budget for actual growth.
 
@@ -120,7 +120,7 @@ AI enables targeted interventions based on the specific reason for risk.
 
 Not every intervention needs a human. AI can handle:
 
-- Automated email sequences triggered by specific risk signals
+- [Automated email sequences](/blog/ai-email-marketing) triggered by specific risk signals
 - In-app messages surfacing relevant features or content
 - Smart dunning for failed payments
 - [Self-service resources](/blog/ai-customer-self-service/) matched to the customer's specific issue

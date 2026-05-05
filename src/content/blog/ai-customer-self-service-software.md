@@ -113,7 +113,7 @@ Where Tidio earns its place: early-stage companies and small e-commerce business
 
 If your team runs on Freshdesk, its built-in self-service tools deserve consideration before you add another vendor to the stack. Freshdesk includes a knowledge base, customer portal, and Freddy AI in every plan — including the free tier. The free plan supports up to 2 agents with a knowledge base and customer portal included.
 
-Freddy AI, Freshdesk's AI layer, answers questions from the knowledge base, suggests articles in ticket workflows for agents, and can be embedded as a chatbot widget. The depth of Freddy's AI features scales with your Freshdesk plan — the Growth plan at $15/agent/month adds more automation; Pro and Enterprise tiers add advanced AI capabilities.
+Freddy AI, Freshdesk's AI layer, answers questions from the knowledge base, suggests articles in [ticket workflows](/blog/ai-ticket-routing) for agents, and can be embedded as a chatbot widget. The depth of Freddy's AI features scales with your Freshdesk plan — the Growth plan at $15/agent/month adds more automation; Pro and Enterprise tiers add advanced AI capabilities.
 
 The advantage of staying in the Freshdesk ecosystem is tight integration between self-service and ticketing. When Freddy cannot resolve a self-service query, it creates a Freshdesk ticket automatically with the conversation context attached. Deflection analytics, customer satisfaction tracking, and content performance reports all live in the same dashboard as your ticketing metrics.
 
@@ -155,7 +155,7 @@ Simple FAQ and policy questions: a knowledge base (Helpjuice, Document360, Stonl
 External only: any knowledge base tool works. Internal + external combined: Guru is the purpose-built answer. Internal agent assist during live interactions: Guru, or Intercom with agent-side AI features.
 
 **4. Where does AI self-service fit in your broader stack?**
-Self-service software is one component of a [complete AI customer service system](/blog/ai-for-customer-service-complete-guide). The right tool depends on what you already have — help desk, CRM, live chat — and where the self-service tool needs to integrate. A best-in-class knowledge base that does not integrate with your ticketing workflow is worse in practice than a good-enough one that does.
+Self-service software is one component of a [complete AI customer service system](/blog/ai-for-customer-service-complete-guide). The right tool depends on what you already have — help desk, [CRM](/blog/ai-crm-tools), live chat — and where the self-service tool needs to integrate. A best-in-class knowledge base that does not integrate with your ticketing workflow is worse in practice than a good-enough one that does.
 
 ## Where to start
 
