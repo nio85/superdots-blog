@@ -95,7 +95,7 @@ What AI does well here is not prescribing your assumptions. It surfaces the logi
 
 The output won't know your company — it will require calibration against your actual pipeline and market context. But the "what would need to be true" framing is often more valuable than the numbers themselves. It makes the assumptions explicit, which is the first step toward stress-testing them.
 
-For integrated scenario modeling at scale, [Causal](https://causal.app) builds driver-based models that update as actuals come in — a meaningful step up from prompt-based scenario generation if your planning cycle warrants it. For the broader forecasting workflow, [AI financial forecasting](/blog/ai-financial-forecasting) covers where dedicated platforms fit in the planning stack.
+For integrated scenario modeling at scale, [Causal](https://causal.app) builds driver-based models that update as actuals come in — a meaningful step up from prompt-based scenario generation if your planning cycle warrants it. For the broader forecasting workflow, [AI financial forecasting](/blog/ai-financial-forecasting) covers where [dedicated FP&A platforms](/blog/ai-financial-modeling-tools) fit in the planning stack.
 
 ## Stage 3 — Variance analysis and exception flagging
 
