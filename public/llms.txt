@@ -95,6 +95,8 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Compensation Benchmarking: Salary Data](https://superdots.sh/blog/ai-compensation-benchmarking/)
 - [Best AI Tools for Employee Engagement in 2026](https://superdots.sh/blog/ai-employee-engagement/)
 - [Best AI Employee Handbook Generators (2026)](https://superdots.sh/blog/ai-employee-handbook-generator/)
+- [AI Policy Writing: Draft Policies in Minutes](https://superdots.sh/blog/ai-policy-writing/)
+- [Best AI Note-Taking Apps for Work (2026)](https://superdots.sh/blog/ai-note-taking-apps/)
 - [How to Automate Employee Offboarding with AI](https://superdots.sh/blog/ai-employee-offboarding/)
 - [AI Job Description Generator: Best Tools (2026)](https://superdots.sh/blog/ai-job-description-generator/)
 
@@ -114,15 +116,17 @@ Step-by-step guides for implementing AI across business functions.
 ## Operations AI Guides
 
 - [AI Business Automation: Complete Guide](https://superdots.sh/blog/ai-automation-for-business-complete-guide/)
+- [Best AI Tools for Operations Managers in 2026](https://superdots.sh/blog/best-ai-tools-for-operations/)
 - [AI Agents for Business: How Teams Use Them](https://superdots.sh/blog/ai-agents-for-business/)
 - [AI Business Intelligence Tools (2026)](https://superdots.sh/blog/ai-business-intelligence-tools/)
 - [10 Best AI Data Visualization Tools (2026)](https://superdots.sh/blog/ai-data-visualization-tools/)
 - [How to Automate Data Entry with AI](https://superdots.sh/blog/ai-data-entry-automation/)
 - [AI Data Cleaning Tools: Fix Messy Data Fast](https://superdots.sh/blog/ai-data-cleaning-tools/)
+- [AI Knowledge Base for Teams (2026)](https://superdots.sh/blog/ai-knowledge-base-for-teams/)
+- [AI Report Writing: Save Hours Every Week](https://superdots.sh/blog/ai-report-writing/)
 - [AI for Business Continuity Planning (2026)](https://superdots.sh/blog/ai-business-continuity-plan/)
 - [Best AI Order Management Software for Small Business](https://superdots.sh/blog/ai-order-management-software-small-business/)
 - [AI Fleet Management: Optimize Routes and Costs](https://superdots.sh/blog/ai-fleet-management/)
-- [Best AI Tools for Operations Managers in 2026](https://superdots.sh/blog/best-ai-tools-for-operations/)
 - [AI Workflow Automation: No Code Required](https://superdots.sh/blog/ai-workflow-automation/)
 - [AI KPI Dashboard Software for Operations (2026)](https://superdots.sh/blog/ai-kpi-dashboard-software/)
 - [7 AI Demand Forecasting Tools for SMBs (2026 Pricing)](https://superdots.sh/blog/ai-demand-forecasting-tools-small-business/)
@@ -137,6 +141,7 @@ Step-by-step guides for implementing AI across business functions.
 - [Best AI API Documentation Tools (2026)](https://superdots.sh/blog/ai-api-documentation/)
 - [Best AI Database Management Tools (2026)](https://superdots.sh/blog/ai-database-management/)
 - [AI Incident Triage for SRE & DevOps Teams (2026)](https://superdots.sh/blog/ai-incident-management/)
+- [AI Security Scanning Tools for Dev Teams (2026)](https://superdots.sh/blog/ai-security-scanning/)
 - [Writing Better Technical Docs with AI](https://superdots.sh/blog/writing-better-docs-with-ai/)
 - [Best AI Sprint Planning Tools in 2026](https://superdots.sh/blog/ai-sprint-planning-tools/)
 
