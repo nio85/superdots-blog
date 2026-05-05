@@ -64,6 +64,7 @@ export const AGENTS = {
   GROWTH_ANALYST: '18fb8cff-39cc-429a-bbfc-5005e064d536',
   PROGRAM_MANAGER: '3d6e6cdc-863c-4fec-a676-9b06dd3b3e89',
   PAID_ADS_OPERATOR: '19b24c1f-efa3-456e-b5be-7cd4d6b776a1',
+  GEO_SPECIALIST: '51891edb-adcc-4ff0-8d89-7114eec8f127',
 };
 
 // --- SMTP (Resend) ---
