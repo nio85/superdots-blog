@@ -38,9 +38,12 @@ function parseArticle(filePath) {
     ? tagsMatch[1].split(',').map(t => t.trim().replace(/^["']|["']$/g, ''))
     : [];
 
+  const pubDateStr = (fm.match(/^pubDate:\s*["']?(\d{4}-\d{2}-\d{2})/m))?.[1] || '';
+  const pubDate = pubDateStr ? new Date(pubDateStr + 'T00:00:00') : null;
+
   const slug = path.basename(filePath, '.md');
 
-  return { slug, title, dept, useCase, tags, body, frontmatter: fmMatch[1], raw, filePath };
+  return { slug, title, dept, useCase, tags, pubDate, body, frontmatter: fmMatch[1], raw, filePath };
 }
 
 // ── Build keyword phrases from article metadata ─────────────────────
@@ -417,9 +420,11 @@ function findInsertionPoints(body, targetPhrase, existingLinkedSlugs) {
 // ── Main ─────────────────────────────────────────────────────────────
 function main() {
   const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'));
-  const articles = files.map(f => parseArticle(path.join(BLOG_DIR, f))).filter(Boolean);
+  const allArticles = files.map(f => parseArticle(path.join(BLOG_DIR, f))).filter(Boolean);
+  const now = new Date();
+  const articles = allArticles.filter(a => a.pubDate && a.pubDate <= now);
 
-  console.log(`Found ${articles.length} articles`);
+  console.log(`Found ${allArticles.length} articles (${allArticles.length - articles.length} future-dated, excluded)`);
 
   const topicMap = buildTopicMap(articles);
   const slugToArticle = new Map(articles.map(a => [a.slug, a]));
