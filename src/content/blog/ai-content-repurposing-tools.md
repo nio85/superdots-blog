@@ -133,7 +133,7 @@ Descript is a video and podcast editor built on transcription. Import a file and
 
 For teams that edit their own audio or video, Descript eliminates the export-to-Castmagic step. You stay in one tool from raw recording to finished assets. Based on user reviews, the AI voice overdub feature works well for short corrections but sounds off for extended passages.
 
-**Pricing:** Free (60 media minutes/month). Creator at $24/month annual ($35 monthly). Business at $40/month annual. *Verify current tiers at descript.com — plan names have changed since 2025.*
+**Pricing:** Free (60 media minutes/month). Creator at $24/month annual ($35 monthly). Business at $40/month annual. *Verify current tiers at descript.com — plan names have changed since 2024.*
 
 **Best for:** Podcasters and video creators who do their own production editing. Teams producing original video who want editing and repurposing consolidated in one subscription.
 
