@@ -126,8 +126,9 @@ Use these in downstream task descriptions to create proper links:
 | `FRONTEND_DESIGNER` | Frontend Designer |
 | `LEGAL_EXPERT` | Legal Expert |
 | `GROWTH_ANALYST` | Growth Analyst |
-| `PAID_ADS_OPERATOR` | Reddit Ads Specialist |
+| `PAID_ADS_OPERATOR` | Paid Ads Specialist |
 | `PROGRAM_MANAGER` | Program Manager |
+| `GEO_SPECIALIST` | GEO Specialist |
 
 ## Description format
 
