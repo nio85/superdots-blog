@@ -75,7 +75,7 @@ The AI features that stand out: Ramp's spend intelligence flags wasteful softwar
 
 Brex built its reputation as the corporate card for startups that cannot qualify for traditional business credit lines. The platform has grown significantly: it now includes expense management, reimbursements, business accounts, and travel booking in one dashboard.
 
-The AI layer is strong. Brex automatically categorizes transactions, flags policy violations in real time, and generates spend reports by department, project, or vendor without manual configuration. The natural-language spending controls are a genuine differentiator — finance managers set rules in plain English ("no single transaction over $500 without manager approval") and Brex interprets and enforces them automatically.
+The AI layer is strong. Brex automatically categorizes transactions, flags policy violations in real time, and generates [spend reports](/blog/ai-report-generator) by department, project, or vendor without manual configuration. The natural-language spending controls are a genuine differentiator — finance managers set rules in plain English ("no single transaction over $500 without manager approval") and Brex interprets and enforces them automatically.
 
 **Best for:** VC-backed startups and hypergrowth companies where the corporate card is the primary spend vehicle. Brex's relationships with startup ecosystem vendors (AWS credits, software perks) add value for early-stage companies that competitors do not match.
 
@@ -184,7 +184,7 @@ The common mistake at this size: letting the tool that demos best win the evalua
 
 **Buying software before writing the expense policy.** No software enforces a policy you have not defined. The AI in these platforms is only as good as the rules you configure. Before implementation, document your expense categories, per-diem rates, approval chains, and receipt requirements. The platform enforces the policy — the policy does not come from the platform.
 
-**Treating expense management as isolated from accounts payable.** These are adjacent problems. If you are evaluating expense management, look at your upstream AP workflow too — covered in our [guide to AI invoice processing](/blog/ai-invoice-processing). Finance teams that address both together typically see faster month-end close and fewer reconciliation exceptions.
+**Treating expense management as isolated from accounts payable.** These are adjacent problems. If you are evaluating expense management, look at your upstream AP workflow too — covered in our [guide to AI invoice processing](/blog/ai-invoice-processing). Finance teams that address both together typically see faster [month-end close](/blog/how-to-cut-days-from-month-end-close-with-ai) and fewer reconciliation exceptions.
 
 For a complete picture of how expense management fits into the broader finance automation stack, see our [best AI tools for finance](/blog/best-ai-tools-for-finance) guide.
 

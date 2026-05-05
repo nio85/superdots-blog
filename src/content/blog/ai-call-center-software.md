@@ -34,7 +34,7 @@ Before evaluating platforms, it helps to understand what the AI capabilities on 
 
 **Agent assist.** During a live call, the AI surfaces relevant information based on what the customer is saying: knowledge base articles, product information, policy details, similar past interactions. Good agent assist reduces hold time (agents do not need to search for answers) and improves consistency (every agent gets the same information for the same question). Weak implementations surface too much information or slow agents down by requiring them to dismiss irrelevant suggestions.
 
-**After-call work automation.** After a call ends, agents typically spend 3–10 minutes writing call summaries, selecting disposition codes, and updating CRM records. AI automation handles this: it generates a summary from the transcript, suggests the correct disposition, and syncs data to your CRM. For teams with high call volumes, this time saving compounds significantly across the team and shift.
+**After-call work automation.** After a call ends, agents typically spend 3–10 minutes writing call summaries, selecting disposition codes, and updating [CRM](/blog/ai-crm-tools) records. AI automation handles this: it generates a summary from the transcript, suggests the correct disposition, and syncs data to your CRM. For teams with high call volumes, this time saving compounds significantly across the team and shift.
 
 **Conversation analytics.** Aggregate analysis of call transcripts across your entire call volume: sentiment trends, topic clustering, compliance monitoring, quality scoring. This is where [AI customer service QA](/blog/ai-customer-service-qa) tools integrate — some platforms include QA scoring natively, others integrate with standalone QA tools. The value is discovering patterns at scale that manual QA sampling misses.
 
@@ -80,7 +80,7 @@ Pricing starts at $85/seat/month (CX Cloud Digital Essentials). Talkdesk Express
 
 ### NICE CXone — Best for Large Enterprise Workforce Management
 
-NICE CXone (now NICE CXone Mpower) is the largest contact center platform by market share, and its AI capabilities are genuinely deep — particularly in workforce management (WFM), quality management, and real-time agent guidance. The Enlighten AI layer, NICE's AI brand, includes sentiment analysis, behavioral scoring for compliance, interaction analytics at scale, and an agent performance coaching system that delivers personalized development recommendations.
+NICE CXone (now NICE CXone Mpower) is the largest contact center platform by market share, and its AI capabilities are genuinely deep — particularly in [workforce management](/blog/ai-workforce-planning) (WFM), quality management, and real-time agent guidance. The Enlighten AI layer, NICE's AI brand, includes [sentiment analysis](/blog/ai-customer-sentiment-dashboard), behavioral scoring for compliance, interaction analytics at scale, and an agent performance coaching system that delivers personalized development recommendations.
 
 Where NICE CXone excels is the breadth of the Enlighten AI portfolio: it covers the full lifecycle from workforce forecasting to real-time agent coaching to post-interaction analysis. Teams running 200+ agent operations who need unified WFM + AI coaching + quality management in one platform find NICE CXone difficult to replace.
 

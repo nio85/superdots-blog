@@ -119,7 +119,7 @@ The limitation: Document360 is overkill if you just need a handbook. Its value i
 
 **Step 1 — Gather your inputs before you start generating.**
 
-AI output quality is directly proportional to the quality of inputs you provide. Before opening any tool, collect: your company's legal name and jurisdiction (country + state/province if US or federal country), your existing policies on any topic (even informal ones), your benefits plan summaries, your employment classification structure (full-time, part-time, contractors), and any compliance requirements specific to your industry.
+AI output quality is directly proportional to the quality of inputs you provide. Before opening any tool, collect: your company's legal name and jurisdiction (country + state/province if US or federal country), your existing policies on any topic (even informal ones), your benefits plan summaries, your employment classification structure (full-time, part-time, contractors), and any [compliance requirements](/blog/ai-compliance-tools) specific to your industry.
 
 If you have an [AI SOP generator](/blog/ai-sop-generator) already producing process documentation, that existing content is useful input — AI can draft handbook sections that reference established processes.
 
@@ -170,4 +170,4 @@ An [AI HR chatbot](/blog/ai-hr-chatbot) configured to answer handbook questions 
 
 **Build in review cadence.** Employment law changes. Benefits plans change. Company policies change. Include a version date on every handbook and schedule an annual legal review. AI makes the initial generation fast enough that annual updates are practical rather than dreaded.
 
-The complete picture of using AI across the HR function — hiring, onboarding, documentation, analytics — is covered in the [AI for HR guide](/blog/ai-for-hr). The handbook is one component of a documentation system that AI can meaningfully accelerate when used with realistic expectations about what it produces and what it cannot replace.
+The complete picture of using AI across the HR function — [hiring](/blog/ai-resume-screening), onboarding, documentation, analytics — is covered in the [AI for HR guide](/blog/ai-for-hr). The handbook is one component of a documentation system that AI can meaningfully accelerate when used with realistic expectations about what it produces and what it cannot replace.
