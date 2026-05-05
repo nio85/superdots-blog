@@ -1,7 +1,7 @@
 # Superdots
 > Practical AI for work — guides, insights, opinions, and the real story.
 
-Superdots publishes practical, no-fluff content about AI and work for every business function. Run by Luca Bartoccini (founder, editor) with a team of AI agents from a homelab in Italy. 220+ articles across sales, marketing, HR, finance, operations, engineering, legal, customer support, and design.
+Superdots publishes practical, no-fluff content about AI and work for every business function. Run by Luca Bartoccini (founder, editor) with a team of AI agents from a homelab in Italy. 222+ articles across sales, marketing, HR, finance, operations, engineering, legal, customer support, and design.
 
 Our content is AI-assisted and human-edited. We are transparent about this. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable.
 
@@ -80,6 +80,11 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Customer Journey Mapping](https://superdots.sh/blog/ai-customer-journey-mapping/)
 - [Best AI Marketing Automation for Small Business](https://superdots.sh/blog/ai-marketing-automation-small-business/)
 - [How to Create Marketing Content with AI](https://superdots.sh/blog/ai-content-creation/)
+- [Build an AI Social Media Content Calendar](https://superdots.sh/blog/ai-social-media-content-calendar/)
+- [AI Marketing Analytics: No Data Team Needed](https://superdots.sh/blog/ai-marketing-analytics-tools/)
+- [AI Marketing Attribution Tools (2026)](https://superdots.sh/blog/ai-marketing-attribution-tools/)
+- [AI Landing Page Optimization Tools (2026)](https://superdots.sh/blog/ai-landing-page-optimization-tools/)
+- [Cut Marketing Reports From 3 Hours to 15 Min](https://superdots.sh/blog/ai-marketing-reporting-automation/)
 
 ## HR AI Guides
 
@@ -104,6 +109,7 @@ Step-by-step guides for implementing AI across business functions.
 - [How AI Automates Audit Preparation](https://superdots.sh/blog/ai-audit-preparation/)
 - [AI FP&A Software for Small Business (2026)](https://superdots.sh/blog/ai-fpa-software-small-business/)
 - [AI Customer Lifetime Value Prediction Tools](https://superdots.sh/blog/ai-customer-lifetime-value-prediction-tools/)
+- [AI Invoice Processing: Cut AP Time by 80%](https://superdots.sh/blog/ai-invoice-processing/)
 
 ## Operations AI Guides
 
@@ -116,6 +122,10 @@ Step-by-step guides for implementing AI across business functions.
 - [AI for Business Continuity Planning (2026)](https://superdots.sh/blog/ai-business-continuity-plan/)
 - [Best AI Order Management Software for Small Business](https://superdots.sh/blog/ai-order-management-software-small-business/)
 - [AI Fleet Management: Optimize Routes and Costs](https://superdots.sh/blog/ai-fleet-management/)
+- [Best AI Tools for Operations Managers in 2026](https://superdots.sh/blog/best-ai-tools-for-operations/)
+- [AI Workflow Automation: No Code Required](https://superdots.sh/blog/ai-workflow-automation/)
+- [AI KPI Dashboard Software for Operations (2026)](https://superdots.sh/blog/ai-kpi-dashboard-software/)
+- [7 AI Demand Forecasting Tools for SMBs (2026 Pricing)](https://superdots.sh/blog/ai-demand-forecasting-tools-small-business/)
 
 ## Engineering AI Guides
 
@@ -128,6 +138,7 @@ Step-by-step guides for implementing AI across business functions.
 - [Best AI Database Management Tools (2026)](https://superdots.sh/blog/ai-database-management/)
 - [AI Incident Triage for SRE & DevOps Teams (2026)](https://superdots.sh/blog/ai-incident-management/)
 - [Writing Better Technical Docs with AI](https://superdots.sh/blog/writing-better-docs-with-ai/)
+- [Best AI Sprint Planning Tools in 2026](https://superdots.sh/blog/ai-sprint-planning-tools/)
 
 ## Legal AI Guides
 
@@ -150,6 +161,7 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Customer Retention: Prevent Churn](https://superdots.sh/blog/ai-customer-retention/)
 - [AI Customer Onboarding: Reduce Time-to-Value](https://superdots.sh/blog/ai-customer-onboarding/)
 - [AI Customer Service Quality Assurance (2026)](https://superdots.sh/blog/ai-customer-service-qa/)
+- [Best AI Customer Support Agents (2026)](https://superdots.sh/blog/ai-customer-support-agents/)
 
 ## Design AI Guides
 
