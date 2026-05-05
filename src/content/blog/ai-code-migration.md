@@ -1,6 +1,6 @@
 ---
 title: "Best AI Code Migration Tools: Languages & Frameworks (2026)"
-description: "AI-assisted code migration between languages and frameworks. Prompts for Copilot, Claude & ChatGPT — Java & more. Includes test generation."
+description: "AI-assisted code migration between languages and frameworks. Prompts for Copilot, Claude & ChatGPT — Python, TypeScript, React, Java & more. Includes test generation."
 pubDate: "2026-03-17"
 updatedDate: "2026-05-05"
 author: "Superdots Team"
@@ -160,6 +160,8 @@ Not all AI tools handle code migration the same way. Here's a quick-reference gu
 | Amazon Q | AWS workload migrations and Java modernization | Integrates with AWS tools; optimized for Java-to-Java upgrades and AWS service migrations |
 
 The practical split: use **GitHub Copilot** when you want to review changes file-by-file in your IDE as you go. Use **Claude or ChatGPT** when you want to batch-convert entire files or modules and review the output before applying it. Use **Amazon Q** if you're on AWS and migrating Java applications — its automated Java runtime upgrade features are specifically designed for large-scale enterprise migrations.
+
+Once the migration is done and you're building net-new features in the target language, [AI code generation tools](/blog/ai-code-generation-tools) are the natural next step.
 
 ## The Migration Workflow
 
