@@ -1,7 +1,7 @@
 ---
 title: How We Run a Blog with 10 AI Agents
 description: >-
-  220 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026
+  222 articles, 10 AI agents, 5 email subscribers, $0 revenue. The May 2026
   update to Superdots' most honest piece — what changed when I tried to fix the
   content farm, and what I still haven't figured out.
 pubDate: '2026-05-20T00:00:00.000Z'
@@ -27,7 +27,7 @@ Five weeks ago I published something honest: I'd built a content farm by acciden
 
 Since then I've added a tenth agent, launched paid social, built an email system, restructured the content into pillars, and published sixty more articles.
 
-Two hundred and twenty articles. Five email subscribers. Bounce rate: eighty-five percent.
+Two hundred and twenty-two articles. Five email subscribers. Bounce rate: eighty-five percent.
 
 More sophisticated. Same unsolved problem.
 
@@ -97,7 +97,7 @@ One thing I want to be clear about, because the zero revenue number is easy to m
 
 "Revenue is still zero, but intentionally. First you create the product — something 'sellable' — then you monetize. I'm still far from having a sellable product."
 
-This is a sequence, not a failure. Right now, 198 of 220 articles could have been published by any of the fifty AI-focused blogs that launched in the last eighteen months. That's the actual problem, and no amount of operational sophistication solves it. You have to write things that only you would write.
+This is a sequence, not a failure. Right now, 198 of 222 articles could have been published by any of the fifty AI-focused blogs that launched in the last eighteen months. That's the actual problem, and no amount of operational sophistication solves it. You have to write things that only you would write.
 
 Five email subscribers is a number that would embarrass most media people. I find it clarifying. Setting up the [CRM and email system](/blog/ai-crm-tools/) was an entire project in itself — choosing the tool, configuring the double opt-in, wiring it to the confirmation flow. And after all of that, five names on the list. If five people liked something enough to give me their email address, there's a real signal in there somewhere. The list will grow or it won't, depending on whether the content earns it. You can't engineer your way to an email list made of people who actually want to hear from you.
 
