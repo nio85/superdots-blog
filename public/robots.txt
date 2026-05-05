@@ -62,6 +62,15 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
+User-agent: YouBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 # Blocked: known aggressive or low-value crawlers
 User-agent: DotBot
 Disallow: /
@@ -79,3 +88,6 @@ User-agent: Bytespider
 Disallow: /
 
 Sitemap: https://superdots.sh/sitemap-index.xml
+
+# AI content discovery
+# llms.txt: https://superdots.sh/llms.txt
