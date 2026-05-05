@@ -15,7 +15,7 @@ faqs:
   - question: "How do I use AI to turn a podcast into blog posts and social media?"
     answer: "Upload the audio to Castmagic (~$39/month). It generates a transcript, blog post draft, newsletter section, LinkedIn post, key quotes, and show notes from a single upload. The blog draft needs 30-45 minutes of editing before publishing. For video clips, run OpusClip simultaneously. Total production time for a 40-minute episode: under 3 hours, versus 6-8 hours manually."
   - question: "Can AI repurpose content for multiple formats automatically?"
-    answer: "Yes, but no single tool covers every channel well. Castmagic handles audio/video to written formats best. OpusClip handles video to short clips. Taplio is specific to LinkedIn. Most marketing teams use 2-3 tools in sequence: Castmagic for written assets, OpusClip for video clips, and Copy.ai or Taplio for social copy. Repurpose.io automates cross-platform distribution after content is created."
+    answer: "Yes, but no single tool covers every channel well. Castmagic handles audio/video to written formats best. OpusClip handles video to short clips. For text-to-text workflows (blog to social, email, ad copy), Jasper or Copy.ai cover the most channels in one subscription. Most marketing teams use 2-3 tools in sequence: Castmagic or Descript for audio/video, then Copy.ai or Taplio for platform-specific social copy."
   - question: "What is the difference between Opus Clip, Repurpose.io, and Lately.ai?"
     answer: "OpusClip (free–$29/month) identifies the best 60-90 second moments in long videos and clips them for YouTube Shorts, TikTok, and Reels. Repurpose.io ($35/month) takes already-published content and routes it to other platforms — it doesn't create content, only distributes it. Lately (~$99/month) generates social posts from long-form text using a brand voice model trained on your historical content and engagement data. They solve different problems and are often used in sequence within the same workflow."
   - question: "Is AI content repurposing good enough to post without editing?"
@@ -41,17 +41,17 @@ Eight tools, five output channels:
 | **Repurpose.io** | Basic (dist. only) | No | Good (dist. only) | Good (dist. only) | No |
 | **Descript** | Basic | Good | Good | Good | Good |
 | **Jasper** | Good | Good | No | No | Good |
-| **Canva Magic Write** | Good | Basic | No | Basic | Basic |
+| **Canva Magic Write** | Good | Basic | No | Basic | No |
 
 **Best** = purpose-built for this channel. **Good** = capable, worth using. **Basic** = functional but not differentiated. **No** = outside the tool's scope.
 
 The channel-by-channel read:
 - **Newsletter and blog from audio:** Castmagic, no close competition
 - **Short video clips (YouTube Shorts / Reels / TikTok):** OpusClip
-- **LinkedIn:** Taplio (purpose-built), or Copy.ai / Jasper if LinkedIn is one channel among several
-- **Multi-format text workflows:** Copy.ai or Jasper (for teams already paying for it as a writing tool)
-- **Visual social content (graphics, slides, presentations):** Canva Magic Write
+- **LinkedIn:** Taplio (purpose-built), or Copy.ai if LinkedIn is one of several channels
+- **Multi-format text workflows:** Copy.ai or Jasper (if already in your stack)
 - **Podcast editing + repurposing combined:** Descript
+- **Visual repurposing (slides, graphics):** Canva Magic Write
 
 No tool wins every channel. The practical stack for most content teams: Castmagic + OpusClip covers audio and video completely. Add Taplio or Copy.ai if LinkedIn is a priority output.
 
@@ -191,12 +191,14 @@ Total time: under 3 hours for one episode, five published formats. Without AI: 6
 
 **You edit your own video:** Descript ($24/month annual) consolidates editing, transcript, and repurposing in one tool. You trade some of Castmagic's written-asset depth for a single subscription and a simpler workflow.
 
-**Text-first, multi-channel output:** Copy.ai. The $29 Starter works for individuals; team-level automation requires the $249 Agents tier.
+**Text-first, multi-channel output:** Copy.ai. The $29 Starter works for individuals; team-level automation requires the $249 Agents tier. If your team already uses Jasper for content creation, use Jasper's repurposing templates instead of adding a second subscription.
 
 **Already on Jasper for writing:** Activate the repurposing templates in your existing subscription before buying a second tool. Jasper covers blog-to-social and blog-to-email without an extra monthly cost — the limitation is no audio or video capability.
 
 **Visual social output is the priority:** Canva Magic Write (free, or ~$15/month Pro) keeps the content-to-graphic workflow inside one tool. Pair it with Castmagic for teams that also need written formats from audio or video.
 
 **Distribution only:** Repurpose.io ($35/month) routes already-created content across platforms. Pair it with Castmagic for creation — they cover different stages of the same pipeline, not the same one.
+
+**Visual-first repurposing (slides, graphics, video storyboards):** Canva Magic Write (free or $15/month Pro). Best when design and copy need to be created together; not the right choice if written output depth is the priority.
 
 For a full view of your [marketing AI stack](/blog/ai-for-marketing-complete-guide/), see our complete guide. For tracking which repurposed content actually performs, [marketing analytics tools](/blog/ai-marketing-analytics-tools/) close the feedback loop. For connecting repurposed social content to subscriber growth, our [email marketing AI guide](/blog/ai-email-marketing/) covers the automation layer.
