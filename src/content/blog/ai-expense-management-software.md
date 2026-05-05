@@ -26,7 +26,7 @@ Most finance managers at 50-person companies are still managing expenses the sam
 
 Employees collect receipts in their pockets or email inboxes. They submit expense reports at the end of the month. Finance reviews them, flags violations, and reimburses — three weeks after the money was spent. By then, the policy conversation is hypothetical and the lesson is rarely absorbed.
 
-AI expense management platforms change when control happens. The best ones enforce policy at the point of spend, code transactions automatically, and sync clean data to your accounting system without reconciliation work. Here is what I found evaluating six platforms against the questions a finance manager at a 20–200 person company would actually ask.
+AI expense management platforms change when control happens. The best ones enforce policy at the point of spend, code transactions automatically, and sync clean data to your accounting system without reconciliation work. Here is how each platform holds up against the questions a finance manager at a 20–200 person company would actually ask.
 
 ## Quick Pick: Best AI Expense Management Tools at a Glance
 
@@ -45,7 +45,7 @@ Receipt scanning is table stakes. Every tool here does it. The AI features that 
 
 **Real-time policy enforcement.** AI-native platforms like Ramp and Brex issue corporate cards with spending rules embedded. An employee cannot spend $800 on a client dinner if the policy caps it at $200 — the card declines automatically, or flags the transaction before it clears. Legacy tools catch this violation in the reimbursement review, after the money is spent.
 
-**Automatic GL coding.** When a vendor charge comes through, the platform suggests the correct general ledger category based on the merchant, the employee's department, and historical patterns. According to Ramp's own documentation, finance teams using their platform see 80–90% of transactions coded correctly on the first pass. Expensify offers auto-categorization too, though accuracy varies by integration depth.
+**Automatic GL coding.** When a vendor charge comes through, the platform suggests the correct general ledger category based on the merchant, the employee's department, and historical patterns. According to [Ramp's accounting automation documentation](https://ramp.com/accounting-automation-software), finance teams using their platform see 80–90% of transactions coded correctly on the first pass. Expensify offers auto-categorization too, though accuracy varies by integration depth.
 
 **Duplicate and anomaly detection.** If two receipts for the same restaurant, same amount, and same date arrive from different employees, AI flags it before either is approved. Ramp and Brex catch duplicates at the card transaction level. Expensify catches them at submission. The former catches more because it has more data earlier.
 
