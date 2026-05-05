@@ -25,6 +25,7 @@ Commands:
   crawl-stats                   Crawl statistics
   url-info <url>                Traffic info for a specific URL
   backlinks                     Inbound links summary
+  ai-performance [--days N]     Copilot/AI citation data (default: 30 days)
 
 Options:
   --json      Output as JSON
@@ -193,6 +194,125 @@ async function main() {
       const counts = data?.d || data;
       log(`Bing Backlinks for ${SITE}:`);
       log(JSON.stringify(counts, null, 2));
+      break;
+    }
+
+    case 'ai-performance': {
+      const days = parseInt(getArg('--days') || '30', 10);
+      const endDate = new Date();
+      const startDate = new Date(Date.now() - days * 86400000);
+
+      const AI_ENDPOINTS = [
+        'GetAIPerformanceStats',
+        'GetAISearchPerformance',
+        'GetAIPerformance',
+        'GetCopilotPerformance',
+      ];
+
+      let data = null;
+      let usedEndpoint = null;
+
+      for (const ep of AI_ENDPOINTS) {
+        try {
+          data = await api(ep, {
+            startDate: formatDate(startDate),
+            endDate: formatDate(endDate),
+          });
+          usedEndpoint = ep;
+          break;
+        } catch (e) {
+          if (e.message.includes('404') || e.message.includes('Endpoint not found')) continue;
+          throw e;
+        }
+      }
+
+      if (!data) {
+        const msg = [
+          'Bing AI Performance API is not yet available.',
+          'The AI Performance report (Copilot citations) launched as a dashboard-only feature in Feb 2026.',
+          'No public API endpoint has been released yet.',
+          '',
+          'Manual workaround: view data at https://www.bing.com/webmasters/aiperformance?siteUrl=' + encodeURIComponent(SITE),
+          '',
+          'This command will auto-detect the endpoint when Bing releases the API.',
+        ].join('\n');
+
+        if (jsonOutput) {
+          out({
+            error: 'API_NOT_AVAILABLE',
+            message: 'Bing AI Performance API endpoint not yet public',
+            dashboardUrl: `https://www.bing.com/webmasters/aiperformance?siteUrl=${encodeURIComponent(SITE)}`,
+          });
+        } else {
+          console.error(msg);
+        }
+        process.exit(2);
+      }
+
+      if (jsonOutput) { out({ endpoint: usedEndpoint, period: { start: formatDate(startDate), end: formatDate(endDate), days }, data }); break; }
+
+      const entries = data?.d || data;
+
+      if (Array.isArray(entries) && entries.length > 0) {
+        const totalCitations = entries.reduce((s, e) => s + (e.Citations ?? e.Impressions ?? 0), 0);
+        const citedPages = new Set(entries.map(e => e.Url || e.Page).filter(Boolean));
+        log(`Bing AI Performance (last ${days} days):`);
+        log(`  Total citations: ${totalCitations}`);
+        log(`  Unique cited pages: ${citedPages.size}`);
+        log('');
+        log('  Top cited pages:');
+        log('  Citations | URL');
+        log('  ----------|----');
+        const byPage = {};
+        for (const e of entries) {
+          const url = e.Url || e.Page || '?';
+          byPage[url] = (byPage[url] || 0) + (e.Citations ?? e.Impressions ?? 0);
+        }
+        const sorted = Object.entries(byPage).sort((a, b) => b[1] - a[1]);
+        for (const [url, count] of sorted.slice(0, 20)) {
+          log(`  ${String(count).padStart(9)} | ${url}`);
+        }
+
+        const queries = entries.filter(e => e.Query || e.GroundingQuery);
+        if (queries.length > 0) {
+          log('');
+          log('  Top grounding queries:');
+          log('  Citations | Query');
+          log('  ----------|------');
+          for (const e of queries.slice(0, 20)) {
+            const q = e.Query || e.GroundingQuery || '?';
+            const c = String(e.Citations ?? e.Impressions ?? 0).padStart(9);
+            log(`  ${c} | ${q}`);
+          }
+        }
+      } else if (typeof entries === 'object' && entries !== null) {
+        log(`Bing AI Performance (last ${days} days):`);
+        if (entries.TotalCitations != null) log(`  Total citations: ${entries.TotalCitations}`);
+        if (entries.AvgCitedPages != null) log(`  Avg cited pages/day: ${entries.AvgCitedPages}`);
+        if (entries.CitedPages) {
+          log('');
+          log('  Top cited pages:');
+          log('  Citations | URL');
+          log('  ----------|----');
+          const pages = Array.isArray(entries.CitedPages) ? entries.CitedPages : [];
+          for (const p of pages.slice(0, 20)) {
+            log(`  ${String(p.Citations ?? 0).padStart(9)} | ${p.Url || p.Page || '?'}`);
+          }
+        }
+        if (entries.GroundingQueries) {
+          log('');
+          log('  Top grounding queries:');
+          log('  Citations | Query');
+          log('  ----------|------');
+          const qs = Array.isArray(entries.GroundingQueries) ? entries.GroundingQueries : [];
+          for (const q of qs.slice(0, 20)) {
+            log(`  ${String(q.Citations ?? 0).padStart(9)} | ${q.Query || '?'}`);
+          }
+        }
+      } else {
+        log('AI Performance data returned in unexpected format.');
+        log(JSON.stringify(entries, null, 2));
+      }
       break;
     }
 
