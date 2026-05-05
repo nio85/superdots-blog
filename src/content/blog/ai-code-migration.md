@@ -1,8 +1,8 @@
 ---
-title: 'AI Code Migration: Python & TypeScript (2026)'
-description: "AI prompts for Python→TypeScript & framework migrations. Step-by-step with Claude, ChatGPT & GitHub Copilot. Includes test generation."
+title: "Best AI Code Migration Tools: Languages & Frameworks (2026)"
+description: "AI-assisted code migration between languages and frameworks. Prompts for Copilot, Claude & ChatGPT — Java & more. Includes test generation."
 pubDate: "2026-03-17"
-updatedDate: "2026-04-22"
+updatedDate: "2026-05-05"
 author: "Superdots Team"
 department: "engineering"
 useCase: "automation"
@@ -24,12 +24,33 @@ faqs:
     answer: "Claude and ChatGPT are the most effective tools for Python-to-TypeScript migration. Paste a Python module, describe the target (TypeScript with strict typing), and review the output — both models handle this translation reliably for typical business logic. Claude tends to produce more complete type annotations than other models. GitHub Copilot works well for file-by-file conversion inside your IDE. No tool handles edge cases in business logic automatically — plan to review any function that deals with dates, floating-point math, or external API responses."
   - question: "Can GitHub Copilot automatically migrate legacy code?"
     answer: "GitHub Copilot assists with code migration but does not automate it fully. It works best for line-by-line or function-by-function conversion when you describe the target language or framework in a comment. For larger migrations — converting an entire file or module — Claude or ChatGPT are more effective because you can provide full context about the source and target. Copilot's advantage is IDE integration: it suggests changes inline as you work, making it faster for incremental, file-by-file migration. For legacy systems with significant technical debt, plan to use Copilot for the mechanical conversion and reserve human review for business logic, error handling, and state management."
+  - question: "Can AI help migrate Java code to TypeScript or Kotlin?"
+    answer: "Yes. Java-to-Kotlin is one of the most reliable AI migration paths because the languages share the JVM and IntelliJ IDEA has native AI-assisted Kotlin conversion built in. Java-to-TypeScript is also well-supported by Claude and ChatGPT — both handle class and interface conversion accurately for typical business logic. The main friction points are Java generics (which map imperfectly to TypeScript generics) and checked exceptions (which have no TypeScript equivalent). Plan manual review for any code involving concurrency, reflection, or complex type hierarchies."
+  - question: "What AI tool is best for React/AngularJS to modern React migration?"
+    answer: "Claude and ChatGPT handle AngularJS-to-React migrations most effectively when you provide the source component and describe the target pattern. Both tools translate controllers and directives to functional React components with hooks reliably. For class-component-to-hooks migrations within React, GitHub Copilot works well inside your IDE. The hardest part is AngularJS's two-way binding — AI translates the syntax but you need to verify that state management behavior matches. Test every migrated component against your existing E2E test suite before considering it done."
 imageHint: "engineer reviewing legacy code alongside AI-refactored version in split screen"
 ---
 
 You inherited a 200,000-line Python 2.7 codebase. The company runs on it. It hasn't been touched in four years. And someone just told you that the server it runs on hits end-of-life in six months.
 
 This is the migration nightmare every engineering team dreads: a deadline, a tangled codebase, and no [documentation](/blog/writing-better-docs-with-ai/). The old approach was to lock a senior engineer in a room for months and hope for the best. The new approach uses AI to do the mechanical work — and it changes the calculus entirely.
+
+## Migration coverage: what AI handles today
+
+Before reading further, confirm your migration type is in scope. AI tools handle these paths reliably:
+
+| Migration | AI support | Notes |
+|---|---|---|
+| Python 2 → Python 3 | ✓ Reliable | Syntax and stdlib changes are mechanical; behavioral edge cases need review |
+| JavaScript → TypeScript | ✓ Reliable | Type inference is good; complex generics need human review |
+| Java → Kotlin | ✓ Reliable | IntelliJ's built-in converter + AI cleanup works well |
+| AngularJS → React | ✓ Good | Two-way binding logic needs verification |
+| React class → React hooks | ✓ Reliable | One of AI's strongest migration paths |
+| PHP → Node.js | ~ Partial | Works for isolated modules; architectural decisions are manual |
+| Java → TypeScript | ~ Partial | Checked exceptions and generics require significant review |
+| Monolith → microservices | ✗ Needs human design | AI assists with code extraction, not architecture decisions |
+
+If your migration is in the top five rows, AI will handle the bulk of the mechanical work. If it is in the bottom three, AI still saves significant time but expect more human decision-making at every step.
 
 ## Why Migrations Are So Painful
 
@@ -115,6 +136,18 @@ const UserProfile = ({ id }) => {
 ```
 
 That's idiomatic. It's not just translated — it's rewritten in the style of the target.
+
+### Java→Kotlin: the fastest-growing migration path
+
+Java-to-Kotlin migrations have become one of the most common AI migration jobs in backend and Android development. Kotlin is interoperable with Java (they run on the same JVM), which means you can migrate incrementally — one file at a time — without breaking the rest of the codebase.
+
+AI handles this migration particularly well. Data classes collapse verbose Java POJOs to a single line. Null safety is added explicitly by the AI because Kotlin requires it. Extension functions replace static utility classes. Lambdas and higher-order functions replace anonymous inner classes.
+
+Prompt for Java-to-Kotlin file conversion:
+
+> "Convert this Java class to idiomatic Kotlin. Use data classes where appropriate, replace Optional with nullable types, convert static methods to companion objects or top-level functions, and add null safety annotations where the original code does not check for null. Do not change the method signatures that form part of the public API."
+
+IntelliJ IDEA has a built-in Java-to-Kotlin converter, but it produces literal translations that still look like Java. Running AI cleanup on the IntelliJ output produces code that actually looks like Kotlin.
 
 ## Which AI Tool to Use for Code Migration
 
@@ -252,6 +285,7 @@ The goal isn't to automate the entire migration. It's to change the economics of
 
 ## Related reads:
 
+- [AI Code Generation Tools](/blog/ai-code-generation-tools)
 - [AI Pair Programming](/blog/ai-pair-programming)
 - [AI Debugging Guide](/blog/ai-debugging-guide)
 - [AI Test Generation](/blog/ai-test-generation)
