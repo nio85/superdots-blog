@@ -201,7 +201,7 @@ Focus on early warning, not last-minute saves. By the time a customer says they 
 
 **Related reads:**
 
-- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis) — Turn support conversations and survey data into retention insights.
+- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis/) — Turn support conversations and survey data into retention insights.
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot) — Resolve issues faster so they do not become churn drivers.
 - [AI Sales Forecasting](/blog/ai-sales-forecasting) — Use the same data-driven approach to predict revenue growth.
 

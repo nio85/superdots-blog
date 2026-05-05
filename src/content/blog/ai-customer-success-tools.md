@@ -228,7 +228,7 @@ For more on the proactive side of retention, [AI Customer Retention](/blog/ai-cu
 
 Customer success doesn't operate in isolation. Health scores improve when you feed them richer signals. A few related capabilities worth building alongside your CS platform:
 
-**Customer feedback analysis** gives you qualitative signal to complement the behavioral data. If a customer's NPS drops from 8 to 5, you need to know why — not just that it happened. [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis) covers how to analyze feedback at scale.
+**Customer feedback analysis** gives you qualitative signal to complement the behavioral data. If a customer's NPS drops from 8 to 5, you need to know why — not just that it happened. [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis/) covers how to analyze feedback at scale.
 
 **Customer journey mapping** helps you identify where customers typically get stuck or disengage, so you can build proactive playbooks around those moments. [AI Customer Journey Mapping](/blog/ai-customer-journey-mapping) explains how AI tools approach this.
 

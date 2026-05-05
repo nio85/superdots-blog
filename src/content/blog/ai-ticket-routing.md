@@ -172,5 +172,5 @@ Here is what to do next:
 
 - [Best AI Help Desk Software](/blog/ai-help-desk-software/) — The full platform comparison: how AI triages, routes, and resolves tickets end-to-end.
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot) — Handle common questions before they become tickets.
-- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis) — Turn your ticket data into actionable product insights.
+- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis/) — Turn your ticket data into actionable product insights.
 - [AI Automation Guide](/blog/ai-automation-guide) — The broader playbook for automating repetitive support and ops work.

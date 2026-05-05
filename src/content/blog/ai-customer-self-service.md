@@ -58,7 +58,7 @@ Technical issues that follow a diagnostic pattern ("Is the red light on? Yes. Ha
 
 ### After-hours support
 
-Everything your team would have resolved during business hours anyway — now resolved at 2am, without making the customer wait. This alone can move your [customer satisfaction scores](/blog/ai-customer-feedback-analysis) meaningfully, because response time is one of the biggest satisfaction drivers.
+Everything your team would have resolved during business hours anyway — now resolved at 2am, without making the customer wait. This alone can move your [customer satisfaction scores](/blog/ai-customer-feedback-analysis/) meaningfully, because response time is one of the biggest satisfaction drivers.
 
 ## Building Your AI Self-Service Stack
 
