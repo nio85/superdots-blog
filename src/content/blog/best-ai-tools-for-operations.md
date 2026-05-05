@@ -25,7 +25,7 @@ faqs:
   - question: "How much does it cost to build an AI operations stack?"
     answer: "A practical mid-market operations stack might include: Zapier Professional ($73.50/month) for automation, Monday.com Standard (~$14/user/month), Notion Plus ($12/user/month), and possibly a process intelligence or RPA tool at custom pricing. For a 20-person team, expect $400–800/month for a well-configured stack covering workflow automation, project management, and documentation. Enterprise tools like Celonis and UiPath are significantly more expensive and sized for larger organizations. Most teams overspend on tools and underspend on setting them up well — implementation time is the hidden cost."
   - question: "What AI tools do small operations teams (2-5 people) use in 2026?"
-    answer: "Small ops teams of 2-5 people get the most value from Zapier's Starter plan ($29.99/month, 750 tasks/month) for automation and Notion's free or Plus tier for documentation and lightweight project tracking. ClickUp's free tier handles task management without adding another paid tool. Skip enterprise tools (Celonis, UiPath) entirely at this size — they require dedicated implementation resources. The right starting stack: one automation tool plus one connected workspace. Add AI agents (Lindy, $49.99/month) only after at least two reliable automations are running."
+    answer: "Small ops teams (2-5 people) typically run three tools: Zapier's free tier (100 tasks/month) for connecting apps without engineering support, ClickUp's free tier for task tracking and project visibility, and n8n (self-hosted Community edition) for higher-volume automations where Zapier's free cap runs out. Honest constraints: Zapier's free tier works for exploration but hits its limit quickly on anything beyond a few automations; ClickUp's free version is sufficient for teams under 10; n8n requires someone comfortable with a basic Linux server to self-host."
 imageHint: "operations manager reviewing AI automation tools dashboard with workflow diagrams and agent activity panels"
 ---
 
@@ -361,17 +361,17 @@ Airtable bridges the gap between spreadsheets and custom software. It gives oper
 
 ---
 
-## 2026 operations AI stack tiers
+## The 2026 ops AI stack: three tiers
 
-Not every tool on this list belongs in every stack. Here is how we tier them by priority — what to add first, what to add later, and what to skip entirely until you have scale.
+Most operations teams are running the same underlying pattern, whether they recognize it or not. The stack has stratified into three distinct tiers.
 
-**Tier 1 — Must-have.** One workflow automation tool should be running before you add anything else. Zapier is the easiest starting point; Make handles more complex logic at a lower cost per operation; n8n is the best value if you have technical resources and want no task caps. Without solid automation fundamentals, adding AI agents or process intelligence creates fragility instead of leverage.
+The must-have tier — Zapier, Make, n8n — is now table stakes. These tools handle the deterministic layer: predefined triggers, predictable outputs, reliable execution. Any team managing more than a handful of integrated systems needs this foundation in place before adding anything else.
 
-**Tier 2 — High value, add next.** Once automation is running reliably: a project management tool for visibility (Monday.com, Asana, or ClickUp depending on team size) plus a connected workspace for documentation (Notion or Airtable). These compound the value of automation by making work visible and institutional knowledge searchable.
+The nice-to-have tier — Lindy, Bardeen — is where the genuine experimentation is happening. These agents handle the variable layer: emails that do not fit a single routing rule, scheduling that spans multiple stakeholders, data pulled from sources without clean APIs. Most mid-market teams have piloted at least one. Fewer have moved them into production.
 
-**Tier 3 — Nice-to-have.** AI agents (Lindy, Bardeen) are worth piloting after Tier 1 is stable. They cover tasks automation cannot — reading an email and deciding what to do with it, scheduling coordination that requires context. Taskade blends agents with task management for smaller teams wanting a single tool. Gumloop fits AI-native pipelines combining data processing with automation.
+The enterprise-only tier — Celonis, UiPath — is fundamentally different in kind. These tools are not about automating tasks. They reveal how work actually moves through an organization at a systems level. That distinction matters: most teams investigating "process mining" have a workflow automation problem that Make or n8n could resolve at a fraction of the cost.
 
-**Tier 4 — Enterprise only.** Process intelligence tools (Celonis) and RPA platforms (UiPath) require dedicated implementation resources and deliver ROI at scale. For teams under 100 people, defer these until Tiers 1–3 are mature. Buying Celonis before you have solid automation fundamentals is one of the most common and expensive mistakes in ops tooling.
+But the interesting question is not which tier is most sophisticated. It is which tier matches the actual problem. The practical implication for operations managers: before adding any tool, identify which tier the friction point belongs to — then pick the simplest tool in that tier that solves it.
 
 ---
 

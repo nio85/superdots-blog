@@ -86,6 +86,8 @@ Coding agents review pull requests, identify bugs, suggest fixes, and even imple
 
 ### Operations: process automation
 
+[Operations teams](/blog/best-ai-tools-for-operations/) typically run agents on top of a foundation of workflow automation tools — agents handle the variable tasks, automation handles the predictable ones. Together, they cover the full range of what an ops team needs to automate.
+
 Operations agents handle multi-step administrative workflows — invoice processing, vendor onboarding, report generation, and compliance checks.
 
 **What it looks like:** An invoice arrives by email. The agent extracts the data, matches it to a purchase order, flags discrepancies, routes for approval, and enters the data into the [accounting system](/blog/ai-accounting-software/). If anything is off, it creates a ticket for the finance team with specific details about the issue.
