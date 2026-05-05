@@ -162,4 +162,4 @@ Here is what to do next:
 
 The goal is not maximum automation — it is a better experience for the caller. Improving containment rates by even 5-20% can reduce call center costs by 10-30%, according to industry benchmarks.
 
-For more on AI across customer service, explore our guides on [AI customer retention](/blog/ai-customer-retention) and [AI customer feedback analysis](/blog/ai-customer-feedback-analysis). For a complete overview, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).
+For more on AI across customer service, explore our guides on [AI customer retention](/blog/ai-customer-retention) and [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/). For a complete overview, visit our [AI tools for business guide](/blog/ai-tools-for-business-guide).

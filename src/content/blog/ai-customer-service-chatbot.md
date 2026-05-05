@@ -175,7 +175,7 @@ You set up the chatbot. It is live. Now what? Track these metrics to know if it 
 
 **No fallback path.** If your human agents are offline and the bot cannot help, what happens? Design an after-hours flow: collect the customer's question and email, then follow up the next business day.
 
-**Ignoring the data.** Your chatbot generates a goldmine of customer intent data. What are people asking about that is not in your help center? What phrasing do they use that your docs do not match? Feed these insights back into your content and product teams. (See our guide on [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) for a systematic approach.)
+**Ignoring the data.** Your chatbot generates a goldmine of customer intent data. What are people asking about that is not in your help center? What phrasing do they use that your docs do not match? Feed these insights back into your content and product teams. (See our guide on [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/) for a systematic approach.)
 
 **Setting it and forgetting it.** Your product changes. Your policies change. Your customers' questions change. A chatbot that was great three months ago becomes a liability if the content goes stale. Assign someone to own chatbot content the same way someone owns your help center.
 

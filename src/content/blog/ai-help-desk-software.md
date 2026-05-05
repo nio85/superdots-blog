@@ -251,7 +251,7 @@ Establish baselines before enabling AI features. These four metrics are the ones
 
 **Escalation rate:** What percentage of AI-attempted resolutions escalate to a human? A high escalation rate means the AI scope is too wide. Narrow it before expanding.
 
-For a broader view of AI-driven support analytics, see our guide on [AI customer feedback analysis](/blog/ai-customer-feedback-analysis).
+For a broader view of AI-driven support analytics, see our guide on [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/).
 
 ---
 

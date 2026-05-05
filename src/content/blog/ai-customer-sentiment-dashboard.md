@@ -191,7 +191,7 @@ The full dashboard comes later. The insight starts now.
 
 ## Related reads
 
-- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis)
+- [AI Customer Feedback Analysis](/blog/ai-customer-feedback-analysis/)
 - [AI Customer Service Chatbot](/blog/ai-customer-service-chatbot)
 - [AI Data Visualization Tools](/blog/ai-data-visualization-tools)
 

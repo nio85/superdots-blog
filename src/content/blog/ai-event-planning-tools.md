@@ -51,7 +51,7 @@ Modern AI event tools work across three phases:
 
 **During the event.** Real-time attendee matching connects people with shared interests or complementary business goals. AI monitors session attendance and engagement levels, flagging sessions that are over or under capacity. For hybrid events, it balances in-person and virtual experiences so remote attendees are not just watching a livestream in a corner.
 
-**After the event.** Automated analytics compile attendee [feedback](/blog/ai-customer-feedback-analysis), engagement scores, and ROI metrics without anyone manually exporting CSVs and building pivot tables. AI identifies which sessions drove the most engagement, which networking connections led to follow-up meetings, and where attendees dropped off.
+**After the event.** Automated analytics compile attendee [feedback](/blog/ai-customer-feedback-analysis/), engagement scores, and ROI metrics without anyone manually exporting CSVs and building pivot tables. AI identifies which sessions drove the most engagement, which networking connections led to follow-up meetings, and where attendees dropped off.
 
 If you are already using AI for other operational processes, event planning tools plug into those same systems — syncing attendee data with your CRM, [automate event follow-up workflows](/blog/ai-workflow-automation), and updating project management boards automatically.
 

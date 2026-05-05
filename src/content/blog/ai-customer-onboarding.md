@@ -92,7 +92,7 @@ This is where AI earns its keep. Instead of reviewing dashboards hoping to spot 
 - Setup completion rate and pace
 - Login frequency and session depth
 - Feature adoption (especially core features tied to the customer's use case)
-- Support ticket volume and sentiment — the same signals that power an [AI customer feedback analysis](/blog/ai-customer-feedback-analysis) loop
+- Support ticket volume and sentiment — the same signals that power an [AI customer feedback analysis](/blog/ai-customer-feedback-analysis/) loop
 - Stakeholder engagement (is only one person logging in, or is the team adopting?)
 
 When the risk score crosses a threshold, the system alerts your CS team with context: what changed, what the customer has and has not done, and a recommended intervention. Your team acts on specific intelligence, not gut feeling.

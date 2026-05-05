@@ -209,7 +209,7 @@ The AI customer service QA market has matured. Here are the tools teams are usin
 
 **Assembled.** Combines workforce management with quality analytics. Useful if you want QA data and scheduling data in one place — agents' quality scores sit alongside their schedule efficiency metrics. Pricing: contact sales; primarily mid-market and enterprise.
 
-**Qualtrics XM.** Enterprise-grade experience management with AI-driven analytics. Best for large organizations that want to connect QA data with broader [customer experience metrics](/blog/ai-customer-feedback-analysis), NPS, and CSAT at the enterprise level. Pricing: enterprise contact only.
+**Qualtrics XM.** Enterprise-grade experience management with AI-driven analytics. Best for large organizations that want to connect QA data with broader [customer experience metrics](/blog/ai-customer-feedback-analysis/), NPS, and CSAT at the enterprise level. Pricing: enterprise contact only.
 
 What none of the top-ranked competitors will tell you: every tool on this list has a coverage limitation. Observe.AI is voice-first; using it for chat-heavy teams adds friction. Zendesk QA only works within the Zendesk ecosystem. Qualtrics requires a dedicated implementation engagement. Match the tool to your primary channel before evaluating features.
 
