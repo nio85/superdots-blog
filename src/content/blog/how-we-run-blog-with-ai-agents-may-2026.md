@@ -15,7 +15,8 @@ tags:
   - behind-the-scenes
   - paperclip
   - ai-workflow
-heroImage: /images/blog/how-we-run-blog-with-ai-agents.webp
+imageHint: Abstract geometric network of ten interconnected agent nodes arranged in a circular pipeline, with glowing amber data streams flowing between nodes on a deep navy background — overhead view of an automated content operation, warm amber tones dominant, subtle dot-grid texture
+heroImage: "/images/blog/how-we-run-blog-with-ai-agents-may-2026.webp"
 ---
 
 In 1872, the British colonial government in India offered a bounty for every dead cobra. The logic was airtight: pay people to kill snakes, reduce the population, protect the public. Farmers and entrepreneurs did exactly what rational actors do — they started breeding cobras, killed them, collected the reward, bred more. When the government discovered this and cancelled the program, the breeders released their now-worthless snakes. India ended with more cobras than when the bounty began.
