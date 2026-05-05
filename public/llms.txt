@@ -1,31 +1,169 @@
 # Superdots
 > Practical AI for work — guides, insights, opinions, and the real story.
 
-Superdots is a one-person company run by Luca Bartoccini with 9 AI agents, publishing practical content about AI and work from a homelab in Italy.
+Superdots publishes practical, no-fluff content about AI and work for every business function. Run by Luca Bartoccini (founder, editor) with a team of AI agents from a homelab in Italy. 220+ articles across sales, marketing, HR, finance, operations, engineering, legal, customer support, and design.
+
+Our content is AI-assisted and human-edited. We are transparent about this. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable.
 
 ## About
+
 - [About Superdots](https://superdots.sh/about/)
 - [How We Work](https://superdots.sh/how-we-work/)
 - [About Luca Bartoccini](https://superdots.sh/about/luca/)
+- [Editorial Policy](https://superdots.sh/how-we-work/)
 
-## Series
-- [Dot by Dot](https://superdots.sh/series/dot-by-dot/) — Tool guides, how-to walkthroughs, and side-by-side comparisons
-- [Connecting the Dots](https://superdots.sh/series/connecting-the-dots/) — Practical AI + work advice you can apply today
+## Editorial Series
+
+- [Dot by Dot](https://superdots.sh/series/dot-by-dot/) — Step-by-step tool guides, how-to walkthroughs, and side-by-side comparisons for every department
+- [Connecting the Dots](https://superdots.sh/series/connecting-the-dots/) — Practical AI + work workflows you can apply today
 - [The Big Picture](https://superdots.sh/series/the-big-picture/) — Opinion, analysis, and the bigger trends shaping AI and work
-- [Behind the Dots](https://superdots.sh/series/behind-the-dots/) — Behind the scenes at Superdots. Real numbers, real mistakes
+- [Behind the Dots](https://superdots.sh/series/behind-the-dots/) — Behind the scenes at Superdots: real numbers, real mistakes
 
-## Key Content
-- [How We Run a Blog with 9 AI Agents](https://superdots.sh/blog/how-we-run-blog-with-ai-agents/)
-- [AI for Marketing Complete Guide](https://superdots.sh/blog/ai-for-marketing-complete-guide/)
-- [AI for Sales Complete Guide](https://superdots.sh/blog/ai-for-sales-complete-guide/)
-- [AI for HR Guide](https://superdots.sh/blog/ai-for-hr/)
-- [AI for Customer Service Guide](https://superdots.sh/blog/ai-for-customer-service-complete-guide/)
-- [AI Business Automation Guide](https://superdots.sh/blog/ai-automation-for-business-complete-guide/)
+## Complete Department Guides
 
-## Content Approach
-Our content is AI-assisted and human-edited. We are transparent about this process. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable.
+These are the most comprehensive resources on the site — complete guides to AI adoption by business function.
+
+- [AI for Marketing: The Complete Guide](https://superdots.sh/blog/ai-for-marketing-complete-guide/)
+- [AI for Sales: Complete Guide (2026)](https://superdots.sh/blog/ai-for-sales-complete-guide/)
+- [AI for HR: Complete Guide to People Ops](https://superdots.sh/blog/ai-for-hr/)
+- [AI for Customer Service: Complete Guide](https://superdots.sh/blog/ai-for-customer-service-complete-guide/)
+- [AI Business Automation: Complete Guide](https://superdots.sh/blog/ai-automation-for-business-complete-guide/)
+- [AI for Small Business: Tools That Work](https://superdots.sh/blog/ai-for-small-business/)
+- [AI Automation Guide for Non-Technical Teams](https://superdots.sh/blog/ai-automation-guide/)
+
+## Thought Leadership
+
+- [How We Run a Blog with 10 AI Agents](https://superdots.sh/blog/how-we-run-blog-with-ai-agents-may-2026/) — The real story of building Superdots: costs, workflows, what failed
+- [How We Run a Blog with 9 AI Agents](https://superdots.sh/blog/how-we-run-blog-with-ai-agents/) — Original behind-the-scenes: one person, nine AI agents, 160+ articles
+- [Why AI Deployments Fail — What Research Shows](https://superdots.sh/blog/why-ai-deployments-fail/)
+- [The AI Productivity Paradox: Why Companies Spending Billions Aren't Getting More Done](https://superdots.sh/blog/ai-productivity-paradox/)
+- [Why 'AI-First' Means Nothing — And What Companies Actually Winning With AI Have in Common](https://superdots.sh/blog/ai-first-strategy-what-it-really-means/)
+
+## Practical Workflows
+
+Step-by-step guides for implementing AI across business functions.
+
+- [How to Use AI for Cold Email (Most People Have It Backwards)](https://superdots.sh/blog/how-to-use-ai-for-cold-email/)
+- [How to Write a Sales Proposal With AI (That Actually Gets Signed)](https://superdots.sh/blog/how-to-write-sales-proposal-with-ai/)
+- [How to Build an AI Content Marketing Workflow](https://superdots.sh/blog/ai-content-marketing-workflow/)
+- [How to Build an AI Content Calendar for a Small Marketing Team](https://superdots.sh/blog/how-to-build-ai-content-calendar-small-team/)
+- [How to Cut 3 Days From Your Monthly Financial Close With AI](https://superdots.sh/blog/how-to-cut-days-from-month-end-close-with-ai/)
+- [How to Use AI for Performance Reviews (Without Making Them Worse)](https://superdots.sh/blog/how-to-use-ai-for-performance-reviews/)
+- [How to Use AI to Prepare for Difficult Conversations at Work](https://superdots.sh/blog/how-to-use-ai-for-difficult-conversations-at-work/)
+- [How to Build an AI Workflow for Your Design Team](https://superdots.sh/blog/how-to-build-ai-workflow-design-team/)
+- [How to Run AI Code Reviews Without Slowing Your Team Down](https://superdots.sh/blog/how-to-run-ai-code-reviews-without-slowing-team-down/)
+- [How to Use AI for Project Management (Without Buying New Software)](https://superdots.sh/blog/how-to-use-ai-for-project-management/)
+- [How to Use AI to Write Your Weekly Team Updates](https://superdots.sh/blog/ai-weekly-team-updates/)
+
+> Optional
+
+## Sales AI Guides
+
+- [AI for Sales: Complete Guide (2026)](https://superdots.sh/blog/ai-for-sales-complete-guide/)
+- [Best AI CRM Features You Should Actually Use](https://superdots.sh/blog/ai-crm-tools/)
+- [Best AI Cold Outreach Tools (2026)](https://superdots.sh/blog/ai-cold-outreach/)
+- [AI Conversation Intelligence Software (2026)](https://superdots.sh/blog/ai-conversation-intelligence/)
+- [8 AI Competitive Intelligence Tools for Sales Teams (2026)](https://superdots.sh/blog/ai-competitive-intelligence-sales/)
+- [Best AI Battlecard Software: Klue, Crayon & Kompyte (2026)](https://superdots.sh/blog/ai-battlecard-tools-sales-teams/)
+- [AI Deal Intelligence: Catch At-Risk Deals (2026)](https://superdots.sh/blog/ai-deal-intelligence/)
+- [AI Sales Enablement Tools for Small Business](https://superdots.sh/blog/ai-sales-enablement-tools-small-business/)
+- [AI Win/Loss Analysis Tools (2026)](https://superdots.sh/blog/ai-win-loss-analysis-tools/)
+
+## Marketing AI Guides
+
+- [AI for Marketing: The Complete Guide](https://superdots.sh/blog/ai-for-marketing-complete-guide/)
+- [8 Best AI Content Repurposing Tools 2026](https://superdots.sh/blog/ai-content-repurposing-tools/)
+- [AI Brand Monitoring: Track Mentions Fast](https://superdots.sh/blog/ai-brand-monitoring/)
+- [AI Ad Copy Tools That Actually Convert](https://superdots.sh/blog/ai-ad-copy-tools/)
+- [AI A/B Testing Tools in 2026](https://superdots.sh/blog/ai-ab-testing-tools/)
+- [AI Conversion Rate Optimization Tools (2026)](https://superdots.sh/blog/ai-conversion-rate-optimization-tools/)
+- [AI Customer Journey Mapping](https://superdots.sh/blog/ai-customer-journey-mapping/)
+- [Best AI Marketing Automation for Small Business](https://superdots.sh/blog/ai-marketing-automation-small-business/)
+- [How to Create Marketing Content with AI](https://superdots.sh/blog/ai-content-creation/)
+
+## HR AI Guides
+
+- [AI for HR: Complete Guide to People Ops](https://superdots.sh/blog/ai-for-hr/)
+- [AI Employee Onboarding: Cut Ramp Time Fast](https://superdots.sh/blog/ai-employee-onboarding/)
+- [AI Employee Training Programs That Work](https://superdots.sh/blog/ai-employee-training/)
+- [AI for Diversity Hiring: Reduce Bias](https://superdots.sh/blog/ai-diversity-hiring/)
+- [AI Compensation Benchmarking: Salary Data](https://superdots.sh/blog/ai-compensation-benchmarking/)
+- [Best AI Tools for Employee Engagement in 2026](https://superdots.sh/blog/ai-employee-engagement/)
+- [Best AI Employee Handbook Generators (2026)](https://superdots.sh/blog/ai-employee-handbook-generator/)
+- [How to Automate Employee Offboarding with AI](https://superdots.sh/blog/ai-employee-offboarding/)
+- [AI Job Description Generator: Best Tools (2026)](https://superdots.sh/blog/ai-job-description-generator/)
+
+## Finance AI Guides
+
+- [Best AI Accounting Software for Small Teams](https://superdots.sh/blog/ai-accounting-software/)
+- [AI Cash Flow Forecasting: Know Your Position](https://superdots.sh/blog/ai-cash-flow-forecasting/)
+- [Best AI Expense Management Software in 2026](https://superdots.sh/blog/ai-expense-management-software/)
+- [AI Budgeting Tools: Track Team Spending](https://superdots.sh/blog/ai-budgeting-tools/)
+- [AI Data Analysis for Non-Technical Teams](https://superdots.sh/blog/ai-data-analysis-for-non-technical-teams/)
+- [AI Accounts Receivable: Get Paid Faster](https://superdots.sh/blog/ai-accounts-receivable/)
+- [How AI Automates Audit Preparation](https://superdots.sh/blog/ai-audit-preparation/)
+- [AI FP&A Software for Small Business (2026)](https://superdots.sh/blog/ai-fpa-software-small-business/)
+- [AI Customer Lifetime Value Prediction Tools](https://superdots.sh/blog/ai-customer-lifetime-value-prediction-tools/)
+
+## Operations AI Guides
+
+- [AI Business Automation: Complete Guide](https://superdots.sh/blog/ai-automation-for-business-complete-guide/)
+- [AI Agents for Business: How Teams Use Them](https://superdots.sh/blog/ai-agents-for-business/)
+- [AI Business Intelligence Tools (2026)](https://superdots.sh/blog/ai-business-intelligence-tools/)
+- [10 Best AI Data Visualization Tools (2026)](https://superdots.sh/blog/ai-data-visualization-tools/)
+- [How to Automate Data Entry with AI](https://superdots.sh/blog/ai-data-entry-automation/)
+- [AI Data Cleaning Tools: Fix Messy Data Fast](https://superdots.sh/blog/ai-data-cleaning-tools/)
+- [AI for Business Continuity Planning (2026)](https://superdots.sh/blog/ai-business-continuity-plan/)
+- [Best AI Order Management Software for Small Business](https://superdots.sh/blog/ai-order-management-software-small-business/)
+- [AI Fleet Management: Optimize Routes and Costs](https://superdots.sh/blog/ai-fleet-management/)
+
+## Engineering AI Guides
+
+- [Best AI Code Generation Tools for Developers (2026)](https://superdots.sh/blog/ai-code-generation-tools/)
+- [Best AI Code Review Tools (2026)](https://superdots.sh/blog/ai-code-review-tools/)
+- [How to Debug Faster with AI (Step-by-Step)](https://superdots.sh/blog/ai-debugging-guide/)
+- [Best AI DevOps Tools in 2026](https://superdots.sh/blog/ai-devops-tools/)
+- [Best AI Code Migration Tools (2026)](https://superdots.sh/blog/ai-code-migration/)
+- [Best AI API Documentation Tools (2026)](https://superdots.sh/blog/ai-api-documentation/)
+- [Best AI Database Management Tools (2026)](https://superdots.sh/blog/ai-database-management/)
+- [AI Incident Triage for SRE & DevOps Teams (2026)](https://superdots.sh/blog/ai-incident-management/)
+- [Writing Better Technical Docs with AI](https://superdots.sh/blog/writing-better-docs-with-ai/)
+
+## Legal AI Guides
+
+- [Best AI Contract Management Tools (2026)](https://superdots.sh/blog/ai-contract-management/)
+- [AI Contract Review for Non-Lawyers](https://superdots.sh/blog/ai-contract-review-non-lawyers/)
+- [AI Compliance Tools: Top Picks for 2026](https://superdots.sh/blog/ai-compliance-tools/)
+- [Best AI Contract Clause Extraction Tools (2026)](https://superdots.sh/blog/ai-contract-clause-extraction/)
+- [AI eDiscovery Tools: Cut Review Time 60-80%](https://superdots.sh/blog/ai-ediscovery-tools/)
+- [AI GDPR Compliance Tools for Small Business (2026)](https://superdots.sh/blog/ai-gdpr-compliance-tools-small-business/)
+- [AI for Intellectual Property Management](https://superdots.sh/blog/ai-ip-management/)
+- [How AI Automates Legal Billing and Time Tracking](https://superdots.sh/blog/ai-legal-billing/)
+
+## Customer Support AI Guides
+
+- [AI for Customer Service: Complete Guide](https://superdots.sh/blog/ai-for-customer-service-complete-guide/)
+- [Best AI Chatbot Builders in 2026](https://superdots.sh/blog/ai-chatbot-builder/)
+- [Best AI Call Center Software for 2026](https://superdots.sh/blog/ai-call-center-software/)
+- [AI Customer Feedback Analysis: Quick Wins](https://superdots.sh/blog/ai-customer-feedback-analysis/)
+- [Best AI Customer Self-Service Software (2026)](https://superdots.sh/blog/ai-customer-self-service-software/)
+- [AI Customer Retention: Prevent Churn](https://superdots.sh/blog/ai-customer-retention/)
+- [AI Customer Onboarding: Reduce Time-to-Value](https://superdots.sh/blog/ai-customer-onboarding/)
+- [AI Customer Service Quality Assurance (2026)](https://superdots.sh/blog/ai-customer-service-qa/)
+
+## Design AI Guides
+
+- [AI Design Tools for Non-Designers](https://superdots.sh/blog/ai-design-tools-non-designers/)
+- [Best AI Brand Identity Tools in 2026](https://superdots.sh/blog/ai-brand-identity-tools/)
+- [AI Design Handoff: End Dev Back-and-Forth](https://superdots.sh/blog/ai-design-handoff/)
+- [How AI Helps Maintain Design Systems at Scale](https://superdots.sh/blog/ai-design-systems/)
+- [AI Image Generation for Marketing Teams](https://superdots.sh/blog/ai-image-generation-marketing/)
+- [AI Color Palette Generators for Branding](https://superdots.sh/blog/ai-color-palette-generator/)
+- [AI Logo Design: Brand Identity Guide](https://superdots.sh/blog/ai-logo-design/)
+- [Best AI Video Editing Tools for Non-Editors](https://superdots.sh/blog/best-ai-video-editing-tools/)
 
 ## Contact
+
 - Founder: Luca Bartoccini
 - Email: luca@superdots.sh
 - Site: https://superdots.sh
