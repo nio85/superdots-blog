@@ -72,7 +72,11 @@
           "- Articles/queries previously flagged",
           "- Interventions tried + outcomes (if recorded)",
           "",
-          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)"
+          "Set task to done. (Even with degraded recall, this step's job is to surface what history we have — empty is OK.)",
+          "",
+          "## After completing this step",
+          "1. Set this task to `done`.",
+          "2. Transition `gather_data` from `blocked` → `todo`. (Same agent — no @mention needed; you'll see it in your next heartbeat.)"
         ]
       },
       {
@@ -286,7 +290,6 @@
           "",
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
-          "# Replace <last-week-memory-id> with ID from read_history. 'good' = predictions held, 'neutral' = mixed, 'negative' = predictions wrong / regressions.",
           "node scripts/tools/pipeline-memory.mjs update-outcome-latest weekly-search-strategy good  # auto-finds prior run, idempotent",
           "```",
           "",

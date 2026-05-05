@@ -296,7 +296,6 @@
           "",
           "```bash",
           "cd /home/luca/superdots-blog && source .env",
-          "# Replace <yesterday-memory-id> with the actual ID. Use 'good' if predictions held, 'neutral' if mixed, 'negative' if priorities slipped.",
           "node scripts/tools/pipeline-memory.mjs update-outcome-latest daily-coordination-digest good  # auto-finds prior run, idempotent",
           "```",
           "",

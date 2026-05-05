@@ -215,7 +215,6 @@
           "First, update LAST WEEK's memory outcome based on what you observed this run (link from [{{read_history.identifier}}] memory ID). Use one of: `good` (predictions held, no surprises), `neutral` (mixed), `negative` (regressions, recurring issues unresolved):",
           "",
           "```bash",
-          "# Replace <last-week-memory-id> with the ID from read_history",
           "node scripts/tools/pipeline-memory.mjs update-outcome-latest weekly-infrastructure-health good  # auto-finds prior run, idempotent",
           "```",
           "",

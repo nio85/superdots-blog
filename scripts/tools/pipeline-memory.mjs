@@ -362,7 +362,9 @@ async function cmdUpdateOutcomeLatest(slug, newOutcome) {
 
   // Don't update if its outcome is already non-pending (already evaluated by a prior run)
   const currentOutcome = (target.tags || []).find((t) => t.startsWith('outcome:'));
-  if (currentOutcome && currentOutcome !== 'outcome:pending') {
+  // Skip if already evaluated. Treat 'outcome:' (empty) and 'outcome:pending' as still-pending.
+  const evaluatedOutcomes = new Set(['outcome:good', 'outcome:neutral', 'outcome:negative']);
+  if (currentOutcome && evaluatedOutcomes.has(currentOutcome)) {
     console.log(`Most recent memory ${target.id} already has ${currentOutcome} — skipping update (already evaluated).`);
     return;
   }
