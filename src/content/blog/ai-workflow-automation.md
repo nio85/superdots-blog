@@ -242,6 +242,6 @@ Once your first workflow is running smoothly, expand systematically:
 3. **Add monitoring dashboards** — track execution counts, error rates, and time saved
 4. **Share templates across teams** — a workflow that works for one team's tickets probably works for another's
 
-For a broader guide to AI automation, see our [AI automation guide](/blog/ai-automation-guide/). For AI-powered process discovery, see [AI process mining](/blog/ai-process-mining/). For a complete overview of the operations tool stack — from project management to supply chain — see our guide to the [best AI tools for operations](/blog/best-ai-tools-for-operations/).
+For a broader guide to AI automation, see our [AI automation guide](/blog/ai-automation-guide/). For AI-powered process discovery, see [AI process mining](/blog/ai-process-mining/). For a complete overview of the operations tool stack — from project management to supply chain — see our guide to the [best AI tools for operations teams](/blog/best-ai-tools-for-operations/).
 
 Start with one workflow this week. Automate the task you've been doing manually for too long. The ROI is immediate, and the learning compound — every workflow you build makes the next one easier.
