@@ -27,7 +27,11 @@ faqs:
 imageHint: "lawyer reviewing extracted contract clauses in structured table on screen"
 ---
 
-**AI contract clause extraction** is the automated identification and retrieval of specific contractual terms — indemnification obligations, termination rights, liability caps — from legal documents using natural language processing. The leading platforms process a standard contract in 30-90 seconds; the same extraction takes an attorney 30-60 minutes by hand.
+:::callout
+**What is AI contract clause extraction?**
+
+AI contract clause extraction is the automated identification and retrieval of specific contractual terms — indemnification obligations, termination rights, liability caps — from legal documents using natural language processing. The leading platforms process a standard contract in 30-90 seconds; the same extraction takes an attorney 30-60 minutes by hand.
+:::
 
 Your general counsel asks a simple question: "Do any of our vendor contracts let the vendor assign the agreement without our consent?"
 
@@ -37,7 +41,7 @@ AI clause extraction compresses that to an afternoon. The leading tools for this
 
 Here is exactly how it works, what it does well, and where you still need human judgment.
 
-## How the Four Leading Tools Compare
+## How Do the Four Leading Tools Compare?
 
 The four platforms most commonly deployed for clause extraction take fundamentally different technical approaches — which determines what they handle well and where they fall short.
 
@@ -52,7 +56,7 @@ None of these tools publish a public rate card. All four require a demo and a cu
 
 **Amendment clauses: what to expect.** Kira and Luminance handle amendment extraction as a core due diligence feature — they can pull clause language from an original agreement and every subsequent amendment, letting you trace how specific terms changed across the contract lifecycle. Ironclad handles amendments through CLM workflow versioning: amendments appear as new document versions, with clause changes visible through comparison views rather than as independently extracted data. Lexion (now part of DocuSign CLM) tracks amendments as version-controlled documents with side-by-side comparison.
 
-## What Clause Extraction Actually Does
+## What Does AI Clause Extraction Actually Do?
 
 Clause extraction is not keyword search. Searching a contract for the word "termination" finds every time the word appears — in headings, definitions, cross-references, and actual termination provisions alike. That is noise.
 
@@ -76,7 +80,7 @@ A well-trained model recognizes indemnification language regardless of how it is
 
 The AI pulls the relevant text from each identified clause and stores it in a structured format — a row in a table, a field in a database, a card in a review interface. The output is a normalized view of clause language across all your contracts, ready to compare, search, and analyze.
 
-## The Clauses AI Handles Best
+## Which Clauses Does AI Extract Best?
 
 ### Indemnification clauses
 
@@ -118,7 +122,7 @@ Force majeure provisions got serious attention after 2020. The question is what 
 
 AI identifies whether a force majeure clause exists, extracts the triggering events, and flags contracts where the clause is absent or unusually narrow. For supply-dependent businesses, knowing which vendor contracts have enforceable force majeure provisions is material risk information.
 
-## What the Output Looks Like
+## What Does the Clause Extraction Output Look Like?
 
 The practical output of clause extraction is a structured data layer on top of your contracts. Depending on the tool, you see this as:
 
@@ -166,7 +170,7 @@ The extraction is not the end — it is the beginning of better decision-making.
 - Audit compliance with company-wide contractual obligations
 - Identify where you carry more liability exposure than you realized
 
-## Where Human Judgment Still Matters
+## Where Does Human Judgment Still Matter?
 
 AI extraction handles the mechanical work accurately. It does not handle the judgment work.
 
