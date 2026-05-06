@@ -3,7 +3,7 @@
  * Send Daily Coordination Digest email — branded template.
  *
  * Used by the Daily Coordination Digest Pipeline (Program Manager, weekday 18:00).
- * Reads markdown content from a file (typically docs/daily-status.md) and sends
+ * Reads markdown content from a file (typically /tmp/coord-digest-YYYY-MM-DD-XXXXXX.md from the Coord Digest pipeline) and sends
  * a branded HTML email matching other Superdots internal mails (daily summary,
  * weekly recap, etc.).
  *
