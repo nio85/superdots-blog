@@ -180,7 +180,7 @@ Individual QA scores tell you about one conversation. Aggregated QA data tells y
 
 ### Product and process issues
 
-When AI customer service QA scores drop for a specific product or topic, it often signals a product issue — not an agent issue. If every agent struggles with questions about your new billing structure, the problem is the billing structure, not the agents. Use your [AI customer service chatbot](/blog/ai-customer-service-chatbot) data alongside QA trends to see if automated channels are struggling with the same topics.
+When AI customer service QA scores drop for a specific product or topic, it often signals a product issue — not an agent issue. If every agent struggles with questions about your new billing structure, the problem is the billing structure, not the agents. Use your [AI customer service chatbot](/blog/ai-customer-service-chatbot) data alongside QA trends to see if automated channels are struggling with the same topics. Topics that consistently underperform across both channels are strong candidates for a structured [AI customer self-service system](/blog/ai-customer-self-service/) — resolving them before they reach the agent queue entirely.
 
 ### Staffing and scheduling patterns
 

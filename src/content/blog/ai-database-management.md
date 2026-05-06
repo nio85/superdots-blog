@@ -133,6 +133,8 @@ AI can analyze your schema and suggest structural improvements:
 - **Missing constraints.** Foreign keys that should exist, NOT NULL constraints that would prevent data quality issues.
 - **Partitioning candidates.** Tables large enough to benefit from partitioning, with suggestions for the partition key based on query patterns.
 
+For teams dealing with inconsistent imported data, [AI data cleaning tools](/blog/ai-data-cleaning-tools/) can automate format standardization before it reaches the database.
+
 ## AI for Database Monitoring and Anomaly Detection
 
 Monitoring catches problems. Anomaly detection catches problems before users notice them.
