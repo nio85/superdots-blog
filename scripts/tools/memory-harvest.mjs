@@ -5,22 +5,30 @@
  * Usage:
  *   node memory-harvest.mjs harvest                          # Harvest current agent's memory
  *   node memory-harvest.mjs harvest --agent-name "CEO" --agent-id <uuid>
- *   node memory-harvest.mjs recall "<query>"                 # Semantic search (cross-agent, default excludes self)
+ *   node memory-harvest.mjs recall "<query>"                 # Semantic search (cross-agent, excludes self)
  *   node memory-harvest.mjs recall "<query>" --include-self  # Include own memories too
  *   node memory-harvest.mjs search "<query>"                 # Keyword search (cross-agent)
  *   node memory-harvest.mjs shared-insights                  # Recent insights from all agents
- *   node memory-harvest.mjs cleanup                          # Delete expired entries
+ *   node memory-harvest.mjs cleanup                          # Delete expired entries (DB read + API delete)
+ *   node memory-harvest.mjs backfill-ttl                     # One-off: apply TTL to legacy entries lacking it
+ *   node memory-harvest.mjs cleanup-deleted-agents           # One-off: purge memories of decommissioned agents
  *   node memory-harvest.mjs health                           # Vector memory stats
  *
- * Hardening (Phase 1.5.B Step 2.A — 2026-05-06):
- *   - TTL defaults: tacit=90d, insight=180d, decision=NULL, tag:evergreen=NULL
- *   - Recall filters: similarity ≥ 0.55 + exclude self by default
- *   - Harvest filters: skip boilerplate sections (placeholder, < 200 char body, < 2 substantive bullets)
- *   - cleanup command: prune expired entries (run via cron daily)
+ * Hardening v2 (Step 2.B — 2026-05-06):
+ * Future-proof against Paperclip upstream upgrades: zero server patches.
+ * Three server-side gaps are worked around client-side:
+ *
+ *   - semantic()/list() don't return agent_id → fetch own memory IDs separately
+ *     and filter by ID-set membership for `--exclude-self`.
+ *   - PATCH ignores expires_at → harvest re-creates tacit memories via DELETE+POST
+ *     instead of PATCH so TTL is always re-applied from the source content type.
+ *   - GET /memories filters expired server-side → cleanup reads expired IDs via
+ *     direct DB SELECT (read-only, allowed by CLAUDE.md), DELETEs via API.
  */
 
-import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, basename } from 'node:path';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import {
   PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID, AGENTS,
   getPaperclipApiKey, createPaperclipJwt,
@@ -52,8 +60,14 @@ const BOILERPLATE_PATTERNS = [
 const MIN_BODY_LENGTH = 200;
 const MIN_SUBSTANTIVE_BULLETS = 2;
 
-// Recall noise filter
-const MIN_SIMILARITY = 0.55;
+// Recall filters
+const MIN_SIMILARITY = 0.60;
+const API_MAX_LIMIT = 100;  // semantic API hard cap; we always over-fetch this much because
+                            // pgvector IVFFlat with default probes=1 returns fewer rows when
+                            // LIMIT is low — high LIMIT triggers more cluster scans.
+
+// Decommissioned agents — their leftover memories are pruned by cleanup-deleted-agents
+const DELETED_AGENT_NAMES = ['Reddit Ads Specialist'];
 
 // Updated 2026-05-06: GEO Specialist added, PAID_ADS_OPERATOR points to renamed folder
 const AGENT_FOLDERS = {
@@ -111,7 +125,48 @@ async function apiCall(method, path, body, agentId) {
     const text = await res.text().catch(() => '');
     throw new Error(`API ${method} ${path} → ${res.status}: ${text.slice(0, 200)}`);
   }
-  return res.json();
+  if (res.status === 204) return null;
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+// --- DB helper (read-only, peer auth as luca) ---
+// Used to get fields the API doesn't return (agent_id) or rows the API filters out (expired)
+// or to bypass the API's IVFFlat index when its lists≫rows configuration causes low recall.
+// CLAUDE.md rule #2 forbids DB *writes* — reads are allowed.
+
+function dbQuery(sql) {
+  // Pass SQL via stdin; tab-separated. Caller is responsible for ensuring no embedded
+  // newlines/tabs in selected columns (e.g., wrap with regexp_replace if needed).
+  const stdout = execFileSync(
+    'psql',
+    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-F', '\t', '-X', '-q'],
+    { input: sql, encoding: 'utf-8', maxBuffer: 16 * 1024 * 1024 },
+  );
+  return stdout.trim().split('\n').filter(Boolean).map((line) => line.split('\t'));
+}
+
+// Returns an array of objects parsed from psql's row_to_json() output.
+// Use this when selected columns may contain newlines/tabs (e.g., memory content).
+function dbQueryJson(sql) {
+  const stdout = execFileSync(
+    'psql',
+    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-X', '-q'],
+    { input: sql, encoding: 'utf-8', maxBuffer: 16 * 1024 * 1024 },
+  );
+  return stdout.split('\n').filter((line) => line.trim().startsWith('{')).map((line) => JSON.parse(line));
+}
+
+async function ollamaEmbed(text) {
+  const res = await fetch('http://localhost:11434/api/embeddings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'nomic-embed-text', prompt: text }),
+  });
+  if (!res.ok) throw new Error(`Ollama embed failed: ${res.status}`);
+  const data = await res.json();
+  if (!Array.isArray(data.embedding)) throw new Error('Ollama returned no embedding');
+  return data.embedding;
 }
 
 // --- TTL ---
@@ -258,17 +313,13 @@ async function harvest(agentId, agentName) {
 
   console.log(`Harvesting memory for ${agentName} (${agentId})...`);
 
-  let existingSourceFiles = new Set();
-  let existingSourceMap = new Map();
+  let existingSourceMap = new Map();  // source_file -> id
   try {
     const existing = await apiCall('GET',
       `/api/companies/${companyId}/memories?agent=${agentId}&limit=200`,
       null, agentId);
     for (const m of (existing || [])) {
-      if (m.source_file) {
-        existingSourceFiles.add(m.source_file);
-        existingSourceMap.set(m.source_file, m.id);
-      }
+      if (m.source_file) existingSourceMap.set(m.source_file, m.id);
     }
   } catch {}
 
@@ -284,7 +335,7 @@ async function harvest(agentId, agentName) {
         contentType: 'tacit',
         tags: ['memory-md', s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50)],
         sourceFile: sourceKey,
-        update: existingSourceFiles.has(sourceKey),
+        replaceExistingId: existingSourceMap.get(sourceKey) ?? null,
       });
     }
   }
@@ -292,23 +343,25 @@ async function harvest(agentId, agentName) {
   const dailyNotes = getRecentDailyNotes(agentHome);
   const noteInsights = extractDailyNoteInsights(dailyNotes);
   for (const n of noteInsights) {
-    if (existingSourceFiles.has(n.sourceFile)) continue;
+    if (existingSourceMap.has(n.sourceFile)) continue;  // daily notes are immutable; skip if exists
     memories.push({
       content: `[${agentName}] ${n.title}\n\n${n.content}`,
       contentType: n.contentType,
       tags: n.tags,
       sourceFile: n.sourceFile,
+      replaceExistingId: null,
     });
   }
 
   const decisions = extractDecisions(agentHome);
   for (const d of decisions) {
-    if (existingSourceFiles.has(d.sourceFile)) continue;
+    if (existingSourceMap.has(d.sourceFile)) continue;  // decisions are immutable; skip if exists
     memories.push({
       content: `[${agentName}] ${d.title}\n\n${d.content}`,
       contentType: d.contentType,
       tags: d.tags,
       sourceFile: d.sourceFile,
+      replaceExistingId: null,
     });
   }
 
@@ -317,18 +370,25 @@ async function harvest(agentId, agentName) {
     return;
   }
 
-  let created = 0, updated = 0, failed = 0;
+  let created = 0, replaced = 0, failed = 0;
   for (const mem of memories) {
     try {
       const expires_at = computeExpiresAt(mem.contentType, mem.tags);
-      if (mem.update && existingSourceMap.has(mem.sourceFile)) {
-        const existingId = existingSourceMap.get(mem.sourceFile);
-        await apiCall('PATCH',
-          `/api/companies/${companyId}/memories/${existingId}`,
-          { content: mem.content, tags: mem.tags, ...(expires_at ? { expires_at } : {}) }, agentId);
-        updated++;
-        continue;
+
+      // Replace path: PATCH ignores expires_at server-side, so DELETE old + POST new
+      // ensures TTL is always re-applied from content_type policy.
+      if (mem.replaceExistingId) {
+        try {
+          await apiCall('DELETE', `/api/companies/${companyId}/memories/${mem.replaceExistingId}`, null, agentId);
+        } catch (delErr) {
+          // Non-fatal: if DELETE fails (e.g. memory already gone) we still try POST below.
+          if (!String(delErr.message).includes('404')) {
+            console.error(`  WARN: pre-delete failed for ${mem.sourceFile}: ${delErr.message}`);
+          }
+        }
+        replaced++;
       }
+
       await apiCall('POST', `/api/companies/${companyId}/memories`, {
         agentId,
         content: mem.content,
@@ -337,16 +397,26 @@ async function harvest(agentId, agentName) {
         source_file: mem.sourceFile,
         ...(expires_at ? { expires_at } : {}),
       }, agentId);
-      created++;
+
+      if (!mem.replaceExistingId) created++;
     } catch (err) {
-      console.error(`  FAILED: ${err.message}`);
+      console.error(`  FAILED ${mem.sourceFile}: ${err.message}`);
       failed++;
     }
   }
 
-  console.log(`Harvest: ${created} created, ${updated} updated, ${failed} failed`);
+  console.log(`Harvest: ${created} created, ${replaced} replaced (delete+post), ${failed} failed`);
 }
 
+// Direct-DB semantic recall. Bypasses the Paperclip API for one specific reason:
+// the IVFFlat index in agent_memories was created with lists=50 — fine when the corpus
+// is large, but with 46-1,000 rows it returns just 1-4 candidates per query (low recall,
+// confirmed by Postgres' own NOTICE on REINDEX). Brute-force scan via Ollama embedding
+// is fast enough for any corpus we'll have for the next year, and it returns agent_id
+// (which the API SELECT clause omits) so exclude-self becomes trivial.
+//
+// Future-proof: if Paperclip ships a fix (probes setting, lists=auto, HNSW migration),
+// nothing breaks — we just keep getting correct results.
 async function recall(query, opts = {}) {
   const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
   const agentId = opts.agentId || process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
@@ -355,40 +425,61 @@ async function recall(query, opts = {}) {
 
   console.log(`Semantic search: "${query}"\n`);
 
-  const result = await apiCall('POST', `/api/companies/${companyId}/memories/semantic`, {
-    query,
-    limit: limit * 2,  // overfetch to compensate for client-side filter
-  }, agentId);
-
-  if (result.error) {
-    console.error(`Error: ${result.error}`);
+  const embedding = await ollamaEmbed(query).catch((err) => {
+    console.error(`Embedding failed (Ollama down?): ${err.message}`);
     process.exit(3);
-  }
+  });
+  const embStr = `[${embedding.join(',')}]`;
 
-  const raw = Array.isArray(result.results) ? result.results : [];
-  if (raw.length === 0) {
+  const selfClause = includeSelf ? '' : `AND agent_id <> '${agentId}'::uuid`;
+
+  // SET LOCAL enable_indexscan=off forces a seq scan, bypassing IVFFlat's low-recall
+  // ANN approximation. With <1k rows, brute-force takes <50ms. JSON output is used
+  // because content may contain newlines/tabs that break tab-separated parsing.
+  const rows = dbQueryJson(`
+    BEGIN;
+    SET LOCAL enable_indexscan = OFF;
+    SET LOCAL enable_bitmapscan = OFF;
+    SELECT row_to_json(t) FROM (
+      SELECT
+        id::text AS id,
+        agent_id::text AS agent_id,
+        agent_name,
+        content,
+        content_type,
+        to_char(created_at, 'YYYY-MM-DD') AS created,
+        ROUND((1 - (embedding <=> '${embStr}'::vector))::numeric, 4) AS similarity
+      FROM agent_memories
+      WHERE company_id = '${companyId}'::uuid
+        AND embedding IS NOT NULL
+        AND (expires_at IS NULL OR expires_at > NOW())
+        ${selfClause}
+      ORDER BY embedding <=> '${embStr}'::vector
+      LIMIT ${API_MAX_LIMIT}
+    ) t;
+    COMMIT;
+  `);
+
+  if (rows.length === 0) {
     console.log('No matching memories found.');
     return;
   }
 
-  // Apply filters: similarity threshold + exclude-self by default
-  const filtered = raw.filter((m) => {
-    if (typeof m.similarity === 'number' && m.similarity < MIN_SIMILARITY) return false;
-    if (!includeSelf && m.agent_id === agentId) return false;
-    return true;
-  }).slice(0, limit);
+  const filtered = rows
+    .filter((m) => Number(m.similarity) >= MIN_SIMILARITY)
+    .slice(0, limit);
 
   if (filtered.length === 0) {
-    console.log(`No high-confidence matches (threshold ≥ ${MIN_SIMILARITY}, exclude-self=${!includeSelf}).`);
-    console.log(`API returned ${raw.length} candidates below threshold or from your own memory.`);
+    console.log(`No high-confidence matches (similarity ≥ ${MIN_SIMILARITY}, exclude-self=${!includeSelf}).`);
+    console.log(`Scanned ${rows.length} candidates; all below threshold.`);
     return;
   }
 
-  for (const mem of filtered) {
-    const sim = typeof mem.similarity === 'number' ? `(${(mem.similarity * 100).toFixed(1)}%)` : '';
-    console.log(`--- ${mem.agent_name} ${sim} [${mem.content_type}] ${mem.created_at?.slice(0, 10) || ''}`);
-    console.log(mem.content.slice(0, 300));
-    if (mem.content.length > 300) console.log('  ...');
+  for (const m of filtered) {
+    const sim = Number(m.similarity);
+    console.log(`--- ${m.agent_name} (${(sim * 100).toFixed(1)}%) [${m.content_type}] ${m.created}`);
+    console.log(m.content.slice(0, 300));
+    if (m.content.length > 300) console.log('  ...');
     console.log();
   }
 }
@@ -453,36 +544,141 @@ async function sharedInsights(opts = {}) {
   }
 }
 
+// Reads expired entries directly from DB (API filters them out). DELETEs via API.
 async function cleanup() {
   const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
-  const agentId = process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
 
   console.log('Memory cleanup: prune expired entries\n');
 
-  const all = await apiCall('GET',
-    `/api/companies/${companyId}/memories?limit=500`,
-    null, agentId);
+  const rows = dbQuery(`
+    SELECT id::text, agent_id::text, agent_name, expires_at::text
+    FROM agent_memories
+    WHERE company_id = '${companyId}'::uuid
+      AND expires_at IS NOT NULL
+      AND expires_at < NOW()
+    ORDER BY expires_at ASC
+  `);
 
-  if (!all || all.length === 0) {
-    console.log('No memories found.');
-    return;
-  }
-
-  const now = Date.now();
-  const expired = all.filter((m) => m.expires_at && new Date(m.expires_at).getTime() < now);
-  console.log(`Total: ${all.length} | Expired: ${expired.length}`);
+  console.log(`Expired entries: ${rows.length}`);
+  if (rows.length === 0) return;
 
   let deleted = 0, failed = 0;
-  for (const m of expired) {
+  for (const [id, agentId, agentName, expiredAt] of rows) {
     try {
-      await apiCall('DELETE', `/api/companies/${companyId}/memories/${m.id}`, null, m.agent_id);
+      await apiCall('DELETE', `/api/companies/${companyId}/memories/${id}`, null, agentId);
       deleted++;
+      console.log(`  ✓ ${agentName} ${id} (expired ${expiredAt.slice(0, 10)})`);
     } catch (err) {
-      console.error(`  FAILED to delete ${m.id}: ${err.message}`);
+      console.error(`  ✗ ${agentName} ${id}: ${err.message}`);
       failed++;
     }
   }
-  console.log(`Cleanup: ${deleted} expired memories deleted, ${failed} failed`);
+  console.log(`\nCleanup: ${deleted} deleted, ${failed} failed`);
+}
+
+// One-off: apply TTL to legacy entries that have NULL expires_at.
+// Strategy: read entry from DB, DELETE via API, POST same content with TTL applied.
+// Skips entries with evergreen tags or content_type=decision (no TTL by policy).
+async function backfillTtl(opts = {}) {
+  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const dryRun = opts.dryRun || false;
+
+  console.log(`Backfill TTL on legacy memories${dryRun ? ' [DRY RUN]' : ''}\n`);
+
+  // The API doesn't expose GET /memories/:id, so read full content from DB
+  // directly (read-only, allowed). Use JSON to handle newlines in content.
+  const rows = dbQueryJson(`
+    SELECT row_to_json(t) FROM (
+      SELECT
+        id::text AS id,
+        agent_id::text AS agent_id,
+        agent_name,
+        content,
+        content_type,
+        COALESCE(tags, ARRAY[]::text[]) AS tags,
+        source_file
+      FROM agent_memories
+      WHERE company_id = '${companyId}'::uuid
+        AND expires_at IS NULL
+        AND content_type IN ('tacit', 'insight')
+      ORDER BY created_at ASC
+    ) t
+  `);
+
+  console.log(`Candidates without TTL: ${rows.length}`);
+  if (rows.length === 0) return;
+
+  let backfilled = 0, skipped = 0, failed = 0;
+  for (const r of rows) {
+    const tags = Array.isArray(r.tags) ? r.tags : [];
+    if (tags.some((t) => EVERGREEN_TAGS.has(String(t).toLowerCase()))) {
+      skipped++;
+      continue;
+    }
+    const expires_at = computeExpiresAt(r.content_type, tags);
+    if (!expires_at) { skipped++; continue; }
+
+    if (dryRun) {
+      console.log(`  [dry] ${r.agent_name} ${r.id} (${r.content_type}) → expires ${expires_at.slice(0, 10)}`);
+      backfilled++;
+      continue;
+    }
+
+    try {
+      await apiCall('DELETE', `/api/companies/${companyId}/memories/${r.id}`, null, r.agent_id);
+      await apiCall('POST', `/api/companies/${companyId}/memories`, {
+        agentId: r.agent_id,
+        content: r.content,
+        content_type: r.content_type,
+        tags,
+        source_file: r.source_file,
+        expires_at,
+      }, r.agent_id);
+
+      backfilled++;
+      console.log(`  ✓ ${r.agent_name} ${r.id} → expires ${expires_at.slice(0, 10)}`);
+    } catch (err) {
+      console.error(`  ✗ ${r.agent_name} ${r.id}: ${err.message}`);
+      failed++;
+    }
+  }
+  console.log(`\nBackfill: ${backfilled} updated, ${skipped} skipped (evergreen/decision), ${failed} failed`);
+}
+
+// One-off: purge memories of decommissioned agents (DELETED_AGENT_NAMES).
+async function cleanupDeletedAgents(opts = {}) {
+  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const dryRun = opts.dryRun || false;
+
+  console.log(`Cleanup memories of decommissioned agents${dryRun ? ' [DRY RUN]' : ''}: ${DELETED_AGENT_NAMES.join(', ')}\n`);
+
+  const namesList = DELETED_AGENT_NAMES.map((n) => `'${n.replace(/'/g, "''")}'`).join(',');
+  const rows = dbQuery(`
+    SELECT id::text, agent_id::text, agent_name
+    FROM agent_memories
+    WHERE company_id = '${companyId}'::uuid
+      AND agent_name IN (${namesList})
+  `);
+
+  console.log(`Found: ${rows.length}`);
+  if (rows.length === 0) return;
+
+  let deleted = 0, failed = 0;
+  for (const [id, agentId, agentName] of rows) {
+    if (dryRun) {
+      console.log(`  [dry] ${agentName} ${id}`);
+      deleted++;
+      continue;
+    }
+    try {
+      await apiCall('DELETE', `/api/companies/${companyId}/memories/${id}`, null, agentId);
+      deleted++;
+    } catch (err) {
+      console.error(`  ✗ ${agentName} ${id}: ${err.message}`);
+      failed++;
+    }
+  }
+  console.log(`\nDeleted: ${deleted}, failed: ${failed}`);
 }
 
 async function healthCheck() {
@@ -540,20 +736,24 @@ if (!command || command === '--help') {
 memory-harvest — Bridge PARA file memory into Paperclip vector DB
 
 Commands:
-  harvest                Harvest current agent's memory (uses PAPERCLIP_AGENT_ID)
-  harvest --all          Harvest all agents' memories
+  harvest                       Harvest current agent's memory (uses PAPERCLIP_AGENT_ID)
+  harvest --all                 Harvest all agents' memories
   harvest --agent-name "CEO" --agent-id <uuid>
-  recall "<query>"       Semantic search across other agents (excludes own by default, ≥0.55 similarity)
+  recall "<query>"              Semantic search across other agents (excludes own by default)
   recall "<query>" --include-self    Include own memories too
-  search "<query>"       Keyword (BM25) search across all agents
-  shared-insights        Recent insights from all agents (last 7 days)
-  cleanup                Prune expired entries (run nightly)
-  health                 Vector memory statistics
+  search "<query>"              Keyword (BM25) search across all agents
+  shared-insights               Recent insights from all agents (last 7 days)
+  cleanup                       Prune expired entries (DB read + API delete)
+  backfill-ttl [--dry-run]      One-off: apply TTL to legacy entries with NULL expires_at
+  cleanup-deleted-agents [--dry-run]  One-off: purge memories of decommissioned agents
+  health                        Vector memory statistics
 
-Hardening (2026-05-06):
-  - TTL applied at write: tacit=90d, insight=180d, decision=NULL, tag:evergreen=NULL
-  - Recall filters: similarity ≥ 0.55 + exclude-self by default (use --include-self to override)
-  - Harvest filters: skip boilerplate sections (placeholder/short/<2 substantive bullets)
+Hardening v2 (2026-05-06) — future-proof against Paperclip upstream:
+  - Recall via direct DB scan + Ollama embed (bypasses API's low-recall IVFFlat with lists=50)
+  - Exclude-self: native SQL clause on agent_id (DB returns it; API SELECT does not)
+  - TTL re-application: harvest uses DELETE+POST instead of PATCH (PATCH ignores expires_at)
+  - Cleanup expired: reads DB directly (API filters expired rows server-side)
+  - Similarity threshold ≥ ${MIN_SIMILARITY} after full brute-force scan (top ${API_MAX_LIMIT})
 `);
   process.exit(0);
 }
@@ -585,6 +785,10 @@ try {
     await sharedInsights({ days: getFlag('--days') ? Number(getFlag('--days')) : undefined });
   } else if (command === 'cleanup') {
     await cleanup();
+  } else if (command === 'backfill-ttl') {
+    await backfillTtl({ dryRun: hasFlag('--dry-run') });
+  } else if (command === 'cleanup-deleted-agents') {
+    await cleanupDeletedAgents({ dryRun: hasFlag('--dry-run') });
   } else if (command === 'health') {
     await healthCheck();
   } else {
