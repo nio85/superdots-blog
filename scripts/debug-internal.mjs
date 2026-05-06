@@ -84,6 +84,13 @@ async function checkContentPipeline() {
     const issues = await api('GET', `/api/companies/${COMPANY_ID}/issues?q=${encodeURIComponent(`[${today}] Daily content pipeline`)}`);
     const found = Array.isArray(issues) && issues.some(i => i.title === `[${today}] Daily content pipeline`);
     if (found) return ok('content_pipeline', `Today's pipeline task exists`);
+
+    // Fallback: routine ran and completed today (intentional pause — no brief to execute)
+    const PIPELINE_ROUTINE_ID = '02a7ad3c-4b14-498a-8164-02675f099317';
+    const runs = await api('GET', `/api/routines/${PIPELINE_ROUTINE_ID}/runs`);
+    const todayRun = runs.find(r => r.createdAt?.startsWith(today) && r.status === 'completed');
+    if (todayRun) return ok('content_pipeline', 'Routine completed today (no pipeline task created — intentional pause)');
+
     return fail('content_pipeline', `No "[${today}] Daily content pipeline" task found`);
   } catch (e) {
     return fail('content_pipeline', e.message);
@@ -136,6 +143,11 @@ async function checkCronExecution() {
 
   for (const [name, id] of Object.entries(routineIds)) {
     try {
+      const routine = await api('GET', `/api/routines/${id}`);
+      if (routine.status === 'archived' || routine.status === 'paused') {
+        results.push(`${name}: ${routine.status}`);
+        continue;
+      }
       const runs = await api('GET', `/api/routines/${id}/runs`);
       const recent = runs.find(r => r.createdAt?.startsWith(today));
       if (recent) {
@@ -146,8 +158,6 @@ async function checkCronExecution() {
         if (!isWeekday && name === 'Daily Content Pipeline') {
           results.push(`${name}: skipped (weekend)`);
         } else {
-          // Check if the routine is scheduled later today before flagging failure
-          const routine = await api('GET', `/api/routines/${id}`);
           const trigger = routine.triggers?.find(t => t.kind === 'schedule');
           const cronHour = trigger?.cronExpression ? parseInt(trigger.cronExpression.split(' ')[1], 10) : null;
           const currentHour = new Date().getHours();
