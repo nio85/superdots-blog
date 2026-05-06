@@ -37,6 +37,18 @@ const FETCH_TIMEOUT_MS = 30_000;
 const ALLOWED_CONTENT_PREFIXES = ['/tmp/', '/home/luca/superdots-blog/tmp/'];
 const STALE_FILE_MS = 24 * 3600_000;
 
+// TTL policy for pipeline memories (matches memory-harvest.mjs):
+// pipeline writes are always content_type='insight' → 180 days, unless tagged evergreen.
+const INSIGHT_TTL_DAYS = 180;
+const EVERGREEN_TAGS = new Set(['evergreen', 'seed', 'decision']);
+
+function computeExpiresAt(tags) {
+  if (tags && tags.some((t) => EVERGREEN_TAGS.has(String(t).toLowerCase()))) return null;
+  const d = new Date();
+  d.setDate(d.getDate() + INSIGHT_TTL_DAYS);
+  return d.toISOString();
+}
+
 // ----- Helpers -----
 
 function isoWeek(d = new Date()) {
@@ -265,16 +277,20 @@ async function cmdWrite(slug, flags) {
     process.exit(1);
   }
 
+  const expires_at = computeExpiresAt(tags);
+
   const result = await api('POST', `/api/companies/${PAPERCLIP_COMPANY_ID}/memories`, {
     agentId,
     content,
     content_type: 'insight',
     tags,
+    ...(expires_at ? { expires_at } : {}),
   }, agentId);
 
   console.log(`Memory written: ${result.id || '(no id returned)'}`);
   console.log(`Tags: ${tags.join(', ')}`);
   console.log(`Length: ${content.length} chars`);
+  console.log(`Expires: ${expires_at ? expires_at.slice(0, 10) : 'never (evergreen)'}`);
 
   // Detect degraded write: API stores rows with embedding=null when Ollama is down,
   // but those rows are filtered out of future semantic recalls. Surface this.

@@ -112,14 +112,21 @@ function assertUuid(value, fieldName) {
 
 // --- API helpers ---
 
-// boardOnly: forces the PAPERCLIP_API_KEY (board admin) auth path. Used by
-// cleanup-deleted-agents — the deleted agent has no row in agents table, so a JWT
-// minted for its UUID would yield no actor under "authenticated" deployment mode.
+// boardOnly: forces a board-level auth path. Used by cleanup-deleted-agents because
+// the deleted agent has no row in `agents`, so a JWT minted for its UUID would yield
+// no actor under "authenticated" deployment mode. Prefers PAPERCLIP_API_KEY when set;
+// otherwise relies on Paperclip's "local_trusted" mode treating any/no token as board.
+let _boardLocalTrustedWarned = false;
 function getAuth(targetAgentId, { boardOnly = false } = {}) {
   if (boardOnly) {
     const key = process.env.PAPERCLIP_API_KEY;
-    if (!key) throw new Error('boardOnly: PAPERCLIP_API_KEY env var is required for this command');
-    return key;
+    if (key) return key;
+    if (!_boardLocalTrustedWarned) {
+      console.error('  WARN: PAPERCLIP_API_KEY not set — relying on Paperclip local_trusted mode.');
+      console.error('         This will fail in authenticated mode. Set PAPERCLIP_API_KEY for portability.');
+      _boardLocalTrustedWarned = true;
+    }
+    return 'local-trusted-no-key';  // any value works in local_trusted; rejected in authenticated
   }
   const callingAgentId = process.env.PAPERCLIP_AGENT_ID;
   if (targetAgentId && callingAgentId && targetAgentId !== callingAgentId) {
@@ -754,13 +761,6 @@ async function cleanupDeletedAgents(opts = {}) {
 
   console.log(`Found: ${rows.length}`);
   if (rows.length === 0) return;
-
-  // Validate board key up front — fail fast if the env isn't set, instead of
-  // silently falling back to JWT and hitting 401s per-row in authenticated mode.
-  if (!dryRun && !process.env.PAPERCLIP_API_KEY) {
-    console.error('PAPERCLIP_API_KEY env required to delete cross-agent memories. Set it and retry.');
-    process.exit(2);
-  }
 
   let deleted = 0, failed = 0;
   for (const [id, agentId, agentName] of rows) {
