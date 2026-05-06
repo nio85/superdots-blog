@@ -33,9 +33,11 @@ const hour = now.getHours();
 
 // Pipelines to verify. Each entry: { title, expectedDays (array of DOW), expectedHour (when it should have fired) }
 // Title is the parent issue title; we look for `[YYYY-MM-DD] <title>` in today's date.
+// routineTitle: if set, also accept a routine execution issue with this title (status=done) as valid.
+// This handles intentional pauses where the routine fires but the agent skips pipeline creation.
 const PIPELINES = [
   // Existing pipelines
-  { title: 'Daily content pipeline', days: [1, 2, 3, 4, 5], hour: 8 },
+  { title: 'Daily content pipeline', days: [1, 2, 3, 4, 5], hour: 8, routineTitle: 'Daily Content Pipeline' },
   { title: 'Daily SEO Optimization', days: [2, 3, 4, 5], hour: 11 },
   { title: 'Daily Coordination Digest', days: [1, 2, 3, 4, 5], hour: 18 },
   { title: 'Weekly Search Strategy', days: [1], hour: 9 },
@@ -46,16 +48,32 @@ const PIPELINES = [
   { title: 'Weekly Content Gap Analysis', days: [4], hour: 16 },
 ];
 
-async function checkExists(expectedTitle) {
+async function searchIssues(query) {
   const res = await fetch(
-    `${API_URL}/api/companies/${COMPANY_ID}/issues?q=${encodeURIComponent(expectedTitle)}`,
+    `${API_URL}/api/companies/${COMPANY_ID}/issues?q=${encodeURIComponent(query)}`,
     { headers: { 'Authorization': `Bearer ${API_KEY}` } },
   );
   if (!res.ok) {
     throw new Error(`API ${res.status}: ${await res.text()}`);
   }
-  const issues = await res.json();
-  return Array.isArray(issues) && issues.some((i) => i.title.startsWith(expectedTitle.split(']')[0] + ']'));
+  return await res.json();
+}
+
+async function checkExists(expectedTitle, routineTitle) {
+  const issues = await searchIssues(expectedTitle);
+  const found = Array.isArray(issues) && issues.some((i) => i.title.startsWith(expectedTitle.split(']')[0] + ']'));
+  if (found) return 'pipeline';
+
+  // Fallback: check if the routine execution issue exists and completed today
+  // (handles intentional pauses where agent skips pipeline creation)
+  if (routineTitle) {
+    const routineIssues = await searchIssues(routineTitle);
+    const todayRoutine = Array.isArray(routineIssues) && routineIssues.some((i) =>
+      i.title === routineTitle && i.status === 'done' && i.createdAt && i.createdAt.startsWith(today),
+    );
+    if (todayRoutine) return 'routine_done';
+  }
+  return null;
 }
 
 async function main() {
@@ -77,8 +95,9 @@ async function main() {
     }
     const expectedTitle = `[${today}] ${p.title}`;
     try {
-      const found = await checkExists(expectedTitle);
-      if (found) ok.push(p.title);
+      const result = await checkExists(expectedTitle, p.routineTitle);
+      if (result === 'pipeline') ok.push(p.title);
+      else if (result === 'routine_done') ok.push(`${p.title} (routine completed, no pipeline created — intentional pause)`);
       else missing.push({ title: p.title, expected: expectedTitle, scheduledFor: `${p.hour}:00` });
     } catch (err) {
       missing.push({ title: p.title, expected: expectedTitle, error: err.message });
