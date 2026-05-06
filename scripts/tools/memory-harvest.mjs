@@ -5,16 +5,18 @@
  * Usage:
  *   node memory-harvest.mjs harvest                          # Harvest current agent's memory
  *   node memory-harvest.mjs harvest --agent-name "CEO" --agent-id <uuid>
- *   node memory-harvest.mjs recall "what format works best"  # Semantic search (cross-agent)
- *   node memory-harvest.mjs search "carousel"                # Keyword search (cross-agent)
+ *   node memory-harvest.mjs recall "<query>"                 # Semantic search (cross-agent, default excludes self)
+ *   node memory-harvest.mjs recall "<query>" --include-self  # Include own memories too
+ *   node memory-harvest.mjs search "<query>"                 # Keyword search (cross-agent)
  *   node memory-harvest.mjs shared-insights                  # Recent insights from all agents
- *   node memory-harvest.mjs shared-insights --days 14
+ *   node memory-harvest.mjs cleanup                          # Delete expired entries
  *   node memory-harvest.mjs health                           # Vector memory stats
  *
- * Environment:
- *   Uses PAPERCLIP_AGENT_ID, PAPERCLIP_COMPANY_ID from env (heartbeat context)
- *   or --agent-id / --agent-name flags for standalone use.
- *   Auth via PAPERCLIP_API_KEY or auto-generated JWT (from config.mjs).
+ * Hardening (Phase 1.5.B Step 2.A — 2026-05-06):
+ *   - TTL defaults: tacit=90d, insight=180d, decision=NULL, tag:evergreen=NULL
+ *   - Recall filters: similarity ≥ 0.55 + exclude self by default
+ *   - Harvest filters: skip boilerplate sections (placeholder, < 200 char body, < 2 substantive bullets)
+ *   - cleanup command: prune expired entries (run via cron daily)
  */
 
 import { readFileSync, readdirSync, statSync } from 'node:fs';
@@ -28,9 +30,32 @@ import {
 
 const AGENT_BASE = '/home/luca/paperclip/agents/superdots/agents';
 const DAILY_NOTES_LOOKBACK_DAYS = 3;
-const MAX_CONTENT_PER_MEMORY = 4000; // Stay under API's 50k but keep memories focused
+const MAX_CONTENT_PER_MEMORY = 4000;
 
-// Map agent IDs to their folder names
+// TTL defaults in days. NULL = never expire.
+const TTL_DAYS = {
+  tacit:    90,    // MEMORY.md sections
+  insight:  180,   // Daily notes & extracted insights
+  decision: null,  // Decisions never expire
+};
+const EVERGREEN_TAGS = new Set(['evergreen', 'seed', 'decision']);
+
+// Boilerplate detection — sections matching these in body are skipped at harvest
+const BOILERPLATE_PATTERNS = [
+  /^_Record /,
+  /^_Document /,
+  /^_Note /,
+  /^_\(/, /^_\(.*\)_$/,
+  /^TODO:/,
+  /^\s*\.\.\.\s*$/,
+];
+const MIN_BODY_LENGTH = 200;
+const MIN_SUBSTANTIVE_BULLETS = 2;
+
+// Recall noise filter
+const MIN_SIMILARITY = 0.55;
+
+// Updated 2026-05-06: GEO Specialist added, PAID_ADS_OPERATOR points to renamed folder
 const AGENT_FOLDERS = {
   [AGENTS.CEO]: 'ceo',
   [AGENTS.CONTENT_MANAGER]: 'content-manager',
@@ -41,10 +66,10 @@ const AGENT_FOLDERS = {
   [AGENTS.LEGAL_EXPERT]: 'legal-expert',
   [AGENTS.GROWTH_ANALYST]: 'growth-analyst',
   [AGENTS.PROGRAM_MANAGER]: 'program-manager',
-  [AGENTS.PAID_ADS_OPERATOR]: 'reddit-ads-specialist',
+  [AGENTS.PAID_ADS_OPERATOR]: 'paid-ads-specialist',
+  [AGENTS.GEO_SPECIALIST]: 'geo-specialist',
 };
 
-// Reverse lookup: name → id
 const AGENT_NAME_TO_ID = Object.fromEntries(
   Object.entries(AGENTS).map(([key, id]) => {
     const names = {
@@ -52,7 +77,8 @@ const AGENT_NAME_TO_ID = Object.fromEntries(
       COPYWRITER: 'Copywriter', FOUNDING_ENGINEER: 'Founding Engineer',
       FRONTEND_DESIGNER: 'Frontend Designer', LEGAL_EXPERT: 'Legal Expert',
       GROWTH_ANALYST: 'Growth Analyst', PROGRAM_MANAGER: 'Program Manager',
-      PAID_ADS_OPERATOR: 'Reddit Ads Specialist',
+      PAID_ADS_OPERATOR: 'Paid Ads Specialist',
+      GEO_SPECIALIST: 'GEO Specialist',
     };
     return [names[key], id];
   }),
@@ -60,21 +86,11 @@ const AGENT_NAME_TO_ID = Object.fromEntries(
 
 // --- API helpers ---
 
-/**
- * Get auth token for API calls.
- * When targetAgentId matches the calling agent (normal heartbeat), use env JWT.
- * When targeting a DIFFERENT agent (harvestAll), mint a fresh JWT for that agent
- * so the server's POST route attributes the memory correctly (it overrides
- * body.agentId with JWT sub).
- */
 function getAuth(targetAgentId) {
   const callingAgentId = process.env.PAPERCLIP_AGENT_ID;
-  // If targeting a different agent, we MUST mint a per-agent JWT
-  // because server overrides body.agentId with JWT sub
   if (targetAgentId && callingAgentId && targetAgentId !== callingAgentId) {
     const jwt = createPaperclipJwt(targetAgentId);
     if (jwt) return jwt;
-    // Fall through if no JWT secret available
   }
   const key = process.env.PAPERCLIP_API_KEY || getPaperclipApiKey(targetAgentId);
   if (!key) throw new Error('No PAPERCLIP_API_KEY or JWT secret available');
@@ -98,6 +114,35 @@ async function apiCall(method, path, body, agentId) {
   return res.json();
 }
 
+// --- TTL ---
+
+function computeExpiresAt(contentType, tags) {
+  if (tags && tags.some((t) => EVERGREEN_TAGS.has(t.toLowerCase()))) return null;
+  const days = TTL_DAYS[contentType];
+  if (days == null) return null;
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return d.toISOString();
+}
+
+// --- Boilerplate detection ---
+
+function isBoilerplate(body) {
+  if (!body || body.length < MIN_BODY_LENGTH) return true;
+
+  const lines = body.split('\n').map((l) => l.trim()).filter(Boolean);
+  if (lines.length === 0) return true;
+  if (lines.every((l) => BOILERPLATE_PATTERNS.some((rx) => rx.test(l)))) return true;
+
+  const bullets = lines.filter((l) => /^[-*]\s/.test(l));
+  if (bullets.length >= 2 && bullets.length === lines.length) {
+    const substantive = bullets.filter((l) => l.replace(/^[-*]\s+/, '').length >= 20);
+    if (substantive.length < MIN_SUBSTANTIVE_BULLETS) return true;
+  }
+
+  return false;
+}
+
 // --- File reading ---
 
 function readFileSafe(path) {
@@ -117,7 +162,7 @@ function getRecentDailyNotes(agentHome, days = DAILY_NOTES_LOOKBACK_DAYS) {
   const notes = [];
 
   try {
-    const files = readdirSync(memoryDir).filter(f => /^\d{4}-\d{2}-\d{2}\.md$/.test(f)).sort().reverse();
+    const files = readdirSync(memoryDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.md$/.test(f)).sort().reverse();
     for (const f of files) {
       const dateStr = f.replace('.md', '');
       if (new Date(dateStr) < cutoff) break;
@@ -133,85 +178,69 @@ function getRecentDailyNotes(agentHome, days = DAILY_NOTES_LOOKBACK_DAYS) {
 
 // --- Memory extraction ---
 
-/**
- * Extract discrete insights from MEMORY.md content.
- * Each H2 section becomes a separate memory entry.
- */
 function extractMemorySections(content, sourceFile) {
   const sections = [];
   const lines = content.split('\n');
   let currentTitle = null;
   let currentLines = [];
 
+  function flush() {
+    if (!currentTitle) return;
+    const body = currentLines.join('\n').trim();
+    if (isBoilerplate(body)) return;
+    sections.push({
+      title: currentTitle,
+      content: body.slice(0, MAX_CONTENT_PER_MEMORY),
+      sourceFile,
+    });
+  }
+
   for (const line of lines) {
     const h2 = line.match(/^## (.+)/);
     if (h2) {
-      if (currentTitle && currentLines.length > 0) {
-        const body = currentLines.join('\n').trim();
-        if (body.length > 10) { // Skip trivially short sections
-          sections.push({
-            title: currentTitle,
-            content: body.slice(0, MAX_CONTENT_PER_MEMORY),
-            sourceFile,
-          });
-        }
-      }
+      flush();
       currentTitle = h2[1].trim();
       currentLines = [];
     } else {
       currentLines.push(line);
     }
   }
-  // Last section
-  if (currentTitle && currentLines.length > 0) {
-    const body = currentLines.join('\n').trim();
-    if (body.length > 10) {
-      sections.push({
-        title: currentTitle,
-        content: body.slice(0, MAX_CONTENT_PER_MEMORY),
-        sourceFile,
-      });
-    }
-  }
-
+  flush();
   return sections;
 }
 
-/**
- * Extract insights from daily notes.
- * Each daily note becomes one memory, tagged with date.
- */
 function extractDailyNoteInsights(notes) {
-  return notes.map(note => ({
-    title: `Daily note ${note.date}`,
-    content: note.content.slice(0, MAX_CONTENT_PER_MEMORY),
-    sourceFile: `memory/${note.file}`,
-    tags: ['daily-note', note.date],
-    contentType: 'insight',
-  }));
+  return notes
+    .filter((note) => !isBoilerplate(note.content))
+    .map((note) => ({
+      title: `Daily note ${note.date}`,
+      content: note.content.slice(0, MAX_CONTENT_PER_MEMORY),
+      sourceFile: `memory/${note.file}`,
+      tags: ['daily-note', note.date],
+      contentType: 'insight',
+    }));
 }
 
-/**
- * Extract insights from decisions/ folder.
- */
 function extractDecisions(agentHome) {
   const decisionsDir = join(agentHome, 'memory', 'decisions');
   const decisions = [];
 
   try {
-    const files = readdirSync(decisionsDir).filter(f => f.endsWith('.md'));
+    const files = readdirSync(decisionsDir).filter((f) => f.endsWith('.md'));
     for (const f of files) {
       const content = readFileSafe(join(decisionsDir, f));
       if (!content) continue;
+      const trimmed = content.trim();
+      if (isBoilerplate(trimmed)) continue;
       decisions.push({
         title: `Decision: ${f.replace('.md', '')}`,
-        content: content.trim().slice(0, MAX_CONTENT_PER_MEMORY),
+        content: trimmed.slice(0, MAX_CONTENT_PER_MEMORY),
         sourceFile: `memory/decisions/${f}`,
         tags: ['decision'],
         contentType: 'decision',
       });
     }
-  } catch {} // decisions/ may not exist yet
+  } catch {}
 
   return decisions;
 }
@@ -229,10 +258,8 @@ async function harvest(agentId, agentName) {
 
   console.log(`Harvesting memory for ${agentName} (${agentId})...`);
 
-  // Check what's already been harvested to avoid duplicates
-  // Use keyword search for each source file prefix to build dedup set
   let existingSourceFiles = new Set();
-  let existingSourceMap = new Map(); // sourceFile → memoryId (for updates)
+  let existingSourceMap = new Map();
   try {
     const existing = await apiCall('GET',
       `/api/companies/${companyId}/memories?agent=${agentId}&limit=200`,
@@ -243,34 +270,29 @@ async function harvest(agentId, agentName) {
         existingSourceMap.set(m.source_file, m.id);
       }
     }
-  } catch {
-    // First harvest, no existing memories
-  }
+  } catch {}
 
   const memories = [];
 
-  // 1. MEMORY.md (tacit knowledge)
   const memoryMd = readFileSafe(join(agentHome, 'MEMORY.md'));
   if (memoryMd) {
     const sections = extractMemorySections(memoryMd, 'MEMORY.md');
     for (const s of sections) {
-      // Use title-based dedup for MEMORY.md sections (they get updated in-place)
       const sourceKey = `MEMORY.md#${s.title}`;
       memories.push({
         content: `[${agentName}] ${s.title}\n\n${s.content}`,
         contentType: 'tacit',
         tags: ['memory-md', s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50)],
         sourceFile: sourceKey,
-        update: existingSourceFiles.has(sourceKey), // Update existing rather than create duplicate
+        update: existingSourceFiles.has(sourceKey),
       });
     }
   }
 
-  // 2. Recent daily notes
   const dailyNotes = getRecentDailyNotes(agentHome);
   const noteInsights = extractDailyNoteInsights(dailyNotes);
   for (const n of noteInsights) {
-    if (existingSourceFiles.has(n.sourceFile)) continue; // Already harvested
+    if (existingSourceFiles.has(n.sourceFile)) continue;
     memories.push({
       content: `[${agentName}] ${n.title}\n\n${n.content}`,
       contentType: n.contentType,
@@ -279,7 +301,6 @@ async function harvest(agentId, agentName) {
     });
   }
 
-  // 3. Decision logs
   const decisions = extractDecisions(agentHome);
   for (const d of decisions) {
     if (existingSourceFiles.has(d.sourceFile)) continue;
@@ -292,20 +313,19 @@ async function harvest(agentId, agentName) {
   }
 
   if (memories.length === 0) {
-    console.log('No new memories to harvest.');
+    console.log('No new memories to harvest (after boilerplate filter).');
     return;
   }
 
   let created = 0, updated = 0, failed = 0;
-
   for (const mem of memories) {
     try {
+      const expires_at = computeExpiresAt(mem.contentType, mem.tags);
       if (mem.update && existingSourceMap.has(mem.sourceFile)) {
-        // Update existing memory with same source_file
         const existingId = existingSourceMap.get(mem.sourceFile);
         await apiCall('PATCH',
           `/api/companies/${companyId}/memories/${existingId}`,
-          { content: mem.content, tags: mem.tags }, agentId);
+          { content: mem.content, tags: mem.tags, ...(expires_at ? { expires_at } : {}) }, agentId);
         updated++;
         continue;
       }
@@ -315,6 +335,7 @@ async function harvest(agentId, agentName) {
         content_type: mem.contentType,
         tags: mem.tags || [],
         source_file: mem.sourceFile,
+        ...(expires_at ? { expires_at } : {}),
       }, agentId);
       created++;
     } catch (err) {
@@ -323,33 +344,47 @@ async function harvest(agentId, agentName) {
     }
   }
 
-  console.log(`Harvest complete: ${created} created, ${updated} updated, ${failed} failed (of ${memories.length} total)`);
+  console.log(`Harvest: ${created} created, ${updated} updated, ${failed} failed`);
 }
 
 async function recall(query, opts = {}) {
   const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
   const agentId = opts.agentId || process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
   const limit = opts.limit || 5;
+  const includeSelf = opts.includeSelf || false;
 
   console.log(`Semantic search: "${query}"\n`);
 
   const result = await apiCall('POST', `/api/companies/${companyId}/memories/semantic`, {
     query,
-    limit,
-    ...(opts.filterAgent ? { agentId: opts.filterAgent } : {}),
+    limit: limit * 2,  // overfetch to compensate for client-side filter
   }, agentId);
 
   if (result.error) {
     console.error(`Error: ${result.error}`);
-    process.exit(1);
+    process.exit(3);
   }
 
-  if (!result.results || result.results.length === 0) {
+  const raw = Array.isArray(result.results) ? result.results : [];
+  if (raw.length === 0) {
     console.log('No matching memories found.');
     return;
   }
 
-  for (const mem of result.results) {
+  // Apply filters: similarity threshold + exclude-self by default
+  const filtered = raw.filter((m) => {
+    if (typeof m.similarity === 'number' && m.similarity < MIN_SIMILARITY) return false;
+    if (!includeSelf && m.agent_id === agentId) return false;
+    return true;
+  }).slice(0, limit);
+
+  if (filtered.length === 0) {
+    console.log(`No high-confidence matches (threshold ≥ ${MIN_SIMILARITY}, exclude-self=${!includeSelf}).`);
+    console.log(`API returned ${raw.length} candidates below threshold or from your own memory.`);
+    return;
+  }
+
+  for (const mem of filtered) {
     const sim = typeof mem.similarity === 'number' ? `(${(mem.similarity * 100).toFixed(1)}%)` : '';
     console.log(`--- ${mem.agent_name} ${sim} [${mem.content_type}] ${mem.created_at?.slice(0, 10) || ''}`);
     console.log(mem.content.slice(0, 300));
@@ -401,7 +436,6 @@ async function sharedInsights(opts = {}) {
     return;
   }
 
-  // Group by agent
   const byAgent = {};
   for (const mem of results) {
     if (!byAgent[mem.agent_name]) byAgent[mem.agent_name] = [];
@@ -417,6 +451,38 @@ async function sharedInsights(opts = {}) {
     if (mems.length > 5) console.log(`  ... and ${mems.length - 5} more`);
     console.log();
   }
+}
+
+async function cleanup() {
+  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const agentId = process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
+
+  console.log('Memory cleanup: prune expired entries\n');
+
+  const all = await apiCall('GET',
+    `/api/companies/${companyId}/memories?limit=500`,
+    null, agentId);
+
+  if (!all || all.length === 0) {
+    console.log('No memories found.');
+    return;
+  }
+
+  const now = Date.now();
+  const expired = all.filter((m) => m.expires_at && new Date(m.expires_at).getTime() < now);
+  console.log(`Total: ${all.length} | Expired: ${expired.length}`);
+
+  let deleted = 0, failed = 0;
+  for (const m of expired) {
+    try {
+      await apiCall('DELETE', `/api/companies/${companyId}/memories/${m.id}`, null, m.agent_id);
+      deleted++;
+    } catch (err) {
+      console.error(`  FAILED to delete ${m.id}: ${err.message}`);
+      failed++;
+    }
+  }
+  console.log(`Cleanup: ${deleted} expired memories deleted, ${failed} failed`);
 }
 
 async function healthCheck() {
@@ -446,7 +512,6 @@ async function healthCheck() {
 async function harvestAll() {
   console.log('Harvesting all agents...\n');
   const nameToId = Object.entries(AGENT_NAME_TO_ID);
-  let totalCreated = 0;
   for (const [name, id] of nameToId) {
     try {
       console.log(`\n=== ${name} ===`);
@@ -466,27 +531,29 @@ function getFlag(name) {
   const idx = args.indexOf(name);
   return idx >= 0 && args[idx + 1] ? args[idx + 1] : null;
 }
+function hasFlag(name) {
+  return args.includes(name);
+}
 
 if (!command || command === '--help') {
   console.log(`
 memory-harvest — Bridge PARA file memory into Paperclip vector DB
 
 Commands:
-  harvest              Harvest current agent's memory (uses PAPERCLIP_AGENT_ID)
-  harvest --all        Harvest all agents' memories
+  harvest                Harvest current agent's memory (uses PAPERCLIP_AGENT_ID)
+  harvest --all          Harvest all agents' memories
   harvest --agent-name "CEO" --agent-id <uuid>
-  recall "<query>"     Semantic search across all agents
-  search "<query>"     Keyword (BM25) search across all agents
-  shared-insights      Recent insights from all agents (last 7 days)
-  shared-insights --days 14
-  health               Vector memory statistics
+  recall "<query>"       Semantic search across other agents (excludes own by default, ≥0.55 similarity)
+  recall "<query>" --include-self    Include own memories too
+  search "<query>"       Keyword (BM25) search across all agents
+  shared-insights        Recent insights from all agents (last 7 days)
+  cleanup                Prune expired entries (run nightly)
+  health                 Vector memory statistics
 
-Flags:
-  --agent-name NAME    Agent name (for harvest)
-  --agent-id UUID      Agent UUID (for harvest)
-  --all                Harvest all agents (for harvest)
-  --days N             Lookback period (for shared-insights)
-  --limit N            Max results (for recall/search)
+Hardening (2026-05-06):
+  - TTL applied at write: tacit=90d, insight=180d, decision=NULL, tag:evergreen=NULL
+  - Recall filters: similarity ≥ 0.55 + exclude-self by default (use --include-self to override)
+  - Harvest filters: skip boilerplate sections (placeholder/short/<2 substantive bullets)
 `);
   process.exit(0);
 }
@@ -498,27 +565,26 @@ try {
     } else {
       const agentName = getFlag('--agent-name') || process.env.PAPERCLIP_AGENT_NAME;
       let agentId = getFlag('--agent-id') || process.env.PAPERCLIP_AGENT_ID;
-
-      if (!agentId && agentName) {
-        agentId = AGENT_NAME_TO_ID[agentName];
-      }
-      if (!agentId) {
-        console.error('Provide --agent-id or set PAPERCLIP_AGENT_ID');
-        process.exit(1);
-      }
+      if (!agentId && agentName) agentId = AGENT_NAME_TO_ID[agentName];
+      if (!agentId) { console.error('Provide --agent-id or set PAPERCLIP_AGENT_ID'); process.exit(1); }
       const name = agentName || Object.entries(AGENT_NAME_TO_ID).find(([, id]) => id === agentId)?.[0] || 'Unknown';
       await harvest(agentId, name);
     }
   } else if (command === 'recall') {
     const query = args[1];
-    if (!query) { console.error('Usage: recall "<query>"'); process.exit(1); }
-    await recall(query, { limit: getFlag('--limit') ? Number(getFlag('--limit')) : undefined });
+    if (!query) { console.error('Usage: recall "<query>" [--limit N] [--include-self]'); process.exit(1); }
+    await recall(query, {
+      limit: getFlag('--limit') ? Number(getFlag('--limit')) : undefined,
+      includeSelf: hasFlag('--include-self'),
+    });
   } else if (command === 'search') {
     const query = args[1];
     if (!query) { console.error('Usage: search "<query>"'); process.exit(1); }
     await search(query, { limit: getFlag('--limit') ? Number(getFlag('--limit')) : undefined });
   } else if (command === 'shared-insights') {
     await sharedInsights({ days: getFlag('--days') ? Number(getFlag('--days')) : undefined });
+  } else if (command === 'cleanup') {
+    await cleanup();
   } else if (command === 'health') {
     await healthCheck();
   } else {
