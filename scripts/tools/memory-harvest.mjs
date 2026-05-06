@@ -28,7 +28,8 @@
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import {
   PAPERCLIP_API_URL, PAPERCLIP_COMPANY_ID, AGENTS,
   getPaperclipApiKey, createPaperclipJwt,
@@ -62,9 +63,9 @@ const MIN_SUBSTANTIVE_BULLETS = 2;
 
 // Recall filters
 const MIN_SIMILARITY = 0.60;
-const API_MAX_LIMIT = 100;  // semantic API hard cap; we always over-fetch this much because
-                            // pgvector IVFFlat with default probes=1 returns fewer rows when
-                            // LIMIT is low — high LIMIT triggers more cluster scans.
+const RECALL_OVERFETCH = 3;  // similarity filter is in SQL; overfetch limit*3 to allow JS .slice trim
+const SCAN_WARN_MS = 1000;   // warn if direct-DB recall exceeds this — hint to revisit IVFFlat
+const SCAN_WARN_ROWS = 20000;
 
 // Decommissioned agents — their leftover memories are pruned by cleanup-deleted-agents
 const DELETED_AGENT_NAMES = ['Reddit Ads Specialist'];
@@ -98,9 +99,28 @@ const AGENT_NAME_TO_ID = Object.fromEntries(
   }),
 );
 
+// --- Validation ---
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function assertUuid(value, fieldName) {
+  if (typeof value !== 'string' || !UUID_RE.test(value)) {
+    throw new Error(`Invalid UUID for ${fieldName}: ${JSON.stringify(value)}`);
+  }
+  return value;
+}
+
 // --- API helpers ---
 
-function getAuth(targetAgentId) {
+// boardOnly: forces the PAPERCLIP_API_KEY (board admin) auth path. Used by
+// cleanup-deleted-agents — the deleted agent has no row in agents table, so a JWT
+// minted for its UUID would yield no actor under "authenticated" deployment mode.
+function getAuth(targetAgentId, { boardOnly = false } = {}) {
+  if (boardOnly) {
+    const key = process.env.PAPERCLIP_API_KEY;
+    if (!key) throw new Error('boardOnly: PAPERCLIP_API_KEY env var is required for this command');
+    return key;
+  }
   const callingAgentId = process.env.PAPERCLIP_AGENT_ID;
   if (targetAgentId && callingAgentId && targetAgentId !== callingAgentId) {
     const jwt = createPaperclipJwt(targetAgentId);
@@ -111,16 +131,16 @@ function getAuth(targetAgentId) {
   return key;
 }
 
-async function apiCall(method, path, body, agentId) {
+async function apiCall(method, path, body, agentId, opts = {}) {
   const url = `${PAPERCLIP_API_URL}${path}`;
   const headers = {
-    'Authorization': `Bearer ${getAuth(agentId)}`,
+    'Authorization': `Bearer ${getAuth(agentId, opts)}`,
     'Content-Type': 'application/json',
   };
-  const opts = { method, headers };
-  if (body) opts.body = JSON.stringify(body);
+  const fetchOpts = { method, headers };
+  if (body) fetchOpts.body = JSON.stringify(body);
 
-  const res = await fetch(url, opts);
+  const res = await fetch(url, fetchOpts);
   if (!res.ok) {
     const text = await res.text().catch(() => '');
     throw new Error(`API ${method} ${path} → ${res.status}: ${text.slice(0, 200)}`);
@@ -135,26 +155,52 @@ async function apiCall(method, path, body, agentId) {
 // or to bypass the API's IVFFlat index when its lists≫rows configuration causes low recall.
 // CLAUDE.md rule #2 forbids DB *writes* — reads are allowed.
 
-function dbQuery(sql) {
-  // Pass SQL via stdin; tab-separated. Caller is responsible for ensuring no embedded
-  // newlines/tabs in selected columns (e.g., wrap with regexp_replace if needed).
-  const stdout = execFileSync(
+// stderr captured separately so psql NOTICEs/WARNINGs don't pollute the row stream.
+// On non-zero exit, raise with both streams visible.
+function runPsql(sql) {
+  const result = spawnSync(
     'psql',
-    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-F', '\t', '-X', '-q'],
+    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-X', '-q', '-v', 'ON_ERROR_STOP=1'],
     { input: sql, encoding: 'utf-8', maxBuffer: 16 * 1024 * 1024 },
   );
-  return stdout.trim().split('\n').filter(Boolean).map((line) => line.split('\t'));
+  if (result.error) throw result.error;
+  if (result.status !== 0) {
+    throw new Error(`psql exit ${result.status}: ${result.stderr.slice(0, 500)}`);
+  }
+  return result.stdout;
 }
 
-// Returns an array of objects parsed from psql's row_to_json() output.
-// Use this when selected columns may contain newlines/tabs (e.g., memory content).
-function dbQueryJson(sql) {
-  const stdout = execFileSync(
+function dbQuery(sql) {
+  // Tab-separated. Caller is responsible for ensuring no embedded newlines/tabs
+  // in selected columns (e.g. wrap text columns with regexp_replace if needed).
+  const stdout = spawnSync(
     'psql',
-    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-X', '-q'],
+    ['-U', 'luca', '-d', 'paperclip', '-t', '-A', '-F', '\t', '-X', '-q', '-v', 'ON_ERROR_STOP=1'],
     { input: sql, encoding: 'utf-8', maxBuffer: 16 * 1024 * 1024 },
   );
-  return stdout.split('\n').filter((line) => line.trim().startsWith('{')).map((line) => JSON.parse(line));
+  if (stdout.status !== 0) throw new Error(`psql exit ${stdout.status}: ${stdout.stderr.slice(0, 500)}`);
+  return stdout.stdout.trim().split('\n').filter(Boolean).map((line) => line.split('\t'));
+}
+
+// Robust JSON-per-row parser. Each line that successfully parses as a JSON object
+// is included; everything else (NOTICEs, blank lines, command tags) is skipped.
+function dbQueryJson(sql) {
+  const stdout = runPsql(sql);
+  const rows = [];
+  for (const line of stdout.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith('{')) continue;
+    try {
+      rows.push(JSON.parse(trimmed));
+    } catch {
+      // Skip lines that look JSON-ish but aren't (extremely rare).
+    }
+  }
+  return rows;
+}
+
+function contentHash(content) {
+  return createHash('md5').update(content, 'utf8').digest('hex').slice(0, 12);
 }
 
 async function ollamaEmbed(text) {
@@ -303,7 +349,8 @@ function extractDecisions(agentHome) {
 // --- Commands ---
 
 async function harvest(agentId, agentName) {
-  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const companyId = assertUuid(process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID, 'companyId');
+  assertUuid(agentId, 'agentId');
   const agentHome = getAgentHome(agentId);
 
   if (!agentHome) {
@@ -313,13 +360,20 @@ async function harvest(agentId, agentName) {
 
   console.log(`Harvesting memory for ${agentName} (${agentId})...`);
 
-  let existingSourceMap = new Map();  // source_file -> id
+  // existingMap: source_file -> { id, contentHash }. contentHash is read from a `hash:<md5>` tag
+  // when present, allowing us to skip re-embed when content is unchanged.
+  const existingMap = new Map();
   try {
     const existing = await apiCall('GET',
-      `/api/companies/${companyId}/memories?agent=${agentId}&limit=200`,
+      `/api/companies/${companyId}/memories?agent=${agentId}&limit=500`,
       null, agentId);
     for (const m of (existing || [])) {
-      if (m.source_file) existingSourceMap.set(m.source_file, m.id);
+      if (!m.source_file) continue;
+      const hashTag = (m.tags || []).find((t) => typeof t === 'string' && t.startsWith('hash:'));
+      existingMap.set(m.source_file, {
+        id: m.id,
+        contentHash: hashTag ? hashTag.slice(5) : null,
+      });
     }
   } catch {}
 
@@ -330,12 +384,16 @@ async function harvest(agentId, agentName) {
     const sections = extractMemorySections(memoryMd, 'MEMORY.md');
     for (const s of sections) {
       const sourceKey = `MEMORY.md#${s.title}`;
+      const fullContent = `[${agentName}] ${s.title}\n\n${s.content}`;
+      const hash = contentHash(fullContent);
+      const existing = existingMap.get(sourceKey);
       memories.push({
-        content: `[${agentName}] ${s.title}\n\n${s.content}`,
+        content: fullContent,
         contentType: 'tacit',
-        tags: ['memory-md', s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50)],
+        tags: ['memory-md', s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 50), `hash:${hash}`],
         sourceFile: sourceKey,
-        replaceExistingId: existingSourceMap.get(sourceKey) ?? null,
+        replaceExistingId: existing?.id ?? null,
+        skipReason: existing && existing.contentHash === hash ? 'unchanged' : null,
       });
     }
   }
@@ -343,25 +401,29 @@ async function harvest(agentId, agentName) {
   const dailyNotes = getRecentDailyNotes(agentHome);
   const noteInsights = extractDailyNoteInsights(dailyNotes);
   for (const n of noteInsights) {
-    if (existingSourceMap.has(n.sourceFile)) continue;  // daily notes are immutable; skip if exists
+    if (existingMap.has(n.sourceFile)) continue;  // daily notes are immutable; skip if exists
+    const fullContent = `[${agentName}] ${n.title}\n\n${n.content}`;
     memories.push({
-      content: `[${agentName}] ${n.title}\n\n${n.content}`,
+      content: fullContent,
       contentType: n.contentType,
-      tags: n.tags,
+      tags: [...n.tags, `hash:${contentHash(fullContent)}`],
       sourceFile: n.sourceFile,
       replaceExistingId: null,
+      skipReason: null,
     });
   }
 
   const decisions = extractDecisions(agentHome);
   for (const d of decisions) {
-    if (existingSourceMap.has(d.sourceFile)) continue;  // decisions are immutable; skip if exists
+    if (existingMap.has(d.sourceFile)) continue;  // decisions are immutable; skip if exists
+    const fullContent = `[${agentName}] ${d.title}\n\n${d.content}`;
     memories.push({
-      content: `[${agentName}] ${d.title}\n\n${d.content}`,
+      content: fullContent,
       contentType: d.contentType,
-      tags: d.tags,
+      tags: [...d.tags, `hash:${contentHash(fullContent)}`],
       sourceFile: d.sourceFile,
       replaceExistingId: null,
+      skipReason: null,
     });
   }
 
@@ -370,26 +432,19 @@ async function harvest(agentId, agentName) {
     return;
   }
 
-  let created = 0, replaced = 0, failed = 0;
+  let created = 0, replaced = 0, skipped = 0, failed = 0;
   for (const mem of memories) {
+    if (mem.skipReason === 'unchanged') {
+      skipped++;
+      continue;
+    }
     try {
       const expires_at = computeExpiresAt(mem.contentType, mem.tags);
 
-      // Replace path: PATCH ignores expires_at server-side, so DELETE old + POST new
-      // ensures TTL is always re-applied from content_type policy.
-      if (mem.replaceExistingId) {
-        try {
-          await apiCall('DELETE', `/api/companies/${companyId}/memories/${mem.replaceExistingId}`, null, agentId);
-        } catch (delErr) {
-          // Non-fatal: if DELETE fails (e.g. memory already gone) we still try POST below.
-          if (!String(delErr.message).includes('404')) {
-            console.error(`  WARN: pre-delete failed for ${mem.sourceFile}: ${delErr.message}`);
-          }
-        }
-        replaced++;
-      }
-
-      await apiCall('POST', `/api/companies/${companyId}/memories`, {
+      // POST first → capture new ID → DELETE old by ID. If POST fails, the old entry
+      // remains intact (no data-loss window). Acceptable trade-off: temporary duplicate
+      // if DELETE fails — next harvest will re-build the existing map and clean up.
+      const posted = await apiCall('POST', `/api/companies/${companyId}/memories`, {
         agentId,
         content: mem.content,
         content_type: mem.contentType,
@@ -398,14 +453,25 @@ async function harvest(agentId, agentName) {
         ...(expires_at ? { expires_at } : {}),
       }, agentId);
 
-      if (!mem.replaceExistingId) created++;
+      if (mem.replaceExistingId) {
+        try {
+          await apiCall('DELETE', `/api/companies/${companyId}/memories/${mem.replaceExistingId}`, null, agentId);
+        } catch (delErr) {
+          if (!String(delErr.message).includes('404')) {
+            console.error(`  WARN: post-delete failed for ${mem.sourceFile} (orphan old id ${mem.replaceExistingId}): ${delErr.message}`);
+          }
+        }
+        replaced++;
+      } else {
+        created++;
+      }
     } catch (err) {
       console.error(`  FAILED ${mem.sourceFile}: ${err.message}`);
       failed++;
     }
   }
 
-  console.log(`Harvest: ${created} created, ${replaced} replaced (delete+post), ${failed} failed`);
+  console.log(`Harvest: ${created} created, ${replaced} replaced (post+delete), ${skipped} unchanged, ${failed} failed`);
 }
 
 // Direct-DB semantic recall. Bypasses the Paperclip API for one specific reason:
@@ -418,8 +484,9 @@ async function harvest(agentId, agentName) {
 // Future-proof: if Paperclip ships a fix (probes setting, lists=auto, HNSW migration),
 // nothing breaks — we just keep getting correct results.
 async function recall(query, opts = {}) {
-  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
-  const agentId = opts.agentId || process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
+  const companyId = assertUuid(process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID, 'companyId');
+  const rawAgentId = opts.agentId || process.env.PAPERCLIP_AGENT_ID || AGENTS.CEO;
+  const agentId = assertUuid(rawAgentId, 'agentId');
   const limit = opts.limit || 5;
   const includeSelf = opts.includeSelf || false;
 
@@ -430,12 +497,15 @@ async function recall(query, opts = {}) {
     process.exit(3);
   });
   const embStr = `[${embedding.join(',')}]`;
-
   const selfClause = includeSelf ? '' : `AND agent_id <> '${agentId}'::uuid`;
+  const sqlLimit = Math.max(limit * RECALL_OVERFETCH, 5);
 
   // SET LOCAL enable_indexscan=off forces a seq scan, bypassing IVFFlat's low-recall
-  // ANN approximation. With <1k rows, brute-force takes <50ms. JSON output is used
-  // because content may contain newlines/tabs that break tab-separated parsing.
+  // ANN approximation (created with lists=50 but corpus is small). Brute-force on
+  // <1k rows is <50ms; <5k rows ~50-200ms; threshold for revisit is ~20k rows or 1s,
+  // whichever comes first — see SCAN_WARN_* constants. Similarity threshold and limit
+  // are pushed into SQL so we transfer only what's needed back over psql stdout.
+  const t0 = Date.now();
   const rows = dbQueryJson(`
     BEGIN;
     SET LOCAL enable_indexscan = OFF;
@@ -453,31 +523,27 @@ async function recall(query, opts = {}) {
       WHERE company_id = '${companyId}'::uuid
         AND embedding IS NOT NULL
         AND (expires_at IS NULL OR expires_at > NOW())
+        AND (1 - (embedding <=> '${embStr}'::vector)) >= ${MIN_SIMILARITY}
         ${selfClause}
       ORDER BY embedding <=> '${embStr}'::vector
-      LIMIT ${API_MAX_LIMIT}
+      LIMIT ${sqlLimit}
     ) t;
     COMMIT;
   `);
+  const elapsedMs = Date.now() - t0;
+
+  if (elapsedMs > SCAN_WARN_MS) {
+    console.error(`  WARN: recall took ${elapsedMs}ms — corpus may be outgrowing brute-force. Revisit IVFFlat lists tuning.`);
+  }
 
   if (rows.length === 0) {
-    console.log('No matching memories found.');
+    console.log(`No matches above similarity ${MIN_SIMILARITY} (exclude-self=${!includeSelf}).`);
     return;
   }
 
-  const filtered = rows
-    .filter((m) => Number(m.similarity) >= MIN_SIMILARITY)
-    .slice(0, limit);
-
-  if (filtered.length === 0) {
-    console.log(`No high-confidence matches (similarity ≥ ${MIN_SIMILARITY}, exclude-self=${!includeSelf}).`);
-    console.log(`Scanned ${rows.length} candidates; all below threshold.`);
-    return;
-  }
-
+  const filtered = rows.slice(0, limit);
   for (const m of filtered) {
-    const sim = Number(m.similarity);
-    console.log(`--- ${m.agent_name} (${(sim * 100).toFixed(1)}%) [${m.content_type}] ${m.created}`);
+    console.log(`--- ${m.agent_name} (${(Number(m.similarity) * 100).toFixed(1)}%) [${m.content_type}] ${m.created}`);
     console.log(m.content.slice(0, 300));
     if (m.content.length > 300) console.log('  ...');
     console.log();
@@ -545,13 +611,18 @@ async function sharedInsights(opts = {}) {
 }
 
 // Reads expired entries directly from DB (API filters them out). DELETEs via API.
+// agent_name is replaced with regexp_replace to neutralize embedded tabs/newlines.
 async function cleanup() {
-  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const companyId = assertUuid(process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID, 'companyId');
 
   console.log('Memory cleanup: prune expired entries\n');
 
   const rows = dbQuery(`
-    SELECT id::text, agent_id::text, agent_name, expires_at::text
+    SELECT
+      id::text,
+      agent_id::text,
+      regexp_replace(agent_name, E'[\\t\\n\\r]', ' ', 'g') AS agent_name,
+      expires_at::text
     FROM agent_memories
     WHERE company_id = '${companyId}'::uuid
       AND expires_at IS NOT NULL
@@ -579,14 +650,17 @@ async function cleanup() {
 // One-off: apply TTL to legacy entries that have NULL expires_at.
 // Strategy: read entry from DB, DELETE via API, POST same content with TTL applied.
 // Skips entries with evergreen tags or content_type=decision (no TTL by policy).
+// One-off: apply TTL to legacy entries that have NULL expires_at.
+// POST-then-DELETE order: if interrupted mid-flight, the old row remains intact and
+// the next run will see it and retry. created_at is reset on the new row (one-time
+// cost, breaks the "last 7 days" window for backfilled rows for one week).
 async function backfillTtl(opts = {}) {
-  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const companyId = assertUuid(process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID, 'companyId');
   const dryRun = opts.dryRun || false;
 
   console.log(`Backfill TTL on legacy memories${dryRun ? ' [DRY RUN]' : ''}\n`);
 
-  // The API doesn't expose GET /memories/:id, so read full content from DB
-  // directly (read-only, allowed). Use JSON to handle newlines in content.
+  // API has no GET /memories/:id, so read full content from DB. Newlines handled via JSON.
   const rows = dbQueryJson(`
     SELECT row_to_json(t) FROM (
       SELECT
@@ -625,7 +699,7 @@ async function backfillTtl(opts = {}) {
     }
 
     try {
-      await apiCall('DELETE', `/api/companies/${companyId}/memories/${r.id}`, null, r.agent_id);
+      // POST first (preserves data on POST failure), then DELETE old.
       await apiCall('POST', `/api/companies/${companyId}/memories`, {
         agentId: r.agent_id,
         content: r.content,
@@ -634,6 +708,18 @@ async function backfillTtl(opts = {}) {
         source_file: r.source_file,
         expires_at,
       }, r.agent_id);
+
+      try {
+        await apiCall('DELETE', `/api/companies/${companyId}/memories/${r.id}`, null, r.agent_id);
+      } catch (delErr) {
+        // Orphan old row: not fatal. Re-running backfill won't re-process it
+        // (it now has a sibling new row that's still NULL-expires-at? No — the
+        // sibling has expires_at set, so only THIS old row matches the WHERE again.
+        // Re-run is safe.) Log and move on.
+        if (!String(delErr.message).includes('404')) {
+          console.error(`  WARN: post-delete failed for ${r.id}: ${delErr.message}`);
+        }
+      }
 
       backfilled++;
       console.log(`  ✓ ${r.agent_name} ${r.id} → expires ${expires_at.slice(0, 10)}`);
@@ -646,15 +732,21 @@ async function backfillTtl(opts = {}) {
 }
 
 // One-off: purge memories of decommissioned agents (DELETED_AGENT_NAMES).
+// Uses board-admin auth (PAPERCLIP_API_KEY) because the deleted agent has no row in
+// the agents table — minting a JWT for its UUID would fail under "authenticated"
+// deployment mode. The board key bypasses agent ownership checks at the API layer.
 async function cleanupDeletedAgents(opts = {}) {
-  const companyId = process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID;
+  const companyId = assertUuid(process.env.PAPERCLIP_COMPANY_ID || PAPERCLIP_COMPANY_ID, 'companyId');
   const dryRun = opts.dryRun || false;
 
   console.log(`Cleanup memories of decommissioned agents${dryRun ? ' [DRY RUN]' : ''}: ${DELETED_AGENT_NAMES.join(', ')}\n`);
 
   const namesList = DELETED_AGENT_NAMES.map((n) => `'${n.replace(/'/g, "''")}'`).join(',');
   const rows = dbQuery(`
-    SELECT id::text, agent_id::text, agent_name
+    SELECT
+      id::text,
+      agent_id::text,
+      regexp_replace(agent_name, E'[\\t\\n\\r]', ' ', 'g') AS agent_name
     FROM agent_memories
     WHERE company_id = '${companyId}'::uuid
       AND agent_name IN (${namesList})
@@ -662,6 +754,13 @@ async function cleanupDeletedAgents(opts = {}) {
 
   console.log(`Found: ${rows.length}`);
   if (rows.length === 0) return;
+
+  // Validate board key up front — fail fast if the env isn't set, instead of
+  // silently falling back to JWT and hitting 401s per-row in authenticated mode.
+  if (!dryRun && !process.env.PAPERCLIP_API_KEY) {
+    console.error('PAPERCLIP_API_KEY env required to delete cross-agent memories. Set it and retry.');
+    process.exit(2);
+  }
 
   let deleted = 0, failed = 0;
   for (const [id, agentId, agentName] of rows) {
@@ -671,7 +770,7 @@ async function cleanupDeletedAgents(opts = {}) {
       continue;
     }
     try {
-      await apiCall('DELETE', `/api/companies/${companyId}/memories/${id}`, null, agentId);
+      await apiCall('DELETE', `/api/companies/${companyId}/memories/${id}`, null, agentId, { boardOnly: true });
       deleted++;
     } catch (err) {
       console.error(`  ✗ ${agentName} ${id}: ${err.message}`);
