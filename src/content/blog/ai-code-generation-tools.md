@@ -75,7 +75,7 @@ Cursor is a fork of VS Code rebuilt with AI at its core. Every feature — autoc
 
 **Best for:** Developers who want the most capable AI editing experience and are flexible on IDE choice.
 
-For a detailed head-to-head, see [Cursor vs GitHub Copilot](/blog/cursor-vs-github-copilot/).
+For a detailed head-to-head, see our upcoming Cursor vs GitHub Copilot comparison.
 
 ### Gemini Code Assist — best free tier in the category
 
