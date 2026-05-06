@@ -1,3 +1,5 @@
+> ⚠ **DEPRECATED 2026-05-06**: This plan was authored before PR #478 changed the publish step from git/PR to PATCH parent issue description. The new flow is in scripts/pipelines/definitions/daily-coordination-digest.json — read THAT, not this plan. This file remains as historical artifact only.
+
 # Daily Coordination Digest — Execution Plan for 2026-05-06
 
 **Program Manager** | *Schedule: 18:00 Europe/Rome*
