@@ -1,8 +1,8 @@
 ---
-title: "8 Best AI Content Repurposing Tools 2026 (Matched to Your Channel)"
+title: "8 Best AI Content Repurposing Tools (2026) by Channel"
 description: "8 AI content repurposing tools compared by output channel — LinkedIn, newsletters, podcast clips, YouTube Shorts, blog posts. 2026 pricing, honest pros/cons."
 pubDate: "2026-04-07"
-updatedDate: "2026-05-05"
+updatedDate: "2026-05-06"
 author: "Superdots Team"
 department: "marketing"
 useCase: "automation"

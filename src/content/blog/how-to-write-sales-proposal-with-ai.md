@@ -1,7 +1,8 @@
 ---
-title: "How to Write a Sales Proposal With AI (That Actually Gets Signed)"
-description: "Most reps write proposals from memory, not from what the buyer said. The 5-step Note-to-Proposal Workflow turns your discovery call notes into a personalized proposal in under an hour."
+title: "How to Write a Sales Proposal With AI That Closes"
+description: "Most reps write proposals from memory. The Note-to-Proposal Workflow turns discovery notes into a personalized proposal in under an hour."
 pubDate: "2026-05-06"
+updatedDate: "2026-05-06"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "sales"

@@ -1,7 +1,8 @@
 ---
-title: "How to Use AI for Performance Reviews (Without Making Them Worse)"
-description: "Most managers use AI to write reviews and get generic output. The real leverage is using it before you write — to structure feedback, catch bias, get specific."
+title: "How to Use AI for Performance Reviews (Done Right)"
+description: "Most managers use AI to write reviews and get generic output. Real leverage: use it before writing — to structure feedback, catch bias, get specific."
 pubDate: "2026-05-05"
+updatedDate: "2026-05-06"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "hr"

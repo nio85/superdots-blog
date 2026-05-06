@@ -1,6 +1,6 @@
 ---
-title: 'Best AI Event Planning Tools (2026): 8 Reviewed by Event Type'
-description: "Bizzabo, Cvent, Whova and 5 more — 2026 pricing, feature comparison, and a clear decision guide. Find the right AI event planning tool for your team size and event type."
+title: 'Best AI Event Planning Tools 2026: 8 by Event Type'
+description: "Bizzabo, Cvent, Whova and 5 more: 2026 pricing, features, and decision guide. Which AI event planning tool fits your team and event type?"
 pubDate: "2026-03-25"
 updatedDate: "2026-05-06"
 author: "Superdots Team"
