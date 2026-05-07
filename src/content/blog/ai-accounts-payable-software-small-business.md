@@ -19,6 +19,7 @@ faqs:
     answer: "Three common hidden costs: per-transaction fees (ACH, check, wire) that compound at volume — BILL charges $0.59 per ACH and $14.99 per international wire; implementation fees quoted separately from monthly subscription pricing; and per-user fees that scale faster than expected as your team grows. Tipalti and Stampli have per-transaction fees that aren't published — request a full fee schedule before signing."
   - question: "Is Tipalti worth it for a company processing fewer than 100 invoices per month?"
     answer: "No. Tipalti is designed for companies paying 200+ international vendors per month. Its base fee starts around $599/month based on user reviews, plus per-transaction fees — a significant cost if your volume doesn't justify it. Under 100 domestic invoices per month, BILL's $45/user/month plan covers the need. Under 50 invoices, the free QuickBooks plus Melio path is almost always the right choice."
+heroImage: "/images/blog/ai-accounts-payable-software-small-business.webp"
 ---
 
 The bottleneck in accounts payable isn't processing invoices. It's getting them approved.
