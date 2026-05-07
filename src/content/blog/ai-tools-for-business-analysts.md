@@ -19,6 +19,7 @@ faqs:
     answer: "Claude ($20/month Pro, free tier available) is the strongest tool for requirements writing — it produces well-structured BRDs, user stories, and acceptance criteria from rough notes. For teams that need requirements to live in a shared workspace, Notion AI ($10/month add-on) integrates writing and storage. Confluence AI ($5.75/user/month) is best when your team already uses Atlassian."
   - question: "How do business analysts use AI for process documentation?"
     answer: "BAs use Miro AI to generate process flowcharts and BPMN diagrams from text descriptions: describe a process in plain language and Miro generates a visual diagram you can edit directly. For written SOPs and process narratives, Claude or Notion AI can draft documentation from a bulleted process description in under 5 minutes, then you refine for accuracy."
+heroImage: "/images/blog/ai-tools-for-business-analysts.webp"
 ---
 
 Business analysts spend a large chunk of every week writing — requirements docs, BRDs, user stories, process maps, stakeholder decks. That writing work is invisible to most tools that claim to help them.
