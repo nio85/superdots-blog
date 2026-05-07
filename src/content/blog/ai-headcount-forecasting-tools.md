@@ -19,6 +19,7 @@ faqs:
     answer: "ChartHop is built for teams of 50–2,000 employees and costs roughly $6/person/mo. It covers org chart visualization, scenario modeling, and headcount planning with real-time HRIS integration. Visier is enterprise-grade, starts at $5,000+/year, and adds predictive attrition modeling and advanced people analytics. If you don't have a dedicated People Analytics team, ChartHop will do more than you need at a fraction of the cost."
   - question: "How far ahead can AI headcount forecasting predict hiring needs?"
     answer: "Most AI headcount tools provide reliable 3–12 month forecasts with enough historical data (typically 18–24 months of clean HRIS records). Beyond 12 months, accuracy drops significantly because business plans themselves change. The practical value isn't the 2-year number — it's the ability to model 'what if attrition increases 5% next quarter' or 'what if we win the enterprise contract' without rebuilding the spreadsheet from scratch."
+heroImage: "/images/blog/ai-headcount-forecasting-tools.webp"
 ---
 
 There is a reliable sign that headcount forecasting has broken down at an organization. It appears in Q4 budget reviews, when someone asks why the team grew 22% when the plan called for 8%. The answer is almost always the same: the spreadsheet was right, but the assumptions were wrong — and nobody updated the assumptions when the business changed in June.
