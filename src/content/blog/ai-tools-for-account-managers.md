@@ -19,6 +19,7 @@ faqs:
     answer: "No. Gainsight starts at around $20,000/year and is built for dedicated Customer Success organizations managing hundreds of accounts. For account managers at companies under $10M ARR with fewer than 50 accounts, Vitally ($300+/mo) or ChurnZero ($500+/mo) are appropriate. For teams under 20 accounts, HubSpot and Fireflies.ai cover most needs."
   - question: "What's a free AI workflow for account managers without a big budget?"
     answer: "HubSpot CRM free covers basic account tracking and renewal pipelines. Claude or ChatGPT free drafts renewal emails and QBR outlines. Otter.ai free gives 300 minutes/month of meeting transcripts. This $0 stack handles CRM hygiene, meeting notes, and writing prep for account managers with up to 20 accounts. Upgrade Fireflies.ai to $10/mo when you need unlimited call summaries."
+heroImage: "/images/blog/ai-tools-for-account-managers.webp"
 ---
 
 Most account managers think of AI as a note-taker. Better than nothing — but wrong end of the problem.
