@@ -14,7 +14,8 @@ export function sitemapFilter(page: string, noindexSlugs: Set<string>): boolean 
 
 export function sitemapSerialize(item: SitemapItem, lastmodMap: Map<string, string>, buildDate: string): SitemapItem {
 	const lastmod = lastmodMap.get(item.url);
-	item.lastmod = lastmod || buildDate;
+	const raw = lastmod || buildDate;
+	item.lastmod = raw > buildDate ? buildDate : raw;
 
 	const url = item.url;
 	if (url === 'https://superdots.sh/') {

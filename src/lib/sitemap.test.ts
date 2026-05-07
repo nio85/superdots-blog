@@ -97,6 +97,12 @@ describe('sitemapSerialize', () => {
 		const item = sitemapSerialize({ url: 'https://superdots.sh/blog/new-post/' }, emptyMap, buildDate);
 		expect(item.lastmod).toBe('2026-04-26');
 	});
+
+	it('caps future lastmod to buildDate', () => {
+		const map = new Map([['https://superdots.sh/blog/my-post/', '2026-05-15']]);
+		const item = sitemapSerialize({ url: 'https://superdots.sh/blog/my-post/' }, map, buildDate);
+		expect(item.lastmod).toBe('2026-04-26');
+	});
 });
 
 describe('parseFrontmatterDates', () => {
