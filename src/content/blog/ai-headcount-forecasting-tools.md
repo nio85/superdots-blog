@@ -34,7 +34,7 @@ Spreadsheet-based forecasting tends to fail in three predictable ways.
 
 **Version chaos** is the most common. When five department heads maintain separate copies of the headcount model, there is no single source of truth. The CFO reviews one number at the board meeting. HR presents another. Neither is wrong — they used different assumptions at different times. The reconciliation meeting is where most of the actual "forecasting" happens, ad hoc, in a conference room.
 
-**Attrition modeling** is almost always missing. Most headcount spreadsheets plan for growth but not for exits. Voluntary attrition in professional roles tends to run 10–15% annually. A 50-person team that plans to add 10 people and ignores a likely 6–7 exits ends up understaffed at year-end even if every hire closes on time.
+**Attrition modeling** is almost always missing. Most headcount spreadsheets plan for growth but not for exits. According to BLS JOLTS data, voluntary attrition in professional roles runs 10–15% annually. A 50-person team that plans to add 10 people and ignores a likely 6–7 exits ends up understaffed at year-end even if every hire closes on time.
 
 **Scenario comparison** is technically possible in spreadsheets but practically rare. Real forecasting requires maintaining a base case, a conservative case, and an upside case simultaneously. Most teams maintain one model because managing five versions is unsustainable. Planning defaults to a single number that everyone understands is probably wrong.
 
