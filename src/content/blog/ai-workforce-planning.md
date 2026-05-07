@@ -232,7 +232,7 @@ The cost question matters. Here is the honest picture:
 2. **Lower backfill cost.** When AI predicts attrition 3-4 months early, you start sourcing before the role is vacant. Time-to-fill drops. Interim productivity loss drops. Pair attrition prediction with [compensation benchmarking](/blog/ai-compensation-benchmarking/) data to identify roles where below-market pay is the root cause — preventable attrition is the cheapest kind to fix.
 3. **Fewer emergency hires.** Emergency hires use agency recruiters (15-20% placement fees) and accept weaker candidates under time pressure. Accurate headcount forecasting lets you use direct recruiting with more time to assess candidates.
 
-Most teams that adopt AI-based headcount modeling recover implementation costs within the first planning cycle through one or two avoided mis-hires.
+Most teams that adopt AI-based headcount modeling recover implementation costs within the first planning cycle through one or two avoided mis-hires. The harder challenge is managing the organizational change that comes with any AI implementation — see our guide to [AI change management](/blog/ai-change-management/) for the 3-phase rollout framework.
 
 ## Key Takeaways
 

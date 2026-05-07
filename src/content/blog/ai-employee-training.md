@@ -155,7 +155,7 @@ Track these instead:
 
 **Knowledge retention over time.** Through spaced repetition check-ins, track whether learning persists. A 90% score immediately after training that drops to 40% after a month means the training did not stick.
 
-**Behavior change.** The hardest to measure but the most important. Did the training change how people work? For customer support training, measure handle time and customer satisfaction scores before and after. For sales training, track conversion rates. AI can correlate training completion with performance metrics to show actual impact.
+**Behavior change.** The hardest to measure but the most important. Did the training change how people work? For customer support training, measure handle time and customer satisfaction scores before and after. For sales training, track conversion rates. AI can correlate training completion with performance metrics to show actual impact. If you're rolling out new AI-assisted training programs across the organization, [AI change management tools](/blog/ai-change-management/) handle the human side — readiness assessment, adoption tracking, and champion activation.
 
 **Time to proficiency.** How quickly do new hires reach full productivity? Compare cohorts with and without AI-powered training. Most companies see a 30-40% reduction in ramp time.
 
