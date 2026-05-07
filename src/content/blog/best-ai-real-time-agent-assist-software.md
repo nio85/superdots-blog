@@ -7,6 +7,7 @@ contentPillar: 'dot-by-dot'
 department: 'customer-support'
 useCase: 'communication'
 tags: ['customer-support', 'agent-assist', 'contact-center', 'ai-tools', 'real-time-ai']
+heroImage: '/images/blog/best-ai-real-time-agent-assist-software.webp'
 imageHint: 'customer service agent at dual-monitor workstation with real-time AI guidance overlay, contact center environment'
 faqs:
   - question: 'What is the difference between AI agent assist software and a knowledge base?'
