@@ -182,9 +182,9 @@ OwlyWriter AI generates social posts from URLs, article summaries, or custom pro
 
 **Best for:** Marketing managers at companies with 10+ employees managing 5 or more social networks, where advanced reporting and team collaboration are genuine requirements. Also useful when brand monitoring and competitive intelligence are built into the social media workflow.
 
-**Who should not use it:** Almost any small business posting to 1–3 networks. The $99–$199/month price tag is hard to justify when Publer or SocialBee handles 90% of the same use cases at 10–15% of the cost. Hootsuite's free trial is worth running for the analytics benchmarks, but committing to a paid plan requires clear justification.
+**Who should not use it:** Almost any small business posting to 1–3 networks. The $99–$249/month price tag is hard to justify when Publer or SocialBee handles 90% of the same use cases at 10–15% of the cost. Hootsuite's free trial is worth running for the analytics benchmarks, but committing to a paid plan requires clear justification.
 
-**Pricing:** Plans start at $99/user/month. The Standard plan at $199/user/month includes more accounts and analytics features. Enterprise pricing is custom. Annual billing reduces monthly costs by approximately 20%.
+**Pricing:** Plans start at $99/user/month (Standard, billed annually). The Advanced plan at $249/user/month includes more accounts and analytics features. Enterprise pricing is custom. Annual billing reduces monthly costs by approximately 20%.
 
 ## Metricool — Best for Analytics-First Small Businesses
 
@@ -194,7 +194,7 @@ The AI assistant is credit-based (5 credits per brand on the free plan, more on 
 
 **What makes Metricool different:** The analytics go deeper than scheduling-first tools. You can see how a LinkedIn post performed versus the traffic it drove to your website, compare your social metrics against competitors, and generate client-ready PDF reports in one click. For agencies managing client accounts or SMBs where the marketing manager doubles as the analyst, this reporting layer saves significant time.
 
-**Competitor benchmarking** is the feature that consistently earns Metricool mentions in user reviews. You can track competitor social accounts — follower growth, posting frequency, engagement rates — without leaving the platform. Hootsuite offers this at $199+/month; Metricool includes it from the Starter plan (based on Metricool's published feature list).
+**Competitor benchmarking** is the feature that consistently earns Metricool mentions in user reviews. You can track competitor social accounts — follower growth, posting frequency, engagement rates — without leaving the platform. Hootsuite offers this at $249+/month (Advanced plan); Metricool includes it from the Starter plan (based on Metricool's published feature list).
 
 **AI-washing check:** The AI caption assistant is a GPT wrapper with a credit model. The analytics and benchmarking features are genuine data processing — Metricool ingests data from multiple sources (social APIs, Google Analytics integration) and surfaces patterns. The "AI" in Metricool is more data analysis than content generation, which is the more honest and useful version.
 
