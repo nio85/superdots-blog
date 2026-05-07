@@ -22,9 +22,9 @@ faqs:
     answer: "BAs use Miro AI to generate process flowcharts and BPMN diagrams from text descriptions: describe a process in plain language and Miro generates a visual diagram you can edit directly. For written SOPs and process narratives, Claude or Notion AI can draft documentation from a bulleted process description in under 5 minutes, then you refine for accuracy."
 ---
 
-Business analysts spend 40% of their time writing — requirements docs, BRDs, user stories, process maps, stakeholder decks. That 40% is invisible to the tools that claim to help them.
+Business analysts spend a large chunk of every week writing — requirements docs, BRDs, user stories, process maps, stakeholder decks. That writing work is invisible to most tools that claim to help them.
 
-Search for "AI tools for business analysts" and you'll find the same list: Power BI, Tableau, Julius. Data analysis tools. Useful for the 60% of the job that involves crunching numbers. The other 40% — writing requirements, documenting processes, preparing stakeholder presentations — barely gets mentioned.
+Search for "AI tools for business analysts" and you'll find the same list: Power BI, Tableau, Julius. Data analysis tools. Useful for the data-heavy parts of the job. The rest — writing requirements, documenting processes, preparing stakeholder presentations — barely gets mentioned.
 
 That's the gap this guide covers. Seven tools organized by where they fit in the BA workflow, with specific use cases for the parts of the job that other lists ignore.
 
