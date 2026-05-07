@@ -109,9 +109,9 @@ QuickBooks Bill Pay suits teams already inside the QuickBooks ecosystem who want
 
 ### BILL
 
-BILL is the most widely adopted AP platform for growing small businesses. Before buying, understand the full cost structure — the subscription is $45/user/month for AP Essentials, but BILL charges per transaction on top: $0.59 per ACH payment, $1.49 per domestic check, $14.99 per international wire. At 100 ACH payments per month, that adds $59 in transaction fees to your monthly cost.
+BILL is one of the most widely adopted AP platforms for growing small businesses. Before buying, understand the full cost structure — the subscription is $45/user/month for AP Essentials, but BILL charges per transaction on top: $0.59 per ACH payment, $1.49 per domestic check, $14.99 per international wire. At 100 ACH payments per month, that adds $59 in transaction fees to your monthly cost.
 
-BILL's core strength is its vendor network: more than 7 million businesses are in the BILL network, and payments to network vendors clear faster with less manual intervention. If many of your vendors also use BILL, the network effect is real.
+BILL's core strength is its vendor network: more than 7 million businesses are in the BILL network (per BILL), and payments to network vendors clear faster with less manual intervention. If many of your vendors also use BILL, the network effect is real.
 
 For teams already using [AI financial modeling tools](/blog/ai-for-financial-modeling/) to connect budget and payment data, BILL's API and accounting integrations (QuickBooks, Xero, NetSuite) make it a reliable data source for financial planning workflows.
 
@@ -123,13 +123,13 @@ Ramp is a spend management platform with AP functionality built in. It is free. 
 
 Stampli is an AI-native AP platform focused specifically on the approval workflow problem. Its AI assistant learns your company's approval patterns over time — flagging anomalous invoices, suggesting GL coding based on history, and routing exceptions automatically without manual rules maintenance.
 
-Stampli integrates with 70+ ERP and accounting systems. Pricing is not publicly listed. Based on user reviews on G2 and Capterra as of early 2026, teams typically pay $500–$1,000/month depending on invoice volume and integrations. Always request a quote with your actual invoice count — Stampli's pricing scales with volume.
+Stampli integrates with 70+ ERP and accounting systems (per Stampli). Pricing is not publicly listed. Based on user reviews on G2 and Capterra as of early 2026, teams typically pay $500–$1,000/month depending on invoice volume and integrations. Always request a quote with your actual invoice count — Stampli's pricing scales with volume.
 
 Stampli is the right call when your main problem is approval chain delays and you have multiple approvers across departments.
 
 ### Tipalti
 
-Tipalti is built for companies paying large numbers of international vendors. Its core capabilities are mass payment processing (batch payments in 196 countries and 120 currencies), supplier self-service onboarding (vendors enter their own payment details, reducing your data entry burden), and tax compliance automation (W-9, W-8, 1099 management).
+Tipalti is built for companies paying large numbers of international vendors. Its core capabilities are mass payment processing (batch payments in 196 countries and 120 currencies, per Tipalti), supplier self-service onboarding (vendors enter their own payment details, reducing your data entry burden), and tax compliance automation (W-9, W-8, 1099 management).
 
 For a US company with mostly domestic vendors, Tipalti is expensive for what it delivers. For a company managing 50+ international vendors across multiple currencies, it solves problems that no SMB-tier tool handles well.
 
