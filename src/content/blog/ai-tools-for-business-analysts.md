@@ -2,7 +2,6 @@
 title: "7 Best AI Tools for Business Analysts in 2026"
 description: "The 7 best AI tools for business analysts in 2026, organized by workflow stage — requirements writing, process mapping, data analysis, and stakeholder decks."
 pubDate: "2026-05-29"
-updatedDate: "2026-05-29"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "operations"
