@@ -136,7 +136,7 @@ The most common decision in this space is whether Spellbook's specialized capabi
 - You're an attorney or work closely enough with one that Word-native review is the right environment
 - Your contracts contain non-standard provisions that require clause-level legal reasoning across the whole document
 
-What's interesting is that for roughly 80% of small business use cases, Claude at $20/month with a structured prompt library replaces Spellbook at $99–199/month without a meaningful quality difference on standard contracts. The 20% where Spellbook genuinely wins matters — but it describes a lawyer or high-volume operations professional, not the typical small business scenario.
+What's interesting is that for most small business use cases — routine NDAs, vendor agreements, employment offers — Claude at $20/month with a structured prompt library replaces Spellbook at $99–199/month without a meaningful quality difference on standard contracts. The scenarios where Spellbook genuinely wins matter, but they describe a lawyer or high-volume operations professional, not the typical small business owner drafting a handful of agreements per month.
 
 ## Choosing by Contract Type
 
