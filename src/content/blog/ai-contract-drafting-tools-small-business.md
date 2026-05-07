@@ -19,6 +19,7 @@ faqs:
     answer: "AI-generated contracts are accurate for standard clauses in common document types — NDAs, vendor agreements, employment offers. They are unreliable for jurisdiction-specific provisions, complex IP licensing, or anything requiring current knowledge of recent case law. Always have a lawyer review before signing anything where the cost of getting it wrong exceeds a single hour of attorney time."
   - question: "Which AI contract tool is best for HR teams drafting employment agreements?"
     answer: "LawDepot ($35/month) and Rocket Lawyer ($39.99/month) are stronger fits for HR teams than general AI tools. Both have jurisdiction-aware employment templates with built-in prompts for state-specific requirements around at-will provisions, non-competes, and compensation disclosures. For teams that also need AI-assisted review of counterparty paper, Genie AI adds redlining support alongside drafting."
+heroImage: "/images/blog/ai-contract-drafting-tools-small-business.webp"
 ---
 
 In the 1870s, John D. Rockefeller's Standard Oil didn't dominate American railroads by offering lower freight rates. It dominated through contract language. His lawyers negotiated rebate clauses that were invisible in the headline terms — provisions that cut his effective freight rate by 25 to 50 percent while competitors signed what looked like identical agreements. The competitors weren't cheated. The contracts were legal and properly executed. They simply hadn't read what they'd agreed to as carefully as Rockefeller's team had written it.
