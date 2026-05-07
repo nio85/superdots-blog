@@ -178,7 +178,7 @@ Don't try to AI-enable all of HR at once. Pick the single highest-impact use cas
 
 ### Step 3: Get buy-in with data
 
-Use pilot results to build the case for broader adoption. "We reduced resume screening time from 20 hours to 2 hours per role" is more compelling than "AI could transform our recruiting."
+Use pilot results to build the case for [broader AI adoption](/blog/ai-change-management/). "We reduced resume screening time from 20 hours to 2 hours per role" is more compelling than "AI could transform our recruiting."
 
 ### Step 4: Expand deliberately
 
