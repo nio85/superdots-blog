@@ -109,7 +109,7 @@ QuickBooks Bill Pay suits teams already inside the QuickBooks ecosystem who want
 
 ### BILL
 
-BILL is the most widely adopted AP platform for growing small businesses. Before buying, understand the full cost structure — the subscription is $45/user/month for AP Essentials, but BILL charges per transaction on top: $0.59 per ACH payment, $1.49 per domestic check, $14.99 per international wire. At 100 ACH payments per month, that adds $59 in transaction fees to your monthly cost.
+BILL is one of the most widely adopted AP platforms for growing small businesses. Before buying, understand the full cost structure — the subscription is $45/user/month for AP Essentials, but BILL charges per transaction on top: $0.59 per ACH payment, $1.49 per domestic check, $14.99 per international wire. At 100 ACH payments per month, that adds $59 in transaction fees to your monthly cost.
 
 BILL's core strength is its vendor network: more than 7 million businesses are in the BILL network, and payments to network vendors clear faster with less manual intervention. If many of your vendors also use BILL, the network effect is real.
 
