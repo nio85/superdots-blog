@@ -149,20 +149,31 @@ export async function runPipeline(name, { dryRun = false, vars = {}, companyId, 
       const desc = resolveDescription(task.description, context);
       const assigneeId = PaperclipClient.resolveAgent(task.assignee);
 
+      // Resolve blocker to a real issue ID from prior task context
+      const blockedByIssueIds = [];
+      if (task.blockedBy && context[task.blockedBy]?.id) {
+        blockedByIssueIds.push(context[task.blockedBy].id);
+      }
+
       if (dryRun) {
         const fakeResult = { identifier: `${name.toUpperCase()}-${task.id.toUpperCase()}`, id: `dry-run-${task.id}`, title };
         context[task.id] = fakeResult;
-        console.log(`  ${task.status.padEnd(8)} | ${task.assignee.padEnd(20)} | ${title}`);
+        const blockerLabel = task.blockedBy ? ` (blocked by ${task.blockedBy})` : '';
+        console.log(`  ${task.status.padEnd(8)} | ${task.assignee.padEnd(20)} | ${title}${blockerLabel}`);
         results.tasks.push(fakeResult);
       } else {
-        const issue = await client.createIssue({
+        const issuePayload = {
           title,
           description: desc,
           status: task.status || 'todo',
           priority: task.priority || 'medium',
           assigneeAgentId: assigneeId,
           parentId: results.parent?.id,
-        });
+        };
+        if (blockedByIssueIds.length > 0) {
+          issuePayload.blockedByIssueIds = blockedByIssueIds;
+        }
+        const issue = await client.createIssue(issuePayload);
         context[task.id] = { identifier: issue.identifier, id: issue.id, title: issue.title };
         console.log(`  ${issue.identifier.padEnd(8)} | ${task.assignee.padEnd(20)} | ${title}`);
         results.tasks.push(issue);
