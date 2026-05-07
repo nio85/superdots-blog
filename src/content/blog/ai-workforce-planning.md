@@ -75,6 +75,8 @@ Headcount modeling is the most immediately useful application of AI workforce pl
 
 Traditional headcount modeling in spreadsheets gives you one number with no explanation and no range. AI headcount modeling gives you a forecast by role and quarter, a confidence range, and a driver breakdown so you can see exactly why the model recommends what it does.
 
+For a dedicated tool comparison, see our guide on [AI headcount forecasting tools](/blog/ai-headcount-forecasting-tools/).
+
 ### How it works
 
 AI headcount models use three inputs:

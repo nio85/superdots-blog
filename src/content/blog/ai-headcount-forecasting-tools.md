@@ -17,8 +17,8 @@ faqs:
     answer: "For companies with 50–500 employees, ChartHop (~$6/person/mo) and Rippling Analytics (add-on, ~$8/person/mo for existing Rippling users) are the clearest choices. ChartHop combines org chart visualization with scenario modeling. Rippling's analytics module only makes sense if you're already on Rippling HRIS — but if you are, it's the lowest-friction option available."
   - question: "How does ChartHop compare to Visier for headcount forecasting?"
     answer: "ChartHop targets teams of 50–2,000 employees at roughly $6/person/mo. It covers org chart visualization, scenario planning, and headcount modeling with real-time HRIS integration. Visier is enterprise-grade, starts at $5,000+/year, and adds predictive attrition and advanced people analytics. Companies under 2,000 employees without a dedicated People Analytics function will find Visier more than they need — and harder to use than something simpler."
-  - question: "How far ahead can AI headcount forecasting predict hiring needs?"
-    answer: "Most AI headcount tools produce reliable 3–12 month forecasts given sufficient historical data — typically 18–24 months of clean HRIS records. Beyond 12 months, accuracy drops significantly because business plans change. The real value isn't the two-year projection. It's the ability to model scenarios quickly: what if attrition rises 5%, or the company wins a large contract, without rebuilding the spreadsheet each time."
+  - question: "Which AI headcount forecasting tool works without an existing HRIS?"
+    answer: "Google Sheets combined with Claude covers basic forecasting for teams under 50 — no HRIS integration required. Once headcount exceeds 50, ChartHop and Causal both support manual data upload via CSV, so you can get started without a live HRIS connection. BambooHR and Rippling modules are different: they require existing accounts on those platforms before the forecasting features are accessible."
 heroImage: "/images/blog/ai-headcount-forecasting-tools.webp"
 ---
 
