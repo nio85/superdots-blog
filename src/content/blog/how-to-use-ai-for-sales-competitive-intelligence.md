@@ -71,6 +71,8 @@ AI conversation intelligence tools have made it practical to mine this at scale.
 
 ## What AI can actually extract from your call recordings
 
+Conversation intelligence software records, transcribes, and analyzes sales calls to surface patterns across deals at scale — making it practical to extract competitive signals that manual call review would miss.
+
 Before setting up any trackers, it helps to understand what you're looking for. Four signal types are worth tracking — call it the **CI Signal Stack**:
 
 **Explicit competitor mentions** — A prospect says a competitor's name. "We're also looking at Gong." "HubSpot does this differently." These are the easiest for AI to detect.
@@ -157,12 +159,12 @@ Your product team already hears feature requests from support tickets and custom
 
 ## Which tools do this best
 
-| Tool | Competitor tracking | Auto-tagging | Battlecard integration | Price |
-|---|---|---|---|---|
-| Gong | ✓ Custom trackers | ✓ | Klue, Crayon (native) | ~$100/user/month (contact sales) |
-| Chorus (Clari) | ✓ Custom trackers | ✓ | Klue, Battlecards | ~$8K–$15K/year |
-| getrafiki | ✓ (core feature) | ✓ | Battlecard export | From $29/user/month |
-| Salesken | Partial | Manual | Manual export | Contact sales |
+| Tool | Competitor tracking | Auto-tagging | Battlecard integration | Price | Best For |
+|---|---|---|---|---|---|
+| Gong | ✓ Custom trackers | ✓ | Klue, Crayon (native) | ~$100/user/month (contact sales) | Teams already on Gong — CI at no extra cost |
+| Chorus (Clari) | ✓ Custom trackers | ✓ | Klue, Battlecards | ~$8K–$15K/year (contact sales, estimated) | Enterprise teams on the Clari revenue platform |
+| getrafiki | ✓ (core feature) | ✓ | Battlecard export | From $29/user/month (published pricing) | SMB teams that want purpose-built CI without full revenue intelligence cost |
+| Salesken | Partial | Manual | Manual export | Contact sales | Teams with limited CI needs (partial tracking only) |
 
 Gong leads on integration depth — if you're already paying for it, the competitive intelligence layer costs nothing extra. Chorus is equivalent for Clari enterprise shops. getrafiki is the best option for teams that want purpose-built CI extraction without the full revenue intelligence price tag.
 
