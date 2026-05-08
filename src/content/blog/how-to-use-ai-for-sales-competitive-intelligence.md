@@ -1,7 +1,7 @@
 ---
-title: "How to Use AI to Extract Competitive Intelligence from Sales Calls (Step-by-Step)"
-description: "Your recorded sales calls hold the freshest competitive intel your team will ever get. Here's a step-by-step workflow for extracting it using Gong, Chorus, and other conversation intelligence tools."
-pubDate: "2026-06-10"
+title: "How to Use AI to Extract Competitive Intelligence from Sales Calls"
+description: "Step-by-step workflow for mining competitor data from your recorded sales calls using Gong, Chorus, and getrafiki — and turning it into battlecard updates."
+pubDate: "2026-05-31"
 author: Superdots Team
 department: sales
 contentPillar: connecting-the-dots
