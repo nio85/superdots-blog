@@ -11,7 +11,6 @@ tags:
   - conversation-intelligence
   - sales-enablement
   - gong
-imageHint: "sales manager at laptop reviewing call transcripts dashboard with competitor mentions highlighted in yellow"
 faqs:
   - question: How does Gong AI extract competitive intelligence from sales calls?
     answer: >-
