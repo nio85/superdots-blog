@@ -4,6 +4,7 @@ description: "Most teams think they're using agentic AI. They're using automatio
 pubDate: "2026-05-30"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
+department: "operations"
 tags: ["agentic AI", "AI workflows", "AI for business", "automation", "AI agents"]
 imageHint: "professional at a whiteboard with a multi-step workflow diagram, human and AI decision points marked in different colors, open-plan office background"
 heroImage: "/images/blog/ai-agentic-workflows-business.webp"
