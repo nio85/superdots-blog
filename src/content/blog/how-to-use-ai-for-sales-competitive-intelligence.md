@@ -58,6 +58,7 @@ faqs:
       purpose-built for competitive intelligence extraction and starts at
       $29/user/month. Salesken offers partial tracking but requires manual
       export for any downstream analysis.
+heroImage: "/images/blog/how-to-use-ai-for-sales-competitive-intelligence.webp"
 ---
 
 Your best competitive intelligence is sitting in your recorded sales calls. Most teams never look at it.
