@@ -71,7 +71,7 @@ AI conversation intelligence tools have made it practical to mine this at scale.
 
 ## What AI can actually extract from your call recordings
 
-Before setting up any trackers, it helps to understand what you're looking for. There are four signal types worth tracking:
+Before setting up any trackers, it helps to understand what you're looking for. Four signal types are worth tracking — call it the **CI Signal Stack**:
 
 **Explicit competitor mentions** — A prospect says a competitor's name. "We're also looking at Gong." "HubSpot does this differently." These are the easiest for AI to detect.
 
