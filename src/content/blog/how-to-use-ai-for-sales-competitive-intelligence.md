@@ -58,6 +58,7 @@ faqs:
       $29/user/month. Salesken offers partial tracking but requires manual
       export for any downstream analysis.
 heroImage: "/images/blog/how-to-use-ai-for-sales-competitive-intelligence.webp"
+imageHint: "sales analyst reviewing AI-tagged competitor mentions highlighted in a recorded call transcript on screen"
 ---
 
 Your best competitive intelligence is sitting in your recorded sales calls. Most teams never look at it.
