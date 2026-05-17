@@ -2,7 +2,7 @@
 title: 'Best AI Note-Taking Apps for Work (2026)'
 description: 'Notion AI, Otter.ai, Mem & Obsidian compared — best AI note-taking apps for meetings, research, and team docs. Free options and paid plans from $8/month.'
 pubDate: '2026-03-18'
-updatedDate: '2026-04-21'
+updatedDate: '2026-05-17'
 author: 'Superdots Team'
 department: 'operations'
 useCase: 'automation'

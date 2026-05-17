@@ -35,7 +35,7 @@ Different problems. Different tools. Same cost of getting it wrong.
 
 ## First: what actually makes an AI agent different from a chatbot
 
-An AI chatbot is a decision tree with a personality. It recognizes keywords, matches intent, and routes to a pre-written answer. Useful. Also the tool you've probably been using since 2019. Our [guide to AI customer service chatbots](/blog/ai-customer-service-chatbot) covers that tier.
+An AI chatbot is a decision tree with a personality. It recognizes keywords, matches intent, and routes to a pre-written answer. Useful. Also the tool you've probably been using since 2019. Our [guide to AI customer service chatbots](/blog/ai-customer-service-chatbot) covers that tier. For non-technical teams comparing no-code [AI chatbot builders](/blog/ai-chatbot-builder/) by setup speed — Chatfuel, Tidio, Intercom Fin, and Zendesk side by side — that's the companion guide.
 
 **An AI customer support agent is categorically different.** An AI customer support agent is software that can understand a customer's request, look up information in connected systems, and take action — like issuing a refund or updating an account record — without human intervention, escalating to a human only when the situation falls outside its scope.
 
