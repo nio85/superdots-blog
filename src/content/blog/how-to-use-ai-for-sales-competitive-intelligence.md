@@ -62,7 +62,7 @@ heroImage: "/images/blog/how-to-use-ai-for-sales-competitive-intelligence.webp"
 
 Your best competitive intelligence is sitting in your recorded sales calls. Most teams never look at it.
 
-Every lost deal contains competitor intel. Every pricing objection where a rep says "they mentioned Competitor X was cheaper" is a signal. Every feature gap objection — "but your tool doesn't do Y like theirs does" — is a signal. These signals are scattered across hundreds of call recordings, individually trivial, collectively critical. And most sales teams ignore them entirely.
+Every lost deal contains competitor intel. Every [pricing objection](/blog/ai-sales-objection-handling-tools) where a rep says "they mentioned Competitor X was cheaper" is a signal. Every feature gap objection — "but your tool doesn't do Y like theirs does" — is a signal. These signals are scattered across hundreds of call recordings, individually trivial, collectively critical. And most sales teams ignore them entirely.
 
 The common approach to competitive intelligence is external monitoring: tracking competitor websites, product releases, job postings, review sites. That's useful background noise. But the freshest, most actionable intel comes from inside your own deal conversations — where buyers tell your reps exactly what competitors are pitching, what pricing they quoted, and what objections they're raising.
 
@@ -109,7 +109,7 @@ Define four signal types before you start reviewing calls:
 | Mention | Competitor named in any context | "We're also talking to Salesforce" |
 | Objection | Feature or capability gap raised | "They have a native Slack integration, you don't" |
 | Pricing Reference | Competitor price point shared | "They quoted us $80/seat" |
-| Buying Trigger | Competitor already in their stack | "We use HubSpot for marketing, so the CRM matters" |
+| Buying Trigger | Competitor already in their stack | "We use HubSpot for marketing, so the [CRM](/blog/ai-crm-tools) matters" |
 
 Why taxonomy matters: if every mention is treated the same, you can't triage. A "mention" that's positive ("we compared you to Competitor X and preferred you") is different from a "mention" that's a near-loss trigger ("we almost went with Competitor X because of pricing"). The signal type tells you how to respond.
 
@@ -117,7 +117,7 @@ Why taxonomy matters: if every mention is treated the same, you can't triage. A 
 
 The review doesn't need to be long. Thirty minutes, once a week, run by one person.
 
-**Who does it:** A CI owner — typically a sales enablement manager, competitive intelligence analyst, or a senior sales rep with cross-deal visibility. Not every rep. Individual reps see their own calls; the CI owner sees the pattern across all calls.
+**Who does it:** A CI owner — typically a [sales enablement manager](/blog/ai-sales-enablement-tools-small-business), competitive intelligence analyst, or a senior sales rep with cross-deal visibility. Not every rep. Individual reps see their own calls; the CI owner sees the pattern across all calls.
 
 **The 30-minute process:**
 

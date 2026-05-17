@@ -46,7 +46,7 @@ Before recommending any paid software, it's worth being precise about what the f
 
 For teams under 50 people, a structured Google Sheet combined with a quarterly Claude prompt handles most headcount forecasting requirements at zero cost.
 
-**Step 1:** Export your HRIS data into a Google Sheet — current headcount by department, hire date, role, salary band, and all attrition events in the last 24 months. The 24-month window matters for detecting attrition patterns.
+**Step 1:** Export your HRIS data into a Google Sheet — current headcount by department, hire date, role, [salary band](/blog/ai-compensation-benchmarking), and all attrition events in the last 24 months. The 24-month window matters for detecting attrition patterns.
 
 **Step 2:** Build three scenarios in separate tabs: base (current trajectory), conservative (10% reduction in planned hires, higher attrition), and aggressive (15% growth target). Hard-code the attrition assumption using the trailing 12-month rate and connect cells so changing one input propagates through all scenarios.
 
@@ -144,7 +144,7 @@ The honest tradeoff: Adaptive Planning has a steep learning curve and an impleme
 
 Visier is the category leader for enterprise people analytics, with headcount forecasting as one capability within a broader platform. The differentiating feature is predictive attrition modeling: Visier analyzes workforce data patterns to flag which employees or roles have elevated flight risk before the resignation happens.
 
-At scale, this matters differently than it does at smaller companies. A company with 3,000 employees and 12% annual attrition has approximately 360 exits per year. Knowing which 40 are likely in the next quarter — and in which roles — changes how the organization plans backfill hiring and succession.
+At scale, this matters differently than it does at smaller companies. A company with 3,000 employees and 12% annual attrition has approximately 360 exits per year. Knowing which 40 are likely in the next quarter — and in which roles — changes how the organization plans backfill [hiring](/blog/ai-resume-screening) and succession.
 
 Companies under 2,000 employees should not evaluate Visier. The platform requires a dedicated People Analytics function to implement and operate effectively. For the strategic workforce planning methodology that sits above tool selection, see our guide on [AI workforce planning](/blog/ai-workforce-planning).
 
