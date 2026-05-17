@@ -81,7 +81,7 @@ The account is ready to talk. The job is to give your SDR or AE the full context
 
 Demand generation lives or dies on content volume. You need enough blog posts, LinkedIn articles, ad copy variants, and landing page versions to show up everywhere your buyers are researching. Most teams can't produce that volume without AI.
 
-Jasper is the most mature AI writing platform for marketing teams. The Pro plan ($69/month) gives you brand voice training, campaign templates for demand gen sequences, and multi-seat collaboration — so your whole content team works from the same model, not their individual ChatGPT accounts.
+Jasper is one of the most established AI writing platforms for marketing teams. The Pro plan ($69/month) gives you brand voice training, campaign templates for demand gen sequences, and multi-seat collaboration — so your whole content team works from the same model, not their individual ChatGPT accounts.
 
 **What it does well:** Jasper's Brand Voice feature trains the model on your company's tone and terminology, which means output that doesn't need complete rewriting. The campaign workflow lets you generate a full blog post, three LinkedIn variants, and four ad copy versions from a single brief — useful when you're running integrated demand gen campaigns.
 
@@ -179,7 +179,7 @@ Metadata automates the execution of B2B paid campaigns across LinkedIn, Facebook
 
 The core value proposition: Metadata runs hundreds of micro-experiments (different audiences, creative combinations, landing pages) simultaneously and allocates budget to whatever's working, faster than a human can. For demand gen specifically, it builds audiences from intent data and CRM segments automatically.
 
-**What it does well:** The automation genuinely reduces manual work. Teams that move from manual campaign management to Metadata typically cut their paid media management time by 60–70% while maintaining or improving performance metrics. The ROI tracking integrates with Salesforce to connect ad spend to pipeline and closed revenue.
+**What it does well:** The automation genuinely reduces manual work. According to Metadata's published case studies, teams moving from manual campaign management typically cut paid media management time by 60–70% while maintaining or improving performance metrics. The ROI tracking integrates with Salesforce to connect ad spend to pipeline and closed revenue.
 
 **What it doesn't do:** Metadata is a tool for teams already running B2B paid campaigns at meaningful scale ($15K+/month in ad spend). Below that threshold, the platform cost doesn't justify the efficiency gains — manual management is fine.
 
