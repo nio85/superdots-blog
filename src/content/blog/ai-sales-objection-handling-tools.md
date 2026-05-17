@@ -43,7 +43,7 @@ These solve fundamentally different problems. A rep who freezes on "we're happy 
 
 > **AI sales objection handling tools** are software that help sales reps prepare for, or respond to, buyer pushback during the sales process — either through pre-call practice simulations or real-time in-call response prompts.
 
-According to Gong's [State of Revenue Growth 2025](https://www.gong.io/press/revenue-organizations-using-ai-in-2024-reported-29-percent-higher-sales-growth-than-their-peers-according-to-new-report-from-gong) report, sales teams using AI as a core driver of their revenue strategy are 65% more likely to increase win rates — the category decision is where most teams leave that improvement on the table.
+According to [Gong research](https://www.gong.io/win-rates), sellers who use AI to optimize their sales activities increase their win rates by 50% — the category decision is where most teams leave that improvement on the table.
 
 Here's how to tell them apart, what each costs, and how to pick the right one for where your team is.
 
