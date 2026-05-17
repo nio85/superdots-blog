@@ -1,7 +1,8 @@
 ---
 title: 'Best AI Call Center Software for 2026'
-description: 'Compare 7 AI call center platforms — pricing, features, and which fits teams under 50 agents. Includes honest TCO analysis and a native-AI vs. legacy comparison.'
+description: 'Compare 7 AI call center platforms — pricing, features, and which fits teams under 50 agents. Includes TCO analysis and a native-AI vs. legacy comparison.'
 pubDate: '2026-05-13'
+updatedDate: '2026-05-17'
 author: 'Superdots Team'
 department: 'customer-support'
 useCase: 'automation'
