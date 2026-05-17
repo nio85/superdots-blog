@@ -68,6 +68,11 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Deal Intelligence: Catch At-Risk Deals (2026)](https://superdots.sh/blog/ai-deal-intelligence/)
 - [AI Sales Enablement Tools for Small Business](https://superdots.sh/blog/ai-sales-enablement-tools-small-business/)
 - [AI Win/Loss Analysis Tools (2026)](https://superdots.sh/blog/ai-win-loss-analysis-tools/)
+- [AI Objection Handling Tools: Coaching vs. Roleplay (2026)](https://superdots.sh/blog/ai-sales-objection-handling-tools/)
+- [AI for Sales Call Prep: Full Brief in 5 Minutes](https://superdots.sh/blog/ai-for-sales-call-prep/)
+- [AI Sales Coaching: Train Reps While They Sell](https://superdots.sh/blog/ai-sales-coaching/)
+- [Best AI SDR Tools (2026): Autonomous vs. Augmented](https://superdots.sh/blog/best-ai-sdr-tools/)
+- [How to Use AI for Sales Competitive Intelligence](https://superdots.sh/blog/how-to-use-ai-for-sales-competitive-intelligence/)
 
 ## Marketing AI Guides
 
@@ -112,6 +117,8 @@ Step-by-step guides for implementing AI across business functions.
 - [AI FP&A Software for Small Business (2026)](https://superdots.sh/blog/ai-fpa-software-small-business/)
 - [AI Customer Lifetime Value Prediction Tools](https://superdots.sh/blog/ai-customer-lifetime-value-prediction-tools/)
 - [AI Invoice Processing: Cut AP Time by 80%](https://superdots.sh/blog/ai-invoice-processing/)
+- [Best AI Financial Modeling Tools (2026)](https://superdots.sh/blog/ai-financial-modeling-tools/)
+- [AI Fraud Detection for Finance Teams](https://superdots.sh/blog/ai-fraud-detection/)
 
 ## Operations AI Guides
 
@@ -130,6 +137,8 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Workflow Automation: No Code Required](https://superdots.sh/blog/ai-workflow-automation/)
 - [AI KPI Dashboard Software for Operations (2026)](https://superdots.sh/blog/ai-kpi-dashboard-software/)
 - [7 AI Demand Forecasting Tools for SMBs (2026 Pricing)](https://superdots.sh/blog/ai-demand-forecasting-tools-small-business/)
+- [AI Document Management Software (2026)](https://superdots.sh/blog/ai-document-management/)
+- [Best AI Report Generator: Business Reports](https://superdots.sh/blog/ai-report-generator/)
 
 ## Engineering AI Guides
 
@@ -167,6 +176,8 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Customer Onboarding: Reduce Time-to-Value](https://superdots.sh/blog/ai-customer-onboarding/)
 - [AI Customer Service Quality Assurance (2026)](https://superdots.sh/blog/ai-customer-service-qa/)
 - [Best AI Customer Support Agents (2026)](https://superdots.sh/blog/ai-customer-support-agents/)
+- [AI Customer Sentiment Dashboard Tools (2026)](https://superdots.sh/blog/ai-customer-sentiment-dashboard/)
+- [Best AI Real-Time Agent Assist Software (2026)](https://superdots.sh/blog/best-ai-real-time-agent-assist-software/)
 
 ## Design AI Guides
 
@@ -178,6 +189,8 @@ Step-by-step guides for implementing AI across business functions.
 - [AI Color Palette Generators for Branding](https://superdots.sh/blog/ai-color-palette-generator/)
 - [AI Logo Design: Brand Identity Guide](https://superdots.sh/blog/ai-logo-design/)
 - [Best AI Video Editing Tools for Non-Editors](https://superdots.sh/blog/best-ai-video-editing-tools/)
+- [AI-Generated Art for Commercial Use](https://superdots.sh/blog/ai-generated-art-for-commercial-use/)
+- [Best AI Writing Tools for Business (2026)](https://superdots.sh/blog/best-ai-writing-tools/)
 
 ## Contact
 
