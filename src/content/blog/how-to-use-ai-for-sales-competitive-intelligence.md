@@ -11,6 +11,7 @@ tags:
   - conversation-intelligence
   - sales-enablement
   - gong
+imageHint: "sales rep reviewing a competitive battlecard on screen with conversation intelligence dashboard showing competitor mentions from recorded calls"
 faqs:
   - question: How does Gong AI extract competitive intelligence from sales calls?
     answer: >-
