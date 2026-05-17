@@ -111,7 +111,7 @@ Most paid AI logo tools export all of these. If yours only gives you a JPG on a 
 
 ## Beyond logos: building a full brand identity
 
-A logo without a brand system is like a great headline on a bad article. Here is what else you need, and how AI can help.
+A logo without a brand system is like a great headline on a bad article. Our [AI brand identity tools](/blog/ai-brand-identity-tools) guide covers every component — colors, typography, guidelines, and templates — if you want the full system. Here is what else you need, and how AI can help.
 
 ### Brand colors
 
