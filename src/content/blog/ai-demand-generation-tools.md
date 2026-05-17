@@ -19,6 +19,7 @@ faqs:
     answer: "No — and teams that try this burn their budget fast. AI demand generation tools automate the execution layer (audience targeting, content variation, ad rotation, visitor identification) but they don't replace strategic judgment. Someone still needs to decide which accounts to prioritize, which content angles to test, and how to interpret intent signal spikes. What AI tools do is let one demand gen manager do the work that previously required a team of four. The job changes, it doesn't disappear."
   - question: "What is intent data and how do AI tools use it for demand generation?"
     answer: "Intent data is behavioral signal — evidence that a specific company is actively researching a topic relevant to your product. B2B intent data platforms (Bombora, 6sense) aggregate signals from thousands of publisher websites: which companies are reading articles about your category, downloading competitor comparisons, or visiting review sites. AI layers on top to score accounts by likelihood to convert and predict the optimal moment to reach out. Without AI, intent data is a spreadsheet of companies. With AI, it becomes a prioritized list of accounts your sales team should contact this week."
+heroImage: "/images/blog/ai-demand-generation-tools.webp"
 ---
 
 Most B2B marketing teams are buying lead generation tools and calling it demand generation. Apollo to scrape contacts. ZoomInfo to enrich them. LinkedIn Sales Navigator to reach out cold. Then they wonder why pipeline is weak and SDRs are burning out on unresponsive prospects.
