@@ -1,7 +1,8 @@
 ---
 title: "How to Use AI to Prepare for Difficult Conversations at Work"
-description: "A practical 3-step protocol for using AI to prepare for hard workplace conversations — with specific prompts for PIPs, salary declines, terminations, and team conflicts."
+description: "A practical 3-step protocol for using AI to prepare for hard workplace conversations — prompts for PIPs, salary declines, terminations, and conflicts."
 pubDate: "2026-05-09"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "hr"

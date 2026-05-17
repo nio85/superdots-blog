@@ -1,7 +1,8 @@
 ---
 title: "How to Use AI for Cold Email (Most People Have It Backwards)"
-description: "AI cold emails fail because reps use AI to write, not to research. The real leverage is using AI for prospect intelligence first, then letting that drive the email."
+description: "AI cold emails fail when reps use AI to write, not research. The real leverage is using AI for prospect intelligence first, then letting that drive the email."
 pubDate: "2026-05-08"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 contentPillar: "connecting-the-dots"
 department: "sales"

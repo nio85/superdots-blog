@@ -1,7 +1,8 @@
 ---
-title: "Why 'AI-First' Means Nothing — And What Companies Actually Winning With AI Have in Common"
-description: "74% of companies struggle to get value from AI despite massive investment. The label 'AI-first' is an empty declaration — here's what the 4% actually succeeding have figured out."
+title: "AI-First Strategy: What It Really Means"
+description: "74% of companies struggle to get value from AI. The label 'AI-first' is an empty declaration — here's what the 4% actually succeeding have figured out."
 pubDate: "2026-05-14"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 contentPillar: "the-big-picture"
 tags: ["AI strategy", "enterprise AI", "AI implementation", "digital transformation", "AI ROI"]

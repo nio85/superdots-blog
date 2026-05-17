@@ -1,7 +1,8 @@
 ---
-title: "How to Build an AI Content Marketing Workflow (for a Team of 1, 2, or 3)"
-description: "A practical 6-stage AI content marketing workflow for small teams — from topic research to measurement. Specific tools, real prices, and where human judgment stays essential."
+title: "AI Content Marketing Workflow for Small Teams"
+description: "A practical AI content marketing workflow for small teams — from research to measurement. Specific tools, real prices, and where human judgment stays essential."
 pubDate: "2026-05-15"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 department: "marketing"
 contentPillar: "connecting-the-dots"

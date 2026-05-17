@@ -1,8 +1,8 @@
 ---
-title: "The AI Productivity Paradox: Why Companies Spending Billions Aren't Getting More Done"
-description: "Companies are spending $1.5 trillion on AI in 2025. Knowledge worker productivity has barely moved. Here's what the data actually reveals — and why the tool isn't the variable."
+title: "The AI Productivity Paradox: What the Data Shows"
+description: "$1.5 trillion in AI spending in 2025, yet knowledge worker productivity barely moved. Here's what the data reveals — and why the tool isn't the variable."
 pubDate: "2026-05-11"
-updatedDate: "2026-04-27"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 contentPillar: "the-big-picture"
 tags: ["AI", "productivity", "AI adoption", "enterprise AI", "ROI", "AI productivity paradox"]

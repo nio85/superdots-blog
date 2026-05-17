@@ -1,5 +1,6 @@
 ---
-title: 'Best AI Customer Self-Service Tools (2026): An Honest SMB Guide'
+title: 'Best AI Customer Self-Service Tools (2026)'
+updatedDate: "2026-05-17"
 description: "Most AI self-service guides are written by vendors. This one isn't. 8 tools reviewed: SMB pricing, honest tradeoffs, and where each one breaks."
 pubDate: "2026-05-12"
 author: "Superdots Team"
