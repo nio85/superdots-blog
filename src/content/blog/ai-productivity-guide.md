@@ -74,8 +74,9 @@ This is especially useful for recurring presentations — weekly reports, monthl
 
 Every team has a knowledge problem. Important information lives in docs, wikis, Slack threads, and people's heads. Finding the right answer means searching multiple places and hoping you get lucky.
 
-AI-powered knowledge bases change this. Platforms like [Notion](https://www.notion.so) and [Microsoft 365](https://www.microsoft.com/en-us/microsoft-365) now include AI-powered search that indexes your existing content, understands questions in natural language, and surfaces the right answer regardless of where it lives. New team members get up to speed faster. Experienced team members stop answering the same questions repeatedly.
+AI-powered knowledge bases change this. [AI note-taking apps](/blog/ai-note-taking-apps/) like [Notion](https://www.notion.so) and platforms like [Microsoft 365](https://www.microsoft.com/en-us/microsoft-365) now include AI-powered search that indexes your existing content, understands questions in natural language, and surfaces the right answer regardless of where it lives. New team members get up to speed faster. Experienced team members stop answering the same questions repeatedly.
 
+- [AI note-taking apps for work](/blog/ai-note-taking-apps/) — Notion AI, Mem, and Obsidian compared for capturing and organizing notes
 - [AI knowledge base for teams](/blog/ai-knowledge-base-for-teams/) — build a knowledge base that actually gets used
 
 ## Start with your biggest time sink
