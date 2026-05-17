@@ -1,8 +1,8 @@
 ---
-title: "AI Workforce Planning & Headcount Forecasting: 2026 Guide"
-description: "Step-by-step: how HR teams use AI to replace headcount spreadsheets. Visier, Workday Adaptive, and Mosaic with 2026 pricing — and when AI beats a spreadsheet."
+title: "AI Workforce Planning: Visier, Workday & Mosaic"
+description: "How HR teams replace headcount spreadsheets with AI. Visier, Workday Adaptive, and Mosaic — 2026 pricing, attrition prediction built in, step-by-step setup."
 pubDate: "2026-03-17T07:26:22Z"
-updatedDate: "2026-05-07"
+updatedDate: "2026-05-17"
 author: "Superdots Team"
 department: "hr"
 useCase: "analysis"
@@ -59,7 +59,7 @@ Traditional workforce planning is not planning. It is budgeting with job titles.
 
 ## What AI Workforce Planning Actually Does
 
-AI workforce planning connects the dots between business performance, workforce data, and future needs. It turns "we think we need more people" into "based on our growth trajectory, pipeline, and attrition patterns, here is exactly what we need and when."
+AI workforce planning connects the dots between business performance, workforce data, and future needs. [People analytics platforms](/blog/ai-people-analytics-software) provide the data layer that feeds these models — connecting HRIS records, engagement surveys, and performance data into a unified view. The result: "we think we need more people" becomes "based on our growth trajectory, pipeline, and attrition patterns, here is exactly what we need and when."
 
 ### Three core capabilities
 
@@ -106,7 +106,7 @@ Then expand to other departments. Engineering is harder (headcount is project-dr
 
 ## AI for Skills Gap Analysis and Internal Mobility
 
-Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?" If this applies to your team, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
+Hiring is expensive. Before posting a new role, the smartest question is: "Do we already have someone who could do this?" [AI skills gap analysis](/blog/ai-skills-gap-analysis) tools can answer that question systematically. If compensation is also a factor, our [AI Compensation Benchmarking: Get Salary Data Right Without Consultants](/blog/ai-compensation-benchmarking/) guide covers the details.
 
 ### Skills inventory
 
