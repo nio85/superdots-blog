@@ -36,7 +36,7 @@ This guide compares eight tools by output channel: which one actually wins for L
 
 **Brand voice tools** (Lately, Copy.ai, Taplio, Jasper) generate new content that sounds like your brand. Quality improves as the model trains on your historical content and engagement data.
 
-According to [HubSpot's State of Marketing 2024](https://www.hubspot.com/state-of-marketing), 62% of marketers say AI saves them 2–3 hours per day on content tasks — the same time compression applies when adapting a finished asset into five platform-specific formats.
+According to [HubSpot's 2024 State of Marketing report](https://www.hubspot.com/state-of-marketing), marketers using AI save an average of 3 hours per piece of content and 2.5 hours per day overall — time that compounds quickly when a single podcast episode becomes five published formats.
 
 ## Which Tool Wins Per Channel
 
