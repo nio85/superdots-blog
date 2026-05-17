@@ -8,7 +8,6 @@ department: 'customer-support'
 useCase: 'communication'
 tags: ['customer-support', 'agent-assist', 'contact-center', 'ai-tools', 'real-time-ai']
 heroImage: "/images/blog/best-ai-real-time-agent-assist-software.webp"
-imageHint: 'customer service agent at dual-monitor workstation with real-time AI guidance overlay, contact center environment'
 faqs:
   - question: 'What is the difference between AI agent assist software and a knowledge base?'
     answer: 'Real-time agent assist is active during a conversation — it surfaces answers and coaching cues as the customer talks. A knowledge base is passive: agents search it manually between interactions. Modern agent assist tools often include a knowledge layer, but the key difference is whether information comes to the agent automatically or the agent has to find it.'
@@ -44,9 +43,9 @@ The demo solved a problem the team does not actually have.
 
 A team where agents struggle with **handle time** needs real-time coaching — prompts that guide agents toward faster resolution paths during the call itself.
 
-A team where agents struggle with **ticket escalations and accuracy** needs knowledge retrieval — the ability to surface the right policy or procedure without putting the customer on hold to search for it.
+A team where agents struggle with **[ticket escalations](/blog/ai-ticket-routing) and accuracy** needs knowledge retrieval — the ability to surface the right policy or procedure without putting the customer on hold to search for it.
 
-A team where **CSAT is unpredictable** — where satisfaction is volatile and no one knows which interactions are about to go wrong — needs sentiment prediction tools that flag at-risk calls before the survey arrives.
+A team where **CSAT is unpredictable** — where satisfaction is volatile and no one knows which interactions are about to go wrong — needs [sentiment prediction tools](/blog/ai-customer-sentiment-dashboard) that flag at-risk calls before the survey arrives.
 
 These are different products. Buying call coaching software when the bottleneck is knowledge gaps does not help agents find answers faster. It gives them suggestions about how to phrase things they do not know yet.
 

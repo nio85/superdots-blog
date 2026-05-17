@@ -64,7 +64,7 @@ Five situations where Claude-plus-template isn't enough:
 1. **You draft 10+ contracts per month** — the time cost of manual prompting and cleanup exceeds the subscription cost at that volume
 2. **Counterparties send you their paper** — you need to redline someone else's contract, not draft yours from scratch
 3. **You work across multiple jurisdictions** — US state employment law variations alone make template-based drafting unreliable without jurisdiction-aware logic
-4. **Your contracts include regulatory requirements** — GDPR data processing agreements, HIPAA business associate agreements, or export control clauses require current legal specificity
+4. **Your contracts include regulatory requirements** — [GDPR data processing agreements](/blog/ai-gdpr-compliance-tools-small-business), HIPAA business associate agreements, or export control clauses require current legal specificity
 5. **You need an audit trail** — signed copies, version history, and amendment logs in one place for compliance or due diligence
 
 If two or more of these apply, a purpose-built tool will save time and reduce risk. One is probably not enough to justify the switch.
@@ -92,7 +92,7 @@ Less useful for employment contracts (the database skews toward commercial filin
 
 LawDepot uses an interview-driven model: you answer structured questions about your situation and it generates a document. The AI layer customizes clauses based on your answers rather than an open-ended prompt. It covers 150+ document types across US, UK, Canadian, and Australian jurisdictions.
 
-Best for HR managers and operations leads who find open-ended AI prompting uncomfortable. The guided flow prevents missing standard provisions by omission — a real risk when you're drafting less frequently. The jurisdiction-aware employment templates are worth the price for anyone managing agreements across multiple US states.
+Best for [HR managers](/blog/ai-for-hr) and operations leads who find open-ended AI prompting uncomfortable. The guided flow prevents missing standard provisions by omission — a real risk when you're drafting less frequently. The jurisdiction-aware employment templates are worth the price for anyone managing agreements across multiple US states.
 
 The limitation: questionnaire-driven tools cap out when your situation deviates from their decision trees. Complex equity vesting, non-standard IP ownership, or multi-party agreements won't fit cleanly into LawDepot's structure. For anything that doesn't map to a standard template, you'll need a different tool or an attorney.
 
@@ -150,7 +150,7 @@ Rocket Lawyer or LawDepot for guided template creation; Claude for customizing a
 LawDepot or Rocket Lawyer — both have jurisdiction-aware employment templates with built-in checks for state-specific requirements. Avoid relying on Claude alone for employment agreements: non-compete enforceability, at-will provisions, and compensation disclosure requirements vary by state in ways that a general AI should not be your only check on.
 
 **Freelance / Independent Contractor Agreement**
-Claude with a reputable freelance contract template handles this well. The one clause to verify manually: IP ownership. Confirm that work-for-hire language is explicit and that any carve-outs for the contractor's pre-existing IP are clearly defined, regardless of which tool generates the first draft.
+Claude with a reputable freelance contract template handles this well. The one clause to verify manually: [IP ownership](/blog/ai-ip-management). Confirm that work-for-hire language is explicit and that any carve-outs for the contractor's pre-existing IP are clearly defined, regardless of which tool generates the first draft.
 
 One thing worth noting: the best contract drafting tool is the one your counterparty doesn't have to fight through to understand. The Rockefeller lesson cuts both ways — precision protects you, but impenetrable language creates disputes. Whatever tool you use, clarity is the goal. Not impressiveness.
 

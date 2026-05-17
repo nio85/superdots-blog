@@ -140,7 +140,7 @@ One practical limitation: Gamma doesn't know your brand guidelines or internal t
 
 Julius AI is built specifically for data analysis without code. You upload a CSV, Excel file, or connect a database, ask questions in plain English, and Julius runs the analysis and generates the chart. No SQL, no Python, no pivot tables.
 
-For BAs, the primary use cases are gap analysis and root-cause analysis. You have operational data, process performance data, or project metrics — you need to identify where performance drops, which variables correlate with delays, or where a process breaks down. Julius handles these questions and produces visual output ready for a stakeholder deck.
+For BAs, the primary use cases are gap analysis and root-cause analysis. You have operational data, process performance data, or project metrics — you need to identify where performance drops, which variables correlate with delays, or where a process breaks down. Julius handles these questions and produces [visual output](/blog/ai-data-visualization-tools) ready for a stakeholder deck.
 
 What Julius doesn't do: it's a single-user workflow with no native collaboration features. If you need the analysis to be shared with a team or refreshed on a schedule, see Rows below.
 
@@ -168,7 +168,7 @@ Confluence AI also flags inconsistencies across pages — if your BRD says users
 
 **BA workflow stage: Data analysis and stakeholder communication**
 
-Rows combines spreadsheet-style data analysis with native sharing and publishing. For BAs who run recurring analysis — monthly performance reports, sprint velocity tracking, operational dashboards — Rows automates the refresh cycle and produces output that stakeholders can access as a live link.
+Rows combines spreadsheet-style data analysis with native sharing and publishing. For BAs who run recurring analysis — monthly performance reports, sprint velocity tracking, operational [dashboards](/blog/ai-kpi-dashboard-software) — Rows automates the refresh cycle and produces output that stakeholders can access as a live link.
 
 The AI features handle analysis: trend identification, anomaly detection, natural language queries against your data. The sharing features handle distribution. Instead of exporting a CSV every month and reformatting it in PowerPoint, you share a Rows link that updates automatically when the underlying data changes.
 
