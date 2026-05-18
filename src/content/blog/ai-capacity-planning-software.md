@@ -8,6 +8,7 @@ department: "operations"
 useCase: "analysis"
 tags: ["capacity planning", "operations", "resource management", "AI tools", "team planning"]
 imageHint: "operations manager at a standing desk reviewing a capacity utilization dashboard with team load charts on a large monitor"
+heroImage: "/images/blog/ai-capacity-planning-software.webp"
 ---
 
 Most operations teams find out they're over capacity the same way: a deadline slips, a key person burns out, or a client escalates. The problem isn't that the team didn't see it coming. It's that they had no tool that could see it coming *for* them.
