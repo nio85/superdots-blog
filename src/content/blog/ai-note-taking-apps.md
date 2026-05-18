@@ -172,6 +172,42 @@ For more on building productive AI-powered workflows, see our [AI productivity g
 
 **Not setting up integrations.** A note-taking app that doesn't connect to your calendar, email, and task manager is working at half capacity. Spend 30 minutes on integrations during setup.
 
+## Notion AI vs Otter.ai for Meetings: Which Should Your Team Use?
+
+These tools solve different parts of the meeting problem. The choice depends on whether you need dedicated transcription or an integrated workspace.
+
+**Choose Notion AI if** your team already uses Notion for documentation or project management. Meeting notes stay alongside related tasks, decisions, and project pages — no copying content between tools. Notion AI handles summaries and action item extraction, but capturing live audio requires a companion integration (Fireflies.ai or Otter.ai). Cost: $10/member/month (Plus) + $10/month AI add-on.
+
+**Choose Otter.ai if** reliable live transcription is the primary need. Otter joins Zoom, Google Meet, and Microsoft Teams calls automatically, transcribes in real time, highlights key moments, and generates meeting summaries with no per-meeting setup. At $16.99/month (Pro), it costs more than adding Notion AI to an existing plan, but the meeting-specific depth and automation are significantly stronger.
+
+| Factor | Notion AI | Otter.ai |
+|--------|-----------|----------|
+| Live transcription | Via integration only | Built-in |
+| Auto-joins meetings | No | Yes |
+| Notes + workspace integration | Native (Notion pages) | Export only |
+| Pricing | $10/mo + $10/mo AI add-on | Free tier; Pro $16.99/mo |
+| Best for | Teams already on Notion | Teams needing dedicated transcription |
+
+---
+
+## Mem vs Obsidian AI for Research Notes: Which Tool Actually Fits Your Needs?
+
+Both excel for individual research and knowledge management. The core difference is where your notes live and how much setup you're willing to do.
+
+**Choose Mem if** you want zero-friction research capture with automatic organization. Drop notes in, and Mem's AI creates connections, surfaces related content, and builds a searchable knowledge base without any folder structure from you. Fully cloud-based. $15/month (Pro).
+
+**Choose Obsidian (with AI plugins) if** you want complete data control. Notes stay as Markdown files on your device, not in any company's cloud. The AI features — Smart Connections plugin for semantic search, Copilot plugin for querying your notes — require manual setup, but the result is a local knowledge graph you own indefinitely. Free for personal use; optional Sync at $5/month. The tradeoff: more setup time, no automatic organization, but no subscription dependency.
+
+| Factor | Mem | Obsidian + AI plugins |
+|--------|-----|----------------------|
+| Data location | Cloud | Local device |
+| AI organization | Automatic, built-in | Plugin-based (manual setup) |
+| Pricing | $15/mo Pro | Free + $5/mo sync (optional) |
+| Setup required | Minimal | Moderate (plugin configuration) |
+| Best for | Effortless organization | Full data ownership, power users |
+
+---
+
 ## What's next
 
 AI note-taking is evolving fast. The next wave of tools will proactively surface relevant notes before meetings, draft follow-up emails from your notes, and suggest actions based on patterns in your captured thinking.
