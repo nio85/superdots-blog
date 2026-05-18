@@ -1,7 +1,7 @@
 # Superdots
 > Practical AI for work — guides, insights, opinions, and the real story.
 
-Superdots publishes practical, no-fluff content about AI and work for every business function. Run by Luca Bartoccini (founder, editor) with a team of AI agents from a homelab in Italy. 222+ articles across sales, marketing, HR, finance, operations, engineering, legal, customer support, and design.
+Superdots publishes practical, no-fluff content about AI and work for every business function. Run by Luca Bartoccini (founder, editor) with a team of AI agents from a homelab in Italy. 230+ articles across sales, marketing, HR, finance, operations, engineering, legal, customer support, and design.
 
 Our content is AI-assisted and human-edited. We are transparent about this. We never fabricate testimonials, fake statistics, or invent case studies. Every claim must be verifiable.
 
@@ -191,6 +191,128 @@ Step-by-step guides for implementing AI across business functions.
 - [Best AI Video Editing Tools for Non-Editors](https://superdots.sh/blog/best-ai-video-editing-tools/)
 - [AI-Generated Art for Commercial Use](https://superdots.sh/blog/ai-generated-art-for-commercial-use/)
 - [Best AI Writing Tools for Business (2026)](https://superdots.sh/blog/best-ai-writing-tools/)
+
+## Additional Sales Guides
+
+- [AI Competitive Analysis: Prep Smarter](https://superdots.sh/blog/ai-competitive-analysis/)
+- [AI Guided Selling: Top Tools, 2026 Pricing & 5-Step Setup](https://superdots.sh/blog/ai-guided-selling/)
+- [AI Lead Scoring in 2026: Tools & Guide](https://superdots.sh/blog/ai-lead-scoring/)
+- [AI Negotiation Tools: Win Better Deals](https://superdots.sh/blog/ai-negotiation-tools/)
+- [AI Pitch Deck Generator: No Designer Needed](https://superdots.sh/blog/ai-pitch-deck-generator/)
+- [AI Pricing Optimization: Maximize Revenue](https://superdots.sh/blog/ai-pricing-optimization/)
+- [AI Proposal Generators: Win More Deals Fast](https://superdots.sh/blog/ai-proposal-generator/)
+- [AI RFP Response Tools: Win More Bids](https://superdots.sh/blog/ai-rfp-response-tools/)
+- [Best AI Sales Commission Software for Small Teams in 2026](https://superdots.sh/blog/ai-sales-commission-software-small-business/)
+- [How to Write Sales Emails with AI That Work](https://superdots.sh/blog/ai-sales-emails/)
+- [AI Sales Forecasting: Predict Revenue](https://superdots.sh/blog/ai-sales-forecasting/)
+- [Best AI Sales Playbook Software in 2026: 6 Tools](https://superdots.sh/blog/ai-sales-playbook-software/)
+- [Best AI Sales Prospecting Tools (2026)](https://superdots.sh/blog/ai-sales-prospecting/)
+- [How AI Optimizes Sales Territory Planning](https://superdots.sh/blog/ai-sales-territory-planning/)
+
+## Additional Marketing Guides
+
+- [AI Email Marketing: Campaigns That Convert](https://superdots.sh/blog/ai-email-marketing/)
+- [Best AI Grammar Checker for Business Teams](https://superdots.sh/blog/ai-grammar-checker-business/)
+- [AI Landing Page Builder: No Dev Needed](https://superdots.sh/blog/ai-landing-page-builder/)
+- [AI for Market Research: Faster Insights](https://superdots.sh/blog/ai-market-research/)
+- [How Small Businesses Use AI for PR (Without a PR Agency)](https://superdots.sh/blog/ai-pr-tools-small-business/)
+- [AI SEO Tools: Rank Higher with Less Effort](https://superdots.sh/blog/ai-seo-tools/)
+- [AI Tools for Account-Based Marketing](https://superdots.sh/blog/ai-tools-for-account-based-marketing/)
+- [AI Translation Tools: Go Global Affordably](https://superdots.sh/blog/ai-translation-tools/)
+- [AI Video Marketing Tools: No Video Team](https://superdots.sh/blog/ai-video-marketing-tools/)
+- [AI Writing Assistant: Keep Your Voice](https://superdots.sh/blog/ai-writing-assistant-keep-your-voice/)
+- [Best AI Email Marketing Tools 2026: 7 Platforms Compared](https://superdots.sh/blog/best-ai-email-marketing-tools/)
+
+## Additional HR Guides
+
+- [AI Change Management Tools for HR & Ops Teams (2026)](https://superdots.sh/blog/ai-change-management/)
+- [AI for Employee Wellness: Tackle Burnout](https://superdots.sh/blog/ai-employee-wellness/)
+- [AI for Recruiting: Less Busywork, Better Hires](https://superdots.sh/blog/ai-for-recruiting/)
+- [AI HR Chatbots: Answer Employee Questions](https://superdots.sh/blog/ai-hr-chatbot/)
+- [AI for Internal Communications: Guide](https://superdots.sh/blog/ai-internal-communications/)
+- [AI Interview Scheduling: Save 10 Hours/Week](https://superdots.sh/blog/ai-interview-scheduling/)
+- [AI People Analytics Software: Teams Under 200](https://superdots.sh/blog/ai-people-analytics-software/)
+- [AI Performance Reviews: Better Feedback Fast](https://superdots.sh/blog/ai-performance-reviews/)
+- [AI Resume Screening: Filter Applicants Fast](https://superdots.sh/blog/ai-resume-screening/)
+- [AI Skills Gap Analysis Tools and Framework (2026)](https://superdots.sh/blog/ai-skills-gap-analysis/)
+- [AI Workforce Planning: Visier, Workday & Mosaic](https://superdots.sh/blog/ai-workforce-planning/)
+
+## Additional Finance Guides
+
+- [AI Expense Reports: Automate the Hard Part](https://superdots.sh/blog/ai-expense-reports/)
+- [How to Use AI for Financial Forecasting](https://superdots.sh/blog/ai-financial-forecasting/)
+- [AI Payroll Software: Automate Pay & Compliance](https://superdots.sh/blog/ai-payroll-software/)
+- [AI for Revenue Recognition: ASC 606 Guide](https://superdots.sh/blog/ai-revenue-recognition/)
+- [AI Tax Prep Tools: What Works and What Doesn't](https://superdots.sh/blog/ai-tax-preparation/)
+- [Best AI Finance Tools: 10 Platforms Reviewed](https://superdots.sh/blog/best-ai-tools-for-finance/)
+
+## Additional Operations Guides
+
+- [AI Document Summarizer: Read Less, Know More](https://superdots.sh/blog/ai-document-summarizer/)
+- [AI Employee Scheduling: Smarter Shift Planning](https://superdots.sh/blog/ai-employee-scheduling/)
+- [Best AI Event Planning Tools 2026: 8 by Event Type](https://superdots.sh/blog/ai-event-planning-tools/)
+- [AI Facilities Management: Practical Guide](https://superdots.sh/blog/ai-facilities-management/)
+- [AI Inventory Management: Operations Guide](https://superdots.sh/blog/ai-inventory-management/)
+- [AI Meeting Notes: Summaries & Action Items](https://superdots.sh/blog/ai-meeting-notes-summaries-action-items/)
+- [AI Presentation Maker: Avoid the AI Look](https://superdots.sh/blog/ai-presentation-maker/)
+- [AI Process Mining: Find Bottlenecks Fast](https://superdots.sh/blog/ai-process-mining/)
+- [AI Procurement Tools: Smarter Sourcing](https://superdots.sh/blog/ai-procurement-tools/)
+- [AI Productivity Tools: Save 5-10 Hours/Week](https://superdots.sh/blog/ai-productivity-guide/)
+- [AI Tools for Product Managers (2026)](https://superdots.sh/blog/ai-product-management-tools/)
+- [AI in Project Management: Features Guide](https://superdots.sh/blog/ai-project-management-features-guide/)
+- [AI Prompt Engineering for Business](https://superdots.sh/blog/ai-prompt-engineering-for-business/)
+- [AI Quality Management Software (2026)](https://superdots.sh/blog/ai-quality-management-software/)
+- [AI Resource Allocation: Right People, Right Projects](https://superdots.sh/blog/ai-resource-allocation/)
+- [AI Risk Management: Identify Threats Early](https://superdots.sh/blog/ai-risk-management/)
+- [Best AI Scheduling Assistants for Busy Teams](https://superdots.sh/blog/ai-scheduling-assistant/)
+- [AI SOP Generator: Create SOPs Automatically](https://superdots.sh/blog/ai-sop-generator/)
+- [AI Spreadsheet Tools: No Formula Writing](https://superdots.sh/blog/ai-spreadsheet-tools/)
+- [AI for Supply Chain Management (2026)](https://superdots.sh/blog/ai-supply-chain-management/)
+- [AI Time Management Tools: Reclaim 5+ Hours](https://superdots.sh/blog/ai-time-management-tools/)
+- [AI Tools for Business: By Department](https://superdots.sh/blog/ai-tools-for-business-guide/)
+- [AI Tools for Change Management (2026)](https://superdots.sh/blog/ai-tools-for-change-management/)
+- [AI Tools for Data Entry: Stop Typing](https://superdots.sh/blog/ai-tools-for-data-entry/)
+- [Best AI Transcription Tools for Meetings](https://superdots.sh/blog/ai-transcription-tools/)
+- [Best AI Translation Tools for Business](https://superdots.sh/blog/ai-translation-tools-business/)
+- [AI Vendor Management: Score and Negotiate](https://superdots.sh/blog/ai-vendor-management/)
+- [How to Automate Email Triage with AI](https://superdots.sh/blog/automate-email-triage-with-ai/)
+- [Best AI Tools for Remote Teams (2026)](https://superdots.sh/blog/best-ai-tools-for-remote-teams/)
+- [How to Implement AI in Your Business](https://superdots.sh/blog/how-to-implement-ai-in-your-business/)
+- [Manage Your Email 2x Faster with AI](https://superdots.sh/blog/manage-email-faster-with-ai/)
+
+## Additional Engineering Guides
+
+- [AI Infrastructure Monitoring for Engineers](https://superdots.sh/blog/ai-infrastructure-monitoring/)
+- [AI Pair Programming: Best Tools Compared in 2026](https://superdots.sh/blog/ai-pair-programming/)
+- [AI Test Generation: Write Better Tests Fast](https://superdots.sh/blog/ai-test-generation/)
+- [Best AI Tools for Software Engineers](https://superdots.sh/blog/best-ai-tools-for-engineering/)
+- [Cursor vs. GitHub Copilot for Teams (2026)](https://superdots.sh/blog/cursor-vs-github-copilot/)
+
+## Additional Legal Guides
+
+- [AI Legal Document Review: Save Hours](https://superdots.sh/blog/ai-legal-document-review/)
+- [AI Legal Research: Find Case Law Fast (2026)](https://superdots.sh/blog/ai-legal-research/)
+- [AI Regulatory Compliance: Stay Ahead](https://superdots.sh/blog/ai-regulatory-compliance-monitoring/)
+- [10 AI Tools for Legal Teams (2026)](https://superdots.sh/blog/best-ai-tools-for-legal/)
+
+## Additional Customer Support Guides
+
+- [Best AI Customer Self-Service Tools (2026)](https://superdots.sh/blog/ai-customer-self-service-tools/)
+- [AI Customer Service Chatbots: No Dev Team](https://superdots.sh/blog/ai-customer-service-chatbot/)
+- [Best AI Customer Success Tools (2026)](https://superdots.sh/blog/ai-customer-success-tools/)
+- [Best AI Help Desk Software (2026)](https://superdots.sh/blog/ai-help-desk-software/)
+- [AI Knowledge Base Generator: Tickets to Docs](https://superdots.sh/blog/ai-knowledge-base-generator/)
+- [AI Omnichannel Support: Unify Conversations](https://superdots.sh/blog/ai-omnichannel-support/)
+- [AI Ticket Routing: Right Agent, Every Time](https://superdots.sh/blog/ai-ticket-routing/)
+- [AI Voice Assistants for Customer Service](https://superdots.sh/blog/ai-voice-assistant-customer-service/)
+
+## Additional Design Guides
+
+- [AI Image Editing: Professional Results](https://superdots.sh/blog/ai-image-editing-tools/)
+- [Best AI Motion Graphics Tools (2026)](https://superdots.sh/blog/ai-motion-graphics-tools/)
+- [Best AI Tools for UX Design and Prototyping](https://superdots.sh/blog/ai-ux-design-tools/)
+- [AI Wireframing Tools: Text to Prototype](https://superdots.sh/blog/ai-wireframing-tools/)
+- [Best AI Design Tools: Graphics, UX & Branding](https://superdots.sh/blog/best-ai-tools-for-design/)
 
 ## Contact
 
