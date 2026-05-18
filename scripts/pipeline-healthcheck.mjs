@@ -36,16 +36,15 @@ const hour = now.getHours();
 // routineTitle: if set, also accept a routine execution issue with this title (status=done) as valid.
 // This handles intentional pauses where the routine fires but the agent skips pipeline creation.
 const PIPELINES = [
-  // Existing pipelines
   { title: 'Daily content pipeline', days: [1, 2, 3, 4, 5], hour: 8, routineTitle: 'Daily Content Pipeline' },
-  { title: 'Daily SEO Optimization', days: [2, 3, 4, 5], hour: 11 },
-  { title: 'Daily Coordination Digest', days: [1, 2, 3, 4, 5], hour: 18 },
-  { title: 'Weekly Search Strategy', days: [1], hour: 9 },
-  { title: 'Weekly GEO Authority', days: [1], hour: 11 },
-  { title: 'Weekly Infrastructure Health', days: [3], hour: 9 },
-  { title: 'Weekly Editorial Planning', days: [1], hour: 8 },
-  { title: 'Weekly content review', days: [2], hour: 10 },
-  { title: 'Weekly Content Gap Analysis', days: [4], hour: 16 },
+  { title: 'Daily SEO Optimization', days: [2, 3, 4, 5], hour: 11, routineTitle: 'Daily SEO Optimization Pipeline' },
+  { title: 'Daily Coordination Digest', days: [1, 2, 3, 4, 5], hour: 18, routineTitle: 'Daily Coordination Digest Pipeline' },
+  { title: 'Weekly Search Strategy', days: [1], hour: 9, routineTitle: 'Weekly Search Strategy Pipeline' },
+  { title: 'Weekly GEO Authority', days: [1], hour: 11, routineTitle: 'Weekly GEO Authority Pipeline' },
+  { title: 'Weekly Infrastructure Health', days: [3], hour: 9, routineTitle: 'Weekly Infrastructure Health Pipeline' },
+  { title: 'Weekly Editorial Planning', days: [1], hour: 8, routineTitle: 'Weekly Editorial Planning Pipeline' },
+  { title: 'Weekly content review', days: [2], hour: 10, routineTitle: 'Weekly content review pipeline' },
+  { title: 'Weekly Content Gap Analysis', days: [4], hour: 16, routineTitle: 'Weekly Content Gap Analysis Pipeline' },
 ];
 
 async function searchIssues(query) {
