@@ -54,7 +54,7 @@ This is the headline feature. Instead of navigating a complex spreadsheet to fin
 - "What is our remaining budget for the marketing team through June?"
 - "Show me all software subscriptions over $500/month."
 
-The AI reads your data — whether it is a spreadsheet, a connected accounting tool, or an uploaded CSV — and gives you a direct answer. No formulas. No pivot tables. No asking the finance team and waiting two days.
+The AI reads your data — whether it is a spreadsheet, a connected [AI accounting software](/blog/ai-accounting-software) platform, or an uploaded CSV — and gives you a direct answer. No formulas. No pivot tables. No asking the finance team and waiting two days.
 
 This matters most for people who are not spreadsheet-native. If you can write an email, you can query your budget. That is a genuine shift in who can access financial information. If you are already comfortable with [AI-powered data analysis](/blog/ai-data-analysis-for-non-technical-teams), this will feel like a natural extension.
 
