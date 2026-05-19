@@ -2,7 +2,7 @@
 title: "AI Objection Handling Tools: Coaching vs. Roleplay (2026)"
 description: "Real-time coaching vs. roleplay training: which AI objection handling tools move win rates? Gong, Hyperbound, SecondNature compared with 2026 pricing."
 pubDate: "2026-04-14"
-updatedDate: "2026-05-17"
+updatedDate: "2026-05-19"
 author: "Superdots Team"
 department: "sales"
 useCase: "communication"
@@ -47,7 +47,7 @@ According to [Gong research](https://www.gong.io/win-rates), sellers who use AI 
 
 Here's how to tell them apart, what each costs, and how to pick the right one for where your team is.
 
-### Real-time coaching vs roleplay training — which do you need?
+## Real-time coaching vs roleplay training — which do you need?
 
 | Your problem | Best tool type |
 |---|---|
