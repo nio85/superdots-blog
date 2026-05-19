@@ -58,9 +58,10 @@ const provider  = getFlag('--provider') ??
   (process.env.IDEOGRAM_API_KEY ? 'ideogram' : 'flux');
 
 const styleOverride = getFlag('--style');
+const localOutput   = getFlag('--local-output');  // save to this path instead of Postiz CDN
 
 if (!platform || !slug || !title) {
-  console.error('Usage: generate-social-image.mjs --platform linkedin|facebook --slug <slug> --department <dept> --title "<title>" [--description "<desc>"] [--provider flux|ideogram] [--style <style-name>] [--dry-run]');
+  console.error('Usage: generate-social-image.mjs --platform linkedin|facebook --slug <slug> --department <dept> --title "<title>" [--description "<desc>"] [--provider flux|ideogram] [--style <style-name>] [--local-output <path>] [--dry-run]');
   process.exit(1);
 }
 
@@ -296,6 +297,18 @@ async function main() {
   const tmpPath = join(tmpdir(), `social-${slug}-${platform}-${Date.now()}.webp`);
   writeFileSync(tmpPath, buffer);
   console.error(`Saved temp: ${tmpPath}`);
+
+  // If --local-output is specified, save to that path and skip CDN upload
+  if (localOutput) {
+    const { copyFileSync } = await import('node:fs');
+    copyFileSync(tmpPath, localOutput);
+    try { unlinkSync(tmpPath); } catch {}
+    console.error(`Saved locally: ${localOutput}`);
+    console.error(`Style: ${selectedStyleName}`);
+    console.log(localOutput);
+    console.log(`style:${selectedStyleName}`);
+    return;
+  }
 
   // Upload to Postiz CDN
   console.error('Uploading to Postiz CDN...');
