@@ -8,6 +8,7 @@ department: 'customer-support'
 useCase: 'communication'
 tags: ['customer-support', 'agent-assist', 'contact-center', 'ai-tools', 'real-time-ai']
 heroImage: "/images/blog/best-ai-real-time-agent-assist-software.webp"
+imageHint: "Abstract geometric composition showing a headset overlaid with flowing data streams and glowing panel indicators on deep navy background — representing real-time AI coaching surfacing answers to a support agent mid-conversation"
 faqs:
   - question: 'What is the difference between AI agent assist software and a knowledge base?'
     answer: 'Real-time agent assist is active during a conversation — it surfaces answers and coaching cues as the customer talks. A knowledge base is passive: agents search it manually between interactions. Modern agent assist tools often include a knowledge layer, but the key difference is whether information comes to the agent automatically or the agent has to find it.'
