@@ -1,7 +1,8 @@
 ---
-title: "Best AI Tools for LinkedIn Outreach (2026): What Actually Works vs. What Gets You Banned"
+title: "Best AI Tools for LinkedIn Outreach (2026)"
 description: "Most AI LinkedIn outreach tools solve the wrong problem. They help you send more messages. The question is whether you should be sending more messages at all."
 pubDate: "2026-05-19"
+updatedDate: "2026-05-20"
 author: "Superdots Team"
 contentPillar: "dot-by-dot"
 department: "sales"
