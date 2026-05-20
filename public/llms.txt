@@ -194,6 +194,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional Sales Guides
 
+- [7 Best AI Tools for Account Managers in 2026](https://superdots.sh/blog/ai-tools-for-account-managers/)
 - [AI Competitive Analysis: Prep Smarter](https://superdots.sh/blog/ai-competitive-analysis/)
 - [Best AI Tools for LinkedIn Outreach (2026)](https://superdots.sh/blog/best-ai-tools-for-linkedin-outreach/)
 - [AI Guided Selling: Top Tools, 2026 Pricing & 5-Step Setup](https://superdots.sh/blog/ai-guided-selling/)
@@ -212,6 +213,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional Marketing Guides
 
+- [7 Best AI Social Media Management Tools for Small Business (2026)](https://superdots.sh/blog/best-ai-social-media-management-tools-small-business/)
 - [AI Email Marketing: Campaigns That Convert](https://superdots.sh/blog/ai-email-marketing/)
 - [Best AI Grammar Checker for Business Teams](https://superdots.sh/blog/ai-grammar-checker-business/)
 - [AI Landing Page Builder: No Dev Needed](https://superdots.sh/blog/ai-landing-page-builder/)
@@ -226,6 +228,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional HR Guides
 
+- [7 Best AI Headcount Forecasting Tools for HR Teams (2026)](https://superdots.sh/blog/ai-headcount-forecasting-tools/)
 - [AI Change Management Tools for HR & Ops Teams (2026)](https://superdots.sh/blog/ai-change-management/)
 - [AI for Employee Wellness: Tackle Burnout](https://superdots.sh/blog/ai-employee-wellness/)
 - [AI for Recruiting: Less Busywork, Better Hires](https://superdots.sh/blog/ai-for-recruiting/)
@@ -240,6 +243,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional Finance Guides
 
+- [7 Best AI Accounts Payable Software for Small Business in 2026](https://superdots.sh/blog/ai-accounts-payable-software-small-business/)
 - [AI Expense Reports: Automate the Hard Part](https://superdots.sh/blog/ai-expense-reports/)
 - [How to Use AI for Financial Forecasting](https://superdots.sh/blog/ai-financial-forecasting/)
 - [AI Payroll Software: Automate Pay & Compliance](https://superdots.sh/blog/ai-payroll-software/)
@@ -291,6 +295,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional Legal Guides
 
+- [6 AI Contract Drafting Tools for Small Business (2026)](https://superdots.sh/blog/ai-contract-drafting-tools-small-business/)
 - [AI Legal Document Review: Save Hours](https://superdots.sh/blog/ai-legal-document-review/)
 - [AI Legal Research: Find Case Law Fast (2026)](https://superdots.sh/blog/ai-legal-research/)
 - [AI Regulatory Compliance: Stay Ahead](https://superdots.sh/blog/ai-regulatory-compliance-monitoring/)
