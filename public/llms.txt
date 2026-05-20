@@ -195,6 +195,7 @@ Step-by-step guides for implementing AI across business functions.
 ## Additional Sales Guides
 
 - [AI Competitive Analysis: Prep Smarter](https://superdots.sh/blog/ai-competitive-analysis/)
+- [Best AI Tools for LinkedIn Outreach (2026)](https://superdots.sh/blog/best-ai-tools-for-linkedin-outreach/)
 - [AI Guided Selling: Top Tools, 2026 Pricing & 5-Step Setup](https://superdots.sh/blog/ai-guided-selling/)
 - [AI Lead Scoring in 2026: Tools & Guide](https://superdots.sh/blog/ai-lead-scoring/)
 - [AI Negotiation Tools: Win Better Deals](https://superdots.sh/blog/ai-negotiation-tools/)
@@ -297,6 +298,7 @@ Step-by-step guides for implementing AI across business functions.
 
 ## Additional Customer Support Guides
 
+- [How to Build an AI Customer Self-Service System (2026)](https://superdots.sh/blog/ai-customer-self-service/)
 - [Best AI Customer Self-Service Tools (2026)](https://superdots.sh/blog/ai-customer-self-service-tools/)
 - [AI Customer Service Chatbots: No Dev Team](https://superdots.sh/blog/ai-customer-service-chatbot/)
 - [Best AI Customer Success Tools (2026)](https://superdots.sh/blog/ai-customer-success-tools/)
