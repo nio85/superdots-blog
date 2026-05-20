@@ -141,7 +141,7 @@ The caution: the improvement only materializes if you actually change something 
 
 If your team is already thinking about the competitive landscape, win/loss analysis pairs directly with [competitive intelligence for sales](/blog/ai-competitive-intelligence-sales). The two practices inform each other — win/loss tells you which competitors are winning deals; CI tells you why they're positioned that way.
 
-For teams using call recordings, [conversation intelligence tools](/blog/ai-conversation-intelligence) can feed win/loss analysis automatically by flagging competitor mentions and objection patterns in sales calls.
+For teams using call recordings, [conversation intelligence tools](/blog/ai-conversation-intelligence) can feed win/loss analysis automatically by flagging competitor mentions and objection patterns in sales calls. Once you identify which objections consistently kill deals, [AI objection handling tools](/blog/ai-sales-objection-handling-tools/) let teams practice those specific scenarios until reps handle them consistently.
 
 If you want to systematize what you learn from losses into your selling process, [deal intelligence](/blog/ai-deal-intelligence) tools can surface similar historical patterns in real-time during active deals.
 
