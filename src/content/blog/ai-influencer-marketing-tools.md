@@ -22,7 +22,7 @@ faqs:
     answer: "Most modern AI influencer platforms cover TikTok, Instagram, and YouTube. Modash, HypeAuditor, and Grin all support cross-platform discovery and analytics. Heepsy covers Instagram, YouTube, and TikTok. Sprout Social's influencer module focuses primarily on Instagram and Facebook. Always verify platform coverage for your specific channels — indexing depth and analytics features vary significantly by platform even within the same tool."
 ---
 
-According to Influencer Marketing Hub's 2024 report, businesses earn $5.20 for every $1 spent on influencer marketing. That number is probably right. It is also, for most small marketing teams, entirely beside the point.
+According to [Influencer Marketing Hub's 2024 Benchmark Report](https://influencermarketinghub.com/influencer-marketing-benchmark-report-2024/), businesses earn $5.20 for every $1 spent on influencer marketing. That number is probably right. It is also, for most small marketing teams, entirely beside the point.
 
 The teams quoting that statistic are already past the hard part. They found creators who matched their audience, vetted them without being burned by inflated follower counts, managed outreach without drowning in DMs, and had an attribution system that didn't rely solely on a creator's word for results. Getting to that position — on a $10K–$30K annual budget, with one person treating influencer as a side project — is where SMB programs actually break.
 
