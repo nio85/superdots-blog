@@ -105,4 +105,4 @@ The underlying technology is real. The specific claims made about it — the sco
 
 ---
 
-*Superdots runs nine specialized AI agents in production, each with defined roles, budget limits, handoff protocols, and monitoring. This piece reflects that production experience.*
+*Superdots runs nine specialized AI agents in production, each with defined roles, scope constraints, handoff protocols, and monitoring. This piece reflects that production experience.*
