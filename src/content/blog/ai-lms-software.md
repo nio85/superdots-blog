@@ -54,7 +54,7 @@ Not all "AI features" are equal. These four have clear use cases and measurable 
 
 The platform tests what a learner already knows — through a skills assessment, a diagnostic quiz, or role data from your HRIS — and skips content they've already mastered. A salesperson who transferred from a competitor doesn't need the same onboarding as a fresh hire.
 
-According to Brandon Hall Group research, companies implementing adaptive learning paths report up to a 50% reduction in time-to-competency for structured training programs. The ROI comes from two sources: less time in unnecessary training, and faster ramp for employees ready to move faster.
+According to [Brandon Hall Group research](https://www.brandonhall.com/public/resources/lms_lcms/), companies implementing adaptive learning paths report up to a 50% reduction in time-to-competency for structured training programs. The ROI comes from two sources: less time in unnecessary training, and faster ramp for employees ready to move faster.
 
 *What to look for*: Does the platform let you define a learner's starting point via skills assessment or HRIS integration? Or does "personalization" just mean choosing from a content library?
 
