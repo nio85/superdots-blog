@@ -88,7 +88,7 @@ Here is what this looks like in practice:
 
 **Response effectiveness.** The AI tracks outcomes after objections. When reps respond to the pricing objection with a specific ROI story, the deal moves forward 60% of the time. When they offer a discount immediately, it moves forward only 35% of the time. Now you know which talk track works.
 
-**Rep-level patterns.** One rep handles the "we need to think about it" objection well — converting 70% of those deals. Another rep loses the deal 80% of the time after that same objection. The AI shows you exactly what each rep says in that moment, so you can turn the winning response into a team playbook.
+**Rep-level patterns.** One rep handles the "we need to think about it" objection well — converting 70% of those deals. Another rep loses the deal 80% of the time after that same objection. The AI shows you exactly what each rep says in that moment, so you can turn the winning response into a team playbook. To turn that winning response into a habit reps execute automatically, [AI objection handling tools](/blog/ai-sales-objection-handling-tools/) like Hyperbound let the team practice the exact scenarios your call data surfaces most.
 
 This data feeds directly into call prep. When a rep is about to get on a call with a prospect who raised a specific objection last time, [AI for sales call prep](/blog/ai-for-sales-call-prep/) can surface the best response from your team's history.
 
