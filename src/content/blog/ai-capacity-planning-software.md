@@ -9,6 +9,17 @@ useCase: "analysis"
 tags: ["capacity planning", "operations", "resource management", "AI tools", "team planning"]
 imageHint: "operations manager at a standing desk reviewing a capacity utilization dashboard with team load charts on a large monitor"
 heroImage: "/images/blog/ai-capacity-planning-software.webp"
+faqs:
+  - question: "What is AI capacity planning software and how is it different from resource management software?"
+    answer: "Capacity planning software focuses on matching your team's total available output to expected demand — looking forward, across weeks or months. Resource management software typically focuses on assigning specific people to specific tasks or projects in the near term. The distinction matters in practice: resource management answers 'who does what this sprint,' capacity planning answers 'can we take on this contract next quarter without burning our team.' Most modern tools blur the line, but AI capacity planning adds a layer of demand forecasting and scenario modeling that basic resource scheduling doesn't include."
+  - question: "How accurate is AI-powered capacity forecasting compared to spreadsheet methods?"
+    answer: "AI capacity forecasting outperforms spreadsheets on two specific variables: it accounts for historical utilization patterns (most teams are 70-80% productive even when fully booked), and it updates in real time as projects change. A spreadsheet that took two hours to build is already wrong by the time you share it. The AI tools in this list can recalculate your 12-week capacity picture in seconds when a project changes scope or a team member calls in sick. That said, garbage in, garbage out: tools are only as accurate as the project data and availability information you keep updated."
+  - question: "Can these tools integrate with Salesforce, HubSpot, or an ERP system?"
+    answer: "Integration depth varies significantly by tool. Mosaic and Runn have native CRM integrations (Salesforce, HubSpot) that connect your sales pipeline to your capacity forecast — useful for planning ahead of deals closing. Float and Resource Guru integrate with project management tools (Jira, Asana, Monday) rather than CRMs directly. Streamline is the only tool here built for ERP-adjacent supply chain planning. If CRM-to-capacity integration is critical for your workflow, Mosaic is the strongest option; if ERP integration matters more than team scheduling, Streamline is the only purpose-built choice."
+  - question: "What is the best free capacity planning tool for a small operations team?"
+    answer: "Both Runn and Teamdeck offer free plans for very small teams (typically up to 5 users). For a team of this size, Teamdeck's free tier gives you resource scheduling and basic capacity visibility without any configuration overhead. Runn's free tier adds capacity forecasting, which makes it more useful if you're trying to plan even 4-6 weeks out. Float offers a 30-day free trial (not a free plan), but that trial period is often enough to complete one planning cycle and decide if you need the tool."
+  - question: "How do you calculate team capacity in a capacity planning tool?"
+    answer: "Most tools calculate capacity using three inputs: the number of people on your team, their available hours per week (accounting for meetings, PTO, and internal work), and their historical utilization rate. For example: a team of 10 people × 40 hours/week = 400 hours/week gross capacity. With an 80% utilization target (accounting for overhead), effective capacity is 320 hours/week. The AI layer adds demand forecasting on top of this baseline — it looks at your pipeline or backlog and tells you when your effective capacity will be consumed, and by which projects. The most common mistake is using gross capacity (400 hours) instead of effective capacity (320 hours), which leads to systematic over-commitment."
 ---
 
 Most operations teams find out they're over capacity the same way: a deadline slips, a key person burns out, or a client escalates. The problem isn't that the team didn't see it coming. It's that they had no tool that could see it coming *for* them.
@@ -220,26 +231,3 @@ In under an hour, you'll have a clear picture of where your team is over-allocat
 *Get one AI tool recommendation for your department, every Tuesday. No filler.*
 [Subscribe to Superdots →](/newsletter)
 
----
-
-## FAQ
-
-### What is AI capacity planning software and how is it different from resource management software?
-
-Capacity planning software focuses on matching your team's total available output to expected demand — looking forward, across weeks or months. Resource management software typically focuses on assigning specific people to specific tasks or projects in the near term. The distinction matters in practice: resource management answers "who does what this sprint," capacity planning answers "can we take on this contract next quarter without burning our team." Most modern tools blur the line, but AI capacity planning adds a layer of demand forecasting and scenario modeling that basic resource scheduling doesn't include.
-
-### How accurate is AI-powered capacity forecasting compared to spreadsheet methods?
-
-AI capacity forecasting outperforms spreadsheets on two specific variables: it accounts for historical utilization patterns (most teams are 70-80% productive even when "fully booked"), and it updates in real time as projects change. A spreadsheet that took two hours to build is already wrong by the time you share it. The AI tools in this list can recalculate your 12-week capacity picture in seconds when a project changes scope or a team member calls in sick. That said, garbage in, garbage out: tools are only as accurate as the project data and availability information you keep updated.
-
-### Can these tools integrate with Salesforce, HubSpot, or an ERP system?
-
-Integration depth varies significantly by tool. Mosaic and Runn have native CRM integrations (Salesforce, HubSpot) that connect your sales pipeline to your capacity forecast — useful for planning ahead of deals closing. Float and Resource Guru integrate with project management tools (Jira, Asana, Monday) rather than CRMs directly. Streamline is the only tool here built for ERP-adjacent supply chain planning. If CRM-to-capacity integration is critical for your workflow, Mosaic is the strongest option; if ERP integration matters more than team scheduling, Streamline is the only purpose-built choice.
-
-### What's the best free capacity planning tool for a small operations team?
-
-Both Runn and Teamdeck offer free plans for very small teams (typically up to 5 users). For a team of this size, Teamdeck's free tier gives you resource scheduling and basic capacity visibility without any configuration overhead. Runn's free tier adds capacity forecasting, which makes it more useful if you're trying to plan even 4-6 weeks out. Float offers a 30-day free trial (not a free plan), but that trial period is often enough to complete one planning cycle and decide if you need the tool.
-
-### How do you calculate team capacity in a capacity planning tool?
-
-Most tools calculate capacity using three inputs: the number of people on your team, their available hours per week (accounting for meetings, PTO, and internal work), and their historical utilization rate. For example: a team of 10 people × 40 hours/week = 400 hours/week gross capacity. With an 80% utilization target (accounting for overhead), effective capacity is 320 hours/week. The AI layer adds demand forecasting on top of this baseline — it looks at your pipeline or backlog and tells you when your effective capacity will be consumed, and by which projects. The most common mistake is using gross capacity (400 hours) instead of effective capacity (320 hours), which leads to systematic over-commitment.
