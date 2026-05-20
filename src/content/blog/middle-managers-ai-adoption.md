@@ -8,7 +8,7 @@ tags: ["ai-adoption", "management", "ai-at-work"]
 imageHint: "a middle manager at a cluttered desk between two groups of colleagues, one group with executives above and one with frontline workers below, caught in the middle"
 ---
 
-Maria Rossi manages a team of eight analysts at a logistics firm in Milan.
+Maria Rossi — a composite drawn from conversations with managers across Italy, Germany, and the UK over the past year — manages a team of eight analysts at a logistics firm in Milan.
 
 In November, her CEO announced that the company would be "AI-first by Q2." No one asked Maria what that meant for her team's existing workflows. No one explained which of the six tools being piloted across the organization her analysts were expected to use. Her manager told her to "drive adoption." Her analysts asked her which data was safe to put into an AI system and which wasn't.
 
@@ -28,11 +28,11 @@ The middle manager sits between both. She is the person who has to translate the
 
 She is the one who has to tell her team that yes, this tool is now required, while privately being uncertain whether it actually improves anything.
 
-And she is almost never the person anyone designs the change program for.
+And she is almost never the person anyone designs the [change program](/blog/ai-change-management) for.
 
 ## The Squeeze
 
-McKinsey's management-layer surveys on AI adoption reveal a consistent pattern: middle managers are being asked to drive implementation while being given less authority and fewer resources to do so than previous transformation programs required. The 2024 edition of McKinsey's Global Survey on AI found that while executive confidence in AI strategy was rising, frontline and middle-management confidence in their organizations' ability to manage the human side of AI change remained flat.
+McKinsey's management-layer surveys on AI adoption reveal a consistent pattern: middle managers are being asked to drive implementation while being given less authority and fewer resources to do so than previous transformation programs required. The 2024 edition of [McKinsey's Global Survey on AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2024) found that while executive confidence in AI strategy was rising, frontline and middle-management confidence in their organizations' ability to manage the human side of AI change remained flat.
 
 The specific bind is structural.
 
@@ -44,7 +44,7 @@ Maria is in the middle. She has been told what the destination is. She has not b
 
 This is what makes the middle-manager problem structurally different from the challenge facing executives or frontline workers. The executive can set the goal and measure the outcome. The frontline worker can learn a new tool and adapt her daily practice. The middle manager has to coordinate between a goal she didn't set and a team she can't redesign the workflows for — because workflow redesign requires cross-functional authority, system access, and budget she typically doesn't have.
 
-The result, in many organizations, is that AI tools get added on top of existing workflows rather than replacing them. The analyst still does the work the old way. Then she reviews the AI output. Then she reconciles the two. The workload increases. The time the executive said would be freed up doesn't materialize, because no one redesigned the workflow to actually create that time.
+The result, in many organizations, is that AI tools get added on top of [existing workflows](/blog/ai-workflow-automation) rather than replacing them. The analyst still does the work the old way. Then she reviews the AI output. Then she reconciles the two. The workload increases. The time the executive said would be freed up doesn't materialize, because no one redesigned the workflow to actually create that time.
 
 This is not what the executive announced at the all-hands. It is, however, what the manager deals with on Monday morning.
 
@@ -52,21 +52,21 @@ What makes this particularly difficult is that the middle manager typically can'
 
 ## The Organizational Failure Behind the Numbers
 
-Boston Consulting Group's research on enterprise AI adoption consistently finds that the majority of the ROI gap in AI deployments isn't technical — it's organizational. Tools work. Implementation structures don't. People don't know what to do differently, and the people best positioned to tell them — middle managers — have been given the mandate but not the means. BCG estimates that around 70% of the gap between projected and realized ROI from AI investments is organizational and behavioral, not technical.
+Boston Consulting Group's [research on enterprise AI adoption](https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value) consistently finds that the majority of the ROI gap in AI deployments isn't technical — it's organizational. Tools work. Implementation structures don't. People don't know what to do differently, and the people best positioned to tell them — middle managers — have been given the mandate but not the means. BCG estimates that around 70% of the gap between projected and realized ROI from AI investments is organizational and behavioral, not technical.
 
 BCG's finding is often cited as evidence that change management matters. What gets less attention is the specific structure of the problem: it's the management layer, specifically, that carries the implementation burden while having the least clarity about what success looks like. The executive has a target. The frontline employee has a task. The manager has both — and has to build the bridge between them with tools and authority she wasn't given.
 
-Deloitte's research on management fatigue in technology transformations adds another dimension. Transformation programs accumulate. An organization that spent three years on cloud migration, then two years on digital workflow tools, and is now running an AI implementation isn't asking its middle managers to handle one change. It's asking them to handle the cognitive and emotional load of continuous transformation — while continuing to manage their teams' daily output.
+Deloitte's Global Human Capital Trends research on management fatigue in technology transformations adds another dimension. Transformation programs accumulate. An organization that spent three years on cloud migration, then two years on digital workflow tools, and is now running an AI implementation isn't asking its middle managers to handle one change. It's asking them to handle the cognitive and emotional load of continuous transformation — while continuing to manage their teams' daily output.
 
-The Gallup data on manager wellbeing in 2024 and 2025 showed increasing burnout rates specifically among managers, not frontline workers. The group absorbing multiple simultaneous pressures tends to show the strain.
+Gallup's State of the Global Workplace data on manager wellbeing showed increasing burnout rates specifically among managers, not frontline workers. The group absorbing multiple simultaneous pressures tends to show the strain.
 
 ## The Skills Gap No One Is Filling
 
-The World Economic Forum's Future of Jobs report identified a set of skills that would be increasingly valuable for managers navigating AI at work: critical evaluation of AI outputs, workflow redesign, change facilitation, and cross-functional coordination.
+The World Economic Forum's [Future of Jobs Report 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/) identified a set of skills that would be increasingly valuable for managers navigating AI at work: critical evaluation of AI outputs, workflow redesign, change facilitation, and cross-functional coordination.
 
 These are not skills that most managers were hired for or trained in. Most middle managers built their careers on domain expertise and execution — understanding the work their team does and making sure it gets done well. The meta-skills of change architecture and technology evaluation are a different category.
 
-They are also not the skills that most AI adoption programs train managers in. The typical AI training rollout focuses on tool use — how to write a prompt, how to use the interface, how to interpret outputs. This is useful. It is also insufficient.
+They are also not the skills that most AI adoption programs train managers in. The typical [AI training rollout](/blog/ai-employee-training) focuses on tool use — how to write a prompt, how to use the interface, how to interpret outputs. This is useful. It is also insufficient.
 
 What managers actually need is something harder to teach and harder to measure: the judgment to decide which parts of a workflow should be automated and which shouldn't, the communication skills to explain that judgment to both the team above and the executive above them, and the organizational authority to actually implement those decisions. The judgment call — this task is a good fit for AI, that one isn't, here's why — requires deep understanding of the work itself, the team's capabilities, and the quality standards the output needs to meet.
 
@@ -84,7 +84,7 @@ But most AI deployments as they are currently structured don't reduce that coord
 
 That person is usually the middle manager.
 
-The Gallup data on manager burnout is relevant here. The 2024 data showed managers reporting higher rates of stress and lower rates of engagement than either executives or individual contributors — the group absorbing the largest number of simultaneous demands showing the highest strain. That pattern predates AI. The AI deployment wave is landing on an already overloaded layer.
+Gallup's State of the Global Workplace data on manager burnout is relevant here. The 2024 edition showed managers reporting higher rates of stress and lower rates of engagement than either executives or individual contributors — the group absorbing the largest number of simultaneous demands showing the highest strain. That pattern predates AI. The AI deployment wave is landing on an already overloaded layer.
 
 The technology that was supposed to create breathing room has, in its current deployment model, often created more pressure on exactly the layer of the organization that needed it most.
 
