@@ -7,6 +7,7 @@ contentPillar: "dot-by-dot"
 department: "hr"
 useCase: "automation"
 tags: ["ai lms", "learning management system", "employee training", "hr software", "ai tools for hr"]
+heroImage: "/images/blog/ai-lms-software.webp"
 imageHint: "L&D manager at a laptop reviewing training completion dashboards with colorful progress charts, office background"
 faqs:
   - question: "What AI features should an LMS have in 2026?"
