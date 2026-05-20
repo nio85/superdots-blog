@@ -46,7 +46,7 @@ Before evaluating individual tools, it helps to understand the four functions th
 
 **2. Matter Management:** Tracks every legal matter the team is working on — from initial request through resolution. A matter can be a contract negotiation, a regulatory filing, a litigation hold, or a routine business query. Without matter management, teams lose visibility into workload distribution and matter history. Tools: Xakia, Legal Tracker.
 
-**3. Outside Counsel Management:** Tracks spend against budget, reviews outside counsel invoices for billing guideline compliance, and surfaces analytics on which law firms are delivering value. At $400–$800/hour for outside counsel, even modest efficiency gains compound quickly. Tools: Brightflag, Legal Tracker.
+**3. Outside Counsel Management:** Tracks spend against budget, reviews outside counsel invoices for billing guideline compliance, and surfaces analytics on which law firms are delivering value. At typical outside counsel rates — $400–$800/hour for partner-level work at major firms, per the Thomson Reuters 2026 State of the US Legal Market report — even modest efficiency gains compound quickly. Tools: Brightflag, Legal Tracker.
 
 **4. Legal Intake:** A structured way for the business to submit legal requests. Without it, requests arrive via email, Slack, corridor conversations, and CC'd calendar invites — and the legal team has no systematic record of what's in flight. Most CLM and matter management tools include some intake capability; dedicated intake tools are also available but often overkill for teams under 10.
 
