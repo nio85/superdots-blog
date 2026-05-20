@@ -5,7 +5,8 @@ pubDate: '2026-06-13'
 author: "Superdots Team"
 contentPillar: "the-big-picture"
 tags: ["ai-agents", "enterprise-ai", "ai-adoption"]
-imageHint: "dashboard showing multiple AI agent workflows running in parallel, with status indicators and task completion logs on a dark monitor"
+imageHint: "abstract geometric network of interconnected nodes and branching pathways on deep navy, multiple parallel teal and amber lines converging toward a central glowing point, layered depth suggesting parallel processes running simultaneously"
+heroImage: "/images/blog/ai-agents-at-work-reality-check.webp"
 ---
 
 Every software company launched an "agent" in 2025.
