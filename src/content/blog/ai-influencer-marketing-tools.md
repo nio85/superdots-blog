@@ -7,6 +7,7 @@ contentPillar: "dot-by-dot"
 department: "marketing"
 useCase: "analysis"
 tags: ["influencer marketing", "ai tools", "marketing", "creator economy", "social media marketing"]
+heroImage: "/images/blog/ai-influencer-marketing-tools.webp"
 imageHint: "marketing professional reviewing influencer analytics dashboard showing creator profiles, engagement rate graphs, and audience demographic charts on a laptop screen"
 faqs:
   - question: "What's the difference between an AI influencer marketing tool and a standard influencer platform?"
