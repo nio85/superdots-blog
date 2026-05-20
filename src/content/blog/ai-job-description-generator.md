@@ -1,8 +1,8 @@
 ---
 title: "Best AI Job Description Generator: 7 Tools Compared"
-description: "Seven AI job description generators compared — from free ChatGPT prompts to enterprise bias-detection tools. Real pricing, comparison table, and a legal check."
+description: "Seven AI job description generators compared — from free ChatGPT prompts to enterprise bias-detection tools. Real pricing, comparison table, legal check."
 pubDate: '2026-05-07'
-updatedDate: '2026-05-17'
+updatedDate: '2026-05-20'
 author: 'Superdots Team'
 department: 'hr'
 useCase: 'writing'

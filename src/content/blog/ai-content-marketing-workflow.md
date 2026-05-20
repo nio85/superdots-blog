@@ -1,8 +1,8 @@
 ---
 title: "AI Content Marketing Workflow for Small Teams"
-description: "A practical AI content marketing workflow for small teams — from research to measurement. Specific tools, real prices, and where human judgment stays essential."
+description: "A practical AI content marketing workflow for small teams — research to measurement. Specific tools, real prices, and where human judgment stays essential."
 pubDate: "2026-05-15"
-updatedDate: "2026-05-17"
+updatedDate: "2026-05-20"
 author: "Superdots Team"
 department: "marketing"
 contentPillar: "connecting-the-dots"

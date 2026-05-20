@@ -1,8 +1,8 @@
 ---
 title: 'AI Brand Identity Tools: Skip the $10K Agency'
-description: 'Replace a $10K branding agency with Looka, Brandmark, Khroma, and Frontify. Build your complete logo, color system, typography, and brand guidelines in one afternoon.'
+description: 'Replace a $10K agency with Looka, Brandmark, Khroma, and Frontify. Build your complete brand identity — logo, colors, typography — in one afternoon.'
 pubDate: "2026-03-17T17:00:00Z"
-updatedDate: "2026-05-17"
+updatedDate: "2026-05-20"
 author: 'Superdots Team'
 department: 'design'
 useCase: 'writing'
