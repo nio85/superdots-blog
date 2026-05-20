@@ -116,6 +116,8 @@ If a vendor leads with emotion AI in a demo, treat it as a signal about their pr
 | **LearnUpon** | Mid-market, compliance-heavy | Automated certification tracking | Custom | Yes |
 | **WorkRamp** | Sales and CS enablement | AI role-play coaching | Custom | Demo |
 
+*Pricing as of June 2026. Plans and features change — verify current pricing directly with each vendor before purchasing.*
+
 ---
 
 ## The Tools, Evaluated
@@ -136,7 +138,7 @@ For companies without a large L&D team, the collaborative model gets training pr
 
 ### TalentLMS
 
-TalentLMS is the most widely adopted LMS for small businesses — partly because the free tier is genuinely usable (up to 5 users, unlimited courses) and partly because the paid plans are affordable at scale. The AI features are functional rather than advanced: AI-generated quiz questions, basic course recommendations, and an AI writing assistant for course descriptions.
+TalentLMS is one of the most widely adopted LMS platforms for small businesses — partly because the free tier is genuinely usable (up to 5 users, unlimited courses) and partly because the paid plans are affordable at scale. The AI features are functional rather than advanced: AI-generated quiz questions, basic course recommendations, and an AI writing assistant for course descriptions.
 
 For teams under 100 employees that need a simple, reliable platform with minimal setup time, TalentLMS is a sensible default. It integrates with Slack, Salesforce, and most common HRIS platforms. The admin interface has a shallow learning curve.
 
