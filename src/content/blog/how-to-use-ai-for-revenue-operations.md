@@ -7,6 +7,7 @@ contentPillar: "connecting-the-dots"
 department: "operations"
 useCase: "automation"
 tags: ["revenue operations", "revops", "ai automation", "sales and marketing alignment", "crm"]
+heroImage: "/images/blog/how-to-use-ai-for-revenue-operations.webp"
 imageHint: "split-screen showing a chaotic CRM with duplicate contacts on one side and a clean automated lead pipeline dashboard on the other"
 faqs:
   - question: "What is revenue operations (RevOps) in simple terms?"
