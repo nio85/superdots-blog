@@ -7,6 +7,7 @@ department: "legal"
 useCase: "automation"
 contentPillar: "dot-by-dot"
 tags: ['ai-tools', 'ai-for-legal', 'legal-operations', 'contract-management']
+heroImage: "/images/blog/ai-legal-operations-software.webp"
 imageHint: "in-house lawyer reviewing a contract management dashboard on laptop, stack of legal documents on desk beside them"
 showStickyCTA: true
 faqs:
