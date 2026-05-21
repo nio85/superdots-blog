@@ -259,4 +259,4 @@ Free options include uploading CSVs to ChatGPT or Claude, and using built-in AI 
 
 ### Can AI budgeting tools replace my finance team?
 
-No. AI budgeting tools give you independence for routine questions — checking remaining budget, spotting trends, building rough forecasts — so you stop asking finance for information you can find yourself. But you still need finance for budget reallocation, business case modeling, revenue recognition, audit preparation, and any decision involving accounting rules. The goal is to free your finance team from routine inquiries so they can focus on strategic work.
+No. AI budgeting tools give you independence for routine questions — checking remaining budget, spotting trends, building rough forecasts — so you stop asking finance for information you can find yourself. But you still need finance for budget reallocation, business case modeling, revenue recognition, [AI audit preparation](/blog/ai-audit-preparation), and any decision involving accounting rules. The goal is to free your finance team from routine inquiries so they can focus on strategic work.
