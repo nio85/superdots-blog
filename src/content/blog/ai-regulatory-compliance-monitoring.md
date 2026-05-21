@@ -96,7 +96,7 @@ This feature is critical. Without it, your team receives alerts but still has to
 
 Monitoring is step one. Acting on what you find is step two. Look for tools that integrate with your existing workflow systems — Jira, ServiceNow, Asana, or whatever your team uses for task management. When a relevant change is detected, the tool should be able to create a task, assign an owner, and set a deadline automatically.
 
-If your team already uses [AI compliance tools](/blog/ai-compliance-tools) for other functions like audit preparation or policy management, check whether your existing vendor has added regulatory monitoring capabilities before buying a separate platform. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
+If your team already uses [AI compliance tools](/blog/ai-compliance-tools) for other functions like [AI audit preparation](/blog/ai-audit-preparation) or policy management, check whether your existing vendor has added regulatory monitoring capabilities before buying a separate platform. If this applies to your team, our [How AI Extracts and Analyzes Contract Clauses Automatically](/blog/ai-contract-clause-extraction/) guide covers the details.
 
 ### Audit trail generation
 
